@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteResumenPlanillas" targetNamespace="http://tempuri.org/dsReporteResumenPlanillas.xsd" xmlns:mstns="http://tempuri.org/dsReporteResumenPlanillas.xsd" xmlns="http://tempuri.org/dsReporteResumenPlanillas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteResumenPlanillas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteResumenPlanillas" msprop:Generator_UserDSName="dsReporteResumenPlanillas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReportePlanillasResumen" msprop:Generator_TableClassName="dsReportePlanillasResumenDataTable" msprop:Generator_TableVarName="tabledsReportePlanillasResumen" msprop:Generator_TablePropName="dsReportePlanillasResumen" msprop:Generator_RowDeletingName="dsReportePlanillasResumenRowDeleting" msprop:Generator_RowChangingName="dsReportePlanillasResumenRowChanging" msprop:Generator_RowEvHandlerName="dsReportePlanillasResumenRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReportePlanillasResumenRowDeleted" msprop:Generator_UserTableName="dsReportePlanillasResumen" msprop:Generator_RowChangedName="dsReportePlanillasResumenRowChanged" msprop:Generator_RowEvArgName="dsReportePlanillasResumenRowChangeEvent" msprop:Generator_RowClassName="dsReportePlanillasResumenRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Importe" msprop:Generator_ColumnVarNameInTable="columnImporte" msprop:Generator_ColumnPropNameInRow="Importe" msprop:Generator_ColumnPropNameInTable="ImporteColumn" msprop:Generator_UserColumnName="Importe" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoConcepto" msprop:Generator_ColumnVarNameInTable="columnTipoConcepto" msprop:Generator_ColumnPropNameInRow="TipoConcepto" msprop:Generator_ColumnPropNameInTable="TipoConceptoColumn" msprop:Generator_UserColumnName="TipoConcepto" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="DTotal" msprop:Generator_ColumnVarNameInTable="columnDTotal" msprop:Generator_ColumnPropNameInRow="DTotal" msprop:Generator_ColumnPropNameInTable="DTotalColumn" msprop:Generator_UserColumnName="DTotal" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

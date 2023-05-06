@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADC68541-8864-4278-A119-2924D2D18251}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAMBHS.Windows.SigesoftIntegration.UI</RootNamespace>
+    <AssemblyName>SAMBHS.Windows.SigesoftIntegration.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\Components\Common\Resource\SAMBHS.Common.Resource\Librerias\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="ScrapperReniecSunat">
+      <HintPath>..\..\SLSanLorenzo\ExternalLibraries\ScrapperReniecSunat.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgendaBl.cs" />
+    <Compile Include="Dtos\DiagnosticRepositoryList.cs" />
+    <Compile Include="Dtos\PersonDto.cs" />
+    <Compile Include="Dtos\ProtocolComponentList.cs" />
+    <Compile Include="Dtos\ProtocolDto.cs" />
+    <Compile Include="Dtos\RecetaDto.cs" />
+    <Compile Include="Dtos\ServiceDto.cs" />
+    <Compile Include="FarmaciaBl.cs" />
+    <Compile Include="FrmBuscarMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarMedicamento.Designer.cs">
+      <DependentUpon>FrmBuscarMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarServiciosPendientesAsistencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarServiciosPendientesAsistencial.Designer.cs">
+      <DependentUpon>frmBuscarServiciosPendientesAsistencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dtos\ComponentServiceDto.cs" />
+    <Compile Include="ConnectionHelper.cs" />
+    <Compile Include="Dtos\ConsultaServicioDto.cs" />
+    <Compile Include="Dtos\EsoDto.cs" />
+    <Compile Include="Dtos\GrupoOcupacionalDto.cs" />
+    <Compile Include="FacturacionServiciosBl.cs" />
+    <Compile Include="Dtos\LocationDto.cs" />
+    <Compile Include="frmBuscarServiciosPendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarServiciosPendientes.Designer.cs">
+      <DependentUpon>frmBuscarServiciosPendientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Components\Common\BusinessEntity\SAMBHS.Common.BE\SAMBHS.Common.BE.csproj">
+      <Project>{04aceeee-ba05-46b7-a0c2-fd2b6f2e04b8}</Project>
+      <Name>SAMBHS.Common.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN.csproj">
+      <Project>{6F195144-A2AD-42D1-B3CE-F1ACFE7DBC8A}</Project>
+      <Name>SAMBHS.Common.DataModel.MSSQLWIN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\Resource\SAMBHS.Common.Resource\SAMBHS.Common.Resource.csproj">
+      <Project>{818435b2-1f4d-40a3-96d4-1b0bd9a7098b}</Project>
+      <Name>SAMBHS.Common.Resource</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmBuscarMedicamento.resx">
+      <DependentUpon>FrmBuscarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarServiciosPendientesAsistencial.resx">
+      <DependentUpon>frmBuscarServiciosPendientesAsistencial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarServiciosPendientes.resx">
+      <DependentUpon>frmBuscarServiciosPendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_search.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

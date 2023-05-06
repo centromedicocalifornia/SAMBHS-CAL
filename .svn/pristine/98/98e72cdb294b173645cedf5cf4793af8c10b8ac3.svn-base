@@ -1,0 +1,689 @@
+﻿using System;
+using System.Linq;
+using System.Windows.Forms;
+using SAMBHS.Common.Resource;
+using SAMBHS.Security.BL;
+using SAMBHS.CommonWIN.BL;
+using System.Configuration;
+using System.Deployment.Application;
+using System.Drawing;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Threading;
+using SAMBHS.Common.BE;
+// ReSharper disable All
+
+namespace SAMBHS.Windows.WinClient.UI
+{
+    public sealed partial class frmLogin : Form
+    {
+        const int idVersionActual = 260;
+        string appName = "SAMBHS.Windows.WinClient.UI";
+        private int _intNodeId;
+        private static ManualResetEvent _splashLoadedEvent;
+        private string _providerString = string.Empty;
+        private string _dataSource;
+        CancellationTokenSource _cts = new CancellationTokenSource();
+        public string DataSource
+        {
+            get { return _dataSource; }
+        }
+        byte[] _certPubicKeyData;
+        public string AppVersion
+        {
+            get { return txtAppVersion.Text; }
+        }
+
+        public frmLogin()
+        {
+            _splashLoadedEvent = new ManualResetEvent(false);
+
+            ThreadStart threadStart = ShowSplashScreen;
+            var thread = new Thread(threadStart) { Name = "Splash Screen" };
+            thread.Start();
+            _splashLoadedEvent.WaitOne();
+            OnInitializationStatusChanged("Inicializando...");
+            InitializeComponent();
+        }
+        
+        private void ShowSplashScreen()
+        {
+            var splashScreen = new SplashScreen();
+            Application.Run(splashScreen);
+            Application.ExitThread();
+        }
+
+        private bool AuthenticateUser()
+        {
+            var objClientSession = new ClientSession { ReplicationNodeID = UserConfig.Default.repCurrentNode };
+            var objOperationResult = new OperationResult();
+            var objSecurityBl = new SecurityBL();
+            var objConfiguracionEmpresaBl = new ConfiguracionEmpresaBL();
+            var objUserDto = new systemuserDto();
+            objUserDto = objSecurityBl.ValidateSystemUser(ref objOperationResult, _intNodeId, txtUserName.Text, Utils.Encrypt(txtPassword.Text));
+            btnOK.Enabled = false;
+
+            #region Verifica la Versión de la BD con la del Aplicativo
+            var dbConf = new DbConfig();
+            dbConf.EstadoEvent += delegate(string s)
+            {
+                ultraStatusBar1.Panels[0].Text = s;
+                ultraStatusBar1.Refresh();
+            };
+
+            dbConf.BaseDatosActualizador(ref objOperationResult, idVersionActual, UserConfig.Default.csTipoMotorBD,
+                _providerString, UserConfig.Default.repCurrentNode, ((GridKeyValueDTO)ucNodos.ActiveRow.ListObject).Value1);
+
+            if (objOperationResult.Success == 0)
+            {
+                UltraMessageBox.Show(objOperationResult.ErrorMessage + "\n" + objOperationResult.ExceptionMessage + "\n\nTARGET: " + objOperationResult.AdditionalInformation, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            #endregion
+
+            #region Carga la sesion
+
+            try
+            {
+                if (objUserDto != null)
+                {
+                    ultraStatusBar1.Panels[0].Text = "Cargando la sesión...";
+                    if (objSecurityBl.ValidateSystemUserNode(objUserDto.i_SystemUserId,
+                        int.Parse(ucNodos.Value.ToString())))
+                    {
+                        objClientSession.i_SystemUserId = objUserDto.i_SystemUserId;
+                        objClientSession.v_UserName = objUserDto.v_PersonName + " (" + objUserDto.v_UserName + ")";
+                        var objNode = (GridKeyValueDTO)ucNodos.ActiveRow.ListObject;
+                        objClientSession.i_CurrentExecutionNodeId = int.Parse(objNode.Id);
+                        objClientSession.v_CurrentExecutionNodeName = objNode.Value2;
+                        objClientSession.v_RucEmpresa = objNode.Value1;
+                        objClientSession.i_PersonId = objUserDto.i_PersonId;
+                        var config = new ConfiguracionFacturacionBL().GetConfiguracion(out objOperationResult);
+                        objClientSession.EsEmisorElectronico = config.i_EsEmisor == 1;
+                       
+                        if (objUserDto.i_RoleId != null) objClientSession.i_RoleId = (int)objUserDto.i_RoleId;
+                        objClientSession.UsuarioEsContable = objUserDto.i_UsuarioContable ?? 0;
+
+                        var objConfiguracionEmpresa =
+                            objConfiguracionEmpresaBl.ObtenerConfiguracionEmpresa(ref objOperationResult,
+                                objUserDto.i_SystemUserId);
+
+                        if (objOperationResult.Success == 0)
+                        {
+                            if (!string.IsNullOrEmpty(objOperationResult.ExceptionMessage))
+                                UltraMessageBox.Show(
+                                    objOperationResult.ExceptionMessage + "\n\nTARGET: " +
+                                    objOperationResult.AdditionalInformation, "Error", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                            else
+                                UltraMessageBox.Show(
+                                    objOperationResult.ErrorMessage + "\n\nTARGET: " +
+                                    objOperationResult.AdditionalInformation, "Error", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                            return false;
+                        }
+
+                        if (objConfiguracionEmpresa != null)
+                        {
+                            objClientSession.d_ValorMaximoBoletas = objConfiguracionEmpresa.d_ValorMaximoBoletas;
+                            objClientSession.i_AfectoIgvCompras = objConfiguracionEmpresa.i_AfectoIgvCompras;
+                            objClientSession.i_AfectoIgvVentas = objConfiguracionEmpresa.i_AfectoIgvVentas;
+                            objClientSession.i_CantidadDecimales = objConfiguracionEmpresa.i_CantidadDecimales;
+                            objClientSession.i_IdMoneda = objConfiguracionEmpresa.i_IdMoneda;
+                            objClientSession.i_IdPermiteStockNegativo = objConfiguracionEmpresa.i_IdPermiteStockNegativo;
+                            objClientSession.i_PrecioDecimales = objConfiguracionEmpresa.i_PrecioDecimales;
+                            objClientSession.i_PrecioIncluyeIgvCompras =
+                                objConfiguracionEmpresa.i_PrecioIncluyeIgvCompras;
+                            objClientSession.i_PrecioIncluyeIgvVentas = objConfiguracionEmpresa.i_PrecioIncluyeIgvVentas;
+                            objClientSession.v_IdCuentaContableDolares =
+                                objConfiguracionEmpresa.v_IdCuentaContableDolares;
+                            objClientSession.v_IdCuentaContableSoles = objConfiguracionEmpresa.v_IdCuentaContableSoles;
+                            objClientSession.i_IdDestinoCompras = objConfiguracionEmpresa.i_IdDestinoCompras;
+                            objClientSession.d_ComisionVendedor = objConfiguracionEmpresa.d_ComisionVendedor;
+                            objClientSession.i_IdIgv = objConfiguracionEmpresa.i_IdIgv;
+                            objClientSession.i_IdTipoOperacionVentas = objConfiguracionEmpresa.i_IdTipoOperacionVentas;
+                            objClientSession.i_IdEstablecimiento = UserConfig.Default.appEstablecimientoPredeterminado;
+                            objClientSession.i_IdAlmacenPredeterminado = UserConfig.Default.appAlmacenPredeterminado;
+                            objClientSession.v_IdVendedor = objConfiguracionEmpresa.v_IdVendedor;
+                            objClientSession.i_IncluirPreciosGuiaRemision =
+                                objConfiguracionEmpresa.i_IncluirPreciosGuiaRemision;
+                            objClientSession.i_FechaRegistro = objConfiguracionEmpresa.i_FechaRegistro;
+                            objClientSession.i_FechaEmision = objConfiguracionEmpresa.i_FechaEmision;
+                            objClientSession.i_EmpresaAfectaRetencion = objConfiguracionEmpresa.i_EmpresaAfectaRetencion;
+                            objClientSession.v_NroCuentaRetencion = objConfiguracionEmpresa.v_NroCuentaRetencion;
+                            if (objConfiguracionEmpresa.d_TasaRetencion != null)
+                                objClientSession.d_TasaRetencion = objConfiguracionEmpresa.d_TasaRetencion.Value;
+                            objClientSession.i_Periodo = int.Parse(umPeriodo.Text.Trim());
+                            objClientSession.i_RedondearVentas = objConfiguracionEmpresa.i_RedondearVentas;
+                            objClientSession.i_VentasMostrarEmpaque =
+                                objConfiguracionEmpresa.i_VentasMostrarColumasEmpaque ?? 0;
+                            objClientSession.i_ComprasMostrarEmpaque =
+                                objConfiguracionEmpresa.i_ComprasMostrarColumasEmpaque ?? 0;
+                            objClientSession.i_IdMonedaCompra = objConfiguracionEmpresa.i_IdMonedaCompra ?? -1;
+                            objClientSession.i_PrecioEditableTodosProductosPedido =
+                                objConfiguracionEmpresa.i_EditarPrecioPedido ?? 0;
+                            objClientSession.i_ComprasIscOtrosTributos =
+                                objConfiguracionEmpresa.i_ComprasMostrarIscyOtrosTributos ?? 0;
+                            objClientSession.i_VentasIscOtrosTributos =
+                                objConfiguracionEmpresa.i_VentasMostrarIscyOtrosTributos ?? 0;
+                            objClientSession.v_NroCuentaRedondeoGanancia =
+                                objConfiguracionEmpresa.v_NroCuentaRedondeoGanancia;
+                            objClientSession.v_NroCuentaRedondeoPerdida =
+                                objConfiguracionEmpresa.v_NroCuentaRedondeoPerdida;
+                            objClientSession.v_DiferenciaCambioCtaGanancia =
+                                objConfiguracionEmpresa.v_DiferenciaCambioCtaGanancia;
+                            objClientSession.v_DiferenciaCambioCtaPerdida =
+                                objConfiguracionEmpresa.v_DiferenciaCambioCtaPerdida;
+                            objClientSession.i_EditarPrecioVenta = objConfiguracionEmpresa.i_EditarPrecioVenta ?? 0;
+                            objClientSession.i_PermiteIntercambiarListasPrecios =
+                                objConfiguracionEmpresa.i_PermiteIntercambiarListasPrecios ?? 0;
+                            objClientSession.i_GenerarActDesdeCompras =
+                                objConfiguracionEmpresa.i_GenerarActDesdeCompras ?? 0;
+                            objClientSession.v_NroCuentaUtilidadCierre =
+                                objConfiguracionEmpresa.v_NroCuentaUtilidadCierre;
+                            objClientSession.v_NroCuentaPerdidaCierre = objConfiguracionEmpresa.v_NroCuentaPerdidaCierre;
+                            objClientSession.v_NroCuentaResul891Cierre =
+                                objConfiguracionEmpresa.v_NroCuentaResul891Cierre;
+                            objClientSession.v_NroCuentaResul892Cierre =
+                                objConfiguracionEmpresa.v_NroCuentaResul892Cierre;
+                            objClientSession.v_ImpresionDirectoVentas = objConfiguracionEmpresa.v_ImpresionDirectoVentas;
+                            objClientSession.i_IncluirServicioGuiaVenta =
+                                objConfiguracionEmpresa.i_IncluirServicioGuiaVenta ?? 0;
+                            objClientSession.i_IncluirAgeciaTransporteGuiaRemision =
+                                objConfiguracionEmpresa.i_IncluirTransportistaGuiaRemision ?? 0;
+                            objClientSession.i_ActualizarCostosProductos =
+                                objConfiguracionEmpresa.i_ActualizarCostoProductos ?? 0;
+                            objClientSession.i_IncluirPedidoExportacionCompraVenta =
+                                objConfiguracionEmpresa.i_IncluirPedidoExportacionCompraVenta ?? 0;
+                            objClientSession.i_IncluirNingunoCompraVenta =
+                                objConfiguracionEmpresa.i_IncluirNingunoCompraVenta ?? 0;
+                            //objClientSession.i_IncluirLotesCompraVenta =
+                            //    objConfiguracionEmpresa.i_IncluirLotesCompraVenta ?? 0;
+                            objClientSession.i_IdMonedaImportacion = objConfiguracionEmpresa.i_IdMonedaImportacion ?? -1;
+                            objClientSession.NroCtaISC = objConfiguracionEmpresa.v_NroCuentaISC;
+                            objClientSession.NroCtaPercepcion = objConfiguracionEmpresa.v_NroCuentaPercepcion;
+                            objClientSession.NroCtaOtrosTributos = objConfiguracionEmpresa.v_NroCuentaOtrosConsumos;
+                            objClientSession.NroCtaGastosFinancieros =
+                                objConfiguracionEmpresa.v_NroCuentaGastosFinancierosCobranza;
+                            objClientSession.NroCtaIngresosFinancieros =
+                                objConfiguracionEmpresa.v_NroCuentaIngresosFinancierosCobranza;
+                            objClientSession.i_CambiarUnidadMedidaVentaPedido =
+                                objConfiguracionEmpresa.i_CambiarUnidadMedidaVentaPedido ?? 0;
+                            objClientSession.i_IdDocumentoContableLEC =
+                                objConfiguracionEmpresa.i_IdDocumentoContableLEC.Value;
+                            objClientSession.i_IdDocumentoContableLEP =
+                                objConfiguracionEmpresa.i_IdDocumentoContableLEP.Value;
+                            objClientSession.i_IncluirSEUOImpresionDocumentos =
+                                objConfiguracionEmpresa.i_IncluirSEUOImpresionDocumentos ?? 0;
+                            objClientSession.i_IdTipoRegimenEmpresa = objConfiguracionEmpresa.i_TipoRegimenEmpresa ?? -1;
+                            objClientSession.NroCtaObligacionesFinancieros =
+                                objConfiguracionEmpresa.v_NroCuentaObligacionesFinancierosCobranza;
+                            objClientSession.i_ImprimirDniPNaturales =
+                                objConfiguracionEmpresa.i_ImprimirDniPNaturalesLetras ?? 0;
+                            objClientSession.i_UsaListaPrecios = objConfiguracionEmpresa.i_UsaListaPrecios ?? 1;
+                            objClientSession.i_IncluirAgenciaTransportePedido =
+                                objConfiguracionEmpresa.i_IncluirAgenciaTransportePedido ?? 0;
+                            objClientSession.i_EditarPrecioVentaPedido =
+                                objConfiguracionEmpresa.i_EditarPrecioVentaPedido ?? 0;
+                            objClientSession.GlosaTicket = objConfiguracionEmpresa.v_GlosaTicket;
+                            objClientSession.NroCtaAdelanto = objConfiguracionEmpresa.v_NroCuentaAdelanto;
+                            objClientSession.i_CodigoPlanContable = objConfiguracionEmpresa.i_CodigoPlanContable ?? -1;
+                            objClientSession.TckUsarInfo = objConfiguracionEmpresa.i_TckUseInfo ?? 0;
+                            objClientSession.TckRuc = objConfiguracionEmpresa.v_TckRuc;
+                            objClientSession.TckRzs = objConfiguracionEmpresa.v_TckRzs;
+                            objClientSession.TckDireccion = objConfiguracionEmpresa.v_TckDireccion;
+                            objClientSession.TckTelf = objConfiguracionEmpresa.v_TckExt;
+                            objClientSession.i_ValidarStockMinimoProducto =
+                                objConfiguracionEmpresa.i_ValidarStockMinimoProducto ?? 0;
+                            objClientSession.v_NroCtaRetenciones = objConfiguracionEmpresa.v_NroCtaRetenciones;
+                            objClientSession.ConceptoPlanillaFaltas = objConfiguracionEmpresa.v_IdPlanillaConceptoFaltas;
+                            objClientSession.ConceptoPlanillaTardanzas =
+                                objConfiguracionEmpresa.v_IdPlanillaConceptoTardanzas;
+                            objClientSession.i_CostoListaPreciosDiferentesxAlmacen =
+                                objConfiguracionEmpresa.i_CostoListaPreciosDiferentesxAlmacen ?? 0;
+                            objClientSession.i_IncluirAlmacenDestinoGuiaRemisionVenta =
+                                objConfiguracionEmpresa.i_IncluirAlmacenDestinoGuiaRemision ?? 0;
+                            objClientSession.i_VisualizarColumnasBasicasPedido =
+                                objConfiguracionEmpresa.i_VisualizarColumnasBasicasPedido ?? 0;
+                            objClientSession.v_IdRepresentanteLegal = objConfiguracionEmpresa.v_IdRepresentanteLegal;
+                            objClientSession.v_NroLeyCuartaCategoria = objConfiguracionEmpresa.v_NroLeyCuartaCategoria;
+                            objClientSession.i_UsaDominicalCalculoDescuento =
+                                objConfiguracionEmpresa.i_UsaDominicalCalculoDescuento ?? 0;
+                            objClientSession.v_IdProductoDetalleFlete = objConfiguracionEmpresa.v_IdProductoDetalleFlete;
+                            objClientSession.v_IdProductoDetalleSeguro =
+                                objConfiguracionEmpresa.v_IdProductoDetalleSeguro;
+                            objClientSession.i_GenerarNotaSalidaDesdeVentaUltimoDiaMes =
+                                objConfiguracionEmpresa.i_GenerarNotaSalidaDesdeVentaUltimoDiaMes ?? 0;
+                            objClientSession.i_TipoVentaVentas = objConfiguracionEmpresa.i_TipoVentaVentas ?? -1;
+                            objClientSession.v_GlosaPedido = objConfiguracionEmpresa.v_GlosaPedido;
+                            objClientSession.i_IdCondicionPagoPedido =
+                                objConfiguracionEmpresa.i_IdCondicionPagoPedido ?? -1;
+                            objClientSession.i_SeUsaraSoloUnaListaPrecioEmpresa =
+                                objConfiguracionEmpresa.i_SeUsaraSoloUnaListaPrecioEmpresa ?? 0;
+                            objClientSession.i_VisualizarBusquedaProductos =
+                                objConfiguracionEmpresa.i_VisualizarBusquedaProductos ?? 0;
+                            objClientSession.i_PermiteIncluirPreciosCeroPedido =
+                                objConfiguracionEmpresa.i_PermiteIncluirPreciosCeroPedido ?? 0;
+                            objClientSession.i_IdCondicionPagoVenta = objConfiguracionEmpresa.i_IdCondicionPagoVenta ??
+                                                                      -1;
+                            objClientSession.v_NroCuentaCobranzaRedondeoGanancia =
+                                objConfiguracionEmpresa.v_NroCuentaCobranzaRedondeoGanancia;
+                            objClientSession.v_NroCuentaCobranzaRedondeoPerdida =
+                                objConfiguracionEmpresa.v_NroCuentaCobranzaRedondeoPerdida;
+                            objClientSession.i_CambiarAlmacenVentasDesdeVendedor =
+                                objConfiguracionEmpresa.i_CambiarAlmacenVentasDesdeVendedor ?? 0;
+                            objClientSession.i_EmpresaAfectaPercepcionVenta =
+                                objConfiguracionEmpresa.i_IdConfiguracionEmpresa;
+                            objClientSession.i_TipoDepreciacionActivoFijo = objConfiguracionEmpresa.i_TipoDepreciacionActivoFijo ?? 1;
+
+                            objClientSession.i_PermiteEditarPedidoFacturado = objConfiguracionEmpresa.i_PermiteEditarPedidoFacturado ?? 0;
+                        }
+                        else
+                        {
+                            UltraStatusbarManager.MarcarError(ultraStatusBar1,
+                                "No se pudo cargar la configuración de la empresa.", timer1);
+                            DialogResult = DialogResult.No;
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        UltraStatusbarManager.MarcarError(ultraStatusBar1,
+                            "Este usuario no está asignado a esta empresa.", timer1);
+                        ucNodos.Focus();
+                        DialogResult = DialogResult.No;
+                        return false;
+                    }
+                }
+                else
+                {
+                    UltraStatusbarManager.MarcarError(ultraStatusBar1, objOperationResult.AdditionalInformation, timer1);
+                    txtUserName.Focus();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                UltraMessageBox.Show(ex.Message);
+                return false;
+            }
+
+            #endregion
+
+            Globals.ClientSession = objClientSession;
+
+            return true;
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+            UltraStatusbarManager.Inicializar(ultraStatusBar1);
+            #region Actualizacion ClickOnce
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                var ad = ApplicationDeployment.CurrentDeployment;
+                txtAppVersion.Text = string.Format("{0}.{1}.{2}.{3}", ad.CurrentVersion.Major,
+                    ad.CurrentVersion.Minor, ad.CurrentVersion.Build, ad.CurrentVersion.Revision);
+            }
+            #endregion
+
+            var objOperationResult = new OperationResult();
+            var frColors = new GlobalFormColors();
+            BackColor = frColors.FormColor;
+            panel1.BackColor = new GlobalFormColors().BannerColor;
+
+
+            umPeriodo.MaxValue = int.Parse(DateTime.Today.Year.ToString());
+
+            #region Configurar Cargado del combo y check predeterminado
+            OnInitializationStatusChanged("Conectando...");
+            var nodos = new SecurityBL().ReturnNodes(ref objOperationResult);
+
+            if (objOperationResult.Success == 0)
+            {
+                OnInitializationStatusChanged("Falló la Conexión!");
+                base.OnShown(e);
+                Application.DoEvents();
+                OnInitializationComplete();
+
+                var mensaje = MessageBox.Show(@"-" + objOperationResult.ErrorMessage + '\n' + @"-" + objOperationResult.ExceptionMessage + '\n' +
+                @"-No se pudo establecer una conexión al servidor.\n ¿Desea Editar la Configuración de Conexión?", @"Error de conexión", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+
+                if (mensaje == DialogResult.Yes)
+                {
+                    var cnx = new frmPreferenciasConexion();
+                    cnx.ShowDialog();
+                    if (cnx.Guardado) Application.Restart();
+                }
+            }
+            else
+            {
+                OnInitializationStatusChanged("Conectado!");
+                if (UserConfig.Default.repCurrentNode == "N")
+                {
+                    var s = new SystemValidator();
+                    s.OnEstadoCambio += s_OnEstadoCambio;
+                    s.Start();
+                }
+
+                ValidarEstadoOrganizacion();
+
+                Utils.Windows.LoadUltraComboList(ucNodos, "Value2", "Id", nodos, DropDownListAction.Select);
+
+                var config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+
+                if (!string.IsNullOrEmpty(config.AppSettings.Settings["EmpresaPredeterminada"].Value))
+                {
+                    string empresaPredeterminada = config.AppSettings.Settings["EmpresaPredeterminada"].Value;
+
+                    var rucDelCombo = ucNodos.Rows.Where(o => o.Cells["Value1"].Value != null).Select(p => p.Cells["Value1"].Value.ToString()).ToList();
+
+                    if (rucDelCombo.Contains(empresaPredeterminada))
+                    {
+                        ucNodos.SelectedRow = ucNodos.Rows.FirstOrDefault(p => p.Cells["Value1"].Value != null && p.Cells["Value1"].Value.ToString() == empresaPredeterminada);
+                    }
+                    else
+                    {
+                        ucNodos.Value = "-1";
+                        config.AppSettings.Settings["EmpresaPredeterminada"].Value = "";
+                        config.Save(ConfigurationSaveMode.Modified);
+                    }
+                }
+                else
+                {
+                    if (ucNodos.Rows.Count(p => p.Cells["Id"].Value.ToString() != "-1") == 1)
+                        ucNodos.SelectedRow = ucNodos.Rows.FirstOrDefault(p => p.Cells["Id"].Value.ToString() != "-1");
+                    else
+                        ucNodos.Value = "-1";
+                }
+
+
+                _intNodeId = int.Parse(Utils.Windows.GetApplicationConfigValue("NodeId"));
+                Activate();
+                txtUserName.Focus();
+            }
+            #endregion
+            umPeriodo.Text = DateTime.Now.Year.ToString();
+#if DEBUG
+            txtUserName.Text = @"sa";
+            txtPassword.Text = UserConfig.Default.csTipoMotorBD == TipoMotorBD.MSSQLServer ? "12345678" : "sambhs2015";
+#endif
+
+        }
+
+        void s_OnEstadoCambio()
+        {
+            Invoke(new MethodInvoker(ValidarEstadoOrganizacion));
+        }
+
+        private void ultraButton1_Click(object sender, EventArgs e)
+        {
+            if (ucNodos.Value != null && ucNodos.Value.ToString() != "-1")
+            {
+                progressBar1.Visible = true;
+                progressBar1.Refresh();
+                if (string.IsNullOrWhiteSpace(txtUserName.Text) || string.IsNullOrWhiteSpace(txtPassword.Text)) return;
+
+                //#region Validar licencia
+
+                //UltraStatusbarManager.Mensaje(ultraStatusBar1, "Verificando licencia...", timer1);
+                //ultraStatusBar1.Refresh();
+
+                //#endregion
+
+                UltraStatusbarManager.Mensaje(ultraStatusBar1, "Autenticando usuario...", timer1);
+                ultraStatusBar1.Refresh();
+
+                if (ucNodos.Value != null && ucNodos.Value.ToString() != "-1")
+                {
+                    var objOperationResult = new OperationResult();
+
+                    #region Propiedades de la ConnectionString
+                    _dataSource = UserConfig.Default.csServidor;
+                    var initialCatalog = ucNodos.ActiveRow.Cells["Value1"].Value.ToString();
+                    var userId = UserConfig.Default.csUsuario;
+                    var password = Crypto.DecryptStringAES(UserConfig.Default.csPassword, "TiSolUciOnEs");
+
+
+                    switch (UserConfig.Default.csTipoMotorBD)
+                    {
+                        case TipoMotorBD.MSSQLServer:
+
+                            _providerString = "Data Source=" + _dataSource + ";Initial Catalog=" + initialCatalog + ";Integrated Security=False;Persist Security Info=True;User ID=" + userId + ";Password=" + password + "; Connect Timeout=0" + "";
+                            // _providerString = "Data Source=" + _dataSource + ";Initial Catalog=" + initialCatalog + ";Integrated Security=False;Persist Security Info=True;User ID=" + userId + ";Password=" + password + "; Connect Timeout=0" + "; MultipleActiveResultSets=true"+ "";
+                            break;
+
+                        case TipoMotorBD.PostgreSQL:
+                            _providerString = "User Id=" + userId + "; password=" + password + ";Host=" + _dataSource + ";Database=" + initialCatalog + ";Initial Schema=public" + "; Default Command Timeout=0";
+                            break;
+                    }
+
+                    var cs = ConnectionStringManager.GetConnectionString("SAMBHSConnectionStringWin");
+                    var newConStr = ConnectionStringManager.SetConnectionStringDatabaseName(cs, _providerString);
+                    ConnectionStringManager.SaveConnectionString(ref objOperationResult, "SAMBHSConnectionStringWin", newConStr);
+
+                    if (objOperationResult.Success == 0)
+                    {
+                        UltraMessageBox.Show(objOperationResult.ErrorMessage + "\n\n" + objOperationResult.ExceptionMessage + "\n\nTARGET: " + objOperationResult.AdditionalInformation, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    #endregion
+
+                    #region Predeterminar Empresa
+                    if (ucNodos.Value.ToString() != "-1")
+                    {
+                        Configuration _config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+                        _config.AppSettings.Settings["EmpresaPredeterminada"].Value = ucNodos.ActiveRow.Cells["Value1"].Value.ToString();
+                        _config.Save(ConfigurationSaveMode.Modified);
+                    }
+                    else
+                    {
+                        Configuration _config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+                        _config.AppSettings.Settings["EmpresaPredeterminada"].Value = string.Empty;
+                        _config.Save(ConfigurationSaveMode.Modified);
+                    }
+                    #endregion
+                }
+
+                if (uvDatos.Validate(true, false).IsValid)
+                {
+
+                    ultraStatusBar1.Panels[0].Appearance.ForeColor = Color.Black;
+                    if (AuthenticateUser())
+                    {
+                        Globals.ProgressbarStatus = new ProgressbarStatus();
+                        Globals.CacheCombosVentaDto = new CacheCombosVentaDto();
+                        Globals.ActualizadoStocks = false;
+                        Utils.Windows.GeneraHistorial(LogEventType.ACCESOSSISTEMA, txtUserName.Text.Trim(),
+                            string.Empty);
+                        DialogResult = DialogResult.OK;
+                        var frm = new frmMaster(this, AppVersion, DataSource);
+
+                        frm.CargaFinalizada += delegate
+                        {
+                            Hide();
+                            frm.Show();
+                        };
+
+                        frm.EstadoCargaEvent += delegate(string s)
+                        {
+                            this.Invoke((MethodInvoker)delegate { ultraStatusBar1.Panels[0].Text = s; });
+                        };
+
+                        frm.FormClosed += delegate { Application.Exit(); };
+
+                        frm.InicializarCarga();
+                    }
+                    else
+                    {
+                        btnOK.Enabled = true;
+                        progressBar1.Visible = false;
+                        progressBar1.Refresh();
+                    }
+
+                }
+            }
+            else
+            {
+                UltraStatusbarManager.MarcarError(ultraStatusBar1, "Por favor elija una empresa.", timer1);
+
+                ucNodos.Focus();
+            }
+        }
+
+        [DllImport("user32.dll")]
+        static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, int dwExtraInfo);
+
+        /// <summary>
+        /// Shows the desktop.
+        /// </summary>
+        public static void ShowDesktop()
+        {
+            //keybd_event(0x5B, 0, 0, 0);
+            //keybd_event(0x4D, 0, 0, 0);
+            //keybd_event(0x5B, 0, 0x2, 0);
+        }
+
+        private void btnConfigurarConexión_Click(object sender, EventArgs e)
+        {
+            var cnx = new frmPreferenciasConexion();
+            cnx.ShowDialog();
+        }
+
+        private void txtUserName_Validated(object sender, EventArgs e)
+        {
+            var btnconfigEstado = txtUserName.Text.Trim().ToLower() == "sa";
+            btnConfigurarConexión.Visible = btnconfigEstado;
+        }
+
+        #region SplashScreen Events
+
+        #region Events
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            // Process other events before firing the event. 
+            // Otherwise, the form will not be completely rendered before the splash screen is closed
+            Application.DoEvents();
+
+            // Fire the InitializationComplete event so the SplashScreen is closed.
+            OnInitializationComplete();
+        }
+
+        /// <summary>
+        /// Fired when the staus of the form initialization has changed. 
+        /// </summary>
+        internal static event SAMBHS.Windows.WinClient.UI.SplashScreen.InitializationStatusChangedEventHandler InitializationStatusChanged;
+
+        /// <summary>
+        /// Fired when the staus of the form initialization has completed. 
+        /// </summary>
+        internal static event EventHandler InitializationComplete;
+
+        bool _initializationCompleted;
+
+        #region OnInitializationComplete
+
+        private void OnInitializationComplete()
+        {
+            if (!_initializationCompleted)
+            {
+                _initializationCompleted = true;
+
+                if (InitializationComplete != null)
+                    InitializationComplete(this, EventArgs.Empty);
+            }
+        }
+        #endregion OnInitializationStatusChanged
+
+        #region OnInitializationStatusChanged
+
+        private void OnInitializationStatusChanged(string status)
+        {
+            if (InitializationStatusChanged != null)
+                InitializationStatusChanged(this, new SplashScreen.InitializationStatusChangedEventArgs(status));
+        }
+
+        private void OnInitializationStatusChanged(string status, bool showProgressBar, int percentComplete)
+        {
+            if (InitializationStatusChanged != null)
+                InitializationStatusChanged(this, new SplashScreen.InitializationStatusChangedEventArgs(status, showProgressBar, percentComplete));
+        }
+
+        internal static ManualResetEvent SplashLoadedEvent
+        {
+            get
+            {
+                return _splashLoadedEvent;
+            }
+        }
+        #endregion OnInitializationStatusChanged
+
+        #endregion Events
+
+        #endregion //SplashScreen Events
+
+        public void ValidarEstadoOrganizacion()
+        {
+            var organizacion = new SecurityBL().OrganizacionActiva();
+            if (organizacion != null)
+            {
+                var estado = organizacion.i_IsDeleted == 0;
+                btnOK.Enabled = estado;
+                umPeriodo.Enabled = estado;
+                ucNodos.Enabled = estado;
+                txtPassword.Enabled = estado;
+                txtUserName.Enabled = estado;
+                btnConfigurarConexión.Visible = !estado;
+
+                if (!estado)
+                    UltraStatusbarManager.MarcarAlerta(ultraStatusBar1,
+                        "¡Sistema no disponible!. Por favor comuníquese con el área de sistemas.", timer1);
+                else
+                {
+                    if (organizacion.d_UpdateDate != null)
+                    {
+                        var fechaExpiracion = organizacion.d_UpdateDate.Value;
+                        var fechaActual = DateTime.Today;
+                        var diasRestantes = (fechaExpiracion - fechaActual).Days;
+                        if (diasRestantes > 0 && diasRestantes <= 30)
+                        {
+                            UltraStatusbarManager.MarcarError(ultraStatusBar1,
+                                string.Format("Su servicio de soporte técnico vence el {0}. Contacte con sistemas para más información.", fechaExpiracion.ToShortDateString()), timer1);
+                        }
+                        else if (diasRestantes <= 0)
+                        {
+                            UltraStatusbarManager.MarcarError(ultraStatusBar1,
+                                string.Format("Su servicio de soporte técnico venció el {0}. Contacte con sistemas para más información.", fechaExpiracion.ToShortDateString()), timer1);
+                        }
+                        else
+                        {
+                            UltraStatusbarManager.Reestablecer(ultraStatusBar1, timer1);
+                        }
+                    }
+                    else
+                        UltraStatusbarManager.Reestablecer(ultraStatusBar1, timer1);
+                }
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UltraStatusbarManager.Reestablecer(ultraStatusBar1, timer1);
+        }
+
+        private void frmLogin_Fill_Panel_PaintClient(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ucNodos_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (ucNodos.Value == null)
+                ucNodos.Value = -1;
+        }
+
+    }
+}

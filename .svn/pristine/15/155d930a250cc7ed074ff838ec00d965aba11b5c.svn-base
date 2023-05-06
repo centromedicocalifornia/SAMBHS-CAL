@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SAMBHS.Windows.SigesoftIntegration.UI.Dtos
+{
+    public class ProtocolComponentList
+    {
+        public string ComponentId { get; set; }
+        public string ComponentName { get; set; }
+        public string Porcentajes { get; set; }
+        public string ProtocolComponentId { get; set; }
+
+        public float? Price { get; set; }
+        public string Operator { get; set; }
+        public int Age { get; set; }
+        public string Gender { get; set; }
+        public int IsConditionalImc { get; set; }
+        public decimal Imc { get; set; }
+        public int IsConditional { get; set; }
+        public int? IsAdditional { get; set; }
+        public string ComponentTypeName { get; set; }
+        public int ComponentTypeId { get; set; }
+
+        public int GenderId { get; set; }
+        public int GrupoEtarioId { get; set; }
+        public int IsConditionalId { get; set; }
+        public int OperatorId { get; set; }
+        public int CategoryId { get; set; }
+
+        public int UiIsVisibleId { get; set; }
+        public int UiIndex { get; set; }
+        public string IdUnidadProductiva { get; set; }
+    }
+}

@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A2A5AB5-9C38-47C3-843A-0186F93A4EBA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAMBHS.Windows.WinServer.UI</RootNamespace>
+    <AssemblyName>SAMBHS.Windows.WinServer.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\ModuloSeguridadTISN\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Módulo de Seguridad Sistema Administrativo Contable</ProductName>
+    <PublisherName>TI Soluciones</PublisherName>
+    <SuiteName>Sistema Administrativo Contable TISOL</SuiteName>
+    <ApplicationRevision>49</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>menu.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SAMBHS.Windows.WinServer.UI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D7A9263DFA0536403950DC10478F0670AF4530DF</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\Components\Common\Resource\SAMBHS.Common.Resource\Librerias\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data">
+      <HintPath>..\Components\Common\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Design">
+      <HintPath>..\Components\Common\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Linq">
+      <HintPath>..\Components\Common\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql">
+      <HintPath>..\Components\Common\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql.Entity">
+      <HintPath>..\Components\Common\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.PostgreSql.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.Misc.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinMaskedEdit.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinStatusBar.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTabbedMdi.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationTypes">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\frmBackupEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmBackupEmpresa.Designer.cs">
+      <DependentUpon>frmBackupEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmBandejaEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmBandejaEmpresas.Designer.cs">
+      <DependentUpon>frmBandejaEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmBandejaRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmBandejaRoles.Designer.cs">
+      <DependentUpon>frmBandejaRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmBandejaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmBandejaUsuarios.designer.cs">
+      <DependentUpon>frmBandejaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmBuscarBinPostgres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmBuscarBinPostgres.Designer.cs">
+      <DependentUpon>frmBuscarBinPostgres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmCrearEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmCrearEmpresa.Designer.cs">
+      <DependentUpon>frmCrearEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmLicenseInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmLicenseInput.Designer.cs">
+      <DependentUpon>frmLicenseInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmMantenimientoLicencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmMantenimientoLicencias.Designer.cs">
+      <DependentUpon>frmMantenimientoLicencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmMantenimientoLicenciasRegistrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmMantenimientoLicenciasRegistrar.Designer.cs">
+      <DependentUpon>frmMantenimientoLicenciasRegistrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmMantenimientoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmMantenimientoMenu.Designer.cs">
+      <DependentUpon>frmMantenimientoMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmMantenimientoUsuarioEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmMantenimientoUsuarioEmpresa.Designer.cs">
+      <DependentUpon>frmMantenimientoUsuarioEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmMenus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmMenus.Designer.cs">
+      <DependentUpon>frmMenus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmPermisos.Designer.cs">
+      <DependentUpon>frmPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmRestaurarBd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmRestaurarBd.Designer.cs">
+      <DependentUpon>frmRestaurarBd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\frmUsuario.designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ucMenuPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administracion\ucMenuPopup.Designer.cs">
+      <DependentUpon>ucMenuPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaster.Designer.cs">
+      <DependentUpon>frmMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPreferenciasConexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPreferenciasConexion.designer.cs">
+      <DependentUpon>frmPreferenciasConexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalGlobals.cs" />
+    <Compile Include="PostgreSqlDump.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerDump.cs" />
+    <Compile Include="UserConfig.cs" />
+    <Compile Include="UserConfig.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UserConfig.settings</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Administracion\frmBackupEmpresa.resx">
+      <DependentUpon>frmBackupEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmBandejaEmpresas.resx">
+      <DependentUpon>frmBandejaEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmBandejaRoles.resx">
+      <DependentUpon>frmBandejaRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmBandejaUsuarios.resx">
+      <DependentUpon>frmBandejaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmBuscarBinPostgres.resx">
+      <DependentUpon>frmBuscarBinPostgres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmCrearEmpresa.resx">
+      <DependentUpon>frmCrearEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmLicenseInput.resx">
+      <DependentUpon>frmLicenseInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmMantenimientoLicencias.resx">
+      <DependentUpon>frmMantenimientoLicencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmMantenimientoLicenciasRegistrar.resx">
+      <DependentUpon>frmMantenimientoLicenciasRegistrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmMantenimientoMenu.resx">
+      <DependentUpon>frmMantenimientoMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmMantenimientoUsuarioEmpresa.resx">
+      <DependentUpon>frmMantenimientoUsuarioEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmMenus.resx">
+      <DependentUpon>frmMenus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmPermisos.resx">
+      <DependentUpon>frmPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmRestaurarBd.resx">
+      <DependentUpon>frmRestaurarBd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\ucMenuPopup.resx">
+      <DependentUpon>ucMenuPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaster.resx">
+      <DependentUpon>frmMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPreferenciasConexion.resx">
+      <DependentUpon>frmPreferenciasConexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SAMBHS.Windows.WinServer.UI_ClaveTemporal.pfx" />
+    <Content Include="img\diploma.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="menu.ico" />
+    <Content Include="Style.isl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="UserConfig.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UserConfig.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Components\Common\BusinessEntity\SAMBHS.Common.BE\SAMBHS.Common.BE.csproj">
+      <Project>{04aceeee-ba05-46b7-a0c2-fd2b6f2e04b8}</Project>
+      <Name>SAMBHS.Common.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\BusinessLayer\SAMBHS.Common.BL\SAMBHS.Common.BL.csproj">
+      <Project>{1a1e8aa8-31df-4586-b262-766433582133}</Project>
+      <Name>SAMBHS.Common.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\BusinessLayer\SAMBHS.Common.BL\SAMBHS.CommonWIN.BL\SAMBHS.CommonWIN.BL.csproj">
+      <Project>{953c2391-6d6e-42c3-b343-b3389fdf6c6f}</Project>
+      <Name>SAMBHS.CommonWIN.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN.csproj">
+      <Project>{6f195144-a2ad-42d1-b3ce-f1acfe7dbc8a}</Project>
+      <Name>SAMBHS.Common.DataModel.MSSQLWIN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\SAMBHS.Common.DataModel.MSSQL.csproj">
+      <Project>{d4a01c44-015d-4598-8543-78c5f1fd2f78}</Project>
+      <Name>SAMBHS.Common.DataModel.MSSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\Resource\SAMBHS.Common.Resource\SAMBHS.Common.Resource.csproj">
+      <Project>{818435b2-1f4d-40a3-96d4-1b0bd9a7098b}</Project>
+      <Name>SAMBHS.Common.Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Security\SAMBHS.Security.BL\SAMBHS.Security.BL.csproj">
+      <Project>{b9f430c9-3238-470f-a62f-cd3438a7bf20}</Project>
+      <Name>SAMBHS.Security.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1449110966_System-Preferences.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\1448780328_user-group.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\add-user.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\binary-tree128.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\corporation building.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\Database-Add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\grid_09-128.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\User-Role-Reviewer-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\database_save.png" />
+    <None Include="Resources\database_delete.png" />
+    <None Include="Resources\database_refresh.png" />
+    <None Include="Resources\database_copy.png" />
+    <None Include="Resources\database_edit.png" />
+    <None Include="Resources\database_add.png" />
+    <None Include="Resources\folder_database.png" />
+    <None Include="Resources\folder_wrench.png" />
+    <None Include="Resources\folder_explore.png" />
+    <None Include="Resources\arrow_undo.png" />
+    <None Include="Resources\database_connect.png" />
+    <None Include="Resources\tag_green.png" />
+    <None Include="Resources\user_delete.png" />
+    <None Include="Resources\user_edit.png" />
+    <None Include="Resources\user_add.png" />
+    <None Include="Resources\system_save.gif" />
+    <None Include="Resources\resultset_previous.png" />
+    <None Include="Resources\resultset_next.png" />
+    <None Include="Resources\lock_edit.png" />
+    <None Include="Resources\system_search.gif" />
+    <None Include="Resources\section_expanded.png" />
+    <None Include="Resources\section_collapsed.png" />
+    <None Include="Resources\door_out.png" />
+    <None Include="Resources\system_saveclose.gif" />
+    <None Include="Resources\textfield_add.png" />
+    <None Include="Resources\shape_move_backwards.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\bullet_edit.png" />
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Devart.Data">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Devart.Data.Design">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Devart.Data.Linq">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Devart.Data.PostgreSql">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Devart.Data.PostgreSql.Entity">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="EnvDTE">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FineUI">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.MSXML">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Designer.Interfaces">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.OLE.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.ProjectAggregator">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.9.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Design">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop.8.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop.9.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TextManager.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TextManager.Interop.8.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.VSHelp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SMDiagnostics">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.ServiceModel.Internals">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="VSLangProj">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="VsWebSite.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

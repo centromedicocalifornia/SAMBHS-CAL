@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteLibroInventarioBalanceCapital" targetNamespace="http://tempuri.org/dsReporteLibroInventarioBalanceCapital.xsd" xmlns:mstns="http://tempuri.org/dsReporteLibroInventarioBalanceCapital.xsd" xmlns="http://tempuri.org/dsReporteLibroInventarioBalanceCapital.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteLibroInventarioBalanceCapital" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteLibroInventarioBalanceCapital" msprop:Generator_UserDSName="dsReporteLibroInventarioBalanceCapital">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteLibroInventarioBalanceCapital" msprop:Generator_TableClassName="dsReporteLibroInventarioBalanceCapitalDataTable" msprop:Generator_TableVarName="tabledsReporteLibroInventarioBalanceCapital" msprop:Generator_TablePropName="_dsReporteLibroInventarioBalanceCapital" msprop:Generator_RowDeletingName="dsReporteLibroInventarioBalanceCapitalRowDeleting" msprop:Generator_RowChangingName="dsReporteLibroInventarioBalanceCapitalRowChanging" msprop:Generator_RowEvHandlerName="dsReporteLibroInventarioBalanceCapitalRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteLibroInventarioBalanceCapitalRowDeleted" msprop:Generator_UserTableName="dsReporteLibroInventarioBalanceCapital" msprop:Generator_RowChangedName="dsReporteLibroInventarioBalanceCapitalRowChanged" msprop:Generator_RowEvArgName="dsReporteLibroInventarioBalanceCapitalRowChangeEvent" msprop:Generator_RowClassName="dsReporteLibroInventarioBalanceCapitalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Grupo" msprop:Generator_ColumnVarNameInTable="columnGrupo" msprop:Generator_ColumnPropNameInRow="Grupo" msprop:Generator_ColumnPropNameInTable="GrupoColumn" msprop:Generator_UserColumnName="Grupo" type="xs:string" minOccurs="0" />
+              <xs:element name="Detalle" msprop:Generator_ColumnVarNameInTable="columnDetalle" msprop:Generator_ColumnPropNameInRow="Detalle" msprop:Generator_ColumnPropNameInTable="DetalleColumn" msprop:Generator_UserColumnName="Detalle" type="xs:string" minOccurs="0" />
+              <xs:element name="DetalleValor" msprop:Generator_ColumnVarNameInTable="columnDetalleValor" msprop:Generator_ColumnPropNameInRow="DetalleValor" msprop:Generator_ColumnPropNameInTable="DetalleValorColumn" msprop:Generator_UserColumnName="DetalleValor" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsReporteSocios" msprop:Generator_TableClassName="dsReporteSociosDataTable" msprop:Generator_TableVarName="tabledsReporteSocios" msprop:Generator_RowChangedName="dsReporteSociosRowChanged" msprop:Generator_TablePropName="dsReporteSocios" msprop:Generator_RowDeletingName="dsReporteSociosRowDeleting" msprop:Generator_RowChangingName="dsReporteSociosRowChanging" msprop:Generator_RowEvHandlerName="dsReporteSociosRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteSociosRowDeleted" msprop:Generator_RowClassName="dsReporteSociosRow" msprop:Generator_UserTableName="dsReporteSocios" msprop:Generator_RowEvArgName="dsReporteSociosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TipoDocumento" msprop:Generator_ColumnVarNameInTable="columnTipoDocumento" msprop:Generator_ColumnPropNameInRow="TipoDocumento" msprop:Generator_ColumnPropNameInTable="TipoDocumentoColumn" msprop:Generator_UserColumnName="TipoDocumento" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroDocumento" msprop:Generator_ColumnVarNameInTable="columnNumeroDocumento" msprop:Generator_ColumnPropNameInRow="NumeroDocumento" msprop:Generator_ColumnPropNameInTable="NumeroDocumentoColumn" msprop:Generator_UserColumnName="NumeroDocumento" type="xs:string" minOccurs="0" />
+              <xs:element name="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" msprop:Generator_UserColumnName="RazonSocial" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroAcciones" msprop:Generator_ColumnVarNameInTable="columnNumeroAcciones" msprop:Generator_ColumnPropNameInRow="NumeroAcciones" msprop:Generator_ColumnPropNameInTable="NumeroAccionesColumn" msprop:Generator_UserColumnName="NumeroAcciones" type="xs:string" minOccurs="0" />
+              <xs:element name="Porcentaje" msprop:Generator_ColumnVarNameInTable="columnPorcentaje" msprop:Generator_ColumnPropNameInRow="Porcentaje" msprop:Generator_ColumnPropNameInTable="PorcentajeColumn" msprop:Generator_UserColumnName="Porcentaje" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoAccionSocio" msprop:Generator_ColumnVarNameInTable="columnTipoAccionSocio" msprop:Generator_ColumnPropNameInRow="TipoAccionSocio" msprop:Generator_ColumnPropNameInTable="TipoAccionSocioColumn" msprop:Generator_UserColumnName="TipoAccionSocio" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SigesoftEntitiesModelStoreContainer" CdmEntityContainer="SigesoftEntitiesModel">
+    <EntitySetMapping Name="hospitalizacion">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.hospitalizacion">
+        <MappingFragment StoreEntitySet="hospitalizacions">
+          <ScalarProperty Name="v_HopitalizacionId" ColumnName="v_HopitalizacionId" />
+          <ScalarProperty Name="v_PersonId" ColumnName="v_PersonId" />
+          <ScalarProperty Name="d_FechaIngreso" ColumnName="d_FechaIngreso" />
+          <ScalarProperty Name="d_FechaAlta" ColumnName="d_FechaAlta" />
+          <ScalarProperty Name="v_Comentario" ColumnName="v_Comentario" />
+          <ScalarProperty Name="v_NroLiquidacion" ColumnName="v_NroLiquidacion" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+          <ScalarProperty Name="d_PagoMedico" ColumnName="d_PagoMedico" />
+          <ScalarProperty Name="i_MedicoPago" ColumnName="i_MedicoPago" />
+          <ScalarProperty Name="d_PagoPaciente" ColumnName="d_PagoPaciente" />
+          <ScalarProperty Name="i_PacientePago" ColumnName="i_PacientePago" />
+          <ScalarProperty Name="v_ComentaryUpdate" ColumnName="v_ComentaryUpdate" />
+          <ScalarProperty Name="v_DiseasesName" ColumnName="v_DiseasesName" />
+          <ScalarProperty Name="v_CIE10Id" ColumnName="v_CIE10Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hospitalizacionhabitacion">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.hospitalizacionhabitacion">
+        <MappingFragment StoreEntitySet="hospitalizacionhabitacions">
+          <ScalarProperty Name="v_HospitalizacionHabitacionId" ColumnName="v_HospitalizacionHabitacionId" />
+          <ScalarProperty Name="v_HopitalizacionId" ColumnName="v_HopitalizacionId" />
+          <ScalarProperty Name="i_HabitacionId" ColumnName="i_HabitacionId" />
+          <ScalarProperty Name="d_StartDate" ColumnName="d_StartDate" />
+          <ScalarProperty Name="d_EndDate" ColumnName="d_EndDate" />
+          <ScalarProperty Name="d_Precio" ColumnName="d_Precio" />
+          <ScalarProperty Name="i_ConCargoA" ColumnName="i_ConCargoA" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+          <ScalarProperty Name="d_SaldoPaciente" ColumnName="d_SaldoPaciente" />
+          <ScalarProperty Name="d_SaldoAseguradora" ColumnName="d_SaldoAseguradora" />
+          <ScalarProperty Name="v_ComentaryUpdate" ColumnName="v_ComentaryUpdate" />
+          <ScalarProperty Name="i_EstateRoom" ColumnName="i_EstateRoom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hospitalizacionservice">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.hospitalizacionservice">
+        <MappingFragment StoreEntitySet="hospitalizacionservices">
+          <ScalarProperty Name="v_HospitalizacionServiceId" ColumnName="v_HospitalizacionServiceId" />
+          <ScalarProperty Name="v_HopitalizacionId" ColumnName="v_HopitalizacionId" />
+          <ScalarProperty Name="v_ServiceId" ColumnName="v_ServiceId" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+          <ScalarProperty Name="v_ComentaryUpdate" ColumnName="v_ComentaryUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="accessuser" FunctionName="SAMBHS.Common.DataModel.Store.accessUser" />
+    <FunctionImportMapping FunctionImportName="accessys" FunctionName="SAMBHS.Common.DataModel.Store.accesSys" />
+    <FunctionImportMapping FunctionImportName="activivar_desactivar_user" FunctionName="SAMBHS.Common.DataModel.Store.activivar_desactivar_user" />
+    <FunctionImportMapping FunctionImportName="activivar_desactivar_userforadmin" FunctionName="SAMBHS.Common.DataModel.Store.activivar_desactivar_userForAdmin" />
+    <FunctionImportMapping FunctionImportName="addbaucher" FunctionName="SAMBHS.Common.DataModel.Store.addBaucher" />
+    <FunctionImportMapping FunctionImportName="adduser" FunctionName="SAMBHS.Common.DataModel.Store.addUser" />
+    <FunctionImportMapping FunctionImportName="adduserforadmin" FunctionName="SAMBHS.Common.DataModel.Store.addUserForAdmin" />
+    <FunctionImportMapping FunctionImportName="antecedentesmedicos_sp" FunctionName="SAMBHS.Common.DataModel.Store.AntecedentesmEDICOS_SP" />
+    <FunctionImportMapping FunctionImportName="antecedentesocupacionales_sp" FunctionName="SAMBHS.Common.DataModel.Store.AntecedentesOcupacionales_SP" />
+    <FunctionImportMapping FunctionImportName="buscardistritos_sp" FunctionName="SAMBHS.Common.DataModel.Store.BuscarDistritos_SP" />
+    <FunctionImportMapping FunctionImportName="buscarprotocolopropuesto_sp" FunctionName="SAMBHS.Common.DataModel.Store.BuscarProtocoloPropuesto_SP" />
+    <FunctionImportMapping FunctionImportName="concatenatecomponents_sp" FunctionName="SAMBHS.Common.DataModel.Store.ConcatenateComponents_SP" />
+    <FunctionImportMapping FunctionImportName="concatenaterecomendacionesbycategoria_sp" FunctionName="SAMBHS.Common.DataModel.Store.ConcatenateRecomendacionesByCategoria_SP" />
+    <FunctionImportMapping FunctionImportName="concatenaterestrictionbycategoria_sp" FunctionName="SAMBHS.Common.DataModel.Store.ConcatenateRestrictionByCategoria_SP" />
+    <FunctionImportMapping FunctionImportName="createreportfreeocupacional" FunctionName="SAMBHS.Common.DataModel.Store.createReportFreeOcupacional" />
+    <FunctionImportMapping FunctionImportName="createreportfreeparticular" FunctionName="SAMBHS.Common.DataModel.Store.createReportFreeParticular" />
+    <FunctionImportMapping FunctionImportName="deletereportfreeocupacional" FunctionName="SAMBHS.Common.DataModel.Store.deleteReportFreeOcupacional" />
+    <FunctionImportMapping FunctionImportName="deletereportfreeparticular" FunctionName="SAMBHS.Common.DataModel.Store.deleteReportFreeParticular" />
+    <FunctionImportMapping FunctionImportName="devolvercomponentesconcatenados_sp" FunctionName="SAMBHS.Common.DataModel.Store.DevolverComponentesConcatenados_SP" />
+    <FunctionImportMapping FunctionImportName="devolverdatospaciente_sp" FunctionName="SAMBHS.Common.DataModel.Store.DevolverDatosPaciente_SP" />
+    <FunctionImportMapping FunctionImportName="devolverhabitos_personales_listaantecedentesfamiliares_sp" FunctionName="SAMBHS.Common.DataModel.Store.DevolverHabitos_Personales_ListaAntecedentesFamiliares_SP" />
+    <FunctionImportMapping FunctionImportName="devolverhabitos_personales_listahabitosnoxivos_sp" FunctionName="SAMBHS.Common.DataModel.Store.DevolverHabitos_Personales_ListaHabitosNoxivos_SP" />
+    <FunctionImportMapping FunctionImportName="devolverhabitos_personales_listajerarquizada_sp" FunctionName="SAMBHS.Common.DataModel.Store.DevolverHabitos_Personales_ListaJerarquizada_SP" />
+    <FunctionImportMapping FunctionImportName="devolverhabitos_personales_listamedicospersonales_sp" FunctionName="SAMBHS.Common.DataModel.Store.DevolverHabitos_Personales_ListaMedicosPersonales_SP" />
+    <FunctionImportMapping FunctionImportName="devolverproductos" FunctionName="SAMBHS.Common.DataModel.Store.DevolverProductos" />
+    <FunctionImportMapping FunctionImportName="devolvervalorcampoporserviciomejorado_sp" FunctionName="SAMBHS.Common.DataModel.Store.DevolverValorCampoPorServicioMejorado_SP" />
+    <FunctionImportMapping FunctionImportName="devolvervalorescomponente" FunctionName="SAMBHS.Common.DataModel.Store.DevolverValoresComponente" />
+    <FunctionImportMapping FunctionImportName="examenbydefaultorassigned_comfields_sp" FunctionName="SAMBHS.Common.DataModel.Store.ExamenByDefaultOrAssigned_comFields_SP" />
+    <FunctionImportMapping FunctionImportName="examenbydefaultorassigned_components_sp" FunctionName="SAMBHS.Common.DataModel.Store.ExamenByDefaultOrAssigned_components_SP" />
+    <FunctionImportMapping FunctionImportName="examenbydefaultorassigned_valuefields_sp" FunctionName="SAMBHS.Common.DataModel.Store.ExamenByDefaultOrAssigned_valueFields_SP" />
+    <FunctionImportMapping FunctionImportName="examenbydefaultorassigned_valuefieldsrecome_sp" FunctionName="SAMBHS.Common.DataModel.Store.ExamenByDefaultOrAssigned_valueFieldsRecome_SP" />
+    <FunctionImportMapping FunctionImportName="examenbydefaultorassigned_valuefieldsrestri_sp" FunctionName="SAMBHS.Common.DataModel.Store.ExamenByDefaultOrAssigned_valueFieldsRestri_SP" />
+    <FunctionImportMapping FunctionImportName="existereportfreeocupacional" FunctionName="SAMBHS.Common.DataModel.Store.existeReportFreeOcupacional" />
+    <FunctionImportMapping FunctionImportName="existereportfreeparticular" FunctionName="SAMBHS.Common.DataModel.Store.existeReportFreeParticular" />
+    <FunctionImportMapping FunctionImportName="existuser" FunctionName="SAMBHS.Common.DataModel.Store.existUser" />
+    <FunctionImportMapping FunctionImportName="existuserforadmin" FunctionName="SAMBHS.Common.DataModel.Store.existUserForAdmin" />
+    <FunctionImportMapping FunctionImportName="facturadeudora" FunctionName="SAMBHS.Common.DataModel.Store.FacturaDeudora" />
+    <FunctionImportMapping FunctionImportName="gerenciacredito" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaCredito" />
+    <FunctionImportMapping FunctionImportName="gerenciacredito_asistencial" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaCredito_Asistencial" />
+    <FunctionImportMapping FunctionImportName="gerenciacreditoxempresa" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaCreditoXEmpresa" />
+    <FunctionImportMapping FunctionImportName="gerenciafarmaciaasistencial" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaFarmaciaAsistencial" />
+    <FunctionImportMapping FunctionImportName="gerenciafarmaciaseguros" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaFarmaciaSeguros" />
+    <FunctionImportMapping FunctionImportName="gerenciaresonancias" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaResonancias" />
+    <FunctionImportMapping FunctionImportName="gerenciatipoexamen" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaTipoExamen" />
+    <FunctionImportMapping FunctionImportName="gerenciatipoexamen_asistencial" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaTipoExamen_Asistencial" />
+    <FunctionImportMapping FunctionImportName="gerenciatipopago" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaTipoPago">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.gerenciatipopagoResult">
+          <ScalarProperty Name="IdCondicionPago" ColumnName="IdCondicionPago" />
+          <ScalarProperty Name="CondicionPago" ColumnName="CondicionPago" />
+          <ScalarProperty Name="FechaFactura" ColumnName="FechaFactura" />
+          <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+          <ScalarProperty Name="FechaFactura1" ColumnName="FechaFactura" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="v_NroDocIdentificacion" ColumnName="v_NroDocIdentificacion" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="Trabajador" ColumnName="Trabajador" />
+          <ScalarProperty Name="FechaServicio" ColumnName="FechaServicio" />
+          <ScalarProperty Name="Compania" ColumnName="Compania" />
+          <ScalarProperty Name="Contratista" ColumnName="Contratista" />
+          <ScalarProperty Name="CostoExamen" ColumnName="CostoExamen" />
+          <ScalarProperty Name="TipoEso" ColumnName="TipoEso" />
+          <ScalarProperty Name="Agrupador" ColumnName="Agrupador" />
+          <ScalarProperty Name="UsuarioAgenda" ColumnName="UsuarioAgenda" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="gerenciatipopago_asistencial" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaTipoPago_Asistencial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.gerenciatipopagoResult">
+          <ScalarProperty Name="IdCondicionPago" ColumnName="IdCondicionPago" />
+          <ScalarProperty Name="CondicionPago" ColumnName="CondicionPago" />
+          <ScalarProperty Name="FechaFactura" ColumnName="FechaFactura" />
+          <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+          <ScalarProperty Name="FechaFactura1" ColumnName="FechaFactura" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="v_NroDocIdentificacion" ColumnName="v_NroDocIdentificacion" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="Trabajador" ColumnName="Trabajador" />
+          <ScalarProperty Name="FechaServicio" ColumnName="FechaServicio" />
+          <ScalarProperty Name="Compania" ColumnName="Compania" />
+          <ScalarProperty Name="Contratista" ColumnName="Contratista" />
+          <ScalarProperty Name="CostoExamen" ColumnName="CostoExamen" />
+          <ScalarProperty Name="TipoEso" ColumnName="TipoEso" />
+          <ScalarProperty Name="Agrupador" ColumnName="Agrupador" />
+          <ScalarProperty Name="UsuarioAgenda" ColumnName="UsuarioAgenda" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="gerenciatipoprotocolo" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaTipoProtocolo" />
+    <FunctionImportMapping FunctionImportName="gerenciatipoprotocoloseguros" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaTipoProtocoloSeguros" />
+    <FunctionImportMapping FunctionImportName="gerenciaventas" FunctionName="SAMBHS.Common.DataModel.Store.GerenciaVentas" />
+    <FunctionImportMapping FunctionImportName="getaccessusermonth" FunctionName="SAMBHS.Common.DataModel.Store.getAccessUserMonth" />
+    <FunctionImportMapping FunctionImportName="getaccessusertoday" FunctionName="SAMBHS.Common.DataModel.Store.getAccessUserToDay" />
+    <FunctionImportMapping FunctionImportName="getaddcomprobante" FunctionName="SAMBHS.Common.DataModel.Store.getAddComprobante" />
+    <FunctionImportMapping FunctionImportName="getallpuestos_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAllPuestos_SP" />
+    <FunctionImportMapping FunctionImportName="getalturaestructural_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAlturaEstructural_SP" />
+    <FunctionImportMapping FunctionImportName="getanamnesisreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAnamnesisReport_SP" />
+    <FunctionImportMapping FunctionImportName="getantecedentconsolidateforservice1_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAntecedentConsolidateForService1_SP" />
+    <FunctionImportMapping FunctionImportName="getantecedentconsolidateforservice2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAntecedentConsolidateForService2_SP" />
+    <FunctionImportMapping FunctionImportName="getantecedentconsolidateforservice3_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAntecedentConsolidateForService3_SP" />
+    <FunctionImportMapping FunctionImportName="getantecedentconsolidateforservice4_sp_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAntecedentConsolidateForService4_SP_SP" />
+    <FunctionImportMapping FunctionImportName="getaptitudecertificaterefact_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAptitudeCertificateRefact_SP" />
+    <FunctionImportMapping FunctionImportName="getaptitudecertificaterefactnew_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAptitudeCertificateRefactNew_SP" />
+    <FunctionImportMapping FunctionImportName="getaptitudecertificaterefactnew2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAptitudeCertificateRefactNew2_SP" />
+    <FunctionImportMapping FunctionImportName="getaptitudecertificaterefactnew3_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAptitudeCertificateRefactNew3_SP" />
+    <FunctionImportMapping FunctionImportName="getaptitudmedicoservicio_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAptitudMedicoServicio_SP" />
+    <FunctionImportMapping FunctionImportName="getaudiometriacoimolache_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetAudiometriaCoimolache_SP" />
+    <FunctionImportMapping FunctionImportName="getbaucher" FunctionName="SAMBHS.Common.DataModel.Store.getBaucher" />
+    <FunctionImportMapping FunctionImportName="getcapc_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetCAPC_SP" />
+    <FunctionImportMapping FunctionImportName="getcape_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetCAPE_SP" />
+    <FunctionImportMapping FunctionImportName="getcapsd_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetCAPSD_SP" />
+    <FunctionImportMapping FunctionImportName="getcapsm_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetCAPSM_SP" />
+    <FunctionImportMapping FunctionImportName="getcarnevacuna_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetCarneVacuna_SP" />
+    <FunctionImportMapping FunctionImportName="getcategoriaexamenfaltanteeso_sp" FunctionName="SAMBHS.Common.DataModel.Store.getCategoriaExamenFaltanteESO_SP" />
+    <FunctionImportMapping FunctionImportName="getcomponentsexist" FunctionName="SAMBHS.Common.DataModel.Store.getComponentsExist" />
+    <FunctionImportMapping FunctionImportName="getcomponetsdownload" FunctionName="SAMBHS.Common.DataModel.Store.getComponetsDownload" />
+    <FunctionImportMapping FunctionImportName="getconcatenateepps_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateEpps_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenateexposiciones_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateExposiciones_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenatenoxioushabits_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenatenoxioushabits_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenaterecommendation_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateRecommendation_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenaterecommendationbyservice_new_2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateRecommendationByService_New_2_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenaterecommendationbyservice_new_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateRecommendationByService_New_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenaterecommendationbyservice_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateRecommendationByService_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenaterestriction_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateRestriction_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenaterestrictionbyserviceconcatecdx_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateRestrictionByServiceConcatecDx_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenatetypeofeep_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateTypeOfeep_SP" />
+    <FunctionImportMapping FunctionImportName="getconcatenateworkstationdangers_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetConcatenateWorkStationDangers_SP" />
+    <FunctionImportMapping FunctionImportName="getcustionarioaudiometria_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetCustionarioAudiometria_SP" />
+    <FunctionImportMapping FunctionImportName="getdatahierarchyforcombo_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDataHierarchyForCombo_SP" />
+    <FunctionImportMapping FunctionImportName="getdatahierarchyforcombodepartamento_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDataHierarchyForComboDepartamento_SP" />
+    <FunctionImportMapping FunctionImportName="getdatahierarchyforcombodistrito_1_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDataHierarchyForComboDistrito_1_SP" />
+    <FunctionImportMapping FunctionImportName="getdatahierarchyforcomboprovincia_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDataHierarchyForComboProvincia_SP" />
+    <FunctionImportMapping FunctionImportName="getdataorganizationid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDataOrganizationId_SP" />
+    <FunctionImportMapping FunctionImportName="getdatosprotocolo_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDatosProtocolo_SP" />
+    <FunctionImportMapping FunctionImportName="getdatostrabajador_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDatosTrabajador_SP" />
+    <FunctionImportMapping FunctionImportName="getdetailcompletepurchase" FunctionName="SAMBHS.Common.DataModel.Store.getDetailCompletepurchase" />
+    <FunctionImportMapping FunctionImportName="getdevolverantecedentespersonales_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDevolverAntecedentesPersonales_SP" />
+    <FunctionImportMapping FunctionImportName="getdevolveraptitud_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDevolverAptitud_SP" />
+    <FunctionImportMapping FunctionImportName="getdevolvercomponenteslaboratorioconcatenados_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDevolverComponentesLaboratorioConcatenados_SP" />
+    <FunctionImportMapping FunctionImportName="getdevolverdatosusuariofirma_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDevolverDatosUsuarioFirma_SP" />
+    <FunctionImportMapping FunctionImportName="getdevolverdatosusuariograboexamen_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDevolverDatosUsuarioGraboExamen_SP" />
+    <FunctionImportMapping FunctionImportName="getdiagnosticbyserviceidandcategoryid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDiagnosticByServiceIdAndCategoryId_SP" />
+    <FunctionImportMapping FunctionImportName="getdiagnosticbyserviceidandcomponent_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDiagnosticByServiceIdAndComponent_SP" />
+    <FunctionImportMapping FunctionImportName="getdiagnosticforaudiometria_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDiagnosticForAudiometria_SP" />
+    <FunctionImportMapping FunctionImportName="getdiagnosticrepositorybycomponent1_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDiagnosticRepositoryByComponent1_SP" />
+    <FunctionImportMapping FunctionImportName="getdiagnosticrepositorybycomponent2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDiagnosticRepositoryByComponent2_SP" />
+    <FunctionImportMapping FunctionImportName="getdiagnosticrepositorybycomponent3_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDiagnosticRepositoryByComponent3_SP" />
+    <FunctionImportMapping FunctionImportName="getdisgnosticscie10byserviceidandcomponentconcatec_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDisgnosticsCIE10ByServiceIdAndComponentConcatec_SP" />
+    <FunctionImportMapping FunctionImportName="getdoctophisicalexam_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetDoctoPhisicalExam_SP" />
+    <FunctionImportMapping FunctionImportName="getdx" FunctionName="SAMBHS.Common.DataModel.Store.getDx" />
+    <FunctionImportMapping FunctionImportName="getedadperson" FunctionName="SAMBHS.Common.DataModel.Store.getEdadPerson" />
+    <FunctionImportMapping FunctionImportName="getembarazofiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetEmbarazoFiltered_SP" />
+    <FunctionImportMapping FunctionImportName="getfamilymedicalantecedentspagedandfilteredbypersonid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetFamilyMedicalAntecedentsPagedAndFilteredByPersonId_SP" />
+    <FunctionImportMapping FunctionImportName="getfamilymedicalantecedentsreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetFamilyMedicalAntecedentsReport_SP" />
+    <FunctionImportMapping FunctionImportName="getfichapsicologicaocupacional_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetFichaPsicologicaOcupacional_SP" />
+    <FunctionImportMapping FunctionImportName="getfile" FunctionName="SAMBHS.Common.DataModel.Store.getFile" />
+    <FunctionImportMapping FunctionImportName="getfirmamedicos_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetFirmaMedicos_SP" />
+    <FunctionImportMapping FunctionImportName="getformaction_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetFormAction_SP" />
+    <FunctionImportMapping FunctionImportName="getfototipo_sp" FunctionName="SAMBHS.Common.DataModel.Store.getFototipo_SP" />
+    <FunctionImportMapping FunctionImportName="gethistoriaclinicapsicologica_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetHistoriaClinicaPsicologica_SP" />
+    <FunctionImportMapping FunctionImportName="gethistorypagedandfiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetHistoryPagedAndFiltered_SP" />
+    <FunctionImportMapping FunctionImportName="gethistoryreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetHistoryReport_SP" />
+    <FunctionImportMapping FunctionImportName="gethistoryreporta_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetHistoryReportA_SP" />
+    <FunctionImportMapping FunctionImportName="gethistoryreportb_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetHistoryReportB_SP" />
+    <FunctionImportMapping FunctionImportName="getimageperson" FunctionName="SAMBHS.Common.DataModel.Store.getImagePerson" />
+    <FunctionImportMapping FunctionImportName="getinfomedicalcenter_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetInfoMedicalCenter_SP" />
+    <FunctionImportMapping FunctionImportName="getinfopayment" FunctionName="SAMBHS.Common.DataModel.Store.getInfoPayment" />
+    <FunctionImportMapping FunctionImportName="getinfoperson" FunctionName="SAMBHS.Common.DataModel.Store.getInfoPerson" />
+    <FunctionImportMapping FunctionImportName="getinfopersonforadmin" FunctionName="SAMBHS.Common.DataModel.Store.getInfoPersonForAdmin" />
+    <FunctionImportMapping FunctionImportName="getinformacion_laboratorio_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetInformacion_Laboratorio_SP" />
+    <FunctionImportMapping FunctionImportName="getinformacion_otrosexamenes_new_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetInformacion_OtrosExamenes_New_SP" />
+    <FunctionImportMapping FunctionImportName="getinformacion_otrosexamenes_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetInformacion_OtrosExamenes_SP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.getinformacion_otrosexamenes_spResult">
+          <ScalarProperty Name="v_PersonId" ColumnName="v_PersonId" />
+          <ScalarProperty Name="v_ServiceId" ColumnName="v_ServiceId" />
+          <ScalarProperty Name="i_EsoTypeId" ColumnName="i_EsoTypeId" />
+          <ScalarProperty Name="i_ServiceTypeId" ColumnName="i_ServiceTypeId" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="EmpresaTrabajo" ColumnName="EmpresaTrabajo" />
+          <ScalarProperty Name="EmpresaEmpleadora" ColumnName="EmpresaEmpleadora" />
+          <ScalarProperty Name="RubroEmpresaTrabajo" ColumnName="RubroEmpresaTrabajo" />
+          <ScalarProperty Name="DireccionEmpresaTrabajo" ColumnName="DireccionEmpresaTrabajo" />
+          <ScalarProperty Name="DepartamentoEmpresaTrabajo" ColumnName="DepartamentoEmpresaTrabajo" />
+          <ScalarProperty Name="ProvinciaEmpresaTrabajo" ColumnName="ProvinciaEmpresaTrabajo" />
+          <ScalarProperty Name="DistritoEmpresaTrabajo" ColumnName="DistritoEmpresaTrabajo" />
+          <ScalarProperty Name="v_CurrentOccupation" ColumnName="v_CurrentOccupation" />
+          <ScalarProperty Name="b_Logo" ColumnName="b_Logo" />
+          <ScalarProperty Name="EmpresaClienteId" ColumnName="EmpresaClienteId" />
+          <ScalarProperty Name="FirmaTrabajador" ColumnName="FirmaTrabajador" />
+          <ScalarProperty Name="HuellaTrabajador" ColumnName="HuellaTrabajador" />
+          <ScalarProperty Name="FirmaDoctor" ColumnName="FirmaDoctor" />
+          <ScalarProperty Name="NombreDoctor" ColumnName="NombreDoctor" />
+          <ScalarProperty Name="CMP" ColumnName="CMP" />
+          <ScalarProperty Name="v_CustomerOrganizationName" ColumnName="v_CustomerOrganizationName" />
+          <ScalarProperty Name="v_OwnerOrganizationName" ColumnName="v_OwnerOrganizationName" />
+          <ScalarProperty Name="NombreDoctor1" ColumnName="NombreDoctor" />
+          <ScalarProperty Name="CMP1" ColumnName="CMP" />
+          <ScalarProperty Name="FirmaMedicoMedicina" ColumnName="FirmaMedicoMedicina" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getinformacionprotocolocompletoasservice_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetInformacionProtocoloCompletoAsService_SP" />
+    <FunctionImportMapping FunctionImportName="getinformacionprotocoloservicio_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetInformacionProtocoloservicio_SP" />
+    <FunctionImportMapping FunctionImportName="getinfouserclient" FunctionName="SAMBHS.Common.DataModel.Store.getInfoUserclient" />
+    <FunctionImportMapping FunctionImportName="getjoinorganizationandlocation_list_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetJoinOrganizationAndLocation_List_SP" />
+    <FunctionImportMapping FunctionImportName="getjoinorganizationandlocation_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetJoinOrganizationAndLocation_SP" />
+    <FunctionImportMapping FunctionImportName="getlistrecommendationbyserviceidandcomponent_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetListRecommendationByServiceIdAndComponent_SP" />
+    <FunctionImportMapping FunctionImportName="getlistrequestcomponents" FunctionName="SAMBHS.Common.DataModel.Store.getListRequestComponents" />
+    <FunctionImportMapping FunctionImportName="getlistservicetoaptitud_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetListserviceToAptitud_SP" />
+    <FunctionImportMapping FunctionImportName="getlistsmspendientes" FunctionName="SAMBHS.Common.DataModel.Store.getListSmsPendientes" />
+    <FunctionImportMapping FunctionImportName="getlistusers" FunctionName="SAMBHS.Common.DataModel.Store.getListUsers" />
+    <FunctionImportMapping FunctionImportName="getlistusersforadmin" FunctionName="SAMBHS.Common.DataModel.Store.getListUsersForAdmin" />
+    <FunctionImportMapping FunctionImportName="getlistvaluecomponent_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetListValueComponent_SP" />
+    <FunctionImportMapping FunctionImportName="getmusculoesqueletico_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetMusculoEsqueletico_SP" />
+    <FunctionImportMapping FunctionImportName="getnombreempresalab_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetNombreEmpresaLab_SP" />
+    <FunctionImportMapping FunctionImportName="getnombregrabaaptitud_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetNombreGrabaAptitud_SP" />
+    <FunctionImportMapping FunctionImportName="getnombremedicolab_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetNombreMedicoLab_SP" />
+    <FunctionImportMapping FunctionImportName="getnoxioushabitspagedandfilteredbypersonid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetNoxiousHabitsPagedAndFilteredByPersonId_SP" />
+    <FunctionImportMapping FunctionImportName="getnoxioushabitsreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetNoxiousHabitsReport_SP" />
+    <FunctionImportMapping FunctionImportName="getobtenerfechascuidadospreventivos__sp" FunctionName="SAMBHS.Common.DataModel.Store.GetObtenerFechasCuidadosPreventivos__SP" />
+    <FunctionImportMapping FunctionImportName="getobtenerfirmamedico_2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetObtenerFirmaMedico_2_SP" />
+    <FunctionImportMapping FunctionImportName="getobtenerfirmamedicoexamen_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetObtenerFirmaMedicoExamen_SP" />
+    <FunctionImportMapping FunctionImportName="getobtenerusuarioanterior_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetObtenerUsuarioAnterior_SP" />
+    <FunctionImportMapping FunctionImportName="getordenreporte" FunctionName="SAMBHS.Common.DataModel.Store.getOrdenReporte" />
+    <FunctionImportMapping FunctionImportName="getorganizationfacturacion_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetOrganizationFacturacion_SP" />
+    <FunctionImportMapping FunctionImportName="getorsetrequestcomponents" FunctionName="SAMBHS.Common.DataModel.Store.getOrSetRequestComponents" />
+    <FunctionImportMapping FunctionImportName="getpacient_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPacient_SP" />
+    <FunctionImportMapping FunctionImportName="getpacientreporteps_neworganizationid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPacientReportEPS_NewOrganizationId_SP" />
+    <FunctionImportMapping FunctionImportName="getpacientreporteps_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPacientReportEPS_SP" />
+    <FunctionImportMapping FunctionImportName="getpacientreportepsfirmamedicoocupacional_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPacientReportEPSFirmaMedicoOcupacional_SP" />
+    <FunctionImportMapping FunctionImportName="getpacientspagedandfiltered_apellidos_nombre_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPacientsPagedAndFiltered_Apellidos_Nombre_SP" />
+    <FunctionImportMapping FunctionImportName="getpacientspagedandfiltered_apellidos_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPacientsPagedAndFiltered_Apellidos_SP" />
+    <FunctionImportMapping FunctionImportName="getpacientspagedandfiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPacientsPagedAndFiltered_SP" />
+    <FunctionImportMapping FunctionImportName="getpacientspagedandfilteredbypersonid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPacientsPagedAndFilteredByPErsonId_SP" />
+    <FunctionImportMapping FunctionImportName="getparentnamesystemparameter_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetParentNameSystemParameter_SP" />
+    <FunctionImportMapping FunctionImportName="getparentnamesystemparameter2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetParentNameSystemParameter2_SP" />
+    <FunctionImportMapping FunctionImportName="getpassold" FunctionName="SAMBHS.Common.DataModel.Store.getPassOLD" />
+    <FunctionImportMapping FunctionImportName="getpersonmedicalhistorypagedandfilteredbypersonid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPersonMedicalHistoryPagedAndFilteredByPersonId_SP" />
+    <FunctionImportMapping FunctionImportName="getpersonmedicalhistorypagedandfilteredbypersonid1_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPersonMedicalHistoryPagedAndFilteredByPersonId1_SP" />
+    <FunctionImportMapping FunctionImportName="getpersonmedicalhistoryreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPersonMedicalHistoryReport_SP" />
+    <FunctionImportMapping FunctionImportName="getplanintegralandfiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetPlanIntegralAndFiltered_SP" />
+    <FunctionImportMapping FunctionImportName="getproblemapagedandfiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetProblemaPagedAndFiltered_SP" />
+    <FunctionImportMapping FunctionImportName="getprotocolcomponents_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetProtocolComponents_SP" />
+    <FunctionImportMapping FunctionImportName="getprotocolcomponentslist_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetProtocolComponentsList_SP" />
+    <FunctionImportMapping FunctionImportName="getprotocolpagedandfiltered_filt_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetProtocolPagedAndFiltered_FILT_SP" />
+    <FunctionImportMapping FunctionImportName="getprotocolpagedandfiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetProtocolPagedAndFiltered_SP" />
+    <FunctionImportMapping FunctionImportName="getpurchaseefectivoandonline" FunctionName="SAMBHS.Common.DataModel.Store.getPurchaseEfectivoAndOnline" />
+    <FunctionImportMapping FunctionImportName="getpurchaseventanillaandonline" FunctionName="SAMBHS.Common.DataModel.Store.getPurchaseVentanillaAndOnline" />
+    <FunctionImportMapping FunctionImportName="getrecomendationbyserviceidandcomponentconcatec_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetRecomendationByServiceIdAndComponentConcatec_SP" />
+    <FunctionImportMapping FunctionImportName="getrecomendations" FunctionName="SAMBHS.Common.DataModel.Store.getRecomendations" />
+    <FunctionImportMapping FunctionImportName="getrecommendationbyserviceidandcomponent_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetRecommendationByServiceIdAndComponent_SP" />
+    <FunctionImportMapping FunctionImportName="getreportantropometria_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportAntropometria_SP" />
+    <FunctionImportMapping FunctionImportName="getreportaudiometria_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportAudiometria_SP" />
+    <FunctionImportMapping FunctionImportName="getreportcocainamarihuana_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportCocainaMarihuana_SP" />
+    <FunctionImportMapping FunctionImportName="getreportconsentimiento_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportConsentimiento_SP" />
+    <FunctionImportMapping FunctionImportName="getreportcuestionarioespirometria_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportCuestionarioEspirometria_SP" />
+    <FunctionImportMapping FunctionImportName="getreportcuestionarionordico_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportCuestionarioNordico_SP" />
+    <FunctionImportMapping FunctionImportName="getreporteergnomia_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReporteErgnomia_SP" />
+    <FunctionImportMapping FunctionImportName="getreportelectrogold_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportElectroGold_SP" />
+    <FunctionImportMapping FunctionImportName="getreportelumbosaca_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReporteLumboSaca_SP" />
+    <FunctionImportMapping FunctionImportName="getreporteotoscopia_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReporteOtoscopia_SP" />
+    <FunctionImportMapping FunctionImportName="getreportesintomaticorespiratorio_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReporteSintomaticoRespiratorio_SP" />
+    <FunctionImportMapping FunctionImportName="getreportesomnolencia_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReporteSomnolencia_SP" />
+    <FunctionImportMapping FunctionImportName="getreportestudioelectrocardiografico_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportEstudioElectrocardiografico_SP" />
+    <FunctionImportMapping FunctionImportName="getreporteucosteocoimalache_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReporteUCOsteoCoimalache_SP" />
+    <FunctionImportMapping FunctionImportName="getreportevaluacioncardiologia_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportEvaluacionCardiologia_SP" />
+    <FunctionImportMapping FunctionImportName="getreportevaluacionpsicolaborlapersonal_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportEvaluacionPsicolaborlaPersonal_SP" />
+    <FunctionImportMapping FunctionImportName="getreportevaneurologica_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportEvaNeurologica_SP" />
+    <FunctionImportMapping FunctionImportName="getreportevaosteosanmartin_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportEvaOsteoSanMartin_SP" />
+    <FunctionImportMapping FunctionImportName="getreportfichaotoscopia_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportFichaOtoscopia_SP" />
+    <FunctionImportMapping FunctionImportName="getreportfuncionesvitales_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportFuncionesVitales_SP" />
+    <FunctionImportMapping FunctionImportName="getreporthistoriaocupacional_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportHistoriaOcupacional_SP" />
+    <FunctionImportMapping FunctionImportName="getreportinformeradiografico_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportInformeRadiografico_SP" />
+    <FunctionImportMapping FunctionImportName="getreportodontograma_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportOdontograma_SP" />
+    <FunctionImportMapping FunctionImportName="getreportosteocoimalache_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportOsteoCoimalache_SP" />
+    <FunctionImportMapping FunctionImportName="getreportosteomuscularnuevo_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportOsteoMuscularNuevo_SP" />
+    <FunctionImportMapping FunctionImportName="getreportradiologico_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportRadiologico_SP" />
+    <FunctionImportMapping FunctionImportName="getreportsfreeocupacionales" FunctionName="SAMBHS.Common.DataModel.Store.getReportsFreeOcupacionales" />
+    <FunctionImportMapping FunctionImportName="getreportsfreeparticulares" FunctionName="SAMBHS.Common.DataModel.Store.getReportsFreeParticulares" />
+    <FunctionImportMapping FunctionImportName="getreporttamizajedermatologico_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportTamizajeDermatologico_SP" />
+    <FunctionImportMapping FunctionImportName="getreporttestvertigo_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportTestVertigo_SP" />
+    <FunctionImportMapping FunctionImportName="getreporttoxicologico_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetReportToxicologico_SP" />
+    <FunctionImportMapping FunctionImportName="getrestrictionbyserviceid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetRestrictionByServiceId_SP" />
+    <FunctionImportMapping FunctionImportName="getrestrictions" FunctionName="SAMBHS.Common.DataModel.Store.getRestrictions" />
+    <FunctionImportMapping FunctionImportName="getrolenodecomponentprofilebyrolenodeid__sp" FunctionName="SAMBHS.Common.DataModel.Store.GetRoleNodeComponentProfileByRoleNodeId__SP" />
+    <FunctionImportMapping FunctionImportName="getrouteinterconsultas" FunctionName="SAMBHS.Common.DataModel.Store.getRouteInterconsultas" />
+    <FunctionImportMapping FunctionImportName="getrouteobservaciones" FunctionName="SAMBHS.Common.DataModel.Store.getRouteObservaciones" />
+    <FunctionImportMapping FunctionImportName="getroutereportmedic" FunctionName="SAMBHS.Common.DataModel.Store.getRouteReportMedic" />
+    <FunctionImportMapping FunctionImportName="getselectedindexchanged_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetSelectedIndexChanged_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentconclusionesdxserviceid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentConclusionesDxServiceId_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentconclusionesdxserviceidreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentConclusionesDxServiceIdReport_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentconclusionesdxserviceidreport_todos_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentConclusionesDxServiceIdReport_TODOS_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentdiagnosticsreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentDiagnosticsReport_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentdisgnosticsbyserviceid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentDisgnosticsByServiceId_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentdisgnosticsforgridview_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentDisgnosticsForGridView_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentfields1_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentFields1_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentfields2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentFields2_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponents_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponents_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsculminados_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsCulminados_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsformanagementreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsForManagementReport_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsinfo_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsInfo_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsreport_2_diagnosticrepository_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsReport_2_DiagnosticRepository_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsreport_2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsReport_2_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsreport_dxlist_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsReport_DxList_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsreport_new312_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsReport_New312_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsreport_newlab_1_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsReport_NewLab_1_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsreport_newlab_2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsReport_NewLab_2_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsreportc_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsReportC_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsreportforreportsolo_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsReportForReportSolo_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponentsreportsc_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentsReportSC_SP" />
+    <FunctionImportMapping FunctionImportName="getservicecomponenttotaldiagnostics_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceComponentTotalDiagnostics_SP" />
+    <FunctionImportMapping FunctionImportName="getservicedata_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceData_SP" />
+    <FunctionImportMapping FunctionImportName="getservicedisgnosticsreports_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceDisgnosticsReports_SP" />
+    <FunctionImportMapping FunctionImportName="getserviceid" FunctionName="SAMBHS.Common.DataModel.Store.getServiceId" />
+    <FunctionImportMapping FunctionImportName="getserviceinformation" FunctionName="SAMBHS.Common.DataModel.Store.getServiceInformation" />
+    <FunctionImportMapping FunctionImportName="getservicepersondata_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServicePersonData_SP" />
+    <FunctionImportMapping FunctionImportName="getservicerecommendationbydiagnosticrepositoryid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceRecommendationByDiagnosticRepositoryId_SP" />
+    <FunctionImportMapping FunctionImportName="getservicerecommendationbydiagnosticrepositoryidreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceRecommendationByDiagnosticRepositoryIdReport_SP" />
+    <FunctionImportMapping FunctionImportName="getservicerecommendationbyserviceid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceRecommendationByServiceId_SP" />
+    <FunctionImportMapping FunctionImportName="getservicereport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceReport_SP" />
+    <FunctionImportMapping FunctionImportName="getservicerestrictionbydiagnosticrepositoryidreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceRestrictionByDiagnosticRepositoryIdReport_SP" />
+    <FunctionImportMapping FunctionImportName="getservicerestrictionsbydiagnosticrepositoryid_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceRestrictionsByDiagnosticRepositoryId_SP" />
+    <FunctionImportMapping FunctionImportName="getservicerestrictionsforgridview_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceRestrictionsForGridView_SP" />
+    <FunctionImportMapping FunctionImportName="getservices" FunctionName="SAMBHS.Common.DataModel.Store.getServices" />
+    <FunctionImportMapping FunctionImportName="getservicescomponentarchivo_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServicesComponentArchivo_SP" />
+    <FunctionImportMapping FunctionImportName="getservicesconsolidateforservice_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServicesConsolidateForService_SP" />
+    <FunctionImportMapping FunctionImportName="getservicescovid19_filters_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServicesCovid19_FILTERS_SP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.getservicescovid19_filters_spResult">
+          <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+          <ScalarProperty Name="ID_PACIENTE" ColumnName="ID_PACIENTE" />
+          <ScalarProperty Name="PACIENTE" ColumnName="PACIENTE" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NACIMIENTO" ColumnName="NACIMIENTO" />
+          <ScalarProperty Name="EDAD" ColumnName="EDAD" />
+          <ScalarProperty Name="OCUPACION" ColumnName="OCUPACION" />
+          <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CONTACTO_EMERGENCIA" ColumnName="CONTACTO EMERGENCIA" />
+          <ScalarProperty Name="TELEFONO_EMERGENCIA" ColumnName="TELEFONO EMERGENCIA" />
+          <ScalarProperty Name="EXAMEN" ColumnName="EXAMEN" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="COMPROBANTE" ColumnName="COMPROBANTE" />
+          <ScalarProperty Name="PROTOCOLOID" ColumnName="PROTOCOLOID" />
+          <ScalarProperty Name="PROTOCOLO" ColumnName="PROTOCOLO" />
+          <ScalarProperty Name="RESULTADO" ColumnName="RESULTADO" />
+          <ScalarProperty Name="PRIMER_RES" ColumnName="PRIMER_RES" />
+          <ScalarProperty Name="SEGUNDO_RES" ColumnName="SEGUNDO_RES" />
+          <ScalarProperty Name="ATENCION" ColumnName="ATENCION" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
+          <ScalarProperty Name="MINAID" ColumnName="MINAID" />
+          <ScalarProperty Name="MINANAME" ColumnName="MINANAME" />
+          <ScalarProperty Name="CONTRATAID" ColumnName="CONTRATAID" />
+          <ScalarProperty Name="CONTRATANAME" ColumnName="CONTRATANAME" />
+          <ScalarProperty Name="TERCEROID" ColumnName="TERCEROID" />
+          <ScalarProperty Name="TERCERONAME" ColumnName="TERCERONAME" />
+          <ScalarProperty Name="v_ServiceComponentId" ColumnName="v_ServiceComponentId" />
+          <ScalarProperty Name="i_StatusLiquidation" ColumnName="i_StatusLiquidation" />
+          <ScalarProperty Name="i_MasterServiceId" ColumnName="i_MasterServiceId" />
+          <ScalarProperty Name="GradoInstruc" ColumnName="GradoInstruc" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="AltaCovid19_1" ColumnName="AltaCovid19_1" />
+          <ScalarProperty Name="AltaCovid19_2" ColumnName="AltaCovid19_2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getservicescovid19_seg_val_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServicesCovid19_SEG_VAL_SP" />
+    <FunctionImportMapping FunctionImportName="getservicescovid19_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServicesCovid19_SP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.getservicescovid19_spResult">
+          <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+          <ScalarProperty Name="ID_PACIENTE" ColumnName="ID_PACIENTE" />
+          <ScalarProperty Name="PACIENTE" ColumnName="PACIENTE" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NACIMIENTO" ColumnName="NACIMIENTO" />
+          <ScalarProperty Name="EDAD" ColumnName="EDAD" />
+          <ScalarProperty Name="OCUPACION" ColumnName="OCUPACION" />
+          <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CONTACTO_EMERGENCIA" ColumnName="CONTACTO EMERGENCIA" />
+          <ScalarProperty Name="TELEFONO_EMERGENCIA" ColumnName="TELEFONO EMERGENCIA" />
+          <ScalarProperty Name="EXAMEN" ColumnName="EXAMEN" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="COMPROBANTE" ColumnName="COMPROBANTE" />
+          <ScalarProperty Name="PROTOCOLOID" ColumnName="PROTOCOLOID" />
+          <ScalarProperty Name="PROTOCOLO" ColumnName="PROTOCOLO" />
+          <ScalarProperty Name="RESULTADO" ColumnName="RESULTADO" />
+          <ScalarProperty Name="PRIMER_RES" ColumnName="PRIMER_RES" />
+          <ScalarProperty Name="SEGUNDO_RES" ColumnName="SEGUNDO_RES" />
+          <ScalarProperty Name="ATENCION" ColumnName="ATENCION" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
+          <ScalarProperty Name="MINAID" ColumnName="MINAID" />
+          <ScalarProperty Name="MINANAME" ColumnName="MINANAME" />
+          <ScalarProperty Name="CONTRATAID" ColumnName="CONTRATAID" />
+          <ScalarProperty Name="CONTRATANAME" ColumnName="CONTRATANAME" />
+          <ScalarProperty Name="TERCEROID" ColumnName="TERCEROID" />
+          <ScalarProperty Name="TERCERONAME" ColumnName="TERCERONAME" />
+          <ScalarProperty Name="v_ServiceComponentId" ColumnName="v_ServiceComponentId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getservicescovid19antigeno_filters_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServicesCovid19ANTIGENO_FILTERS_SP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.getservicescovid19antigeno_filters_spResult">
+          <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+          <ScalarProperty Name="ID_PACIENTE" ColumnName="ID_PACIENTE" />
+          <ScalarProperty Name="PACIENTE" ColumnName="PACIENTE" />
+          <ScalarProperty Name="AP_PATERNO" ColumnName="AP_PATERNO" />
+          <ScalarProperty Name="AP_MATERNO" ColumnName="AP_MATERNO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NACIMIENTO" ColumnName="NACIMIENTO" />
+          <ScalarProperty Name="EDAD" ColumnName="EDAD" />
+          <ScalarProperty Name="OCUPACION" ColumnName="OCUPACION" />
+          <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CONTACTO_EMERGENCIA" ColumnName="CONTACTO EMERGENCIA" />
+          <ScalarProperty Name="TELEFONO_EMERGENCIA" ColumnName="TELEFONO EMERGENCIA" />
+          <ScalarProperty Name="EXAMEN" ColumnName="EXAMEN" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="COMPROBANTE" ColumnName="COMPROBANTE" />
+          <ScalarProperty Name="PROTOCOLOID" ColumnName="PROTOCOLOID" />
+          <ScalarProperty Name="PROTOCOLO" ColumnName="PROTOCOLO" />
+          <ScalarProperty Name="RESULTADO" ColumnName="RESULTADO" />
+          <ScalarProperty Name="ATENCION" ColumnName="ATENCION" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
+          <ScalarProperty Name="MINAID" ColumnName="MINAID" />
+          <ScalarProperty Name="MINANAME" ColumnName="MINANAME" />
+          <ScalarProperty Name="CONTRATAID" ColumnName="CONTRATAID" />
+          <ScalarProperty Name="CONTRATANAME" ColumnName="CONTRATANAME" />
+          <ScalarProperty Name="TERCEROID" ColumnName="TERCEROID" />
+          <ScalarProperty Name="TERCERONAME" ColumnName="TERCERONAME" />
+          <ScalarProperty Name="v_ServiceComponentId" ColumnName="v_ServiceComponentId" />
+          <ScalarProperty Name="i_StatusLiquidation" ColumnName="i_StatusLiquidation" />
+          <ScalarProperty Name="i_MasterServiceId" ColumnName="i_MasterServiceId" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Lugar" ColumnName="Lugar" />
+          <ScalarProperty Name="AltaCovid19_1" ColumnName="AltaCovid19_1" />
+          <ScalarProperty Name="AltaCovid19_2" ColumnName="AltaCovid19_2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getservicescovid19molecular_filters_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServicesCovid19MOLECULAR_FILTERS_SP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.getservicescovid19antigeno_filters_spResult">
+          <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+          <ScalarProperty Name="ID_PACIENTE" ColumnName="ID_PACIENTE" />
+          <ScalarProperty Name="PACIENTE" ColumnName="PACIENTE" />
+          <ScalarProperty Name="AP_PATERNO" ColumnName="AP_PATERNO" />
+          <ScalarProperty Name="AP_MATERNO" ColumnName="AP_MATERNO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NACIMIENTO" ColumnName="NACIMIENTO" />
+          <ScalarProperty Name="EDAD" ColumnName="EDAD" />
+          <ScalarProperty Name="OCUPACION" ColumnName="OCUPACION" />
+          <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CONTACTO_EMERGENCIA" ColumnName="CONTACTO EMERGENCIA" />
+          <ScalarProperty Name="TELEFONO_EMERGENCIA" ColumnName="TELEFONO EMERGENCIA" />
+          <ScalarProperty Name="EXAMEN" ColumnName="EXAMEN" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="COMPROBANTE" ColumnName="COMPROBANTE" />
+          <ScalarProperty Name="PROTOCOLOID" ColumnName="PROTOCOLOID" />
+          <ScalarProperty Name="PROTOCOLO" ColumnName="PROTOCOLO" />
+          <ScalarProperty Name="RESULTADO" ColumnName="RESULTADO" />
+          <ScalarProperty Name="ATENCION" ColumnName="ATENCION" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
+          <ScalarProperty Name="MINAID" ColumnName="MINAID" />
+          <ScalarProperty Name="MINANAME" ColumnName="MINANAME" />
+          <ScalarProperty Name="CONTRATAID" ColumnName="CONTRATAID" />
+          <ScalarProperty Name="CONTRATANAME" ColumnName="CONTRATANAME" />
+          <ScalarProperty Name="TERCEROID" ColumnName="TERCEROID" />
+          <ScalarProperty Name="TERCERONAME" ColumnName="TERCERONAME" />
+          <ScalarProperty Name="v_ServiceComponentId" ColumnName="v_ServiceComponentId" />
+          <ScalarProperty Name="i_StatusLiquidation" ColumnName="i_StatusLiquidation" />
+          <ScalarProperty Name="i_MasterServiceId" ColumnName="i_MasterServiceId" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Lugar" ColumnName="Lugar" />
+          <ScalarProperty Name="AltaCovid19_1" ColumnName="AltaCovid19_1" />
+          <ScalarProperty Name="AltaCovid19_2" ColumnName="AltaCovid19_2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getserviceshort_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServiceShort_SP" />
+    <FunctionImportMapping FunctionImportName="getservicespagedandfiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetServicesPagedAndFiltered_SP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.getservicespagedandfiltered_spResult">
+          <ScalarProperty Name="b_FechaEntrega" ColumnName="b_FechaEntrega" />
+          <ScalarProperty Name="v_PersonId" ColumnName="v_PersonId" />
+          <ScalarProperty Name="v_ServiceId" ColumnName="v_ServiceId" />
+          <ScalarProperty Name="v_Pacient" ColumnName="v_Pacient" />
+          <ScalarProperty Name="v_PacientDocument" ColumnName="v_PacientDocument" />
+          <ScalarProperty Name="d_ServiceDate" ColumnName="d_ServiceDate" />
+          <ScalarProperty Name="i_ServiceStatusId" ColumnName="i_ServiceStatusId" />
+          <ScalarProperty Name="i_StatusLiquidation" ColumnName="i_StatusLiquidation" />
+          <ScalarProperty Name="v_CustomerOrganizationId" ColumnName="v_CustomerOrganizationId" />
+          <ScalarProperty Name="v_CustomerLocationId" ColumnName="v_CustomerLocationId" />
+          <ScalarProperty Name="i_MasterServiceId" ColumnName="i_MasterServiceId" />
+          <ScalarProperty Name="i_ServiceTypeId" ColumnName="i_ServiceTypeId" />
+          <ScalarProperty Name="i_EsoTypeId" ColumnName="i_EsoTypeId" />
+          <ScalarProperty Name="v_ProtocolId" ColumnName="v_ProtocolId" />
+          <ScalarProperty Name="v_ProtocolName" ColumnName="v_ProtocolName" />
+          <ScalarProperty Name="i_AptitudeStatusId" ColumnName="i_AptitudeStatusId" />
+          <ScalarProperty Name="CompMinera" ColumnName="CompMinera" />
+          <ScalarProperty Name="Tercero" ColumnName="Tercero" />
+          <ScalarProperty Name="v_OrganizationName" ColumnName="v_OrganizationName" />
+          <ScalarProperty Name="i_ServiceId" ColumnName="i_ServiceId" />
+          <ScalarProperty Name="v_AptitudeStatusName" ColumnName="v_AptitudeStatusName" />
+          <ScalarProperty Name="v_DocNumber" ColumnName="v_DocNumber" />
+          <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
+          <ScalarProperty Name="TipoServicioMaster" ColumnName="TipoServicioMaster" />
+          <ScalarProperty Name="TipoServicioESO" ColumnName="TipoServicioESO" />
+          <ScalarProperty Name="d_BirthDate" ColumnName="d_BirthDate" />
+          <ScalarProperty Name="i_Age" ColumnName="i_Age" />
+          <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+          <ScalarProperty Name="Medico" ColumnName="Medico" />
+          <ScalarProperty Name="Rx_DCM" ColumnName="Rx_DCM" />
+          <ScalarProperty Name="Rx_JPG" ColumnName="Rx_JPG" />
+          <ScalarProperty Name="Rx_PDF" ColumnName="Rx_PDF" />
+          <ScalarProperty Name="Esp_" ColumnName="Esp." />
+          <ScalarProperty Name="Ekg" ColumnName="Ekg" />
+          <ScalarProperty Name="AltaCovid19_1" ColumnName="AltaCovid19_1" />
+          <ScalarProperty Name="AltaCovid19_2" ColumnName="AltaCovid19_2" />
+          <ScalarProperty Name="Alta" ColumnName="Alta" />
+          <ScalarProperty Name="Facturacion" ColumnName="Facturacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getsintomascovid19_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetSintomasCovid19_SP" />
+    <FunctionImportMapping FunctionImportName="getsolicitudesconcluidastoday" FunctionName="SAMBHS.Common.DataModel.Store.getsolicitudesConcluidasToDay" />
+    <FunctionImportMapping FunctionImportName="getsolicitudesculminadasformonths" FunctionName="SAMBHS.Common.DataModel.Store.getSolicitudesCulminadasForMonths" />
+    <FunctionImportMapping FunctionImportName="getsolicitudesparaaprobar" FunctionName="SAMBHS.Common.DataModel.Store.getSolicitudesParaAprobar" />
+    <FunctionImportMapping FunctionImportName="getsubcategoryname_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetSubCategoryName_SP" />
+    <FunctionImportMapping FunctionImportName="getsystemparameterforcombo_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetSystemParameterForCombo_SP" />
+    <FunctionImportMapping FunctionImportName="getsystemparameterforcomboform_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetSystemParameterForComboForm_SP" />
+    <FunctionImportMapping FunctionImportName="getsystemparameterforcomboformeso_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetSystemParameterForComboFormEso_SP" />
+    <FunctionImportMapping FunctionImportName="getsystemparameterspagedandfilterednew_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetSystemParametersPagedAndFilteredNew_SP" />
+    <FunctionImportMapping FunctionImportName="getsystemparameterspagedandfilterednew2_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetSystemParametersPagedAndFilteredNew2_SP" />
+    <FunctionImportMapping FunctionImportName="getsystemuser" FunctionName="SAMBHS.Common.DataModel.Store.getSystemUser" />
+    <FunctionImportMapping FunctionImportName="getsystemuserexternalpagedandfiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetSystemUserExternalPagedAndFiltered_SP" />
+    <FunctionImportMapping FunctionImportName="gettypeofeeppagedandfiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetTypeOfEEPPagedAndFiltered_SP" />
+    <FunctionImportMapping FunctionImportName="getusersregister" FunctionName="SAMBHS.Common.DataModel.Store.getUsersRegister" />
+    <FunctionImportMapping FunctionImportName="getvalorescomponente_observadoamc_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetValoresComponente_ObservadoAMC_SP" />
+    <FunctionImportMapping FunctionImportName="getvalorescomponente_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetValoresComponente_SP" />
+    <FunctionImportMapping FunctionImportName="getvalorescomponenteamc__sp" FunctionName="SAMBHS.Common.DataModel.Store.GetValoresComponenteAMC__SP" />
+    <FunctionImportMapping FunctionImportName="getvalorescomponenteodontograma_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetValoresComponenteOdontograma_SP" />
+    <FunctionImportMapping FunctionImportName="getvalorescomponenteodontogramaausente_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetValoresComponenteOdontogramaAusente_SP" />
+    <FunctionImportMapping FunctionImportName="getvalorescomponenteodontogramavalue1_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetValoresComponenteOdontogramaValue1_SP" />
+    <FunctionImportMapping FunctionImportName="getvalorescomponentesusercontrol_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetValoresComponentesUserControl_SP" />
+    <FunctionImportMapping FunctionImportName="getvaloresexamencomponete_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetValoresExamenComponete_SP" />
+    <FunctionImportMapping FunctionImportName="getverificaraptitud_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetVerificarAptitud_SP" />
+    <FunctionImportMapping FunctionImportName="getverificarescritura_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetVerificarEscritura_SP" />
+    <FunctionImportMapping FunctionImportName="getworkerdata_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetWorkerData_SP" />
+    <FunctionImportMapping FunctionImportName="getworkstationdangersagedandfiltered_sp" FunctionName="SAMBHS.Common.DataModel.Store.GetWorkstationDangersagedAndFiltered_SP" />
+    <FunctionImportMapping FunctionImportName="isexistuser" FunctionName="SAMBHS.Common.DataModel.Store.isExistUser" />
+    <FunctionImportMapping FunctionImportName="isnullimageperfil" FunctionName="SAMBHS.Common.DataModel.Store.isNullImagePerfil" />
+    <FunctionImportMapping FunctionImportName="isobservado" FunctionName="SAMBHS.Common.DataModel.Store.isObservado" />
+    <FunctionImportMapping FunctionImportName="listgetdiagnosticbyserviceid1_sp" FunctionName="SAMBHS.Common.DataModel.Store.ListGetDiagnosticByServiceId1_SP" />
+    <FunctionImportMapping FunctionImportName="listgetdiagnosticbyserviceidandcategoryid_sp" FunctionName="SAMBHS.Common.DataModel.Store.ListGetDiagnosticByServiceIdAndCategoryId_SP" />
+    <FunctionImportMapping FunctionImportName="listgetrecommendationbyserviceid_sp" FunctionName="SAMBHS.Common.DataModel.Store.ListGetRecommendationByServiceId_SP" />
+    <FunctionImportMapping FunctionImportName="listgetrestrictionbyserviceid_sp" FunctionName="SAMBHS.Common.DataModel.Store.ListGetRestrictionByServiceId_SP" />
+    <FunctionImportMapping FunctionImportName="listmissingexamenesnames_sp" FunctionName="SAMBHS.Common.DataModel.Store.ListMissingExamenesNames_SP" />
+    <FunctionImportMapping FunctionImportName="listmissingexamenesnames2_sp" FunctionName="SAMBHS.Common.DataModel.Store.ListMissingExamenesNames2_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboaltitud_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboAltitud_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombodistrito_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboDistrito_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboestadocivil_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboEstadoCivil_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombofactor_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboFactor_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombogennero_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboGennero_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombogetservicetype_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboGetServiceType_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombogrupo_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboGrupo_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombolugarlabor_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboLugarLabor_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombonivelestudio_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboNivelEstudio_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboparentesco_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboParentesco_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboprotocolo_particular_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboProtocolo_Particular_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboprotocolo_pre_1_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboProtocolo_pre_1_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboprotocolo_pre_2_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboProtocolo_pre_2_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboprotocolo_seguros_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboProtocolo_Seguros_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboprotocolo_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboProtocolo_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboresidencia_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboResidencia_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcomboservicio_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboServicio_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombosystemparametro_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboSystemParametro_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombotipodocumento" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboTipoDocumento" />
+    <FunctionImportMapping FunctionImportName="llenarcombotiposeguro_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboTipoSeguro_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombotiposervicio_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboTipoServicio_SP" />
+    <FunctionImportMapping FunctionImportName="llenarcombousuarios_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarComboUsuarios_SP" />
+    <FunctionImportMapping FunctionImportName="llenargrillasigesoft" FunctionName="SAMBHS.Common.DataModel.Store.LlenarGrillaSigesoft" />
+    <FunctionImportMapping FunctionImportName="llenarperson_sp" FunctionName="SAMBHS.Common.DataModel.Store.LlenarPerson_SP" />
+    <FunctionImportMapping FunctionImportName="obtenerareas_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerAreas_SP" />
+    <FunctionImportMapping FunctionImportName="obtenercomentarioscuidadospreventivos_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerComentariosCuidadosPreventivos_SP" />
+    <FunctionImportMapping FunctionImportName="obtenercontactoemergencia_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerContactoEmergencia_SP" />
+    <FunctionImportMapping FunctionImportName="obteneresoantecedentesporgrupoid1__sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerEsoAntecedentesPorGrupoId1__SP" />
+    <FunctionImportMapping FunctionImportName="obteneresoantecedentesporgrupoid2__sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerEsoAntecedentesPorGrupoId2__SP" />
+    <FunctionImportMapping FunctionImportName="obtenergesoid_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerGesoId_SP" />
+    <FunctionImportMapping FunctionImportName="obtenergesoprotocol_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerGesoProtocol_SP" />
+    <FunctionImportMapping FunctionImportName="obteneridsparaimportacionexcel_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerIdsParaImportacionExcel_SP" />
+    <FunctionImportMapping FunctionImportName="obtenerlistadocuidadospreventivos_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerListadoCuidadosPreventivos_SP" />
+    <FunctionImportMapping FunctionImportName="obtenernetoporcobrar" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerNetoPorCobrar" />
+    <FunctionImportMapping FunctionImportName="obtenernetoporcobrartodos" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerNetoPorCobrarTodos" />
+    <FunctionImportMapping FunctionImportName="obtenerpacientes_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerPacientes_SP" />
+    <FunctionImportMapping FunctionImportName="obtenerpreciotarifario" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerPrecioTarifario" />
+    <FunctionImportMapping FunctionImportName="obtenerproducto" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerProducto" />
+    <FunctionImportMapping FunctionImportName="obtenerprovincia_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerProvincia_SP" />
+    <FunctionImportMapping FunctionImportName="obtenerpuestos_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerPuestos_SP" />
+    <FunctionImportMapping FunctionImportName="obtenertodasprovincia_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerTodasProvincia_SP" />
+    <FunctionImportMapping FunctionImportName="obtenertodosdepartamentos_sp" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerTodosDepartamentos_SP" />
+    <FunctionImportMapping FunctionImportName="obtenervalores" FunctionName="SAMBHS.Common.DataModel.Store.ObtenerValores" />
+    <FunctionImportMapping FunctionImportName="pagoenlinea" FunctionName="SAMBHS.Common.DataModel.Store.pagoEnLinea" />
+    <FunctionImportMapping FunctionImportName="pagoventanilla" FunctionName="SAMBHS.Common.DataModel.Store.pagoVentanilla" />
+    <FunctionImportMapping FunctionImportName="reporteatencionmedica" FunctionName="SAMBHS.Common.DataModel.Store.ReporteAtencionMedica" />
+    <FunctionImportMapping FunctionImportName="reportegerencial" FunctionName="SAMBHS.Common.DataModel.Store.ReporteGerencial" />
+    <FunctionImportMapping FunctionImportName="reportematrizlazanja_sp" FunctionName="SAMBHS.Common.DataModel.Store.ReporteMatrizLaZanja_SP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.reportematrizlazanja_spResult">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="ProtocolId" ColumnName="ProtocolId" />
+          <ScalarProperty Name="Protocolo" ColumnName="Protocolo" />
+          <ScalarProperty Name="v_CustomerOrganizationId" ColumnName="v_CustomerOrganizationId" />
+          <ScalarProperty Name="P_EmployerOrganizationId" ColumnName="_EmployerOrganizationId" />
+          <ScalarProperty Name="v_WorkingOrganizationId" ColumnName="v_WorkingOrganizationId" />
+          <ScalarProperty Name="v_CustomerLocationId" ColumnName="v_CustomerLocationId" />
+          <ScalarProperty Name="v_WorkingLocationId" ColumnName="v_WorkingLocationId" />
+          <ScalarProperty Name="v_EmployerLocationId" ColumnName="v_EmployerLocationId" />
+          <ScalarProperty Name="TipoEmo" ColumnName="TipoEmo" />
+          <ScalarProperty Name="DniPasaporte" ColumnName="DniPasaporte" />
+          <ScalarProperty Name="FechaExamen" ColumnName="FechaExamen" />
+          <ScalarProperty Name="ApellidosNombres" ColumnName="ApellidosNombres" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="TelefonoContacto" ColumnName="TelefonoContacto" />
+          <ScalarProperty Name="P_Sexo" ColumnName="_Sexo" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="GradoInstruccion" ColumnName="GradoInstruccion" />
+          <ScalarProperty Name="P_Grupo" ColumnName="_Grupo" />
+          <ScalarProperty Name="P_Factor" ColumnName="_Factor" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="General" ColumnName="General" />
+          <ScalarProperty Name="Contrata" ColumnName="Contrata" />
+          <ScalarProperty Name="Subcontrata" ColumnName="Subcontrata" />
+          <ScalarProperty Name="Unida" ColumnName="Unida" />
+          <ScalarProperty Name="P_AptitudFinal" ColumnName="_AptitudFinal" />
+          <ScalarProperty Name="P_VigenciaEmo" ColumnName="_VigenciaEmo" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Procedencia" ColumnName="Procedencia" />
+          <ScalarProperty Name="NumeroHijos" ColumnName="NumeroHijos" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="Sintomas" ColumnName="Sintomas" />
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Value3" ColumnName="Value3" />
+          <ScalarProperty Name="Value4" ColumnName="Value4" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="reportematrizshauindo_sp" FunctionName="SAMBHS.Common.DataModel.Store.ReporteMatrizShauindo_SP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SAMBHS.Common.DataModel.reportematrizshauindo_spResult">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="ProtocolId" ColumnName="ProtocolId" />
+          <ScalarProperty Name="Protocolo" ColumnName="Protocolo" />
+          <ScalarProperty Name="v_CustomerOrganizationId" ColumnName="v_CustomerOrganizationId" />
+          <ScalarProperty Name="P_EmployerOrganizationId" ColumnName="_EmployerOrganizationId" />
+          <ScalarProperty Name="v_WorkingOrganizationId" ColumnName="v_WorkingOrganizationId" />
+          <ScalarProperty Name="v_CustomerLocationId" ColumnName="v_CustomerLocationId" />
+          <ScalarProperty Name="v_WorkingLocationId" ColumnName="v_WorkingLocationId" />
+          <ScalarProperty Name="v_EmployerLocationId" ColumnName="v_EmployerLocationId" />
+          <ScalarProperty Name="TipoEmo" ColumnName="TipoEmo" />
+          <ScalarProperty Name="DniPasaporte" ColumnName="DniPasaporte" />
+          <ScalarProperty Name="FechaExamen" ColumnName="FechaExamen" />
+          <ScalarProperty Name="ApellidosNombres" ColumnName="ApellidosNombres" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="TelefonoContacto" ColumnName="TelefonoContacto" />
+          <ScalarProperty Name="P_Sexo" ColumnName="_Sexo" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="GradoInstruccion" ColumnName="GradoInstruccion" />
+          <ScalarProperty Name="P_Grupo" ColumnName="_Grupo" />
+          <ScalarProperty Name="P_Factor" ColumnName="_Factor" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="General" ColumnName="General" />
+          <ScalarProperty Name="Contrata" ColumnName="Contrata" />
+          <ScalarProperty Name="Subcontrata" ColumnName="Subcontrata" />
+          <ScalarProperty Name="Unida" ColumnName="Unida" />
+          <ScalarProperty Name="P_AptitudFinal" ColumnName="_AptitudFinal" />
+          <ScalarProperty Name="P_VigenciaEmo" ColumnName="_VigenciaEmo" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Procedencia" ColumnName="Procedencia" />
+          <ScalarProperty Name="NumeroHijos" ColumnName="NumeroHijos" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="Sintomas" ColumnName="Sintomas" />
+          <ScalarProperty Name="Facturacion" ColumnName="Facturacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="reporteosteomuscular_sp" FunctionName="SAMBHS.Common.DataModel.Store.ReporteOsteomuscular_SP" />
+    <FunctionImportMapping FunctionImportName="requestdetailservicecomponent" FunctionName="SAMBHS.Common.DataModel.Store.requestdetailservicecomponent" />
+    <FunctionImportMapping FunctionImportName="requestdocs" FunctionName="SAMBHS.Common.DataModel.Store.requestDocs" />
+    <FunctionImportMapping FunctionImportName="resumentipoempresa" FunctionName="SAMBHS.Common.DataModel.Store.ResumenTipoEmpresa" />
+    <FunctionImportMapping FunctionImportName="resumentipopago" FunctionName="SAMBHS.Common.DataModel.Store.ResumenTipoPago" />
+    <FunctionImportMapping FunctionImportName="savesms" FunctionName="SAMBHS.Common.DataModel.Store.saveSms" />
+    <FunctionImportMapping FunctionImportName="searchperson" FunctionName="SAMBHS.Common.DataModel.Store.searchPerson" />
+    <FunctionImportMapping FunctionImportName="searchpersonforadmin" FunctionName="SAMBHS.Common.DataModel.Store.searchPersonForAdmin" />
+    <FunctionImportMapping FunctionImportName="setemvironmentvariables" FunctionName="SAMBHS.Common.DataModel.Store.setEmvironmentVariables" />
+    <FunctionImportMapping FunctionImportName="setstatusaprobardenegarsolicitud" FunctionName="SAMBHS.Common.DataModel.Store.setStatusAprobarDenegarSolicitud" />
+    <FunctionImportMapping FunctionImportName="updatepass" FunctionName="SAMBHS.Common.DataModel.Store.upDatePass" />
+    <FunctionImportMapping FunctionImportName="updatereportfreeocupacional" FunctionName="SAMBHS.Common.DataModel.Store.updateReportFreeOcupacional" />
+    <FunctionImportMapping FunctionImportName="updatereportfreeparticular" FunctionName="SAMBHS.Common.DataModel.Store.updateReportFreeParticular" />
+    <FunctionImportMapping FunctionImportName="updateserviceaptitude_sp" FunctionName="SAMBHS.Common.DataModel.Store.UPdateserviceAptitude_SP" />
+    <FunctionImportMapping FunctionImportName="updateservicecomponent1_sp" FunctionName="SAMBHS.Common.DataModel.Store.UpdateServiceComponent1_SP" />
+    <FunctionImportMapping FunctionImportName="updateservicecomponent2_sp" FunctionName="SAMBHS.Common.DataModel.Store.UpdateServiceComponent2_SP" />
+    <FunctionImportMapping FunctionImportName="updateservicecomponent3_sp" FunctionName="SAMBHS.Common.DataModel.Store.UpdateServiceComponent3_SP" />
+    <FunctionImportMapping FunctionImportName="updateuser" FunctionName="SAMBHS.Common.DataModel.Store.upDateUser" />
+    <FunctionImportMapping FunctionImportName="updateuserforadmin" FunctionName="SAMBHS.Common.DataModel.Store.upDateUserForAdmin" />
+    <FunctionImportMapping FunctionImportName="valorescomponente_managerreport_sp" FunctionName="SAMBHS.Common.DataModel.Store.ValoresComponente_ManagerReport_SP" />
+    <FunctionImportMapping FunctionImportName="valorescomponenteodontograma1_sp" FunctionName="SAMBHS.Common.DataModel.Store.ValoresComponenteOdontograma1_SP" />
+    <FunctionImportMapping FunctionImportName="valorescomponentesservicio" FunctionName="SAMBHS.Common.DataModel.Store.ValoresComponentesServicio" />
+  </EntityContainerMapping>
+</Mapping>

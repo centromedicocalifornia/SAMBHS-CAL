@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using SAMBHS.CommonWIN;
+using SAMBHS.Common.DataModel;
+
+namespace SAMBHS.Venta.BL
+{
+    public static class VentaHelper
+    {
+        public static string GetPdf(string pstrIdVenta, TipoConstancia tipoConstancia)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var vta = dbContext.venta.FirstOrDefault(p => p.v_IdVenta == pstrIdVenta);
+                    if (vta == null) 
+                        return string.Empty;
+                    else
+                    {
+                        switch (tipoConstancia)
+                        {
+                            case TipoConstancia.PDF: return vta.v_EnlacePdf;
+                            case TipoConstancia.XML: return vta.v_EnlaceXml;
+                            case TipoConstancia.CDR: return vta.v_EnlaceCdr;
+                            case TipoConstancia.PDF_BAJA:
+                                break;
+                            case TipoConstancia.CDR_BAJA:
+                                break;
+                            default: return string.Empty;
+                        }
+                    }
+                }
+
+                return string.Empty;
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+        }
+
+        public enum TipoConstancia
+        {
+            PDF,
+            XML,
+            CDR,
+            PDF_BAJA,
+            CDR_BAJA
+        }
+    }
+}

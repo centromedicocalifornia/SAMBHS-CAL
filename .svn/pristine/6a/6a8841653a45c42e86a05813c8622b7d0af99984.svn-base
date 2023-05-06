@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteTipoCambio" targetNamespace="http://tempuri.org/dsReporteTipoCambio.xsd" xmlns:mstns="http://tempuri.org/dsReporteTipoCambio.xsd" xmlns="http://tempuri.org/dsReporteTipoCambio.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteTipoCambio" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteTipoCambio" msprop:Generator_UserDSName="dsReporteTipoCambio">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteTipoCambio" msprop:Generator_TableClassName="dsReporteTipoCambioDataTable" msprop:Generator_TableVarName="tabledsReporteTipoCambio" msprop:Generator_RowChangedName="dsReporteTipoCambioRowChanged" msprop:Generator_TablePropName="_dsReporteTipoCambio" msprop:Generator_RowDeletingName="dsReporteTipoCambioRowDeleting" msprop:Generator_RowChangingName="dsReporteTipoCambioRowChanging" msprop:Generator_RowEvHandlerName="dsReporteTipoCambioRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteTipoCambioRowDeleted" msprop:Generator_RowClassName="dsReporteTipoCambioRow" msprop:Generator_UserTableName="dsReporteTipoCambio" msprop:Generator_RowEvArgName="dsReporteTipoCambioRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Dia" msprop:Generator_ColumnVarNameInTable="columnDia" msprop:Generator_ColumnPropNameInRow="Dia" msprop:Generator_ColumnPropNameInTable="DiaColumn" msprop:Generator_UserColumnName="Dia" type="xs:int" minOccurs="0" />
+              <xs:element name="TipoCambioCompraA" msprop:Generator_ColumnVarNameInTable="columnTipoCambioCompraA" msprop:Generator_ColumnPropNameInRow="TipoCambioCompraA" msprop:Generator_ColumnPropNameInTable="TipoCambioCompraAColumn" msprop:Generator_UserColumnName="TipoCambioCompraA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TipoCambioVentaA" msprop:Generator_ColumnVarNameInTable="columnTipoCambioVentaA" msprop:Generator_ColumnPropNameInRow="TipoCambioVentaA" msprop:Generator_ColumnPropNameInTable="TipoCambioVentaAColumn" msprop:Generator_UserColumnName="TipoCambioVentaA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TipoCambioCompraC" msprop:Generator_ColumnVarNameInTable="columnTipoCambioCompraC" msprop:Generator_ColumnPropNameInRow="TipoCambioCompraC" msprop:Generator_ColumnPropNameInTable="TipoCambioCompraCColumn" msprop:Generator_UserColumnName="TipoCambioCompraC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TipoCambioVentaC" msprop:Generator_ColumnVarNameInTable="columnTipoCambioVentaC" msprop:Generator_ColumnPropNameInRow="TipoCambioVentaC" msprop:Generator_ColumnPropNameInTable="TipoCambioVentaCColumn" msprop:Generator_UserColumnName="TipoCambioVentaC" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsEmpresa" msprop:Generator_TableClassName="dsEmpresaDataTable" msprop:Generator_TableVarName="tabledsEmpresa" msprop:Generator_RowChangedName="dsEmpresaRowChanged" msprop:Generator_TablePropName="dsEmpresa" msprop:Generator_RowDeletingName="dsEmpresaRowDeleting" msprop:Generator_RowChangingName="dsEmpresaRowChanging" msprop:Generator_RowEvHandlerName="dsEmpresaRowChangeEventHandler" msprop:Generator_RowDeletedName="dsEmpresaRowDeleted" msprop:Generator_RowClassName="dsEmpresaRow" msprop:Generator_UserTableName="dsEmpresa" msprop:Generator_RowEvArgName="dsEmpresaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnNombreEmpresaPropietaria" msprop:Generator_ColumnPropNameInRow="NombreEmpresaPropietaria" msprop:Generator_ColumnPropNameInTable="NombreEmpresaPropietariaColumn" msprop:Generator_UserColumnName="NombreEmpresaPropietaria" type="xs:string" minOccurs="0" />
+              <xs:element name="RucEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnRucEmpresaPropietaria" msprop:Generator_ColumnPropNameInRow="RucEmpresaPropietaria" msprop:Generator_ColumnPropNameInTable="RucEmpresaPropietariaColumn" msprop:Generator_UserColumnName="RucEmpresaPropietaria" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

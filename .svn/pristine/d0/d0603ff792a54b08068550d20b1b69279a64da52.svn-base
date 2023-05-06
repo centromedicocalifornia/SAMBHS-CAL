@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportePlanillaAFP" targetNamespace="http://tempuri.org/dsReportePlanillaAFP.xsd" xmlns:mstns="http://tempuri.org/dsReportePlanillaAFP.xsd" xmlns="http://tempuri.org/dsReportePlanillaAFP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportePlanillaAFP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportePlanillaAFP" msprop:Generator_UserDSName="dsReportePlanillaAFP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReportePlanillaAFP" msprop:Generator_TableClassName="dsReportePlanillaAFPDataTable" msprop:Generator_TableVarName="tabledsReportePlanillaAFP" msprop:Generator_RowChangedName="dsReportePlanillaAFPRowChanged" msprop:Generator_TablePropName="_dsReportePlanillaAFP" msprop:Generator_RowDeletingName="dsReportePlanillaAFPRowDeleting" msprop:Generator_RowChangingName="dsReportePlanillaAFPRowChanging" msprop:Generator_RowEvHandlerName="dsReportePlanillaAFPRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReportePlanillaAFPRowDeleted" msprop:Generator_RowClassName="dsReportePlanillaAFPRow" msprop:Generator_UserTableName="dsReportePlanillaAFP" msprop:Generator_RowEvArgName="dsReportePlanillaAFPRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Afp" msprop:Generator_ColumnVarNameInTable="columnAfp" msprop:Generator_ColumnPropNameInRow="Afp" msprop:Generator_ColumnPropNameInTable="AfpColumn" msprop:Generator_UserColumnName="Afp" type="xs:string" minOccurs="0" />
+              <xs:element name="Trabajador" msprop:Generator_ColumnVarNameInTable="columnTrabajador" msprop:Generator_ColumnPropNameInRow="Trabajador" msprop:Generator_ColumnPropNameInTable="TrabajadorColumn" msprop:Generator_UserColumnName="Trabajador" type="xs:string" minOccurs="0" />
+              <xs:element name="NroCussp" msprop:Generator_ColumnVarNameInTable="columnNroCussp" msprop:Generator_ColumnPropNameInRow="NroCussp" msprop:Generator_ColumnPropNameInTable="NroCusspColumn" msprop:Generator_UserColumnName="NroCussp" type="xs:string" minOccurs="0" />
+              <xs:element name="Dni" msprop:Generator_ColumnVarNameInTable="columnDni" msprop:Generator_ColumnPropNameInRow="Dni" msprop:Generator_ColumnPropNameInTable="DniColumn" msprop:Generator_UserColumnName="Dni" type="xs:string" minOccurs="0" />
+              <xs:element name="Remuneracion" msprop:Generator_ColumnVarNameInTable="columnRemuneracion" msprop:Generator_ColumnPropNameInRow="Remuneracion" msprop:Generator_ColumnPropNameInTable="RemuneracionColumn" msprop:Generator_UserColumnName="Remuneracion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AporteObligatorio" msprop:Generator_ColumnVarNameInTable="columnAporteObligatorio" msprop:Generator_ColumnPropNameInRow="AporteObligatorio" msprop:Generator_ColumnPropNameInTable="AporteObligatorioColumn" msprop:Generator_UserColumnName="AporteObligatorio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PrimaSeguro" msprop:Generator_ColumnVarNameInTable="columnPrimaSeguro" msprop:Generator_ColumnPropNameInRow="PrimaSeguro" msprop:Generator_ColumnPropNameInTable="PrimaSeguroColumn" msprop:Generator_UserColumnName="PrimaSeguro" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ComisionFija" msprop:Generator_ColumnVarNameInTable="columnComisionFija" msprop:Generator_ColumnPropNameInRow="ComisionFija" msprop:Generator_ColumnPropNameInTable="ComisionFijaColumn" msprop:Generator_UserColumnName="ComisionFija" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ComisionRa" msprop:Generator_ColumnVarNameInTable="columnComisionRa" msprop:Generator_ColumnPropNameInRow="ComisionRa" msprop:Generator_ColumnPropNameInTable="ComisionRaColumn" msprop:Generator_UserColumnName="ComisionRa" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalS" msprop:Generator_ColumnVarNameInTable="columnTotalS" msprop:Generator_ColumnPropNameInRow="TotalS" msprop:Generator_ColumnPropNameInTable="TotalSColumn" msprop:Generator_UserColumnName="TotalS" type="xs:string" minOccurs="0" />
+              <xs:element name="Ccosto" msprop:Generator_ColumnVarNameInTable="columnCcosto" msprop:Generator_ColumnPropNameInRow="Ccosto" msprop:Generator_ColumnPropNameInTable="CcostoColumn" msprop:Generator_UserColumnName="Ccosto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

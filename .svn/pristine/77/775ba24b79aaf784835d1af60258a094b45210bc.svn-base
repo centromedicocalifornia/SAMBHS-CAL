@@ -1,0 +1,222 @@
+﻿using System;
+using System.ComponentModel;
+using System.Linq;
+using System.Windows.Forms;
+using Infragistics.Win.UltraWinSchedule;
+using SAMBHS.Windows.SigesoftIntegration.UI;
+using SAMBHS.Windows.SigesoftIntegration.UI.Dtos;
+using System.Threading.Tasks;
+using SAMBHS.Common.BE;
+using Task = System.Threading.Tasks.Task;
+
+namespace SAMBHS.Windows.WinClient.UI.Sigesoft
+{
+    public partial class frmAgendarTrabajador : Form
+    {
+        private string _personId;
+        private DateTime? _fechaNacimiento;
+        private int _sexTypeId;
+        public frmAgendarTrabajador()
+        {
+            InitializeComponent();
+        }
+
+        private void frmAgendarTrabajador_Load(object sender, EventArgs e)
+        {
+            AgendaBl.LlenarComboTipoDocumento(cboTipoDocumento);
+            AgendaBl.LlenarComboGennero(cboGenero);
+            AgendaBl.LlenarComboTipoServicio(cboTipoServicio);
+        }
+
+        private void btnschedule_Click(object sender, EventArgs e)
+        {
+            AgendarServicio();
+        }
+
+        public BindingList<ventadetalleDto> ListadoVentaDetalle = new BindingList<ventadetalleDto>();
+        private void AgendarServicio()
+        {
+            var oServiceDto = OServiceDto();
+            Task.Factory.StartNew(() =>
+            {
+                ListadoVentaDetalle = AgendaBl.SheduleService(oServiceDto);
+            }).ContinueWith(t =>
+            {
+                if (!ListadoVentaDetalle.Any()) return;
+                DialogResult = DialogResult.OK;
+                Close();
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+
+        }
+
+        private ServiceDto OServiceDto()
+        {
+            var oServiceDto = new ServiceDto
+            {
+                ProtocolId = cboProtocolo.SelectedValue.ToString(),
+                PersonId = _personId,
+                MasterServiceId = int.Parse(cboServicio.SelectedValue.ToString()),
+                ServiceStatusId = (int) ServiceStatus.Iniciado,
+                AptitudeStatusId = (int) AptitudeStatus.SinAptitud,
+                ServiceDate = null,
+                GlobalExpirationDate = null,
+                ObsExpirationDate = null,
+                FlagAgentId = 1,
+                Motive = string.Empty,
+                IsFac = 0,
+                FechaNacimiento =_fechaNacimiento,
+                GeneroId =_sexTypeId
+            };
+            return oServiceDto;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void btnBuscarTrabajador_Click(object sender, EventArgs e)
+        {
+            var datosTrabajador = AgendaBl.GetDatosTrabajador(txtSearchNroDocument.Text);
+            if (datosTrabajador != null)
+            {
+                LlenarCampos(datosTrabajador);
+                _sexTypeId = datosTrabajador.GeneroId;
+                _fechaNacimiento = datosTrabajador.FechaNacimiento;
+            }
+           else TrabajadorNoEncontrado(txtSearchNroDocument.Text);
+        }
+
+        private void TrabajadorNoEncontrado(string nrodocumento)
+        {
+            MessageBox.Show(@"El trabajador con el nro. documento " + nrodocumento + @" no se encuentra en registrado",
+                @"Información");
+            LimparControlesTrabajador();
+            txtNroDocumento.Text = txtSearchNroDocument.Text;
+            txtNombres.Focus();
+        }
+
+        private void LimparControlesTrabajador()
+        {
+            txtNombres.Text = "";
+            txtApellidoPaterno.Text = "";
+            txtApellidoMaterno.Text = "";
+            cboTipoDocumento.SelectedValue = "-1";
+            cboGenero.SelectedValue = "-1";
+            txtNroDocumento.Text = "";
+        }
+
+        private void LlenarCampos(AgendaBl.DatosTrabajador datosTrabajador)
+        {
+            txtNombres.Text = datosTrabajador.Nombres;
+            txtApellidoPaterno.Text = datosTrabajador.ApellidoPaterno;
+            txtApellidoMaterno.Text = datosTrabajador.ApellidoMaterno;
+            cboTipoDocumento.SelectedValue = datosTrabajador.TipoDocumentoId;
+            txtNroDocumento.Text = datosTrabajador.NroDocumento;
+            cboGenero.SelectedValue = datosTrabajador.GeneroId;
+            dtpBirthdate.Value = datosTrabajador.FechaNacimiento;
+            _personId = datosTrabajador.PersonId;
+        }
+
+        private void cboTipoServicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTipoServicio.SelectedIndex == 0 || cboTipoServicio.SelectedIndex == -1)
+                AgendaBl.LlenarComboServicio(cboServicio, 1000);
+            else
+                AgendaBl.LlenarComboServicio(cboServicio, int.Parse(cboTipoServicio.SelectedValue.ToString()));
+        }
+        
+        private void cboServicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboServicio.SelectedIndex == 0 || cboServicio.SelectedIndex == -1)
+                AgendaBl.LlenarComboProtocolo(cboProtocolo, 1000, 1000);
+            else
+                AgendaBl.LlenarComboProtocolo(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()));
+        }
+        
+        private void cboProtocolo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboProtocolo.SelectedIndex == 0 || cboProtocolo.SelectedIndex == -1)
+                LimpiarControlesProtocolo();
+            else
+                LlenarControlesProtocolo();
+        }
+
+        private void LimpiarControlesProtocolo()
+        {
+            txtGeso.Text = "";
+            txtTipoEso.Text = "";
+            txtEmpresaCliente.Text = "";
+            txtEmpresaEmpleadora.Text = "";
+            txtEmpresaTrabajo.Text = "";
+        }
+
+        private void LlenarControlesProtocolo()
+        {
+            var datosProtocolo = AgendaBl.GetDatosProtocolo(cboProtocolo.SelectedValue.ToString());
+            txtGeso.Text = datosProtocolo.Geso;
+            txtTipoEso.Text = datosProtocolo.TipoEso;
+            txtEmpresaCliente.Text = datosProtocolo.EmpresaCliente;
+            txtEmpresaEmpleadora.Text = datosProtocolo.EmpresaEmpleadora;
+            txtEmpresaTrabajo.Text = datosProtocolo.EmpresaTrabajo;
+        }
+
+        private void btnSavePacient_Click(object sender, EventArgs e)
+        {
+            GrabarTrabajadorNuevo();
+        }
+
+        private void GrabarTrabajadorNuevo()
+        {
+            PersonDto oPersonDto = new PersonDto
+            {
+                Nombres = txtNombres.Text,
+                TipoDocumento = int.Parse(cboTipoDocumento.SelectedValue.ToString()),
+                NroDocumento = txtNroDocumento.Text,
+                ApellidoPaterno = txtApellidoMaterno.Text,
+                ApellidoMaterno = txtApellidoMaterno.Text,
+                GeneroId = int.Parse(cboGenero.SelectedValue.ToString()),
+                FechaNacimiento = dtpBirthdate.Value
+            };
+            _personId = AgendaBl.AddPerson(oPersonDto);
+            if (_personId == "El paciente ya se encuentra registrado")
+            {
+                MessageBox.Show(@"Este paciente ya se encu", @"Información");
+                return; 
+            } 
+            _sexTypeId = oPersonDto.GeneroId;
+            _fechaNacimiento = oPersonDto.FechaNacimiento;
+            MessageBox.Show(@"Se grabó correctamente", @"Información");
+        }
+
+        #region Enumeradores
+
+        public enum ServiceType
+        {
+            Empresarial = 1,
+            Particular = 9,
+            Preventivo = 11
+        }
+
+        public enum ServiceStatus
+        {
+            PorIniciar = 1,
+            Iniciado = 2,
+            Culminado = 3,
+            Incompleto = 4,
+            Cancelado = 5,
+            EsperandoAptitud = 6
+        }
+
+        public enum AptitudeStatus
+        {
+            Apto = 2,
+            NoApto = 3,
+            AptoObs = 4,
+            AptRestriccion = 5,
+            SinAptitud = 1
+        }
+
+        #endregion
+    }
+}

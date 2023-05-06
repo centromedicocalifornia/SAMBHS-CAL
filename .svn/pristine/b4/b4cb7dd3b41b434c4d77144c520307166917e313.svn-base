@@ -1,0 +1,84 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SAMBHS.Windows.WinClient.UI" GeneratedClassName="UserConfig">
+  <Profiles />
+  <Settings>
+    <Setting Name="appEstablecimientoPredeterminado" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="appAlmacenPredeterminado" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="csUsuario" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="csServidor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sistema4-pc</Value>
+    </Setting>
+    <Setting Name="csPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123456</Value>
+    </Setting>
+    <Setting Name="csTipoMotorBD" Type="SAMBHS.Common.Resource.TipoMotorBD" Scope="User">
+      <Value Profile="(Default)">MSSQLServer</Value>
+    </Setting>
+    <Setting Name="csTipoDocumentoVentaRapida" Type="System.String" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="appTipoBusquedaPredeterminadaProducto" Type="SAMBHS.Common.Resource.TipoBusquedaProductos" Scope="User">
+      <Value Profile="(Default)">Ambos</Value>
+    </Setting>
+    <Setting Name="repCurrentNode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N</Value>
+    </Setting>
+    <Setting Name="appPermiteIntercambiarDocumentosVR" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ImpresionDirectaTesoreria" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NroTicket" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sacRuc" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sacUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sacClave" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="appEmisorComp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ImpresioDirectaVentaRapida" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MostrarSoloFormasPagoAlmacenActual" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SerieCaja" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TipoDocumentoCajaChica" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CantVenta" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="CantCompra" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ThermalPrinter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TSC TTP-244 Plus (Copiar 1)</Value>
+    </Setting>
+    <Setting Name="PermiteRealizarCobranzasImporteCero" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RealizarCalculoDespachoPedido" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AnularGuiaInternaExtraccion" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

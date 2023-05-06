@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteLibroInventarioPatrimonioNeto" targetNamespace="http://tempuri.org/dsReporteLibroInventarioPatrimonioNeto.xsd" xmlns:mstns="http://tempuri.org/dsReporteLibroInventarioPatrimonioNeto.xsd" xmlns="http://tempuri.org/dsReporteLibroInventarioPatrimonioNeto.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteLibroInventarioPatrimonioNeto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteLibroInventarioPatrimonioNeto" msprop:Generator_UserDSName="dsReporteLibroInventarioPatrimonioNeto">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteLibroInventarioPatrimonioNeto" msprop:Generator_TableClassName="dsReporteLibroInventarioPatrimonioNetoDataTable" msprop:Generator_TableVarName="tabledsReporteLibroInventarioPatrimonioNeto" msprop:Generator_RowChangedName="dsReporteLibroInventarioPatrimonioNetoRowChanged" msprop:Generator_TablePropName="_dsReporteLibroInventarioPatrimonioNeto" msprop:Generator_RowDeletingName="dsReporteLibroInventarioPatrimonioNetoRowDeleting" msprop:Generator_RowChangingName="dsReporteLibroInventarioPatrimonioNetoRowChanging" msprop:Generator_RowEvHandlerName="dsReporteLibroInventarioPatrimonioNetoRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteLibroInventarioPatrimonioNetoRowDeleted" msprop:Generator_RowClassName="dsReporteLibroInventarioPatrimonioNetoRow" msprop:Generator_UserTableName="dsReporteLibroInventarioPatrimonioNeto" msprop:Generator_RowEvArgName="dsReporteLibroInventarioPatrimonioNetoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Capital" msprop:Generator_ColumnVarNameInTable="columnCapital" msprop:Generator_ColumnPropNameInRow="Capital" msprop:Generator_ColumnPropNameInTable="CapitalColumn" msprop:Generator_UserColumnName="Capital" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CapitalAdicional" msprop:Generator_ColumnVarNameInTable="columnCapitalAdicional" msprop:Generator_ColumnPropNameInRow="CapitalAdicional" msprop:Generator_ColumnPropNameInTable="CapitalAdicionalColumn" msprop:Generator_UserColumnName="CapitalAdicional" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AccionesInversion" msprop:Generator_ColumnVarNameInTable="columnAccionesInversion" msprop:Generator_ColumnPropNameInRow="AccionesInversion" msprop:Generator_ColumnPropNameInTable="AccionesInversionColumn" msprop:Generator_UserColumnName="AccionesInversion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ExcedenteRevaluacion" msprop:Generator_ColumnVarNameInTable="columnExcedenteRevaluacion" msprop:Generator_ColumnPropNameInRow="ExcedenteRevaluacion" msprop:Generator_ColumnPropNameInTable="ExcedenteRevaluacionColumn" msprop:Generator_UserColumnName="ExcedenteRevaluacion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ReservaLegal" msprop:Generator_ColumnVarNameInTable="columnReservaLegal" msprop:Generator_ColumnPropNameInRow="ReservaLegal" msprop:Generator_ColumnPropNameInTable="ReservaLegalColumn" msprop:Generator_UserColumnName="ReservaLegal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OtrasReservas" msprop:Generator_ColumnVarNameInTable="columnOtrasReservas" msprop:Generator_ColumnPropNameInRow="OtrasReservas" msprop:Generator_ColumnPropNameInTable="OtrasReservasColumn" msprop:Generator_UserColumnName="OtrasReservas" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ResultadosAcumulados" msprop:Generator_ColumnVarNameInTable="columnResultadosAcumulados" msprop:Generator_ColumnPropNameInRow="ResultadosAcumulados" msprop:Generator_ColumnPropNameInTable="ResultadosAcumuladosColumn" msprop:Generator_UserColumnName="ResultadosAcumulados" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Nota" msprop:Generator_ColumnVarNameInTable="columnNota" msprop:Generator_ColumnPropNameInRow="Nota" msprop:Generator_ColumnPropNameInTable="NotaColumn" msprop:Generator_UserColumnName="Nota" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

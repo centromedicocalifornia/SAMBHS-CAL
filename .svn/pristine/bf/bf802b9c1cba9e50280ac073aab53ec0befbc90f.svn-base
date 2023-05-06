@@ -1,0 +1,430 @@
+﻿using System.Linq;
+using System.Net;
+using System.Web;
+using System.IO;
+using System.Drawing;
+using System.Text.RegularExpressions;
+
+namespace SAMBHS.Security.BL
+{
+    /// <summary>
+    /// Consulta en Reniec.
+    /// </summary>
+    public class ConsultaPersona
+    {
+        #region Propiedades
+
+        /// <summary>
+        /// Devuelve la imagen para el reto capcha
+        /// </summary>
+        public Image GetCapcha { get { return ReadCapcha(); } }
+
+        /// <summary>
+        /// Si no Hubo error en la lectura de datos devuelve los nombres 
+        /// <para>de la persona caso contrario devuelve <c>string</c>.Empty</para>
+        /// </summary>
+        public string Nombres { get { return _nombres; } }
+
+        /// <summary>
+        /// Si no Hubo error en la lectura de datos devuelve el Apellido Paterno
+        /// <para>de la persona caso contrario devuelve <c>string</c>.Empty</para>
+        /// </summary>
+        public string ApePaterno { get { return _apePaterno; } }
+
+        /// <summary>
+        /// Si no Hubo error en la lectura de datos devuelve el Apellido Materno
+        /// <para>de la persona caso contrario devuelve <c>string</c>.Empty</para>
+        /// </summary>
+        public string ApeMaterno { get { return _apeMaterno; } }
+
+        /// <summary>
+        /// Devuelve el resultado de la busqueda de DNI
+        /// </summary>
+        public Resul GetResul { get { return _state; } }
+
+        #endregion
+
+        #region Fields
+        private Resul _state;
+        private string _nombres;
+        private string _apePaterno;
+        private string _apeMaterno;
+        private readonly CookieContainer _myCookie;
+        #endregion
+
+        #region Private Method
+        private Image ReadCapcha()
+        {
+            var myWebRequest = (HttpWebRequest)WebRequest.Create("https://cel.reniec.gob.pe/valreg/codigo.do");
+            myWebRequest.CookieContainer = _myCookie;
+            myWebRequest.Proxy = null;
+            myWebRequest.Credentials = CredentialCache.DefaultCredentials;
+
+            using (var myWebResponse = (HttpWebResponse)myWebRequest.GetResponse())
+            {
+                using (var myImgStream = myWebResponse.GetResponseStream())
+                {
+                    return myImgStream !=null ? Image.FromStream(myImgStream) : null;
+                }
+            }
+        }
+        #endregion
+
+        #region Enums
+        public enum Resul
+        {
+            /// <summary>
+            /// Se encontro la persona
+            /// </summary>
+            Ok = 0,
+            /// <summary>
+            /// No se encontro la persona
+            /// </summary>
+            NoResul = 1,
+            /// <summary>
+            /// la imagen capcha no es valida
+            /// </summary>
+            ErrorCapcha = 2,
+            /// <summary>
+            /// Error no especificado
+            /// </summary>
+            Error = 3,
+        }
+        #endregion
+
+        #region Public Method
+        public ConsultaPersona()
+        {
+            _myCookie = null;
+            _myCookie = new CookieContainer();
+
+            //Permitir SSL
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
+            ReadCapcha();
+        }
+        public void GetInfo(string numDni, string imgCapcha)
+        {
+            var myUrl = string.Format("https://cel.reniec.gob.pe/valreg/valreg.do?accion=buscar&nuDni={0}&imagen={1}",
+                numDni, imgCapcha);
+
+            var myWebRequest = (HttpWebRequest)WebRequest.Create(myUrl);
+            myWebRequest.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0";//esto creo que lo puse por gusto :/
+            myWebRequest.CookieContainer = _myCookie;
+            myWebRequest.Credentials = CredentialCache.DefaultCredentials;
+            myWebRequest.Proxy = null;
+            using (var myHttpWebResponse = (HttpWebResponse)myWebRequest.GetResponse())
+            {
+                var myStream = myHttpWebResponse.GetResponseStream();
+                if (myStream == null)
+                {
+                    _state = Resul.Error;
+                    return;
+                }
+
+                var myStreamReader = new StreamReader(myStream);
+                var webSource = HttpUtility.HtmlDecode(myStreamReader.ReadToEnd());
+                var split = webSource.Split('<', '>', '\n', '\r');
+                var resul = (from t in split
+                             where !string.IsNullOrEmpty(t.Trim())
+                             select t.Trim()).ToList();
+
+                //quitamos todos los caracteres nulos
+
+                // Anlizando la el arreglo "_resul" llegamos a la siguiente conclusion
+                // 
+                // _resul.Count == 217 cuando nos equivocamos en el captcha
+                // _resul.Count == 232 cuando todo salio ok
+                // _resul.Count == 222 cuando no existe el DNI
+                //
+
+                switch (resul.Count)
+                {
+                    case 217:
+                        _state = Resul.ErrorCapcha;
+                        break;
+                    case 232:
+                        _state = Resul.Ok;
+                        break;
+                    case 222:
+                        _state = Resul.NoResul;
+                        break;
+                    default:
+                        _state = Resul.Error;
+                        break;
+                }
+
+                if (_state == Resul.Ok)
+                {
+                    _nombres = resul[185];
+                    _apePaterno = resul[186];
+                    _apeMaterno = resul[187];
+                }
+            }
+        }
+        #endregion
+    }
+
+    /// <summary>
+    /// Consulta en SUNAT
+    /// </summary>
+    public class ConsultaContribuyente
+    {
+        #region Propiedades
+
+        public Image GetCapcha { get { return ReadCapcha(); } }
+
+        public string RazonSocial { get { return _razonSocial; } }
+
+        public string FechaInscripcion { get { return _fechaInscripcion; } }
+
+        public string FechaInicioActividades { get { return _fechaInicioActividades; } }
+
+        public string EstadoContribuyente { get { return _estadoContribuyente; } }
+
+        public string Condicion { get { return _condicion; } }
+
+        public string DireccionFiscal { get { return _direccionFiscal; } }
+
+        public string Telefonos { get { return _telefonos; } }
+
+        public string ActividadComercioExterior { get { return _actividadComercioExterior; } }
+
+        public string SistemaContable { get { return _sistemaContable; } }
+
+        public string TipoContribuyente { get { return _tipoContribuyente; } }
+
+        public Resul GetResul { get { return _state; } }
+
+        #endregion
+
+        #region Fields
+        private Resul _state;
+        private string _razonSocial;
+        private string _fechaInscripcion;
+        private string _fechaInicioActividades;
+        private string _estadoContribuyente;
+        private string _condicion;
+        private string _direccionFiscal;
+        private string _telefonos;
+        private string _actividadComercioExterior;
+        private string _sistemaContable;
+        private string _tipoContribuyente;
+        private string _actividadEconomica;
+        private readonly CookieContainer _myCookie;
+        #endregion
+
+        #region Private Method
+        private Image ReadCapcha()
+        {
+            var myWebRequest = (HttpWebRequest)WebRequest.Create("http://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/captcha?accion=image");
+            myWebRequest.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0";//esto creo que lo puse por gusto :/
+            myWebRequest.CookieContainer = _myCookie;
+            myWebRequest.Credentials = CredentialCache.DefaultCredentials;
+            myWebRequest.Proxy = null;
+            myWebRequest.ContentType = "text/xml;charset=\"utf-8\"";
+            myWebRequest.Accept = "text/xml";
+            myWebRequest.Method = "POST";
+
+            using (var myWebResponse = myWebRequest.GetResponse())
+            {
+                var myImgStream = myWebResponse.GetResponseStream();
+                return myImgStream != null ? Image.FromStream(myImgStream) : null;
+            }
+        }
+        #endregion
+
+        #region Enum
+        public enum Resul
+        {
+            Ok = 0,
+            NoResul = 1,
+            ErrorCapcha = 2,
+            Error = 3,
+        }
+        #endregion
+
+        #region Public Methods
+        public ConsultaContribuyente()
+        {
+            _myCookie = null;
+            _myCookie = new CookieContainer();
+
+            //Permitir SSL
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
+            ReadCapcha();
+        }
+
+        public void GetInfo(string numDni, string imgCapcha)
+        {
+            var tipoPersona = numDni.Substring(0, 1) == "2" ? "1" : "0";
+            var myUrl = string.Format("http://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias?accion=consPorRuc&nroRuc={0}&codigo={1}&tipdoc={2}", numDni, imgCapcha, tipoPersona);
+
+            var myWebRequest = (HttpWebRequest)WebRequest.Create(myUrl);
+            myWebRequest.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0";//esto creo que lo puse por gusto :/
+            myWebRequest.CookieContainer = _myCookie;
+            myWebRequest.Credentials = CredentialCache.DefaultCredentials;
+            myWebRequest.Proxy = null;
+
+            var myHttpWebResponse = (HttpWebResponse)myWebRequest.GetResponse();
+            var myStream = myHttpWebResponse.GetResponseStream();
+            if (myStream == null)
+            {
+                _state = Resul.Error;
+                return;
+            }
+            var myStreamReader = new StreamReader(myStream);
+            var s = myStreamReader.ReadToEnd();
+            using (myStreamReader)
+            {
+                var webSource = HttpUtility.HtmlDecode(s);
+
+                webSource = webSource.Replace("=\"bg\" colspan=3>", "");
+                webSource = webSource.Replace("</td>", "");
+                webSource = webSource.Replace("\r\n ", "");
+                webSource = webSource.Replace("\t", "");
+                webSource = webSource.Replace("=\"bg\" colspan=1>", "");
+                webSource = webSource.Replace("</tr>", "");
+                webSource = webSource.Replace("\"", "");
+                webSource = webSource.Replace("<td width=27% colspan=1 class=bgn>Fecha de Inicio de Actividades:", "");
+                webSource = webSource.Replace("-->", "");
+                webSource = webSource.Replace("\r\n<!--", "");
+                webSource = webSource.Replace("SE COMENTO POR INDICACION DEL PASE PAS20134EA20000207", "");
+                webSource = webSource.Replace("=bgn colspan=1 >", "");
+                webSource = webSource.Replace("<tr>", "");
+                webSource = webSource.Replace("<a target=_blank href=http://www.sunat.gob.pe/orientacion/Nohallados/index.html title=Deberá declarar el nuevo domicilio fiscal o confirmar el señalado en el RUC. Para ello, deberá acercarse a los Centros de Servicios al Contribuyente con los documentos que sustenten el nuevo domicilio. >", "");
+                webSource = webSource.Replace("</a>", "");
+                webSource = webSource.Replace("<html>\r\n<head>\r\n<title>Consulta RUC</title>\r\n\r\n<link href=/a/css/estilos2_0.css rel=stylesheet type=text/css>\r\n</head>\r\n<script language=JavaScript src=/a/js/js.js></script>\r\n<link href=/a/css/estilos2_0.css rel=stylesheet>\r\n<script languaje=JavaScript type=text/javascript>\r\nfunction validaemail(F) {\r\nvar estrep=document.getElementById(div_estrep);\r\nvar progress=document.getElementById(div_progress);\r\nemail = F.email.value;\r\nvar ok = validacorreo(email);\r\nif (!ok) {\r\nalert(Email no v�lido);\r\nreturn false\r\n}\r\nF.correo.value = email.value;\r\n//estrep.style.display=none;\r\n//progress.style.display=block;\r\n//window.setInterval(avance(),20);\r\nreturn true;\r\n}\r\n\r\nfunction submitLocAnex(){\r\nvar estrep=document.getElementById(div_estrep);\r\nvar progress=document.getElementById(div_progress);\r\n//document.formLocAnex.submit();\r\nestrep.style.display=none;\r\nprogress.style.display=block;\r\nwindow.setInterval(avance(),20);\r\n}\r\n/*\r\nSWF-[PAS20145E210000234]:R_DSNT_0060_informacion_consulta_ruc    \r\n*/  \r\nfunction submitIGVImpuesto(){\r\nvar estrep=document.getElementById(div_estrep);\r\nvar progress=document.getElementById(div_progress);\r\n//document.formLocAnex.submit();\r\nestrep.style.display=none;\r\nprogress.style.display=block;\r\nwindow.setInterval(avance(),20);\r\n}\r\n\r\n\r\nfunction submitRetencion(){\r\nvar estrep=document.getElementById(div_estrep);\r\nvar progress=document.getElementById(div_progress);\r\n//document.formLocAnex.submit();\r\nestrep.style.display=none;\r\nprogress.style.display=block;\r\nwindow.setInterval(avance(),20);\r\n}\r\n\r\nfunction submitRentaSalReg(){\r\nvar estrep=document.getElementById(div_estrep);\r\nvar progress=document.getElementById(div_progress);\r\n//document.formLocAnex.submit();\r\nestrep.style.display=none;\r\nprogress.style.display=block;\r\nwindow.setInterval(avance(),20);\r\n}\r\n\r\n\r\n/*\r\nSWF-[PAS20145E210000234]:R_DSNT_0060_informacion_consulta_ruc    \r\n*/\r\n\r\nfunction submitRepLeg(){\r\nvar estrep=document.getElementById(div_estrep);\r\nvar progress=document.getElementById(div_progress);\r\n//document.formRepLeg.submit();\r\nestrep.style.display=none;\r\nprogress.style.display=block;\r\nwindow.setInterval(avance(),20);\r\n}\r\n\r\nfunction submitActPro(){\r\nvar estrep=document.getElementById(div_estrep);\r\nvar progress=document.getElementById(div_progress);\r\n//document.formRepLeg.submit();\r\nestrep.style.display=none;\r\nprogress.style.display=block;\r\nwindow.setInterval(avance(),20);\r\n}\r\n\r\nfunction submitInforHist(){\r\nvar estrep=document.getElementById(div_estrep);\r\nvar progress=document.getElementById(div_progress);\r\n//document.forminfoHist.submit();\r\nestrep.style.display=none;\r\nprogress.style.display=block;\r\nwindow.setInterval(avance(),20);\r\n}\r\nfunction cargar(){\r\ndocument.formEnviar.pagina.value=datosRuc;\r\ndocument.formEnviar.email.value=;\r\n}\r\nfunction Imprimible(){var print = window.open(, versionImprimible);var valor = document.getElementById(print).innerHTML;\r\nprint.document.write(<html><title>Consulta RUC: versión Imprimible</title><link href='../../../a/css/estilos2_0.css' rel='stylesheet' type='text/css'><body > + valor + <br><br><input class=form-button type='button' name='imprimir' value='Imprimir' onclick='window.print();'></body></html>);print.document.close();\r\n}\r\n\r\nfunction validaFrameNulo(){  if(window.parent.leftFrame != null){  window.parent.leftFrame.goRefresh();  }  /*window.parent.resetContPag(); */  cargar();\r\n}\r\n</script>\r\n\r\n\r\n\r\n<body onload=JavaScript:validaFrameNulo(); >\r\n<table border=0 cellpadding=2 cellspacing=3 width=100% class=form-table>                                  <td width=18% colspan=1  class=bgn>Número de RUC:            <td  class", "");
+                webSource = webSource.Replace("=bgncolspan=1>", "");
+                webSource = webSource.Replace("=bgn colspan=1>", "");
+                webSource = webSource.Replace("Principal    -", "");
+                webSource = webSource.Replace("<!--SC003-2015 Inicio", "");
+                webSource = webSource.Replace("<!--SC003-2015 Fin", "");
+                webSource = webSource.Replace("<br>", "");
+                //10081585500 test mas de una actividad
+                
+                var resul = Regex.Split(webSource, "<td class");
+                string razonSocial;
+                switch (tipoPersona)
+                {
+                    case "0":
+                        if ((resul.GetUpperBound(0) == 78 || resul.GetUpperBound(0) == 82) && resul[7].Trim() != "Afecto al Nuevo RUS:")
+                        {
+                            razonSocial = resul[0];
+                            _razonSocial = razonSocial.Split('-')[1].Trim();
+                            _tipoContribuyente = resul[2].Trim();
+                            _fechaInscripcion = resul[8].Trim();
+                            _fechaInicioActividades = resul[9].Trim();
+                            _estadoContribuyente = resul[11].Trim();
+                            _condicion = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[14].Trim() : resul[15].Trim();
+                            _direccionFiscal = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[16].Trim() : resul[17].Trim();
+                            _telefonos = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[18].Trim() : resul[19].Trim();
+                            _actividadComercioExterior = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[24].Trim() : resul[25].Trim();
+                            _sistemaContable = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[26].Trim() : resul[27].Trim();
+                            _actividadEconomica = resul[74].Trim();
+                            _state = Resul.Ok;
+                            break;
+                        }
+                        
+                        if ((resul.GetUpperBound(0) == 78 || resul.GetUpperBound(0) == 82) && resul[7].Trim() == "Afecto al Nuevo RUS:")
+                        {
+                            razonSocial = resul[0];
+                            _razonSocial = razonSocial.Split('-')[1].Trim();
+                            _tipoContribuyente = resul[2].Trim();
+                            _fechaInscripcion = resul[8].Trim();
+                            _fechaInicioActividades = resul[10].Trim();
+                            _estadoContribuyente = resul[13].Trim();
+                            _condicion = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[16].Trim() : resul[17].Trim();
+                            _direccionFiscal = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[18].Trim() : resul[19].Trim();
+                            _telefonos = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[20].Trim() : resul[21].Trim();
+                            _actividadComercioExterior = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[26].Trim() : resul[27].Trim();
+                            _sistemaContable = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[28].Trim() : resul[29].Trim();
+                            _actividadEconomica = resul[74].Trim();
+                            _state = Resul.Ok;
+                            break;
+                        }
+
+                        if (resul.GetUpperBound(0) >= 77 && resul[7].Trim() != "Afecto al Nuevo RUS:")
+                        {
+                            razonSocial = resul[4];
+                            _razonSocial = razonSocial.Split('-')[1].Trim();
+                            _tipoContribuyente = resul[2].Trim();
+                            _fechaInscripcion = resul[8].Trim();
+                            _fechaInicioActividades = resul[9].Trim();
+                            _estadoContribuyente = resul[11].Trim();
+                            _condicion = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[14].Trim() : resul[15].Trim();
+                            _direccionFiscal = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[16].Trim() : resul[17].Trim();
+                            _telefonos = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[18].Trim() : resul[19].Trim();
+                            _actividadComercioExterior = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[24].Trim() : resul[25].Trim();
+                            _sistemaContable = resul[11].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[26].Trim() : resul[27].Trim();
+                            _actividadEconomica = resul[74].Trim();
+                            _state = Resul.Ok;
+                        }
+                        else if (resul.GetUpperBound(0) >= 77 && resul[7].Trim() == "Afecto al Nuevo RUS:")
+                        {
+                            razonSocial = resul[4];
+                            _razonSocial = razonSocial.Split('-')[1].Trim();
+                            _tipoContribuyente = resul[2].Trim();
+                            _fechaInscripcion = resul[10].Trim();
+                            _fechaInicioActividades = resul[11].Trim();
+                            _estadoContribuyente = resul[13].Trim();
+                            _condicion = resul[13].Trim() != "BAJA DE OFICIO" && resul[13].Trim() != "BAJA DEFINITIVA" ? resul[16].Trim() : resul[17].Trim();
+                            _direccionFiscal = resul[13].Trim() != "BAJA DE OFICIO" && resul[13].Trim() != "BAJA DEFINITIVA" ? resul[18].Trim() : resul[19].Trim();
+                            _telefonos = resul[13].Trim() != "BAJA DE OFICIO" && resul[13].Trim() != "BAJA DEFINITIVA" ? resul[20].Trim() : resul[21].Trim();
+                            _actividadComercioExterior = resul[13].Trim() != "BAJA DE OFICIO" && resul[11].Trim() != "BAJA DEFINITIVA" ? resul[26].Trim() : resul[27].Trim();
+                            _sistemaContable = resul[13].Trim() != "BAJA DE OFICIO" && resul[13].Trim() != "BAJA DEFINITIVA" ? resul[28].Trim() : resul[29].Trim();
+                            _actividadEconomica = resul[74].Trim();
+                            _state = Resul.Ok;
+                        }
+                        else if (resul.GetUpperBound(0) == 3)
+                        {
+                            _state = Resul.NoResul;
+                        }
+                        else if (resul.GetUpperBound(0) == 0)
+                        {
+                            _state = Resul.ErrorCapcha;
+                        }
+                        else
+                        {
+                            _state = Resul.Error;
+                        }
+                        break;
+
+                    case "1":
+                        if (resul.GetUpperBound(0) >= 73)
+                        {
+                            razonSocial = resul[0];
+                            _razonSocial = razonSocial.Split('-')[1].Trim();
+                            _tipoContribuyente = resul[2].Trim();
+                            _fechaInscripcion = resul[6].Trim();
+                            _fechaInicioActividades = resul[7].Trim();
+                            _estadoContribuyente = resul[9].Trim();
+                            _condicion = resul[9].Trim() != "BAJA DE OFICIO" && resul[9].Trim() != "BAJA DEFINITIVA" ? resul[12].Trim() : resul[13].Trim();
+                            _direccionFiscal = resul[9].Trim() != "BAJA DE OFICIO" && resul[9].Trim() != "BAJA DEFINITIVA" ? resul[14].Trim() : resul[15].Trim();
+                            _telefonos = resul[9].Trim() != "BAJA DE OFICIO" && resul[9].Trim() != "BAJA DEFINITIVA" ? resul[16].Trim() : resul[17].Trim();
+                            _actividadComercioExterior = resul[9].Trim() != "BAJA DE OFICIO" && resul[9].Trim() != "BAJA DEFINITIVA" ? resul[22].Trim() : resul[23].Trim();
+                            _sistemaContable = resul[9].Trim() != "BAJA DE OFICIO" && resul[9].Trim() != "BAJA DEFINITIVA" ? resul[24].Trim() : resul[25].Trim();
+                            _actividadEconomica = resul[66].Trim();
+                            _state = Resul.Ok;
+                        }
+                        else if (resul.GetUpperBound(0) == 3)
+                        {
+                            _state = Resul.NoResul;
+                        }
+                        else if (resul.GetUpperBound(0) == 0)
+                        {
+                            _state = Resul.ErrorCapcha;
+                        }
+                        else
+                        {
+                            _state = Resul.Error;
+                        }
+                        break;
+                }
+            }
+        }
+        #endregion
+    }
+}
+

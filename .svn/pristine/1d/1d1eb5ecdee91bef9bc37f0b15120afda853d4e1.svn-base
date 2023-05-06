@@ -1,0 +1,2820 @@
+﻿using SAMBHS.Common.BE;
+using SAMBHS.Common.DataModel;
+using SAMBHS.Common.Resource;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Dynamic;
+using System.Threading.Tasks;
+using SAMBHS.CommonWIN.BL;
+using System.Data.Objects;
+using System.Text.RegularExpressions;
+using System.Transactions;
+using SAMBHS.Common.BL;
+using System.ComponentModel;
+
+namespace SAMBHS.Venta.BL
+{
+    public class ClienteBL
+    {
+        public List<clienteshortDto> ObtenerListadoCliente(ref OperationResult pobjOperationResult, string pstrSortExpression, string pstrFilterExpression, string TipoBusqueda = null)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var query = from A in dbContext.cliente
+                                join J1 in dbContext.systemuser on new { i_InsertUserId = A.i_InsertaIdUsuario.Value }
+                                equals new { i_InsertUserId = J1.i_SystemUserId } into J1_join
+                                from J1 in J1_join.DefaultIfEmpty()
+
+                                join J2 in dbContext.systemuser on new { i_UpdateUserId = A.i_ActualizaIdUsuario.Value }
+                                equals new { i_UpdateUserId = J2.i_SystemUserId } into J2_join
+                                from J2 in J2_join.DefaultIfEmpty()
+
+                                join J3 in dbContext.systemparameter on new { a = A.i_IdTipoIdentificacion.Value, b = 150 }
+                                equals new { a = J3.i_ParameterId, b = J3.i_GroupId } into J3_join
+                                from J3 in J3_join.DefaultIfEmpty()
+
+
+
+                                where A.i_Eliminado == 0
+                                      && A.v_IdCliente != "N002-CL000000000"
+                                      && (A.v_RazonSocial.Trim() != "A N U L A D A" && A.v_RazonSocial.Trim() != "ANULADA")
+                                // && A.v_IdCliente != "N002-CL999999999"
+
+                                select new clienteshortDto
+                                {
+                                    NombreRazonSocial =
+                                    (A.v_ApePaterno + " " + A.v_ApeMaterno + " " + A.v_PrimerNombre + " " +
+                                     A.v_SegundoNombre + " " + A.v_RazonSocial).Trim(),
+                                    v_IdCliente = A.v_IdCliente,
+                                    v_CodCliente = A.v_CodCliente,
+                                    v_NroDocIdentificacion = A.v_NroDocIdentificacion,
+                                    v_PrimerNombre = A.v_PrimerNombre,
+                                    v_RazonSocial =
+                                    (A.v_ApePaterno + " " + A.v_ApeMaterno + " " + A.v_PrimerNombre + " " +
+                                     A.v_SegundoNombre + " " + A.v_RazonSocial).Trim(),
+                                    i_IdTipoIdentificacion = A.i_IdTipoIdentificacion,
+                                    i_IdTipoPersona = A.i_IdTipoPersona,
+                                    t_ActualizaFecha = A.t_ActualizaFecha.Value,
+                                    t_InsertaFecha = A.t_InsertaFecha.Value,
+                                    v_UsuarioCreacion = J1.v_UserName,
+                                    v_UsuarioModificacion = J2.v_UserName,
+                                    TipoDocumento = J3.v_Value1,
+                                    v_FlagPantalla = A.v_FlagPantalla,
+                                    v_SegundoNombre = A.v_SegundoNombre,
+                                    v_ApeMaterno = A.v_ApeMaterno,
+                                    v_ApePaterno = A.v_ApePaterno,
+                                    TipoDocumentoTrabajadores = J3.v_Value1 + " : " + A.v_NroDocIdentificacion,
+                                    i_Activo = A.i_Activo ?? 0,
+                                    i_EsProveedorServicios =
+                                        A.i_EsPrestadorServicios ?? 0,
+
+                                };
+
+                    if (!string.IsNullOrEmpty(pstrFilterExpression))
+                    {
+                        query = query.Where(pstrFilterExpression);
+                    }
+                    if (!string.IsNullOrEmpty(pstrSortExpression))
+                    {
+                        query = query.OrderBy(pstrSortExpression);
+                    }
+                    var objData = TipoBusqueda == "FILTRARSOLORUCEMPIEZA10" ? query.ToList().Where(x => x.v_NroDocIdentificacion.StartsWith("1")).ToList() : query.ToList();
+                    pobjOperationResult.Success = 1;
+                    return objData;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+        }
+
+
+        public List<clienteshortDto> ObtenerListadoTrabajadores(ref OperationResult pobjOperationResult, string pstrSortExpression, string pstrFilterExpression, string TipoBusqueda = null)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var query = from A in dbContext.cliente
+                                join J1 in dbContext.systemuser on new { i_InsertUserId = A.i_InsertaIdUsuario.Value }
+                                equals new { i_InsertUserId = J1.i_SystemUserId } into J1_join
+                                from J1 in J1_join.DefaultIfEmpty()
+
+                                join J2 in dbContext.systemuser on new { i_UpdateUserId = A.i_ActualizaIdUsuario.Value }
+                                equals new { i_UpdateUserId = J2.i_SystemUserId } into J2_join
+                                from J2 in J2_join.DefaultIfEmpty()
+
+                                join J3 in dbContext.datahierarchy on new { a = A.i_IdTipoIdentificacion.Value, b = 132 }
+                                equals new { a = J3.i_ItemId, b = J3.i_GroupId } into J3_join
+                                from J3 in J3_join.DefaultIfEmpty()
+
+                                where A.i_Eliminado == 0
+                                      && A.v_IdCliente != "N002-CL000000000"
+                                      && (A.v_RazonSocial.Trim() != "A N U L A D A" && A.v_RazonSocial.Trim() != "ANULADA")
+                                // && A.v_IdCliente != "N002-CL999999999"
+
+                                select new clienteshortDto
+                                {
+                                    NombreRazonSocial =
+                                    (A.v_ApePaterno + " " + A.v_ApeMaterno + " " + A.v_PrimerNombre + " " +
+                                     A.v_SegundoNombre + " " + A.v_RazonSocial).Trim(),
+                                    v_IdCliente = A.v_IdCliente,
+                                    v_CodCliente = A.v_CodCliente,
+                                    v_NroDocIdentificacion = A.v_NroDocIdentificacion,
+                                    v_PrimerNombre = A.v_PrimerNombre,
+                                    v_RazonSocial =
+                                    (A.v_ApePaterno + " " + A.v_ApeMaterno + " " + A.v_PrimerNombre + " " +
+                                     A.v_SegundoNombre + " " + A.v_RazonSocial).Trim(),
+                                    i_IdTipoIdentificacion = A.i_IdTipoIdentificacion,
+                                    i_IdTipoPersona = A.i_IdTipoPersona,
+                                    t_ActualizaFecha = A.t_ActualizaFecha.Value,
+                                    t_InsertaFecha = A.t_InsertaFecha.Value,
+                                    v_UsuarioCreacion = J1.v_UserName,
+                                    v_UsuarioModificacion = J2.v_UserName,
+                                    TipoDocumento = J3.v_Value1,
+                                    v_FlagPantalla = A.v_FlagPantalla,
+                                    v_SegundoNombre = A.v_SegundoNombre,
+                                    v_ApeMaterno = A.v_ApeMaterno,
+                                    v_ApePaterno = A.v_ApePaterno,
+                                    TipoDocumentoTrabajadores = J3.v_Value1 + " : " + A.v_NroDocIdentificacion,
+                                    i_Activo = A.i_Activo ?? 0,
+                                    i_EsProveedorServicios =
+                                        A.i_EsPrestadorServicios ?? 0,
+                                };
+
+                    if (!string.IsNullOrEmpty(pstrFilterExpression))
+                    {
+                        query = query.Where(pstrFilterExpression);
+                    }
+                    if (!string.IsNullOrEmpty(pstrSortExpression))
+                    {
+                        query = query.OrderBy(pstrSortExpression);
+                    }
+                    var objData = TipoBusqueda == "FILTRARSOLORUCEMPIEZA10" ? query.ToList().Where(x => x.v_NroDocIdentificacion.StartsWith("10")).ToList() : query.ToList();
+                    pobjOperationResult.Success = 1;
+                    return objData;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+        }
+
+
+        public List<clienteshortDto> ObtenerListadoClienteBusqueda(ref OperationResult pobjOperationResult, string pstrSortExpression, string pstrFilterExpression)
+        {
+            try
+            {
+                using (var db = new SAMBHSEntitiesModelWin())
+                {
+                     var query = from A in db.cliente
+                        join J1 in db.systemuser on new { i_InsertUserId = A.i_InsertaIdUsuario.Value }
+                                                    equals new { i_InsertUserId = J1.i_SystemUserId } into J1_join
+                        from J1 in J1_join.DefaultIfEmpty()
+
+                        join J2 in db.systemuser on new { i_UpdateUserId = A.i_ActualizaIdUsuario.Value }
+                                                    equals new { i_UpdateUserId = J2.i_SystemUserId } into J2_join
+                        from J2 in J2_join.DefaultIfEmpty()
+
+                        join J3 in db.systemparameter on new { a = A.i_IdTipoIdentificacion.Value, b = 150 }
+                                                         equals new { a = J3.i_ParameterId, b = J3.i_GroupId } into J3_join
+                        from J3 in J3_join.DefaultIfEmpty()
+
+                        join J4 in db.clientedirecciones on new { IdDireccion = A.v_IdCliente, eliminado = 0, predeterminado = 1 } 
+                                                equals new { IdDireccion = J4.v_IdCliente, eliminado = J4.i_Eliminado.Value, predeterminado = J4.i_EsDireccionPredeterminada.Value } into J4_join
+                        from J4 in J4_join.DefaultIfEmpty()
+
+                        where A.i_Eliminado == 0
+
+                        select new clienteshortDto
+                        {
+                            NombreRazonSocial = (A.v_ApePaterno + " " + A.v_ApeMaterno + " " + A.v_PrimerNombre + " " + A.v_SegundoNombre + " " + A.v_RazonSocial).Trim(),
+                            v_IdCliente = A.v_IdCliente,
+                            v_ApeMaterno = A.v_ApeMaterno,
+                            v_ApePaterno = A.v_ApePaterno,
+                            v_CodCliente = A.v_CodCliente,
+                            i_IdLista = A.i_IdListaPrecios,
+                            v_NroDocIdentificacion = A.v_NroDocIdentificacion,
+                            v_PrimerNombre = A.v_PrimerNombre,
+                            v_RazonSocial = (A.v_ApePaterno + " " + A.v_ApeMaterno + " " + A.v_PrimerNombre + " " + A.v_SegundoNombre + " " + A.v_RazonSocial).Trim(),
+                            v_SegundoNombre = A.v_SegundoNombre,
+                            i_IdTipoIdentificacion = A.i_IdTipoIdentificacion,
+                            i_IdTipoPersona = A.i_IdTipoPersona,
+                            t_ActualizaFecha = A.t_ActualizaFecha.Value,
+                            t_InsertaFecha = A.t_InsertaFecha.Value,
+                            v_UsuarioCreacion = J1.v_UserName,
+                            v_UsuarioModificacion = J2.v_UserName,
+                            TipoDocumento = J3.v_Value1,
+                            v_FlagPantalla = A.v_FlagPantalla,
+                            v_Direccion = J4 == null ? A.v_DirecPrincipal : J4.v_Direccion,
+                            i_ParameterId = J3.i_ParameterId,
+                            i_IdDireccionCliente = J4 == null ? -1 : J4.i_IdDireccionCliente
+                        };
+
+                    if (!string.IsNullOrEmpty(pstrFilterExpression))
+                    {
+                        query = query.Where(pstrFilterExpression);
+                    }
+                    if (!string.IsNullOrEmpty(pstrSortExpression))
+                    {
+                        query = query.OrderBy(pstrSortExpression);
+                    }
+
+                    var objData = query.ToList();
+                    pobjOperationResult.Success = 1;
+                    return objData;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+        }
+
+        public clienteDto ObtenerCliente(ref OperationResult pobjOperationResult, string pstringIdcliente)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    clienteDto objDtoEntity = null;
+
+                    var DireccionCliente = dbContext.clientedirecciones.Where(o => o.i_Eliminado == 0 && o.v_IdCliente == pstringIdcliente && o.i_EsDireccionPredeterminada == 1).ToList();
+
+                    var objEntity = (from A in dbContext.cliente
+                                     where A.v_IdCliente == pstringIdcliente
+                                     select A
+                                     ).FirstOrDefault();
+                    if (objEntity != null)
+                        objDtoEntity = objEntity.ToDTO();
+                    if (DireccionCliente.Any())
+                    {
+                        objDtoEntity.v_DirecPrincipal = DireccionCliente.FirstOrDefault().v_Direccion;
+                        objDtoEntity.i_IdDireccionCliente = DireccionCliente.FirstOrDefault().i_IdDireccionCliente;
+                    }
+
+                    pobjOperationResult.Success = 1;
+                    return objDtoEntity;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+        }
+
+
+
+
+        public clienteDto ObtenerClienteTrabajador(ref OperationResult pobjOperationResult, string Filtro, string IdCliente = null)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    clienteDto objDtoEntity = null;
+
+                    if (IdCliente == null)
+                    {
+
+                        var objEntity = (from A in dbContext.cliente
+                                         where A.i_Eliminado == 0 && A.v_FlagPantalla == "T" && A.i_Activo == 1
+                                         select A
+                                         );
+
+
+                        if (!string.IsNullOrEmpty(Filtro))
+                        {
+                            objEntity = objEntity.Where(Filtro);
+                        }
+
+                        if (objEntity != null)
+                            objDtoEntity = objEntity.FirstOrDefault().ToDTO();
+                    }
+                    else
+                    {
+
+                        var objEntity = (from A in dbContext.cliente
+                                         where A.i_Eliminado == 0 && A.v_FlagPantalla == "T" && A.i_Activo == 1 && A.v_IdCliente != IdCliente
+                                         select A
+                                            );
+
+
+                        if (!string.IsNullOrEmpty(Filtro))
+                        {
+                            objEntity = objEntity.Where(Filtro);
+                        }
+                        if (objEntity != null)
+                            objDtoEntity = objEntity.FirstOrDefault().ToDTO();
+
+                    }
+
+                    pobjOperationResult.Success = 1;
+                    return objDtoEntity;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+        }
+
+
+        public string  InsertarCliente(ref OperationResult pobjOperationResult, clienteDto pobjDtoEntity, List<string> ClientSession, lineacreditoempresaDto _lineacreditoempresaDto, trabajadorDto pobjTrabajador, List<contratotrabajadorDto> AgregarListContratoDto, List<contratodetalletrabajadorDto> AgregarListContratoDetalleDto, List<regimenpensionariotrabajadorDto> AgregarRegimen, List<derechohabientetrabajadorDto> ListaAgregarDH, List<areaslaboratrabajadorDto> ListaAgregarAreas = null)
+        {
+            //TRABAJADOR ....TT-86
+            //CONTRATOTRABAJADOR  TC-87
+            //CONTRATODETALLETRABAJADOR TD- 88
+            //REGIMEN PENSIONARIO  TR- 89
+            //DERECHO HABIENTE TV-92
+            //AREAS LABORADAS TZ-93
+
+            int SecuentialId = 0;
+            string newIdCliente = string.Empty;
+            string newIdTrabajador = string.Empty;
+            string newIdContrato = string.Empty;
+            string newIdContratoDetalle = string.Empty, newIdRegimen = String.Empty, newIdDH = String.Empty;
+            try
+            {
+                using (var ts = TransactionUtils.CreateTransactionScope())
+                {
+                    using (var dbContext = new SAMBHSEntitiesModelWin())
+                    {
+                        SecuentialBL objSecuentialBL = new SecuentialBL();
+                        cliente objEntity = clienteAssembler.ToEntity(pobjDtoEntity);
+                        objEntity.t_InsertaFecha = DateTime.Now;
+                        objEntity.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                        objEntity.i_Eliminado = 0;
+                        int intNodeId = int.Parse(ClientSession[0]);
+                        SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 14);
+                        newIdCliente = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "CL");
+                        objEntity.v_IdCliente = newIdCliente;
+
+                        #region Guarda la Linea de Crédito
+                        if (_lineacreditoempresaDto != null && pobjDtoEntity.i_UsaLineaCredito == 1)
+                        {
+                            var ExisteLineaCredito = dbContext.lineacreditoempresa.Count(p => p.v_IdCliente == objEntity.v_IdCliente);
+
+                            if (ExisteLineaCredito == 0)
+                            {
+                                lineacreditoempresa _lineacreditoempresa = new lineacreditoempresa();
+                                _lineacreditoempresa.v_IdCliente = objEntity.v_IdCliente;
+                                _lineacreditoempresa.i_IdMoneda = _lineacreditoempresaDto.i_IdMoneda;
+                                _lineacreditoempresa.d_Acuenta = _lineacreditoempresaDto.d_Acuenta;
+                                _lineacreditoempresa.d_Credito = _lineacreditoempresaDto.d_Credito;
+                                _lineacreditoempresa.d_Saldo = _lineacreditoempresaDto.d_Saldo;
+                                dbContext.AddTolineacreditoempresa(_lineacreditoempresa);
+                            }
+                            else
+                            {
+                                lineacreditoempresa _lineacreditoempresa = dbContext.lineacreditoempresa.Where(p => p.v_IdCliente == objEntity.v_IdCliente).FirstOrDefault();
+                                _lineacreditoempresa.i_IdMoneda = _lineacreditoempresaDto.i_IdMoneda;
+                                _lineacreditoempresa.d_Acuenta = _lineacreditoempresaDto.d_Acuenta;
+                                _lineacreditoempresa.d_Credito = _lineacreditoempresaDto.d_Credito;
+                                _lineacreditoempresa.d_Saldo = _lineacreditoempresaDto.d_Saldo;
+                                dbContext.lineacreditoempresa.ApplyCurrentValues(_lineacreditoempresa);
+                            }
+                        }
+                        #endregion
+
+                        dbContext.AddTocliente(objEntity);
+
+                        Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "cliente", newIdCliente);
+                        #region GuardarTrabajador
+                        if (pobjDtoEntity.v_FlagPantalla == "T")
+                        {
+
+                            trabajador objTrabajador = trabajadorAssembler.ToEntity(pobjTrabajador);
+                            objTrabajador.t_InsertaFecha = DateTime.Now;
+                            objTrabajador.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                            objTrabajador.i_Eliminado = 0;
+                            SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 86);
+                            newIdTrabajador = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TT");
+                            objTrabajador.v_IdTrabajador = newIdTrabajador;
+                            objTrabajador.v_IdCliente = newIdCliente;
+                            dbContext.AddTotrabajador(objTrabajador);
+                            //  dbContext.SaveChanges();
+                            Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "trabajador", newIdTrabajador);
+
+
+                            if (AgregarListContratoDetalleDto != null)
+                            {
+                                foreach (contratotrabajadorDto contratoDto in AgregarListContratoDto)
+                                {
+
+                                    contratotrabajador contrato = contratotrabajadorAssembler.ToEntity(contratoDto);
+                                    SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 87);
+                                    newIdContrato = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TC");
+                                    contrato.v_IdContrato = newIdContrato;
+                                    contrato.v_IdTrabajador = newIdTrabajador;
+                                    contrato.t_InsertaFecha = DateTime.Now;
+                                    contrato.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    contrato.i_Eliminado = 0;
+                                    dbContext.AddTocontratotrabajador(contrato);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "contratotrabajador", newIdContrato);
+
+                                }
+                            }
+                            if (AgregarListContratoDetalleDto != null)
+                            {
+                                foreach (contratodetalletrabajadorDto contratoDetalleDto in AgregarListContratoDetalleDto)
+                                {
+
+                                    contratodetalletrabajador contratoDetalle = contratodetalletrabajadorAssembler.ToEntity(contratoDetalleDto);
+                                    SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 88);
+                                    newIdContratoDetalle = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TD");
+
+                                    contratoDetalle.v_IdContrato = newIdContrato;
+                                    contratoDetalle.v_IdContratoDetalle = newIdContratoDetalle;
+                                    contratoDetalle.t_InsertaFecha = DateTime.Now;
+                                    contratoDetalle.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    contratoDetalle.i_Eliminado = 0;
+                                    dbContext.AddTocontratodetalletrabajador(contratoDetalle);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "contratotrabajadordetalle", newIdContratoDetalle);
+
+                                }
+                            }
+                            if (AgregarRegimen!=null)
+                            {
+                                foreach (regimenpensionariotrabajadorDto regimenPensionarioDto in AgregarRegimen)
+                                {
+                                    regimenpensionariotrabajador regimenpensionarios = regimenpensionariotrabajadorAssembler.ToEntity(regimenPensionarioDto);
+
+                                    SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 89);
+                                    newIdRegimen = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TR");
+                                    regimenpensionarios.v_IdRegimenPensionario = newIdRegimen;
+                                    regimenpensionarios.v_IdTrabajador = newIdTrabajador;
+                                    regimenpensionarios.t_InsertaFecha = DateTime.Now;
+                                    regimenpensionarios.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    regimenpensionarios.i_Eliminado = 0;
+                                    dbContext.AddToregimenpensionariotrabajador(regimenpensionarios);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "regimenpensionariotrabajador", newIdRegimen);
+
+
+                                }
+                            }
+                            if (ListaAgregarDH!=null)
+                            {
+
+                                foreach (derechohabientetrabajadorDto DHDto in ListaAgregarDH)
+                                {
+
+                                    derechohabientetrabajador DH = derechohabientetrabajadorAssembler.ToEntity(DHDto);
+                                    SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 92);
+                                    newIdDH = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TV");
+                                    DH.v_IdDerechoHabiente = newIdDH;
+                                    DH.v_IdTrabajador = newIdTrabajador;
+                                    DH.t_InsertaFecha = DateTime.Now;
+                                    DH.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    DH.i_Eliminado = 0;
+                                    dbContext.AddToderechohabientetrabajador(DH);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "derechohabientetrabajador", newIdDH);
+
+                                }
+                            }
+                            if (ListaAgregarAreas!=null)
+                            {
+                                foreach (areaslaboratrabajadorDto AreasDto in ListaAgregarAreas)
+                                {
+
+                                    areaslaboratrabajador Areas = areaslaboratrabajadorAssembler.ToEntity(AreasDto);
+                                    Areas.v_IdTrabajador = newIdTrabajador;
+                                    Areas.t_InsertaFecha = DateTime.Now;
+                                    Areas.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    Areas.i_Eliminado = 0;
+                                    dbContext.AddToareaslaboratrabajador(Areas);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "areaslaboratrabajador", Areas.v_IdAreaLaborada.ToString());
+                                }
+                            }
+                        }
+
+
+                        #endregion
+
+                        dbContext.SaveChanges();
+
+                        #region Actualizar Direcciones
+
+                        clientedireccionesDto objClienteDireccion = new clientedireccionesDto();
+                        objClienteDireccion.v_Direccion = objEntity.v_DirecPrincipal;
+                        objClienteDireccion.i_EsDireccionPredeterminada = 1;
+                        InsertarDireccionesCliente(ref pobjOperationResult, objClienteDireccion, ClientSession, newIdCliente);
+                        if (pobjOperationResult.Success == 0)
+                        {
+                            return null;
+                        }
+
+
+                        #endregion
+                        dbContext.SaveChanges();
+                        pobjOperationResult.Success = 1;
+                        ts.Complete();
+                        return newIdCliente;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.InsertarCliente()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                return null;
+            }
+        }
+
+        public void Actualizarcliente(ref OperationResult pobjOperationResult, clienteDto pobjDtoEntity, List<string> ClientSession, lineacreditoempresaDto _lineacreditoempresaDto, trabajadorDto pobjTrabajador, List<contratotrabajadorDto> AgregarListContratoDto, List<contratotrabajadorDto> ModificarListContratoDto, List<contratotrabajadorDto> EliminarListContratoDto, List<contratodetalletrabajadorDto> AgregarListContratoDetalleDto, List<contratodetalletrabajadorDto> ModificarListContratoDetalleDto,
+            List<contratodetalletrabajadorDto> EliminarListContratoDetalleDto, List<regimenpensionariotrabajadorDto> AgregarListRegimenDto, List<regimenpensionariotrabajadorDto> ModificarListRegimenDto, List<regimenpensionariotrabajadorDto> EliminarListRegimenDto, List<derechohabientetrabajadorDto> ListaAgregarDH, List<derechohabientetrabajadorDto> ListaModificarDH, List<derechohabientetrabajadorDto> ListaEliminarDH,
+            List<areaslaboratrabajadorDto> ListaAgregarAreasDto = null, List<areaslaboratrabajadorDto> ListaModificarAreasDto = null, List<areaslaboratrabajadorDto> ListaEliminarAreasDto = null)
+        {
+            try
+            {
+
+                int SecuentialId = 0;
+                bool GeneroContrato = false;
+                string newIdContrato = "", newIdContratoDetalle = "", newIdRegimen = "", newIdDH = "";
+                int intNodeId = int.Parse(ClientSession[0]);
+                SecuentialBL objSecuentialBL = new SecuentialBL();
+                using (var ts = TransactionUtils.CreateTransactionScope())
+                {
+                    using (var dbContext = new SAMBHSEntitiesModelWin())
+                    {
+                        // Obtener la entidad fuente
+                        var objEntitySource = (from a in dbContext.cliente
+                                               where a.v_IdCliente == pobjDtoEntity.v_IdCliente
+                                               select a).FirstOrDefault();
+
+                        // Crear la entidad con los datos actualizados
+                        pobjDtoEntity.t_ActualizaFecha = DateTime.Now;
+                        pobjDtoEntity.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+
+                        cliente objEntity = pobjDtoEntity.ToEntity();
+                        dbContext.cliente.ApplyCurrentValues(objEntity);
+                        #region Guarda la Linea de Crédito
+                        if (_lineacreditoempresaDto != null && pobjDtoEntity.i_UsaLineaCredito == 1)
+                        {
+                            var ExisteLineaCredito = dbContext.lineacreditoempresa.Count(p => p.v_IdCliente == pobjDtoEntity.v_IdCliente);
+
+                            if (ExisteLineaCredito == 0)
+                            {
+                                lineacreditoempresa _lineacreditoempresa = new lineacreditoempresa();
+                                _lineacreditoempresa.v_IdCliente = pobjDtoEntity.v_IdCliente;
+                                _lineacreditoempresa.i_IdMoneda = _lineacreditoempresaDto.i_IdMoneda;
+                                _lineacreditoempresa.d_Acuenta = _lineacreditoempresaDto.d_Acuenta;
+                                _lineacreditoempresa.d_Credito = _lineacreditoempresaDto.d_Credito;
+                                _lineacreditoempresa.d_Saldo = _lineacreditoempresaDto.d_Saldo;
+                                dbContext.AddTolineacreditoempresa(_lineacreditoempresa);
+                            }
+                            else
+                            {
+                                lineacreditoempresa _lineacreditoempresa = dbContext.lineacreditoempresa.FirstOrDefault(p => p.v_IdCliente == pobjDtoEntity.v_IdCliente);
+                                _lineacreditoempresa.i_IdMoneda = _lineacreditoempresaDto.i_IdMoneda;
+                                _lineacreditoempresa.d_Acuenta = _lineacreditoempresaDto.d_Acuenta;
+                                _lineacreditoempresa.d_Credito = _lineacreditoempresaDto.d_Credito;
+                                _lineacreditoempresa.d_Saldo = _lineacreditoempresaDto.d_Saldo;
+                                dbContext.lineacreditoempresa.ApplyCurrentValues(_lineacreditoempresa);
+                            }
+                        }
+                        #endregion
+                        Utils.Windows.GeneraHistorial(LogEventType.ACTUALIZACION, Globals.ClientSession.v_UserName, "cliente", objEntitySource.v_IdCliente);
+
+                        switch (pobjDtoEntity.v_FlagPantalla)
+                        {
+
+
+                            case "T":
+
+
+                                var objEntityTrabajador = (from a in dbContext.trabajador
+                                                           where a.v_IdCliente == pobjDtoEntity.v_IdCliente
+
+                                                           select a).FirstOrDefault();
+                                pobjTrabajador.t_ActualizaFecha = DateTime.Now;
+                                pobjTrabajador.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                trabajador objTrabajador = trabajadorAssembler.ToEntity(pobjTrabajador);
+                                dbContext.trabajador.ApplyCurrentValues(objTrabajador);
+
+                                #region Contratos
+                                foreach (contratotrabajadorDto contratoDto in AgregarListContratoDto)
+                                {
+
+                                    contratotrabajador contrato = contratotrabajadorAssembler.ToEntity(contratoDto);
+                                    SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 87);
+                                    newIdContrato = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TC");
+                                    contrato.v_IdContrato = newIdContrato;
+                                    contrato.v_IdTrabajador = pobjTrabajador.v_IdTrabajador;
+                                    contrato.t_InsertaFecha = DateTime.Now;
+                                    contrato.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    contrato.i_Eliminado = 0;
+                                    dbContext.AddTocontratotrabajador(contrato);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "contratotrabajador", newIdContrato);
+                                    GeneroContrato = true;
+                                }
+
+                                foreach (contratotrabajadorDto contratoDto in ModificarListContratoDto)
+                                {
+                                    contratotrabajador _objContrato = contratotrabajadorAssembler.ToEntity(contratoDto);
+                                    var queryContrato = (from n in dbContext.contratotrabajador
+                                                         where n.v_IdContrato == contratoDto.v_IdContrato
+                                                         select n).FirstOrDefault();
+
+
+                                    _objContrato.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    _objContrato.t_ActualizaFecha = DateTime.Now;
+                                    dbContext.contratotrabajador.ApplyCurrentValues(_objContrato);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ACTUALIZACION, Globals.ClientSession.v_UserName, "contratotrabajador", contratoDto.v_IdContrato);
+                                }
+
+                                foreach (contratotrabajadorDto contratoDto in EliminarListContratoDto)
+                                {
+
+                                    contratotrabajador _objContrato = contratotrabajadorAssembler.ToEntity(contratoDto);
+
+                                    var queryEliminar = (from n in dbContext.contratotrabajador
+                                                         where n.v_IdContrato == contratoDto.v_IdContrato
+
+                                                         select n).FirstOrDefault();
+
+                                    if (queryEliminar != null)
+                                    {
+                                        queryEliminar.t_ActualizaFecha = DateTime.Now;
+                                        queryEliminar.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                        queryEliminar.i_Eliminado = 1;
+
+                                    }
+
+                                    dbContext.contratotrabajador.ApplyCurrentValues(queryEliminar);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName, "contratotrabajador", contratoDto.v_IdContrato);
+
+
+                                }
+
+                                #endregion
+
+                                #region ContratoDetalles
+
+                                foreach (contratodetalletrabajadorDto contratoDetalleDto in AgregarListContratoDetalleDto)
+                                {
+                                    contratodetalletrabajador contratoDetalle = contratodetalletrabajadorAssembler.ToEntity(contratoDetalleDto);
+                                    SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 88);
+                                    newIdContratoDetalle = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TD");
+
+                                    if (GeneroContrato == true)
+                                    {
+                                        contratoDetalle.v_IdContrato = newIdContrato;
+
+                                    }
+                                    else
+                                    {
+
+                                        contratoDetalle.v_IdContrato = contratoDetalleDto.v_IdContrato;
+                                    }
+                                    contratoDetalle.v_IdContratoDetalle = newIdContratoDetalle;
+                                    contratoDetalle.t_InsertaFecha = DateTime.Now;
+                                    contratoDetalle.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    contratoDetalle.i_Eliminado = 0;
+                                    dbContext.AddTocontratodetalletrabajador(contratoDetalle);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "contratodetalletrabajador", contratoDetalle.v_IdContratoDetalle);
+
+                                }
+
+                                foreach (contratodetalletrabajadorDto contratoDetalleDto in ModificarListContratoDetalleDto)
+                                {
+
+
+                                    contratodetalletrabajador _objDetalle = contratodetalletrabajadorAssembler.ToEntity(contratoDetalleDto);
+                                    var queryContrato = (from n in dbContext.contratodetalletrabajador
+                                                         where n.v_IdContratoDetalle == contratoDetalleDto.v_IdContratoDetalle
+                                                         select n).FirstOrDefault();
+
+
+                                    _objDetalle.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    _objDetalle.t_ActualizaFecha = DateTime.Now;
+                                    dbContext.contratodetalletrabajador.ApplyCurrentValues(_objDetalle);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ACTUALIZACION, Globals.ClientSession.v_UserName, "contratodetalletrabajador", contratoDetalleDto.v_IdContratoDetalle);
+
+
+                                }
+
+
+                                foreach (contratodetalletrabajadorDto contratoDetalleDto in EliminarListContratoDetalleDto)
+                                {
+
+                                    contratodetalletrabajador _objDetalle = contratodetalletrabajadorAssembler.ToEntity(contratoDetalleDto);
+
+                                    var queryEliminar = (from n in dbContext.contratodetalletrabajador
+                                                         where n.v_IdContratoDetalle == contratoDetalleDto.v_IdContratoDetalle
+
+                                                         select n).FirstOrDefault();
+
+                                    if (queryEliminar != null)
+                                    {
+                                        queryEliminar.t_ActualizaFecha = DateTime.Now;
+                                        queryEliminar.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                        queryEliminar.i_Eliminado = 1;
+
+                                    }
+
+                                    dbContext.contratodetalletrabajador.ApplyCurrentValues(queryEliminar);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName, "contratodetalletrabajador", contratoDetalleDto.v_IdContratoDetalle);
+
+
+                                }
+
+                                #endregion
+                                #region Regimen
+                                foreach (regimenpensionariotrabajadorDto regimenPensionarioDto in AgregarListRegimenDto)
+                                {
+                                    regimenpensionariotrabajador regimenpensionarios = regimenpensionariotrabajadorAssembler.ToEntity(regimenPensionarioDto);
+
+                                    SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 89);
+                                    newIdRegimen = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TR");
+
+                                    regimenpensionarios.v_IdRegimenPensionario = newIdRegimen;
+                                    regimenpensionarios.v_IdTrabajador = objTrabajador.v_IdTrabajador;
+                                    regimenpensionarios.t_InsertaFecha = DateTime.Now;
+                                    regimenpensionarios.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    regimenpensionarios.i_Eliminado = 0;
+                                    dbContext.AddToregimenpensionariotrabajador(regimenpensionarios);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "regimenpensionariotrabajador", newIdRegimen);
+
+
+                                }
+
+
+
+
+
+                                foreach (regimenpensionariotrabajadorDto regimenDto in ModificarListRegimenDto)
+                                {
+                                    regimenpensionariotrabajador _objRegimen = regimenpensionariotrabajadorAssembler.ToEntity(regimenDto);
+                                    var queryContrato = (from n in dbContext.regimenpensionariotrabajador
+                                                         where n.v_IdRegimenPensionario == regimenDto.v_IdRegimenPensionario
+                                                         select n).FirstOrDefault();
+
+
+                                    _objRegimen.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    _objRegimen.t_ActualizaFecha = DateTime.Now;
+                                    dbContext.regimenpensionariotrabajador.ApplyCurrentValues(_objRegimen);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ACTUALIZACION, Globals.ClientSession.v_UserName, "regimenpensionariotrabajador", regimenDto.v_IdRegimenPensionario);
+                                }
+
+                                foreach (regimenpensionariotrabajadorDto regimenDto in EliminarListRegimenDto)
+                                {
+
+                                    regimenpensionariotrabajador _objRegimen = regimenpensionariotrabajadorAssembler.ToEntity(regimenDto);
+
+                                    var queryEliminar = (from n in dbContext.regimenpensionariotrabajador
+                                                         where n.v_IdRegimenPensionario == regimenDto.v_IdRegimenPensionario
+
+                                                         select n).FirstOrDefault();
+
+                                    if (queryEliminar != null)
+                                    {
+                                        queryEliminar.t_ActualizaFecha = DateTime.Now;
+                                        queryEliminar.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                        queryEliminar.i_Eliminado = 1;
+
+                                    }
+
+                                    dbContext.regimenpensionariotrabajador.ApplyCurrentValues(queryEliminar);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName, "regimenpensionariotrabajador", regimenDto.v_IdRegimenPensionario);
+
+
+                                }
+
+
+                                #endregion
+                                #region DH
+                                foreach (derechohabientetrabajadorDto DHDto in ListaAgregarDH)
+                                {
+
+                                    derechohabientetrabajador DH = derechohabientetrabajadorAssembler.ToEntity(DHDto);
+                                    SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 92);
+                                    newIdDH = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TV");
+                                    DH.v_IdDerechoHabiente = newIdDH;
+                                    DH.v_IdTrabajador = objTrabajador.v_IdTrabajador;
+                                    DH.t_InsertaFecha = DateTime.Now;
+                                    DH.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    DH.i_Eliminado = 0;
+                                    dbContext.AddToderechohabientetrabajador(DH);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "derechohabientetrabajador", newIdDH);
+
+                                }
+
+
+                                foreach (derechohabientetrabajadorDto DHDto in ListaModificarDH)
+                                {
+
+
+                                    derechohabientetrabajador _objDetalle = derechohabientetrabajadorAssembler.ToEntity(DHDto);
+                                    var queryDH = (from n in dbContext.derechohabientetrabajador
+                                                   where n.v_IdDerechoHabiente == DHDto.v_IdDerechoHabiente
+                                                   select n).FirstOrDefault();
+
+                                    _objDetalle.v_IdTrabajador = objTrabajador.v_IdTrabajador;
+                                    _objDetalle.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    _objDetalle.t_ActualizaFecha = DateTime.Now;
+                                    dbContext.derechohabientetrabajador.ApplyCurrentValues(_objDetalle);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ACTUALIZACION, Globals.ClientSession.v_UserName, "derechohabientetrabajador", DHDto.v_IdDerechoHabiente);
+
+                                }
+
+
+                                foreach (derechohabientetrabajadorDto DHDto in ListaEliminarDH)
+                                {
+
+                                    derechohabientetrabajador _objDetalle = derechohabientetrabajadorAssembler.ToEntity(DHDto);
+
+                                    var queryEliminar = (from n in dbContext.derechohabientetrabajador
+                                                         where n.v_IdDerechoHabiente == DHDto.v_IdDerechoHabiente
+
+                                                         select n).FirstOrDefault();
+
+                                    if (queryEliminar != null)
+                                    {
+                                        queryEliminar.t_ActualizaFecha = DateTime.Now;
+                                        queryEliminar.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                        queryEliminar.i_Eliminado = 1;
+
+                                    }
+
+                                    dbContext.derechohabientetrabajador.ApplyCurrentValues(queryEliminar);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName, "derechohabientetrabajador", DHDto.v_IdDerechoHabiente);
+
+                                }
+                                #endregion
+                                #region AreasLabora
+
+                                foreach (areaslaboratrabajadorDto AreasDto in ListaAgregarAreasDto)
+                                {
+
+                                    areaslaboratrabajador Areas = areaslaboratrabajadorAssembler.ToEntity(AreasDto);
+                                    //SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 92);
+                                    //newArea  = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "TV");
+                                    //Areas.v_IdAreaLaborada  = newArea;
+                                    Areas.v_IdTrabajador = objTrabajador.v_IdTrabajador;
+                                    Areas.t_InsertaFecha = DateTime.Now;
+                                    Areas.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    Areas.i_Eliminado = 0;
+                                    dbContext.AddToareaslaboratrabajador(Areas);
+                                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "areaslaboratrabajador", Areas.v_IdAreaLaborada.ToString());
+                                }
+
+
+                                foreach (areaslaboratrabajadorDto AreasDto in ListaModificarAreasDto)
+                                {
+
+
+                                    areaslaboratrabajador _objDetalle = areaslaboratrabajadorAssembler.ToEntity(AreasDto);
+                                    var queryDH = (from n in dbContext.areaslaboratrabajador
+                                                   where n.v_IdAreaLaborada == AreasDto.v_IdAreaLaborada
+                                                   select n).FirstOrDefault();
+
+                                    _objDetalle.v_IdTrabajador = objTrabajador.v_IdTrabajador;
+                                    _objDetalle.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    _objDetalle.t_ActualizaFecha = DateTime.Now;
+                                    dbContext.areaslaboratrabajador.ApplyCurrentValues(_objDetalle);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ACTUALIZACION, Globals.ClientSession.v_UserName, "areaslaboratrabajador", AreasDto.v_IdAreaLaborada.ToString());
+
+                                }
+
+
+                                foreach (areaslaboratrabajadorDto AreasDto in ListaEliminarAreasDto)
+                                {
+
+                                    areaslaboratrabajador _objDetalle = areaslaboratrabajadorAssembler.ToEntity(AreasDto);
+
+                                    var queryEliminar = (from n in dbContext.areaslaboratrabajador
+                                                         where n.v_IdAreaLaborada == AreasDto.v_IdAreaLaborada
+
+                                                         select n).FirstOrDefault();
+
+                                    if (queryEliminar != null)
+                                    {
+                                        queryEliminar.t_ActualizaFecha = DateTime.Now;
+                                        queryEliminar.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                        queryEliminar.i_Eliminado = 1;
+
+                                    }
+
+                                    dbContext.areaslaboratrabajador.ApplyCurrentValues(queryEliminar);
+                                    Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName, "derechohabientetrabajador", AreasDto.v_IdAreaLaborada.ToString());
+
+                                }
+
+                                #endregion
+                                break;
+
+                        }
+
+                        #region Actualizar DireccionCliente
+
+                        clientedireccionesDto pobjDtoEntityDireccion = dbContext.clientedirecciones.Where(o => o.v_IdCliente == pobjDtoEntity.v_IdCliente && o.i_IdDireccionCliente == pobjDtoEntity.i_IdDireccionCliente).FirstOrDefault().ToDTO();
+                        if (pobjDtoEntityDireccion != null)
+                        {
+                            pobjDtoEntityDireccion.v_Direccion = pobjDtoEntity.v_DirecPrincipal;
+                            ActualizarDireccionesCliente(ref pobjOperationResult, pobjDtoEntityDireccion, ClientSession);
+                            if (pobjOperationResult.Success == 0)
+                            {
+                                return;
+                            }
+                        }
+
+                        #endregion
+                        dbContext.SaveChanges();
+                        ts.Complete();
+                        pobjOperationResult.Success = 1;
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.Actualizarcliente()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                return;
+            }
+        }
+
+        public void Eliminarcliente(ref OperationResult pobjOperationResult, string pstrIdcliente, List<string> ClientSession)
+        {
+
+
+            using (TransactionScope ts = TransactionUtils.CreateTransactionScope())
+            {
+
+                try
+                {
+                    using (var dbContext = new SAMBHSEntitiesModelWin())
+                    {
+
+                        // Obtener la entidad fuente
+                        var objEntitySource = (from a in dbContext.cliente
+                                               where a.v_IdCliente == pstrIdcliente
+                                               select a).FirstOrDefault();
+
+                        // Crear la entidad con los datos actualizados
+                        objEntitySource.t_ActualizaFecha = DateTime.Now;
+                        objEntitySource.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                        objEntitySource.i_Eliminado = 1;
+
+                        //Eliminar avales del cliente eliminado.
+                        var objEntitySourceAvalClientes = (from a in dbContext.avalcliente
+                                                           where a.v_IdCliente == pstrIdcliente
+                                                           select a).ToList();
+
+                        foreach (var RegistroCarteraCliente in objEntitySourceAvalClientes)
+                        {
+                            RegistroCarteraCliente.t_ActualizaFecha = DateTime.Now;
+                            RegistroCarteraCliente.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                            RegistroCarteraCliente.i_Eliminado = 1;
+                        }
+                        // Guardar los cambios
+
+                        Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName,
+                            "cliente", objEntitySource.v_IdCliente);
+
+
+
+                        if (objEntitySource.v_FlagPantalla == "T")
+                        {
+
+                            #region EliminarTrabajador
+
+                            var objTrabajador = (from a in dbContext.trabajador
+
+                                                 where a.v_IdCliente == pstrIdcliente && a.i_Eliminado == 0
+
+                                                 select a).FirstOrDefault();
+
+                            objTrabajador.t_ActualizaFecha = DateTime.Now;
+                            objTrabajador.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                            objTrabajador.i_Eliminado = 1;
+                            Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName,
+                                "trabajador", objTrabajador.v_IdTrabajador);
+
+                            #endregion
+
+                            #region EliminarContratoyContratoDetalles
+
+                            var Contratos = (from a in dbContext.contratotrabajador
+                                             where a.v_IdTrabajador == objTrabajador.v_IdTrabajador && a.i_Eliminado == 0
+
+                                             select a).ToList();
+                            foreach (var contratitos in Contratos)
+                            {
+                                contratitos.t_ActualizaFecha = DateTime.Now;
+                                contratitos.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                contratitos.i_Eliminado = 1;
+                                Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName,
+                                    "contatotrabajador", contratitos.v_IdContrato);
+
+
+                                var ContratoDetalle = (from a in dbContext.contratodetalletrabajador
+                                                       where a.v_IdContrato == contratitos.v_IdContrato && a.i_Eliminado == 0
+                                                       select a).ToList();
+
+                                foreach (var detalleContrato in ContratoDetalle)
+                                {
+
+                                    detalleContrato.t_ActualizaFecha = DateTime.Now;
+                                    detalleContrato.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                    detalleContrato.i_Eliminado = 1;
+                                    Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION,
+                                        Globals.ClientSession.v_UserName, "contratodetalletrabajador",
+                                        detalleContrato.v_IdContrato);
+
+
+                                }
+
+                            }
+
+                            #endregion
+
+                            #region EliminarRegimenPensionario
+
+                            var ListaRegimenPensionario = (from a in dbContext.regimenpensionariotrabajador
+                                                           where a.v_IdTrabajador == objTrabajador.v_IdTrabajador && a.i_Eliminado == 0
+                                                           select a).ToList();
+
+
+                            foreach (var regimen in ListaRegimenPensionario)
+                            {
+
+                                regimen.t_ActualizaFecha = DateTime.Now;
+                                regimen.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                regimen.i_Eliminado = 1;
+                                Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName,
+                                    "contratodetalletrabajador", regimen.v_IdRegimenPensionario);
+                            }
+
+                            #endregion
+
+                            #region Eliminar DerechoHabientes
+
+                            var ListDH = (from a in dbContext.derechohabientetrabajador
+                                          where a.v_IdTrabajador == objTrabajador.v_IdTrabajador && a.i_Eliminado == 0
+                                          select a).ToList();
+                            foreach (var derechoHabientes in ListDH)
+                            {
+
+                                derechoHabientes.t_ActualizaFecha = DateTime.Now;
+                                derechoHabientes.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                derechoHabientes.i_Eliminado = 1;
+                                Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName,
+                                    "derechohabientetrabajador ", derechoHabientes.v_IdDerechoHabiente);
+
+
+                            }
+
+
+                            #endregion
+
+                            #region AreasLabora
+
+                            var Areas = (from a in dbContext.areaslaboratrabajador
+                                         where a.v_IdTrabajador == objTrabajador.v_IdTrabajador
+                                         select a).ToList();
+
+                            foreach (var AreasLabora in Areas)
+                            {
+
+                                AreasLabora.t_ActualizaFecha = DateTime.Now;
+                                AreasLabora.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                                AreasLabora.i_Eliminado = 1;
+                                Utils.Windows.GeneraHistorial(LogEventType.ELIMINACION, Globals.ClientSession.v_UserName,
+                                    "areaslaboratrabajador", AreasLabora.v_IdAreaLaborada.ToString());
+                            }
+
+                            #endregion
+                        }
+
+                        dbContext.SaveChanges();
+                        ts.Complete();
+
+                        pobjOperationResult.Success = 1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    pobjOperationResult.Success = 0;
+                    pobjOperationResult.AdditionalInformation = "ClienteBL.Eliminarcliente()";
+                    pobjOperationResult.ErrorMessage = ex.Message;
+                    pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                    Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                }
+            }
+        }
+
+
+
+
+        public clientedireccionesDto InsertarDireccionesCliente(ref OperationResult pobjOperationResult, clientedireccionesDto ObjClienteDireccionDto, List<string> ClientSession, string IdCliente)
+        {
+            //mon.IsActive = true;
+
+            string newId = string.Empty;
+            try
+            {
+                //  SAMBHSEntitiesModel dbContext = new SAMBHSEntitiesModel();
+                using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    // tipodecambio objEntity = tipodecambioAssembler.ToEntity(ObjventadetalleanexoDto);
+                    clientedirecciones objEntity = clientedireccionesAssembler.ToEntity(ObjClienteDireccionDto);
+
+                    objEntity.i_IdDireccionCliente = dbContext.clientedirecciones.Any() ? dbContext.clientedirecciones.Max(p => p.i_IdDireccionCliente) + 1 : 1;
+                    objEntity.t_InsertaFecha = DateTime.Now;
+                    objEntity.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                    objEntity.i_Eliminado = 0;
+                    objEntity.v_IdCliente = IdCliente;
+                    dbContext.AddToclientedirecciones(objEntity);
+
+                    dbContext.SaveChanges();
+
+                    pobjOperationResult.Success = 1;
+
+                    Utils.Windows.GeneraHistorial(LogEventType.CREACION, Globals.ClientSession.v_UserName, "clientedirecciones", objEntity.i_IdDireccionCliente.ToString());
+                    return ObjClienteDireccionDto;
+                }
+            }
+            catch (Exception ex)
+            {
+
+
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.InsertarDireccionesCliente()\nLinea:" + ex.StackTrace.Substring(ex.StackTrace.LastIndexOf(' '));
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                return null;
+            }
+        }
+
+
+        public bool YaTieneDireccionPredeterminada(clientedireccionesDto objClienteDireccionesDto)
+        {
+
+            using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+            {
+                if (objClienteDireccionesDto.i_IdDireccionCliente == null) // Nuevo
+                {
+                    var Direcciones = dbContext.clientedirecciones.Where(o => o.v_IdCliente == objClienteDireccionesDto.v_IdCliente && o.i_Eliminado == 0 && o.i_EsDireccionPredeterminada == 1).ToList();
+                    if (objClienteDireccionesDto.i_EsDireccionPredeterminada == 1)
+                    {
+                        return Direcciones.Any() ? true : false;
+                    }
+                    else
+                        return Direcciones.Any() ? false : true;
+                }
+                else // Editado
+                {
+                    var Direcciones = dbContext.clientedirecciones.Where(o => o.v_IdCliente == objClienteDireccionesDto.v_IdCliente && o.i_Eliminado == 0 && o.i_EsDireccionPredeterminada == 1 && o.i_IdDireccionCliente != objClienteDireccionesDto.i_IdDireccionCliente).ToList();
+                    if (objClienteDireccionesDto.i_EsDireccionPredeterminada == 1)
+                    {
+                        return Direcciones.Any() ? false : true;
+                    }
+                    else
+                        return Direcciones.Any() ? true : false;
+                }
+
+
+            }
+        }
+
+        public void IniciarDirecionesClientes(ref OperationResult objOperationResult)
+        {
+            using (TransactionScope ts = new TransactionScope())
+            {
+                using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+                {
+
+                    var DireccionesClientes = dbContext.cliente.Where(o => o.i_Eliminado == 0).ToList().ToDTOs();
+
+                    foreach (var DirCliente in DireccionesClientes)
+                    {
+                        clientedireccionesDto objClienteDireccionesDto = new clientedireccionesDto();
+                        objClienteDireccionesDto.v_Direccion = string.IsNullOrEmpty(DirCliente.v_DirecPrincipal) ? "" : DirCliente.v_DirecPrincipal.Trim();
+                        objClienteDireccionesDto.i_EsDireccionPredeterminada = 1;
+                        objClienteDireccionesDto.i_IdZona = -1;
+                        InsertarDireccionesCliente(ref objOperationResult, objClienteDireccionesDto, Globals.ClientSession.GetAsList(), DirCliente.v_IdCliente);
+                        if (objOperationResult.Success == 0)
+                        {
+                            return;
+                        }
+                    }
+                    ts.Complete();
+                }
+            }
+
+        }
+
+
+        public clientedireccionesDto ActualizarDireccionesCliente(ref OperationResult pobjOperationResult, clientedireccionesDto pobjDtoEntity, List<string> ClientSession)
+        {
+
+            try
+            {
+
+                int intNodeId = int.Parse(ClientSession[0]);
+                SecuentialBL objSecuentialBL = new SecuentialBL();
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    // Obtener la entidad fuente
+                    var objEntitySource = (from a in dbContext.clientedirecciones
+                                           where a.i_IdDireccionCliente == pobjDtoEntity.i_IdDireccionCliente
+                                           select a).FirstOrDefault();
+
+                    // Crear la entidad con los datos actualizados
+                    pobjDtoEntity.t_ActualizaFecha = DateTime.Now;
+                    pobjDtoEntity.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+
+                    clientedirecciones objEntity = pobjDtoEntity.ToEntity();
+                    dbContext.clientedirecciones.ApplyCurrentValues(objEntity);
+
+                    Utils.Windows.GeneraHistorial(LogEventType.ACTUALIZACION, Globals.ClientSession.v_UserName, "clientedirecciones", objEntitySource.v_IdCliente);
+
+                    dbContext.SaveChanges();
+
+                    pobjOperationResult.Success = 1;
+                    return objEntitySource.ToDTO();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.ActualizarDireccionesCliente()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                return null;
+            }
+
+
+
+        }
+
+
+        public clientedireccionesDto ObtenerDireccionesPorId(ref OperationResult objOperationResult, int Id)
+        {
+            try
+            {
+
+                objOperationResult.Success = 1;
+                using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+                {
+
+                    var ListaDirecciones = (from a in dbContext.clientedirecciones
+                                            join b in dbContext.datahierarchy on new { grupo = 161, eliminado = 0, zonadireccion = a.i_IdZona.Value } equals new { grupo = b.i_GroupId, eliminado = b.i_IsDeleted.Value, zonadireccion = b.i_ItemId } into b_join
+                                            from b in b_join.DefaultIfEmpty()
+                                            where a.i_Eliminado == 0 && a.i_IdDireccionCliente == Id
+                                            select new clientedireccionesDto
+                                            {
+
+                                                i_IdDireccionCliente = a.i_IdDireccionCliente,
+                                                v_Direccion = a.v_Direccion,
+                                                Zona = b.v_Value1,
+                                                v_IdCliente = a.v_IdCliente,
+                                                i_IdDepartamento = a.i_IdDepartamento,
+                                                i_IdProvincia = a.i_IdProvincia,
+                                                i_IdDistrito = a.i_IdDistrito,
+                                                i_EsDireccionPredeterminada = a.i_EsDireccionPredeterminada ?? 0,
+                                                i_Eliminado = a.i_Eliminado,
+                                                i_InsertaIdUsuario = a.i_InsertaIdUsuario,
+                                                i_ActualizaIdUsuario = a.i_ActualizaIdUsuario,
+                                                t_InsertaFecha = a.t_InsertaFecha,
+                                                t_ActualizaFecha = a.t_ActualizaFecha,
+                                                i_IdZona = a.i_IdZona
+
+
+                                            }
+                                           ).FirstOrDefault();
+
+                    return ListaDirecciones;
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                objOperationResult.Success = 0;
+                objOperationResult.ExceptionMessage = Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
+
+        public List<clientedireccionesDto> ObtenerDireccionClientes(ref OperationResult objOperationResult, string IdCliente)
+        {
+            try
+            {
+                objOperationResult.Success = 1;
+                using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+                {
+
+                    var ListaDirecciones = (from a in dbContext.clientedirecciones
+                                            join b in dbContext.datahierarchy on new { grupo = 161, eliminado = 0, zonadireccion = a.i_IdZona.Value } equals new { grupo = b.i_GroupId, eliminado = b.i_IsDeleted.Value, zonadireccion = b.i_ItemId } into b_join
+                                            from b in b_join.DefaultIfEmpty()
+                                            where a.i_Eliminado == 0 && a.v_IdCliente == IdCliente
+                                            select new clientedireccionesDto
+                                            {
+
+                                                i_IdDireccionCliente = a.i_IdDireccionCliente,
+                                                v_Direccion = a.v_Direccion,
+                                                Zona = b.v_Value1,
+                                                v_IdCliente = a.v_IdCliente,
+                                                i_IdDepartamento = a.i_IdDepartamento,
+                                                i_IdProvincia = a.i_IdProvincia,
+                                                i_IdDistrito = a.i_IdDistrito,
+                                                i_EsDireccionPredeterminada = a.i_EsDireccionPredeterminada ?? 0,
+                                                i_Eliminado = a.i_Eliminado,
+                                                i_InsertaIdUsuario = a.i_InsertaIdUsuario,
+                                                i_ActualizaIdUsuario = a.i_ActualizaIdUsuario,
+                                                t_InsertaFecha = a.t_InsertaFecha,
+                                                t_ActualizaFecha = a.t_ActualizaFecha,
+                                                i_IdZona = a.i_IdZona ?? -1,
+
+                                            }
+                                           ).ToList();
+
+                    return ListaDirecciones;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                objOperationResult.Success = 0;
+                return null;
+            }
+
+        }
+
+        public List<clientedireccionesDto> ObtenerDireccionClienteParaCombo(ref OperationResult objOperationResult, string idCliente)
+        {
+            try
+            {
+                objOperationResult.Success = 1;
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var listaDirecciones = (from a in dbContext.clientedirecciones
+                        where a.i_Eliminado == 0 && a.v_IdCliente == idCliente
+                        select new clientedireccionesDto
+                        {
+                            i_IdDireccionCliente = a.i_IdDireccionCliente,
+                            v_Direccion = a.v_Direccion,
+                            i_IdDepartamento = a.i_IdDepartamento,
+                            i_IdProvincia = a.i_IdProvincia,
+                            i_IdDistrito = a.i_IdDistrito,
+                            i_EsDireccionPredeterminada = a.i_EsDireccionPredeterminada,
+                            //Zona = b.v_Value2 + c.v_Value2 + d.v_Value2
+                        }
+                    ).ToList();
+
+                    return listaDirecciones;
+                }
+            }
+            catch (Exception ex)
+            {
+                objOperationResult.Success = 0;
+                return null;
+            }
+
+        }
+        
+        public BindingList<relacionusuarioclienteDto> ObtenerRelacionesClientesUsuario(ref OperationResult objOperationResult, int SystemUser=-1)
+        {
+            try
+            {
+                objOperationResult.Success = 1;
+                using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+                {
+
+
+                    var ListaRelacionesUsuarioCliente = (from a in dbContext.relacionusuariocliente
+
+                                                         join b in dbContext.cliente on new { cliente = a.v_IdCliente } equals new { cliente = b.v_IdCliente } into b_join
+                                                         from b in b_join.DefaultIfEmpty()
+
+                                                         join c in dbContext.clientedirecciones on new { cliente = b.v_IdCliente, dir = a.i_IdDireccionCliente.Value, eliminado = 0 } equals new { cliente = c.v_IdCliente, dir = c.i_IdDireccionCliente, eliminado = c.i_Eliminado.Value } into c_join
+                                                         from c in c_join.DefaultIfEmpty()
+
+                                                         join d in dbContext.systemuser on new { us = a.i_SystemUser.Value, eliminado = 0 } equals new { us= d.i_SystemUserId ,eliminado= d.i_IsDeleted.Value } into d_join
+                                                         from  d in d_join.DefaultIfEmpty ()
+                                                         where a.i_Eliminado == 0 && (a.i_SystemUser == SystemUser || SystemUser == -1)
+
+                                                         select new relacionusuarioclienteDto
+                                                         {
+
+                                                             i_SystemUser = a.i_SystemUser,
+                                                             i_IdDireccionCliente = a.i_IdDireccionCliente,
+                                                             v_IdCliente = a.v_IdCliente,
+                                                             i_Eliminado = a.i_Eliminado,
+                                                             i_InsertaIdUsuario = a.i_InsertaIdUsuario,
+                                                             i_ActualizaIdUsuario = a.i_ActualizaIdUsuario,
+                                                             t_InsertaFecha = a.t_InsertaFecha,
+                                                             t_ActualizaFecha = a.t_ActualizaFecha,
+                                                             Cliente = b != null ? (b.v_ApePaterno + " " + b.v_ApeMaterno + " " + b.v_PrimerNombre + " " + b.v_RazonSocial).Trim() : "",
+                                                             CodigoCliente = b != null ? b.v_CodCliente.Trim() : "",
+                                                             i_IdRelacionusuariocliente = a.i_IdRelacionusuariocliente,
+                                                             DireccionCliente = c.v_Direccion,
+                                                             User= d.v_UserName,
+
+                                                         }
+                                           ).ToList();
+
+
+                  
+                    var res = new BindingList<relacionusuarioclienteDto>(ListaRelacionesUsuarioCliente);
+                    return res;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                objOperationResult.Success = 0;
+                return null;
+            }
+
+        }
+
+        public void InsertarRelacionUsuarioCliente(ref OperationResult pobjOperationResult, relacionusuarioclienteDto objRelacionCliente, List<string> ClientSession)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var entity = objRelacionCliente.ToEntity();
+                    entity.t_InsertaFecha = DateTime.Now;
+                    entity.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                    entity.i_Eliminado = 0;
+                    dbContext.AddTorelacionusuariocliente(entity);
+                    dbContext.SaveChanges();
+                    pobjOperationResult.Success = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.InsertarRelacionUsuarioCliente()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+            }
+        }
+
+        public void ActualizaRelacionUsuarioCliente(ref OperationResult pobjOperationResult, relacionusuarioclienteDto objRelacionCliente, List<string> ClientSession)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var objEntitySource = (from a in dbContext.relacionusuariocliente
+                                           where a.i_IdRelacionusuariocliente  == objRelacionCliente.i_IdRelacionusuariocliente 
+                                           select a).FirstOrDefault();
+                    var entity = objRelacionCliente.ToEntity();
+                    entity.t_ActualizaFecha = DateTime.Now;
+                    entity.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+
+                    dbContext.relacionusuariocliente.ApplyCurrentValues(entity);
+                    dbContext.SaveChanges();
+                    pobjOperationResult.Success = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.ActualizaRelacionUsuarioCliente()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+            }
+        }
+
+
+
+        public void EliminarRelacionUsuarioById(ref OperationResult pobjOperationResult, int pintIdRelacionUsuario, List<string> ClientSession)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var obj = (from n in dbContext.relacionusuariocliente 
+                               where n.i_IdRelacionusuariocliente  == pintIdRelacionUsuario
+                               select n).FirstOrDefault();
+                    obj.t_ActualizaFecha = DateTime.Now;
+                    obj.i_ActualizaIdUsuario = Int32.Parse(ClientSession[2]);
+                    obj.i_Eliminado = 1;
+                    dbContext.SaveChanges();
+                    pobjOperationResult.Success = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.EliminarRelacionUsuarioById()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+            }
+        }
+
+
+
+
+
+
+
+
+        public static void ActualizarUbigeoPorCliente(ref OperationResult pobjOperationResult, List<KeyValueDTO> listClientes)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var clientesTemporal = dbContext.cliente.Where(p => p.i_Eliminado == 0).ToList();
+
+                    foreach (var KeyValueCliente in listClientes)
+                    {
+                        var cliente = clientesTemporal.FirstOrDefault(p => p.v_CodCliente.Trim().Equals(KeyValueCliente.Id.Trim()));
+
+                        if (cliente == null) continue;
+                        int departamento, provincia, distrito;
+                        cliente.i_IdDepartamento = int.TryParse(KeyValueCliente.Value1, out departamento) ? departamento : -1;
+                        cliente.i_IdProvincia = int.TryParse(KeyValueCliente.Value2, out provincia) ? provincia : -1;
+                        cliente.i_IdDistrito = int.TryParse(KeyValueCliente.Value3, out distrito) ? distrito : -1;
+
+                        dbContext.cliente.ApplyCurrentValues(cliente);
+                    }
+
+                    dbContext.SaveChanges();
+                    pobjOperationResult.Success = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.ActualizarUbigeoPorCliente()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+            }
+        }
+
+        public bool ExistenciaClienteVentas(string IdCliente)
+        {
+
+
+            using (var dbContext = new SAMBHSEntitiesModelWin())
+            {
+
+
+
+                var OrdenTrabajos = (from a in dbContext.nbs_ordentrabajo
+
+                                     where a.i_Eliminado == 0 && a.v_IdCliente == IdCliente
+
+                                     select a).ToList();
+
+                var Ventas = (from a in dbContext.venta
+                              where a.v_IdCliente == IdCliente && a.i_Eliminado == 0
+
+                              select a).ToList();
+                var DiarioDetalle = (from a in dbContext.diariodetalle
+
+                                     where a.v_IdCliente == IdCliente && a.i_Eliminado == 0
+
+                                     select a).ToList();
+
+                var TesoreriaDetalle = (from a in dbContext.tesoreriadetalle
+                                        where a.v_IdCliente == IdCliente && a.i_Eliminado == 0
+
+                                        select a).ToList();
+                return Ventas.Any() || DiarioDetalle.Any() || TesoreriaDetalle.Any();
+            }
+        }
+
+
+        public bool ExistenciaProveedorDiversosProcesos(string IdProveedor)
+        {
+
+
+            using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+            {
+
+
+                var Compras = (from a in dbContext.compra
+                               where a.v_IdProveedor == IdProveedor && a.i_Eliminado == 0
+
+                               select a).ToList();
+
+                var Ventas = (from a in dbContext.venta
+                               where a.v_IdCliente == IdProveedor && a.i_Eliminado == 0
+
+                               select a).ToList();
+
+                var ReciboHonorarios = (from a in dbContext.recibohonorario
+
+                                        where a.v_IdProveedor == IdProveedor && a.i_Eliminado == 0
+                                        select a).ToList();
+
+                var DiarioDetalle = (from a in dbContext.diariodetalle
+
+                                     where a.v_IdCliente == IdProveedor && a.i_Eliminado == 0
+
+                                     select a).ToList();
+
+                var TesoreriaDetalle = (from a in dbContext.tesoreriadetalle
+                                        where a.v_IdCliente == IdProveedor && a.i_Eliminado == 0
+
+                                        select a).ToList();
+
+                var ImportacionFob = (from a in dbContext.importaciondetallefob
+                                      where a.v_IdCliente == IdProveedor && a.i_Eliminado == 0
+                                      select a).ToList();
+                var ImportacionGastos = (from a in dbContext.importaciondetallegastos
+
+                                         where a.i_Eliminado == 0 && a.v_Detalle == IdProveedor
+
+                                         select a).ToList();
+
+                return Ventas.Any() || Compras.Any() || ReciboHonorarios.Any() || DiarioDetalle.Any() || TesoreriaDetalle.Any() || ImportacionFob.Any() || ImportacionGastos.Any();
+            }
+        }
+
+        public clienteDto ObtenerClienteCodigo(ref OperationResult pobjOperatioResult, string pstrCodigo, string pstringIdCliente, string Flag)
+        {
+
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    clienteDto objDtoEntity = null;
+                    if (pstringIdCliente == null)
+                    {
+                        var objEntity = (from A in dbContext.cliente
+                                         where A.v_CodCliente == pstrCodigo & A.i_Eliminado == 0 & A.v_FlagPantalla == Flag
+                                         select A
+                        ).FirstOrDefault();
+                        if (objEntity != null)
+                            objDtoEntity = clienteAssembler.ToDTO(objEntity);
+
+                        pobjOperatioResult.Success = 1;
+                        return objDtoEntity;
+                    }
+                    else
+                    {
+                        var objEntity = (from A in dbContext.cliente
+                                         where A.v_CodCliente == pstrCodigo & A.i_Eliminado == 0 & A.v_FlagPantalla == Flag
+                                               & A.v_IdCliente != pstringIdCliente
+                                         select A
+                        ).FirstOrDefault();
+                        if (objEntity != null)
+                            objDtoEntity = clienteAssembler.ToDTO(objEntity);
+
+                        pobjOperatioResult.Success = 1;
+                        return objDtoEntity;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperatioResult.Success = 0;
+                pobjOperatioResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+
+        }
+
+        public clienteDto ObtenerClientePorID(ref OperationResult pobjOperationResult, string ID)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var Entidad = dbContext.cliente.FirstOrDefault(p => p.v_IdCliente == ID);
+
+                    return Entidad.ToDTO();
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+        }
+
+        public clienteDto ObtenerClienteDocumentoIdentificacion(ref OperationResult pobjOperatioResult, string pstrDocumentoIdentificacion, string pstringIdCliente, string Flag)
+        {
+
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    clienteDto objDtoEntity = null;
+                    if (pstringIdCliente == null)
+                    {
+                        var objEntity = (from A in dbContext.cliente
+                                         where
+                                         A.v_NroDocIdentificacion == pstrDocumentoIdentificacion & A.i_Eliminado == 0 &&
+                                         A.v_FlagPantalla == Flag
+                                         select A
+                        ).FirstOrDefault();
+                        if (objEntity != null)
+                            objDtoEntity = objEntity.ToDTO();
+
+                        pobjOperatioResult.Success = 1;
+                        return objDtoEntity;
+                    }
+                    else
+                    {
+
+                        return objDtoEntity;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperatioResult.Success = 0;
+                pobjOperatioResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+        }
+
+        public List<KeyValueDTO> DevuelveClientes()
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var entityCliente = dbContext.cliente
+                        .Where(n => n.v_FlagPantalla == "C" && n.i_Eliminado == 0)
+                        .Select(n => new KeyValueDTO
+                        {
+                            Id = n.v_IdCliente,
+                            Value1 = n.v_CodCliente.Trim(),
+                            Value3 =
+                                (n.v_ApePaterno + " " + n.v_ApeMaterno + " " + n.v_PrimerNombre + " " +
+                                 n.v_SegundoNombre + " " + n.v_RazonSocial).Trim(),
+                            Value5 = n.v_NroDocIdentificacion.Trim()
+                        }).ToList().GroupBy(g => g.Value1)
+                        .Select(p => p.FirstOrDefault())
+                        .ToList();
+
+                    return entityCliente;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<KeyValueDTO> DevuelveProveedores()
+        {
+            using (var dbContext = new SAMBHSEntitiesModelWin())
+            {
+                List<KeyValueDTO> EntityCliente = (from n in dbContext.cliente
+                                                   where n.v_FlagPantalla == "V"
+                                                   select new KeyValueDTO { Value5 = n.v_NroDocIdentificacion.Trim(), Id = n.v_IdCliente, Value1 = n.v_CodCliente, Value3 = (n.v_ApePaterno + " " + n.v_ApeMaterno + " " + n.v_PrimerNombre + " " + n.v_SegundoNombre + " " + n.v_RazonSocial).Trim() }).ToList();
+
+                return EntityCliente;
+
+            }
+        }
+
+        public List<KeyValueDTO> DevuelveClientesProveedores()
+        {
+            using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+            {
+                var entityCliente = (from n in dbContext.cliente
+                                     where n.v_FlagPantalla != null
+                                     select
+                                     new KeyValueDTO
+                                     {
+                                         Id = n.v_IdCliente,
+                                         Value1 = n.v_CodCliente.Trim(),
+                                         Value3 =
+                                         (n.v_ApePaterno + " " + n.v_ApeMaterno + " " + n.v_PrimerNombre + " " +
+                                          n.v_SegundoNombre + " " + n.v_RazonSocial).Trim(),
+                                         Value2 = n.v_FlagPantalla,
+                                         Value5 = n.v_NroDocIdentificacion
+                                     }).ToList();
+
+                return entityCliente.Distinct().ToList();
+
+            }
+        }
+
+        public List<KeyValueDTO> DevuelveTrabajadores()
+        {
+            using (var dbContext = new SAMBHSEntitiesModelWin())
+            {
+                List<KeyValueDTO> EntityCliente = (from n in dbContext.cliente
+                                                   where n.v_FlagPantalla == "T"
+                                                   select new KeyValueDTO { Value5 = n.v_NroDocIdentificacion.Trim(), Id = n.v_IdCliente, Value1 = n.v_CodCliente, Value3 = (n.v_ApePaterno + " " + n.v_ApeMaterno + " " + n.v_PrimerNombre + " " + n.v_SegundoNombre + " " + n.v_RazonSocial).Trim() }).ToList();
+
+                return EntityCliente;
+
+            }
+        }
+
+
+        public clienteDto CreaVerificaClienteAnulado(ref OperationResult pobjOperationResult)
+        {
+            try
+            {
+                using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var ClienteA = (from n in dbContext.cliente
+                                    where n.v_IdCliente == "N002-CL999999999"
+                                    select n).FirstOrDefault();
+
+                    pobjOperationResult.Success = 1;
+
+                    if (ClienteA == null)
+                    {
+                        cliente clientepg = new cliente();
+                        clientepg.v_IdCliente = "N002-CL999999999";
+                        clientepg.v_CodCliente = "00000";
+                        clientepg.v_FlagPantalla = "C";
+                        clientepg.i_IdTipoIdentificacion = 6;
+                        clientepg.v_NroDocIdentificacion = "99999999999";
+                        clientepg.i_IdTipoPersona = 1;
+                        clientepg.v_RazonSocial = "A N U L A D A";
+                        clientepg.v_PrimerNombre = "";
+                        clientepg.v_SegundoNombre = "";
+                        clientepg.v_ApeMaterno = "";
+                        clientepg.v_ApePaterno = "";
+                        clientepg.i_Activo = 1;
+                        clientepg.i_Nacionalidad = 0;
+                        clientepg.i_IdListaPrecios = 1;
+                        clientepg.i_Eliminado = 0;
+                        clientepg.v_DirecPrincipal = "S/N";
+                        dbContext.AddTocliente(clientepg);
+                        dbContext.SaveChanges();
+                        return clientepg.ToDTO();
+                    }
+                    return ClienteA.ToDTO();
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.CreaVerificaClienteAnulado()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                return null;
+            }
+        }
+
+        public double ObtenerDeudaPendientePorCliente(ref OperationResult pobjOperationResult, int IdMoneda, string IdCliente, double TipoCambio)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    if (!string.IsNullOrEmpty(IdCliente))
+                    {
+                        var Registros = (from n in dbContext.cobranzapendiente
+
+                                         join J1 in dbContext.venta on n.v_IdVenta equals J1.v_IdVenta into J1_join
+                                         from J1 in J1_join.DefaultIfEmpty()
+
+                                         where J1.v_IdCliente == IdCliente && J1.i_Eliminado == 0 && n.i_Eliminado == 0
+
+                                         select new
+                                         {
+                                             Saldo = n.d_Saldo,
+                                             Moneda = J1.i_IdMoneda
+                                         }
+                                        ).AsEnumerable().Select(p => new
+                                        {
+                                            Deuda = CalcularMontoDeudaParaLineaCredito(p.Moneda.Value, IdMoneda, p.Saldo.Value, TipoCambio)
+                                        }
+                                        ).ToList();
+
+                        return Registros.Sum(p => p.Deuda);
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.ObtenerDeudaPendientePorCliente()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                return 0;
+            }
+        }
+
+        private double CalcularMontoDeudaParaLineaCredito(int IdMonedaVenta, int IdMonedaConsulta, decimal Saldo, double TipoCambio)
+        {
+            switch (IdMonedaVenta)
+            {
+                case 1:
+
+                    if (IdMonedaConsulta == 1)
+                    {
+                        return (Double)Saldo;
+                    }
+                    else if (IdMonedaConsulta == 2)
+                    {
+                        return (Double)Saldo / TipoCambio;
+                    }
+                    break;
+
+                case 2:
+                    if (IdMonedaConsulta == 1)
+                    {
+                        return (Double)Saldo * TipoCambio;
+                    }
+                    else if (IdMonedaConsulta == 2)
+                    {
+                        return (Double)Saldo;
+                    }
+                    break;
+            }
+
+            return 0;
+        }
+
+        public clienteDto ObtenerClienteCodigoBandejas(ref OperationResult pobjOperatioResult, string pstrNumeroDoc, string Flag)
+        {
+
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    clienteDto objDtoEntity = null;
+
+                    var objEntity = (from A in dbContext.cliente
+                                     where A.v_NroDocIdentificacion == pstrNumeroDoc & A.i_Eliminado == 0 & A.v_FlagPantalla == Flag
+                                     select A
+                    ).FirstOrDefault();
+                    if (objEntity != null)
+                        objDtoEntity = objEntity.ToDTO();
+
+                    pobjOperatioResult.Success = 1;
+                    return objDtoEntity;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                pobjOperatioResult.Success = 0;
+                pobjOperatioResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+
+        }
+
+        public clienteDto ObtenerClienteCodigoBandejasCodigo(ref OperationResult pobjOperatioResult, string pstrNumeroDoc, string Flag)
+        {
+
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    clienteDto objDtoEntity = null;
+
+                    var objEntity = (from A in dbContext.cliente
+                                     where A.v_CodCliente == pstrNumeroDoc & A.i_Eliminado == 0 & A.v_FlagPantalla == Flag
+                                     select A
+                    ).FirstOrDefault();
+                    if (objEntity != null)
+                        objDtoEntity = objEntity.ToDTO();
+
+                    pobjOperatioResult.Success = 1;
+                    return objDtoEntity;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperatioResult.Success = 0;
+                pobjOperatioResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+
+        }
+
+        public string[] DevolverClientePorNroDocumento(ref OperationResult pobjOperationResult, string NroDocumento)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var query = (from n in dbContext.cliente
+                                 where n.i_Eliminado == 0 && n.v_FlagPantalla == "C" && n.v_NroDocIdentificacion == NroDocumento
+                                 select n
+                    ).FirstOrDefault();
+
+                    pobjOperationResult.Success = 1;
+
+                    if (query != null)
+                    {
+                        string[] Cadena = new string[4];
+                        Cadena[0] = query.v_IdCliente;
+                        Cadena[1] = query.v_CodCliente;
+                        Cadena[2] =
+                        (query.v_ApePaterno + " " + query.v_ApeMaterno + " " + query.v_PrimerNombre + " " +
+                         query.v_RazonSocial).Trim();
+                        Cadena[3] = query.v_DirecPrincipal;
+                        return Cadena;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
+        public List<ClientesDescuentos> ObtenerDescuentosCliente(ref OperationResult pObjOperatiobResult, string IdCliente, string IdProducto, DateTime FechaInicio, DateTime FechaFin)
+        {
+            try
+            {
+
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var DescuentosVentas = (from a in dbContext.ventadetalle
+
+                                            join b in dbContext.venta on new { v = a.v_IdVenta } equals new { v = b.v_IdVenta } into b_join
+
+                                            from b in b_join.DefaultIfEmpty()
+
+                                            join c in dbContext.cliente on new { c = b.v_IdCliente } equals new { c = c.v_IdCliente } into c_join
+
+                                            from c in c_join.DefaultIfEmpty()
+
+                                            join d in dbContext.productodetalle on new { v = a.v_IdProductoDetalle } equals new { v = d.v_IdProductoDetalle } into d_join
+
+                                            from d in d_join.DefaultIfEmpty()
+
+                                            join e in dbContext.producto on new { v = d.v_IdProducto } equals new { v = e.v_IdProducto } into e_join
+
+                                            from e in e_join.DefaultIfEmpty()
+
+
+                                            join f in dbContext.documento on new { d = b.i_IdTipoDocumento.Value } equals new { d = f.i_CodigoDocumento } into f_join
+
+                                            from f in f_join.DefaultIfEmpty()
+
+                                            join g in dbContext.datahierarchy on new { Grupo = 17, um = a.i_IdUnidadMedida.Value, eliminado = 0 } equals new { Grupo = g.i_GroupId, um = g.i_ItemId, eliminado = g.i_IsDeleted.Value } into g_join
+
+                                            from g in g_join.DefaultIfEmpty()
+
+                                            join h in dbContext.datahierarchy on new { Grupo = 18, um = b.i_IdMoneda.Value, eliminado = 0 } equals new { Grupo = h.i_GroupId, um = h.i_ItemId, eliminado = h.i_IsDeleted.Value } into h_join
+
+                                            from h in h_join.DefaultIfEmpty()
+
+                                            where b.i_Eliminado == 0 && b.i_IdEstado == 1
+
+                                           && (c.v_IdCliente == IdCliente || IdCliente == null) && (a.v_IdProductoDetalle == IdProducto || IdProducto == null) && a.d_Descuento > 0
+                                            && (b.t_FechaRegistro >= FechaInicio && b.t_FechaRegistro <= FechaFin)
+
+                                            select new ClientesDescuentos
+                                            {
+                                                v_Descuento = a.v_FacturaRef == null ? "0" : a.v_FacturaRef,
+                                                d_Descuento = a.d_Descuento == null ? 0 : a.d_Descuento.Value,
+                                                FechaEmision = b.t_FechaRegistro.Value,
+                                                Producto = d.producto.v_CodInterno.Trim() + " - " + d.producto.v_Descripcion.Trim(),
+                                                Cliente = (c.v_ApePaterno.Trim() + " " + c.v_ApeMaterno.Trim() + " " + c.v_PrimerNombre.Trim() + " " + c.v_RazonSocial.Trim()).Trim(),
+                                                NroDocumento = b.v_SerieDocumento + "-" + b.v_CorrelativoDocumento,
+                                                TipoDocumento = f.v_Siglas.Trim(),
+                                                d_Cantidad = a.d_Cantidad ?? 0,
+                                                UnidadMedida = g == null ? "" : g.v_Field,
+                                                d_Precio = a.d_Precio == null ? 0 : a.d_Precio.Value,
+                                                d_SubTotal = a.d_PrecioVenta == null ? 0 : a.d_PrecioVenta.Value,
+                                                Moneda = h.v_Value2,
+                                                i_IdTipoDocumento = b.i_IdTipoDocumento ?? -1,
+
+
+
+                                            }).ToList();
+
+
+                    var DescuentosGuiasInternas = (from a in dbContext.guiaremisiondetalle
+
+                                                   join b in dbContext.guiaremision on new { gd = a.v_IdGuiaRemision, eliminado = 0 } equals new { gd = b.v_IdGuiaRemision, eliminado = b.i_Eliminado.Value } into b_join
+
+                                                   from b in b_join.DefaultIfEmpty()
+
+                                                   join c in dbContext.cliente on new { c = b.v_IdCliente } equals new { c = c.v_IdCliente } into c_join
+
+                                                   from c in c_join.DefaultIfEmpty()
+
+                                                   join d in dbContext.productodetalle on new { v = a.v_IdProductoDetalle } equals new { v = d.v_IdProductoDetalle } into d_join
+
+                                                   from d in d_join.DefaultIfEmpty()
+
+                                                   join e in dbContext.producto on new { v = d.v_IdProducto } equals new { v = e.v_IdProducto } into e_join
+
+                                                   from e in e_join.DefaultIfEmpty()
+
+
+                                                   join f in dbContext.documento on new { d = b.i_IdTipoGuia.Value } equals new { d = f.i_CodigoDocumento } into f_join
+
+                                                   from f in f_join.DefaultIfEmpty()
+
+                                                   join g in dbContext.datahierarchy on new { Grupo = 17, um = a.i_IdUnidadMedida.Value, eliminado = 0 } equals new { Grupo = g.i_GroupId, um = g.i_ItemId, eliminado = g.i_IsDeleted.Value } into g_join
+
+                                                   from g in g_join.DefaultIfEmpty()
+
+                                                   join h in dbContext.datahierarchy on new { Grupo = 18, um = b.i_IdMoneda.Value, eliminado = 0 } equals new { Grupo = h.i_GroupId, um = h.i_ItemId, eliminado = h.i_IsDeleted.Value } into h_join
+
+                                                   from h in h_join.DefaultIfEmpty()
+
+                                                   where b.i_Eliminado == 0 && b.i_IdEstado == 1 && b.i_IdTipoGuia == (int)TiposDocumentos.GuiaInterna
+
+                                                  && (c.v_IdCliente == IdCliente || IdCliente == null) && (a.v_IdProductoDetalle == IdProducto || IdProducto == null) && a.d_Descuento > 0
+
+                                                    && (b.t_FechaEmision >= FechaInicio && b.t_FechaEmision <= FechaFin)
+
+                                                   select new ClientesDescuentos
+                                                   {
+                                                       v_Descuento = a.v_Descuento ?? "0",
+                                                       d_Descuento = a.d_Descuento ?? 0,
+                                                       FechaEmision = b.t_FechaEmision.Value,
+                                                       Producto = d.producto.v_CodInterno.Trim() + "-" + d.producto.v_Descripcion.Trim(),
+                                                       Cliente = (c.v_ApePaterno.Trim() + "  " + c.v_ApeMaterno.Trim() + " " + c.v_PrimerNombre.Trim() + " " + c.v_RazonSocial.Trim()).Trim(),
+                                                       NroDocumento = b.v_SerieGuiaRemision + "-" + b.v_NumeroGuiaRemision,
+                                                       TipoDocumento = f.v_Siglas.Trim(),
+                                                       d_Cantidad = a.d_Cantidad ?? 0,
+                                                       UnidadMedida = g == null ? "" : g.v_Field,
+                                                       d_Precio = a.d_Precio ?? 0,
+                                                       d_SubTotal = a.d_Total ?? 0,
+                                                       Moneda = h.v_Value2,
+                                                       i_IdTipoDocumento = b.i_IdTipoGuia ?? -1,
+
+                                                   }).ToList();
+
+
+                    pObjOperatiobResult.Success = 1;
+
+                    return DescuentosVentas.Concat(DescuentosGuiasInternas).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                pObjOperatiobResult.Success = 0;
+                return null;
+
+            }
+
+        }
+
+        /// <summary>
+        /// Retorna la linea de credito del cliente, acepta nulos.
+        /// </summary>
+        /// <param name="pobjOperationResult"></param>
+        /// <param name="IdCliente"></param>
+        /// <returns></returns>
+        public lineacreditoempresaDto DevuelveLineaCreditoCliente(ref OperationResult pobjOperationResult, string IdCliente)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(IdCliente)) return null;
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var Cliente = dbContext.cliente.FirstOrDefault(p => p.v_IdCliente == IdCliente);
+
+                    if (Cliente.i_UsaLineaCredito != null && Cliente.i_UsaLineaCredito.Value == 1)
+                    {
+                        var Result = dbContext.lineacreditoempresa.FirstOrDefault(p => p.v_IdCliente == IdCliente);
+
+                        return Result != null ? Result.ToDTO() : null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.DevuelveLineaCreditoCliente()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+            }
+            return null;
+        }
+
+        public List<Anexo> BuscarAnexo(ref OperationResult pobjOperationResult, string flag)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var consulta = dbContext.cliente.Where(p => p.v_FlagPantalla.Equals(flag) && p.i_Eliminado == 0).ToList().Select(o => new Anexo
+                    {
+                        Flag = o.v_FlagPantalla.Trim(),
+                        IdAnexo = o.v_IdCliente,
+                        Codigo = o.v_CodCliente,
+                        NombresApellidos = (o.v_ApePaterno + " " + o.v_ApeMaterno + " " + o.v_PrimerNombre + " " + o.v_SegundoNombre + " " + o.v_RazonSocial).Trim(),
+                        NroDocumento = o.v_NroDocIdentificacion
+                    }).ToList();
+
+                    pobjOperationResult.Success = 1;
+
+                    return consulta;
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.BuscarAnexo()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                return null;
+            }
+        }
+
+
+        public List<KeyValueDTO> BuscarAnexoForCombo(ref OperationResult pobjOperationResult, string Flag)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    var Anexos = BuscarAnexo(ref pobjOperationResult, Flag);
+
+                    if (pobjOperationResult.Success == 1)
+                    {
+
+                        var query2 = Anexos.AsEnumerable()
+                            .Select(x => new KeyValueDTO
+                            {
+                                Id = x.IdAnexo ,
+                                Value1 = x.NombresApellidos ,
+                               
+                            }).ToList();
+                        pobjOperationResult.Success = 1;
+                        return query2;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+        }
+
+        public static void ActualizarDireccionCliente(string pstrIdCliente, string pstrDireccionActual)
+        {
+            try
+            {
+                var tarea = new Task(() =>
+                {
+                    using (var dbContext = new SAMBHSEntitiesModelWin())
+                    {
+                        if (string.IsNullOrWhiteSpace(pstrDireccionActual)) return;
+                        var cliente = dbContext.cliente.FirstOrDefault(c => c.v_IdCliente.Equals(pstrIdCliente));
+                        var dir =
+                            dbContext.clientedirecciones.FirstOrDefault(
+                                c =>
+                                    c.v_IdCliente.Equals(pstrIdCliente) && c.i_Eliminado == 0 &&
+                                    c.i_EsDireccionPredeterminada == 1);
+                        if (cliente != null)
+                        {
+                            pstrDireccionActual = Regex.Replace(pstrDireccionActual, @"[ ]+", " ");
+
+                            cliente.v_DirecPrincipal = pstrDireccionActual.Trim().Length > 200
+                                ? pstrDireccionActual.Trim().Substring(0, 200).ToUpper()
+                                : pstrDireccionActual.Trim().ToUpper();
+                            if (dir != null)
+                            {
+                                dir.v_Direccion = cliente.v_DirecPrincipal;
+                                dbContext.clientedirecciones.ApplyCurrentValues(dir);
+                            }
+
+                            dbContext.cliente.ApplyCurrentValues(cliente);
+                            dbContext.SaveChanges();
+                        }
+
+
+                    }
+                }, TaskCreationOptions.LongRunning);
+
+                tarea.Start();
+            }
+            catch { }
+        }
+
+
+        public static void ActualizarDatosCliente(string pstrIdCliente, string pstrDireccionActual, string pstrRazonSocialActual = null)
+        {
+            try
+            {
+                //var tarea = new Task(() =>
+                //{
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    if (string.IsNullOrWhiteSpace(pstrDireccionActual)) return;
+                    var cliente = dbContext.cliente.FirstOrDefault(c => c.v_IdCliente.Equals(pstrIdCliente));
+                    if (cliente != null)
+                    {
+                        pstrDireccionActual = Regex.Replace(pstrDireccionActual, @"[ ]+", " ");
+
+                        cliente.v_DirecPrincipal = pstrDireccionActual.Trim().Length > 200
+                            ? pstrDireccionActual.Trim().Substring(0, 200).ToUpper()
+                            : pstrDireccionActual.Trim().ToUpper();
+                        dbContext.cliente.ApplyCurrentValues(cliente);
+
+                        var direccionCliente =
+                            dbContext.clientedirecciones.FirstOrDefault(p => p.v_IdCliente.Equals(pstrIdCliente)
+                                && p.i_EsDireccionPredeterminada == 1 && p.i_Eliminado == 0);
+
+                        if (direccionCliente != null)
+                        {
+                            direccionCliente.v_Direccion = cliente.v_DirecPrincipal;
+                            dbContext.clientedirecciones.ApplyCurrentValues(direccionCliente);
+                        }
+
+                        dbContext.SaveChanges();
+                    }
+
+                    if (string.IsNullOrWhiteSpace(pstrRazonSocialActual)) return;
+                    if (cliente != null)
+                    {
+                        pstrRazonSocialActual = Regex.Replace(pstrRazonSocialActual, @"[ ]+", " ");
+
+                        cliente.v_RazonSocial = pstrRazonSocialActual.Trim().Length > 120
+                            ? pstrRazonSocialActual.Trim().Substring(0, 120).ToUpper()
+                            : pstrRazonSocialActual.Trim().ToUpper();
+                        dbContext.cliente.ApplyCurrentValues(cliente);
+                        dbContext.SaveChanges();
+                    }
+                }
+                //}, TaskCreationOptions.LongRunning);
+
+                //tarea.Start();
+            }
+            catch { }
+        }
+
+
+        public static clienteDto RegistroRapidoCliente(ref OperationResult pobjOperationResult, clienteDto objCliente, TipoAnexo tipoAnexo)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    if (objCliente == null) return null;
+                    var flagAnexo = tipoAnexo == TipoAnexo.Cliente
+                        ? "C" : tipoAnexo == TipoAnexo.Proveedor ? "V" : "T";
+
+                    if (string.IsNullOrWhiteSpace(objCliente.v_NroDocIdentificacion) ||
+                        string.IsNullOrWhiteSpace(objCliente.NombreRazonSocial))
+                    {
+                        throw new Exception("Este cliente no cuenta con los datos básicos requeridos.");
+                    }
+
+                    var clienteEntity = dbContext.cliente.FirstOrDefault(p =>
+                        p.v_NroDocIdentificacion.Trim().Equals(objCliente.v_NroDocIdentificacion.Trim()) &&
+                        p.i_Eliminado == 0 && p.v_FlagPantalla.Equals(flagAnexo));
+
+                    if (clienteEntity != null) return clienteEntity.ToDTO();
+
+                    var clienteToInsert = new clienteDto();
+                    var esPersonaNatural = objCliente.v_NroDocIdentificacion.Trim().Length == 8 ||
+                                           objCliente.v_NroDocIdentificacion.Trim().StartsWith("1");
+
+                    if (esPersonaNatural)
+                    {
+                        var arrayN = objCliente.NombreRazonSocial.Split(' ', ',');
+                        if (arrayN.Length < 3) return null;
+                        clienteToInsert.v_ApePaterno = arrayN[0];
+                        clienteToInsert.v_ApeMaterno = arrayN[1];
+                        clienteToInsert.v_PrimerNombre = arrayN[2];
+                        clienteToInsert.v_SegundoNombre = string.Empty;
+                        clienteToInsert.v_RazonSocial = string.Empty;
+                    }
+                    else
+                    {
+                        clienteToInsert.v_ApePaterno = string.Empty;
+                        clienteToInsert.v_ApeMaterno = string.Empty;
+                        clienteToInsert.v_PrimerNombre = string.Empty;
+                        clienteToInsert.v_SegundoNombre = string.Empty;
+                        clienteToInsert.v_RazonSocial = objCliente.NombreRazonSocial;
+                    }
+                    clienteToInsert.v_NroDocIdentificacion = objCliente.v_NroDocIdentificacion;
+                    clienteToInsert.v_CodCliente = objCliente.v_NroDocIdentificacion;
+                    clienteToInsert.i_IdTipoIdentificacion = objCliente.v_NroDocIdentificacion.Length == 11 ? 6 : 1;
+                    clienteToInsert.i_IdTipoPersona = esPersonaNatural ? 1 : 2;
+                    clienteToInsert.v_FlagPantalla = flagAnexo;
+                    clienteToInsert.i_IdSexo = -1;
+                    clienteToInsert.v_DirecPrincipal = objCliente.v_DirecPrincipal;
+                    clienteToInsert.i_IdPais = 1;
+                    clienteToInsert.i_IdDepartamento = 1391;
+                    clienteToInsert.i_IdProvincia = 1392;
+                    clienteToInsert.i_IdDistrito = 1393;
+                    clienteToInsert.i_Nacionalidad = 0;
+                    clienteToInsert.i_IdListaPrecios = 1;
+                    clienteToInsert.i_IdZona = 1;
+                    var objOperationResult = new OperationResult();
+                    var idClienteNuevo = new ClienteBL().InsertarCliente(ref objOperationResult, clienteToInsert,
+                        Globals.ClientSession.GetAsList(), null, null, null, null, null, null);
+
+                    if (objOperationResult.Success == 0)
+                    {
+                        throw new Exception(objOperationResult.ErrorMessage);
+                    }
+                    pobjOperationResult.Success = 1;
+                    return dbContext.cliente.Single(p => p.v_IdCliente.Equals(idClienteNuevo)).ToDTO();
+                }
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.RegistroRapidoCliente()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                return null;
+            }
+        }
+
+        #region Migracion
+
+        #region Metodo Experimental 1
+        public void InsertarClientes(ref OperationResult pobjOperationResult, List<clienteDto> pobjDtoEntitys, List<string> ClientSession)
+        {
+            //mon.IsActive = true;
+            int SecuentialId = 0;
+            string newId = string.Empty;
+            try
+            {
+
+                using (TransactionScope scope = TransactionUtils.CreateTransactionScope())
+                {
+                    SAMBHSEntitiesModelWin context = null;
+                    try
+                    {
+                        context = new SAMBHSEntitiesModelWin();
+                        context.CommandTimeout = 180;
+                        context.cliente.MergeOption = MergeOption.NoTracking;
+                        SecuentialBL objSecuentialBL = new SecuentialBL();
+
+                        int count = 0;
+
+                        foreach (clienteDto pobjDtoEntity in pobjDtoEntitys)
+                        {
+                            cliente objEntity = clienteAssembler.ToEntity(pobjDtoEntity);
+                            objEntity.t_InsertaFecha = DateTime.Now;
+                            objEntity.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                            objEntity.i_Eliminado = 0;
+
+                            // Autogeneramos el Pk de la tabla
+                            int intNodeId = int.Parse(ClientSession[0]);
+                            SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 14);
+                            newId = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "CL");
+                            objEntity.v_IdCliente = newId;
+                            ++count;
+                            context = AddToContext(context, objEntity, count, 100, true);
+                        }
+
+                        #region Insertar Cliente público general si es necesario
+
+                        cliente cpg = (from c in context.cliente
+                                       where c.v_IdCliente == "N002-CL000000000"
+                                       select c).FirstOrDefault();
+
+                        if (cpg == null)
+                        {
+                            cliente clientepg = new cliente();
+                            clientepg.v_IdCliente = "N002-CL000000000";
+                            clientepg.v_CodCliente = "000000000";
+                            clientepg.v_FlagPantalla = "C";
+                            clientepg.i_IdTipoIdentificacion = 6;
+                            clientepg.v_NroDocIdentificacion = "00000000000";
+                            clientepg.i_IdTipoPersona = 1;
+                            clientepg.v_RazonSocial = "PÚBLICO GENERAL";
+                            clientepg.v_PrimerNombre = "";
+                            clientepg.v_SegundoNombre = "";
+                            clientepg.v_ApeMaterno = "";
+                            clientepg.v_ApePaterno = "";
+                            clientepg.i_Activo = 1;
+                            clientepg.i_Nacionalidad = 0;
+                            clientepg.i_IdListaPrecios = 1;
+                            clientepg.i_Eliminado = 0;
+                            context.AddTocliente(clientepg);
+                        }
+                        #endregion
+
+                        context.SaveChanges();
+                    }
+                    finally
+                    {
+                        if (context != null)
+                            context.Dispose();
+                    }
+                    scope.Complete();
+                    pobjOperationResult.Success = 1;
+                }
+
+                return;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.AdditionalInformation = "ClienteBL.InsertarClientes()";
+                pobjOperationResult.ErrorMessage = ex.Message;
+                pobjOperationResult.ExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                Utils.ExceptionToLog(Globals.ClientSession.i_SystemUserId, pobjOperationResult);
+                return;
+            }
+        }
+
+        private SAMBHSEntitiesModelWin AddToContext(SAMBHSEntitiesModelWin context, cliente entity, int count, int commitCount, bool recreateContext)
+        {
+
+            context.AddTocliente(entity);
+
+            if (count % commitCount == 0)
+            {
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                if (recreateContext)
+                {
+                    context.Dispose();
+                    context = new SAMBHSEntitiesModelWin();
+                    context.CommandTimeout = 180;
+                    context.cliente.MergeOption = MergeOption.NoTracking;
+                }
+            }
+
+            return context;
+        }
+
+        //public class TransactionUtils
+        //{
+        //    public static TransactionScope CreateTransactionScope()
+        //    {
+        //        var transactionOptions = new TransactionOptions();
+        //        transactionOptions.IsolationLevel = IsolationLevel.ReadCommitted;
+        //        transactionOptions.Timeout = TransactionManager.MaximumTimeout;
+        //        return new TransactionScope(TransactionScopeOption.Required, transactionOptions);
+        //    }
+        //}
+        #endregion
+
+        #region Metodo Clasico 2
+        public void InsertarClientes_(ref OperationResult pobjOperationResult, List<clienteDto> pobjDtoEntitys, List<string> ClientSession)
+        {
+            //mon.IsActive = true;
+            int SecuentialId = 0;
+            string newId = string.Empty;
+            try
+            {
+                SAMBHSEntitiesModelWin context = new SAMBHSEntitiesModelWin();
+
+                context.cliente.MergeOption = MergeOption.NoTracking;
+                SecuentialBL objSecuentialBL = new SecuentialBL();
+
+                foreach (clienteDto pobjDtoEntity in pobjDtoEntitys)
+                {
+                    cliente objEntity = clienteAssembler.ToEntity(pobjDtoEntity);
+
+                    objEntity.t_InsertaFecha = DateTime.Now;
+                    objEntity.i_InsertaIdUsuario = Int32.Parse(ClientSession[2]);
+                    objEntity.i_Eliminado = 0;
+
+                    // Autogeneramos el Pk de la tabla
+                    int intNodeId = int.Parse(ClientSession[0]);
+                    SecuentialId = objSecuentialBL.GetNextSecuentialId(intNodeId, 14);
+                    newId = Utils.GetNewId(int.Parse(ClientSession[0]), SecuentialId, "CL");
+                    objEntity.v_IdCliente = newId;
+                    context.AddTocliente(objEntity);
+                }
+
+                context.SaveChanges();
+
+                #region Insertar Cliente público general si es necesario
+                using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    cliente cpg = (from c in dbContext.cliente
+                                   where c.v_IdCliente == "N002-CL000000000"
+                                   select c).FirstOrDefault();
+                    if (cpg == null)
+                    {
+                        cliente clientepg = new cliente();
+                        clientepg.v_IdCliente = "N002-CL000000000";
+                        clientepg.v_CodCliente = "000000000";
+                        clientepg.v_FlagPantalla = "C";
+                        clientepg.i_IdTipoIdentificacion = 6;
+                        clientepg.v_NroDocIdentificacion = "0000000000";
+                        clientepg.i_IdTipoPersona = 1;
+                        clientepg.v_RazonSocial = "PÚBLICO GENERAL";
+                        clientepg.i_Activo = 1;
+                        clientepg.i_Nacionalidad = 0;
+                        clientepg.i_IdListaPrecios = 1;
+                        clientepg.i_Eliminado = 0;
+                        dbContext.AddTocliente(clientepg);
+                        dbContext.SaveChanges();
+                    }
+                }
+                #endregion
+
+                pobjOperationResult.Success = 1;
+                return;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = ex.Message;
+                return;
+            }
+        }
+        #endregion
+
+
+        public void InsertarProveedorSiNoExiste(ref  OperationResult objOperationResult, string NumeroRucCliente)
+        {
+            clienteDto _clienteDto = new clienteDto();
+            ClienteBL _objClienteBL = new ClienteBL();
+            using (SAMBHSEntitiesModelWin dbContext = new SAMBHSEntitiesModelWin())
+            {
+                var HH = dbContext.cliente.Where(
+                                   x => x.v_NroDocIdentificacion == NumeroRucCliente && x.i_Eliminado == 0 && x.i_Activo == 1 && x.v_FlagPantalla == "V")
+                                  .ToList();
+
+                if (!dbContext.cliente.Where(
+                                   x => x.v_NroDocIdentificacion == NumeroRucCliente && x.i_Eliminado == 0 && x.i_Activo == 1 && x.v_FlagPantalla == "V")
+                                   .Any())
+                {
+                    _clienteDto = new clienteDto();
+                    _clienteDto.v_RazonSocial = "JORPLAST";
+                    _clienteDto.v_NroDocIdentificacion = NumeroRucCliente;
+                    _clienteDto.v_CodCliente = NumeroRucCliente;
+                    _clienteDto.i_IdTipoPersona = 2;
+                    _clienteDto.i_IdTipoIdentificacion = 6;
+                    _clienteDto.i_Activo = 1;
+                    _clienteDto.i_IdSexo = 2;
+                    _clienteDto.v_FlagPantalla = "V";
+
+                    _clienteDto.v_DirecPrincipal = "LIMA";
+                    _clienteDto.i_IdPais = 1;
+                    _clienteDto.i_IdDepartamento = 1391;
+                    _clienteDto.i_IdProvincia = 1392;
+                    _clienteDto.i_IdDistrito = 1393;
+                    _objClienteBL.InsertarCliente(ref objOperationResult, _clienteDto,
+                        Globals.ClientSession.GetAsList(), null, null, null, null, null, null);
+                }
+            }
+
+
+        }
+
+        #endregion
+
+
+        #region Reporte
+        public List<ReporteCliente> ReporteCliente(ref OperationResult objOperationResult, string pstrt_Orden, int pintIdTipoPersona, string pstrFilterExpression, int Departamento, int Provincia, int Distrito, int ListaPrecios)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    objOperationResult.Success = 1;
+                    var ubigeo = new SystemParameterBL().GetSystemParameterForCombo(ref objOperationResult, 112, "");
+
+                    #region Query
+
+                    var query =
+                    (from A in dbContext.cliente
+                     join B in dbContext.datahierarchy on new { IGroup = 2, TipoPersona = A.i_IdTipoPersona.Value }
+                     equals new { IGroup = B.i_GroupId, TipoPersona = B.i_ItemId }
+                     join C in dbContext.datahierarchy on new {Grupo =175 ,eliminado =0 , tipoAccion=A.i_IdTipoAccionesSocio ??-1} equals  new  {Grupo =C.i_GroupId ,eliminado =C.i_IsDeleted.Value ,tipoAccion=C.i_ItemId} into C_join 
+                     from C in C_join.DefaultIfEmpty ()
+                     
+
+                     where
+                     A.i_Eliminado == 0 && B.i_IsDeleted == 0 &&
+                     (A.i_IdTipoPersona == pintIdTipoPersona || pintIdTipoPersona == -1)
+                     && (A.i_IdDepartamento == Departamento || Departamento == -1)
+                     && (A.i_IdDistrito == Distrito || Distrito == -1)
+                     && (A.i_IdProvincia == Provincia || Provincia == -1)
+                     && (A.i_IdListaPrecios == ListaPrecios || ListaPrecios == -1)
+                     select new
+                     {
+                         A.v_CodCliente,
+                         NombreRazonSocial =
+                         A.v_RazonSocial + " " + A.v_PrimerNombre + " " + A.v_ApePaterno + " " + A.v_ApeMaterno,
+                         A.v_NroDocIdentificacion,
+                         v_Direccion = A.v_DirecPrincipal,
+                         v_TipoPersona = B == null ? "" : B.v_Value1,
+                         A.v_TelefonoFijo,
+                         A.t_InsertaFecha,
+                         A.v_FlagPantalla,
+                         iDepartamento = A.i_IdDepartamento ?? -1,
+                         idProvincia = A.i_IdProvincia ?? -1,
+                         idDistrito = A.i_IdDistrito ?? -1,
+                         TipoDocumento =A.i_IdTipoIdentificacion ??0,
+                         TipoAccionSocio=C.v_Value1 ,
+                         AccionesSuscritas =A.i_NumeroAccionesSuscritas??0 ,
+                         AccionesPagadas =A.i_NumeroAccionesPagadas ??0,
+                     }).ToList().Select(p =>
+                    {
+
+                        var departamento = p.iDepartamento == -1
+                                ? ""
+                                : ubigeo.FirstOrDefault(l => l.Id == p.iDepartamento.ToString()).Value1;
+                        var provincia = p.idProvincia == -1
+                            ? ""
+                            : ubigeo.FirstOrDefault(l => l.Id == p.idProvincia.ToString()).Value1;
+                        var distrito = p.idDistrito == -1
+                            ? ""
+                            : ubigeo.FirstOrDefault(l => l.Id == p.idDistrito.ToString()).Value1;
+                        return new ReporteCliente
+                        {
+                            v_CodCliente = p.v_CodCliente,
+                            NombreRazonSocial = p.NombreRazonSocial,
+                            v_NroDocIdentificacion = p.v_NroDocIdentificacion,
+                            v_Direccion = p.v_Direccion,
+                            v_TipoPersona = p.v_TipoPersona,
+                            v_TelefonoFijo = p.v_TelefonoFijo,
+                            t_InsertaFecha = p.t_InsertaFecha,
+                            v_FlagPantalla = p.v_FlagPantalla,
+                            Departamento = departamento,
+                            Distrito = distrito,
+                            Provincia = provincia,
+                            TipoDocumento =p.TipoDocumento.ToString () ,
+                            TipoAcciones =p.TipoAccionSocio ,
+                            AccionesPagadas =p.AccionesPagadas ,
+                            AccionesSuscritas =p.AccionesSuscritas ,
+                            
+
+                        };
+                    }).AsQueryable();
+
+                    #endregion
+
+                    if (!string.IsNullOrEmpty(pstrFilterExpression))
+                    {
+                        query = query.Where(pstrFilterExpression);
+                    }
+
+                    if (query.Any() && query != null &&  !string.IsNullOrEmpty (pstrt_Orden ))
+                    {
+                        query = query.OrderBy(pstrt_Orden);
+                    }
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                objOperationResult.Success = 0;
+                objOperationResult.ExceptionMessage = ex.Message;
+                return null;
+            }
+        }
+
+        #endregion
+    }
+}

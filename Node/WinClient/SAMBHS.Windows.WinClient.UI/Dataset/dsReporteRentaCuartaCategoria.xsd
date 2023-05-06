@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteRentaCuartaCategoria" targetNamespace="http://tempuri.org/dsReporteRentaCuartaCategoria.xsd" xmlns:mstns="http://tempuri.org/dsReporteRentaCuartaCategoria.xsd" xmlns="http://tempuri.org/dsReporteRentaCuartaCategoria.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteRentaCuartaCategoria" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteRentaCuartaCategoria" msprop:Generator_UserDSName="dsReporteRentaCuartaCategoria">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteRentaCuartaCategoria" msprop:Generator_TableClassName="dsReporteRentaCuartaCategoriaDataTable" msprop:Generator_TableVarName="tabledsReporteRentaCuartaCategoria" msprop:Generator_TablePropName="_dsReporteRentaCuartaCategoria" msprop:Generator_RowDeletingName="dsReporteRentaCuartaCategoriaRowDeleting" msprop:Generator_RowChangingName="dsReporteRentaCuartaCategoriaRowChanging" msprop:Generator_RowEvHandlerName="dsReporteRentaCuartaCategoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteRentaCuartaCategoriaRowDeleted" msprop:Generator_UserTableName="dsReporteRentaCuartaCategoria" msprop:Generator_RowChangedName="dsReporteRentaCuartaCategoriaRowChanged" msprop:Generator_RowEvArgName="dsReporteRentaCuartaCategoriaRowChangeEvent" msprop:Generator_RowClassName="dsReporteRentaCuartaCategoriaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ejercicio" msprop:Generator_ColumnVarNameInTable="columnEjercicio" msprop:Generator_ColumnPropNameInRow="Ejercicio" msprop:Generator_ColumnPropNameInTable="EjercicioColumn" msprop:Generator_UserColumnName="Ejercicio" type="xs:string" minOccurs="0" />
+              <xs:element name="Texto1" msprop:Generator_ColumnVarNameInTable="columnTexto1" msprop:Generator_ColumnPropNameInRow="Texto1" msprop:Generator_ColumnPropNameInTable="Texto1Column" msprop:Generator_UserColumnName="Texto1" type="xs:string" minOccurs="0" />
+              <xs:element name="Texto2" msprop:Generator_ColumnVarNameInTable="columnTexto2" msprop:Generator_ColumnPropNameInRow="Texto2" msprop:Generator_ColumnPropNameInTable="Texto2Column" msprop:Generator_UserColumnName="Texto2" type="xs:string" minOccurs="0" />
+              <xs:element name="Texto3" msprop:Generator_ColumnVarNameInTable="columnTexto3" msprop:Generator_ColumnPropNameInRow="Texto3" msprop:Generator_ColumnPropNameInTable="Texto3Column" msprop:Generator_UserColumnName="Texto3" type="xs:string" minOccurs="0" />
+              <xs:element name="Servicio" msprop:Generator_ColumnVarNameInTable="columnServicio" msprop:Generator_ColumnPropNameInRow="Servicio" msprop:Generator_ColumnPropNameInTable="ServicioColumn" msprop:Generator_UserColumnName="Servicio" type="xs:string" minOccurs="0" />
+              <xs:element name="RentasBrutas" msprop:Generator_ColumnVarNameInTable="columnRentasBrutas" msprop:Generator_ColumnPropNameInRow="RentasBrutas" msprop:Generator_ColumnPropNameInTable="RentasBrutasColumn" msprop:Generator_UserColumnName="RentasBrutas" type="xs:string" minOccurs="0" />
+              <xs:element name="ImporteRetenido" msprop:Generator_ColumnVarNameInTable="columnImporteRetenido" msprop:Generator_ColumnPropNameInRow="ImporteRetenido" msprop:Generator_ColumnPropNameInTable="ImporteRetenidoColumn" msprop:Generator_UserColumnName="ImporteRetenido" type="xs:string" minOccurs="0" />
+              <xs:element name="v_IdTrabajador" msprop:Generator_ColumnVarNameInTable="columnv_IdTrabajador" msprop:Generator_ColumnPropNameInRow="v_IdTrabajador" msprop:Generator_ColumnPropNameInTable="v_IdTrabajadorColumn" msprop:Generator_UserColumnName="v_IdTrabajador" type="xs:string" minOccurs="0" />
+              <xs:element name="NroLey" msprop:Generator_ColumnVarNameInTable="columnNroLey" msprop:Generator_ColumnPropNameInRow="NroLey" msprop:Generator_ColumnPropNameInTable="NroLeyColumn" msprop:Generator_UserColumnName="NroLey" type="xs:string" minOccurs="0" />
+              <xs:element name="NombreRepresentante" msprop:Generator_ColumnVarNameInTable="columnNombreRepresentante" msprop:Generator_ColumnPropNameInRow="NombreRepresentante" msprop:Generator_ColumnPropNameInTable="NombreRepresentanteColumn" msprop:Generator_UserColumnName="NombreRepresentante" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaHoraImprimir" msprop:Generator_ColumnVarNameInTable="columnFechaHoraImprimir" msprop:Generator_ColumnPropNameInRow="FechaHoraImprimir" msprop:Generator_ColumnPropNameInTable="FechaHoraImprimirColumn" msprop:Generator_UserColumnName="FechaHoraImprimir" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

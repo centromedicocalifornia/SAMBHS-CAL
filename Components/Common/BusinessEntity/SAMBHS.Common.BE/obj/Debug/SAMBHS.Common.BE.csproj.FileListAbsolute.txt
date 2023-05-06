@@ -1,0 +1,60 @@
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll.config
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.Entity.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Runtime.Serialization.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.Linq.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll.licenses
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.csprojResolveAssemblyReference.cache
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll.config
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\Microsoft.CSharp.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.DataSetExtensions.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.Entity.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Runtime.Serialization.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.Linq.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll.licenses
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll.config
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\Microsoft.CSharp.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.DataSetExtensions.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.Entity.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Runtime.Serialization.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.Linq.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll.licenses
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll.config
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\Microsoft.CSharp.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.DataSetExtensions.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.Entity.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Runtime.Serialization.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll.licenses
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.pdb

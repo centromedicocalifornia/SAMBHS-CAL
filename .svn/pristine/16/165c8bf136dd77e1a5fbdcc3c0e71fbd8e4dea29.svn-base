@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportePlanillaDetalleDescuentos" targetNamespace="http://tempuri.org/dsReportePlanillaDetalleDescuentos.xsd" xmlns:mstns="http://tempuri.org/dsReportePlanillaDetalleDescuentos.xsd" xmlns="http://tempuri.org/dsReportePlanillaDetalleDescuentos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportePlanillaDetalleDescuentos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportePlanillaDetalleDescuentos" msprop:Generator_UserDSName="dsReportePlanillaDetalleDescuentos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReportePlanillaDetalleDescuentos" msprop:Generator_TableClassName="dsReportePlanillaDetalleDescuentosDataTable" msprop:Generator_TableVarName="tabledsReportePlanillaDetalleDescuentos" msprop:Generator_TablePropName="_dsReportePlanillaDetalleDescuentos" msprop:Generator_RowDeletingName="dsReportePlanillaDetalleDescuentosRowDeleting" msprop:Generator_RowChangingName="dsReportePlanillaDetalleDescuentosRowChanging" msprop:Generator_RowEvHandlerName="dsReportePlanillaDetalleDescuentosRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReportePlanillaDetalleDescuentosRowDeleted" msprop:Generator_UserTableName="dsReportePlanillaDetalleDescuentos" msprop:Generator_RowChangedName="dsReportePlanillaDetalleDescuentosRowChanged" msprop:Generator_RowEvArgName="dsReportePlanillaDetalleDescuentosRowChangeEvent" msprop:Generator_RowClassName="dsReportePlanillaDetalleDescuentosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Trabajador" msprop:Generator_ColumnVarNameInTable="columnTrabajador" msprop:Generator_ColumnPropNameInRow="Trabajador" msprop:Generator_ColumnPropNameInTable="TrabajadorColumn" msprop:Generator_UserColumnName="Trabajador" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento1" msprop:Generator_ColumnVarNameInTable="columnDescuento1" msprop:Generator_ColumnPropNameInRow="Descuento1" msprop:Generator_ColumnPropNameInTable="Descuento1Column" msprop:Generator_UserColumnName="Descuento1" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento2" msprop:Generator_ColumnVarNameInTable="columnDescuento2" msprop:Generator_ColumnPropNameInRow="Descuento2" msprop:Generator_ColumnPropNameInTable="Descuento2Column" msprop:Generator_UserColumnName="Descuento2" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento3" msprop:Generator_ColumnVarNameInTable="columnDescuento3" msprop:Generator_ColumnPropNameInRow="Descuento3" msprop:Generator_ColumnPropNameInTable="Descuento3Column" msprop:Generator_UserColumnName="Descuento3" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento4" msprop:Generator_ColumnVarNameInTable="columnDescuento4" msprop:Generator_ColumnPropNameInRow="Descuento4" msprop:Generator_ColumnPropNameInTable="Descuento4Column" msprop:Generator_UserColumnName="Descuento4" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento5" msprop:Generator_ColumnVarNameInTable="columnDescuento5" msprop:Generator_ColumnPropNameInRow="Descuento5" msprop:Generator_ColumnPropNameInTable="Descuento5Column" msprop:Generator_UserColumnName="Descuento5" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento6" msprop:Generator_ColumnVarNameInTable="columnDescuento6" msprop:Generator_ColumnPropNameInRow="Descuento6" msprop:Generator_ColumnPropNameInTable="Descuento6Column" msprop:Generator_UserColumnName="Descuento6" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento7" msprop:Generator_ColumnVarNameInTable="columnDescuento7" msprop:Generator_ColumnPropNameInRow="Descuento7" msprop:Generator_ColumnPropNameInTable="Descuento7Column" msprop:Generator_UserColumnName="Descuento7" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento8" msprop:Generator_ColumnVarNameInTable="columnDescuento8" msprop:Generator_ColumnPropNameInRow="Descuento8" msprop:Generator_ColumnPropNameInTable="Descuento8Column" msprop:Generator_UserColumnName="Descuento8" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento9" msprop:Generator_ColumnVarNameInTable="columnDescuento9" msprop:Generator_ColumnPropNameInRow="Descuento9" msprop:Generator_ColumnPropNameInTable="Descuento9Column" msprop:Generator_UserColumnName="Descuento9" type="xs:string" minOccurs="0" />
+              <xs:element name="Descuento10" msprop:Generator_ColumnVarNameInTable="columnDescuento10" msprop:Generator_ColumnPropNameInRow="Descuento10" msprop:Generator_ColumnPropNameInTable="Descuento10Column" msprop:Generator_UserColumnName="Descuento10" type="xs:string" minOccurs="0" />
+              <xs:element name="DDescuento1" msprop:Generator_ColumnVarNameInTable="columnDDescuento1" msprop:Generator_ColumnPropNameInRow="DDescuento1" msprop:Generator_ColumnPropNameInTable="DDescuento1Column" msprop:Generator_UserColumnName="DDescuento1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DDescuento2" msprop:Generator_ColumnVarNameInTable="columnDDescuento2" msprop:Generator_ColumnPropNameInRow="DDescuento2" msprop:Generator_ColumnPropNameInTable="DDescuento2Column" msprop:Generator_UserColumnName="DDescuento2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DDescuento3" msprop:Generator_ColumnVarNameInTable="columnDDescuento3" msprop:Generator_ColumnPropNameInRow="DDescuento3" msprop:Generator_ColumnPropNameInTable="DDescuento3Column" msprop:Generator_UserColumnName="DDescuento3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DDescuento4" msprop:Generator_ColumnVarNameInTable="columnDDescuento4" msprop:Generator_ColumnPropNameInRow="DDescuento4" msprop:Generator_ColumnPropNameInTable="DDescuento4Column" msprop:Generator_UserColumnName="DDescuento4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DDescuento5" msprop:Generator_ColumnVarNameInTable="columnDDescuento5" msprop:Generator_ColumnPropNameInRow="DDescuento5" msprop:Generator_ColumnPropNameInTable="DDescuento5Column" msprop:Generator_UserColumnName="DDescuento5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DDescuento6" msprop:Generator_ColumnVarNameInTable="columnDDescuento6" msprop:Generator_ColumnPropNameInRow="DDescuento6" msprop:Generator_ColumnPropNameInTable="DDescuento6Column" msprop:Generator_UserColumnName="DDescuento6" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DDescuento7" msprop:Generator_ColumnVarNameInTable="columnDDescuento7" msprop:Generator_ColumnPropNameInRow="DDescuento7" msprop:Generator_ColumnPropNameInTable="DDescuento7Column" msprop:Generator_UserColumnName="DDescuento7" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DDescuento8" msprop:Generator_ColumnVarNameInTable="columnDDescuento8" msprop:Generator_ColumnPropNameInRow="DDescuento8" msprop:Generator_ColumnPropNameInTable="DDescuento8Column" msprop:Generator_UserColumnName="DDescuento8" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DDescuento9" msprop:Generator_ColumnVarNameInTable="columnDDescuento9" msprop:Generator_ColumnPropNameInRow="DDescuento9" msprop:Generator_ColumnPropNameInTable="DDescuento9Column" msprop:Generator_UserColumnName="DDescuento9" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DDescuento10" msprop:Generator_ColumnVarNameInTable="columnDDescuento10" msprop:Generator_ColumnPropNameInRow="DDescuento10" msprop:Generator_ColumnPropNameInTable="DDescuento10Column" msprop:Generator_UserColumnName="DDescuento10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Remuneracion" msprop:Generator_ColumnVarNameInTable="columnRemuneracion" msprop:Generator_ColumnPropNameInRow="Remuneracion" msprop:Generator_ColumnPropNameInTable="RemuneracionColumn" msprop:Generator_UserColumnName="Remuneracion" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportePlanillaNetoPagar" targetNamespace="http://tempuri.org/dsReportePlanillaNetoPagar.xsd" xmlns:mstns="http://tempuri.org/dsReportePlanillaNetoPagar.xsd" xmlns="http://tempuri.org/dsReportePlanillaNetoPagar.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportePlanillaNetoPagar" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportePlanillaNetoPagar" msprop:Generator_UserDSName="dsReportePlanillaNetoPagar">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReportePlanillaNetoPagar" msprop:Generator_TableClassName="dsReportePlanillaNetoPagarDataTable" msprop:Generator_TableVarName="tabledsReportePlanillaNetoPagar" msprop:Generator_RowChangedName="dsReportePlanillaNetoPagarRowChanged" msprop:Generator_TablePropName="_dsReportePlanillaNetoPagar" msprop:Generator_RowDeletingName="dsReportePlanillaNetoPagarRowDeleting" msprop:Generator_RowChangingName="dsReportePlanillaNetoPagarRowChanging" msprop:Generator_RowEvHandlerName="dsReportePlanillaNetoPagarRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReportePlanillaNetoPagarRowDeleted" msprop:Generator_RowClassName="dsReportePlanillaNetoPagarRow" msprop:Generator_UserTableName="dsReportePlanillaNetoPagar" msprop:Generator_RowEvArgName="dsReportePlanillaNetoPagarRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Trabajador" msprop:Generator_ColumnVarNameInTable="columnTrabajador" msprop:Generator_ColumnPropNameInRow="Trabajador" msprop:Generator_ColumnPropNameInTable="TrabajadorColumn" msprop:Generator_UserColumnName="Trabajador" type="xs:string" minOccurs="0" />
+              <xs:element name="NetoPagar" msprop:Generator_ColumnVarNameInTable="columnNetoPagar" msprop:Generator_ColumnPropNameInRow="NetoPagar" msprop:Generator_ColumnPropNameInTable="NetoPagarColumn" msprop:Generator_UserColumnName="NetoPagar" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CodigoTrabajador" msprop:Generator_ColumnVarNameInTable="columnCodigoTrabajador" msprop:Generator_ColumnPropNameInRow="CodigoTrabajador" msprop:Generator_ColumnPropNameInTable="CodigoTrabajadorColumn" msprop:Generator_UserColumnName="CodigoTrabajador" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteVentaProductoSegunda" targetNamespace="http://tempuri.org/dsReporteVentaProductoSegunda.xsd" xmlns:mstns="http://tempuri.org/dsReporteVentaProductoSegunda.xsd" xmlns="http://tempuri.org/dsReporteVentaProductoSegunda.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteVentaProductoSegunda" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteVentaProductoSegunda" msprop:Generator_UserDSName="dsReporteVentaProductoSegunda">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteVentaProductoSegunda" msprop:Generator_TableClassName="dsReporteVentaProductoSegundaDataTable" msprop:Generator_TableVarName="tabledsReporteVentaProductoSegunda" msprop:Generator_TablePropName="_dsReporteVentaProductoSegunda" msprop:Generator_RowDeletingName="dsReporteVentaProductoSegundaRowDeleting" msprop:Generator_RowChangingName="dsReporteVentaProductoSegundaRowChanging" msprop:Generator_RowEvHandlerName="dsReporteVentaProductoSegundaRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteVentaProductoSegundaRowDeleted" msprop:Generator_UserTableName="dsReporteVentaProductoSegunda" msprop:Generator_RowChangedName="dsReporteVentaProductoSegundaRowChanged" msprop:Generator_RowEvArgName="dsReporteVentaProductoSegundaRowChangeEvent" msprop:Generator_RowClassName="dsReporteVentaProductoSegundaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoProducto" msprop:Generator_ColumnVarNameInTable="columnCodigoProducto" msprop:Generator_ColumnPropNameInRow="CodigoProducto" msprop:Generator_ColumnPropNameInTable="CodigoProductoColumn" msprop:Generator_UserColumnName="CodigoProducto" type="xs:string" minOccurs="0" />
+              <xs:element name="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_UserColumnName="Producto" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MontoVendido" msprop:Generator_ColumnVarNameInTable="columnMontoVendido" msprop:Generator_ColumnPropNameInRow="MontoVendido" msprop:Generator_ColumnPropNameInTable="MontoVendidoColumn" msprop:Generator_UserColumnName="MontoVendido" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Acuenta" msprop:Generator_ColumnVarNameInTable="columnAcuenta" msprop:Generator_ColumnPropNameInRow="Acuenta" msprop:Generator_ColumnPropNameInTable="AcuentaColumn" msprop:Generator_UserColumnName="Acuenta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Saldo" msprop:Generator_ColumnVarNameInTable="columnSaldo" msprop:Generator_ColumnPropNameInRow="Saldo" msprop:Generator_ColumnPropNameInTable="SaldoColumn" msprop:Generator_UserColumnName="Saldo" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

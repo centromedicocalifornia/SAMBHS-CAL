@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteComercializacion" targetNamespace="http://tempuri.org/dsReporteComercializacion.xsd" xmlns:mstns="http://tempuri.org/dsReporteComercializacion.xsd" xmlns="http://tempuri.org/dsReporteComercializacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteComercializacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteComercializacion" msprop:Generator_UserDSName="dsReporteComercializacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteComercializacion" msprop:Generator_TableClassName="dsReporteComercializacionDataTable" msprop:Generator_TableVarName="tabledsReporteComercializacion" msprop:Generator_TablePropName="_dsReporteComercializacion" msprop:Generator_RowDeletingName="dsReporteComercializacionRowDeleting" msprop:Generator_RowChangingName="dsReporteComercializacionRowChanging" msprop:Generator_RowEvHandlerName="dsReporteComercializacionRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteComercializacionRowDeleted" msprop:Generator_UserTableName="dsReporteComercializacion" msprop:Generator_RowChangedName="dsReporteComercializacionRowChanged" msprop:Generator_RowEvArgName="dsReporteComercializacionRowChangeEvent" msprop:Generator_RowClassName="dsReporteComercializacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NroPedido" msprop:Generator_ColumnVarNameInTable="columnNroPedido" msprop:Generator_ColumnPropNameInRow="NroPedido" msprop:Generator_ColumnPropNameInTable="NroPedidoColumn" msprop:Generator_UserColumnName="NroPedido" type="xs:string" minOccurs="0" />
+              <xs:element name="CostoMercadeo" msprop:Generator_ColumnVarNameInTable="columnCostoMercadeo" msprop:Generator_ColumnPropNameInRow="CostoMercadeo" msprop:Generator_ColumnPropNameInTable="CostoMercadeoColumn" msprop:Generator_UserColumnName="CostoMercadeo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CostoFlete" msprop:Generator_ColumnVarNameInTable="columnCostoFlete" msprop:Generator_ColumnPropNameInRow="CostoFlete" msprop:Generator_ColumnPropNameInTable="CostoFleteColumn" msprop:Generator_UserColumnName="CostoFlete" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ServicioTerceros" msprop:Generator_ColumnVarNameInTable="columnServicioTerceros" msprop:Generator_ColumnPropNameInRow="ServicioTerceros" msprop:Generator_ColumnPropNameInTable="ServicioTercerosColumn" msprop:Generator_UserColumnName="ServicioTerceros" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GastoFinanciero" msprop:Generator_ColumnVarNameInTable="columnGastoFinanciero" msprop:Generator_ColumnPropNameInRow="GastoFinanciero" msprop:Generator_ColumnPropNameInTable="GastoFinancieroColumn" msprop:Generator_UserColumnName="GastoFinanciero" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ImpuestoRenta" msprop:Generator_ColumnVarNameInTable="columnImpuestoRenta" msprop:Generator_ColumnPropNameInRow="ImpuestoRenta" msprop:Generator_ColumnPropNameInTable="ImpuestoRentaColumn" msprop:Generator_UserColumnName="ImpuestoRenta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Venta" msprop:Generator_ColumnVarNameInTable="columnVenta" msprop:Generator_ColumnPropNameInRow="Venta" msprop:Generator_ColumnPropNameInTable="VentaColumn" msprop:Generator_UserColumnName="Venta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Margen" msprop:Generator_ColumnVarNameInTable="columnMargen" msprop:Generator_ColumnPropNameInRow="Margen" msprop:Generator_ColumnPropNameInTable="MargenColumn" msprop:Generator_UserColumnName="Margen" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Porcentaje" msprop:Generator_ColumnVarNameInTable="columnPorcentaje" msprop:Generator_ColumnPropNameInRow="Porcentaje" msprop:Generator_ColumnPropNameInTable="PorcentajeColumn" msprop:Generator_UserColumnName="Porcentaje" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

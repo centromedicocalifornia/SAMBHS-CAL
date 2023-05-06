@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteVentaDetracciones" targetNamespace="http://tempuri.org/dsReporteVentaDetracciones.xsd" xmlns:mstns="http://tempuri.org/dsReporteVentaDetracciones.xsd" xmlns="http://tempuri.org/dsReporteVentaDetracciones.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteVentaDetracciones" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteVentaDetracciones" msprop:Generator_UserDSName="dsReporteVentaDetracciones">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteVentaDetracciones" msprop:Generator_TableClassName="dsReporteVentaDetraccionesDataTable" msprop:Generator_TableVarName="tabledsReporteVentaDetracciones" msprop:Generator_TablePropName="_dsReporteVentaDetracciones" msprop:Generator_RowDeletingName="dsReporteVentaDetraccionesRowDeleting" msprop:Generator_RowChangingName="dsReporteVentaDetraccionesRowChanging" msprop:Generator_RowEvHandlerName="dsReporteVentaDetraccionesRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteVentaDetraccionesRowDeleted" msprop:Generator_UserTableName="dsReporteVentaDetracciones" msprop:Generator_RowChangedName="dsReporteVentaDetraccionesRowChanged" msprop:Generator_RowEvArgName="dsReporteVentaDetraccionesRowChangeEvent" msprop:Generator_RowClassName="dsReporteVentaDetraccionesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FechaVenta" msprop:Generator_ColumnVarNameInTable="columnFechaVenta" msprop:Generator_ColumnPropNameInRow="FechaVenta" msprop:Generator_ColumnPropNameInTable="FechaVentaColumn" msprop:Generator_UserColumnName="FechaVenta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NroComprobante" msprop:Generator_ColumnVarNameInTable="columnNroComprobante" msprop:Generator_ColumnPropNameInRow="NroComprobante" msprop:Generator_ColumnPropNameInTable="NroComprobanteColumn" msprop:Generator_UserColumnName="NroComprobante" type="xs:string" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="Importe" msprop:Generator_ColumnVarNameInTable="columnImporte" msprop:Generator_ColumnPropNameInRow="Importe" msprop:Generator_ColumnPropNameInTable="ImporteColumn" msprop:Generator_UserColumnName="Importe" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TasaDetraccion" msprop:Generator_ColumnVarNameInTable="columnTasaDetraccion" msprop:Generator_ColumnPropNameInRow="TasaDetraccion" msprop:Generator_ColumnPropNameInTable="TasaDetraccionColumn" msprop:Generator_UserColumnName="TasaDetraccion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DepositoBancoDetraccion" msprop:Generator_ColumnVarNameInTable="columnDepositoBancoDetraccion" msprop:Generator_ColumnPropNameInRow="DepositoBancoDetraccion" msprop:Generator_ColumnPropNameInTable="DepositoBancoDetraccionColumn" msprop:Generator_UserColumnName="DepositoBancoDetraccion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MontoCobrado" msprop:Generator_ColumnVarNameInTable="columnMontoCobrado" msprop:Generator_ColumnPropNameInRow="MontoCobrado" msprop:Generator_ColumnPropNameInTable="MontoCobradoColumn" msprop:Generator_UserColumnName="MontoCobrado" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADC68541-8864-4278-A119-2924D2D18251}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAMBHS.Windows.SigesoftIntegration.UI</RootNamespace>
+    <AssemblyName>SAMBHS.Windows.SigesoftIntegration.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.ZKFPEngXControl">
+      <HintPath>..\ExternalLibraries\AxInterop.ZKFPEngXControl.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Dapper">
+      <HintPath>..\Components\Common\Resource\SAMBHS.Common.Resource\Librerias\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FineUI, Version=3.2.6.0, Culture=neutral, PublicKeyToken=0ff1835d01c384a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Server\WebClientAdmin\SAMBHS.Server.WebClientAdmin.UI\Bin\FineUI.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\ExternalLibraries\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Documents.Excel.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Shared.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Portable.Core.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinDataSource.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.ExcelExport.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinStatusBar.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v15.1, Version=15.1.20151.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Interop.ZKFPEngXControl">
+      <HintPath>..\ExternalLibraries\Interop.ZKFPEngXControl.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Sigesoft_New\ExternalLibraries\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="ScrapperReniecSunat">
+      <HintPath>..\ExternalLibraries\ScrapperReniecSunat.dll</HintPath>
+    </Reference>
+    <Reference Include="SigPlusNET">
+      <HintPath>..\ExternalLibraries\SigPlusNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WebCam_Capture">
+      <HintPath>..\ExternalLibraries\WebCam_Capture.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgendaBl.cs" />
+    <Compile Include="BLL\AdditionalExamBL.cs" />
+    <Compile Include="BLL\CalendarBL.cs" />
+    <Compile Include="BLL\MedicamentoBL.cs" />
+    <Compile Include="BLL\MedicamentoDAO.cs" />
+    <Compile Include="BLL\PacientBL.cs" />
+    <Compile Include="BLL\ProductoCustomBL.cs" />
+    <Compile Include="BLL\RecetaBL.cs" />
+    <Compile Include="BLL\ServiceBL.cs" />
+    <Compile Include="BLL\TicketBL.cs" />
+    <Compile Include="BLL\Utilidades.cs" />
+    <Compile Include="ConstantsSigesoft.cs" />
+    <Compile Include="Dataset\dsReporteReceta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReporteReceta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\dsRoadMap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRoadMap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DigitalContactCenterBl.cs" />
+    <Compile Include="Dtos\AgendaDto.cs" />
+    <Compile Include="Dtos\CalendarList.cs" />
+    <Compile Include="Dtos\Categoria.cs" />
+    <Compile Include="Dtos\ComponentDetailList.cs" />
+    <Compile Include="Dtos\componentDto.cs" />
+    <Compile Include="Dtos\datahierarchydTO.cs" />
+    <Compile Include="Dtos\DigitalContactCenterDto.cs" />
+    <Compile Include="Dtos\Egreso_Ingreso.cs" />
+    <Compile Include="Dtos\EmpresaDto.cs" />
+    <Compile Include="Dtos\familymedicalantecedentsDto.cs" />
+    <Compile Include="Dtos\groupoccupationDto.cs" />
+    <Compile Include="Dtos\Hospitalizacion.cs" />
+    <Compile Include="Dtos\HospitalizacionService.cs" />
+    <Compile Include="Dtos\ImagenesTrabajadorDto.cs" />
+    <Compile Include="Dtos\MedicoTratanteAtenciones.cs" />
+    <Compile Include="Dtos\NodeOrganizationLoactionWarehouseList.cs" />
+    <Compile Include="Dtos\nodeorganizationlocationwarehouseprofileDto.cs" />
+    <Compile Include="Dtos\noxioushabitsDto.cs" />
+    <Compile Include="Dtos\OrdenReportes.cs" />
+    <Compile Include="Dtos\OrganizationDto1.cs" />
+    <Compile Include="Dtos\PacientList.cs" />
+    <Compile Include="Dtos\PersonDto.cs" />
+    <Compile Include="Dtos\PlanDto.cs" />
+    <Compile Include="Dtos\Professional.cs" />
+    <Compile Include="Dtos\ProtocolComponentList.cs" />
+    <Compile Include="Dtos\ProtocolDto.cs" />
+    <Compile Include="Dtos\RecetaDto.cs" />
+    <Compile Include="Dtos\ServiceComponentList.cs" />
+    <Compile Include="Dtos\ServiceDto.cs" />
+    <Compile Include="Dtos\SMSUsuario.cs" />
+    <Compile Include="Dtos\SystemUser.cs" />
+    <Compile Include="Dtos\TicketCobranza.cs" />
+    <Compile Include="Dtos\TicketDto.cs" />
+    <Compile Include="EmpresaBl.cs" />
+    <Compile Include="EncryptPassword.cs" />
+    <Compile Include="EnumsSigesoft.cs" />
+    <Compile Include="FarmaciaBl.cs" />
+    <Compile Include="FormPrecioComponente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrecioComponente.Designer.cs">
+      <DependentUpon>FormPrecioComponente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrecioComponente_Seg_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrecioComponente_Seg_.Designer.cs">
+      <DependentUpon>FormPrecioComponente_Seg_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddExam.Designer.cs">
+      <DependentUpon>frmAddExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddRecipe.Designer.cs">
+      <DependentUpon>frmAddRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSolicitudCarta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSolicitudCarta.Designer.cs">
+      <DependentUpon>frmAddSolicitudCarta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgendaParticular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgendaParticular.Designer.cs">
+      <DependentUpon>frmAgendaParticular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgendarTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgendarTrabajador.Designer.cs">
+      <DependentUpon>frmAgendarTrabajador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBandejaAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBandejaAgenda.Designer.cs">
+      <DependentUpon>frmBandejaAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarMedicamento.Designer.cs">
+      <DependentUpon>FrmBuscarMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarProtocolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarProtocolo.Designer.cs">
+      <DependentUpon>frmBuscarProtocolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarServiciosPendientesAsistencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarServiciosPendientesAsistencial.Designer.cs">
+      <DependentUpon>frmBuscarServiciosPendientesAsistencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dtos\ComponentServiceDto.cs" />
+    <Compile Include="ConnectionHelper.cs" />
+    <Compile Include="Dtos\ConsultaServicioDto.cs" />
+    <Compile Include="Dtos\EsoDto.cs" />
+    <Compile Include="Dtos\GrupoOcupacionalDto.cs" />
+    <Compile Include="FacturacionServiciosBl.cs" />
+    <Compile Include="Dtos\LocationDto.cs" />
+    <Compile Include="frmBuscarServiciosPendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarServiciosPendientes.Designer.cs">
+      <DependentUpon>frmBuscarServiciosPendientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarTicket.Designer.cs">
+      <DependentUpon>frmBuscarTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCamera.Designer.cs">
+      <DependentUpon>frmCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCapturedFingerPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCapturedFingerPrint.designer.cs">
+      <DependentUpon>frmCapturedFingerPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfigSeguros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigSeguros.Designer.cs">
+      <DependentUpon>frmConfigSeguros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfirmarDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmarDespacho.Designer.cs">
+      <DependentUpon>frmConfirmarDespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrudPacient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrudPacient.Designer.cs">
+      <DependentUpon>frmCrudPacient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerCapchaSUNAT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerCapchaSUNAT.Designer.cs">
+      <DependentUpon>frmCustomerCapchaSUNAT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarEstadoDigitalContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarEstadoDigitalContact.Designer.cs">
+      <DependentUpon>frmEditarEstadoDigitalContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarProtocolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarProtocolo.Designer.cs">
+      <DependentUpon>frmEditarProtocolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarTrabajador.Designer.cs">
+      <DependentUpon>frmEditarTrabajador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditMedic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditMedic.Designer.cs">
+      <DependentUpon>frmEditMedic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmElegirTipoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmElegirTipoDetalle.Designer.cs">
+      <DependentUpon>frmElegirTipoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpresa.Designer.cs">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturarHospitalizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturarHospitalizacion.Designer.cs">
+      <DependentUpon>frmFacturarHospitalizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarPacientes.Designer.cs">
+      <DependentUpon>frmListarPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoRegistro.Designer.cs">
+      <DependentUpon>frmNuevoRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPreCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPreCarga.Designer.cs">
+      <DependentUpon>frmPreCarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecetaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecetaMedica.Designer.cs">
+      <DependentUpon>frmRecetaMedica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteReceta.Designer.cs">
+      <DependentUpon>frmReporteReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchMedicamento.Designer.cs">
+      <DependentUpon>frmSearchMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVacunasCovid19.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVacunasCovid19.Designer.cs">
+      <DependentUpon>frmVacunasCovid19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewChanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewChanges.Designer.cs">
+      <DependentUpon>frmViewChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JsonPersona.cs" />
+    <Compile Include="ListaLineas.cs" />
+    <Compile Include="PacientesList.cs" />
+    <Compile Include="Reports\ConexionSAM.cs" />
+    <Compile Include="Reports\ConexionSigesoft.cs" />
+    <Compile Include="Reports\crRoadMapAsist.cs">
+      <DependentUpon>crRoadMapAsist.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\frmRoadMapAsist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmRoadMapAsist.Designer.cs">
+      <DependentUpon>frmRoadMapAsist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HandlingItextSharp.cs" />
+    <Compile Include="MedicamentoDto.cs" />
+    <Compile Include="Reports\Hisoria_Clinica.cs" />
+    <Compile Include="Reports\Historia_Oftalmologia.cs" />
+    <Compile Include="Reports\pdfPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProtocoloBl.cs" />
+    <Compile Include="recetadespachoDto.cs" />
+    <Compile Include="Reports\crRecetaPresentacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crRecetaPresentacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crRoadMap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crRoadMap.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Modelo01_Caja.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo01_Caja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\frmRoadMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmRoadMap.Designer.cs">
+      <DependentUpon>frmRoadMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportPDF.cs" />
+    <Compile Include="SaldoPaciente.cs" />
+    <Compile Include="StringContent.cs" />
+    <Compile Include="UtilsSigesoft.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Components\Almacen\SAMBHS.Almacen.BL\SAMBHS.Almacen.BL.csproj">
+      <Project>{bf23d0da-9868-4347-8433-4b86b715d165}</Project>
+      <Name>SAMBHS.Almacen.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\BusinessEntity\SAMBHS.Common.BE\SAMBHS.Common.BE.csproj">
+      <Project>{04aceeee-ba05-46b7-a0c2-fd2b6f2e04b8}</Project>
+      <Name>SAMBHS.Common.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\BusinessLayer\SAMBHS.Common.BL\SAMBHS.Common.BL.csproj">
+      <Project>{1a1e8aa8-31df-4586-b262-766433582133}</Project>
+      <Name>SAMBHS.Common.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT.csproj">
+      <Project>{3bd80da6-9db3-4b99-b6b0-6b95640a9be8}</Project>
+      <Name>SAMBHS.Common.DataModel.MSSQLSIGESOFT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN.csproj">
+      <Project>{6F195144-A2AD-42D1-B3CE-F1ACFE7DBC8A}</Project>
+      <Name>SAMBHS.Common.DataModel.MSSQLWIN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Common\Resource\SAMBHS.Common.Resource\SAMBHS.Common.Resource.csproj">
+      <Project>{818435b2-1f4d-40a3-96d4-1b0bd9a7098b}</Project>
+      <Name>SAMBHS.Common.Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Security\SAMBHS.Security.BL\SAMBHS.Security.BL.csproj">
+      <Project>{b9f430c9-3238-470f-a62f-cd3438a7bf20}</Project>
+      <Name>SAMBHS.Security.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormPrecioComponente.resx">
+      <DependentUpon>FormPrecioComponente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrecioComponente_Seg_.resx">
+      <DependentUpon>FormPrecioComponente_Seg_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddExam.resx">
+      <DependentUpon>frmAddExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddRecipe.resx">
+      <DependentUpon>frmAddRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSolicitudCarta.resx">
+      <DependentUpon>frmAddSolicitudCarta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgendaParticular.resx">
+      <DependentUpon>frmAgendaParticular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgendarTrabajador.resx">
+      <DependentUpon>frmAgendarTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBandejaAgenda.resx">
+      <DependentUpon>frmBandejaAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarMedicamento.resx">
+      <DependentUpon>FrmBuscarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarProtocolo.resx">
+      <DependentUpon>frmBuscarProtocolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarServiciosPendientesAsistencial.resx">
+      <DependentUpon>frmBuscarServiciosPendientesAsistencial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarServiciosPendientes.resx">
+      <DependentUpon>frmBuscarServiciosPendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarTicket.resx">
+      <DependentUpon>frmBuscarTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCamera.resx">
+      <DependentUpon>frmCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCapturedFingerPrint.resx">
+      <DependentUpon>frmCapturedFingerPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigSeguros.resx">
+      <DependentUpon>frmConfigSeguros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmarDespacho.resx">
+      <DependentUpon>frmConfirmarDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrudPacient.resx">
+      <DependentUpon>frmCrudPacient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerCapchaSUNAT.resx">
+      <DependentUpon>frmCustomerCapchaSUNAT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarEstadoDigitalContact.resx">
+      <DependentUpon>frmEditarEstadoDigitalContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarProtocolo.resx">
+      <DependentUpon>frmEditarProtocolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarTrabajador.resx">
+      <DependentUpon>frmEditarTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditMedic.resx">
+      <DependentUpon>frmEditMedic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmElegirTipoDetalle.resx">
+      <DependentUpon>frmElegirTipoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturarHospitalizacion.resx">
+      <DependentUpon>frmFacturarHospitalizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarPacientes.resx">
+      <DependentUpon>frmListarPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoRegistro.resx">
+      <DependentUpon>frmNuevoRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPreCarga.resx">
+      <DependentUpon>frmPreCarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecetaMedica.resx">
+      <DependentUpon>frmRecetaMedica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteReceta.resx">
+      <DependentUpon>frmReporteReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchMedicamento.resx">
+      <DependentUpon>frmSearchMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVacunasCovid19.resx">
+      <DependentUpon>frmVacunasCovid19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewChanges.resx">
+      <DependentUpon>frmViewChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crRoadMapAsist.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crRoadMapAsist.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crRecetaPresentacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crRecetaPresentacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crRoadMap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crRoadMap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmRoadMapAsist.resx">
+      <DependentUpon>frmRoadMapAsist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Modelo01_Caja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Modelo01_Caja.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmRoadMap.resx">
+      <DependentUpon>frmRoadMap.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dataset\dsReporteReceta.xsc">
+      <DependentUpon>dsReporteReceta.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\dsReporteReceta.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReporteReceta.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dataset\dsReporteReceta.xss">
+      <DependentUpon>dsReporteReceta.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\dsRoadMap.xsc">
+      <DependentUpon>dsRoadMap.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\dsRoadMap.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRoadMap.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\dsRoadMap.xss">
+      <DependentUpon>dsRoadMap.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\Report.xsc">
+      <DependentUpon>Report.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\Report.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Report.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\Report.xss">
+      <DependentUpon>Report.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\system_search.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_close.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restar_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cambio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facturar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historiaclinica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_suit_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag_blue_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+    <None Include="Resources\camera_small.png" />
+    <Content Include="Resources\Clinica San Lorenzo APP.jpeg" />
+    <Content Include="Resources\home_printer-512.png" />
+    <None Include="Resources\system_save.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="NETCONLib">
+      <Guid>{43E734CA-043D-4A70-9A2C-A8F254063D91}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="NETWORKLIST">
+      <Guid>{DCB00D01-570F-4A9B-8D69-199FDBA5723B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteResumenActivoFijo" targetNamespace="http://tempuri.org/dsReporteResumenActivoFijo.xsd" xmlns:mstns="http://tempuri.org/dsReporteResumenActivoFijo.xsd" xmlns="http://tempuri.org/dsReporteResumenActivoFijo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteResumenActivoFijo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteResumenActivoFijo" msprop:Generator_UserDSName="dsReporteResumenActivoFijo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteResumenActivoFijo" msprop:Generator_TableClassName="dsReporteResumenActivoFijoDataTable" msprop:Generator_TableVarName="tabledsReporteResumenActivoFijo" msprop:Generator_TablePropName="_dsReporteResumenActivoFijo" msprop:Generator_RowDeletingName="dsReporteResumenActivoFijoRowDeleting" msprop:Generator_RowChangingName="dsReporteResumenActivoFijoRowChanging" msprop:Generator_RowEvHandlerName="dsReporteResumenActivoFijoRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteResumenActivoFijoRowDeleted" msprop:Generator_UserTableName="dsReporteResumenActivoFijo" msprop:Generator_RowChangedName="dsReporteResumenActivoFijoRowChanged" msprop:Generator_RowEvArgName="dsReporteResumenActivoFijoRowChangeEvent" msprop:Generator_RowClassName="dsReporteResumenActivoFijoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CuentaDescripcion" msprop:Generator_ColumnVarNameInTable="columnCuentaDescripcion" msprop:Generator_ColumnPropNameInRow="CuentaDescripcion" msprop:Generator_ColumnPropNameInTable="CuentaDescripcionColumn" msprop:Generator_UserColumnName="CuentaDescripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="SaldoAl" msprop:Generator_ColumnVarNameInTable="columnSaldoAl" msprop:Generator_ColumnPropNameInRow="SaldoAl" msprop:Generator_ColumnPropNameInTable="SaldoAlColumn" msprop:Generator_UserColumnName="SaldoAl" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Adiciones" msprop:Generator_ColumnVarNameInTable="columnAdiciones" msprop:Generator_ColumnPropNameInRow="Adiciones" msprop:Generator_ColumnPropNameInTable="AdicionesColumn" msprop:Generator_UserColumnName="Adiciones" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Retiros" msprop:Generator_ColumnVarNameInTable="columnRetiros" msprop:Generator_ColumnPropNameInRow="Retiros" msprop:Generator_ColumnPropNameInTable="RetirosColumn" msprop:Generator_UserColumnName="Retiros" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SaldoAlMesAnio" msprop:Generator_ColumnVarNameInTable="columnSaldoAlMesAnio" msprop:Generator_ColumnPropNameInRow="SaldoAlMesAnio" msprop:Generator_ColumnPropNameInTable="SaldoAlMesAnioColumn" msprop:Generator_UserColumnName="SaldoAlMesAnio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Reclasificaciones" msprop:Generator_ColumnVarNameInTable="columnReclasificaciones" msprop:Generator_ColumnPropNameInRow="Reclasificaciones" msprop:Generator_ColumnPropNameInTable="ReclasificacionesColumn" msprop:Generator_UserColumnName="Reclasificaciones" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Depreciacion" msprop:Generator_ColumnVarNameInTable="columnDepreciacion" msprop:Generator_ColumnPropNameInRow="Depreciacion" msprop:Generator_ColumnPropNameInTable="DepreciacionColumn" msprop:Generator_UserColumnName="Depreciacion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CodigoActivoFijo" msprop:Generator_ColumnVarNameInTable="columnCodigoActivoFijo" msprop:Generator_ColumnPropNameInRow="CodigoActivoFijo" msprop:Generator_ColumnPropNameInTable="CodigoActivoFijoColumn" msprop:Generator_UserColumnName="CodigoActivoFijo" type="xs:string" minOccurs="0" />
+              <xs:element name="KeyCuenta" msprop:Generator_ColumnVarNameInTable="columnKeyCuenta" msprop:Generator_ColumnPropNameInRow="KeyCuenta" msprop:Generator_ColumnPropNameInTable="KeyCuentaColumn" msprop:Generator_UserColumnName="KeyCuenta" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

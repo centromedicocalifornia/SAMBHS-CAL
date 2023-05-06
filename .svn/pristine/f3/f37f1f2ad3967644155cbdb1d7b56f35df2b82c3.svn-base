@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using SAMBHS.Common.BE;
+using SAMBHS.Windows.SigesoftIntegration.UI.Dtos;
+
+namespace SAMBHS.Windows.SigesoftIntegration.UI
+{
+    public partial class FrmBuscarMedicamento : Form
+    {
+        public FrmBuscarMedicamento()
+        {
+            InitializeComponent();
+        }
+
+        private void FrmBuscarMedicamento_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (!uvFiltro.Validate(true, false).IsValid) return;
+            BuscarReceta();
+        }
+
+        List<RecetaDto> _listaDetalle = new List<RecetaDto>();
+        private void BuscarReceta()
+        {
+            var filtros = new Filtros
+            {
+                FechaInicio = dtpDateTimeStar.Value,
+                FechaFin = dptDateTimeEnd.Value,
+                Dni = txtDni.Text
+            };
+            _listaDetalle = FarmaciaBl.ObtenerRecetaMedica(filtros);
+            grdTotalDiagnosticos.DataSource = _listaDetalle;
+        }
+
+        public class Filtros
+        {
+            public DateTime? FechaInicio{ get; set; }
+            public DateTime? FechaFin { get; set; }
+            public string Dni { get; set; }
+        }
+
+        public BindingList<ventadetalleDto> ListadoVentaDetalle = new BindingList<ventadetalleDto>();
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Task.Factory.StartNew(() =>
+            {
+                ListadoVentaDetalle = Transformar(_listaDetalle);
+            }).ContinueWith(t =>
+            {
+                if (!ListadoVentaDetalle.Any()) return;
+                DialogResult = DialogResult.OK;
+                Close();
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+
+        }
+
+        private static BindingList<ventadetalleDto> Transformar(List<RecetaDto> listaDetalle)
+        {
+            var l = new BindingList<ventadetalleDto>();
+            foreach (var item in listaDetalle)
+            {
+                var o = new ventadetalleDto();
+                o.i_Anticipio = 0;
+                o.i_IdAlmacen = 1;
+                o.i_IdCentroCosto = "0";
+                o.i_IdUnidadMedida = item.IdUnidadMedida;
+                o.ProductoNombre = item.Medicamento;
+                o.v_DescripcionProducto = item.Medicamento;
+                o.v_IdProductoDetalle = item.IdProductoDetalle;
+                o.v_NroCuenta = "";
+                o.d_PrecioVenta = item.PrecioVenta;
+                o.d_Igv = item.Igv;
+                o.d_Cantidad = item.Cantidad;
+                o.d_CantidadEmpaque = item.Cantidad;
+                o.d_Precio = item.PrecioVenta ;
+                o.d_Valor = item.ValorV;
+                o.d_ValorVenta = item.ValorV;
+                o.d_PrecioImpresion = item.PrecioVenta;
+                o.v_CodigoInterno = item.CodigoInterno;
+                o.Empaque = 1;
+                o.UMEmpaque = "UND";
+                o.i_EsServicio = 1;
+                o.i_IdUnidadMedidaProducto = item.IdUnidadMedida;
+                l.Add(o);
+            }
+
+            return l;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCertificado5taCategoria" targetNamespace="http://tempuri.org/dsCertificado5taCategoria.xsd" xmlns:mstns="http://tempuri.org/dsCertificado5taCategoria.xsd" xmlns="http://tempuri.org/dsCertificado5taCategoria.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCertificado5taCategoria" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCertificado5taCategoria" msprop:Generator_UserDSName="dsCertificado5taCategoria">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsCertificado5taCategoria" msprop:Generator_TableClassName="dsCertificado5taCategoriaDataTable" msprop:Generator_TableVarName="tabledsCertificado5taCategoria" msprop:Generator_RowChangedName="dsCertificado5taCategoriaRowChanged" msprop:Generator_TablePropName="_dsCertificado5taCategoria" msprop:Generator_RowDeletingName="dsCertificado5taCategoriaRowDeleting" msprop:Generator_RowChangingName="dsCertificado5taCategoriaRowChanging" msprop:Generator_RowEvHandlerName="dsCertificado5taCategoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="dsCertificado5taCategoriaRowDeleted" msprop:Generator_RowClassName="dsCertificado5taCategoriaRow" msprop:Generator_UserTableName="dsCertificado5taCategoria" msprop:Generator_RowEvArgName="dsCertificado5taCategoriaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" msprop:Generator_UserColumnName="Titulo" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaEmision" msprop:Generator_ColumnVarNameInTable="columnFechaEmision" msprop:Generator_ColumnPropNameInRow="FechaEmision" msprop:Generator_ColumnPropNameInTable="FechaEmisionColumn" msprop:Generator_UserColumnName="FechaEmision" type="xs:string" minOccurs="0" />
+              <xs:element name="Texto1" msprop:Generator_ColumnVarNameInTable="columnTexto1" msprop:Generator_ColumnPropNameInRow="Texto1" msprop:Generator_ColumnPropNameInTable="Texto1Column" msprop:Generator_UserColumnName="Texto1" type="xs:string" minOccurs="0" />
+              <xs:element name="Texto2" msprop:Generator_ColumnVarNameInTable="columnTexto2" msprop:Generator_ColumnPropNameInRow="Texto2" msprop:Generator_ColumnPropNameInTable="Texto2Column" msprop:Generator_UserColumnName="Texto2" type="xs:string" minOccurs="0" />
+              <xs:element name="Grupo" msprop:Generator_ColumnVarNameInTable="columnGrupo" msprop:Generator_ColumnPropNameInRow="Grupo" msprop:Generator_ColumnPropNameInTable="GrupoColumn" msprop:Generator_UserColumnName="Grupo" type="xs:string" minOccurs="0" />
+              <xs:element name="v_IdTrabajador" msprop:Generator_ColumnVarNameInTable="columnv_IdTrabajador" msprop:Generator_ColumnPropNameInRow="v_IdTrabajador" msprop:Generator_ColumnPropNameInTable="v_IdTrabajadorColumn" msprop:Generator_UserColumnName="v_IdTrabajador" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsCertificado5taCategoriaDetalles" msprop:Generator_TableClassName="dsCertificado5taCategoriaDetallesDataTable" msprop:Generator_TableVarName="tabledsCertificado5taCategoriaDetalles" msprop:Generator_RowChangedName="dsCertificado5taCategoriaDetallesRowChanged" msprop:Generator_TablePropName="dsCertificado5taCategoriaDetalles" msprop:Generator_RowDeletingName="dsCertificado5taCategoriaDetallesRowDeleting" msprop:Generator_RowChangingName="dsCertificado5taCategoriaDetallesRowChanging" msprop:Generator_RowEvHandlerName="dsCertificado5taCategoriaDetallesRowChangeEventHandler" msprop:Generator_RowDeletedName="dsCertificado5taCategoriaDetallesRowDeleted" msprop:Generator_RowClassName="dsCertificado5taCategoriaDetallesRow" msprop:Generator_UserTableName="dsCertificado5taCategoriaDetalles" msprop:Generator_RowEvArgName="dsCertificado5taCategoriaDetallesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Grupo" msprop:Generator_ColumnVarNameInTable="columnGrupo" msprop:Generator_ColumnPropNameInRow="Grupo" msprop:Generator_ColumnPropNameInTable="GrupoColumn" msprop:Generator_UserColumnName="Grupo" type="xs:string" minOccurs="0" />
+              <xs:element name="Conceptos" msprop:Generator_ColumnVarNameInTable="columnConceptos" msprop:Generator_ColumnPropNameInRow="Conceptos" msprop:Generator_ColumnPropNameInTable="ConceptosColumn" msprop:Generator_UserColumnName="Conceptos" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="v_IdTrabajador" msprop:Generator_ColumnVarNameInTable="columnv_IdTrabajador" msprop:Generator_ColumnPropNameInRow="v_IdTrabajador" msprop:Generator_ColumnPropNameInTable="v_IdTrabajadorColumn" msprop:Generator_UserColumnName="v_IdTrabajador" type="xs:string" minOccurs="0" />
+              <xs:element name="Porcentajes" msprop:Generator_ColumnVarNameInTable="columnPorcentajes" msprop:Generator_ColumnPropNameInRow="Porcentajes" msprop:Generator_ColumnPropNameInTable="PorcentajesColumn" msprop:Generator_UserColumnName="Porcentajes" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

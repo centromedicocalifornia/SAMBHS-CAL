@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SAMBHS.Common.DataModel" Alias="Self" d4p1:ViewGeneration="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" xmlns:d4p1="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SAMBHSEntitiesModel" annotation:LazyLoadingEnabled="true" ed:Guid="e542efbd-3b95-4d4d-bfca-7e1c9dfb792c">
+    <EntitySet Name="applicationhierarchy" EntityType="SAMBHS.Common.DataModel.applicationhierarchy" />
+    <EntitySet Name="dbconfig" EntityType="SAMBHS.Common.DataModel.dbconfig" />
+    <EntitySet Name="extendedaction" EntityType="SAMBHS.Common.DataModel.extendedaction" />
+    <EntitySet Name="licenses" EntityType="SAMBHS.Common.DataModel.licenses" />
+    <EntitySet Name="node" EntityType="SAMBHS.Common.DataModel.node" />
+    <EntitySet Name="nodewarehouse" EntityType="SAMBHS.Common.DataModel.nodewarehouse" />
+    <EntitySet Name="organization" EntityType="SAMBHS.Common.DataModel.organization" />
+    <EntitySet Name="person" EntityType="SAMBHS.Common.DataModel.person" />
+    <EntitySet Name="role" EntityType="SAMBHS.Common.DataModel.role" />
+    <EntitySet Name="roleprofile" EntityType="SAMBHS.Common.DataModel.roleprofile" />
+    <EntitySet Name="systemparameter" EntityType="SAMBHS.Common.DataModel.systemparameter" />
+    <EntitySet Name="systemuser" EntityType="SAMBHS.Common.DataModel.systemuser" />
+    <EntitySet Name="systemusernode" EntityType="SAMBHS.Common.DataModel.systemusernode" />
+    <EntitySet Name="tipodecambio" EntityType="SAMBHS.Common.DataModel.tipodecambio" />
+    <EntitySet Name="warehouse" EntityType="SAMBHS.Common.DataModel.warehouse" />
+    <AssociationSet Name="Fk_ApplicationHierarchy_ExtendedAction_i_ApplicationHierarchyIdSet" Association="SAMBHS.Common.DataModel.Fk_ApplicationHierarchy_ExtendedAction_i_ApplicationHierarchyId">
+      <End Role="applicationhierarchy" EntitySet="applicationhierarchy" />
+      <End Role="extendedaction" EntitySet="extendedaction" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_SystemUser_ExtendedAction_i_SystemUserIdSet" Association="SAMBHS.Common.DataModel.Fk_SystemUser_ExtendedAction_i_SystemUserId">
+      <End Role="systemuser" EntitySet="systemuser" />
+      <End Role="extendedaction" EntitySet="extendedaction" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Node_NodeWarehouse_i_NodeIdSet" Association="SAMBHS.Common.DataModel.Fk_Node_NodeWarehouse_i_NodeId">
+      <End Role="node" EntitySet="node" />
+      <End Role="nodewarehouse" EntitySet="nodewarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="warehouse_nodewarehouse_v_WarehouseIdSet" Association="SAMBHS.Common.DataModel.warehouse_nodewarehouse_v_WarehouseId">
+      <End Role="warehouse" EntitySet="warehouse" />
+      <End Role="nodewarehouse" EntitySet="nodewarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Role_RoleProfile_i_RoleIdSet" Association="SAMBHS.Common.DataModel.Fk_Role_RoleProfile_i_RoleId">
+      <End Role="role" EntitySet="role" />
+      <End Role="roleprofile" EntitySet="roleprofile" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_ApplicationHierarchy_RoleProfile_i_ApplicationHierarchyIdSet" Association="SAMBHS.Common.DataModel.Fk_ApplicationHierarchy_RoleProfile_i_ApplicationHierarchyId">
+      <End Role="applicationhierarchy" EntitySet="applicationhierarchy" />
+      <End Role="roleprofile" EntitySet="roleprofile" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Person_SystemUser_i_PersonIdSet" Association="SAMBHS.Common.DataModel.Fk_Person_SystemUser_i_PersonId">
+      <End Role="person" EntitySet="person" />
+      <End Role="systemuser" EntitySet="systemuser" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Node_SystemUserNode_i_NodeIdSet" Association="SAMBHS.Common.DataModel.Fk_Node_SystemUserNode_i_NodeId">
+      <End Role="node" EntitySet="node" />
+      <End Role="systemusernode" EntitySet="systemusernode" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_SystemUser_SystemUserWarehouse_i_SystemUserIdSet" Association="SAMBHS.Common.DataModel.Fk_SystemUser_SystemUserWarehouse_i_SystemUserId">
+      <End Role="systemuser" EntitySet="systemuser" />
+      <End Role="systemusernode" EntitySet="systemusernode" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="applicationhierarchy" ed:Guid="b4d0c0a5-a72b-4d75-8d62-0d2cb497efdc">
+    <Key>
+      <PropertyRef Name="i_ApplicationHierarchyId" />
+    </Key>
+    <Property Name="i_ApplicationHierarchyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="64816492-6d04-40d7-8342-4f5ca0192094" />
+    <Property Name="i_ApplicationHierarchyTypeId" Type="Int32" ed:ValidateRequired="False" ed:Guid="66ea605c-c177-4b10-9e76-5964acc7c72a">
+      <Documentation>
+        <Summary>Hace referencia a a la tabla parametro
+
+1 Agrupacion (no usa ScopeId)
+2 Funcionalidad (pantalla) (Si usa ScopeId)
+3 Accion(no usa ScopeId)
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_Level" Type="Int32" ed:ValidateRequired="False" ed:Guid="9ce177bd-86fb-42d4-ab64-4afd9d10cde4" />
+    <Property Name="v_Description" Type="String" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="False" ed:Guid="1ed6536f-2520-4aac-9eb8-5405a7893cdd" />
+    <Property Name="v_Form" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="8b8f62c8-0c3c-4ba5-8ec5-5b7026edd388" />
+    <Property Name="v_Code" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="3f1589d0-8510-46c6-a728-255c49c936af">
+      <Documentation>
+        <Summary>Es el código del formulario y tambien el código de acción</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_ParentId" Type="Int32" ed:ValidateRequired="False" ed:Guid="bd989d4e-cb30-4d8b-ba81-302ad47aa2e1" />
+    <Property Name="i_ScopeId" Type="Int32" ed:ValidateRequired="False" ed:Guid="fae3cd97-4fff-4928-b970-84ca3ea1042e">
+      <Documentation>
+        <Summary>Hace referencia a la tabla SystemParameter
+tipo opcion:  global: Son los permisos globales (Adm sistema, Adm Negocio) , contextual : Permiso por Nodo / Empresa(Adm Sistema, Adm Negocio)</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="8431f198-e8c6-46d1-beb7-721cc93d4cbe" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="2de4989e-6a58-44eb-a5a9-3b2b5feca412" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="e6be5c1e-f69b-43f2-824d-38c2f61159d9" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="53efa720-25e2-4e78-850a-097aae304c9d" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="7b3c6a3d-670c-4d6d-aaf7-58454adb51ca" />
+    <Property Name="i_TypeFormId" Type="Int32" ed:ValidateRequired="False" ed:Guid="2bbe1830-00aa-4504-b000-6d17e6dde96b" />
+    <NavigationProperty Name="extendedaction" Relationship="SAMBHS.Common.DataModel.Fk_ApplicationHierarchy_ExtendedAction_i_ApplicationHierarchyId" FromRole="applicationhierarchy" ToRole="extendedaction" ed:Guid="defaec07-53bf-452c-a302-6a0064221183" />
+    <NavigationProperty Name="roleprofile" Relationship="SAMBHS.Common.DataModel.Fk_ApplicationHierarchy_RoleProfile_i_ApplicationHierarchyId" FromRole="applicationhierarchy" ToRole="roleprofile" ed:Guid="d2bbba6b-77d5-4c4c-809c-c7be246a03b6" />
+  </EntityType>
+  <EntityType Name="dbconfig" ed:Guid="f7bb225e-235f-4953-a276-0cc75a28cfa2">
+    <Key>
+      <PropertyRef Name="i_ConfId" />
+    </Key>
+    <Property Name="i_ConfId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="d15bfb87-8217-406f-b118-9872fb10a4fc" />
+    <Property Name="v_RutaMSSQL" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="3c2a08bf-775b-44c2-bd5d-14dab65f14e7" />
+    <Property Name="v_RutaBDPlantilla" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="684adfce-09a3-4bce-bacc-38e80b6fd6c4" />
+  </EntityType>
+  <EntityType Name="extendedaction" ed:Guid="fb843649-be43-49ad-862d-cac5aeedb092">
+    <Documentation>
+      <Summary>Son los permisos extendidos para un usuario en particular</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_ExtendedActionId" />
+    </Key>
+    <Property Name="i_ExtendedActionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="899a5b84-461d-409e-a857-a1fbd8dd6aaa" />
+    <Property Name="i_SystemUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="11416087-2537-4c66-9e96-ee029bcb5860" />
+    <Property Name="i_ApplicationHierarchyId" Type="Int32" ed:ValidateRequired="False" ed:Guid="0fb0609f-3f65-4c30-a1a6-10494561b5b6" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="456a6556-6a60-4323-aa97-8c78062704b9" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="844569fe-5aaa-4df7-a22e-a3254e0740a9" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="361d27af-6564-4ddd-b8ea-741876072e5b" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="9091db1d-3011-4845-b4b7-90ed9fb8b278" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="33257976-198b-4f04-acca-d23e24a3ce7f" />
+    <NavigationProperty Name="applicationhierarchy" Relationship="SAMBHS.Common.DataModel.Fk_ApplicationHierarchy_ExtendedAction_i_ApplicationHierarchyId" FromRole="extendedaction" ToRole="applicationhierarchy" ed:Guid="03814757-9478-4738-b82e-cfcb260b1401" />
+    <NavigationProperty Name="systemuser" Relationship="SAMBHS.Common.DataModel.Fk_SystemUser_ExtendedAction_i_SystemUserId" FromRole="extendedaction" ToRole="systemuser" ed:Guid="9939022b-a1d9-4000-bf84-f53ea8702d0b" />
+  </EntityType>
+  <EntityType Name="licenses" ed:Guid="f2357ca4-6f5c-4c5b-8e26-8edbb81f3909">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="String" Nullable="false" MaxLength="30" ed:ValidateMaxLength="30" ed:ValidateRequired="True" ed:Guid="5aea7449-e365-4bd9-be0c-aabf26a0413c" />
+    <Property Name="v_License" Type="String" MaxLength="5000" ed:ValidateMaxLength="5000" ed:ValidateRequired="False" ed:Guid="e913bb7c-047a-4af1-8af9-20a790b3ed89" />
+    <Property Name="v_Descripcion" Type="String" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="False" ed:Guid="221b8791-b4fc-49e5-a4d9-c751e6840090" />
+    <Property Name="t_FechaCreacion" Type="DateTime" ed:ValidateRequired="False" ed:Guid="f2a786ea-ed83-4190-9135-14b72619bf22" />
+    <Property Name="i_IdUsuarioCreacion" Type="Int32" ed:ValidateRequired="False" ed:Guid="a944f315-6f72-4d51-ab51-32ac8013538f" />
+    <Property Name="t_FechaExpiracion" Type="DateTime" ed:ValidateRequired="False" ed:Guid="00e20e53-5268-4dce-b5f0-3c375018c9fd" />
+  </EntityType>
+  <EntityType Name="node" ed:Guid="83c59e6d-0a12-4a77-a7e2-5794a5f0fc82">
+    <Documentation>
+      <Summary>Son las áreas geográficas donde se ingresará los datos (Almacenes, Tienda, Central, etc)
+
+El nodo N001 será el nodo Data Center</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_NodeId" />
+    </Key>
+    <Property Name="i_NodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="8c9f3f31-c8e7-44c6-918b-38b883d7d9fe" />
+    <Property Name="v_RazonSocial" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="ee17ff75-c060-4952-acf1-1b52869436dd" />
+    <Property Name="v_RUC" Type="String" MaxLength="11" ed:ValidateMaxLength="11" ed:ValidateRequired="False" ed:Guid="5f316c46-f9ec-49f0-b680-ebb5936518fd" />
+    <Property Name="v_Direccion" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="abb3aa85-5ce6-4b8b-957c-561447b574c7" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="55c06afe-eef5-45d0-96a2-4197861c6fc9" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="0e620325-0bb7-4739-9392-c38dcf6e8cf6" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="4fd5843e-a1f0-4b13-8f47-d44fa330c228" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="b673e93b-493b-4d17-979b-78cc673a0459" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="d1f03d69-fd4b-4886-9712-54f8a218715b" />
+    <NavigationProperty Name="nodewarehouse" Relationship="SAMBHS.Common.DataModel.Fk_Node_NodeWarehouse_i_NodeId" FromRole="node" ToRole="nodewarehouse" ed:Guid="80445641-4c5b-41a5-87f1-3ba5dfaa3a09" />
+    <NavigationProperty Name="systemusernode" Relationship="SAMBHS.Common.DataModel.Fk_Node_SystemUserNode_i_NodeId" FromRole="node" ToRole="systemusernode" ed:Guid="520c99d3-0bfd-45da-9e2d-ba6762a9e90e" />
+  </EntityType>
+  <EntityType Name="nodewarehouse" ed:Guid="ac10212a-5e22-4f2c-b95e-ca61515dc6fd">
+    <Key>
+      <PropertyRef Name="i_NodeWarehouseId" />
+    </Key>
+    <Property Name="i_NodeWarehouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="680c5f8e-58f3-43bc-a584-298b045a9bb4" />
+    <Property Name="i_NodeId" Type="Int32" ed:ValidateRequired="False" ed:Guid="6bb2c5b0-a36f-4731-93a1-a20b437b34a2" />
+    <Property Name="i_WarehouseId" Type="Int32" ed:ValidateRequired="False" ed:Guid="600c1ce3-4e5d-463e-8096-93c439e3d9ed" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="64f96f94-89a8-4de6-988c-a0bb0ee48cce" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="bff979e2-b116-4bd3-8acd-f6c9e6768254" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="47a68b0e-2a77-4608-a339-bf9e02e10dac" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="56d12b87-d54c-4507-8176-deea1eafb3ce" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="60362de1-942b-4d6e-84b7-d61ff62d24ef" />
+    <NavigationProperty Name="node" Relationship="SAMBHS.Common.DataModel.Fk_Node_NodeWarehouse_i_NodeId" FromRole="nodewarehouse" ToRole="node" ed:Guid="1f987883-109b-4df3-9cc1-11e96c933ce6" />
+    <NavigationProperty Name="warehouse" Relationship="SAMBHS.Common.DataModel.warehouse_nodewarehouse_v_WarehouseId" FromRole="nodewarehouse" ToRole="warehouse" ed:Guid="45ca3432-1b11-49cc-8c35-98b14d3ebb06" />
+  </EntityType>
+  <EntityType Name="organization" ed:Guid="2e9b3a8b-4463-41ec-8772-0ad9f3c3ef2d">
+    <Key>
+      <PropertyRef Name="i_OrganizationId" />
+    </Key>
+    <Property Name="i_OrganizationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="b0b701c6-3e12-4f5c-95e5-8fae951a764c" />
+    <Property Name="v_IdentificationNumber" Type="String" MaxLength="20" ed:ValidateMaxLength="20" ed:ValidateRequired="False" ed:Guid="f7b0d2b7-7865-44d7-ae87-b4617d37a1b1" />
+    <Property Name="v_Name" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="0d433084-8569-4ef4-a233-02b7130971a5" />
+    <Property Name="v_Address" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="9fc7a10b-5573-4876-b57b-3d4c52a79afb" />
+    <Property Name="v_PhoneNumber" Type="String" MaxLength="15" ed:ValidateMaxLength="15" ed:ValidateRequired="False" ed:Guid="e75ae144-d1ba-4972-9f0f-33952f4f1c21" />
+    <Property Name="v_Mail" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="aedc4572-1048-40e1-951a-18e13f3a428b" />
+    <Property Name="v_ContacName" Type="String" ed:ValidateRequired="False" ed:Guid="a0d792bf-021d-456e-8dc0-2ef2dc2de9b8" />
+    <Property Name="v_Observation" Type="String" ed:ValidateRequired="False" ed:Guid="65ad351a-b78d-42a7-bd4a-e8da78fc46dd" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="513cf8b7-c47e-4632-b3ba-7c12f6c1480e" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="3905260c-2863-4d4d-954c-6c1357c59a4d" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="2563d088-d4f0-439b-b4f4-05a8ca0a7cf2" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="b9837f87-2663-4496-a37d-8e8a78b8683c" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="fb46ba2e-840d-4f70-8589-08a003bd233d" />
+  </EntityType>
+  <EntityType Name="person" ed:Guid="a93febb7-6e8e-4fe2-9f9b-cd0ef3b5f742">
+    <Documentation>
+      <Summary>Person será creado solo en el Data Center, y bajará a los nodos</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_PersonId" />
+    </Key>
+    <Property Name="i_PersonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="ef2bd3b5-32c3-4852-922c-f3d44b143c60" />
+    <Property Name="v_FirstName" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="a4dbd4f1-ace6-4acf-af51-21dfbdfdf459" />
+    <Property Name="v_FirstLastName" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="992a4f1b-19dc-4520-9dec-d70eb745689e" />
+    <Property Name="v_SecondLastName" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="5f45d55f-525f-4dde-986a-86516478994c" />
+    <Property Name="i_DocTypeId" Type="Int32" ed:ValidateRequired="False" ed:Guid="df384088-d73e-4cad-9bcc-956101db4499">
+      <Documentation>
+        <Summary>Dni, Ruc, Passaporte, Etc</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_DocNumber" Type="String" MaxLength="20" ed:ValidateMaxLength="20" ed:ValidateRequired="False" ed:Guid="5b2deedc-ac0b-415c-89e5-a484b8e1049a" />
+    <Property Name="d_Birthdate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="03ba8ee6-318f-43d4-a28c-b58b6f97429e" />
+    <Property Name="v_BirthPlace" Type="String" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="False" ed:Guid="1a084c7b-e28c-4bda-8f30-390240b70106">
+      <Documentation>
+        <Summary>Lugar de Nacimiento como texto
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_SexTypeId" Type="Int32" ed:ValidateRequired="False" ed:Guid="e2aed767-b31b-47a3-9780-e032c27c89b0">
+      <Documentation>
+        <Summary>Masculino, Femenino
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_MaritalStatusId" Type="Int32" ed:ValidateRequired="False" ed:Guid="0fd1d5f2-311a-4a15-9597-1d308a2b64dd">
+      <Documentation>
+        <Summary>Soltero; Casado; Conviviente; Divorciado; Viudo
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_LevelOfId" Type="Int32" ed:ValidateRequired="False" ed:Guid="6c584c3f-1564-46f5-82a3-2f59e3156548">
+      <Documentation>
+        <Summary>Analfabeto; Primaria Incompleta; Primaria Completa; Secundaria Incompleta; Secundaria Completa; Técnico; Universitario; Post Grado.
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_TelephoneNumber" Type="String" MaxLength="15" ed:ValidateMaxLength="15" ed:ValidateRequired="False" ed:Guid="d92dffae-878d-4bf5-9aac-54dceef89252" />
+    <Property Name="v_AdressLocation" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="a201be78-8057-47bb-92f5-0675f4c40da6">
+      <Documentation>
+        <Summary>Lugar de residencia actual
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_GeografyLocationId" Type="String" MaxLength="6" ed:ValidateMaxLength="6" ed:ValidateRequired="False" ed:Guid="dc2808e7-4821-4077-8c3b-8b88c003f9a5">
+      <Documentation>
+        <Summary>còdigo de obigueo
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_ContactName" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="b3046fcf-840b-4303-9900-1030af377ca7" />
+    <Property Name="v_EmergencyPhone" Type="String" MaxLength="15" ed:ValidateMaxLength="15" ed:ValidateRequired="False" ed:Guid="ed712a5d-910a-4cd5-832f-5e9040b3ab80" />
+    <Property Name="b_PersonImage" Type="Binary" ed:ValidateRequired="False" ed:Guid="f42db7d0-94e3-4ad9-a7c5-cef757b0d5ff" />
+    <Property Name="v_Mail" Type="String" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="False" ed:Guid="07e363bf-1083-4f2b-b869-e418a06007cb" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="2e3f019a-c670-42c4-a3b6-45f0e7dec788" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="d27f8416-ac9c-4091-a36a-e2128669018d" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="0de0f5c7-cfb7-4125-8bfa-cf53db9ba207" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="1a12fd12-50ce-4b3d-b4bc-d9ef7420ef1f" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="d4974b60-b7fb-4e66-bd3d-021a019bfacd" />
+    <Property Name="i_InsertNodeId" Type="Int32" ed:ValidateRequired="False" ed:Guid="e174503c-0225-4922-9d78-0847da10b2cc" />
+    <Property Name="i_UpdateNodeId" Type="Int32" ed:ValidateRequired="False" ed:Guid="ea1bfe64-b540-4204-853e-35a737f6ba41" />
+    <NavigationProperty Name="systemuser" Relationship="SAMBHS.Common.DataModel.Fk_Person_SystemUser_i_PersonId" FromRole="person" ToRole="systemuser" ed:Guid="9ab281b1-9411-4b54-b0ad-7396cfc4355c" />
+  </EntityType>
+  <EntityType Name="role" ed:Guid="2ae95bac-78c3-4090-80d0-9c08a5f74db9">
+    <Key>
+      <PropertyRef Name="i_RoleId" />
+    </Key>
+    <Property Name="i_RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="980437f5-9bbf-42e6-94b4-faea4a8e13f3" />
+    <Property Name="v_Name" Type="String" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="False" ed:Guid="3b099d54-6ea3-459b-8528-102b29fdd027" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="cd1d92f2-98a6-4e13-a6b1-a8b1a72829d8" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="ef6d184e-7cbc-4211-8405-eabd980b7cbb" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="e78623cf-e590-40c0-bca1-88b2f08075b1" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="4214ab2d-e17b-4eee-98d6-c9250b722711" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="78c70718-cec6-4e05-ac0a-fdae6bde2083" />
+    <NavigationProperty Name="roleprofile" Relationship="SAMBHS.Common.DataModel.Fk_Role_RoleProfile_i_RoleId" FromRole="role" ToRole="roleprofile" ed:Guid="39ae7d41-39a3-4e33-80e3-0b7f39b4cc2b" />
+  </EntityType>
+  <EntityType Name="roleprofile" ed:Guid="27cd5401-8efd-4bae-991c-9086d61ef4da">
+    <Documentation>
+      <Summary>aca se grabran las pantallas y acciones de un rol por usuario</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_RoleProfileId" />
+    </Key>
+    <Property Name="i_RoleProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="2534c81f-c3d3-458c-9178-0e7cf6672792" />
+    <Property Name="i_ApplicationHierarchyId" Type="Int32" ed:ValidateRequired="False" ed:Guid="0c967761-cf54-4bcb-a0a5-fce0f49aa5b7" />
+    <Property Name="i_RoleId" Type="Int32" ed:ValidateRequired="False" ed:Guid="83ccb283-20fe-4296-80ad-c0885ab2ed38" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="afbf42d1-2edc-425d-a6d5-2f47e6dd8fda" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="0a9a62b7-085c-4edd-a28b-cb1765454f38" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="34fade0b-f57b-425a-a894-a70d70ffc916" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="52ab5399-7518-4422-a551-689dab0a765b" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="4043f812-d3e7-4c09-a62b-c9f48bb20358" />
+    <NavigationProperty Name="role" Relationship="SAMBHS.Common.DataModel.Fk_Role_RoleProfile_i_RoleId" FromRole="roleprofile" ToRole="role" ed:Guid="fc439d47-d77d-4b50-83a7-b75489982ccc" />
+    <NavigationProperty Name="applicationhierarchy" Relationship="SAMBHS.Common.DataModel.Fk_ApplicationHierarchy_RoleProfile_i_ApplicationHierarchyId" FromRole="roleprofile" ToRole="applicationhierarchy" ed:Guid="8da643a0-085a-41cd-b3b1-f4e09f574cb5" />
+  </EntityType>
+  <EntityType Name="systemparameter" ed:Guid="5f5fc887-9bb0-48b4-8e02-1f9a66646d3e">
+    <Key>
+      <PropertyRef Name="i_GroupId" />
+      <PropertyRef Name="i_ParameterId" />
+    </Key>
+    <Property Name="i_GroupId" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="5d796820-c065-4e35-952c-250b53130fe1" />
+    <Property Name="i_ParameterId" Type="Int32" Nullable="false" ed:ValidateRequired="True" ed:Guid="2b7d171a-a990-4305-b975-64541e7f4c1d" />
+    <Property Name="v_Value1" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="61cbdb88-5497-474f-8058-e348d5b845bf" />
+    <Property Name="v_Value2" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="8c36851f-2202-4625-a92e-07047e9ac7c8" />
+    <Property Name="v_Value3" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="fa323f1f-8705-4e39-8e5d-ea1f3f1f796e" />
+    <Property Name="v_Field" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="810c951c-eee8-4a6d-89b3-bc489355fafe" />
+    <Property Name="i_ParentParameterId" Type="Int32" ed:ValidateRequired="False" ed:Guid="116fbbb8-3658-4040-bf22-ec1ca3eafd72" />
+    <Property Name="i_Sort" Type="Int32" ed:ValidateRequired="False" ed:Guid="94520aaa-c342-4059-bb85-aa3bfade74ef" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="37e998e9-c677-470a-9b00-98b27538c223" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="d6319d9e-8125-40e9-97aa-8082a5756904" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="17976a82-7069-42bf-b64b-96b29d205193" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="e9268956-d880-4e1e-9f77-3060b3db48ae" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="737d0305-b19f-4e55-ba57-30d6a8e6f3aa" />
+  </EntityType>
+  <EntityType Name="systemuser" ed:Guid="3994b3c9-37d9-47ca-980b-a77b15974fda">
+    <Key>
+      <PropertyRef Name="i_SystemUserId" />
+    </Key>
+    <Property Name="i_SystemUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="bbb4bb93-0bca-4ffc-94ff-c2a9974b838e" />
+    <Property Name="i_PersonId" Type="Int32" ed:ValidateRequired="False" ed:Guid="51a35f17-c937-4a81-8171-783363b72338" />
+    <Property Name="i_RoleId" Type="Int32" ed:ValidateRequired="False" ed:Guid="c8162aa5-3c9b-4d88-8b51-a34f556e4591">
+      <Documentation>
+        <Summary>Es el Rol que el usuario va a tener; viene de un grupo de SystemParameter</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_UserName" Type="String" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="False" ed:Guid="3c342547-4b60-479d-8a3e-747bfd6b6329" />
+    <Property Name="v_Password" Type="String" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="False" ed:Guid="2f4535bf-5cd8-4ce6-ad46-f33483f6f295" />
+    <Property Name="v_SecretQuestion" Type="String" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="False" ed:Guid="68f324bb-09f2-495e-9aa4-91efd47a4d44" />
+    <Property Name="v_SecretAnswer" Type="String" MaxLength="200" ed:ValidateMaxLength="200" ed:ValidateRequired="False" ed:Guid="f424a059-e613-4033-a9f6-6a0f89b62651" />
+    <Property Name="v_CodeBar" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="b85abbee-a2eb-46cb-8674-52b37059de61">
+      <Documentation>
+        <Summary>Código de barras del usuario, para poder loguearse para registrar una venta</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_UsuarioContable" Type="Int32" ed:ValidateRequired="False" ed:Guid="513cff7c-5165-46db-9a7a-e6fc446b14a1" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="ba3e3fe9-a7d9-42a0-a515-bc5c4639522b" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="25a04495-6d73-422f-a0d6-685845951120" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="245c35ba-a9ae-4892-b9a9-b8ace017be95" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="641752b6-57b4-452e-93c0-399c55d79f97" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="78b63356-95d5-4d8c-8273-d72370bfe664" />
+    <NavigationProperty Name="extendedaction" Relationship="SAMBHS.Common.DataModel.Fk_SystemUser_ExtendedAction_i_SystemUserId" FromRole="systemuser" ToRole="extendedaction" ed:Guid="6cc21ed2-56a4-4df8-bd43-016be884040c" />
+    <NavigationProperty Name="person" Relationship="SAMBHS.Common.DataModel.Fk_Person_SystemUser_i_PersonId" FromRole="systemuser" ToRole="person" ed:Guid="9938f8e3-8fc6-443c-a85d-8e981ac16ad4" />
+    <NavigationProperty Name="systemusernode" Relationship="SAMBHS.Common.DataModel.Fk_SystemUser_SystemUserWarehouse_i_SystemUserId" FromRole="systemuser" ToRole="systemusernode" ed:Guid="d36f4c12-5965-4f5a-aef9-36d9a1da0f37" />
+  </EntityType>
+  <EntityType Name="systemusernode" ed:Guid="3594f6d2-9c1f-4236-9aa6-1b9c8c12ad23">
+    <Documentation>
+      <Summary>En esta tabla se almacenará usuarios con  acceso a uno o mas nodos.</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_SystemUserNodeId" />
+    </Key>
+    <Property Name="i_SystemUserNodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="66d1df4a-6a9e-4619-9a2b-254257cf67e3" />
+    <Property Name="i_SystemUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="7989a6d7-87ef-4e89-8f38-ed8f5e7bad0b" />
+    <Property Name="i_NodeId" Type="Int32" ed:ValidateRequired="False" ed:Guid="f095b3dd-dca0-4555-a7a3-056d677e9e6b" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="1cd8aae1-0931-41ae-b282-28851ec52dd6" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="cf7dca45-396f-42cd-b070-325a3f431f66" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="f32ef4cb-ca74-459d-81d2-ee464bdb0748" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="03194747-41be-485d-90d9-54701b2e5335" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="6198c3ad-abeb-40ce-a80e-33c9179a8dc0" />
+    <NavigationProperty Name="node" Relationship="SAMBHS.Common.DataModel.Fk_Node_SystemUserNode_i_NodeId" FromRole="systemusernode" ToRole="node" ed:Guid="0ac3a9ea-b257-4c35-a7c1-0af1b4b1a1e5" />
+    <NavigationProperty Name="systemuser" Relationship="SAMBHS.Common.DataModel.Fk_SystemUser_SystemUserWarehouse_i_SystemUserId" FromRole="systemusernode" ToRole="systemuser" ed:Guid="99acdcec-17bf-4dab-881b-b345634011f8" />
+  </EntityType>
+  <EntityType Name="tipodecambio" ed:Guid="59ab15e8-9645-4ed6-8cd3-69945f05fb83">
+    <Key>
+      <PropertyRef Name="i_CodTipoCambio" />
+    </Key>
+    <Property Name="i_CodTipoCambio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="1d457a5c-2d95-46ad-a82b-a64b9cd383f6" />
+    <Property Name="i_Periodo" Type="Int32" ed:ValidateRequired="False" ed:Guid="1e577455-49df-424a-aec3-081abe7c189f" />
+    <Property Name="d_FechaTipoC" Type="DateTime" ed:ValidateRequired="False" ed:Guid="af0494c7-85be-418b-a721-057ab46750fb" />
+    <Property Name="d_ValorCompra" Type="Decimal" Precision="18" Scale="4" ed:ValidateRequired="False" ed:Guid="dbd57ba3-4782-4a89-bd03-9cbc40f75a19" />
+    <Property Name="d_ValorVenta" Type="Decimal" Precision="18" Scale="4" ed:ValidateRequired="False" ed:Guid="026c7207-b359-4f14-b9f2-65de69df9385" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="7f99f791-16e5-4ea4-8d94-7386c7edac36" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="a26a46dc-b1d6-4ace-97ff-385ff1fe6086" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="59a758c7-b7c6-4517-a801-ca7f3badce12" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="faa2fa8f-19ab-469b-8621-e3b9c28c981d" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="48c72ad3-3cd1-4ea8-a5ed-da1e589e5235" />
+    <Property Name="d_ValorCompraContable" Type="Decimal" Precision="18" Scale="4" ed:ValidateRequired="False" ed:Guid="d125936e-88ec-499d-b6aa-3da74a179723" />
+    <Property Name="d_ValorVentaContable" Type="Decimal" Precision="18" Scale="4" ed:ValidateRequired="False" ed:Guid="7c345697-16fa-4bb0-a204-d2d2fd8f637a" />
+  </EntityType>
+  <EntityType Name="warehouse" ed:Guid="2f9ba1f2-41d4-46f6-a027-ab7011359236">
+    <Key>
+      <PropertyRef Name="i_WarehouseId" />
+    </Key>
+    <Property Name="i_WarehouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ed:ValidateRequired="True" ed:Guid="92e3beae-dd8c-4f66-bfe0-58d695a15251" />
+    <Property Name="v_Name" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="bb53fc4d-58b1-4f60-9708-93594267f6f0" />
+    <Property Name="v_Address" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="03c1e770-5a91-4ef4-8afa-51bc84397446" />
+    <Property Name="v_PhoneNumber" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="484f0826-1d2d-4cb6-9eb3-4b32a76f05a0" />
+    <Property Name="v_CommercialName" Type="String" MaxLength="250" ed:ValidateMaxLength="250" ed:ValidateRequired="False" ed:Guid="c2362017-6e1e-4aa1-a22e-4d7e5bd3db92" />
+    <Property Name="v_TicketSerialNumber" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="43992294-7f87-4fd9-8515-3abc3c872394" />
+    <Property Name="v_EstablishmentCode" Type="String" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="3714eb1a-9913-49a8-bc3d-e0a55fccdd19" />
+    <Property Name="i_IsDeleted" Type="Int32" ed:ValidateRequired="False" ed:Guid="5b029d9e-1b9b-40fb-89a5-cbed5d933518" />
+    <Property Name="i_InsertUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="a37a450e-afcd-4fa1-8d6c-53eb1de9b4b2" />
+    <Property Name="d_InsertDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="b99ad7b3-202a-48fc-beba-0e7a041083e4" />
+    <Property Name="i_UpdateUserId" Type="Int32" ed:ValidateRequired="False" ed:Guid="caeb12b1-3e08-4b98-9169-5b1a2cb44bdb" />
+    <Property Name="d_UpdateDate" Type="DateTime" ed:ValidateRequired="False" ed:Guid="70921d0f-17b7-48c2-b78c-94a0e7653d64" />
+    <NavigationProperty Name="nodewarehouse" Relationship="SAMBHS.Common.DataModel.warehouse_nodewarehouse_v_WarehouseId" FromRole="warehouse" ToRole="nodewarehouse" ed:Guid="b21e0530-3b1c-45c8-b28d-9a97b2da9553" />
+  </EntityType>
+  <Association Name="Fk_ApplicationHierarchy_ExtendedAction_i_ApplicationHierarchyId" ed:Guid="262ffb9c-eb55-4617-8dc5-26b8ed59a51a">
+    <End Role="applicationhierarchy" Type="SAMBHS.Common.DataModel.applicationhierarchy" Multiplicity="0..1" />
+    <End Role="extendedaction" Type="SAMBHS.Common.DataModel.extendedaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="applicationhierarchy">
+        <PropertyRef Name="i_ApplicationHierarchyId" />
+      </Principal>
+      <Dependent Role="extendedaction">
+        <PropertyRef Name="i_ApplicationHierarchyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_SystemUser_ExtendedAction_i_SystemUserId" ed:Guid="9f23ed86-d084-41a2-ae27-e9c18c87ac9a">
+    <End Role="systemuser" Type="SAMBHS.Common.DataModel.systemuser" Multiplicity="0..1" />
+    <End Role="extendedaction" Type="SAMBHS.Common.DataModel.extendedaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="systemuser">
+        <PropertyRef Name="i_SystemUserId" />
+      </Principal>
+      <Dependent Role="extendedaction">
+        <PropertyRef Name="i_SystemUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Node_NodeWarehouse_i_NodeId" ed:Guid="8bb34884-b546-4e49-9070-5eea904fc3e9">
+    <End Role="node" Type="SAMBHS.Common.DataModel.node" Multiplicity="0..1" />
+    <End Role="nodewarehouse" Type="SAMBHS.Common.DataModel.nodewarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="node">
+        <PropertyRef Name="i_NodeId" />
+      </Principal>
+      <Dependent Role="nodewarehouse">
+        <PropertyRef Name="i_NodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="warehouse_nodewarehouse_v_WarehouseId" ed:Guid="863afcd9-0879-4964-a29d-6972675c2904">
+    <End Role="warehouse" Type="SAMBHS.Common.DataModel.warehouse" Multiplicity="0..1" />
+    <End Role="nodewarehouse" Type="SAMBHS.Common.DataModel.nodewarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="warehouse">
+        <PropertyRef Name="i_WarehouseId" />
+      </Principal>
+      <Dependent Role="nodewarehouse">
+        <PropertyRef Name="i_WarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Role_RoleProfile_i_RoleId" ed:Guid="568be9d6-9e89-440c-b217-0b9c9bac55bc">
+    <End Role="role" Type="SAMBHS.Common.DataModel.role" Multiplicity="0..1" />
+    <End Role="roleprofile" Type="SAMBHS.Common.DataModel.roleprofile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="i_RoleId" />
+      </Principal>
+      <Dependent Role="roleprofile">
+        <PropertyRef Name="i_RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_ApplicationHierarchy_RoleProfile_i_ApplicationHierarchyId" ed:Guid="4e4609b4-bcef-48ff-87a5-6969c021938f">
+    <End Role="applicationhierarchy" Type="SAMBHS.Common.DataModel.applicationhierarchy" Multiplicity="0..1" />
+    <End Role="roleprofile" Type="SAMBHS.Common.DataModel.roleprofile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="applicationhierarchy">
+        <PropertyRef Name="i_ApplicationHierarchyId" />
+      </Principal>
+      <Dependent Role="roleprofile">
+        <PropertyRef Name="i_ApplicationHierarchyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Person_SystemUser_i_PersonId" ed:Guid="4e47b36f-b31c-4c53-a46e-6d447eaf7405">
+    <End Role="person" Type="SAMBHS.Common.DataModel.person" Multiplicity="0..1" />
+    <End Role="systemuser" Type="SAMBHS.Common.DataModel.systemuser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="person">
+        <PropertyRef Name="i_PersonId" />
+      </Principal>
+      <Dependent Role="systemuser">
+        <PropertyRef Name="i_PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Node_SystemUserNode_i_NodeId" ed:Guid="5673823d-9a87-491e-9ab7-58d33c9a75d2">
+    <End Role="node" Type="SAMBHS.Common.DataModel.node" Multiplicity="0..1" />
+    <End Role="systemusernode" Type="SAMBHS.Common.DataModel.systemusernode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="node">
+        <PropertyRef Name="i_NodeId" />
+      </Principal>
+      <Dependent Role="systemusernode">
+        <PropertyRef Name="i_NodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_SystemUser_SystemUserWarehouse_i_SystemUserId" ed:Guid="7dd606bb-9071-43aa-94ed-e08dcfb9024c">
+    <End Role="systemuser" Type="SAMBHS.Common.DataModel.systemuser" Multiplicity="0..1" />
+    <End Role="systemusernode" Type="SAMBHS.Common.DataModel.systemusernode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="systemuser">
+        <PropertyRef Name="i_SystemUserId" />
+      </Principal>
+      <Dependent Role="systemusernode">
+        <PropertyRef Name="i_SystemUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

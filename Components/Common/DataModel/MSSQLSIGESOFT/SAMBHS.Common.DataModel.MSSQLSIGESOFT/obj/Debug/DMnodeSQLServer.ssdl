@@ -1,0 +1,1461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SAMBHS.Common.DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SigesoftEntitiesModelStoreContainer">
+    <EntitySet Name="hospitalizacions" EntityType="SAMBHS.Common.DataModel.Store.hospitalizacion" store:Type="Tables" Schema="dbo" Table="hospitalizacion" />
+    <EntitySet Name="hospitalizacionhabitacions" EntityType="SAMBHS.Common.DataModel.Store.hospitalizacionhabitacion" store:Type="Tables" Schema="dbo" Table="hospitalizacionhabitacion" />
+    <EntitySet Name="hospitalizacionservices" EntityType="SAMBHS.Common.DataModel.Store.hospitalizacionservice" store:Type="Tables" Schema="dbo" Table="hospitalizacionservice" />
+    <AssociationSet Name="FK_hospitalizacionservice_hospitalizacion" Association="SAMBHS.Common.DataModel.Store.FK_hospitalizacionservice_hospitalizacion">
+      <End Role="hospitalizacion" EntitySet="hospitalizacions" />
+      <End Role="hospitalizacionservice" EntitySet="hospitalizacionservices" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="hospitalizacion">
+    <Key>
+      <PropertyRef Name="v_HopitalizacionId" />
+    </Key>
+    <Property Name="v_HopitalizacionId" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="v_PersonId" Type="varchar" MaxLength="16" />
+    <Property Name="d_FechaIngreso" Type="datetime" />
+    <Property Name="d_FechaAlta" Type="datetime" />
+    <Property Name="v_Comentario" Type="varchar" MaxLength="250" />
+    <Property Name="v_NroLiquidacion" Type="varchar" MaxLength="50" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+    <Property Name="d_PagoMedico" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="i_MedicoPago" Type="int" />
+    <Property Name="d_PagoPaciente" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="i_PacientePago" Type="int" />
+    <Property Name="v_ComentaryUpdate" Type="varchar" MaxLength="8000" />
+    <Property Name="v_DiseasesName" Type="varchar" MaxLength="500" />
+    <Property Name="v_CIE10Id" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="hospitalizacionhabitacion">
+    <Key>
+      <PropertyRef Name="v_HospitalizacionHabitacionId" />
+    </Key>
+    <Property Name="v_HospitalizacionHabitacionId" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="v_HopitalizacionId" Type="varchar" MaxLength="16" />
+    <Property Name="i_HabitacionId" Type="int" />
+    <Property Name="d_StartDate" Type="datetime" />
+    <Property Name="d_EndDate" Type="datetime" />
+    <Property Name="d_Precio" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="i_ConCargoA" Type="int" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+    <Property Name="d_SaldoPaciente" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="d_SaldoAseguradora" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="v_ComentaryUpdate" Type="varchar" MaxLength="8000" />
+    <Property Name="i_EstateRoom" Type="int" />
+  </EntityType>
+  <EntityType Name="hospitalizacionservice">
+    <Key>
+      <PropertyRef Name="v_HospitalizacionServiceId" />
+    </Key>
+    <Property Name="v_HospitalizacionServiceId" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="v_HopitalizacionId" Type="varchar" MaxLength="16" />
+    <Property Name="v_ServiceId" Type="varchar" MaxLength="16" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+    <Property Name="v_ComentaryUpdate" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <Association Name="FK_hospitalizacionservice_hospitalizacion">
+    <End Role="hospitalizacion" Type="SAMBHS.Common.DataModel.Store.hospitalizacion" Multiplicity="0..1" />
+    <End Role="hospitalizacionservice" Type="SAMBHS.Common.DataModel.Store.hospitalizacionservice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hospitalizacion">
+        <PropertyRef Name="v_HopitalizacionId" />
+      </Principal>
+      <Dependent Role="hospitalizacionservice">
+        <PropertyRef Name="v_HopitalizacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="accessUser" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="accessUser">
+    <Parameter Name="userId" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="loginFecuency" Type="int" Mode="In" />
+    <Parameter Name="typeUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="accesSys" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="accesSys" />
+  <Function Name="activivar_desactivar_user" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="activivar_desactivar_user">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="userId" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="status" Type="int" Mode="In" />
+  </Function>
+  <Function Name="activivar_desactivar_userForAdmin" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="activivar_desactivar_userForAdmin">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="userId" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="status" Type="int" Mode="In" />
+    <Parameter Name="adminId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="idAdmin" Type="int" Mode="In" />
+  </Function>
+  <Function Name="addBaucher" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="addBaucher">
+    <Parameter Name="adminId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="fileBaucherContent" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="fileBaucherName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="addUser" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="addUser">
+    <Parameter Name="dni" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="email" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="telefono" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="user" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="password" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="typeUser" Type="int" Mode="In" />
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="idSys" Type="int" Mode="In" />
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="addUserForAdmin" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="addUserForAdmin">
+    <Parameter Name="dni" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="email" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="telefono" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="user" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="password" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="typeUser" Type="int" Mode="In" />
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="AdminId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="AntecedentesmEDICOS_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="AntecedentesmEDICOS_SP">
+    <Parameter Name="v_PersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="AntecedentesOcupacionales_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="AntecedentesOcupacionales_SP">
+    <Parameter Name="v_PersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="BuscarDistritos_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="BuscarDistritos_SP">
+    <Parameter Name="text" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="BuscarProtocoloPropuesto_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="BuscarProtocoloPropuesto_SP">
+    <Parameter Name="organizationEmployerId" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="masterServiceTypeId" Type="int" Mode="In" />
+    <Parameter Name="masterServiceId" Type="int" Mode="In" />
+    <Parameter Name="groupOccupationName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="esoTypeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ConcatenateComponents_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ConcatenateComponents_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ConcatenateRecomendacionesByCategoria_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ConcatenateRecomendacionesByCategoria_SP">
+    <Parameter Name="pintCategoriaId" Type="int" Mode="In" />
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ConcatenateRestrictionByCategoria_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ConcatenateRestrictionByCategoria_SP">
+    <Parameter Name="pintCategoryId" Type="int" Mode="In" />
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="createReportFreeOcupacional" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="createReportFreeOcupacional">
+    <Parameter Name="name" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="createReportFreeParticular" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="createReportFreeParticular">
+    <Parameter Name="name" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="deleteReportFreeOcupacional" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="deleteReportFreeOcupacional">
+    <Parameter Name="reportName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="deleteReportFreeParticular" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="deleteReportFreeParticular">
+    <Parameter Name="reportName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="DevolverComponentesConcatenados_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="DevolverComponentesConcatenados_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="DevolverDatosPaciente_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="DevolverDatosPaciente_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="DevolverHabitos_Personales_ListaAntecedentesFamiliares_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="DevolverHabitos_Personales_ListaAntecedentesFamiliares_SP">
+    <Parameter Name="v_PersonsIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="DevolverHabitos_Personales_ListaHabitosNoxivos_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="DevolverHabitos_Personales_ListaHabitosNoxivos_SP">
+    <Parameter Name="v_PersonsIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="DevolverHabitos_Personales_ListaJerarquizada_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="DevolverHabitos_Personales_ListaJerarquizada_SP">
+    <Parameter Name="v_PersonsIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="DevolverHabitos_Personales_ListaMedicosPersonales_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="DevolverHabitos_Personales_ListaMedicosPersonales_SP">
+    <Parameter Name="v_PersonsIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="DevolverProductos" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="DevolverProductos">
+    <Parameter Name="Nombre" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="IdAlmacen" Type="int" Mode="In" />
+    <Parameter Name="RolId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DevolverValorCampoPorServicioMejorado_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="DevolverValorCampoPorServicioMejorado_SP">
+    <Parameter Name="v_ServiciosIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="DevolverValoresComponente" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="DevolverValoresComponente">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="CategoryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ExamenByDefaultOrAssigned_comFields_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ExamenByDefaultOrAssigned_comFields_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ExamenByDefaultOrAssigned_components_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ExamenByDefaultOrAssigned_components_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ExamenByDefaultOrAssigned_valueFields_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ExamenByDefaultOrAssigned_valueFields_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ExamenByDefaultOrAssigned_valueFieldsRecome_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ExamenByDefaultOrAssigned_valueFieldsRecome_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ExamenByDefaultOrAssigned_valueFieldsRestri_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ExamenByDefaultOrAssigned_valueFieldsRestri_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="existeReportFreeOcupacional" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="existeReportFreeOcupacional">
+    <Parameter Name="name" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="existeReportFreeParticular" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="existeReportFreeParticular">
+    <Parameter Name="name" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="existUser" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="existUser">
+    <Parameter Name="docIdentity" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="existUserForAdmin" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="existUserForAdmin">
+    <Parameter Name="AdminId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="docIdentity" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="FacturaDeudora" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="FacturaDeudora">
+    <Parameter Name="serie" Type="varchar" Mode="In" MaxLength="16" />
+    <Parameter Name="correlativo" Type="varchar" Mode="In" MaxLength="16" />
+  </Function>
+  <Function Name="GerenciaCredito" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaCredito">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoCaja" Type="int" Mode="In" />
+    <Parameter Name="MasterServiceId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaCredito_Asistencial" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaCredito_Asistencial">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoCaja" Type="int" Mode="In" />
+    <Parameter Name="MasterServiceId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaCreditoXEmpresa" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaCreditoXEmpresa">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoCaja" Type="int" Mode="In" />
+    <Parameter Name="MasterServiceId" Type="int" Mode="In" />
+    <Parameter Name="Empresa" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GerenciaFarmaciaAsistencial" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaFarmaciaAsistencial">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoServicio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaFarmaciaSeguros" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaFarmaciaSeguros">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoServicio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaResonancias" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaResonancias">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoServicio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaTipoExamen" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaTipoExamen">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoCaja" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaTipoExamen_Asistencial" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaTipoExamen_Asistencial">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoCaja" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaTipoPago" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaTipoPago">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoCaja" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaTipoPago_Asistencial" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaTipoPago_Asistencial">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoCaja" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaTipoProtocolo" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaTipoProtocolo">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoServicio" Type="int" Mode="In" />
+    <Parameter Name="Value" Type="varchar" Mode="In" MaxLength="1" />
+  </Function>
+  <Function Name="GerenciaTipoProtocoloSeguros" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaTipoProtocoloSeguros">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoServicio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GerenciaVentas" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GerenciaVentas">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoVenta" Type="int" Mode="In" />
+    <Parameter Name="Value" Type="varchar" Mode="In" MaxLength="1" />
+  </Function>
+  <Function Name="getAccessUserMonth" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getAccessUserMonth" />
+  <Function Name="getAccessUserToDay" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getAccessUserToDay" />
+  <Function Name="getAddComprobante" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getAddComprobante" />
+  <Function Name="GetAllPuestos_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAllPuestos_SP">
+    <Parameter Name="pstrPacientId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetAlturaEstructural_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAlturaEstructural_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetAnamnesisReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAnamnesisReport_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p1" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p2" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetAntecedentConsolidateForService1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAntecedentConsolidateForService1_SP">
+    <Parameter Name="v_PersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetAntecedentConsolidateForService2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAntecedentConsolidateForService2_SP">
+    <Parameter Name="v_PersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetAntecedentConsolidateForService3_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAntecedentConsolidateForService3_SP">
+    <Parameter Name="v_PersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetAntecedentConsolidateForService4_SP_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAntecedentConsolidateForService4_SP_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetAptitudeCertificateRefact_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAptitudeCertificateRefact_SP">
+    <Parameter Name="pstrServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetAptitudeCertificateRefactNew_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAptitudeCertificateRefactNew_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetAptitudeCertificateRefactNew2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAptitudeCertificateRefactNew2_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetAptitudeCertificateRefactNew3_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAptitudeCertificateRefactNew3_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetAptitudMedicoServicio_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAptitudMedicoServicio_SP">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="50" />
+  </Function>
+  <Function Name="GetAudiometriaCoimolache_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetAudiometriaCoimolache_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getBaucher" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getBaucher">
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="GetCAPC_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetCAPC_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetCAPE_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetCAPE_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetCAPSD_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetCAPSD_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetCAPSM_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetCAPSM_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetCarneVacuna_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetCarneVacuna_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getCategoriaExamenFaltanteESO_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getCategoriaExamenFaltanteESO_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="getComponentsExist" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getComponentsExist">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="getComponetsDownload" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getComponetsDownload">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="componentDownloadId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetConcatenateEpps_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateEpps_SP">
+    <Parameter Name="pstrHistoryId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetConcatenateExposiciones_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateExposiciones_SP">
+    <Parameter Name="pstrHistoryId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetConcatenatenoxioushabits_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenatenoxioushabits_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetConcatenateRecommendation_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateRecommendation_SP">
+    <Parameter Name="pstrDiagnosticRepositoryId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetConcatenateRecommendationByService_New_2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateRecommendationByService_New_2_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetConcatenateRecommendationByService_New_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateRecommendationByService_New_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetConcatenateRecommendationByService_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateRecommendationByService_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetConcatenateRestriction_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateRestriction_SP">
+    <Parameter Name="pstrDiagnosticRepositoryId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetConcatenateRestrictionByServiceConcatecDx_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateRestrictionByServiceConcatecDx_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetConcatenateTypeOfeep_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateTypeOfeep_SP">
+    <Parameter Name="pstrHistoryId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetConcatenateWorkStationDangers_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetConcatenateWorkStationDangers_SP">
+    <Parameter Name="pstrHistoryId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetCustionarioAudiometria_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetCustionarioAudiometria_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDataHierarchyForCombo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDataHierarchyForCombo_SP">
+    <Parameter Name="pintGroupId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDataHierarchyForComboDepartamento_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDataHierarchyForComboDepartamento_SP">
+    <Parameter Name="pintGroupId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDataHierarchyForComboDistrito_1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDataHierarchyForComboDistrito_1_SP">
+    <Parameter Name="pintGroupId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDataHierarchyForComboProvincia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDataHierarchyForComboProvincia_SP">
+    <Parameter Name="pintGroupId" Type="int" Mode="In" />
+    <Parameter Name="pintParentItemId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDataOrganizationId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDataOrganizationId_SP">
+    <Parameter Name="serviceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDatosProtocolo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDatosProtocolo_SP">
+    <Parameter Name="pProtocoloId" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="GetDatosTrabajador_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDatosTrabajador_SP">
+    <Parameter Name="v_docNumbre" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="getDetailCompletepurchase" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getDetailCompletepurchase">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="GetDevolverAntecedentesPersonales_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDevolverAntecedentesPersonales_SP">
+    <Parameter Name="pstrPersonId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDevolverAptitud_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDevolverAptitud_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDevolverComponentesLaboratorioConcatenados_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDevolverComponentesLaboratorioConcatenados_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="INFORME_LABORATORIO_ID" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDevolverDatosUsuarioFirma_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDevolverDatosUsuarioFirma_SP">
+    <Parameter Name="systemuserId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDevolverDatosUsuarioGraboExamen_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDevolverDatosUsuarioGraboExamen_SP">
+    <Parameter Name="pstrserviceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="categoriaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDiagnosticByServiceIdAndCategoryId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDiagnosticByServiceIdAndCategoryId_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pintCategoriaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDiagnosticByServiceIdAndComponent_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDiagnosticByServiceIdAndComponent_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponent" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDiagnosticForAudiometria_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDiagnosticForAudiometria_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponent" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDiagnosticRepositoryByComponent1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDiagnosticRepositoryByComponent1_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="componentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDiagnosticRepositoryByComponent2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDiagnosticRepositoryByComponent2_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="componentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDiagnosticRepositoryByComponent3_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDiagnosticRepositoryByComponent3_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="componentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDisgnosticsCIE10ByServiceIdAndComponentConcatec_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDisgnosticsCIE10ByServiceIdAndComponentConcatec_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDoctoPhisicalExam_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetDoctoPhisicalExam_SP">
+    <Parameter Name="serviceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="EXAMEN_FISICO_ID" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getDx" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getDx">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="serviceName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="getEdadPerson" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getEdadPerson">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="GetEmbarazoFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetEmbarazoFiltered_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetFamilyMedicalAntecedentsPagedAndFilteredByPersonId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetFamilyMedicalAntecedentsPagedAndFilteredByPersonId_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetFamilyMedicalAntecedentsReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetFamilyMedicalAntecedentsReport_SP">
+    <Parameter Name="v_PersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetFichaPsicologicaOcupacional_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetFichaPsicologicaOcupacional_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getFile" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getFile">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="GetFirmaMedicos_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetFirmaMedicos_SP">
+    <Parameter Name="medicoID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetFormAction_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetFormAction_SP">
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+    <Parameter Name="pintRoleId" Type="int" Mode="In" />
+    <Parameter Name="pintSystemUserId" Type="int" Mode="In" />
+    <Parameter Name="pstrFormCode" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getFototipo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getFototipo_SP">
+    <Parameter Name="v_ServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetHistoriaClinicaPsicologica_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetHistoriaClinicaPsicologica_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetHistoryPagedAndFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetHistoryPagedAndFiltered_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetHistoryReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetHistoryReport_SP">
+    <Parameter Name="pstrPersonId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetHistoryReportA_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetHistoryReportA_SP">
+    <Parameter Name="pstrPersonId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetHistoryReportB_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetHistoryReportB_SP">
+    <Parameter Name="pstrPersonId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getImagePerson" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getImagePerson">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="18" />
+  </Function>
+  <Function Name="GetInfoMedicalCenter_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetInfoMedicalCenter_SP">
+    <Parameter Name="OWNER_ORGNIZATION_ID" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getInfoPayment" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getInfoPayment">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="18" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="getInfoPerson" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getInfoPerson">
+    <Parameter Name="docIdentity" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="getInfoPersonForAdmin" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getInfoPersonForAdmin">
+    <Parameter Name="docIdentity" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="adminId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="GetInformacion_Laboratorio_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetInformacion_Laboratorio_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetInformacion_OtrosExamenes_New_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetInformacion_OtrosExamenes_New_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetInformacion_OtrosExamenes_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetInformacion_OtrosExamenes_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="OWNER_ORGNIZATION_ID" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p1" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p2" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p3" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p4" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p5" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p6" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p7" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p8" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p9" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p10" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetInformacionProtocoloCompletoAsService_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetInformacionProtocoloCompletoAsService_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetInformacionProtocoloservicio_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetInformacionProtocoloservicio_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="getInfoUserclient" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getInfoUserclient">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="GetJoinOrganizationAndLocation_List_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetJoinOrganizationAndLocation_List_SP">
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetJoinOrganizationAndLocation_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetJoinOrganizationAndLocation_SP">
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetListRecommendationByServiceIdAndComponent_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetListRecommendationByServiceIdAndComponent_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getListRequestComponents" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getListRequestComponents">
+    <Parameter Name="date_start" Type="date" Mode="In" />
+    <Parameter Name="date_end" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetListserviceToAptitud_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetListserviceToAptitud_SP">
+    <Parameter Name="v_PersonId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="v_serviceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getListSmsPendientes" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getListSmsPendientes" />
+  <Function Name="getListUsers" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getListUsers" />
+  <Function Name="getListUsersForAdmin" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getListUsersForAdmin" />
+  <Function Name="GetListValueComponent_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetListValueComponent_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetMusculoEsqueletico_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetMusculoEsqueletico_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetNombreEmpresaLab_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetNombreEmpresaLab_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetNombreGrabaAptitud_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetNombreGrabaAptitud_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetNombreMedicoLab_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetNombreMedicoLab_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetNoxiousHabitsPagedAndFilteredByPersonId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetNoxiousHabitsPagedAndFilteredByPersonId_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetNoxiousHabitsReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetNoxiousHabitsReport_SP">
+    <Parameter Name="v_PersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetObtenerFechasCuidadosPreventivos__SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetObtenerFechasCuidadosPreventivos__SP">
+    <Parameter Name="PersonId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetObtenerFirmaMedico_2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetObtenerFirmaMedico_2_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p1" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p2" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p3" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p4" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p5" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p6" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p7" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p8" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p9" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p10" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetObtenerFirmaMedicoExamen_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetObtenerFirmaMedicoExamen_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p1" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p2" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetObtenerUsuarioAnterior_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetObtenerUsuarioAnterior_SP">
+    <Parameter Name="v_ServiceComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getOrdenReporte" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getOrdenReporte">
+    <Parameter Name="organizationId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="GetOrganizationFacturacion_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetOrganizationFacturacion_SP">
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getOrSetRequestComponents" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getOrSetRequestComponents">
+    <Parameter Name="status" Type="int" Mode="In" />
+    <Parameter Name="nameComponent" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="ServiceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="adminUserId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="GetPacient_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPacient_SP">
+    <Parameter Name="pstrPacientId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstNroDocument" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetPacientReportEPS_NewOrganizationId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPacientReportEPS_NewOrganizationId_SP">
+    <Parameter Name="serviceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetPacientReportEPS_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPacientReportEPS_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetPacientReportEPSFirmaMedicoOcupacional_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPacientReportEPSFirmaMedicoOcupacional_SP">
+    <Parameter Name="serviceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetPacientsPagedAndFiltered_Apellidos_Nombre_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPacientsPagedAndFiltered_Apellidos_Nombre_SP">
+    <Parameter Name="apPat" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="apMat" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="GetPacientsPagedAndFiltered_Apellidos_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPacientsPagedAndFiltered_Apellidos_SP">
+    <Parameter Name="apPat" Type="varchar(max)" Mode="In" />
+    <Parameter Name="apMat" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetPacientsPagedAndFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPacientsPagedAndFiltered_SP">
+    <Parameter Name="pstrFirstLastNameorDocNumber" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="GetPacientsPagedAndFilteredByPErsonId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPacientsPagedAndFilteredByPErsonId_SP">
+    <Parameter Name="pstrPErsonId" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="GetParentNameSystemParameter_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetParentNameSystemParameter_SP">
+    <Parameter Name="pintParameterId" Type="int" Mode="In" />
+    <Parameter Name="pintGroupId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetParentNameSystemParameter2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetParentNameSystemParameter2_SP">
+    <Parameter Name="pintParameterId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPassOLD" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getPassOLD">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="typeUser" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="varchar" Mode="In" MaxLength="100" />
+  </Function>
+  <Function Name="GetPersonMedicalHistoryPagedAndFilteredByPersonId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPersonMedicalHistoryPagedAndFilteredByPersonId_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetPersonMedicalHistoryPagedAndFilteredByPersonId1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPersonMedicalHistoryPagedAndFilteredByPersonId1_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetPersonMedicalHistoryReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPersonMedicalHistoryReport_SP">
+    <Parameter Name="v_PersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetPlanIntegralAndFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetPlanIntegralAndFiltered_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetProblemaPagedAndFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetProblemaPagedAndFiltered_SP">
+    <Parameter Name="pstrPersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetProtocolComponents_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetProtocolComponents_SP">
+    <Parameter Name="pstrProtocolId" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="GetProtocolComponentsList_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetProtocolComponentsList_SP">
+    <Parameter Name="pstrProtocolId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetProtocolPagedAndFiltered_FILT_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetProtocolPagedAndFiltered_FILT_SP">
+    <Parameter Name="txtProtocolName" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="v_OrganizationId_1" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="v_LocationId_1" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="i_EsoTypeId" Type="int" Mode="In" />
+    <Parameter Name="v_GroupOccupationId" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="v_WorkingOrganizationId_2" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="v_WorkingLocationId_2" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="v_OrganizationInvoiceId_3" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="v_CustomerLocationId" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="i_ServiceTypeId" Type="int" Mode="In" />
+    <Parameter Name="i_MasterServiceId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetProtocolPagedAndFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetProtocolPagedAndFiltered_SP" />
+  <Function Name="getPurchaseEfectivoAndOnline" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getPurchaseEfectivoAndOnline" />
+  <Function Name="getPurchaseVentanillaAndOnline" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getPurchaseVentanillaAndOnline" />
+  <Function Name="GetRecomendationByServiceIdAndComponentConcatec_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetRecomendationByServiceIdAndComponentConcatec_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getRecomendations" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getRecomendations">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="serviceName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="GetRecommendationByServiceIdAndComponent_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetRecommendationByServiceIdAndComponent_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponent" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportAntropometria_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportAntropometria_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportAudiometria_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportAudiometria_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportCocainaMarihuana_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportCocainaMarihuana_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportConsentimiento_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportConsentimiento_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportCuestionarioEspirometria_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportCuestionarioEspirometria_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportCuestionarioNordico_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportCuestionarioNordico_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReporteErgnomia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReporteErgnomia_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportElectroGold_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportElectroGold_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReporteLumboSaca_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReporteLumboSaca_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReporteOtoscopia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReporteOtoscopia_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReporteSintomaticoRespiratorio_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReporteSintomaticoRespiratorio_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReporteSomnolencia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReporteSomnolencia_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportEstudioElectrocardiografico_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportEstudioElectrocardiografico_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReporteUCOsteoCoimalache_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReporteUCOsteoCoimalache_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportEvaluacionCardiologia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportEvaluacionCardiologia_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportEvaluacionPsicolaborlaPersonal_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportEvaluacionPsicolaborlaPersonal_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportEvaNeurologica_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportEvaNeurologica_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportEvaOsteoSanMartin_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportEvaOsteoSanMartin_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportFichaOtoscopia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportFichaOtoscopia_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportFuncionesVitales_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportFuncionesVitales_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportHistoriaOcupacional_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportHistoriaOcupacional_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportInformeRadiografico_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportInformeRadiografico_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportOdontograma_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportOdontograma_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportOsteoCoimalache_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportOsteoCoimalache_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportOsteoMuscularNuevo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportOsteoMuscularNuevo_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportRadiologico_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportRadiologico_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getReportsFreeOcupacionales" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getReportsFreeOcupacionales" />
+  <Function Name="getReportsFreeParticulares" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getReportsFreeParticulares" />
+  <Function Name="GetReportTamizajeDermatologico_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportTamizajeDermatologico_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportTestVertigo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportTestVertigo_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetReportToxicologico_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetReportToxicologico_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetRestrictionByServiceId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetRestrictionByServiceId_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getRestrictions" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getRestrictions">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="serviceName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="GetRoleNodeComponentProfileByRoleNodeId__SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetRoleNodeComponentProfileByRoleNodeId__SP">
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+    <Parameter Name="pintRoleId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getRouteInterconsultas" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getRouteInterconsultas" />
+  <Function Name="getRouteObservaciones" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getRouteObservaciones" />
+  <Function Name="getRouteReportMedic" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getRouteReportMedic" />
+  <Function Name="GetSelectedIndexChanged_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetSelectedIndexChanged_SP">
+    <Parameter Name="v_serviceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentConclusionesDxServiceId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentConclusionesDxServiceId_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentConclusionesDxServiceIdReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentConclusionesDxServiceIdReport_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentConclusionesDxServiceIdReport_TODOS_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentConclusionesDxServiceIdReport_TODOS_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentDiagnosticsReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentDiagnosticsReport_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentDisgnosticsByServiceId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentDisgnosticsByServiceId_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentDisgnosticsForGridView_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentDisgnosticsForGridView_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ComponentId" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentFields1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentFields1_SP">
+    <Parameter Name="v_ServiceComponentId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentFields2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentFields2_SP">
+    <Parameter Name="v_ServiceComponentId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponents_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponents_SP">
+    <Parameter Name="serviceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentsCulminados_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsCulminados_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentsForManagementReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsForManagementReport_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentsInfo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsInfo_SP">
+    <Parameter Name="v_ServiceComponentId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentsReport_2_DiagnosticRepository_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsReport_2_DiagnosticRepository_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="v_ComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentsReport_2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsReport_2_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="v_ComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentsReport_DxList_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsReport_DxList_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ComponentId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentsReport_New312_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsReport_New312_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentsReport_NewLab_1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsReport_NewLab_1_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentsReport_NewLab_2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsReport_NewLab_2_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentsReportC_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsReportC_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentsReportForReportSolo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsReportForReportSolo_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServiceComponentsReportSC_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentsReportSC_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceComponentTotalDiagnostics_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceComponentTotalDiagnostics_SP">
+    <Parameter Name="v_DiagnosticDepositoryId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceData_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceData_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceDisgnosticsReports_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceDisgnosticsReports_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getServiceId" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getServiceId">
+    <Parameter Name="serviceName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="getServiceInformation" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getServiceInformation">
+    <Parameter Name="serviceName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="GetServicePersonData_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServicePersonData_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceRecommendationByDiagnosticRepositoryId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceRecommendationByDiagnosticRepositoryId_SP">
+    <Parameter Name="v_DiagnosticRepositoryId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceRecommendationByDiagnosticRepositoryIdReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceRecommendationByDiagnosticRepositoryIdReport_SP">
+    <Parameter Name="v_DiagnosticRepository" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceRecommendationByServiceId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceRecommendationByServiceId_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceReport_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceRestrictionByDiagnosticRepositoryIdReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceRestrictionByDiagnosticRepositoryIdReport_SP">
+    <Parameter Name="v_DiagnosticRepository" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceRestrictionsByDiagnosticRepositoryId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceRestrictionsByDiagnosticRepositoryId_SP">
+    <Parameter Name="v_DiagnosticRepositoryId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServiceRestrictionsForGridView_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceRestrictionsForGridView_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="getServices" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getServices">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="30" />
+    <Parameter Name="ocupacionalesOrParticulares" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetServicesComponentArchivo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServicesComponentArchivo_SP">
+    <Parameter Name="serviceComponent" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServicesConsolidateForService_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServicesConsolidateForService_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_PersonId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServicesCovid19_FILTERS_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServicesCovid19_FILTERS_SP">
+    <Parameter Name="FechaIicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="v_Person" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="Servicio" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="EmpresaGeneral" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="EmpresaContrata" Type="varchar" Mode="In" MaxLength="1000" />
+  </Function>
+  <Function Name="GetServicesCovid19_SEG_VAL_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServicesCovid19_SEG_VAL_SP">
+    <Parameter Name="v_ServiceComponentId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetServicesCovid19_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServicesCovid19_SP">
+    <Parameter Name="FechaIicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetServicesCovid19ANTIGENO_FILTERS_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServicesCovid19ANTIGENO_FILTERS_SP">
+    <Parameter Name="FechaIicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="v_Person" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="Servicio" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="EmpresaGeneral" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="EmpresaContrata" Type="varchar" Mode="In" MaxLength="1000" />
+  </Function>
+  <Function Name="GetServicesCovid19MOLECULAR_FILTERS_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServicesCovid19MOLECULAR_FILTERS_SP">
+    <Parameter Name="FechaIicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="v_Person" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="Servicio" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="EmpresaGeneral" Type="varchar" Mode="In" MaxLength="1000" />
+    <Parameter Name="EmpresaContrata" Type="varchar" Mode="In" MaxLength="1000" />
+  </Function>
+  <Function Name="GetServiceShort_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServiceShort_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetServicesPagedAndFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetServicesPagedAndFiltered_SP">
+    <Parameter Name="FechaIicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetSintomasCovid19_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetSintomasCovid19_SP">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField1" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField2" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField3" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField4" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField5" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField6" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField7" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField8" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField9" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField10" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField11" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField12" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField13" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField14" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField15" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField16" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField17" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField18" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField19" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField20" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField21" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField22" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField23" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField24" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField25" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField26" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField27" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField28" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField29" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField30" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField31" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="CompField32" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="getsolicitudesConcluidasToDay" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getsolicitudesConcluidasToDay" />
+  <Function Name="getSolicitudesCulminadasForMonths" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getSolicitudesCulminadasForMonths" />
+  <Function Name="getSolicitudesParaAprobar" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getSolicitudesParaAprobar" />
+  <Function Name="GetSubCategoryName_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetSubCategoryName_SP">
+    <Parameter Name="componentId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetSystemParameterForCombo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetSystemParameterForCombo_SP">
+    <Parameter Name="pintGroupId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSystemParameterForComboForm_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetSystemParameterForComboForm_SP">
+    <Parameter Name="form" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetSystemParameterForComboFormEso_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetSystemParameterForComboFormEso_SP" />
+  <Function Name="GetSystemParametersPagedAndFilteredNew_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetSystemParametersPagedAndFilteredNew_SP">
+    <Parameter Name="pintGroupId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSystemParametersPagedAndFilteredNew2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetSystemParametersPagedAndFilteredNew2_SP">
+    <Parameter Name="pintGroupId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getSystemUser" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getSystemUser">
+    <Parameter Name="userId" Type="varchar" Mode="In" MaxLength="200" />
+  </Function>
+  <Function Name="GetSystemUserExternalPagedAndFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetSystemUserExternalPagedAndFiltered_SP">
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTypeOfEEPPagedAndFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetTypeOfEEPPagedAndFiltered_SP">
+    <Parameter Name="pstrHistorytId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="getUsersRegister" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="getUsersRegister" />
+  <Function Name="GetValoresComponente_ObservadoAMC_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetValoresComponente_ObservadoAMC_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetValoresComponente_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetValoresComponente_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetValoresComponenteAMC__SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetValoresComponenteAMC__SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pintCategory" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetValoresComponenteOdontograma_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetValoresComponenteOdontograma_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrPath" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetValoresComponenteOdontogramaAusente_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetValoresComponenteOdontogramaAusente_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrPath" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetValoresComponenteOdontogramaValue1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetValoresComponenteOdontogramaValue1_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetValoresComponentesUserControl_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetValoresComponentesUserControl_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetValoresExamenComponete_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetValoresExamenComponete_SP">
+    <Parameter Name="pstrServiceId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="pstrComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetVerificarAptitud_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetVerificarAptitud_SP">
+    <Parameter Name="serviceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetVerificarEscritura_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetVerificarEscritura_SP">
+    <Parameter Name="v_ComponentId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="p2" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetWorkerData_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetWorkerData_SP">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="GetWorkstationDangersagedAndFiltered_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="GetWorkstationDangersagedAndFiltered_SP">
+    <Parameter Name="pstrHistorytId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="isExistUser" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="isExistUser">
+    <Parameter Name="dni" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="isNullImagePerfil" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="isNullImagePerfil">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="18" />
+  </Function>
+  <Function Name="isObservado" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="isObservado">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="16" />
+  </Function>
+  <Function Name="ListGetDiagnosticByServiceId1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ListGetDiagnosticByServiceId1_SP">
+    <Parameter Name="v_ServiciosIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ListGetDiagnosticByServiceIdAndCategoryId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ListGetDiagnosticByServiceIdAndCategoryId_SP">
+    <Parameter Name="v_ServiciosIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ListGetRecommendationByServiceId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ListGetRecommendationByServiceId_SP">
+    <Parameter Name="v_ServiciosIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ListGetRestrictionByServiceId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ListGetRestrictionByServiceId_SP">
+    <Parameter Name="v_ServiciosIds" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ListMissingExamenesNames_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ListMissingExamenesNames_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+    <Parameter Name="pintRoleIdint" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ListMissingExamenesNames2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ListMissingExamenesNames2_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+    <Parameter Name="pintRoleIdint" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LlenarComboAltitud_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboAltitud_SP" />
+  <Function Name="LlenarComboDistrito_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboDistrito_SP" />
+  <Function Name="LlenarComboEstadoCivil_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboEstadoCivil_SP" />
+  <Function Name="LlenarComboFactor_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboFactor_SP" />
+  <Function Name="LlenarComboGennero_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboGennero_SP" />
+  <Function Name="LlenarComboGetServiceType_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboGetServiceType_SP" />
+  <Function Name="LlenarComboGrupo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboGrupo_SP" />
+  <Function Name="LlenarComboLugarLabor_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboLugarLabor_SP" />
+  <Function Name="LlenarComboNivelEstudio_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboNivelEstudio_SP" />
+  <Function Name="LlenarComboParentesco_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboParentesco_SP" />
+  <Function Name="LlenarComboProtocolo_Particular_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboProtocolo_Particular_SP">
+    <Parameter Name="p1" Type="int" Mode="In" />
+    <Parameter Name="p2" Type="int" Mode="In" />
+    <Parameter Name="empresa" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="LlenarComboProtocolo_pre_1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboProtocolo_pre_1_SP">
+    <Parameter Name="v_empresa" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="LlenarComboProtocolo_pre_2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboProtocolo_pre_2_SP">
+    <Parameter Name="v_empresa" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="LlenarComboProtocolo_Seguros_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboProtocolo_Seguros_SP">
+    <Parameter Name="p1" Type="int" Mode="In" />
+    <Parameter Name="p2" Type="int" Mode="In" />
+    <Parameter Name="seguro" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="empresa" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="LlenarComboProtocolo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboProtocolo_SP">
+    <Parameter Name="pServiceTypeId" Type="int" Mode="In" />
+    <Parameter Name="pService" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LlenarComboResidencia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboResidencia_SP" />
+  <Function Name="LlenarComboServicio_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboServicio_SP">
+    <Parameter Name="pServiceTypeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LlenarComboSystemParametro_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboSystemParametro_SP">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LlenarComboTipoDocumento" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboTipoDocumento" />
+  <Function Name="LlenarComboTipoSeguro_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboTipoSeguro_SP" />
+  <Function Name="LlenarComboTipoServicio_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboTipoServicio_SP" />
+  <Function Name="LlenarComboUsuarios_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarComboUsuarios_SP">
+    <Parameter Name="pstrProtocolId" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="LlenarGrillaSigesoft" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarGrillaSigesoft">
+    <Parameter Name="Dni" Type="varchar" Mode="In" MaxLength="16" />
+    <Parameter Name="v_CustomerOrganizationId" Type="varchar" Mode="In" MaxLength="16" />
+    <Parameter Name="v_CustomerLocationId" Type="varchar" Mode="In" MaxLength="16" />
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="i_EsoTypeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LlenarPerson_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="LlenarPerson_SP">
+    <Parameter Name="Filtro" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="ObtenerAreas_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerAreas_SP" />
+  <Function Name="ObtenerComentariosCuidadosPreventivos_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerComentariosCuidadosPreventivos_SP">
+    <Parameter Name="PersonId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ObtenerContactoEmergencia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerContactoEmergencia_SP" />
+  <Function Name="ObtenerEsoAntecedentesPorGrupoId1__SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerEsoAntecedentesPorGrupoId1__SP">
+    <Parameter Name="GrupoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerEsoAntecedentesPorGrupoId2__SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerEsoAntecedentesPorGrupoId2__SP">
+    <Parameter Name="GrupoEtario" Type="int" Mode="In" />
+    <Parameter Name="PersonaId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="P_ParametroId" Type="int" Mode="In" />
+    <Parameter Name="grupoHijo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerGesoId_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerGesoId_SP">
+    <Parameter Name="pstrLocationId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="pstrGesoName" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="ObtenerGesoProtocol_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerGesoProtocol_SP">
+    <Parameter Name="organizationId" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="locationId" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="ObtenerIdsParaImportacionExcel_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerIdsParaImportacionExcel_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="i_Categoria" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerListadoCuidadosPreventivos_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerListadoCuidadosPreventivos_SP">
+    <Parameter Name="FechaServicio" Type="datetime" Mode="In" />
+    <Parameter Name="PersonId" Type="varchar(max)" Mode="In" />
+    <Parameter Name="GrupoPadre" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerNetoPorCobrar" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerNetoPorCobrar">
+    <Parameter Name="serie" Type="varchar" Mode="In" MaxLength="16" />
+    <Parameter Name="correlativo" Type="varchar" Mode="In" MaxLength="16" />
+  </Function>
+  <Function Name="ObtenerNetoPorCobrarTodos" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerNetoPorCobrarTodos" />
+  <Function Name="ObtenerPacientes_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerPacientes_SP" />
+  <Function Name="ObtenerPrecioTarifario" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerPrecioTarifario">
+    <Parameter Name="Service" Type="varchar" Mode="In" MaxLength="16" />
+    <Parameter Name="IdProductoDetalle" Type="varchar" Mode="In" MaxLength="16" />
+  </Function>
+  <Function Name="ObtenerProducto" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerProducto">
+    <Parameter Name="IdProductoDetalle" Type="varchar" Mode="In" MaxLength="16" />
+  </Function>
+  <Function Name="ObtenerProvincia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerProvincia_SP">
+    <Parameter Name="pintParentItemId" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="ObtenerPuestos_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerPuestos_SP" />
+  <Function Name="ObtenerTodasProvincia_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerTodasProvincia_SP">
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerTodosDepartamentos_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerTodosDepartamentos_SP">
+    <Parameter Name="pintNodeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerValores" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ObtenerValores">
+    <Parameter Name="ServiceId" Type="varchar" Mode="In" MaxLength="16" />
+  </Function>
+  <Function Name="pagoEnLinea" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="pagoEnLinea">
+    <Parameter Name="json" Type="varchar(max)" Mode="In" />
+    <Parameter Name="nroDoc" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="typeDoc" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="pagoVentanilla" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="pagoVentanilla">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="fileBaucherContent" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="fileBaucherName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="adminId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="typeDoc" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="nroDoc" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="paymentType" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="ReporteAtencionMedica" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ReporteAtencionMedica">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="IdProfesional" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReporteGerencial" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ReporteGerencial">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoCaja" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReporteMatrizLaZanja_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ReporteMatrizLaZanja_SP">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ReporteMatrizShauindo_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ReporteMatrizShauindo_SP">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ReporteOsteomuscular_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ReporteOsteomuscular_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="i_ComponentId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="requestdetailservicecomponent" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="requestdetailservicecomponent">
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="fileBitsDni" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="fileNameDni" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="fileBitsDoc" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="fileNameDoc" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="requestDocs" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="requestDocs">
+    <Parameter Name="fileBits" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="fileName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="ResumenTipoEmpresa" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ResumenTipoEmpresa">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ResumenTipoPago" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ResumenTipoPago">
+    <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="TipoCaja" Type="int" Mode="In" />
+  </Function>
+  <Function Name="saveSms" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="saveSms">
+    <Parameter Name="phoneNumber" Type="int" Mode="In" />
+    <Parameter Name="smsContent" Type="varchar" Mode="In" MaxLength="160" />
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="searchPerson" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="searchPerson">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="userId" Type="varchar" Mode="In" MaxLength="100" />
+  </Function>
+  <Function Name="searchPersonForAdmin" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="searchPersonForAdmin">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="adminId" Type="varchar" Mode="In" MaxLength="20" />
+  </Function>
+  <Function Name="setEmvironmentVariables" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="setEmvironmentVariables">
+    <Parameter Name="observaciones" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="reportes" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="interconsultas" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="setStatusAprobarDenegarSolicitud" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="setStatusAprobarDenegarSolicitud">
+    <Parameter Name="adminId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="status" Type="int" Mode="In" />
+    <Parameter Name="serviceId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="componentName" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="upDatePass" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="upDatePass">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="pass" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="typeUser" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="varchar" Mode="In" MaxLength="100" />
+  </Function>
+  <Function Name="updateReportFreeOcupacional" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="updateReportFreeOcupacional">
+    <Parameter Name="nameold" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="name" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="updateReportFreeParticular" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="updateReportFreeParticular">
+    <Parameter Name="nameold" Type="varchar" Mode="In" MaxLength="500" />
+    <Parameter Name="name" Type="varchar" Mode="In" MaxLength="500" />
+  </Function>
+  <Function Name="UPdateserviceAptitude_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="UPdateserviceAptitude_SP">
+    <Parameter Name="StatusId" Type="int" Mode="In" />
+    <Parameter Name="AptitudStatusId" Type="int" Mode="In" />
+    <Parameter Name="FECHA" Type="datetime" Mode="In" />
+    <Parameter Name="i_UpdateUserId" Type="int" Mode="In" />
+    <Parameter Name="ServicioId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateServiceComponent1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="UpdateServiceComponent1_SP">
+    <Parameter Name="v_ServiceComponentId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateServiceComponent2_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="UpdateServiceComponent2_SP">
+    <Parameter Name="serviceId_" Type="varchar(max)" Mode="In" />
+    <Parameter Name="componentName" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UpdateServiceComponent3_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="UpdateServiceComponent3_SP">
+    <Parameter Name="item" Type="varchar(max)" Mode="In" />
+    <Parameter Name="userId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="upDateUser" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="upDateUser">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="tel" Type="varchar" Mode="In" MaxLength="15" />
+    <Parameter Name="email" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="useName" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="newPass" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="isDeleted" Type="int" Mode="In" />
+    <Parameter Name="typeUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="upDateUserForAdmin" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="upDateUserForAdmin">
+    <Parameter Name="personId" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="tel" Type="varchar" Mode="In" MaxLength="15" />
+    <Parameter Name="email" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="useName" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="newPass" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="isDeleted" Type="int" Mode="In" />
+    <Parameter Name="admin" Type="varchar" Mode="In" MaxLength="20" />
+    <Parameter Name="idAdmin" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ValoresComponente_ManagerReport_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ValoresComponente_ManagerReport_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="ValoresComponenteOdontograma1_SP" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ValoresComponenteOdontograma1_SP">
+    <Parameter Name="v_ServiceId" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_ComponentId" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="ValoresComponentesServicio" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="ValoresComponentesServicio">
+    <Parameter Name="v_ServiceId" Type="nvarchar" Mode="In" MaxLength="50" />
+  </Function>
+</Schema>

@@ -1,0 +1,132 @@
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Design.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Linq.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Dapper.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\FineUI.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Ionic.Zip.Reduced.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Configuration.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.Entity.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Runtime.Serialization.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Web.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Windows.Forms.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.Linq.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.ConexionPerdida.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\App_Demo.UI.DownloadingUpdate.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\LoadingClass.LoadingForm.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.Properties.Resources.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll.licenses
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Design.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Linq.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Dapper.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\FineUI.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Ionic.Zip.Reduced.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Configuration.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.DataSetExtensions.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.Entity.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Runtime.Serialization.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Web.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Windows.Forms.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.Linq.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csprojResolveAssemblyReference.cache
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.ConexionPerdida.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\App_Demo.UI.DownloadingUpdate.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\LoadingClass.LoadingForm.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.Properties.Resources.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csproj.GenerateResource.Cache
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll.licenses
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Dapper.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\FineUI.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Configuration.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.DataSetExtensions.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.Entity.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Runtime.Serialization.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Web.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Windows.Forms.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.Linq.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.ConexionPerdida.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\App_Demo.UI.DownloadingUpdate.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\LoadingClass.LoadingForm.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.Properties.Resources.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csproj.GenerateResource.Cache
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll.licenses
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Dapper.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\FineUI.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Configuration.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.DataSetExtensions.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.Entity.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Runtime.Serialization.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Web.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Windows.Forms.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.ConexionPerdida.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\App_Demo.UI.DownloadingUpdate.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\LoadingClass.LoadingForm.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.Properties.Resources.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csproj.GenerateResource.Cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll.licenses
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.pdb

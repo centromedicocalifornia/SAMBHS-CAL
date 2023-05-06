@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SAMBHS.Windows.SigesoftIntegration.UI.Dtos
+{
+    public class ProtocolDto
+    {
+        public string Geso { get; set; }
+        public string TipoEso { get; set; }
+        public string EmpresaCliente { get; set; }
+        public string EmpresaEmpleadora { get; set; }
+        public string EmpresaTrabajo { get; set; }
+    }
+}

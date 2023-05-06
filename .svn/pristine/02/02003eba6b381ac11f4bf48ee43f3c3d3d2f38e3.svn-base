@@ -1,0 +1,106 @@
+﻿.mayus 
+{
+	text-transform: uppercase;	
+}
+.datecontainer .x-form-field-trigger-wrap
+{
+    margin-right: 10px;
+}
+.mright
+{
+    margin-right: 10px;
+}
+.mleft
+{
+    margin-left: 10px;
+}
+.mrightmayus
+{
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+.page
+{
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 1024px;
+    height: 768px;
+    margin-left: -512px;
+    background-color: #fff;
+}
+
+/* ------------------------------------------------------------------------- */
+
+/* Login Style */
+.login
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1024px;
+    height: 680px;
+    background-image: url(images/bg-login.jpg);
+}
+.login-form
+{
+    position: absolute;
+    left: 704px;
+    top: 100px;
+    width: 240px;
+    height: 520px;
+}
+.login-title
+{
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    width: 200px;
+    height: 120px;
+    font-family: Arial;
+    font-size: 36px;
+    font-weight: normal;
+    color: #333;
+    text-align: right;
+}
+/* ------------------------------------------------------------------------- */
+
+/* Form & Labels Style*/
+.form-item
+{
+    position: absolute;
+    display: block;
+    width: auto;
+}
+.form-label
+{
+    position: absolute;
+    font-family: Arial;
+    font-size: 8pt;
+    color: #000;
+    line-height: 20px;
+    text-align: left;
+}
+
+.form-input
+{
+    position: absolute;
+    font-family: Arial;
+    font-size: 8pt;
+    text-align: left;
+    float: left;
+}
+.form-textbox
+{
+    position: absolute;
+    padding: 5px;
+    font-family: Arial;
+    font-size: 8pt;
+    line-height: 16px;
+    color: #000;
+    overflow: auto;
+}
+
+
+/* ------------------------------------------------------------------------- */

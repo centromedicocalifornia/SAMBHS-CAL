@@ -1,0 +1,188 @@
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.Design.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.Linq.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.ActivoFijo.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.ActivoFijo.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Almacen.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Cobranza.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BE.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.Resource.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.CommonWIN.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Contabilidad.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Tesoreria.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Dapper.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Venta.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\FineUI.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Ionic.Zip.Reduced.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\itextsharp.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\WebCam_Capture.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\AxInterop.ZKFPEngXControl.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SigPlusNET.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Security.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\ScrapperReniecSunat.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Almacen.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Cobranza.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BE.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.Resource.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Contabilidad.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Tesoreria.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Venta.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Security.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.Design.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.Linq.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.ActivoFijo.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.ActivoFijo.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Almacen.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Cobranza.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BE.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.Resource.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.CommonWIN.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Contabilidad.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Tesoreria.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Dapper.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Venta.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\FineUI.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Ionic.Zip.Reduced.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\itextsharp.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\WebCam_Capture.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\AxInterop.ZKFPEngXControl.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SigPlusNET.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Security.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\ScrapperReniecSunat.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\HtmlAgilityPack.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Almacen.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Cobranza.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BE.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.Resource.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Contabilidad.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Tesoreria.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Venta.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Security.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.csprojResolveAssemblyReference.cache
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.ActivoFijo.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.ActivoFijo.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Almacen.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Cobranza.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.CommonWIN.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Contabilidad.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Tesoreria.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Dapper.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Venta.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\FineUI.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\itextsharp.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\WebCam_Capture.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\AxInterop.ZKFPEngXControl.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SigPlusNET.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Security.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\ScrapperReniecSunat.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\HtmlAgilityPack.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Cobranza.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Contabilidad.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Tesoreria.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Venta.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Security.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.ActivoFijo.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.ActivoFijo.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Almacen.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Cobranza.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.CommonWIN.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Contabilidad.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Tesoreria.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Dapper.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Venta.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\FineUI.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\itextsharp.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\WebCam_Capture.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\AxInterop.ZKFPEngXControl.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SigPlusNET.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Security.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\ScrapperReniecSunat.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\HtmlAgilityPack.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Cobranza.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Contabilidad.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Tesoreria.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Venta.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Security.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.pdb

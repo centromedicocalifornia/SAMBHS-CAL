@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Dapper;
+using SAMBHS.Common.BE;
+using SAMBHS.Common.DataModel;
+using SAMBHS.Windows.SigesoftIntegration.UI.Dtos;
+
+namespace SAMBHS.Windows.SigesoftIntegration.UI
+{
+    public class FarmaciaBl
+    {
+        public static List<RecetaDto> ObtenerRecetaMedica(FrmBuscarMedicamento.Filtros filtros)
+        {
+            using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+            {
+                if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+                var dni = filtros.Dni;
+                if (filtros.FechaInicio == null || filtros.FechaFin == null) return null;
+                var fi = filtros.FechaInicio.Value.ToShortDateString();
+                var ff = filtros.FechaFin.Value.ToShortDateString();
+
+                var query = @"select dig.v_DiseasesId as DiagnosticRepositoryId, rec.v_IdProductoDetalle as IdProductoDetalle, rec.d_Cantidad as Cantidad, rec.i_IdReceta as IdReceta " +
+                            "from diagnosticrepository dig " +
+                            "inner join service ser on  dig.v_ServiceId = ser.v_ServiceId "+
+                            "inner join person per on ser.v_PersonId = per.v_PersonId "+
+                            "inner join component com on dig.v_ComponentId = com.v_ComponentId "+
+                            "inner join receta rec on dig.v_DiagnosticRepositoryId = rec.v_DiagnosticRepositoryId  " +
+                            "where per.v_DocNumber ='"+  dni + "'and (ser.d_ServiceDate > '"+fi+"' and ser.d_ServiceDate < '"+ ff+"')";
+
+                var data = cnx.Query<RecetaDto>(query).ToList();
+                return GetReceta(data);
+            }
+        }
+
+        public static List<RecetaDto> GetReceta(List<RecetaDto> data)
+        {
+            using (var dbContext = new SAMBHSEntitiesModelWin())
+            {
+                var ids = data.Select(p => p.IdProductoDetalle).ToList();
+                var objEntity = (from a in dbContext.productodetalle
+                                 join b in dbContext.producto on a.v_IdProducto equals b.v_IdProducto
+                                 where ids.Contains(a.v_IdProductoDetalle)
+                                 select new
+                                 {
+                                     IdProductoDetalle = a.v_IdProductoDetalle,
+                                     ProductName = b.v_Descripcion,
+                                     IdUnidadMedida = b.i_IdUnidadMedida,
+                                     PrecioVenta = b.d_PrecioVenta,
+                                     igv = b.d_PrecioVenta* 18/100,
+                                     pu = b.d_PrecioVenta,
+                                     valorV = b.d_PrecioVenta + (b.d_PrecioVenta* 18/100),
+                                     CodigoInterno = b.v_CodInterno
+                                 }).ToList();
+
+                foreach (var item in data)
+                {
+                    item.Medicamento = objEntity.Find(p => p.IdProductoDetalle == item.IdProductoDetalle).ProductName;
+                    item.Cantidad = item.Cantidad;
+                    item.DiagnosticRepositoryId = item.DiagnosticRepositoryId;
+                    item.IdReceta = item.IdReceta;
+                    item.IdUnidadMedida = objEntity.Find(p => p.IdProductoDetalle == item.IdProductoDetalle).IdUnidadMedida.Value;
+                    item.PrecioVenta = objEntity.Find(p => p.IdProductoDetalle == item.IdProductoDetalle).PrecioVenta.Value;
+                    item.Igv = objEntity.Find(p => p.IdProductoDetalle == item.IdProductoDetalle).igv.Value;
+                    item.Pu = objEntity.Find(p => p.IdProductoDetalle == item.IdProductoDetalle).pu.Value;
+                    item.ValorV = objEntity.Find(p => p.IdProductoDetalle == item.IdProductoDetalle).valorV.Value;
+                    item.CodigoInterno = objEntity.Find(p => p.IdProductoDetalle == item.IdProductoDetalle).CodigoInterno;
+                }
+                return data;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SAMBHS.Windows.WinServer.UI" GeneratedClassName="UserConfig">
+  <Profiles />
+  <Settings>
+    <Setting Name="appEstablecimientoPredeterminado" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="appAlmacenPredeterminado" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="csUsuario" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="csServidor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sistema4-pc</Value>
+    </Setting>
+    <Setting Name="csPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123456</Value>
+    </Setting>
+    <Setting Name="csTipoMotorBD" Type="SAMBHS.Common.Resource.TipoMotorBD" Scope="User">
+      <Value Profile="(Default)">MSSQLServer</Value>
+    </Setting>
+    <Setting Name="appBinPostgresLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\PostgreSQL\8.4\bin\</Value>
+    </Setting>
+    <Setting Name="appRutaBackupPredeterminada" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="appSistemaMultiEmpresas" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="appRutaCrearBackupPredeterminada" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

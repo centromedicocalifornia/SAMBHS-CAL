@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4A01C44-015D-4598-8543-78C5F1FD2F78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAMBHS.Common.DataModel</RootNamespace>
+    <AssemblyName>SAMBHS.Common.DataModel.MSSQL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Devart.Data">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Design">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Linq">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql.Entity">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.PostgreSql.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DMMSQL1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMMSQL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedAssemblers\applicationhierarchyAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\licensesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\systemuserAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\tipodecambioAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\warehouseAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\systemusernodeAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\systemparameterAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\roleprofileAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\roleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\personAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\organizationAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\nodewarehouseAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\nodeAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\extendedactionAssembler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BusinessEntity\SAMBHS.Common.BE\SAMBHS.Common.BE.csproj">
+      <Project>{04ACEEEE-BA05-46B7-A0C2-FD2B6F2E04B8}</Project>
+      <Name>SAMBHS.Common.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN.csproj">
+      <Project>{6F195144-A2AD-42D1-B3CE-F1ACFE7DBC8A}</Project>
+      <Name>SAMBHS.Common.DataModel.MSSQLWIN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMMSQL.Diagram1.view">
+      <DependentUpon>DMMSQL.edmx</DependentUpon>
+    </None>
+    <DevartEntityDeploy Include="DMMSQL.edmx">
+      <Generator>DevartEfGenerator</Generator>
+      <LastGenOutput>DMMSQL1.Designer.cs</LastGenOutput>
+    </DevartEntityDeploy>
+    <None Include="DMMSQL.edps">
+      <DependentUpon>DMMSQL.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Devart\v3.5\Devart.Data.Entity.targets" Condition="'$(CiBuild)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

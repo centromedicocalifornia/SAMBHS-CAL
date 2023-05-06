@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SAMBHSEntitiesModelStoreContainer" CdmEntityContainer="SAMBHSEntitiesModel">
+    <EntitySetMapping Name="applicationhierarchy">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.applicationhierarchy">
+        <MappingFragment StoreEntitySet="applicationhierarchies">
+          <ScalarProperty Name="i_ApplicationHierarchyId" ColumnName="i_ApplicationHierarchyId" />
+          <ScalarProperty Name="i_ApplicationHierarchyTypeId" ColumnName="i_ApplicationHierarchyTypeId" />
+          <ScalarProperty Name="i_Level" ColumnName="i_Level" />
+          <ScalarProperty Name="v_Description" ColumnName="v_Description" />
+          <ScalarProperty Name="v_Form" ColumnName="v_Form" />
+          <ScalarProperty Name="v_Code" ColumnName="v_Code" />
+          <ScalarProperty Name="i_ParentId" ColumnName="i_ParentId" />
+          <ScalarProperty Name="i_ScopeId" ColumnName="i_ScopeId" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+          <ScalarProperty Name="i_TypeFormId" ColumnName="i_TypeFormId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dbconfig">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.dbconfig">
+        <MappingFragment StoreEntitySet="dbconfigs">
+          <ScalarProperty Name="i_ConfId" ColumnName="i_ConfId" />
+          <ScalarProperty Name="v_RutaMSSQL" ColumnName="v_RutaMSSQL" />
+          <ScalarProperty Name="v_RutaBDPlantilla" ColumnName="v_RutaBDPlantilla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="extendedaction">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.extendedaction">
+        <MappingFragment StoreEntitySet="extendedactions">
+          <ScalarProperty Name="i_ExtendedActionId" ColumnName="i_ExtendedActionId" />
+          <ScalarProperty Name="i_SystemUserId" ColumnName="i_SystemUserId" />
+          <ScalarProperty Name="i_ApplicationHierarchyId" ColumnName="i_ApplicationHierarchyId" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="licenses">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.licenses">
+        <MappingFragment StoreEntitySet="licenses">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="v_License" ColumnName="v_License" />
+          <ScalarProperty Name="v_Descripcion" ColumnName="v_Descripcion" />
+          <ScalarProperty Name="t_FechaCreacion" ColumnName="t_FechaCreacion" />
+          <ScalarProperty Name="i_IdUsuarioCreacion" ColumnName="i_IdUsuarioCreacion" />
+          <ScalarProperty Name="t_FechaExpiracion" ColumnName="t_FechaExpiracion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="node">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.node">
+        <MappingFragment StoreEntitySet="nodes">
+          <ScalarProperty Name="i_NodeId" ColumnName="i_NodeId" />
+          <ScalarProperty Name="v_RazonSocial" ColumnName="v_RazonSocial" />
+          <ScalarProperty Name="v_RUC" ColumnName="v_RUC" />
+          <ScalarProperty Name="v_Direccion" ColumnName="v_Direccion" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nodewarehouse">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.nodewarehouse">
+        <MappingFragment StoreEntitySet="nodewarehouses">
+          <ScalarProperty Name="i_NodeWarehouseId" ColumnName="i_NodeWarehouseId" />
+          <ScalarProperty Name="i_NodeId" ColumnName="i_NodeId" />
+          <ScalarProperty Name="i_WarehouseId" ColumnName="i_WarehouseId" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="organization">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.organization">
+        <MappingFragment StoreEntitySet="organizations">
+          <ScalarProperty Name="i_OrganizationId" ColumnName="i_OrganizationId" />
+          <ScalarProperty Name="v_IdentificationNumber" ColumnName="v_IdentificationNumber" />
+          <ScalarProperty Name="v_Name" ColumnName="v_Name" />
+          <ScalarProperty Name="v_Address" ColumnName="v_Address" />
+          <ScalarProperty Name="v_PhoneNumber" ColumnName="v_PhoneNumber" />
+          <ScalarProperty Name="v_Mail" ColumnName="v_Mail" />
+          <ScalarProperty Name="v_ContacName" ColumnName="v_ContacName" />
+          <ScalarProperty Name="v_Observation" ColumnName="v_Observation" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="person">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.person">
+        <MappingFragment StoreEntitySet="people">
+          <ScalarProperty Name="i_PersonId" ColumnName="i_PersonId" />
+          <ScalarProperty Name="v_FirstName" ColumnName="v_FirstName" />
+          <ScalarProperty Name="v_FirstLastName" ColumnName="v_FirstLastName" />
+          <ScalarProperty Name="v_SecondLastName" ColumnName="v_SecondLastName" />
+          <ScalarProperty Name="i_DocTypeId" ColumnName="i_DocTypeId" />
+          <ScalarProperty Name="v_DocNumber" ColumnName="v_DocNumber" />
+          <ScalarProperty Name="d_Birthdate" ColumnName="d_Birthdate" />
+          <ScalarProperty Name="v_BirthPlace" ColumnName="v_BirthPlace" />
+          <ScalarProperty Name="i_SexTypeId" ColumnName="i_SexTypeId" />
+          <ScalarProperty Name="i_MaritalStatusId" ColumnName="i_MaritalStatusId" />
+          <ScalarProperty Name="i_LevelOfId" ColumnName="i_LevelOfId" />
+          <ScalarProperty Name="v_TelephoneNumber" ColumnName="v_TelephoneNumber" />
+          <ScalarProperty Name="v_AdressLocation" ColumnName="v_AdressLocation" />
+          <ScalarProperty Name="v_GeografyLocationId" ColumnName="v_GeografyLocationId" />
+          <ScalarProperty Name="v_ContactName" ColumnName="v_ContactName" />
+          <ScalarProperty Name="v_EmergencyPhone" ColumnName="v_EmergencyPhone" />
+          <ScalarProperty Name="b_PersonImage" ColumnName="b_PersonImage" />
+          <ScalarProperty Name="v_Mail" ColumnName="v_Mail" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+          <ScalarProperty Name="i_InsertNodeId" ColumnName="i_InsertNodeId" />
+          <ScalarProperty Name="i_UpdateNodeId" ColumnName="i_UpdateNodeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="role">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="i_RoleId" ColumnName="i_RoleId" />
+          <ScalarProperty Name="v_Name" ColumnName="v_Name" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roleprofile">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.roleprofile">
+        <MappingFragment StoreEntitySet="roleprofiles">
+          <ScalarProperty Name="i_RoleProfileId" ColumnName="i_RoleProfileId" />
+          <ScalarProperty Name="i_ApplicationHierarchyId" ColumnName="i_ApplicationHierarchyId" />
+          <ScalarProperty Name="i_RoleId" ColumnName="i_RoleId" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systemparameter">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.systemparameter">
+        <MappingFragment StoreEntitySet="systemparameters">
+          <ScalarProperty Name="i_GroupId" ColumnName="i_GroupId" />
+          <ScalarProperty Name="i_ParameterId" ColumnName="i_ParameterId" />
+          <ScalarProperty Name="v_Value1" ColumnName="v_Value1" />
+          <ScalarProperty Name="v_Value2" ColumnName="v_Value2" />
+          <ScalarProperty Name="v_Value3" ColumnName="v_Value3" />
+          <ScalarProperty Name="v_Field" ColumnName="v_Field" />
+          <ScalarProperty Name="i_ParentParameterId" ColumnName="i_ParentParameterId" />
+          <ScalarProperty Name="i_Sort" ColumnName="i_Sort" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systemuser">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.systemuser">
+        <MappingFragment StoreEntitySet="systemusers">
+          <ScalarProperty Name="i_SystemUserId" ColumnName="i_SystemUserId" />
+          <ScalarProperty Name="i_PersonId" ColumnName="i_PersonId" />
+          <ScalarProperty Name="i_RoleId" ColumnName="i_RoleId" />
+          <ScalarProperty Name="v_UserName" ColumnName="v_UserName" />
+          <ScalarProperty Name="v_Password" ColumnName="v_Password" />
+          <ScalarProperty Name="v_SecretQuestion" ColumnName="v_SecretQuestion" />
+          <ScalarProperty Name="v_SecretAnswer" ColumnName="v_SecretAnswer" />
+          <ScalarProperty Name="v_CodeBar" ColumnName="v_CodeBar" />
+          <ScalarProperty Name="i_UsuarioContable" ColumnName="i_UsuarioContable" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systemusernode">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.systemusernode">
+        <MappingFragment StoreEntitySet="systemusernodes">
+          <ScalarProperty Name="i_SystemUserNodeId" ColumnName="i_SystemUserNodeId" />
+          <ScalarProperty Name="i_SystemUserId" ColumnName="i_SystemUserId" />
+          <ScalarProperty Name="i_NodeId" ColumnName="i_NodeId" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipodecambio">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.tipodecambio">
+        <MappingFragment StoreEntitySet="tipodecambios">
+          <ScalarProperty Name="i_CodTipoCambio" ColumnName="i_CodTipoCambio" />
+          <ScalarProperty Name="i_Periodo" ColumnName="i_Periodo" />
+          <ScalarProperty Name="d_FechaTipoC" ColumnName="d_FechaTipoC" />
+          <ScalarProperty Name="d_ValorCompra" ColumnName="d_ValorCompra" />
+          <ScalarProperty Name="d_ValorVenta" ColumnName="d_ValorVenta" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+          <ScalarProperty Name="d_ValorCompraContable" ColumnName="d_ValorCompraContable" />
+          <ScalarProperty Name="d_ValorVentaContable" ColumnName="d_ValorVentaContable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="warehouse">
+      <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.warehouse">
+        <MappingFragment StoreEntitySet="warehouses">
+          <ScalarProperty Name="i_WarehouseId" ColumnName="i_WarehouseId" />
+          <ScalarProperty Name="v_Name" ColumnName="v_Name" />
+          <ScalarProperty Name="v_Address" ColumnName="v_Address" />
+          <ScalarProperty Name="v_PhoneNumber" ColumnName="v_PhoneNumber" />
+          <ScalarProperty Name="v_CommercialName" ColumnName="v_CommercialName" />
+          <ScalarProperty Name="v_TicketSerialNumber" ColumnName="v_TicketSerialNumber" />
+          <ScalarProperty Name="v_EstablishmentCode" ColumnName="v_EstablishmentCode" />
+          <ScalarProperty Name="i_IsDeleted" ColumnName="i_IsDeleted" />
+          <ScalarProperty Name="i_InsertUserId" ColumnName="i_InsertUserId" />
+          <ScalarProperty Name="d_InsertDate" ColumnName="d_InsertDate" />
+          <ScalarProperty Name="i_UpdateUserId" ColumnName="i_UpdateUserId" />
+          <ScalarProperty Name="d_UpdateDate" ColumnName="d_UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

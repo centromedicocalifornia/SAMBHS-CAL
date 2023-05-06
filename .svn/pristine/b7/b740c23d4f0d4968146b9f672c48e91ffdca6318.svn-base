@@ -1,0 +1,81 @@
+
+using System.Globalization;
+using Newtonsoft.Json.Converters;
+
+namespace SAMBHS.Windows.NubefactIntegration.Modelos
+{
+    using Newtonsoft.Json;
+
+    public partial class Respuesta
+    {
+        [JsonProperty("tipo_de_comprobante")]
+        public long TipoDeComprobante { get; set; }
+
+        [JsonProperty("serie")]
+        public string Serie { get; set; }
+
+        [JsonProperty("numero")]
+        public long Numero { get; set; }
+
+        [JsonProperty("enlace")]
+        public string Enlace { get; set; }
+
+        [JsonProperty("aceptada_por_sunat")]
+        public bool AceptadaPorSunat { get; set; }
+
+        [JsonProperty("sunat_description")]
+        public string SunatDescription { get; set; }
+
+        [JsonProperty("sunat_note")]
+        public object SunatNote { get; set; }
+
+        [JsonProperty("sunat_responsecode")]
+        public string SunatResponsecode { get; set; }
+
+        [JsonProperty("sunat_soap_error")]
+        public string SunatSoapError { get; set; }
+
+        [JsonProperty("pdf_zip_base64")]
+        public string PdfZipBase64 { get; set; }
+
+        [JsonProperty("xml_zip_base64")]
+        public object XmlZipBase64 { get; set; }
+
+        [JsonProperty("cdr_zip_base64")]
+        public object CdrZipBase64 { get; set; }
+
+        [JsonProperty("cadena_para_codigo_qr")]
+        public string CadenaParaCodigoQr { get; set; }
+
+        [JsonProperty("codigo_hash")]
+        public string CodigoHash { get; set; }
+    }
+
+    public partial class Respuesta
+    {
+        public static Respuesta FromJson(string json)
+        {
+            return JsonConvert.DeserializeObject<Respuesta>(json, RespuestaConverter.Settings);
+        }
+    }
+
+    public static class RespuestaSerialize
+    {
+        public static string ToJson(this GeneraAnulacion self)
+        {
+            return JsonConvert.SerializeObject(self, RespuestaConverter.Settings);
+        }
+    }
+
+    internal static class RespuestaConverter
+    {
+        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
+        {
+            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+            DateParseHandling = DateParseHandling.None,
+            Converters = {
+                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
+            },
+        };
+    }
+}

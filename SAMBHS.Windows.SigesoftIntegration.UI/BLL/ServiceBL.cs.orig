@@ -1,0 +1,300 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Linq.Dynamic;
+using System.Collections;
+using System.Transactions;
+using System.Threading;
+
+using SAMBHS.Windows.SigesoftIntegration.UI;
+using SAMBHS.Windows.SigesoftIntegration.UI.Dtos;
+using SAMBHS.Windows.SigesoftIntegration.UI.Reports;
+
+using System.ComponentModel;
+using System.Data.SqlClient;
+using System.Globalization;
+
+using System.Runtime.CompilerServices;
+
+using System.Windows.Forms;
+using Dapper;
+using Infragistics.Win.UltraWinEditors;
+using SAMBHS.Common.BE;
+using SAMBHS.Common.Resource;
+using System.Data;
+using System.Drawing.Text;
+using SAMBHS.Common.DataModel;
+using SAMBHS.Common.BE.Custom;
+
+
+namespace SAMBHS.Windows.SigesoftIntegration.UI.BLL
+{
+    public class ServiceBL
+    {
+        public OrganizationDto1 GetInfoMedicalCenter()
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    var query =
+                        "select v_OrganizationId, v_IdentificationNumber,v_Name, v_Address, v_PhoneNumber, v_Mail, v_ContacName, v_Contacto, b_Image " +
+                        "from organization where v_OrganizationId = 'N009-OO000000052' ";
+                    return cnx.Query<OrganizationDto1>(query).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public PacientList GetDatosTrabajador(string pstNroServicio)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    //v_PersonId,v_FirstName,v_FirstLastName,v_SecondLastName,i_DocTypeId,v_DocNumber,i_SexTypeId,d_Birthdate,i_IsDeleted,i_MaritalStatusId,v_BirthPlace,i_DistrictId,i_ProvinceId,i_DepartmentId,i_ResidenceInWorkplaceId,v_Mail,v_AdressLocation,v_CurrentOccupation,i_AltitudeWorkId,v_ExploitedMineral,i_LevelOfId,i_BloodGroupId,i_BloodFactorId,v_ResidenceTimeInWorkplace,i_TypeOfInsuranceId,i_NumberLivingChildren,i_NumberDependentChildren,i_NroHermanos,v_TelephoneNumber,i_Relationship,i_PlaceWorkId
+                    var query =
+                    "select s.v_ServiceId as v_IdService, s.d_GlobalExpirationDate, s.d_UpdateDate, s.d_ServiceDate as FechaServicio, p.v_PersonId, p.v_FirstName, p.v_FirstLastName, p.v_SecondLastName, p.i_DocTypeId, " +
+                    " p.v_DocNumber, (Select v_Value1 from systemparameter where i_ParameterId = p.i_SexTypeId and i_GroupId = 100 ) as Genero, p.d_Birthdate, " +
+                    " (Select v_Value1 from systemparameter where i_ParameterId = p.i_MaritalStatusId and i_GroupId = 101 ) as v_MaritalStatus, p.v_BirthPlace, " +
+                    " (Select v_Value1 from datahierarchy where i_ItemId = p.i_DistrictId and i_GroupId = 113 ) as v_DistrictName, " +
+                    " (Select v_Value1 from datahierarchy where i_ItemId = p.i_ProvinceId and i_GroupId = 113 ) as v_ProvinceName," +
+                    " (Select v_Value1 from datahierarchy where i_ItemId = p.i_DepartmentId and i_GroupId = 113 ) as v_DepartamentName, p.i_ResidenceInWorkplaceId, p.v_Mail, p.v_AdressLocation, " +
+                    " p.v_CurrentOccupation, p.i_AltitudeWorkId, p.v_ExploitedMineral, " +
+                    " (Select v_Value1 from datahierarchy where i_ItemId = p.i_LevelOfId and i_GroupId = 108 ) as GradoInstruccion, " +
+                    " (Select v_Value1 from systemparameter where i_ParameterId = p.i_BloodGroupId and i_GroupId = 154 ) as v_BloodGroupName, " +
+                    " (Select v_Value1 from systemparameter where i_ParameterId = p.i_BloodFactorId and i_GroupId = 154 ) as v_BloodFactorName, p.v_ResidenceTimeInWorkplace, p.i_TypeOfInsuranceId, " +
+                    " p.i_NumberLivingChildren, p.i_NumberDependentChildren, p.i_NroHermanos, p.v_TelephoneNumber, p.i_Relationship, p.i_PlaceWorkId, p.b_FingerPrintTemplate, p.b_FingerPrintImage, " +
+                    " p.b_RubricImage, p.t_RubricImageText, p.b_PersonImage, p.v_Religion, p.v_Nacionalidad, p.v_ResidenciaAnterior " +
+                    " from service as s join person as p on s.v_PersonId = p.v_PersonId " +
+                    " where s.v_ServiceId = '" + pstNroServicio + "' and s.i_IsDeleted = 0 ";
+                    return cnx.Query<PacientList>(query).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public MedicoTratanteAtenciones GetMedicoTratante(string pstrServiceId)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    //v_PersonId,v_FirstName,v_FirstLastName,v_SecondLastName,i_DocTypeId,v_DocNumber,i_SexTypeId,d_Birthdate,i_IsDeleted,i_MaritalStatusId,v_BirthPlace,i_DistrictId,i_ProvinceId,i_DepartmentId,i_ResidenceInWorkplaceId,v_Mail,v_AdressLocation,v_CurrentOccupation,i_AltitudeWorkId,v_ExploitedMineral,i_LevelOfId,i_BloodGroupId,i_BloodFactorId,v_ResidenceTimeInWorkplace,i_TypeOfInsuranceId,i_NumberLivingChildren,i_NumberDependentChildren,i_NroHermanos,v_TelephoneNumber,i_Relationship,i_PlaceWorkId
+                    var query =
+                    " select top 1 p.v_FirstLastName + ' ' + p.v_SecondLastName + ', ' + p.v_FirstName as Nombre, pro.v_ProfessionalCode as Colegiatura, p.v_AdressLocation as Direccion " +
+                    " from service as s " +
+                    " join servicecomponent as sc on s.v_ServiceId = sc.v_ServiceId " +
+                    " join systemuser as sy on sc.i_MedicoTratanteId = sy.i_SystemUserId " +
+                    " join person as p on sy.v_PersonId = p.v_PersonId " +
+                    " join professional as pro on p.v_PersonId = pro.v_PersonId " +
+                    " where s.v_ServiceId = '" + pstrServiceId + "' and sc.i_IsRequiredId = 1 ";
+                    return cnx.Query<MedicoTratanteAtenciones>(query).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+       
+        public int GetAge(DateTime FechaNacimiento)
+        {
+            return int.Parse((DateTime.Today.AddTicks(-FechaNacimiento.Ticks).Year - 1).ToString());
+
+        }
+
+        public List<ServiceCustom> GetServicesByDataPerson(string value, DateTime inicio, DateTime fin)
+        {
+            try
+            {
+
+                string newFin = (fin.Day + 1).ToString() + "/" + fin.Month.ToString() + "/" + fin.Year.ToString();
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    var query =
+                        "select per.v_FirstName + ' ' + per.v_FirstLastName + ' ' + per.v_SecondLastName AS v_Paciente, ser.v_ServiceId, org.v_Name AS v_Empresa, ser.d_ServiceDate AS d_FechaAtencion, ser.v_ProtocolId" +
+                        " from service ser" +
+                        " inner join person per on ser.v_PersonId = per.v_PersonId " +
+                        " inner join protocol pro on ser.v_ProtocolId = pro.v_ProtocolId" +
+                        " inner join organization org on pro.v_EmployerOrganizationId = org.v_OrganizationId" +
+                        " where (per.v_DocNumber like '%" + value + "%' or per.v_FirstName like '%" + value + "%' or per.v_FirstLastName like '%" + value + "%' or per.v_SecondLastName like '%" + value + "%')" +
+<<<<<<< HEAD
+                        " and (ser.d_ServiceDate >= '" + inicio.ToShortDateString() + "' and ser.d_ServiceDate <= '" + fin.ToShortDateString() + "') order by ser.v_ServiceId";
+=======
+                        " and (ser.d_ServiceDate >= '" + inicio.ToShortDateString() + "' and ser.d_ServiceDate <= '" + newFin + "') order by ser.v_ServiceId";
+>>>>>>> fa65db7d6247d5bfa27c58e3ce883634f0d6df8f
+
+                    var List = cnx.Query<ServiceCustom>(query).OrderBy(x => x.d_FechaAtencion).ToList();
+
+                    return List;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        public KeyValueDTO ObtenerFirmaMedicoExamen(string pstrServiceId, string p1, string p2)
+        {
+            using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+            {
+                var query = "SELECT prof.b_SignatureImage AS Value5_, per.v_FirstLastName + ' ' + per.v_SecondLastName + ' ' + per.v_FirstName AS Value2, prof.v_ProfessionalCode AS Value3 FROM servicecomponent src " +
+                            "LEFT JOIN systemuser sys on src.i_ApprovedUpdateUserId = sys.i_SystemUserId " +
+                            "LEFT JOIN professional prof on sys.v_PersonId = prof.v_PersonId " +
+                            "INNER JOIN person per on sys.v_PersonId = per.v_PersonId " +
+                            "WHERE src.v_ServiceId = '" + pstrServiceId + "' and (src.v_ComponentId = '" + p1 + "' or src.v_ComponentId ='" + p2 + "')";
+                
+                var objEntity = cnx.Query<KeyValueDTO>(query).FirstOrDefault();
+
+                return objEntity;
+            }
+        }
+
+        public List<DiagnosticRepositoryList> GetServiceComponentDisgnosticsByServiceId(ref OperationResult pobjOperationResult, string pstrServiceId)
+        {
+
+            try
+            {
+
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    var query = "SELECT dry.v_DiagnosticRepositoryId, dry.v_ServiceId, dry.v_ComponentId, dry.v_DiseasesId, dry.i_AutoManualId, dry.i_PreQualificationId, dry.i_FinalQualificationId, dry.i_DiagnosticTypeId, " +
+                                "dry.i_IsSentToAntecedent, dry.d_ExpirationDateDiagnostic, dry.i_GenerateMedicalBreak, dis.v_Name AS v_DiseasesName, sys.v_Value1 AS v_AutoManualName, com.i_CategoryId, sys2.v_Value1, " +
+                                "sys3.v_Value1 AS v_PreQualificationName, sys4.v_Value1 AS v_FinalQualificationName, sys5.v_Value1 AS v_DiagnosticTypeName, sys6.v_Value1 AS v_IsSentToAntecedentName, " +
+                                "sysu.v_UserName AS v_UpdateUser, sysu.d_UpdateDate, dry.i_IsDeleted " +
+                                "FROM diagnosticrepository dry " +
+                                "LEFT JOIN component com on dry.v_ComponentId = com.v_ComponentId " +
+                                "LEFT JOIN servicecomponent src on dry.v_ComponentId = src.v_ComponentId and src.v_ServiceId = '" + pstrServiceId + "' " +
+                                "INNER JOIN diseases dis on dry.v_DiseasesId = dis.v_DiseasesId " +
+                                "LEFT JOIN systemparameter sys on dry.i_AutoManualId = sys.i_ParameterId and sys.i_GroupId = 136 " +
+                                "LEFT JOIN systemparameter sys2 on com.i_CategoryId = sys2.i_ParameterId and sys2.i_GroupId = 116 " +
+                                "LEFT JOIN systemparameter sys3 on dry.i_PreQualificationId = sys3.i_ParameterId and sys3.i_GroupId = 137 " +
+                                "LEFT JOIN systemparameter sys4 on dry.i_FinalQualificationId = sys4.i_ParameterId and sys4.i_GroupId = 138 " +
+                                "LEFT JOIN systemparameter sys5 on dry.i_DiagnosticTypeId = sys5.i_ParameterId and sys5.i_GroupId = 139 " +
+                                "LEFT JOIN systemparameter sys6 on dry.i_IsSentToAntecedent = sys6.i_ParameterId and sys6.i_GroupId = 111 " +
+                                "LEFT JOIN systemuser sysu on src.i_ApprovedUpdateUserId = sysu.i_SystemUserId " +
+                                "WHERE dry.v_ServiceId = '" + pstrServiceId + "' and com.i_IsDeleted = 0 and dry.i_IsDeleted = 0 and dis.i_IsDeleted = 0 ORDER BY com.v_Name";
+
+                    var List = cnx.Query<DiagnosticRepositoryList>(query).ToList();
+
+                    foreach (var item in List)
+                    {
+                        item.i_RecordStatus = (int) RecordStatus.Grabado;
+                        item.i_RecordType = (int)RecordType.NoTemporal;
+                        item.v_ComponentId = item.i_CategoryId == -1 ? item.v_Name : item.v_Value1;
+                    }
+
+                    List = List.GroupBy(p => p.v_DiagnosticRepositoryId).Select(p => p.FirstOrDefault()).ToList();
+                    if (List.Count > 0)
+                    {
+                        var q = (from a in List
+                            select new DiagnosticRepositoryList
+                            {
+                                v_DiagnosticRepositoryId = a.v_DiagnosticRepositoryId,
+                                v_ServiceId = a.v_ServiceId,
+                                v_ComponentId = a.v_ComponentId,
+                                v_DiseasesId = a.v_DiseasesId,
+                                i_AutoManualId = a.i_AutoManualId,
+                                i_PreQualificationId = a.i_PreQualificationId,
+                                i_FinalQualificationId = a.i_FinalQualificationId,
+                                i_DiagnosticTypeId = a.i_DiagnosticTypeId,
+                                i_IsSentToAntecedent = a.i_IsSentToAntecedent,
+                                d_ExpirationDateDiagnostic = a.d_ExpirationDateDiagnostic,
+                                i_GenerateMedicalBreak = a.i_GenerateMedicalBreak,
+
+                                v_RestrictionsName = ConcatenateRestriction(a.v_DiagnosticRepositoryId),
+                                v_RecomendationsName = ConcatenateRecommendation(a.v_DiagnosticRepositoryId),
+                                v_DiseasesName = a.v_DiseasesName,
+                                v_AutoManualName = a.v_AutoManualName,
+                                v_ComponentName = a.v_ComponentName,
+
+                                v_PreQualificationName = a.v_PreQualificationName,
+                                v_FinalQualificationName = a.v_FinalQualificationName,
+                                v_DiagnosticTypeName = a.v_DiagnosticTypeName,
+                                v_IsSentToAntecedentName = a.v_IsSentToAntecedentName,
+                                i_RecordStatus = a.i_RecordStatus,
+                                i_RecordType = a.i_RecordType,
+
+                                v_UpdateUser = a.v_UpdateUser,
+
+                                d_UpdateDate = a.d_UpdateDate,
+                                i_IsDeleted = a.i_IsDeleted
+
+                            }).ToList();
+                        pobjOperationResult.Success = 1;
+                        return q;
+                    }
+                   
+
+                    pobjOperationResult.Success = 1;
+                    return new List<DiagnosticRepositoryList>();
+                }                
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
+
+        private string ConcatenateRestriction(string pstrDiagnosticRepositoryId)
+        {
+            using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+            {
+                var query = "SELECT masrr.v_Name FROM restriction res " +
+                            "INNER JOIN masterrecommendationrestricction masrr  on res.v_MasterRestrictionId = masrr.v_MasterRecommendationRestricctionId " +
+                            "WHERE res.v_DiagnosticRepositoryId = '" + pstrDiagnosticRepositoryId + "' and res.i_IsDeleted = 0 and masrr.i_TypifyingId = " + (int)Typifying.Restricciones + "";
+                var List = cnx.Query<DiagnosticRepositoryList>(query).ToList();
+
+                return string.Join(", ", List.Select(p => p.v_Name));
+            }
+        }
+
+        private string ConcatenateRecommendation(string pstrDiagnosticRepositoryId)
+        {
+            using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+            {
+                var query = "SELECT masrr.v_Name FROM recommendation recm " +
+                            "INNER JOIN masterrecommendationrestricction masrr  on recm.v_MasterRecommendationId = masrr.v_MasterRecommendationRestricctionId " +
+                            "WHERE recm.v_DiagnosticRepositoryId = '" + pstrDiagnosticRepositoryId + "' and recm.i_IsDeleted = 0 and masrr.i_TypifyingId = " + (int)Typifying.Recomendaciones + "";
+                var List = cnx.Query<DiagnosticRepositoryList>(query).ToList();
+
+                return string.Join(", ", List.Select(p => p.v_Name));
+            }
+
+        }
+
+        public void AddGenericDiseasesByServiceId(string serviceId, List<string> ClientSession)
+        {
+            try
+            {
+                var secuential = Utilidades.GetNextSecuentialId(int.Parse(ClientSession[0]), 29);
+                var newId = Utilidades.GetNewId(int.Parse(ClientSession[0]), secuential, "DR");
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    var add = "INSERT INTO diagnosticrepository(v_DiagnosticRepositoryId, v_ServiceId, v_DiseasesId, v_ComponentId, i_AutoManualId, i_PreQualificationId, i_FinalQualificationId, i_DiagnosticTypeId, i_IsDeleted, i_InsertUserId, d_InsertDate) " +
+                                "VALUES ('" + newId + "', '" + serviceId + "', '" + Constants.PACIENTE_SANO + "', 'N009-ME000000052', 1, 1, 4, 1, 0, " + int.Parse(ClientSession[2]).ToString() + ", '" + DateTime.Now.ToShortDateString() + "')";
+
+                    cnx.Execute(add);
+                }
+            }//cambia el config apunta a prueba
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+    }
+}

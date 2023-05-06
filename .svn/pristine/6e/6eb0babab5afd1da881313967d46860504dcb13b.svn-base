@@ -1,0 +1,9 @@
+﻿namespace SAMBHS.Windows.WinClient.UI.Dataset {
+    
+    
+    public partial class dsDocumentoBoleta {
+        partial class dsDocumentoBoletaDataTable
+        {
+        }
+    }
+}

@@ -1,0 +1,898 @@
+﻿namespace SAMBHS.Common.Resource
+{
+    public enum LogEventType
+    {
+        ACCESOSSISTEMA = 1,
+        CREACION = 2,
+        ACTUALIZACION = 3,
+        ELIMINACION = 4,
+        EXPORTACION = 5,
+        GENERACIONREPORTE = 6,
+        PROCESO = 7,
+        REPROCESO = 8,
+        CLONACION = 9
+    }
+
+    public enum Success : byte
+    {
+        Failed = 0,
+        Ok = 1
+    }
+
+    public enum TipoBusquedaProductos : byte
+    {
+        Mercaderia,
+        Servicios,
+        Ambos
+    }
+
+    public enum UnidadMedida : byte
+    {
+        Unidad = 15
+    }
+
+    public enum MediosPagoCobranza : byte
+    {
+        Efectivo = 8,
+        Deposito = 1,
+        Cheques = 13,
+
+    }
+
+    public enum Mes : byte
+    {
+        Enero = 1,
+        Febrero = 2,
+        Marzo = 3,
+        Abril = 4,
+        Mayo = 5,
+        Junio = 6,
+        Julio = 7,
+        Agosto = 8,
+        Setiembre = 9,
+        Octubre = 10,
+        Noviembre = 11,
+        Diciembre = 12,
+
+    }
+    public enum EstadoPedido
+    {
+
+        Todos = -1,
+        Pendientes = 0,
+        Despachado = 1
+
+    }
+
+    public enum TipoVerificacionPedido
+    {
+        PorAtender = 1,
+        Atendido = 2,
+        Reenviado = 3,
+
+    }
+
+    public enum FormatoEstadoResultados
+    {
+
+        Acumulado = 0,
+        Comparativo = 1,
+
+
+    }
+    public enum TiposDocumentos
+    {
+
+        Factura = 1,
+        BoletaVenta = 3,
+        NotaCredito = 7,
+        NotaDebito = 8,
+        Pedido = 430,
+        Cotizacion = 431,
+        OrdenTrabajo = 436,
+        GuiaRemision = 9,
+        Irpe = 438,
+        Importacion = 50,
+        CompraExterna52 = 52,
+        CompraExterna53 = 53,
+        CompraExterna54 = 54,
+        CompraExterna91 = 91,
+        CompraExterna97 = 97,
+        CompraExterna98 = 98,
+        GuiaInterna = 438,
+        Proforma = 439,
+        Ticket = 12,
+        Otros = 0,
+        ReciboHonorario = 2,
+        LiquidacionCompra = 4,
+        BME = 5,
+        Tip88 = 88,
+        Tip89 = 89,
+        Tip98 = 98,
+        Tip97 = 97,
+        Tip91 = 91,
+        Tip34 = 34,
+        Tip35 = 35,
+        Tip36 = 36,
+        Tip37 = 37,
+        DiarioImportacion = 340,
+        GuiaTraslado = 439,
+        LibroReciboHonorario = 339,
+        Car = 6,
+
+
+    }
+    public enum TipoReporteAnalisis
+    {
+        AnalisisCuentaCorrienteAnalitico = 1,
+        AnalisisCuentaCorrienteResumen = 2,
+        AnalisisCorrientesPendientesAnalitico = 3,
+        AnalisisCorrientesPendientesAcumulado = 4
+    }
+
+    public enum TipoReporteAnalisisGastoFuncion6y9
+    {
+        Resumen = 2,
+        Analitico = 1,
+
+    }
+    public enum TipoReporteBalancesInicial
+    {
+        Inventario = 1,
+        Balance = 2
+
+    }
+    public enum ConfiguracionBalances
+    {
+        EstadodeResultadosFuncion = 1,
+        SituacionFinanciera = 2,
+        EstadodeResultadosNaturaleza = 3,
+
+    }
+    public enum TipoOperacionConfiguracionBalances
+    {
+
+        Suma = 1,
+        Resta = 0,
+    }
+
+
+    public enum TiposMediosPagoVenta
+    {
+        Cfr = 2,
+        Fob = 1,
+        Cif = 3,
+
+    }
+    public enum TiposRegimenEmpresa
+    {
+        RegimenGeneral = 1,
+        Rer = 2,
+        NuevoRus = 3,
+
+
+    }
+    public enum TiposLibrosElectronicos
+    {
+        Compra = 1,
+        Ventas = 2,
+        Mayor = 3,
+        Diario = 4,
+        InventarioValorizado = 5,
+        PlanContable = 6,
+        LibroBalance10 = 10,
+        LibroBalance12 = 12,
+        LibroBalance42 = 42,
+        LibroBalance16 = 16,
+        LibroBalance46 = 46,
+        LibroBalance20 = 20,
+        LibroBalance19 = 19,
+        LibroBalance14 = 14,
+        LibroBalance41 = 41,
+        LibroBalance40 = 40,
+        LibroBalance47 = 47,
+    }
+
+    public enum TipoDetraccion
+    {
+        Venta = 1,
+        Compra = 2,
+
+    }
+
+    public enum TiposPDT
+    {
+        RetencionCompra = 2,
+        LiquidacionCompra = 1,
+        PercepcionCompra = 3
+    }
+
+    public enum TiposPDB : byte
+    {
+        TipoCambio = 1,
+        TodosComprobantesCompra = 2,
+        SoloComprobantesCompra = 3,
+        TodosComprobantesVenta = 4,
+    }
+
+    public enum FormatoEstructuraReporteComprasSunat
+    {
+        Completa = 1,
+        sinISC = 2,
+        SinNroPago = 3,
+
+    }
+
+    public enum FormatoEstructuraReporteLibroDiario
+    {
+        Completa = 1,
+        Resumido = 2,
+
+
+    }
+    public enum FormatoEstructuraLibroMayor
+    {
+        Completa = 1,
+        Resumido = 2,
+    }
+    public enum LibroDiarios
+    {
+        ReciboHonorario = 339,
+        Importaciones = 340,
+        DiarioNormal = 335,
+        Compra = 336,
+        Ventas = 337,
+        Planilla = 405,
+
+    }
+
+    public enum TipoCompra
+    {
+
+        MonedaNacional = 1,
+        MonedaExtranjera = 2,
+    }
+
+    public enum Concepto
+    {
+        ValorFob = 10,
+        ProveedoresFob = 16,
+        Flete = 11,
+        Seguro = 12,
+        AdValorem = 14,
+        Igv = 15,
+        CuartaCategoria = 06,
+        PorPagarSoles = 08,
+        PorPagarDolares = 09,
+        Percepcion = 50,
+        ProveedoresFlete = 17,
+        ProveedoresSeguro = 18,
+        ProveedoresAdvalorem = 19,
+        ProveedorIgv = 20,
+        ProveedorPercepcion = 51,
+        ComprasMN = 01,
+        ComprasME = 02,
+
+
+    }
+    public enum Menu : byte
+    {
+        Modulo = 5,
+        AgrupadorMenu = 1,
+        Pantalla = 2,
+        AccionPantalla = 3,
+        PantallaIndependiente = 4
+    }
+
+
+    public enum TypeForm : byte
+    {
+        Windows = 1,
+        Web = 2
+    }
+
+    public enum SyncStatus
+    {
+        PorSincronizar = 1, // este flag sirve para saber si el registro todavìa no se ha sincronizado
+        Sincronizado = 2 // este nos indica que el registro se ha sincronizado
+    }
+
+    public enum RecordStatus  // estos estados nos permite saber que hacer con el registro que se va a sincronizar; por ejemplpo, si se va a eliminar, agregar, etc
+    {
+        Grabado = 0, // este no se usa para la sincro
+        Modificado = 1, // este es cuando modificas
+        Agregado = 2, //cuando creas un registro siempre su flag va ser grabado
+        EliminadoLogico = 3 // y este cuando eliminas
+
+    }
+
+    public enum FormaPago
+    {
+        Visa = 1,
+        Efectivo = 2,
+        MasterCard = 3
+    }
+
+    public enum DocumentType
+    {
+        TicketBoleta = 12,
+        TicketFactura = 1,
+        NotaCredito = 7,
+        Boleta = 3,
+        Factura = 1,
+        NotaDebito = 8,
+        Proforma = 439,
+        Irpe = 438,
+    }
+
+    public enum OperatorValue1
+    {
+        IGUAL = 1,
+        DIFERENTE = 2,
+        MENOR = 3,
+        MENORIGUAL = 4,
+        MAYOR = 5,
+        MAYORIGUAL = 6,
+
+    }
+
+    public enum Document
+    {
+        DNI = 1,
+        PASAPORTE = 2,
+        LICENCIACONDUCIR = 3,
+        CARNETEXTRANJ = 4
+    }
+
+
+    public enum DropDownListAction
+    {
+        All,
+        Select
+    }
+
+    public enum Scope : byte
+    {
+        Global = 1,
+        Contextual = 2
+
+    }
+
+    public enum MasterService
+    {
+        Eso = 2,
+        AtxMEdica = 3,
+        ConsultaInformatica = 4,
+        ConsultaMedica = 5,
+        ConsultaNutricional = 6,
+        ConsultaPsicológica = 7,
+        ProcEnfermería = 8,
+        AtxMedicaParticular = 10
+    }
+
+    public enum MovementType
+    {
+        INGRESO = 1,
+        EGRESO = 2
+    }
+
+    public enum MotiveType
+    {
+        EGRESOxVENTAS = 11,
+        CARGAINICIAL = 5
+    }
+
+    public enum AptitudeStatus
+    {
+        Apto = 2,
+        NoApto = 3,
+        AptoObs = 4,
+        AptRestriccion = 5,
+        SinAptitud = 1
+    }
+
+
+
+    public enum CalendarStatus
+    {
+        Agendado = 1,
+        Atendido = 2,
+        Vencido = 3,
+        Cancelado = 4,
+    }
+
+    public enum ServiceStatus
+    {
+        PorIniciar = 1,
+        Iniciado = 2,
+        Culminado = 3,
+        Incompleto = 4,
+        Cancelado = 5,
+    }
+
+    public enum ServiceComponentStatus
+    {
+        PorIniciar = 1,
+        Iniciado = 2,
+        Culminado = 3,
+        PorReevaluar = 4,
+    }
+
+
+    public enum LineStatus
+    {
+        EnCircuito = 1,
+        FueraCircuito = 2,
+    }
+
+
+    public enum QueueStatusId
+    {
+        LIBRE = 1,
+        LLAMANDO = 2,
+        OCUPADO = 3
+    }
+
+
+    public enum modality
+    {
+        NuevoServicio = 1,
+        ContinuacionServicio = 2,
+    }
+
+    public enum SiNo
+    {
+        NO = 0,
+        SI = 1
+    }
+
+    public enum Currency
+    {
+        Soles = 1,
+        Dolares = 2,
+        Todas = -1
+
+
+    }
+    public enum TipoReporteVentasMensual
+    {
+        Unidades = 1,
+        Valores = 2,
+    }
+
+    public enum ProcessType
+    {
+        LOCAL = 1,
+        REMOTO = 2
+    }
+
+
+    public enum Gender
+    {
+        MASCULINO = 1,
+        FEMENINO = 2
+    }
+
+
+    public enum GenderConditional
+    {
+        MASCULINO = 1,
+        FEMENINO = 2,
+        AMBOS = 3
+    }
+
+    public enum RecordType
+    {
+        /// <summary>
+        /// El registro tiene un ID [GUID]
+        /// </summary>
+        Temporal = 1,
+        /// <summary>
+        /// El registro Tiene in ID de Base de Datos
+        /// </summary>
+        NoTemporal = 2
+    }
+
+    public enum ControlType
+    {
+        CadenaTextual = 1,
+        CadenaMultilinea = 2,
+        NumeroEntero = 3,
+        NumeroDecimal = 4,
+        SiNoCheck = 5,
+        SiNoRadioButton = 6,
+        SiNoCombo = 7,
+        UcFileUpload = 8,
+        Lista = 9
+    }
+
+    public enum ComponentType
+    {
+        Examen = 1,
+        NoExamen = 2
+
+    }
+
+    public enum ServiceType
+    {
+        Empresarial = 1,
+        Particular = 9
+
+    }
+
+    public enum AutoManual
+    {
+        Automático = 1,
+        Manual = 2
+
+    }
+
+    public enum PreQualification
+    {
+        SinPreCalificar = 1,
+        Aceptado = 2,
+        Rechazado = 3
+
+    }
+
+    public enum FinalQualification
+    {
+        SinCalificar = 1,
+        Definitivo = 2,
+        Presuntivo = 3,
+        Descartado = 4
+
+    }
+
+    public enum Operator2Values
+    {
+        X_esIgualque_A = 1,
+        X_noesIgualque_A = 2,
+        X_esMenorque_A = 3,
+        X_esMenorIgualque_A = 4,
+        X_esMayorque_A = 5,
+        X_esMayorIgualque_A = 6,
+        X_esMayorque_A_yMenorque_B = 7,
+        X_esMayorque_A_yMenorIgualque_B = 8,
+        X_esMayorIgualque_A_yMenorque_B = 9,
+        X_esMayorIgualque_A_yMenorIgualque_B = 12,
+    }
+    public enum TipoPersona
+    {
+        Natural = 1,
+        Juridica = 2,
+        NoDomicialiado = 3,
+
+
+    }
+    public enum TipoDocumentosPersona
+    {
+        Dni = 1,
+        Ruc = 6,
+    }
+
+    public enum SystemTableToSync
+    {
+        applicationhierarchy,
+        systemparameter,
+        datahierarchy,
+        organization,
+        organizationwarehouse,
+        organizationconfiguration,
+        warehouse,
+        node,
+        nodewarehouse,
+        role,
+        roleprofile,
+        person,
+        systemuser,
+        systemusernode,
+        product,
+        supplier,
+        productwarehouse,
+        movement,
+        movementdetail,
+        customer,
+        line,
+        brand,
+        size,
+        color,
+        voucher,
+        voucherdetail,
+        PendingPayment,
+        effectivecollection,
+        effectivecollectiondetail,
+        warehousedocument,
+    }
+
+    public enum MessageType
+    {
+        Received = 0,
+        Transmitted = 1,
+        System = 2,
+        Warning = 3,
+        Error = 4
+    }
+
+    public enum TipoDeMovimiento
+    {
+        NotadeIngreso = 1,
+        NotadeSalida = 2,
+        Transferencia = 3,
+        Inicial = 5,
+    }
+
+    public enum TipoMovimientoTesoreria
+    {
+        Ingreso = 1,
+        Egreso = 2,
+        Ninguno = -1,
+    }
+    public enum Moneda
+    {
+        Soles = 1,
+        Dolares = 2
+    }
+
+    public enum ListaProcesos
+    {
+        Venta = 1,
+        NotaIngreso = 2,
+        Compra = 3,
+        GuiaRemisionCompra = 4,
+        Tesoreria = 5,
+        Diario = 6,
+        Adelanto = 7,
+        Cobranza = 8,
+        Retencion = 9,
+        OrdenCompra = 10,
+        LetrasCanje = 11,
+        LetrasMantenimiento = 12,
+        LetrasCanjePago = 13,
+        LiquidacionCompra = 14,
+        NotaSalida = 15,
+        OrdenTrabajo = 16,
+        FormatoUnicoFacturacion = 17,
+        GuiaRemision = 118,
+        Pagos = 99,
+        Importacion = 50,
+        ReciboHonoarios = 119,
+        CajaChica = 120,
+        Transferencia = 121,
+        OrdenProduccion = 122,
+    }
+
+    public enum ModulosSistema
+    {
+        Tesoreria = 1,
+        Personal = 2,
+        CtasPagar = 3,
+        Almacen = 4,
+        Contabilidad = 5,
+        VentasFacturacion = 6,
+        Compras = 7,
+        ActivoFijo = 8
+
+
+
+    }
+
+    public enum OrdenCompraEstados
+    {
+        Pendiente = 1,
+        Procesado = 2,
+        Cancelado = 3,
+        Terminado = 4,
+        NoEncontrada = 5,
+        Error = 6
+    }
+
+    public enum TipoOperacionNueva
+    {
+        Exonerado = 20,
+        Gravada = 10,
+        Mixta = 50,
+        Inafecto = 30,
+        Exportacion = 40,
+    }
+
+    public enum TipoOperacion1Digito
+    {
+        Exonerado = 2,
+        Gravada = 1,
+        Inafecto = 3,
+        Exportacion = 4,
+        Mixta = 5,
+
+    }
+
+    public enum TipoVenta
+    {
+        VExterior = 5,
+        VentasLocalesME = 4,
+        VentasLocalesMN = 3
+
+    }
+    public enum TipoOperacionNoGravada
+    {
+        Inafecta = 1,
+        Exonerada = 2,
+    }
+    public enum Documentos
+    {
+
+        //NotaCredito = 7,
+    }
+    public enum Resumen
+    {
+        Activado = 1,
+
+    }
+    public enum MostrarSoloResumen
+    {
+        Activado = 1,
+
+    }
+    public enum AsientosDescuadrados
+    {
+        Activado = 1,
+    }
+    public enum Naturaleza
+    {
+        Deudor = 1,
+        Acreedor = 2,
+    }
+    public enum TipoKardex
+    {
+        Fisico = 1,
+        Valorizado = 2,
+        ValorizadoSunat = 3,
+        FisicoAuxiliar = 4,
+        ValorizadoAuxiliar = 5,
+        FisicoSunat = 7,
+
+    }
+    public enum TipoExistencia
+    {
+        Mercaderia = 1,
+        ProductosTerminados = 2,
+        MateriasPrimasAuxiliares = 3,
+        Suministros = 5,
+        Envases = 4,
+    }
+
+    public enum MotivoActivoFijo
+    {
+        PeriodoActual = 1,
+        PeriodoAnterior = 2
+
+
+    }
+
+    public enum TipoFormatoReporteRetencion
+    {
+        Oficial = 1,
+        Auxiliar = 2,
+    }
+    public enum TipoAsientoInventario
+    {
+        MensualHistoricos = 1,
+        Ajustes = 2,
+    }
+
+    public enum TipoMotorBD : byte
+    {
+        MSSQLServer = 1,
+        PostgreSQL = 2
+    }
+    public enum FormatoCantidad
+    {
+        Unidades = 1,
+        UnidadMedidaProducto = 2,
+    }
+
+    public enum TipoKardexVenta : byte
+    {
+        Varios = 2,
+
+    }
+
+
+
+    # region Planilla
+    public enum TipoConceptosPlanillas
+    {
+        Ingresos = 1,
+        Descuentos = 2,
+        Aportaciones = 3,
+        Todos = 4
+    }
+
+    public enum PlanillaColumnasAFP
+    {
+        PorcPrima = 1,
+        TopePrima = 2,
+        AporteObligatorio = 3,
+        S_IPSS = 4,
+        ComFlujo = 5,
+        ComSaldo = 6
+    }
+
+    public enum PlanillaColumnasTrabajador
+    {
+        Essalud = 1,
+        ONP = 2,
+        Senati = 3,
+        SCTR = 4
+    }
+
+    public enum PlanillaColumnasEmpleador
+    {
+        Essalud = 1,
+        Senati = 2,
+        SCTR = 3,
+        SCTRPen = 4
+    }
+    public enum TipoComprobanteLibroDiario
+    {
+
+        Apertura = 1,
+        Cierre = 5,
+
+        DiferenciaCambio = 6,
+        DiarioCompras = 336
+
+    }
+    # endregion
+
+    #region Facturacion - Homologacion
+    /// <summary>
+    /// Estados de los Documentos Enviados a SUNAT
+    /// </summary>
+    public enum EstadoSunat : byte
+    {
+        /// <summary>
+        /// No Enviado u Ocurrio Errores en el Envio.
+        /// Tiene que volver a Enviar el Documento.
+        /// </summary>
+        PENDIENTE = 0,
+        /// <summary>
+        /// CDR Aceptado
+        /// </summary>
+        CDR_ACEPTADO = 1,
+        /// <summary>
+        /// CDR - Aceptado pero con Observaciones
+        /// </summary>
+        CDR_ACEPTADO_CON_OBSERV = 2,
+        /// <summary>
+        /// CDR - Rechazado (Tiene que Enviar otro Correlativo)
+        /// </summary>
+        CDR_RECHAZADO = 3,
+        /// <summary>
+        /// Comunciacion de Baja enviado.
+        /// </summary>
+        DE_BAJA = 4,
+        /// <summary>
+        /// Comunciacion de Baja con CDR-ACEPTADO
+        /// </summary>
+        DE_BAJA_CDR_ACEPTADO = 5,
+        /// <summary>
+        /// Comunciacion de Baja con (CDR-RECHAZADO).
+        /// Tiene que Volver ha Enviarlo.
+        /// </summary>
+        DE_BAJA_CDR_RECHAZADO = 6,
+
+        /// <summary>
+        /// Estado utilizado cuando se ha enviado con anterioridas este documento
+        /// Debe revisar si los datos son los mismos con el enviado, sino debe darle de baja.
+        /// </summary>
+        ENVIADO_ANTERIORMENTE = 7,
+
+        ERROR_RECEPCION_ENVIO = 8,
+
+        ENVIADO_POR_CONSULTAR_ESTADO = 9,
+
+        ERROR_RECEPCION_BAJA = 10
+    }
+    #endregion
+}

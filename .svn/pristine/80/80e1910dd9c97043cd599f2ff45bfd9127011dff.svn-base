@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SAMBHS.Common.BE
+{
+   public class ReporteLinea
+
+    {
+       public string IdLinea { get; set; }
+        public string NombreLinea { get; set; }
+
+    }
+}

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteResumenVsAnterior" targetNamespace="http://tempuri.org/dsReporteResumenVsAnterior.xsd" xmlns:mstns="http://tempuri.org/dsReporteResumenVsAnterior.xsd" xmlns="http://tempuri.org/dsReporteResumenVsAnterior.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteResumenVsAnterior" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteResumenVsAnterior" msprop:Generator_UserDSName="dsReporteResumenVsAnterior">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReportePlanillaResumenVsAnterior" msprop:Generator_TableClassName="dsReportePlanillaResumenVsAnteriorDataTable" msprop:Generator_TableVarName="tabledsReportePlanillaResumenVsAnterior" msprop:Generator_RowChangedName="dsReportePlanillaResumenVsAnteriorRowChanged" msprop:Generator_TablePropName="dsReportePlanillaResumenVsAnterior" msprop:Generator_RowDeletingName="dsReportePlanillaResumenVsAnteriorRowDeleting" msprop:Generator_RowChangingName="dsReportePlanillaResumenVsAnteriorRowChanging" msprop:Generator_RowEvHandlerName="dsReportePlanillaResumenVsAnteriorRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReportePlanillaResumenVsAnteriorRowDeleted" msprop:Generator_RowClassName="dsReportePlanillaResumenVsAnteriorRow" msprop:Generator_UserTableName="dsReportePlanillaResumenVsAnterior" msprop:Generator_RowEvArgName="dsReportePlanillaResumenVsAnteriorRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Importe" msprop:Generator_ColumnVarNameInTable="columnImporte" msprop:Generator_ColumnPropNameInRow="Importe" msprop:Generator_ColumnPropNameInTable="ImporteColumn" msprop:Generator_UserColumnName="Importe" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoConcepto" msprop:Generator_ColumnVarNameInTable="columnTipoConcepto" msprop:Generator_ColumnPropNameInRow="TipoConcepto" msprop:Generator_ColumnPropNameInTable="TipoConceptoColumn" msprop:Generator_UserColumnName="TipoConcepto" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="DTotal" msprop:Generator_ColumnVarNameInTable="columnDTotal" msprop:Generator_ColumnPropNameInRow="DTotal" msprop:Generator_ColumnPropNameInTable="DTotalColumn" msprop:Generator_UserColumnName="DTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ImporteMesAnterior" msprop:Generator_ColumnVarNameInTable="columnImporteMesAnterior" msprop:Generator_ColumnPropNameInRow="ImporteMesAnterior" msprop:Generator_ColumnPropNameInTable="ImporteMesAnteriorColumn" msprop:Generator_UserColumnName="ImporteMesAnterior" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DTotalMesAnterior" msprop:Generator_ColumnVarNameInTable="columnDTotalMesAnterior" msprop:Generator_ColumnPropNameInRow="DTotalMesAnterior" msprop:Generator_ColumnPropNameInTable="DTotalMesAnteriorColumn" msprop:Generator_UserColumnName="DTotalMesAnterior" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

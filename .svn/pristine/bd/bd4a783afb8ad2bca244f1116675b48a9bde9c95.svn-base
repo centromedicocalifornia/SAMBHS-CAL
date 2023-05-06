@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SAMBHS.Windows.SigesoftIntegration.UI.Dtos
+{
+    public class ServiceDto
+    {
+        public string ServiceId { get; set; }
+        public string ProtocolId { get; set; }
+        public string PersonId { get; set; }
+        public int MasterServiceId { get; set; }
+        public int ServiceStatusId { get; set; }
+        public int AptitudeStatusId { get; set; }
+        public DateTime? ServiceDate { get; set; }
+        public DateTime? GlobalExpirationDate { get; set; }
+        public DateTime? ObsExpirationDate { get; set; }
+        public int FlagAgentId { get; set; }
+        public string Motive { get; set; }
+        public int IsFac { get; set; }
+        public DateTime? FechaNacimiento { get; set; }
+        public int GeneroId { get; set; }
+    }
+
+    public class ServiceComponentDto
+    {
+        public string ServiceId { get; set; }
+        public int ExternalInternalId { get; set; }
+        public int ServiceComponentTypeId { get; set; }
+        public int IsVisibleId { get; set; }
+        public int IsInheritedId { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+        public int Index { get; set; }
+        public float Price { get; set; }
+        public string ComponentId { get; set; }
+        public string ComponentName { get; set; }
+        public int IsInvoicedId { get; set; }
+        public int ServiceComponentStatusId { get; set; }
+        public int QueueStatusId { get; set; }
+        public int IsRequiredId { get; set; }
+        public string ProtocolId { get; set; }
+        public int Iscalling { get; set; }
+        public int Iscalling1 { get; set; }
+        public string IdUnidadProductiva { get; set; }
+        public int IsManuallyAddedId { get; set; }
+    }
+}

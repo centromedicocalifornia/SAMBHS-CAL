@@ -1,0 +1,205 @@
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\1448780328_user-group.png
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\add-user.png
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\binary-tree128.png
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\corporation building.png
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\Database-Add.png
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\User-Role-Reviewer-icon.png
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.Design.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.Linq.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\diploma.png
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Style.isl
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\1449110966_System-Preferences.ico
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\grid_09-128.png
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.exe.config
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.exe.manifest
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.application
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.exe
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Dapper.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Shared.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.Misc.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinEditors.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinGrid.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinMaskedEdit.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinStatusBar.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinTabbedMdi.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinTabControl.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinToolbars.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.v15.1.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.BE.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.Resource.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.CommonWIN.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Security.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Configuration.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Data.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Deployment.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Drawing.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Web.Extensions.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Windows.Forms.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Xml.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Xml.Linq.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\UIAutomationProvider.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\UIAutomationTypes.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\WindowsBase.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\FineUI.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Web.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Ionic.Zip.Reduced.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.BE.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.Resource.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Security.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Shared.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.Misc.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinEditors.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinGrid.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinMaskedEdit.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinStatusBar.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinTabbedMdi.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinTabControl.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinToolbars.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.v15.1.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBackupEmpresa.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBandejaEmpresas.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBandejaRoles.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBandejaUsuarios.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBuscarBinPostgres.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmCrearEmpresa.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmLicenseInput.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMantenimientoLicencias.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMantenimientoLicenciasRegistrar.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMantenimientoMenu.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMantenimientoUsuarioEmpresa.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMenus.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmPermisos.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmRestaurarBd.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmUsuario.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.ucMenuPopup.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.frmLogin.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.frmMaster.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.frmPreferenciasConexion.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Properties.Resources.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.exe.licenses
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.TrustInfo.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.exe.manifest
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.application
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.exe
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.exe.config
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\1448780328_user-group.png
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\add-user.png
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\binary-tree128.png
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\corporation building.png
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\Database-Add.png
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\User-Role-Reviewer-icon.png
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\diploma.png
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Style.isl
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\1449110966_System-Preferences.ico
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\img\grid_09-128.png
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.exe.manifest
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.application
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.exe
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Windows.WinServer.UI.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Dapper.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Devart.Data.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Shared.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.Misc.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinEditors.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinGrid.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinMaskedEdit.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinStatusBar.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinTabbedMdi.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinTabControl.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinToolbars.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.v15.1.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Microsoft.CSharp.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.CommonWIN.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Security.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Configuration.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Data.DataSetExtensions.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Data.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Deployment.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Drawing.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Runtime.Serialization.Formatters.Soap.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Web.Extensions.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Windows.Forms.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Xml.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Xml.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\UIAutomationProvider.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\UIAutomationTypes.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\WindowsBase.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\FineUI.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\System.Web.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\HtmlAgilityPack.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\SAMBHS.Security.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Shared.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.Misc.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinEditors.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinGrid.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinMaskedEdit.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinStatusBar.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinTabbedMdi.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinTabControl.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.UltraWinToolbars.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\bin\Debug\Infragistics4.Win.v15.1.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBackupEmpresa.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBandejaEmpresas.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBandejaRoles.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBandejaUsuarios.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmBuscarBinPostgres.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmCrearEmpresa.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmLicenseInput.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMantenimientoLicencias.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMantenimientoLicenciasRegistrar.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMantenimientoMenu.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMantenimientoUsuarioEmpresa.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmMenus.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmPermisos.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmRestaurarBd.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.frmUsuario.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Administracion.ucMenuPopup.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.frmLogin.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.frmMaster.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.frmPreferenciasConexion.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.Properties.Resources.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.csproj.GenerateResource.Cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.exe.licenses
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.TrustInfo.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.exe.manifest
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.application
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.exe
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.WinServer.UI\obj\Debug\SAMBHS.Windows.WinServer.UI.pdb

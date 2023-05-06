@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRegistroVentaAlmacenResumen" targetNamespace="http://tempuri.org/dsRegistroVentaAlmacenResumen.xsd" xmlns:mstns="http://tempuri.org/dsRegistroVentaAlmacenResumen.xsd" xmlns="http://tempuri.org/dsRegistroVentaAlmacenResumen.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsRegistroVentaAlmacenResumen" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsRegistroVentaAlmacenResumen" msprop:Generator_UserDSName="dsRegistroVentaAlmacenResumen">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsRegistroVentaAlmacenResumen" msprop:Generator_TableClassName="dsRegistroVentaAlmacenResumenDataTable" msprop:Generator_TableVarName="tabledsRegistroVentaAlmacenResumen" msprop:Generator_RowChangedName="dsRegistroVentaAlmacenResumenRowChanged" msprop:Generator_TablePropName="_dsRegistroVentaAlmacenResumen" msprop:Generator_RowDeletingName="dsRegistroVentaAlmacenResumenRowDeleting" msprop:Generator_RowChangingName="dsRegistroVentaAlmacenResumenRowChanging" msprop:Generator_RowEvHandlerName="dsRegistroVentaAlmacenResumenRowChangeEventHandler" msprop:Generator_RowDeletedName="dsRegistroVentaAlmacenResumenRowDeleted" msprop:Generator_RowClassName="dsRegistroVentaAlmacenResumenRow" msprop:Generator_UserTableName="dsRegistroVentaAlmacenResumen" msprop:Generator_RowEvArgName="dsRegistroVentaAlmacenResumenRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Documento" msprop:Generator_ColumnVarNameInTable="columnDocumento" msprop:Generator_ColumnPropNameInRow="Documento" msprop:Generator_ColumnPropNameInTable="DocumentoColumn" msprop:Generator_UserColumnName="Documento" type="xs:string" minOccurs="0" />
+              <xs:element name="CondicionPago" msprop:Generator_ColumnVarNameInTable="columnCondicionPago" msprop:Generator_ColumnPropNameInRow="CondicionPago" msprop:Generator_ColumnPropNameInTable="CondicionPagoColumn" msprop:Generator_UserColumnName="CondicionPago" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalS" msprop:Generator_ColumnVarNameInTable="columnTotalS" msprop:Generator_ColumnPropNameInRow="TotalS" msprop:Generator_ColumnPropNameInTable="TotalSColumn" msprop:Generator_UserColumnName="TotalS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalD" msprop:Generator_ColumnVarNameInTable="columnTotalD" msprop:Generator_ColumnPropNameInRow="TotalD" msprop:Generator_ColumnPropNameInTable="TotalDColumn" msprop:Generator_UserColumnName="TotalD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Establecimiento" msprop:Generator_ColumnVarNameInTable="columnEstablecimiento" msprop:Generator_ColumnPropNameInRow="Establecimiento" msprop:Generator_ColumnPropNameInTable="EstablecimientoColumn" msprop:Generator_UserColumnName="Establecimiento" type="xs:string" minOccurs="0" />
+              <xs:element name="Almacen" msprop:Generator_ColumnVarNameInTable="columnAlmacen" msprop:Generator_ColumnPropNameInRow="Almacen" msprop:Generator_ColumnPropNameInTable="AlmacenColumn" msprop:Generator_UserColumnName="Almacen" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsEmpresa" msprop:Generator_TableClassName="dsEmpresaDataTable" msprop:Generator_TableVarName="tabledsEmpresa" msprop:Generator_RowChangedName="dsEmpresaRowChanged" msprop:Generator_TablePropName="dsEmpresa" msprop:Generator_RowDeletingName="dsEmpresaRowDeleting" msprop:Generator_RowChangingName="dsEmpresaRowChanging" msprop:Generator_RowEvHandlerName="dsEmpresaRowChangeEventHandler" msprop:Generator_RowDeletedName="dsEmpresaRowDeleted" msprop:Generator_RowClassName="dsEmpresaRow" msprop:Generator_UserTableName="dsEmpresa" msprop:Generator_RowEvArgName="dsEmpresaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnNombreEmpresaPropietaria" msprop:Generator_ColumnPropNameInRow="NombreEmpresaPropietaria" msprop:Generator_ColumnPropNameInTable="NombreEmpresaPropietariaColumn" msprop:Generator_UserColumnName="NombreEmpresaPropietaria" type="xs:string" minOccurs="0" />
+              <xs:element name="RucEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnRucEmpresaPropietaria" msprop:Generator_ColumnPropNameInRow="RucEmpresaPropietaria" msprop:Generator_ColumnPropNameInTable="RucEmpresaPropietariaColumn" msprop:Generator_UserColumnName="RucEmpresaPropietaria" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsRegistroVentaAlmacenResumenDocumentos" msprop:Generator_TableClassName="dsRegistroVentaAlmacenResumenDocumentosDataTable" msprop:Generator_TableVarName="tabledsRegistroVentaAlmacenResumenDocumentos" msprop:Generator_RowChangedName="dsRegistroVentaAlmacenResumenDocumentosRowChanged" msprop:Generator_TablePropName="dsRegistroVentaAlmacenResumenDocumentos" msprop:Generator_RowDeletingName="dsRegistroVentaAlmacenResumenDocumentosRowDeleting" msprop:Generator_RowChangingName="dsRegistroVentaAlmacenResumenDocumentosRowChanging" msprop:Generator_RowEvHandlerName="dsRegistroVentaAlmacenResumenDocumentosRowChangeEventHandler" msprop:Generator_RowDeletedName="dsRegistroVentaAlmacenResumenDocumentosRowDeleted" msprop:Generator_RowClassName="dsRegistroVentaAlmacenResumenDocumentosRow" msprop:Generator_UserTableName="dsRegistroVentaAlmacenResumenDocumentos" msprop:Generator_RowEvArgName="dsRegistroVentaAlmacenResumenDocumentosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Documento" msprop:Generator_ColumnVarNameInTable="columnDocumento" msprop:Generator_ColumnPropNameInRow="Documento" msprop:Generator_ColumnPropNameInTable="DocumentoColumn" msprop:Generator_UserColumnName="Documento" type="xs:string" minOccurs="0" />
+              <xs:element name="CondicionPago" msprop:Generator_ColumnVarNameInTable="columnCondicionPago" msprop:Generator_ColumnPropNameInRow="CondicionPago" msprop:Generator_ColumnPropNameInTable="CondicionPagoColumn" msprop:Generator_UserColumnName="CondicionPago" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalS" msprop:Generator_ColumnVarNameInTable="columnTotalS" msprop:Generator_ColumnPropNameInRow="TotalS" msprop:Generator_ColumnPropNameInTable="TotalSColumn" msprop:Generator_UserColumnName="TotalS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalD" msprop:Generator_ColumnVarNameInTable="columnTotalD" msprop:Generator_ColumnPropNameInRow="TotalD" msprop:Generator_ColumnPropNameInTable="TotalDColumn" msprop:Generator_UserColumnName="TotalD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Establecimiento" msprop:Generator_ColumnVarNameInTable="columnEstablecimiento" msprop:Generator_ColumnPropNameInRow="Establecimiento" msprop:Generator_ColumnPropNameInTable="EstablecimientoColumn" msprop:Generator_UserColumnName="Establecimiento" type="xs:string" minOccurs="0" />
+              <xs:element name="Almacen" msprop:Generator_ColumnVarNameInTable="columnAlmacen" msprop:Generator_ColumnPropNameInRow="Almacen" msprop:Generator_ColumnPropNameInTable="AlmacenColumn" msprop:Generator_UserColumnName="Almacen" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

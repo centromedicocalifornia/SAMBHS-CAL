@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tree>
+  <TreeNode Text="Administración del Sistema" SingleClickExpand="true" >
+    <TreeNode Text="Parámetros" NavigateUrl="~/Common/FRM001.aspx" Target="main"  />
+    <TreeNode Text="Data Jerárquica" NavigateUrl="~/Common/FRM002.aspx" Target="main"  />
+    <TreeNode Text="Application Hierarchy" NavigateUrl="~/Security/FRM005.aspx" Target="main" />
+    <TreeNode Text="Nodo" NavigateUrl="~/Common/FRM004.aspx" Target="main"  />
+    <TreeNode Text="Usuario" NavigateUrl="~/Security/FRM006.aspx" Target="main" />
+    <TreeNode Text="Log" NavigateUrl="~/Common/FRM003.aspx" Target="main" />
+    <TreeNode Text="Rol" NavigateUrl="~/Common/FRM007.aspx" Target="main" />
+  <TreeNode Text="Organización" NavigateUrl="~/Common/FRM008.aspx" Target="main" />
+  <TreeNode Text="Almacén" NavigateUrl="~/Common/FRM009.aspx" Target="main" />
+  </TreeNode>  
+</Tree>

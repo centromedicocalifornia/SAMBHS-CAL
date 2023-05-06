@@ -1,0 +1,823 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Windows.Forms;
+using Dapper;
+using Infragistics.Win.UltraWinEditors;
+using SAMBHS.Common.BE;
+using SAMBHS.Windows.SigesoftIntegration.UI.Dtos;
+
+namespace SAMBHS.Windows.SigesoftIntegration.UI
+{
+    public class AgendaBl
+    {
+        public static DatosTrabajador GetDatosTrabajador(string pstNroDocument)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    var query =
+                        "select v_PersonId as PersonId, v_FirstName as Nombres, v_FirstLastName as ApellidoPaterno, v_SecondLastName as ApellidoMaterno, i_DocTypeId as TipoDocumentoId, v_DocNumber as  NroDocumento, i_SexTypeId as GeneroId, d_Birthdate as FechaNacimiento " +
+                        "from person where v_DocNumber = '" + pstNroDocument + "'";
+                    return cnx.Query<DatosTrabajador>(query).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public static void LlenarComboTipoDocumento(ComboBox cbo)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+
+                    var query = @"select i_ItemId as 'EsoId', v_Value1 as 'Nombre' from datahierarchy
+								where i_GroupId = 106 and i_IsDeleted = 0";
+
+                    var data = cnx.Query<EsoDto>(query).ToList();
+                    data.Insert(0, new EsoDto {EsoId = -1, Nombre = "--Seleccionar--"});
+
+                    cbo.DataSource = data;
+                    cbo.DisplayMember = "Nombre";
+                    cbo.ValueMember = "EsoId";
+                    cbo.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void LlenarComboGennero(ComboBox cbo)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+
+                    var query = @"select i_ParameterId as 'EsoId', v_Value1 as 'Nombre' from systemparameter
+								where i_GroupId = 100 and i_IsDeleted = 0";
+
+                    var data = cnx.Query<EsoDto>(query).ToList();
+                    data.Insert(0, new EsoDto {EsoId = -1, Nombre = "--Seleccionar--"});
+
+                    cbo.DataSource = data;
+                    cbo.DisplayMember = "Nombre";
+                    cbo.ValueMember = "EsoId";
+                    cbo.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void LlenarComboTipoServicio(ComboBox cbo)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+
+                    var query = @"select DISTINCT b.i_ParameterId as 'EsoId', b.v_Value1 as 'Nombre' 
+                            from nodeserviceprofile a
+                            inner join systemparameter b on (a.i_ServiceTypeId = b.i_ParameterId) and (119 = b.i_GroupId)
+							where b.i_IsDeleted = 0 and a.i_NodeId = 9";
+
+                    var data = cnx.Query<EsoDto>(query).ToList();
+                    data.Insert(0, new EsoDto {EsoId = -1, Nombre = "--Seleccionar--"});
+
+                    cbo.DataSource = data;
+                    cbo.DisplayMember = "Nombre";
+                    cbo.ValueMember = "EsoId";
+                    cbo.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void LlenarComboServicio(ComboBox cbo, int? pServiceTypeId)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+
+                    var query = @"select DISTINCT b.i_ParameterId as 'EsoId', b.v_Value1 as 'Nombre' 
+                            from nodeserviceprofile a
+                            inner join systemparameter b on (a.i_MasterServiceId = b.i_ParameterId) and (119 = b.i_GroupId)
+							where a.i_ServiceTypeId = " + pServiceTypeId + " and b.i_IsDeleted = 0 and a.i_NodeId = 9";
+
+                    var data = cnx.Query<EsoDto>(query).ToList();
+                    data.Insert(0, new EsoDto {EsoId = -1, Nombre = "--Seleccionar--"});
+
+                    cbo.DataSource = data;
+                    cbo.DisplayMember = "Nombre";
+                    cbo.ValueMember = "EsoId";
+                    cbo.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void LlenarComboProtocolo(ComboBox cbo, int? pServiceTypeId, int? pService)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+
+                    var query = @"SELECT v_ProtocolId AS Id, v_Name AS Nombre
+                            FROM Protocol
+                            WHERE i_MasterServiceTypeId =" + pServiceTypeId + "and i_MasterServiceId =" + pService;
+
+                    var data = cnx.Query<EsoDto>(query).ToList();
+                    data.Insert(0, new EsoDto {Id = "-1", Nombre = "--Seleccionar--"});
+
+                    cbo.DataSource = data;
+                    cbo.DisplayMember = "Nombre";
+                    cbo.ValueMember = "Id";
+                    cbo.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static ProtocolDto GetDatosProtocolo(string pProtocoloId)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+
+                    var query = @"SELECT b.v_Name AS Geso, c.v_Value1 AS TipoEso, d.v_Name AS EmpresaCliente, e.v_Name AS EmpresaEmpleadora, f.v_Name AS EmpresaTrabajo
+                                FROM Protocol a
+                                INNER JOIN groupoccupation b ON a.v_GroupOccupationId = b.v_GroupOccupationId
+                                INNER JOIN systemparameter c ON a.i_EsoTypeId = c.i_ParameterId and c.i_GroupId = 118
+                                INNER JOIN organization d ON a.v_CustomerOrganizationId = d.v_OrganizationId
+                                INNER JOIN organization e ON a.v_EmployerOrganizationId = e.v_OrganizationId
+                                INNER JOIN organization f ON a.v_EmployerOrganizationId = f.v_OrganizationId
+                                WHERE a.v_ProtocolId = '" + pProtocoloId + "'";
+
+                    var data = cnx.Query<ProtocolDto>(query).FirstOrDefault();
+                    return data;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static string AddPerson(PersonDto personDto)
+        {
+            try
+            {
+                var secuentialId = GetNextSecuentialId(8).SecuentialId;
+                var newId = GetNewId(9, secuentialId, "PP");
+
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+
+                    var searchPerson = "select * from person where v_DocNumber = '" + personDto.NroDocumento + "'";
+                    var firstOrDefault = cnx.Query<PersonDto>(searchPerson).FirstOrDefault();
+
+                    if (firstOrDefault != null)
+                    {
+                        return "El paciente ya se encuentra registrado";
+                    }
+
+                    var query =
+                        "INSERT INTO person (v_PersonId,v_FirstName,v_FirstLastName,v_SecondLastName,i_DocTypeId,v_DocNumber,i_SexTypeId,d_Birthdate,i_IsDeleted) " +
+                        "VALUES ('" + newId + "' , '" + personDto.Nombres + "', '" + personDto.ApellidoPaterno + "', '" +
+                        personDto.ApellidoMaterno + "', '" + personDto.TipoDocumento + "', '" + personDto.NroDocumento +
+                        "', '" + personDto.GeneroId + "',  CONVERT(datetime,'" +
+                        personDto.FechaNacimiento.ToShortDateString() + "',103), 1)";
+                    cnx.Execute(query);
+
+                    var query2 = "INSERT INTO pacient (v_PersonId, i_IsDeleted) VALUES ('" + newId + "', 1) ";
+                    cnx.Execute(query2);
+
+                    return newId;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public static Secuential GetNextSecuentialId(int tableId)
+        {
+            using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+            {
+                var query =
+                    "update secuential set i_SecuentialId = (select i_SecuentialId from secuential where i_NodeId = 9 and  i_TableId =" +
+                    tableId + " ) + 1 where i_NodeId = 9 and  i_TableId = " + tableId +
+                    " select i_NodeId as NodeId ,i_TableId as TableId ,i_SecuentialId as SecuentialId from secuential where i_NodeId = 9 and  i_TableId =" +
+                    tableId;
+                return cnx.Query<Secuential>(query).FirstOrDefault();
+            }
+        }
+
+        public static string GetNewId(int pintNodeId, int pintSequential, string pstrPrefix)
+        {
+            return string.Format("N{0:000}-{1}{2:000000000}", pintNodeId, pstrPrefix, pintSequential);
+        }
+
+        public static BindingList<ventadetalleDto> SheduleService(ServiceDto oServiceDto)
+        {
+            try
+            {
+                var result = new BindingList<ventadetalleDto>();
+                var secuentialId = GetNextSecuentialId(23).SecuentialId;
+                var serviceId = GetNewId(9, secuentialId, "SR");
+                oServiceDto.ServiceId = serviceId;
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    var query =
+                        "INSERT INTO [dbo].[service]([v_ServiceId],[v_ProtocolId],[v_PersonId],[i_MasterServiceId],[i_ServiceStatusId],[i_AptitudeStatusId],[d_ServiceDate],[d_GlobalExpirationDate],[d_ObsExpirationDate],[i_FlagAgentId],[v_Motive],[i_IsFac],i_IsDeleted)" +
+                        "VALUES ('" + serviceId + "','" + oServiceDto.ProtocolId + "','" + oServiceDto.PersonId + "'," +
+                        oServiceDto.MasterServiceId + "," + oServiceDto.ServiceStatusId + "," +
+                        oServiceDto.AptitudeStatusId + ",NULL,NULL,NULL,1,'',0,0)";
+                    cnx.Execute(query);
+
+                    var qProtocolComponents =
+                        "select pc.v_ComponentId AS ComponentId, c.v_Name AS ComponentName, sp1.v_Field AS Porcentajes, pc.v_ProtocolComponentId AS ProtocolComponentId, pc.r_Price AS Price, sp2.v_Value1 AS Operator, pc.i_Age AS Age, sp3.v_Value1 AS Gender, pc.i_IsConditionalIMC AS IsConditionalImc, pc.r_Imc AS Imc, pc.i_IsConditionalId AS IsConditional, pc.i_IsAdditional AS IsAdditional,  sp4.v_Value1 AS ComponentTypeName, pc.i_GenderId AS GenderId, pc.i_GrupoEtarioId AS GrupoEtarioId, pc.i_IsConditionalId AS IsConditionalId, pc.i_OperatorId AS OperatorId, c.i_CategoryId AS CategoryId,c.i_ComponentTypeId AS ComponentTypeId, i_UIIsVisibleId AS UiIsVisibleId,i_UIIndex AS UiIndex,v_IdUnidadProductiva AS IdUnidadProductiva " +
+                        "from protocolcomponent pc " +
+                        "inner join component c on pc.v_ComponentId = c.v_ComponentId " +
+                        "left join systemparameter sp1 on c.i_CategoryId = sp1.i_ParameterId and sp1.i_GroupId = 116 " +
+                        "left join systemparameter sp2 on pc.i_OperatorId = sp2.i_ParameterId and sp2.i_GroupId = 117 " +
+                        "left join systemparameter sp3 on pc.i_GenderId = sp3.i_ParameterId and sp3.i_GroupId = 130 " +
+                        "left join systemparameter sp4 on c.i_ComponentTypeId= sp4.i_ParameterId and sp4.i_GroupId = 126 " +
+                        "where pc.v_ProtocolId ='" + oServiceDto.ProtocolId + "'";
+                    var components = cnx.Query<ProtocolComponentList>(qProtocolComponents).ToList();
+
+                    var oServiceComponentDto = new ServiceComponentDto();
+                    foreach (var t in components)
+                    {
+                        var componentId = t.ComponentId;
+                        oServiceComponentDto.ComponentName = t.ComponentName;
+                        oServiceComponentDto.ServiceId = serviceId;
+                        oServiceComponentDto.ExternalInternalId = (int) ComponenteProcedencia.Interno;
+                        oServiceComponentDto.ServiceComponentTypeId = t.ComponentTypeId;
+                        oServiceComponentDto.IsVisibleId = t.UiIsVisibleId;
+                        oServiceComponentDto.IsInheritedId = (int) SiNo.No;
+                        oServiceComponentDto.StartDate = null;
+                        oServiceComponentDto.EndDate = null;
+                        oServiceComponentDto.Index = t.UiIndex;
+                        var porcentajes = t.Porcentajes.Split('-');
+                        float p1 = porcentajes[0] == null ? 0 : float.Parse(porcentajes[0]);
+                        float p2 = porcentajes[1] == null ? 0 : float.Parse(porcentajes[1]);
+                        if (t.Price != null)
+                        {
+                            var pb = t.Price.Value;
+                            oServiceComponentDto.Price = pb + (pb * p1 / 100) + (pb * p2 / 100);
+                        }
+                        oServiceComponentDto.ComponentId = t.ComponentId;
+                        oServiceComponentDto.IsInvoicedId = (int) SiNo.No;
+                        oServiceComponentDto.ServiceComponentStatusId = (int) ServiceStatus.PorIniciar;
+                        oServiceComponentDto.QueueStatusId = (int) QueueStatusId.Libre;
+                        oServiceComponentDto.Iscalling = (int) FlagCall.NoseLlamo;
+                        oServiceComponentDto.Iscalling1 = (int) FlagCall.NoseLlamo;
+                        oServiceComponentDto.IdUnidadProductiva = t.IdUnidadProductiva;
+
+                        //Condicionales
+                        var conditional = t.IsConditionalId;
+                        if (conditional == (int) SiNo.Si)
+                        {
+                            var fechaNacimiento = oServiceDto.FechaNacimiento;
+                            //Datos del paciente
+
+                            if (fechaNacimiento != null)
+                            {
+                                var pacientAge = DateTime.Today.AddTicks(-fechaNacimiento.Value.Ticks).Year - 1;
+
+                                var pacientGender = oServiceDto.GeneroId;
+
+                                //Datos del protocolo
+                                int analyzeAge = t.Age;
+                                int analyzeGender = t.GenderId;
+                                var @operator = (Operator2Values) t.OperatorId;
+                                GrupoEtario oGrupoEtario = (GrupoEtario) t.GrupoEtarioId;
+                                if ((int) @operator == -1)
+                                {
+                                    //si la condicional del operador queda en --Seleccionar--
+                                    if (analyzeGender == (int) GenderConditional.AMBOS)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else if (pacientGender == analyzeGender)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                                    }
+                                }
+                                else
+                                {
+                                    if (analyzeGender == (int) GenderConditional.MASCULINO)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = SwitchOperator2Values(pacientAge, analyzeAge,
+                                            @operator, pacientGender, analyzeGender);
+                                    }
+                                    else if (analyzeGender == (int) GenderConditional.FEMENINO)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = SwitchOperator2Values(pacientAge, analyzeAge,
+                                            @operator, pacientGender, analyzeGender);
+                                    }
+                                    else if (analyzeGender == (int) GenderConditional.AMBOS)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = SwitchOperator2Values(pacientAge, analyzeAge,
+                                            @operator, pacientGender, analyzeGender);
+                                    }
+                                }
+                                if (componentId == "N009-ME000000402") //Adolecente
+                                {
+                                    if ((int) oGrupoEtario == -1)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else if (13 <= pacientAge && pacientAge <= 18)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                                    }
+
+                                }
+                                else if (componentId == "N009-ME000000403") //Adulto
+                                {
+                                    if ((int) oGrupoEtario == -1)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else if (19 <= pacientAge && pacientAge <= 60)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                                    }
+                                }
+                                else if (componentId == "N009-ME000000404") //AdultoMayor
+                                {
+                                    if ((int) oGrupoEtario == -1)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else if (61 <= pacientAge)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                                    }
+                                }
+                                else if (componentId == "N009-ME000000406")
+                                {
+                                    if ((int) oGrupoEtario == -1)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else if (12 >= pacientAge)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                                    }
+                                }
+                                else if (componentId == "N009-ME000000401") //plan integral
+                                {
+                                    if ((int) oGrupoEtario == -1)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else if (12 >= pacientAge)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                                    }
+                                }
+                                else if (componentId == "N009-ME000000400") //atencion integral
+                                {
+                                    if ((int) oGrupoEtario == -1)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else if (12 >= pacientAge)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                                    }
+                                }
+                                else if (componentId == "N009-ME000000405") //consulta
+                                {
+                                    if ((int) oGrupoEtario == -1)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else if (12 >= pacientAge)
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                                    }
+                                    else
+                                    {
+                                        oServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                                    }
+                                }
+                                else
+                                {
+                                    oServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            oServiceComponentDto.IsRequiredId = (int)SiNo.Si;
+                            if (t.IsAdditional == null) continue;
+                            var adicional = t.IsAdditional;
+                            if (adicional == 1)
+                            {
+                                oServiceComponentDto.IsRequiredId = (int)SiNo.No;
+                            }
+                        }
+                        oServiceComponentDto.IsManuallyAddedId = (int)SiNo.No;
+                        AddServiceComponent(oServiceComponentDto);
+
+                        var cant = 1;
+                        var pu = decimal.Parse(oServiceComponentDto.Price.ToString(CultureInfo.InvariantCulture));
+                        var valorV = Math.Round(cant * pu, 2, MidpointRounding.AwayFromZero);
+                        var igv = Math.Round(valorV * 0.18m, 2, MidpointRounding.AwayFromZero);
+                        var pv = valorV + igv;
+                        var oventadetalleDto = new ventadetalleDto
+                        {
+                            i_Anticipio = 0,
+                            i_IdAlmacen = 1,
+                            i_IdCentroCosto = "0",
+                            i_IdUnidadMedida = 15,
+                            ProductoNombre = oServiceComponentDto.ComponentName,
+                            v_DescripcionProducto = oServiceComponentDto.ComponentName,
+                            v_IdProductoDetalle = "N001-PE000015780",
+                            v_NroCuenta = string.Empty,
+                            d_PrecioVenta = pv,
+                            d_Igv = igv,
+                            d_Cantidad = cant,
+                            d_CantidadEmpaque = cant,
+                            d_Precio = pu,
+                            d_Valor = valorV,
+                            d_ValorVenta = valorV,
+                            d_PrecioImpresion = pu,
+                            v_CodigoInterno = "ATMED01",
+                            Empaque = 1,
+                            UMEmpaque = "UND",
+                            i_EsServicio = 1,
+                            i_IdUnidadMedidaProducto = 15
+                        };
+                        result.Add(oventadetalleDto);
+                    }
+                    AddCalendar(oServiceDto);
+                }
+
+                return result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        private static void AddCalendar(ServiceDto oServiceDto)
+        {
+            try
+            {
+                var secuentialId = GetNextSecuentialId(22).SecuentialId;
+                var newId = GetNewId(9, secuentialId, "CA");
+
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    var query = "INSERT INTO [dbo].[calendar]([v_CalendarId],[v_PersonId],[v_ServiceId],[d_DateTimeCalendar],[d_CircuitStartDate],[d_EntryTimeCM],[i_ServiceTypeId],[i_CalendarStatusId],[i_ServiceId],[v_ProtocolId],[i_NewContinuationId],[i_LineStatusId],[i_IsVipId],[i_IsDeleted])"+
+                                "VALUES ('" + newId + "', '" + oServiceDto.PersonId + "', '" + oServiceDto.ServiceId + "', GETDATE(),  GETDATE(), NULL," + oServiceDto.MasterServiceId + ",1, "+ oServiceDto.MasterServiceId +", '" + oServiceDto.ProtocolId + "', 1, 1, 0,0)";
+                    cnx.Execute(query);
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        private static void AddServiceComponent(ServiceComponentDto oServiceComponentDto)
+        {
+            try
+            {
+                var secuentialId = GetNextSecuentialId(24).SecuentialId;
+                var newId = GetNewId(9, secuentialId, "SC");
+
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    var query ="INSERT INTO [dbo].[servicecomponent]([v_ServiceComponentId],[v_ServiceId],[i_ExternalInternalId],[i_ServiceComponentTypeId],[i_IsVisibleId],[i_IsInheritedId],[i_index],[r_Price],[v_ComponentId],[i_IsInvoicedId],[i_ServiceComponentStatusId],[i_QueueStatusId],[i_IsRequiredId],[i_Iscalling],[v_IdUnidadProductiva],[i_IsManuallyAddedId],[i_IsDeleted])"+
+                                "VALUES ('" + newId + "', '" + oServiceComponentDto.ServiceId + "', " + oServiceComponentDto.ExternalInternalId + ", " + oServiceComponentDto.ServiceComponentTypeId + ", " + oServiceComponentDto.IsVisibleId + "," + oServiceComponentDto.IsInheritedId + "," + oServiceComponentDto.Index + "," + oServiceComponentDto.Price + ", '" + oServiceComponentDto.ComponentId + "', 0," + oServiceComponentDto.ServiceComponentStatusId + ", " + oServiceComponentDto.QueueStatusId + ", " + oServiceComponentDto.IsRequiredId + ", " + oServiceComponentDto.Iscalling + ",'" + oServiceComponentDto.IdUnidadProductiva + "', " + oServiceComponentDto.IsManuallyAddedId+ ",0 )";
+                    cnx.Execute(query);
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public static int SwitchOperator2Values(int pacientAge, int analyzeAge, Operator2Values @operator,
+            int pacientGender, int analyzeGender)
+        {
+            ServiceComponentDto objServiceComponentDto = new ServiceComponentDto();
+            switch (@operator)
+            {
+                case Operator2Values.X_esIgualque_A:
+                    if (analyzeGender == (int) GenderConditional.AMBOS)
+                    {
+                        if (pacientAge == analyzeAge)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+                    else
+                    {
+                        if (pacientAge == analyzeAge && pacientGender == analyzeGender)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+
+                    break;
+                case Operator2Values.X_noesIgualque_A:
+                    if (analyzeGender == (int) GenderConditional.AMBOS)
+                    {
+                        if (pacientAge != analyzeAge)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+                    else
+                    {
+                        if (pacientAge != analyzeAge && pacientGender == analyzeGender)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+
+                    break;
+                case Operator2Values.X_esMenorque_A:
+
+                    if (analyzeGender == (int) GenderConditional.AMBOS)
+                    {
+                        if (pacientAge < analyzeAge)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+                    else
+                    {
+                        if (pacientAge < analyzeAge && pacientGender == analyzeGender)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+
+                    break;
+                case Operator2Values.X_esMenorIgualque_A:
+
+                    if (analyzeGender == (int) GenderConditional.AMBOS)
+                    {
+                        if (pacientAge <= analyzeAge)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+                    else
+                    {
+                        if (pacientAge <= analyzeAge && pacientGender == analyzeGender)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+
+                    break;
+                case Operator2Values.X_esMayorque_A:
+                    if (analyzeGender == (int) GenderConditional.AMBOS)
+                    {
+                        if (pacientAge > analyzeAge)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+                    else
+                    {
+                        if (pacientAge > analyzeAge && pacientGender == analyzeGender)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+                    break;
+                case Operator2Values.X_esMayorIgualque_A:
+                    if (analyzeGender == (int) GenderConditional.AMBOS)
+                    {
+                        if (pacientAge >= analyzeAge)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+                    else
+                    {
+                        if (pacientAge >= analyzeAge && pacientGender == analyzeGender)
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.Si;
+                        }
+                        else
+                        {
+                            objServiceComponentDto.IsRequiredId = (int) SiNo.No;
+                        }
+                    }
+
+                    break;
+            }
+
+            return objServiceComponentDto.IsRequiredId;
+        }
+
+        public class DatosTrabajador
+        {
+            public string PersonId { get; set; }
+            public string Nombres { get; set; }
+            public string ApellidoPaterno { get; set; }
+            public string ApellidoMaterno { get; set; }
+            public int TipoDocumentoId { get; set; }
+            public string NroDocumento { get; set; }
+            public int GeneroId { get; set; }
+            public DateTime FechaNacimiento { get; set; }
+        }
+
+        public class Secuential
+        {
+            public int NodeId { get; set; }
+            public int TableId { get; set; }
+            public int SecuentialId { get; set; }
+        }
+
+        public enum SiNo
+        {
+            No = 0,
+            Si = 1,
+            None = 2
+        }
+
+        public enum ComponenteProcedencia
+        {
+            Interno = 1,
+            Externo = 2
+        }
+
+        public enum ServiceStatus
+        {
+            PorIniciar = 1,
+            Iniciado = 2,
+            Culminado = 3,
+            Incompleto = 4,
+            Cancelado = 5,
+            EsperandoAptitud = 6
+        }
+
+        public enum QueueStatusId
+        {
+            Libre = 1,
+            Llamando = 2,
+            Ocupado = 3
+        }
+
+        public enum FlagCall
+        {
+            NoseLlamo = 0,
+            Sellamo = 1
+        }
+
+        public enum Operator2Values
+        {
+            X_esIgualque_A = 1,
+            X_noesIgualque_A = 2,
+            X_esMenorque_A = 3,
+            X_esMenorIgualque_A = 4,
+            X_esMayorque_A = 5,
+            X_esMayorIgualque_A = 6,
+            X_esMayorque_A_yMenorque_B = 7,
+            X_esMayorque_A_yMenorIgualque_B = 8,
+            X_esMayorIgualque_A_yMenorque_B = 9,
+            X_esMayorIgualque_A_yMenorIgualque_B = 12,
+        }
+
+        public enum GenderConditional
+        {
+            MASCULINO = 1,
+            FEMENINO = 2,
+            AMBOS = 3
+        }
+
+        public enum GrupoEtario
+        {
+            Ninio = 1,
+            Adolecente = 2,
+            Adulto = 3,
+            AdultoMayor = 4
+        }
+
+    }
+}

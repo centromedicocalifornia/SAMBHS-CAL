@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsImpresionListaPrecios" targetNamespace="http://tempuri.org/dsImpresionListaPrecios.xsd" xmlns:mstns="http://tempuri.org/dsImpresionListaPrecios.xsd" xmlns="http://tempuri.org/dsImpresionListaPrecios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsImpresionListaPrecios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsImpresionListaPrecios" msprop:Generator_UserDSName="dsImpresionListaPrecios">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsImpresionListaPrecios" msprop:Generator_TableClassName="dsImpresionListaPreciosDataTable" msprop:Generator_TableVarName="tabledsImpresionListaPrecios" msprop:Generator_TablePropName="_dsImpresionListaPrecios" msprop:Generator_RowDeletingName="dsImpresionListaPreciosRowDeleting" msprop:Generator_RowChangingName="dsImpresionListaPreciosRowChanging" msprop:Generator_RowEvHandlerName="dsImpresionListaPreciosRowChangeEventHandler" msprop:Generator_RowDeletedName="dsImpresionListaPreciosRowDeleted" msprop:Generator_UserTableName="dsImpresionListaPrecios" msprop:Generator_RowChangedName="dsImpresionListaPreciosRowChanged" msprop:Generator_RowEvArgName="dsImpresionListaPreciosRowChangeEvent" msprop:Generator_RowClassName="dsImpresionListaPreciosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="v_CodInterno" msprop:Generator_ColumnVarNameInTable="columnv_CodInterno" msprop:Generator_ColumnPropNameInRow="v_CodInterno" msprop:Generator_ColumnPropNameInTable="v_CodInternoColumn" msprop:Generator_UserColumnName="v_CodInterno" type="xs:string" minOccurs="0" />
+              <xs:element name="d_Descuento" msprop:Generator_ColumnVarNameInTable="columnd_Descuento" msprop:Generator_ColumnPropNameInRow="d_Descuento" msprop:Generator_ColumnPropNameInTable="d_DescuentoColumn" msprop:Generator_UserColumnName="d_Descuento" type="xs:decimal" minOccurs="0" />
+              <xs:element name="d_Precio" msprop:Generator_ColumnVarNameInTable="columnd_Precio" msprop:Generator_ColumnPropNameInRow="d_Precio" msprop:Generator_ColumnPropNameInTable="d_PrecioColumn" msprop:Generator_UserColumnName="d_Precio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="d_PrecioMinSoles" msprop:Generator_ColumnVarNameInTable="columnd_PrecioMinSoles" msprop:Generator_ColumnPropNameInRow="d_PrecioMinSoles" msprop:Generator_ColumnPropNameInTable="d_PrecioMinSolesColumn" msprop:Generator_UserColumnName="d_PrecioMinSoles" type="xs:decimal" minOccurs="0" />
+              <xs:element name="d_PrecioMinDolares" msprop:Generator_ColumnVarNameInTable="columnd_PrecioMinDolares" msprop:Generator_ColumnPropNameInRow="d_PrecioMinDolares" msprop:Generator_ColumnPropNameInTable="d_PrecioMinDolaresColumn" msprop:Generator_UserColumnName="d_PrecioMinDolares" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NombreLista" msprop:Generator_ColumnVarNameInTable="columnNombreLista" msprop:Generator_ColumnPropNameInRow="NombreLista" msprop:Generator_ColumnPropNameInTable="NombreListaColumn" msprop:Generator_UserColumnName="NombreLista" type="xs:string" minOccurs="0" />
+              <xs:element name="Moneda" msprop:Generator_ColumnVarNameInTable="columnMoneda" msprop:Generator_ColumnPropNameInRow="Moneda" msprop:Generator_ColumnPropNameInTable="MonedaColumn" msprop:Generator_UserColumnName="Moneda" type="xs:string" minOccurs="0" />
+              <xs:element name="Almacen" msprop:Generator_ColumnVarNameInTable="columnAlmacen" msprop:Generator_ColumnPropNameInRow="Almacen" msprop:Generator_ColumnPropNameInTable="AlmacenColumn" msprop:Generator_UserColumnName="Almacen" type="xs:string" minOccurs="0" />
+              <xs:element name="d_Utilidad" msprop:Generator_ColumnVarNameInTable="columnd_Utilidad" msprop:Generator_ColumnPropNameInRow="d_Utilidad" msprop:Generator_ColumnPropNameInTable="d_UtilidadColumn" msprop:Generator_UserColumnName="d_Utilidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Costo" msprop:Generator_ColumnVarNameInTable="columnCosto" msprop:Generator_ColumnPropNameInRow="Costo" msprop:Generator_ColumnPropNameInTable="CostoColumn" msprop:Generator_UserColumnName="Costo" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

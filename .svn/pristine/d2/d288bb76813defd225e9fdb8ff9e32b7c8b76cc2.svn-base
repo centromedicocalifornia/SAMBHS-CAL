@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace SAMBHS.Windows.WinClient.UI.Mantenimientos.UserControls
+{
+    public partial class frmConfigFe : UserControl
+    {
+        public frmConfigFe()
+        {
+            InitializeComponent();
+            this.Load += frmConfigFe_Load;
+        }
+
+        private void frmConfigFe_Load(object sender, EventArgs e)
+        {
+            txtRuta.Text = UserConfig.Default.NubefactRuta;
+            txtToken.Text = UserConfig.Default.NubefactToken;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            UserConfig.Default.NubefactRuta = txtRuta.Text;
+            UserConfig.Default.NubefactToken = txtToken.Text;
+            UserConfig.Default.Save();
+        }
+    }
+}

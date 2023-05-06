@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDocumentoRetencion" targetNamespace="http://tempuri.org/dsDocumentoRetencion.xsd" xmlns:mstns="http://tempuri.org/dsDocumentoRetencion.xsd" xmlns="http://tempuri.org/dsDocumentoRetencion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDocumentoRetencion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDocumentoRetencion" msprop:Generator_UserDSName="dsDocumentoRetencion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsDocumentoRetencion" msprop:Generator_TableClassName="dsDocumentoRetencionDataTable" msprop:Generator_TableVarName="tabledsDocumentoRetencion" msprop:Generator_TablePropName="_dsDocumentoRetencion" msprop:Generator_RowDeletingName="dsDocumentoRetencionRowDeleting" msprop:Generator_RowChangingName="dsDocumentoRetencionRowChanging" msprop:Generator_RowEvHandlerName="dsDocumentoRetencionRowChangeEventHandler" msprop:Generator_RowDeletedName="dsDocumentoRetencionRowDeleted" msprop:Generator_UserTableName="dsDocumentoRetencion" msprop:Generator_RowChangedName="dsDocumentoRetencionRowChanged" msprop:Generator_RowEvArgName="dsDocumentoRetencionRowChangeEvent" msprop:Generator_RowClassName="dsDocumentoRetencionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreProveedor" msprop:Generator_ColumnVarNameInTable="columnNombreProveedor" msprop:Generator_ColumnPropNameInRow="NombreProveedor" msprop:Generator_ColumnPropNameInTable="NombreProveedorColumn" msprop:Generator_UserColumnName="NombreProveedor" type="xs:string" minOccurs="0" />
+              <xs:element name="RucProveedor" msprop:Generator_ColumnVarNameInTable="columnRucProveedor" msprop:Generator_ColumnPropNameInRow="RucProveedor" msprop:Generator_ColumnPropNameInTable="RucProveedorColumn" msprop:Generator_UserColumnName="RucProveedor" type="xs:string" minOccurs="0" />
+              <xs:element name="sFechaRegistro" msprop:Generator_ColumnVarNameInTable="columnsFechaRegistro" msprop:Generator_ColumnPropNameInRow="sFechaRegistro" msprop:Generator_ColumnPropNameInTable="sFechaRegistroColumn" msprop:Generator_UserColumnName="sFechaRegistro" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoDocumentoDetalle" msprop:Generator_ColumnVarNameInTable="columnTipoDocumentoDetalle" msprop:Generator_ColumnPropNameInRow="TipoDocumentoDetalle" msprop:Generator_ColumnPropNameInTable="TipoDocumentoDetalleColumn" msprop:Generator_UserColumnName="TipoDocumentoDetalle" type="xs:string" minOccurs="0" />
+              <xs:element name="v_SerieDocumentoDetalle" msprop:Generator_ColumnVarNameInTable="columnv_SerieDocumentoDetalle" msprop:Generator_ColumnPropNameInRow="v_SerieDocumentoDetalle" msprop:Generator_ColumnPropNameInTable="v_SerieDocumentoDetalleColumn" msprop:Generator_UserColumnName="v_SerieDocumentoDetalle" type="xs:string" minOccurs="0" />
+              <xs:element name="v_CorrelativoDocumentoDetalle" msprop:Generator_ColumnVarNameInTable="columnv_CorrelativoDocumentoDetalle" msprop:Generator_ColumnPropNameInRow="v_CorrelativoDocumentoDetalle" msprop:Generator_ColumnPropNameInTable="v_CorrelativoDocumentoDetalleColumn" msprop:Generator_UserColumnName="v_CorrelativoDocumentoDetalle" type="xs:string" minOccurs="0" />
+              <xs:element name="MontoPagado" msprop:Generator_ColumnVarNameInTable="columnMontoPagado" msprop:Generator_ColumnPropNameInRow="MontoPagado" msprop:Generator_ColumnPropNameInTable="MontoPagadoColumn" msprop:Generator_UserColumnName="MontoPagado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MontoRetenido" msprop:Generator_ColumnVarNameInTable="columnMontoRetenido" msprop:Generator_ColumnPropNameInRow="MontoRetenido" msprop:Generator_ColumnPropNameInTable="MontoRetenidoColumn" msprop:Generator_UserColumnName="MontoRetenido" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NumeroDocumentoRetencion" msprop:Generator_ColumnVarNameInTable="columnNumeroDocumentoRetencion" msprop:Generator_ColumnPropNameInRow="NumeroDocumentoRetencion" msprop:Generator_ColumnPropNameInTable="NumeroDocumentoRetencionColumn" msprop:Generator_UserColumnName="NumeroDocumentoRetencion" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalLetras" msprop:Generator_ColumnVarNameInTable="columnTotalLetras" msprop:Generator_ColumnPropNameInRow="TotalLetras" msprop:Generator_ColumnPropNameInTable="TotalLetrasColumn" msprop:Generator_UserColumnName="TotalLetras" type="xs:string" minOccurs="0" />
+              <xs:element name="sFechaEmisionCompra" msprop:Generator_ColumnVarNameInTable="columnsFechaEmisionCompra" msprop:Generator_ColumnPropNameInRow="sFechaEmisionCompra" msprop:Generator_ColumnPropNameInTable="sFechaEmisionCompraColumn" msprop:Generator_UserColumnName="sFechaEmisionCompra" type="xs:string" minOccurs="0" />
+              <xs:element name="MonedaRetencion" msprop:Generator_ColumnVarNameInTable="columnMonedaRetencion" msprop:Generator_ColumnPropNameInRow="MonedaRetencion" msprop:Generator_ColumnPropNameInTable="MonedaRetencionColumn" msprop:Generator_UserColumnName="MonedaRetencion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

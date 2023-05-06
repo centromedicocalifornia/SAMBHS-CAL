@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteAnalisisHojaTrabajo" targetNamespace="http://tempuri.org/dsReporteAnalisisHojaTrabajo.xsd" xmlns:mstns="http://tempuri.org/dsReporteAnalisisHojaTrabajo.xsd" xmlns="http://tempuri.org/dsReporteAnalisisHojaTrabajo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteAnalisisHojaTrabajo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteAnalisisHojaTrabajo" msprop:Generator_UserDSName="dsReporteAnalisisHojaTrabajo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteAnalisisHojaTrabajo" msprop:Generator_TableClassName="dsReporteAnalisisHojaTrabajoDataTable" msprop:Generator_TableVarName="tabledsReporteAnalisisHojaTrabajo" msprop:Generator_RowChangedName="dsReporteAnalisisHojaTrabajoRowChanged" msprop:Generator_TablePropName="_dsReporteAnalisisHojaTrabajo" msprop:Generator_RowDeletingName="dsReporteAnalisisHojaTrabajoRowDeleting" msprop:Generator_RowChangingName="dsReporteAnalisisHojaTrabajoRowChanging" msprop:Generator_RowEvHandlerName="dsReporteAnalisisHojaTrabajoRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteAnalisisHojaTrabajoRowDeleted" msprop:Generator_RowClassName="dsReporteAnalisisHojaTrabajoRow" msprop:Generator_UserTableName="dsReporteAnalisisHojaTrabajo" msprop:Generator_RowEvArgName="dsReporteAnalisisHojaTrabajoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NroDiario" msprop:Generator_ColumnVarNameInTable="columnNroDiario" msprop:Generator_ColumnPropNameInRow="NroDiario" msprop:Generator_ColumnPropNameInTable="NroDiarioColumn" msprop:Generator_UserColumnName="NroDiario" type="xs:string" minOccurs="0" />
+              <xs:element name="v_IdDiario" msprop:Generator_ColumnVarNameInTable="columnv_IdDiario" msprop:Generator_ColumnPropNameInRow="v_IdDiario" msprop:Generator_ColumnPropNameInTable="v_IdDiarioColumn" msprop:Generator_UserColumnName="v_IdDiario" type="xs:string" minOccurs="0" />
+              <xs:element name="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" msprop:Generator_UserColumnName="Cuenta" type="xs:string" minOccurs="0" />
+              <xs:element name="Naturaleza" msprop:Generator_ColumnVarNameInTable="columnNaturaleza" msprop:Generator_ColumnPropNameInRow="Naturaleza" msprop:Generator_ColumnPropNameInTable="NaturalezaColumn" msprop:Generator_UserColumnName="Naturaleza" type="xs:string" minOccurs="0" />
+              <xs:element name="Importe" msprop:Generator_ColumnVarNameInTable="columnImporte" msprop:Generator_ColumnPropNameInRow="Importe" msprop:Generator_ColumnPropNameInTable="ImporteColumn" msprop:Generator_UserColumnName="Importe" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:string" minOccurs="0" />
+              <xs:element name="Debe" msprop:Generator_ColumnVarNameInTable="columnDebe" msprop:Generator_ColumnPropNameInRow="Debe" msprop:Generator_ColumnPropNameInTable="DebeColumn" msprop:Generator_UserColumnName="Debe" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Haber" msprop:Generator_ColumnVarNameInTable="columnHaber" msprop:Generator_ColumnPropNameInRow="Haber" msprop:Generator_ColumnPropNameInTable="HaberColumn" msprop:Generator_UserColumnName="Haber" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cambio" msprop:Generator_ColumnVarNameInTable="columnCambio" msprop:Generator_ColumnPropNameInRow="Cambio" msprop:Generator_ColumnPropNameInTable="CambioColumn" msprop:Generator_UserColumnName="Cambio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DebeCambio" msprop:Generator_ColumnVarNameInTable="columnDebeCambio" msprop:Generator_ColumnPropNameInRow="DebeCambio" msprop:Generator_ColumnPropNameInTable="DebeCambioColumn" msprop:Generator_UserColumnName="DebeCambio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HaberCambio" msprop:Generator_ColumnVarNameInTable="columnHaberCambio" msprop:Generator_ColumnPropNameInRow="HaberCambio" msprop:Generator_ColumnPropNameInTable="HaberCambioColumn" msprop:Generator_UserColumnName="HaberCambio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cuenta2Digitos" msprop:Generator_ColumnVarNameInTable="columnCuenta2Digitos" msprop:Generator_ColumnPropNameInRow="Cuenta2Digitos" msprop:Generator_ColumnPropNameInTable="Cuenta2DigitosColumn" msprop:Generator_UserColumnName="Cuenta2Digitos" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

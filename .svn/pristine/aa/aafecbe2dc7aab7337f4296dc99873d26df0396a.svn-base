@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteRenta5T" targetNamespace="http://tempuri.org/dsReporteRenta5T.xsd" xmlns:mstns="http://tempuri.org/dsReporteRenta5T.xsd" xmlns="http://tempuri.org/dsReporteRenta5T.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteRenta5T" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteRenta5T" msprop:Generator_UserDSName="dsReporteRenta5T">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteRenta5T" msprop:Generator_TableClassName="dsReporteRenta5TDataTable" msprop:Generator_TableVarName="tabledsReporteRenta5T" msprop:Generator_RowChangedName="dsReporteRenta5TRowChanged" msprop:Generator_TablePropName="_dsReporteRenta5T" msprop:Generator_RowDeletingName="dsReporteRenta5TRowDeleting" msprop:Generator_RowChangingName="dsReporteRenta5TRowChanging" msprop:Generator_RowEvHandlerName="dsReporteRenta5TRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteRenta5TRowDeleted" msprop:Generator_RowClassName="dsReporteRenta5TRow" msprop:Generator_UserTableName="dsReporteRenta5T" msprop:Generator_RowEvArgName="dsReporteRenta5TRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:string" minOccurs="0" />
+              <xs:element name="CodTrabajador" msprop:Generator_ColumnVarNameInTable="columnCodTrabajador" msprop:Generator_ColumnPropNameInRow="CodTrabajador" msprop:Generator_ColumnPropNameInTable="CodTrabajadorColumn" msprop:Generator_UserColumnName="CodTrabajador" type="xs:string" minOccurs="0" />
+              <xs:element name="ApellidoNombres" msprop:Generator_ColumnVarNameInTable="columnApellidoNombres" msprop:Generator_ColumnPropNameInRow="ApellidoNombres" msprop:Generator_ColumnPropNameInTable="ApellidoNombresColumn" msprop:Generator_UserColumnName="ApellidoNombres" type="xs:string" minOccurs="0" />
+              <xs:element name="SueldoBasico" msprop:Generator_ColumnVarNameInTable="columnSueldoBasico" msprop:Generator_ColumnPropNameInRow="SueldoBasico" msprop:Generator_ColumnPropNameInTable="SueldoBasicoColumn" msprop:Generator_UserColumnName="SueldoBasico" type="xs:double" minOccurs="0" />
+              <xs:element name="RemuneracionesAnteriores" msprop:Generator_ColumnVarNameInTable="columnRemuneracionesAnteriores" msprop:Generator_ColumnPropNameInRow="RemuneracionesAnteriores" msprop:Generator_ColumnPropNameInTable="RemuneracionesAnterioresColumn" msprop:Generator_UserColumnName="RemuneracionesAnteriores" type="xs:double" minOccurs="0" />
+              <xs:element name="GratificacionesProyectadas" msprop:Generator_ColumnVarNameInTable="columnGratificacionesProyectadas" msprop:Generator_ColumnPropNameInRow="GratificacionesProyectadas" msprop:Generator_ColumnPropNameInTable="GratificacionesProyectadasColumn" msprop:Generator_UserColumnName="GratificacionesProyectadas" type="xs:double" minOccurs="0" />
+              <xs:element name="RemuneracionBruta" msprop:Generator_ColumnVarNameInTable="columnRemuneracionBruta" msprop:Generator_ColumnPropNameInRow="RemuneracionBruta" msprop:Generator_ColumnPropNameInTable="RemuneracionBrutaColumn" msprop:Generator_UserColumnName="RemuneracionBruta" type="xs:double" minOccurs="0" />
+              <xs:element name="DeduccionUit" msprop:Generator_ColumnVarNameInTable="columnDeduccionUit" msprop:Generator_ColumnPropNameInRow="DeduccionUit" msprop:Generator_ColumnPropNameInTable="DeduccionUitColumn" msprop:Generator_UserColumnName="DeduccionUit" type="xs:double" minOccurs="0" />
+              <xs:element name="RentaNeta" msprop:Generator_ColumnVarNameInTable="columnRentaNeta" msprop:Generator_ColumnPropNameInRow="RentaNeta" msprop:Generator_ColumnPropNameInTable="RentaNetaColumn" msprop:Generator_UserColumnName="RentaNeta" type="xs:double" minOccurs="0" />
+              <xs:element name="ImporteResultante" msprop:Generator_ColumnVarNameInTable="columnImporteResultante" msprop:Generator_ColumnPropNameInRow="ImporteResultante" msprop:Generator_ColumnPropNameInTable="ImporteResultanteColumn" msprop:Generator_UserColumnName="ImporteResultante" type="xs:double" minOccurs="0" />
+              <xs:element name="RetencionMesesAnteriores" msprop:Generator_ColumnVarNameInTable="columnRetencionMesesAnteriores" msprop:Generator_ColumnPropNameInRow="RetencionMesesAnteriores" msprop:Generator_ColumnPropNameInTable="RetencionMesesAnterioresColumn" msprop:Generator_UserColumnName="RetencionMesesAnteriores" type="xs:double" minOccurs="0" />
+              <xs:element name="ImportePorRetener" msprop:Generator_ColumnVarNameInTable="columnImportePorRetener" msprop:Generator_ColumnPropNameInRow="ImportePorRetener" msprop:Generator_ColumnPropNameInTable="ImportePorRetenerColumn" msprop:Generator_UserColumnName="ImportePorRetener" type="xs:double" minOccurs="0" />
+              <xs:element name="Retencion" msprop:Generator_ColumnVarNameInTable="columnRetencion" msprop:Generator_ColumnPropNameInRow="Retencion" msprop:Generator_ColumnPropNameInTable="RetencionColumn" msprop:Generator_UserColumnName="Retencion" type="xs:double" minOccurs="0" />
+              <xs:element name="RemuneracionProyectada" msprop:Generator_ColumnVarNameInTable="columnRemuneracionProyectada" msprop:Generator_ColumnPropNameInRow="RemuneracionProyectada" msprop:Generator_ColumnPropNameInTable="RemuneracionProyectadaColumn" msprop:Generator_UserColumnName="RemuneracionProyectada" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalRemuneracion" msprop:Generator_ColumnVarNameInTable="columnTotalRemuneracion" msprop:Generator_ColumnPropNameInRow="TotalRemuneracion" msprop:Generator_ColumnPropNameInTable="TotalRemuneracionColumn" msprop:Generator_UserColumnName="TotalRemuneracion" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

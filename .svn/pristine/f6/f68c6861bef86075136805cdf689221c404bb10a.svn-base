@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Para obtener más información sobre cómo configurar la aplicación de ASP.NET, visite
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+
+<configuration>
+  <configSections>
+   
+    <section name="FineUI" type="FineUI.ConfigSection, FineUI" />
+  </configSections>
+
+  <connectionStrings>
+      <clear />
+      <add name="SAMBHSConnectionString" connectionString="metadata=res://SAMBHS.Common.DataModel.MSSQL/DMMSQL.csdl|res://SAMBHS.Common.DataModel.MSSQL/DMMSQL.ssdl|res://SAMBHS.Common.DataModel.MSSQL/DMMSQL.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.;Initial Catalog=TIS_INTEGRADO;Integrated Security=False;Persist Security Info=True;User ID=sa;Password=123456&quot;"
+          providerName="System.Data.EntityClient" />
+      <add name="SAMBHSConnectionStringWin" connectionString="metadata=res://SAMBHS.Common.DataModel.MSSQLWIN/DMMSQLWIN.csdl|res://SAMBHS.Common.DataModel.MSSQLWIN/DMMSQLWIN.ssdl|res://SAMBHS.Common.DataModel.MSSQLWIN/DMMSQLWIN.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.;Initial Catalog=20505310072;Integrated Security=False;Persist Security Info=True;User ID=sa;Password=123456&quot;"
+          providerName="System.Data.EntityClient" />
+  </connectionStrings>
+
+
+
+  <FineUI EnableBigFont="true" DebugMode="false" Language="en" IconBasePath="~/images/icons" Theme="Gray" />
+
+  <system.web>
+    <sessionState mode="InProc" timeout="900" />
+    <compilation debug="true" targetFramework="4.0" />
+
+    <pages controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID">
+      <controls>
+        <add assembly="FineUI" namespace="FineUI" tagPrefix="Ext" />
+      </controls>
+    </pages>
+
+    <customErrors mode="Off" />
+
+    <authentication mode="Forms">
+      <forms name=".ASPXFORMSAUTH" loginUrl="frmLogin.aspx" protection="All" timeout="900" defaultUrl="frmMaster.aspx">
+      </forms>
+    </authentication>
+
+    <authorization>
+      <deny users="?" />
+    </authorization>
+
+    <httpRuntime maxRequestLength="1048576" executionTimeout="3600" />
+    
+  </system.web>
+
+  <location path="frmLogin.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*" />
+      </authorization>
+    </system.web>
+  </location>
+
+  <location path="res.axd">
+    <system.web>
+      <authorization>
+        <allow users="*" />
+      </authorization>
+    </system.web>
+  </location>
+  <!--<system.web>
+    <httpHandlers>
+      <add path="customformhandler" verb="*"
+      type="CustomFormHandlerLib, CustomFormHandler" validate="true"/>
+    </httpHandlers>
+  </system.web>-->
+  <system.webServer>
+    <modules>
+      <add name="FineUIScriptModule" type="FineUI.ScriptModule, FineUI" />
+      <!--<add name="AuthenticationModule" type="Sigesoft.WebClient.Main.Utils.AuthenticationModule, Sigesoft.WebClient.Main"/>-->
+    </modules>
+    <handlers>
+      <add name="FineUIResourceHandler" verb="GET" path="res.axd" type="FineUI.ResourceHandler, FineUI" />
+    </handlers>
+    <directoryBrowse enabled="true" />
+    <security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="1073741824" />
+      </requestFiltering>
+    </security>
+  </system.webServer>
+
+ 
+
+  <runtime>
+
+ 
+
+       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+
+ 
+
+            <dependentAssembly>
+
+ 
+
+                 <assemblyIdentity name="System.Web" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+
+ 
+
+                 <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+
+ 
+
+            </dependentAssembly>
+
+ 
+
+            <dependentAssembly>
+
+ 
+
+                 <assemblyIdentity name="System.Xml" publicKeyToken="b77a5c561934e089" culture="neutral" />
+
+ 
+
+                 <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+
+ 
+
+            </dependentAssembly>
+
+ 
+
+            <dependentAssembly>
+
+ 
+
+                 <assemblyIdentity name="System" publicKeyToken="b77a5c561934e089" culture="neutral" />
+
+ 
+
+                 <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+
+ 
+
+            </dependentAssembly>
+
+ 
+
+            <dependentAssembly>
+
+ 
+
+                 <assemblyIdentity name="System.Configuration" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+
+ 
+
+                 <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+
+ 
+
+            </dependentAssembly>
+
+ 
+
+            <dependentAssembly>
+
+ 
+
+                 <assemblyIdentity name="System.Data" publicKeyToken="b77a5c561934e089" culture="neutral" />
+
+ 
+
+                 <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+
+ 
+
+            </dependentAssembly>
+
+ 
+
+            <dependentAssembly>
+
+ 
+
+                 <assemblyIdentity name="System.Windows.Forms" publicKeyToken="b77a5c561934e089" culture="neutral" />
+
+ 
+
+                 <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+
+ 
+
+            </dependentAssembly>
+
+ 
+
+            <dependentAssembly>
+
+ 
+
+                 <assemblyIdentity name="System.Core" publicKeyToken="b77a5c561934e089" culture="neutral" />
+
+ 
+
+                 <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+
+ 
+
+            </dependentAssembly>
+
+ 
+
+            <dependentAssembly>
+
+ 
+
+                 <assemblyIdentity name="System.Xml.Linq" publicKeyToken="b77a5c561934e089" culture="neutral" />
+
+ 
+
+                 <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+
+ 
+
+            </dependentAssembly>
+
+ 
+
+            <dependentAssembly>
+
+ 
+
+                 <assemblyIdentity name="System.Runtime.Serialization" publicKeyToken="b77a5c561934e089" culture="neutral" />
+
+ 
+
+                 <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+
+ 
+
+            </dependentAssembly>
+
+ 
+
+       </assemblyBinding>
+
+ 
+
+  </runtime>
+
+</configuration>

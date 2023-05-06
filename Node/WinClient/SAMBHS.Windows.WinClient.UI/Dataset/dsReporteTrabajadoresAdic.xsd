@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteTrabajadoresAdic" targetNamespace="http://tempuri.org/dsReporteTrabajadoresAdic.xsd" xmlns:mstns="http://tempuri.org/dsReporteTrabajadoresAdic.xsd" xmlns="http://tempuri.org/dsReporteTrabajadoresAdic.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteTrabajadoresAdic" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteTrabajadoresAdic" msprop:Generator_UserDSName="dsReporteTrabajadoresAdic">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteTrabajadoresAdic" msprop:Generator_TableClassName="dsReporteTrabajadoresAdicDataTable" msprop:Generator_TableVarName="tabledsReporteTrabajadoresAdic" msprop:Generator_TablePropName="_dsReporteTrabajadoresAdic" msprop:Generator_RowDeletingName="dsReporteTrabajadoresAdicRowDeleting" msprop:Generator_RowChangingName="dsReporteTrabajadoresAdicRowChanging" msprop:Generator_RowEvHandlerName="dsReporteTrabajadoresAdicRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteTrabajadoresAdicRowDeleted" msprop:Generator_UserTableName="dsReporteTrabajadoresAdic" msprop:Generator_RowChangedName="dsReporteTrabajadoresAdicRowChanged" msprop:Generator_RowEvArgName="dsReporteTrabajadoresAdicRowChangeEvent" msprop:Generator_RowClassName="dsReporteTrabajadoresAdicRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="v_Codigo" msprop:Generator_ColumnVarNameInTable="columnv_Codigo" msprop:Generator_ColumnPropNameInRow="v_Codigo" msprop:Generator_ColumnPropNameInTable="v_CodigoColumn" msprop:Generator_UserColumnName="v_Codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="NombreTrabajador" msprop:Generator_ColumnVarNameInTable="columnNombreTrabajador" msprop:Generator_ColumnPropNameInRow="NombreTrabajador" msprop:Generator_ColumnPropNameInTable="NombreTrabajadorColumn" msprop:Generator_UserColumnName="NombreTrabajador" type="xs:string" minOccurs="0" />
+              <xs:element name="v_NroDocIdentificacion" msprop:Generator_ColumnVarNameInTable="columnv_NroDocIdentificacion" msprop:Generator_ColumnPropNameInRow="v_NroDocIdentificacion" msprop:Generator_ColumnPropNameInTable="v_NroDocIdentificacionColumn" msprop:Generator_UserColumnName="v_NroDocIdentificacion" type="xs:string" minOccurs="0" />
+              <xs:element name="ruc" msprop:Generator_ColumnVarNameInTable="columnruc" msprop:Generator_ColumnPropNameInRow="ruc" msprop:Generator_ColumnPropNameInTable="rucColumn" msprop:Generator_UserColumnName="ruc" type="xs:string" minOccurs="0" />
+              <xs:element name="afp" msprop:Generator_ColumnVarNameInTable="columnafp" msprop:Generator_ColumnPropNameInRow="afp" msprop:Generator_ColumnPropNameInTable="afpColumn" msprop:Generator_UserColumnName="afp" type="xs:string" minOccurs="0" />
+              <xs:element name="Ccosto" msprop:Generator_ColumnVarNameInTable="columnCcosto" msprop:Generator_ColumnPropNameInRow="Ccosto" msprop:Generator_ColumnPropNameInTable="CcostoColumn" msprop:Generator_UserColumnName="Ccosto" type="xs:string" minOccurs="0" />
+              <xs:element name="NroContrato" msprop:Generator_ColumnVarNameInTable="columnNroContrato" msprop:Generator_ColumnPropNameInRow="NroContrato" msprop:Generator_ColumnPropNameInTable="NroContratoColumn" msprop:Generator_UserColumnName="NroContrato" type="xs:string" minOccurs="0" />
+              <xs:element name="Ingresos" msprop:Generator_ColumnVarNameInTable="columnIngresos" msprop:Generator_ColumnPropNameInRow="Ingresos" msprop:Generator_ColumnPropNameInTable="IngresosColumn" msprop:Generator_UserColumnName="Ingresos" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportePlanillaEssalud" targetNamespace="http://tempuri.org/dsReportePlanillaEssalud.xsd" xmlns:mstns="http://tempuri.org/dsReportePlanillaEssalud.xsd" xmlns="http://tempuri.org/dsReportePlanillaEssalud.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportePlanillaEssalud" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportePlanillaEssalud" msprop:Generator_UserDSName="dsReportePlanillaEssalud">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReportePlanillaEssalud" msprop:Generator_TableClassName="dsReportePlanillaEssaludDataTable" msprop:Generator_TableVarName="tabledsReportePlanillaEssalud" msprop:Generator_TablePropName="_dsReportePlanillaEssalud" msprop:Generator_RowDeletingName="dsReportePlanillaEssaludRowDeleting" msprop:Generator_RowChangingName="dsReportePlanillaEssaludRowChanging" msprop:Generator_RowEvHandlerName="dsReportePlanillaEssaludRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReportePlanillaEssaludRowDeleted" msprop:Generator_UserTableName="dsReportePlanillaEssalud" msprop:Generator_RowChangedName="dsReportePlanillaEssaludRowChanged" msprop:Generator_RowEvArgName="dsReportePlanillaEssaludRowChangeEvent" msprop:Generator_RowClassName="dsReportePlanillaEssaludRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Trabajador" msprop:Generator_ColumnVarNameInTable="columnTrabajador" msprop:Generator_ColumnPropNameInRow="Trabajador" msprop:Generator_ColumnPropNameInTable="TrabajadorColumn" msprop:Generator_UserColumnName="Trabajador" type="xs:string" minOccurs="0" />
+              <xs:element name="NroEssalud" msprop:Generator_ColumnVarNameInTable="columnNroEssalud" msprop:Generator_ColumnPropNameInRow="NroEssalud" msprop:Generator_ColumnPropNameInTable="NroEssaludColumn" msprop:Generator_UserColumnName="NroEssalud" type="xs:string" minOccurs="0" />
+              <xs:element name="RemuneracionAsegurable" msprop:Generator_ColumnVarNameInTable="columnRemuneracionAsegurable" msprop:Generator_ColumnPropNameInRow="RemuneracionAsegurable" msprop:Generator_ColumnPropNameInTable="RemuneracionAsegurableColumn" msprop:Generator_UserColumnName="RemuneracionAsegurable" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EsSaludVida" msprop:Generator_ColumnVarNameInTable="columnEsSaludVida" msprop:Generator_ColumnPropNameInRow="EsSaludVida" msprop:Generator_ColumnPropNameInTable="EsSaludVidaColumn" msprop:Generator_UserColumnName="EsSaludVida" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EsSalud" msprop:Generator_ColumnVarNameInTable="columnEsSalud" msprop:Generator_ColumnPropNameInRow="EsSalud" msprop:Generator_ColumnPropNameInTable="EsSaludColumn" msprop:Generator_UserColumnName="EsSalud" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

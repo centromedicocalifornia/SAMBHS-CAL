@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteBalanceComprobacion" targetNamespace="http://tempuri.org/dsReporteBalanceComprobacion.xsd" xmlns:mstns="http://tempuri.org/dsReporteBalanceComprobacion.xsd" xmlns="http://tempuri.org/dsReporteBalanceComprobacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteBalanceComprobacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteBalanceComprobacion" msprop:Generator_UserDSName="dsReporteBalanceComprobacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteBalanceComprobacion" msprop:Generator_TableClassName="dsReporteBalanceComprobacionDataTable" msprop:Generator_TableVarName="tabledsReporteBalanceComprobacion" msprop:Generator_RowChangedName="dsReporteBalanceComprobacionRowChanged" msprop:Generator_TablePropName="_dsReporteBalanceComprobacion" msprop:Generator_RowDeletingName="dsReporteBalanceComprobacionRowDeleting" msprop:Generator_RowChangingName="dsReporteBalanceComprobacionRowChanging" msprop:Generator_RowEvHandlerName="dsReporteBalanceComprobacionRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteBalanceComprobacionRowDeleted" msprop:Generator_RowClassName="dsReporteBalanceComprobacionRow" msprop:Generator_UserTableName="dsReporteBalanceComprobacion" msprop:Generator_RowEvArgName="dsReporteBalanceComprobacionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pstrCuenta" msprop:Generator_ColumnVarNameInTable="columnpstrCuenta" msprop:Generator_ColumnPropNameInRow="pstrCuenta" msprop:Generator_ColumnPropNameInTable="pstrCuentaColumn" msprop:Generator_UserColumnName="pstrCuenta" type="xs:string" minOccurs="0" />
+              <xs:element name="pstrDenominacion" msprop:Generator_ColumnVarNameInTable="columnpstrDenominacion" msprop:Generator_ColumnPropNameInRow="pstrDenominacion" msprop:Generator_ColumnPropNameInTable="pstrDenominacionColumn" msprop:Generator_UserColumnName="pstrDenominacion" type="xs:string" minOccurs="0" />
+              <xs:element name="imputable" msprop:Generator_ColumnVarNameInTable="columnimputable" msprop:Generator_ColumnPropNameInRow="imputable" msprop:Generator_ColumnPropNameInTable="imputableColumn" msprop:Generator_UserColumnName="imputable" type="xs:short" minOccurs="0" />
+              <xs:element name="debeApertura" msprop:Generator_ColumnVarNameInTable="columndebeApertura" msprop:Generator_ColumnPropNameInRow="debeApertura" msprop:Generator_ColumnPropNameInTable="debeAperturaColumn" msprop:Generator_UserColumnName="debeApertura" type="xs:decimal" minOccurs="0" />
+              <xs:element name="haberApertura" msprop:Generator_ColumnVarNameInTable="columnhaberApertura" msprop:Generator_ColumnPropNameInRow="haberApertura" msprop:Generator_ColumnPropNameInTable="haberAperturaColumn" msprop:Generator_UserColumnName="haberApertura" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Grupo2" msprop:Generator_ColumnVarNameInTable="columnGrupo2" msprop:Generator_ColumnPropNameInRow="Grupo2" msprop:Generator_ColumnPropNameInTable="Grupo2Column" msprop:Generator_UserColumnName="Grupo2" type="xs:string" minOccurs="0" />
+              <xs:element name="Grupo1" msprop:Generator_ColumnVarNameInTable="columnGrupo1" msprop:Generator_ColumnPropNameInRow="Grupo1" msprop:Generator_ColumnPropNameInTable="Grupo1Column" msprop:Generator_UserColumnName="Grupo1" type="xs:string" minOccurs="0" />
+              <xs:element name="debeSumaAcumulada" msprop:Generator_ColumnVarNameInTable="columndebeSumaAcumulada" msprop:Generator_ColumnPropNameInRow="debeSumaAcumulada" msprop:Generator_ColumnPropNameInTable="debeSumaAcumuladaColumn" msprop:Generator_UserColumnName="debeSumaAcumulada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="haberSumaAcumulada" msprop:Generator_ColumnVarNameInTable="columnhaberSumaAcumulada" msprop:Generator_ColumnPropNameInRow="haberSumaAcumulada" msprop:Generator_ColumnPropNameInTable="haberSumaAcumuladaColumn" msprop:Generator_UserColumnName="haberSumaAcumulada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="deudor" msprop:Generator_ColumnVarNameInTable="columndeudor" msprop:Generator_ColumnPropNameInRow="deudor" msprop:Generator_ColumnPropNameInTable="deudorColumn" msprop:Generator_UserColumnName="deudor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="acreedor" msprop:Generator_ColumnVarNameInTable="columnacreedor" msprop:Generator_ColumnPropNameInRow="acreedor" msprop:Generator_ColumnPropNameInTable="acreedorColumn" msprop:Generator_UserColumnName="acreedor" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsEmpresa" msprop:Generator_TableClassName="dsEmpresaDataTable" msprop:Generator_TableVarName="tabledsEmpresa" msprop:Generator_RowChangedName="dsEmpresaRowChanged" msprop:Generator_TablePropName="dsEmpresa" msprop:Generator_RowDeletingName="dsEmpresaRowDeleting" msprop:Generator_RowChangingName="dsEmpresaRowChanging" msprop:Generator_RowEvHandlerName="dsEmpresaRowChangeEventHandler" msprop:Generator_RowDeletedName="dsEmpresaRowDeleted" msprop:Generator_RowClassName="dsEmpresaRow" msprop:Generator_UserTableName="dsEmpresa" msprop:Generator_RowEvArgName="dsEmpresaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnNombreEmpresaPropietaria" msprop:Generator_ColumnPropNameInRow="NombreEmpresaPropietaria" msprop:Generator_ColumnPropNameInTable="NombreEmpresaPropietariaColumn" msprop:Generator_UserColumnName="NombreEmpresaPropietaria" type="xs:string" minOccurs="0" />
+              <xs:element name="RucEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnRucEmpresaPropietaria" msprop:Generator_ColumnPropNameInRow="RucEmpresaPropietaria" msprop:Generator_ColumnPropNameInTable="RucEmpresaPropietariaColumn" msprop:Generator_UserColumnName="RucEmpresaPropietaria" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

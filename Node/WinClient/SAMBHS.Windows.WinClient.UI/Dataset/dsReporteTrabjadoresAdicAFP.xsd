@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteTrabjadoresAdicAFP" targetNamespace="http://tempuri.org/dsReporteTrabjadoresAdicAFP.xsd" xmlns:mstns="http://tempuri.org/dsReporteTrabjadoresAdicAFP.xsd" xmlns="http://tempuri.org/dsReporteTrabjadoresAdicAFP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteTrabjadoresAdicAFP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteTrabjadoresAdicAFP" msprop:Generator_UserDSName="dsReporteTrabjadoresAdicAFP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteTrabjadoresAdicAFP" msprop:Generator_TableClassName="dsReporteTrabjadoresAdicAFPDataTable" msprop:Generator_TableVarName="tabledsReporteTrabjadoresAdicAFP" msprop:Generator_TablePropName="_dsReporteTrabjadoresAdicAFP" msprop:Generator_RowDeletingName="dsReporteTrabjadoresAdicAFPRowDeleting" msprop:Generator_RowChangingName="dsReporteTrabjadoresAdicAFPRowChanging" msprop:Generator_RowEvHandlerName="dsReporteTrabjadoresAdicAFPRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteTrabjadoresAdicAFPRowDeleted" msprop:Generator_UserTableName="dsReporteTrabjadoresAdicAFP" msprop:Generator_RowChangedName="dsReporteTrabjadoresAdicAFPRowChanged" msprop:Generator_RowEvArgName="dsReporteTrabjadoresAdicAFPRowChangeEvent" msprop:Generator_RowClassName="dsReporteTrabjadoresAdicAFPRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Trabajador" msprop:Generator_ColumnVarNameInTable="columnTrabajador" msprop:Generator_ColumnPropNameInRow="Trabajador" msprop:Generator_ColumnPropNameInTable="TrabajadorColumn" msprop:Generator_UserColumnName="Trabajador" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaAfiliacion" msprop:Generator_ColumnVarNameInTable="columnFechaAfiliacion" msprop:Generator_ColumnPropNameInRow="FechaAfiliacion" msprop:Generator_ColumnPropNameInTable="FechaAfiliacionColumn" msprop:Generator_UserColumnName="FechaAfiliacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NroCuenta" msprop:Generator_ColumnVarNameInTable="columnNroCuenta" msprop:Generator_ColumnPropNameInRow="NroCuenta" msprop:Generator_ColumnPropNameInTable="NroCuentaColumn" msprop:Generator_UserColumnName="NroCuenta" type="xs:string" minOccurs="0" />
+              <xs:element name="NroCussp" msprop:Generator_ColumnVarNameInTable="columnNroCussp" msprop:Generator_ColumnPropNameInRow="NroCussp" msprop:Generator_ColumnPropNameInTable="NroCusspColumn" msprop:Generator_UserColumnName="NroCussp" type="xs:string" minOccurs="0" />
+              <xs:element name="afp" msprop:Generator_ColumnVarNameInTable="columnafp" msprop:Generator_ColumnPropNameInRow="afp" msprop:Generator_ColumnPropNameInTable="afpColumn" msprop:Generator_UserColumnName="afp" type="xs:string" minOccurs="0" />
+              <xs:element name="regimenactual" msprop:Generator_ColumnVarNameInTable="columnregimenactual" msprop:Generator_ColumnPropNameInRow="regimenactual" msprop:Generator_ColumnPropNameInTable="regimenactualColumn" msprop:Generator_UserColumnName="regimenactual" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="SAMBHS.Windows.WinServer.UI.UserConfig" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+      <section name="SAMBHS.Windows.WinClient.UI.UserConfig" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+
+  <connectionStrings>
+    <clear />
+    <add name="SAMBHSConnectionString" connectionString="metadata=res://SAMBHS.Common.DataModel.MSSQL/DMMSQL.csdl|res://SAMBHS.Common.DataModel.MSSQL/DMMSQL.ssdl|res://SAMBHS.Common.DataModel.MSSQL/DMMSQL.msl;provider=System.Data.SqlClient;provider connection string=&quot;User Id=postgres;Host=localhost;Database=TIS_INTEGRADO&quot;"
+      providerName="System.Data.EntityClient" />
+    <add name="SAMBHSConnectionStringWin" connectionString="metadata=res://SAMBHS.Common.DataModel.MSSQLWIN/DMMSQLWIN.csdl|res://SAMBHS.Common.DataModel.MSSQLWIN/DMMSQLWIN.ssdl|res://SAMBHS.Common.DataModel.MSSQLWIN/DMMSQLWIN.msl;provider=System.Data.SqlClient;provider connection string=&quot;User Id=postgres;Host=localhost;Database=10096713873&quot;"
+      providerName="System.Data.EntityClient" />
+  </connectionStrings>
+
+  <appSettings>
+    <add key="EmpresaPredeterminada" value="" />
+    <add key="NodeId" value="2" />
+    <add key="AccessTime" value="10000" />
+    <add key="EP2" value="29" />
+    <add key="AP29" value="1" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+  </appSettings>
+  <startup useLegacyV2RuntimeActivationPolicy="true">
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0" />
+  </startup>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
+  <system.data>
+    <DbProviderFactories>
+      <remove invariant="Devart.Data.PostgreSql" />
+      <add name="dotConnect for PostgreSQL" invariant="Devart.Data.PostgreSql" description="Devart dotConnect for PostgreSQL" type="Devart.Data.PostgreSql.PgSqlProviderFactory, Devart.Data.PostgreSql, Version=6.8.333.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
+    </DbProviderFactories>
+  </system.data>
+  <system.net>
+    <settings>
+      <httpWebRequest useUnsafeHeaderParsing="true" />
+    </settings>
+  </system.net>
+  <userSettings>
+    <SAMBHS.Windows.WinServer.UI.UserConfig>
+      <setting name="appEstablecimientoPredeterminado" serializeAs="String">
+        <value>-1</value>
+      </setting>
+      <setting name="appAlmacenPredeterminado" serializeAs="String">
+        <value>-1</value>
+      </setting>
+      <setting name="csUsuario" serializeAs="String">
+        <value>sa</value>
+      </setting>
+      <setting name="csServidor" serializeAs="String">
+        <value>sistema4-pc</value>
+      </setting>
+      <setting name="csPassword" serializeAs="String">
+        <value>123456</value>
+      </setting>
+      <setting name="csTipoMotorBD" serializeAs="String">
+        <value>MSSQLServer</value>
+      </setting>
+      <setting name="appBinPostgresLocation" serializeAs="String">
+        <value>C:\Program Files (x86)\PostgreSQL\8.4\bin\</value>
+      </setting>
+      <setting name="appRutaBackupPredeterminada" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="appSistemaMultiEmpresas" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="appRutaCrearBackupPredeterminada" serializeAs="String">
+        <value />
+      </setting>
+    </SAMBHS.Windows.WinServer.UI.UserConfig>
+    <SAMBHS.Windows.WinClient.UI.UserConfig>
+      <setting name="appEstablecimientoPredeterminado" serializeAs="String">
+        <value>-1</value>
+      </setting>
+      <setting name="appAlmacenPredeterminado" serializeAs="String">
+        <value>-1</value>
+      </setting>
+      <setting name="csUsuario" serializeAs="String">
+        <value>sa</value>
+      </setting>
+      <setting name="csServidor" serializeAs="String">
+        <value>sistema4-pc</value>
+      </setting>
+      <setting name="csPassword" serializeAs="String">
+        <value>123456</value>
+      </setting>
+      <setting name="csTipoMotorBD" serializeAs="String">
+        <value>MSSQLServer</value>
+      </setting>
+    </SAMBHS.Windows.WinClient.UI.UserConfig>
+  </userSettings>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Xml" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Configuration" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Drawing" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Data" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Windows.Forms" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.Serialization.Formatters.Soap" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Core" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Xml.Linq" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.Serialization" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>

@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F195144-A2AD-42D1-B3CE-F1ACFE7DBC8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAMBHS.Common.DataModel</RootNamespace>
+    <AssemblyName>SAMBHS.Common.DataModel.MSSQLWIN</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Devart.Data">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Design">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Linq">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql.Entity">
+      <HintPath>..\..\..\Resource\SAMBHS.Common.Resource\Librerias\Devart.Data.PostgreSql.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DMMSQLWIN1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMMSQLWIN.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedAssemblers\activofijodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\adelantoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\administracionconceptosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\agenciatransporteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\almacenAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\asientocontableAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\avalclienteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\carteraclienteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\cierremensualAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\clienteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\clientedireccionesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\cobranzaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\cobranzapendienteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\colorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\compraAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\compradetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\conceptoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\condicionpagoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\configuracionempresaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\configuracionfacturacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\cuentasinventariosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\datahierarchyAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\destinoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\diarioAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\diariodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\documentoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\documentoretencionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\documentoretenciondetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\activofijodepreciacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\cobranzadetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\activofijoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\cobranzaletraspagarpendienteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\contratodetalletrabajadorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\contratotrabajadorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\derechohabientetrabajadorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\areaslaboratrabajadorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\dbconfigAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\documentoretencionhomologacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\documentorolAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\cajachicaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\conceptoscajachicaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\cajachicadetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\configuracionbalancesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\activofijoanexoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ordenproducciondocumentosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ventaimportaciondataconfigAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ordenproduccionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\flujoefectivoconceptosdetallesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\guiaremisionhomologacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaasistenciaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planilladatoslaborablesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planilladiasnolaborablesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillasemanasperiodoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaturnosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaturnosdetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\relacionusuarioclienteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\flujoefectivocabeceraAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\relaciontributosexportacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\productorecetasalidaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\flujoefectivoasientoajusteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\flujoefectivoasientoajustedetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\flujoefectivoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\flujoefectivoconceptosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\flujoefectivoconfiguracionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillavaloresproyeccionquintaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaafectacionesgeneralesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillavaloresrentaquintaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillavaloresuitAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ventadetalleanexoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\letrasdescuentomantenimientoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\lineacuentaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\movimientodetallerecetafinalAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\productoinventarioAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\productoiscAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\productorecetaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\nbs_ventakardexAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\nbs_formatounicofacturaciondetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\nbs_formatounicofacturacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\nbs_ordentrabajodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\nbs_ordentrabajoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillarelacioningresosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillarelacionesnetopagarAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillarelacionesdescuentosafpAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillarelacionesaportacionesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillarelaciondescuentosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillavariablesaportacionesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillacalculoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaconceptosadministracionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaafecleyestrabAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaafecleyesempAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\liquidacioncompradetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\liquidacioncompraAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillavariablestrabajadorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillavariablesingresosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillavariableshorasextrasAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillavariablesdescuentosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillavariablesdiasnolabsubsidiadosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillanumeracionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaafecrentquintaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaafechrsexttardAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaafecgratiAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaafecctsAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaafecafpAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\trabajadorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\regimenpensionariotrabajadorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaporcleyestrabajadorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaporcleyesempleadorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaporcafpAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\planillaconceptosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\letraspagardetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\letraspagarcanjeAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\letraspagarAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\pagopendienteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\pagodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\pagoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\productoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\movimientoestadobancarioAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ventadetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ventaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\vendedorAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\transportistaunidadtransporteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\transportistachoferAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\transportistaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\tesoreriadetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\tesoreriaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\temporalventadetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\tallaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\separacionproductoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\secuentialAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\saldoscontablesAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\saldomensualbancosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\saldoestadobancarioAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\relacionformapagodocumentoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\recibohonorariodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\recibohonorarioAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\productodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\productoalmacenAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\pendientesconciliacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\pendientecobrardetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\pendientecobrarAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\pedidodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\pedidoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ordendecompradetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ordendecompraAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\movimientodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\movimientoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\modeloAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\marcaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\loghistorialAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\logAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\listapreciodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\listaprecioAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\lineacreditoempresaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\lineacreditoclienteAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\lineaAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\letrasmantenimientodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\letrasmantenimientoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\letrasdetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\letrascanjeAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\letrasAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\importaciondetalleproductoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\importaciondetallegastosAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\importaciondetallefobAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\importacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\guiaremisiondetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\guiaremisioncompradetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\guiaremisioncompraAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\guiaremisionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\gastosimportacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\establecimientodetalleAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\establecimientoalmacenAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\establecimientoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ventaelectronicasecuentialAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ventahomolagacionAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\ventaresumenhomologacionAssembler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BusinessEntity\SAMBHS.Common.BE\SAMBHS.Common.BE.csproj">
+      <Project>{04ACEEEE-BA05-46B7-A0C2-FD2B6F2E04B8}</Project>
+      <Name>SAMBHS.Common.BE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DMMSQLWIN.Diagram1.view">
+      <DependentUpon>DMMSQLWIN.edmx</DependentUpon>
+    </None>
+    <DevartEntityDeploy Include="DMMSQLWIN.edmx">
+      <Generator>DevartEfGenerator</Generator>
+      <LastGenOutput>DMMSQLWIN1.Designer.cs</LastGenOutput>
+    </DevartEntityDeploy>
+    <None Include="DMMSQLWIN.edps">
+      <DependentUpon>DMMSQLWIN.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Devart\v3.5\Devart.Data.Entity.targets" Condition="'$(CiBuild)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

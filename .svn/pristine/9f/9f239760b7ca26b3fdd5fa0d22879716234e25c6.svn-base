@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportePlanillaConceptos" targetNamespace="http://tempuri.org/dsReportePlanillaConceptos.xsd" xmlns:mstns="http://tempuri.org/dsReportePlanillaConceptos.xsd" xmlns="http://tempuri.org/dsReportePlanillaConceptos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportePlanillaConceptos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportePlanillaConceptos" msprop:Generator_UserDSName="dsReportePlanillaConceptos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReportePlanillaConceptos" msprop:Generator_TableClassName="dsReportePlanillaConceptosDataTable" msprop:Generator_TableVarName="tabledsReportePlanillaConceptos" msprop:Generator_TablePropName="_dsReportePlanillaConceptos" msprop:Generator_RowDeletingName="dsReportePlanillaConceptosRowDeleting" msprop:Generator_RowChangingName="dsReportePlanillaConceptosRowChanging" msprop:Generator_RowEvHandlerName="dsReportePlanillaConceptosRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReportePlanillaConceptosRowDeleted" msprop:Generator_UserTableName="dsReportePlanillaConceptos" msprop:Generator_RowChangedName="dsReportePlanillaConceptosRowChanged" msprop:Generator_RowEvArgName="dsReportePlanillaConceptosRowChangeEvent" msprop:Generator_RowClassName="dsReportePlanillaConceptosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="i_IdTipoConcepto" msprop:Generator_ColumnVarNameInTable="columni_IdTipoConcepto" msprop:Generator_ColumnPropNameInRow="i_IdTipoConcepto" msprop:Generator_ColumnPropNameInTable="i_IdTipoConceptoColumn" msprop:Generator_UserColumnName="i_IdTipoConcepto" type="xs:short" minOccurs="0" />
+              <xs:element name="v_Codigo" msprop:Generator_ColumnVarNameInTable="columnv_Codigo" msprop:Generator_ColumnPropNameInRow="v_Codigo" msprop:Generator_ColumnPropNameInTable="v_CodigoColumn" msprop:Generator_UserColumnName="v_Codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoPlanilla" msprop:Generator_ColumnVarNameInTable="columnTipoPlanilla" msprop:Generator_ColumnPropNameInRow="TipoPlanilla" msprop:Generator_ColumnPropNameInTable="TipoPlanillaColumn" msprop:Generator_UserColumnName="TipoPlanilla" type="xs:string" minOccurs="0" />
+              <xs:element name="i_IdTipoPlanilla" msprop:Generator_ColumnVarNameInTable="columni_IdTipoPlanilla" msprop:Generator_ColumnPropNameInRow="i_IdTipoPlanilla" msprop:Generator_ColumnPropNameInTable="i_IdTipoPlanillaColumn" msprop:Generator_UserColumnName="i_IdTipoPlanilla" type="xs:short" minOccurs="0" />
+              <xs:element name="v_Nombre" msprop:Generator_ColumnVarNameInTable="columnv_Nombre" msprop:Generator_ColumnPropNameInRow="v_Nombre" msprop:Generator_ColumnPropNameInTable="v_NombreColumn" msprop:Generator_UserColumnName="v_Nombre" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

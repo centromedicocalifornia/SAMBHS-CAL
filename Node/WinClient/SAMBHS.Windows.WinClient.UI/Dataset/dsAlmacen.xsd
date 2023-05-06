@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAlmacen" targetNamespace="http://tempuri.org/dsAlmacen.xsd" xmlns:mstns="http://tempuri.org/dsAlmacen.xsd" xmlns="http://tempuri.org/dsAlmacen.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAlmacen" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsAlmacen" msprop:Generator_UserDSName="dsAlmacen">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsAlmacen" msprop:Generator_TableClassName="dsAlmacenDataTable" msprop:Generator_TableVarName="tabledsAlmacen" msprop:Generator_TablePropName="_dsAlmacen" msprop:Generator_RowDeletingName="dsAlmacenRowDeleting" msprop:Generator_RowChangingName="dsAlmacenRowChanging" msprop:Generator_RowEvHandlerName="dsAlmacenRowChangeEventHandler" msprop:Generator_RowDeletedName="dsAlmacenRowDeleted" msprop:Generator_UserTableName="dsAlmacen" msprop:Generator_RowChangedName="dsAlmacenRowChanged" msprop:Generator_RowEvArgName="dsAlmacenRowChangeEvent" msprop:Generator_RowClassName="dsAlmacenRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="v_Nombre" msdata:Caption="NombreEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnv_Nombre" msprop:Generator_ColumnPropNameInRow="v_Nombre" msprop:Generator_ColumnPropNameInTable="v_NombreColumn" msprop:Generator_UserColumnName="v_Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="v_Direccion" msdata:Caption="RucEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnv_Direccion" msprop:Generator_ColumnPropNameInRow="v_Direccion" msprop:Generator_ColumnPropNameInTable="v_DireccionColumn" msprop:Generator_UserColumnName="v_Direccion" type="xs:string" minOccurs="0" />
+              <xs:element name="v_Telefono" msprop:Generator_ColumnVarNameInTable="columnv_Telefono" msprop:Generator_ColumnPropNameInRow="v_Telefono" msprop:Generator_ColumnPropNameInTable="v_TelefonoColumn" msprop:Generator_UserColumnName="v_Telefono" type="xs:string" minOccurs="0" />
+              <xs:element name="v_NombreComercial" msprop:Generator_ColumnVarNameInTable="columnv_NombreComercial" msprop:Generator_ColumnPropNameInRow="v_NombreComercial" msprop:Generator_ColumnPropNameInTable="v_NombreComercialColumn" msprop:Generator_UserColumnName="v_NombreComercial" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,580 @@
+﻿namespace SAMBHS.Windows.WinClient.UI.Migraciones
+{
+    partial class frmMigraciones
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nuevo", 0);
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
+            this.grdData = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.btnImportar = new Infragistics.Win.Misc.UltraButton();
+            this.ultraDataSource1 = new Infragistics.Win.UltraWinDataSource.UltraDataSource(this.components);
+            this.gpDetalle = new Infragistics.Win.Misc.UltraGroupBox();
+            this.lblContadorFilas = new Infragistics.Win.Misc.UltraLabel();
+            this.cboCodigo = new System.Windows.Forms.ComboBox();
+            this.ultraGroupBox2 = new Infragistics.Win.Misc.UltraGroupBox();
+            this.ultraButton2 = new Infragistics.Win.Misc.UltraButton();
+            this.ultraLabel3 = new Infragistics.Win.Misc.UltraLabel();
+            this.cboUnidadMedida = new System.Windows.Forms.ComboBox();
+            this.ultraLabel4 = new Infragistics.Win.Misc.UltraLabel();
+            this.cboCosto = new System.Windows.Forms.ComboBox();
+            this.ultraLabel2 = new Infragistics.Win.Misc.UltraLabel();
+            this.cboDescripcion = new System.Windows.Forms.ComboBox();
+            this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
+            this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
+            this.ultraLabel6 = new Infragistics.Win.Misc.UltraLabel();
+            this.cboLinea = new System.Windows.Forms.ComboBox();
+            this.ultraLabel7 = new Infragistics.Win.Misc.UltraLabel();
+            this.cboTipoProducto = new System.Windows.Forms.ComboBox();
+            this.ultraGroupBox3 = new Infragistics.Win.Misc.UltraGroupBox();
+            this.ultraButton3 = new Infragistics.Win.Misc.UltraButton();
+            this.label18 = new Infragistics.Win.Misc.UltraLabel();
+            this.txtDetCodServicios = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
+            this.uvDatos = new Infragistics.Win.Misc.UltraValidator(this.components);
+            this.ultraExpandableGroupBox1 = new Infragistics.Win.Misc.UltraExpandableGroupBox();
+            this.ultraExpandableGroupBoxPanel1 = new Infragistics.Win.Misc.UltraExpandableGroupBoxPanel();
+            this.ultraButton5 = new Infragistics.Win.Misc.UltraButton();
+            this.ultraButton4 = new Infragistics.Win.Misc.UltraButton();
+            this.ultraFormManager1 = new Infragistics.Win.UltraWinForm.UltraFormManager(this.components);
+            this.frmMigraciones_Fill_Panel = new Infragistics.Win.Misc.UltraPanel();
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
+            this._frmMigraciones_UltraFormManager_Dock_Area_Top = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gpDetalle)).BeginInit();
+            this.gpDetalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox2)).BeginInit();
+            this.ultraGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox3)).BeginInit();
+            this.ultraGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetCodServicios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraExpandableGroupBox1)).BeginInit();
+            this.ultraExpandableGroupBox1.SuspendLayout();
+            this.ultraExpandableGroupBoxPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraFormManager1)).BeginInit();
+            this.frmMigraciones_Fill_Panel.ClientArea.SuspendLayout();
+            this.frmMigraciones_Fill_Panel.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // grdData
+            // 
+            this.grdData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            ultraGridColumn2.Header.VisiblePosition = 0;
+            ultraGridColumn2.Hidden = true;
+            ultraGridColumn2.Width = 61;
+            ultraGridBand1.Columns.AddRange(new object[] {
+            ultraGridColumn2});
+            this.grdData.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
+            this.grdData.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
+            this.grdData.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
+            this.grdData.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.grdData.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
+            this.grdData.DisplayLayout.Override.ColumnAutoSizeMode = Infragistics.Win.UltraWinGrid.ColumnAutoSizeMode.AllRowsInBand;
+            this.grdData.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            this.grdData.DisplayLayout.Override.SelectTypeCell = Infragistics.Win.UltraWinGrid.SelectType.None;
+            this.grdData.DisplayLayout.Override.SelectTypeCol = Infragistics.Win.UltraWinGrid.SelectType.None;
+            this.grdData.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.grdData.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdData.DisplayLayout.TabNavigation = Infragistics.Win.UltraWinGrid.TabNavigation.NextControl;
+            this.grdData.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
+            this.grdData.Location = new System.Drawing.Point(6, 35);
+            this.grdData.Name = "grdData";
+            this.grdData.Size = new System.Drawing.Size(803, 486);
+            this.grdData.TabIndex = 8;
+            this.grdData.InitializeRow += new Infragistics.Win.UltraWinGrid.InitializeRowEventHandler(this.grdData_InitializeRow);
+            // 
+            // btnImportar
+            // 
+            appearance1.Image = global::SAMBHS.Windows.WinClient.UI.Resource.page_excel;
+            this.btnImportar.Appearance = appearance1;
+            this.btnImportar.Location = new System.Drawing.Point(24, 460);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(190, 29);
+            this.btnImportar.TabIndex = 9;
+            this.btnImportar.Text = "Importar Excel";
+            this.btnImportar.Click += new System.EventHandler(this.ultraButton1_Click);
+            // 
+            // gpDetalle
+            // 
+            this.gpDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gpDetalle.Controls.Add(this.lblContadorFilas);
+            this.gpDetalle.Controls.Add(this.grdData);
+            this.gpDetalle.Location = new System.Drawing.Point(286, 0);
+            this.gpDetalle.Name = "gpDetalle";
+            this.gpDetalle.Size = new System.Drawing.Size(815, 527);
+            this.gpDetalle.TabIndex = 11;
+            this.gpDetalle.Text = "Importación desde Excel";
+            this.gpDetalle.UseAppStyling = false;
+            // 
+            // lblContadorFilas
+            // 
+            this.lblContadorFilas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            appearance2.TextHAlignAsString = "Right";
+            appearance2.TextVAlignAsString = "Middle";
+            this.lblContadorFilas.Appearance = appearance2;
+            this.lblContadorFilas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContadorFilas.Location = new System.Drawing.Point(583, 13);
+            this.lblContadorFilas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblContadorFilas.Name = "lblContadorFilas";
+            this.lblContadorFilas.Size = new System.Drawing.Size(226, 19);
+            this.lblContadorFilas.TabIndex = 144;
+            this.lblContadorFilas.Text = "No se ha realizado la importación aún.";
+            // 
+            // cboCodigo
+            // 
+            this.cboCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCodigo.FormattingEnabled = true;
+            this.cboCodigo.Items.AddRange(new object[] {
+            "--Seleccionar--"});
+            this.cboCodigo.Location = new System.Drawing.Point(79, 21);
+            this.cboCodigo.Name = "cboCodigo";
+            this.cboCodigo.Size = new System.Drawing.Size(164, 21);
+            this.cboCodigo.TabIndex = 13;
+            this.uvDatos.GetValidationSettings(this.cboCodigo).Condition = new Infragistics.Win.OperatorCondition(Infragistics.Win.ConditionOperator.NotEquals, "--Seleccionar--", true, typeof(string));
+            this.uvDatos.GetValidationSettings(this.cboCodigo).IsRequired = true;
+            // 
+            // ultraGroupBox2
+            // 
+            this.ultraGroupBox2.Controls.Add(this.ultraButton2);
+            this.ultraGroupBox2.Controls.Add(this.ultraLabel3);
+            this.ultraGroupBox2.Controls.Add(this.cboUnidadMedida);
+            this.ultraGroupBox2.Controls.Add(this.ultraLabel4);
+            this.ultraGroupBox2.Controls.Add(this.cboCosto);
+            this.ultraGroupBox2.Controls.Add(this.ultraLabel2);
+            this.ultraGroupBox2.Controls.Add(this.cboDescripcion);
+            this.ultraGroupBox2.Controls.Add(this.ultraLabel1);
+            this.ultraGroupBox2.Controls.Add(this.cboCodigo);
+            this.ultraGroupBox2.Location = new System.Drawing.Point(3, 3);
+            this.ultraGroupBox2.Name = "ultraGroupBox2";
+            this.ultraGroupBox2.Size = new System.Drawing.Size(250, 227);
+            this.ultraGroupBox2.TabIndex = 12;
+            this.ultraGroupBox2.Text = "Columnas Equivalentes";
+            this.ultraGroupBox2.UseAppStyling = false;
+            // 
+            // ultraButton2
+            // 
+            appearance3.Image = global::SAMBHS.Windows.WinClient.UI.Resource.table_refresh;
+            appearance3.ImageHAlign = Infragistics.Win.HAlign.Center;
+            this.ultraButton2.Appearance = appearance3;
+            this.ultraButton2.Location = new System.Drawing.Point(217, 102);
+            this.ultraButton2.Name = "ultraButton2";
+            this.ultraButton2.Size = new System.Drawing.Size(26, 25);
+            this.ultraButton2.TabIndex = 23;
+            this.ultraButton2.Click += new System.EventHandler(this.ultraButton2_Click);
+            // 
+            // ultraLabel3
+            // 
+            this.ultraLabel3.AutoSize = true;
+            this.ultraLabel3.Location = new System.Drawing.Point(6, 108);
+            this.ultraLabel3.Name = "ultraLabel3";
+            this.ultraLabel3.Size = new System.Drawing.Size(28, 14);
+            this.ultraLabel3.TabIndex = 20;
+            this.ultraLabel3.Text = "U.M:";
+            // 
+            // cboUnidadMedida
+            // 
+            this.cboUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUnidadMedida.FormattingEnabled = true;
+            this.cboUnidadMedida.Items.AddRange(new object[] {
+            "--Seleccionar--"});
+            this.cboUnidadMedida.Location = new System.Drawing.Point(79, 105);
+            this.cboUnidadMedida.Name = "cboUnidadMedida";
+            this.cboUnidadMedida.Size = new System.Drawing.Size(132, 21);
+            this.cboUnidadMedida.TabIndex = 19;
+            // 
+            // ultraLabel4
+            // 
+            this.ultraLabel4.AutoSize = true;
+            this.ultraLabel4.Location = new System.Drawing.Point(6, 80);
+            this.ultraLabel4.Name = "ultraLabel4";
+            this.ultraLabel4.Size = new System.Drawing.Size(37, 14);
+            this.ultraLabel4.TabIndex = 18;
+            this.ultraLabel4.Text = "Costo:";
+            // 
+            // cboCosto
+            // 
+            this.cboCosto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCosto.FormattingEnabled = true;
+            this.cboCosto.Items.AddRange(new object[] {
+            "--Seleccionar--"});
+            this.cboCosto.Location = new System.Drawing.Point(79, 77);
+            this.cboCosto.Name = "cboCosto";
+            this.cboCosto.Size = new System.Drawing.Size(164, 21);
+            this.cboCosto.TabIndex = 17;
+            // 
+            // ultraLabel2
+            // 
+            this.ultraLabel2.AutoSize = true;
+            this.ultraLabel2.Location = new System.Drawing.Point(6, 52);
+            this.ultraLabel2.Name = "ultraLabel2";
+            this.ultraLabel2.Size = new System.Drawing.Size(67, 14);
+            this.ultraLabel2.TabIndex = 16;
+            this.ultraLabel2.Text = "Descripción:";
+            // 
+            // cboDescripcion
+            // 
+            this.cboDescripcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDescripcion.FormattingEnabled = true;
+            this.cboDescripcion.Items.AddRange(new object[] {
+            "--Seleccionar--"});
+            this.cboDescripcion.Location = new System.Drawing.Point(79, 49);
+            this.cboDescripcion.Name = "cboDescripcion";
+            this.cboDescripcion.Size = new System.Drawing.Size(164, 21);
+            this.cboDescripcion.TabIndex = 15;
+            this.uvDatos.GetValidationSettings(this.cboDescripcion).Condition = new Infragistics.Win.OperatorCondition(Infragistics.Win.ConditionOperator.NotEquals, "--Seleccionar--", true, typeof(string));
+            this.uvDatos.GetValidationSettings(this.cboDescripcion).IsRequired = true;
+            // 
+            // ultraLabel1
+            // 
+            this.ultraLabel1.AutoSize = true;
+            this.ultraLabel1.Location = new System.Drawing.Point(6, 24);
+            this.ultraLabel1.Name = "ultraLabel1";
+            this.ultraLabel1.Size = new System.Drawing.Size(43, 14);
+            this.ultraLabel1.TabIndex = 14;
+            this.ultraLabel1.Text = "Código:";
+            // 
+            // ultraButton1
+            // 
+            appearance4.Image = global::SAMBHS.Windows.WinClient.UI.Resource.database_save1;
+            this.ultraButton1.Appearance = appearance4;
+            this.ultraButton1.Location = new System.Drawing.Point(24, 489);
+            this.ultraButton1.Name = "ultraButton1";
+            this.ultraButton1.Size = new System.Drawing.Size(190, 29);
+            this.ultraButton1.TabIndex = 13;
+            this.ultraButton1.Text = "Guardar y Procesar";
+            this.ultraButton1.Click += new System.EventHandler(this.ultraButton1_Click_1);
+            // 
+            // ultraLabel6
+            // 
+            this.ultraLabel6.AutoSize = true;
+            this.ultraLabel6.Location = new System.Drawing.Point(6, 77);
+            this.ultraLabel6.Name = "ultraLabel6";
+            this.ultraLabel6.Size = new System.Drawing.Size(35, 14);
+            this.ultraLabel6.TabIndex = 24;
+            this.ultraLabel6.Text = "Linea:";
+            // 
+            // cboLinea
+            // 
+            this.cboLinea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLinea.FormattingEnabled = true;
+            this.cboLinea.Items.AddRange(new object[] {
+            "--Seleccionar--"});
+            this.cboLinea.Location = new System.Drawing.Point(79, 74);
+            this.cboLinea.Name = "cboLinea";
+            this.cboLinea.Size = new System.Drawing.Size(132, 21);
+            this.cboLinea.TabIndex = 23;
+            // 
+            // ultraLabel7
+            // 
+            this.ultraLabel7.AutoSize = true;
+            this.ultraLabel7.Location = new System.Drawing.Point(6, 116);
+            this.ultraLabel7.Name = "ultraLabel7";
+            this.ultraLabel7.Size = new System.Drawing.Size(60, 14);
+            this.ultraLabel7.TabIndex = 26;
+            this.ultraLabel7.Text = "Tipo Prod.:";
+            // 
+            // cboTipoProducto
+            // 
+            this.cboTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoProducto.FormattingEnabled = true;
+            this.cboTipoProducto.Items.AddRange(new object[] {
+            "NO",
+            "SI"});
+            this.cboTipoProducto.Location = new System.Drawing.Point(79, 113);
+            this.cboTipoProducto.Name = "cboTipoProducto";
+            this.cboTipoProducto.Size = new System.Drawing.Size(164, 21);
+            this.cboTipoProducto.TabIndex = 25;
+            // 
+            // ultraGroupBox3
+            // 
+            this.ultraGroupBox3.Controls.Add(this.ultraButton3);
+            this.ultraGroupBox3.Controls.Add(this.label18);
+            this.ultraGroupBox3.Controls.Add(this.txtDetCodServicios);
+            this.ultraGroupBox3.Controls.Add(this.ultraLabel7);
+            this.ultraGroupBox3.Controls.Add(this.cboLinea);
+            this.ultraGroupBox3.Controls.Add(this.cboTipoProducto);
+            this.ultraGroupBox3.Controls.Add(this.ultraLabel6);
+            this.ultraGroupBox3.Location = new System.Drawing.Point(3, 236);
+            this.ultraGroupBox3.Name = "ultraGroupBox3";
+            this.ultraGroupBox3.Size = new System.Drawing.Size(250, 150);
+            this.ultraGroupBox3.TabIndex = 21;
+            this.ultraGroupBox3.Text = "Datos Generales";
+            this.ultraGroupBox3.UseAppStyling = false;
+            // 
+            // ultraButton3
+            // 
+            appearance5.Image = global::SAMBHS.Windows.WinClient.UI.Resource.table_refresh;
+            appearance5.ImageHAlign = Infragistics.Win.HAlign.Center;
+            this.ultraButton3.Appearance = appearance5;
+            this.ultraButton3.Location = new System.Drawing.Point(217, 72);
+            this.ultraButton3.Name = "ultraButton3";
+            this.ultraButton3.Size = new System.Drawing.Size(26, 25);
+            this.ultraButton3.TabIndex = 24;
+            this.ultraButton3.Click += new System.EventHandler(this.ultraButton3_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColorInternal = System.Drawing.Color.Transparent;
+            this.label18.Location = new System.Drawing.Point(3, 40);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(77, 14);
+            this.label18.TabIndex = 53;
+            this.label18.Text = "Cod Servicios:";
+            // 
+            // txtDetCodServicios
+            // 
+            this.txtDetCodServicios.Location = new System.Drawing.Point(79, 34);
+            this.txtDetCodServicios.Name = "txtDetCodServicios";
+            this.txtDetCodServicios.NullText = "Prefijos de los Servicios separados por comas ( , )";
+            appearance6.FontData.ItalicAsString = "True";
+            this.txtDetCodServicios.NullTextAppearance = appearance6;
+            this.txtDetCodServicios.Size = new System.Drawing.Size(164, 21);
+            this.txtDetCodServicios.TabIndex = 52;
+            this.txtDetCodServicios.Text = "OTS, GAST";
+            this.uvDatos.GetValidationSettings(this.txtDetCodServicios).EmptyValueCriteria = Infragistics.Win.Misc.EmptyValueCriteria.NullOrEmptyString;
+            this.uvDatos.GetValidationSettings(this.txtDetCodServicios).IsRequired = true;
+            // 
+            // uvDatos
+            // 
+            this.uvDatos.NotificationSettings.Action = Infragistics.Win.Misc.NotificationAction.BalloonTip;
+            // 
+            // ultraExpandableGroupBox1
+            // 
+            this.ultraExpandableGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ultraExpandableGroupBox1.Controls.Add(this.ultraExpandableGroupBoxPanel1);
+            this.ultraExpandableGroupBox1.ExpandedSize = new System.Drawing.Size(280, 533);
+            this.ultraExpandableGroupBox1.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.None;
+            this.ultraExpandableGroupBox1.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOutsideBorder;
+            this.ultraExpandableGroupBox1.Location = new System.Drawing.Point(0, 0);
+            this.ultraExpandableGroupBox1.Name = "ultraExpandableGroupBox1";
+            this.ultraExpandableGroupBox1.Size = new System.Drawing.Size(280, 533);
+            this.ultraExpandableGroupBox1.TabIndex = 23;
+            this.ultraExpandableGroupBox1.Text = "Opciones";
+            this.ultraExpandableGroupBox1.UseAppStyling = false;
+            this.ultraExpandableGroupBox1.ExpandedStateChanged += new System.EventHandler(this.ultraExpandableGroupBox1_ExpandedStateChanged);
+            // 
+            // ultraExpandableGroupBoxPanel1
+            // 
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.ultraButton5);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.ultraButton4);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.ultraGroupBox2);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.btnImportar);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.ultraGroupBox3);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.ultraButton1);
+            this.ultraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ultraExpandableGroupBoxPanel1.Location = new System.Drawing.Point(21, 3);
+            this.ultraExpandableGroupBoxPanel1.Name = "ultraExpandableGroupBoxPanel1";
+            this.ultraExpandableGroupBoxPanel1.Size = new System.Drawing.Size(256, 527);
+            this.ultraExpandableGroupBoxPanel1.TabIndex = 0;
+            // 
+            // ultraButton5
+            // 
+            appearance7.Image = global::SAMBHS.Windows.WinClient.UI.Properties.Resources.folder_table;
+            this.ultraButton5.Appearance = appearance7;
+            this.ultraButton5.Location = new System.Drawing.Point(24, 401);
+            this.ultraButton5.Name = "ultraButton5";
+            this.ultraButton5.Size = new System.Drawing.Size(190, 29);
+            this.ultraButton5.TabIndex = 25;
+            this.ultraButton5.Text = "Migrar Lineas";
+            this.ultraButton5.Click += new System.EventHandler(this.ultraButton5_Click);
+            // 
+            // ultraButton4
+            // 
+            appearance8.Image = global::SAMBHS.Windows.WinClient.UI.Resource.page_excel;
+            this.ultraButton4.Appearance = appearance8;
+            this.ultraButton4.Location = new System.Drawing.Point(24, 431);
+            this.ultraButton4.Name = "ultraButton4";
+            this.ultraButton4.Size = new System.Drawing.Size(190, 29);
+            this.ultraButton4.TabIndex = 24;
+            this.ultraButton4.Text = "Migrar Utilidades y Descuentos";
+            this.ultraButton4.Click += new System.EventHandler(this.ultraButton4_Click);
+            // 
+            // ultraFormManager1
+            // 
+            this.ultraFormManager1.Form = this;
+            // 
+            // frmMigraciones_Fill_Panel
+            // 
+            // 
+            // frmMigraciones_Fill_Panel.ClientArea
+            // 
+            this.frmMigraciones_Fill_Panel.ClientArea.Controls.Add(this.ultraExpandableGroupBox1);
+            this.frmMigraciones_Fill_Panel.ClientArea.Controls.Add(this.gpDetalle);
+            this.frmMigraciones_Fill_Panel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.frmMigraciones_Fill_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmMigraciones_Fill_Panel.Location = new System.Drawing.Point(8, 31);
+            this.frmMigraciones_Fill_Panel.Name = "frmMigraciones_Fill_Panel";
+            this.frmMigraciones_Fill_Panel.Size = new System.Drawing.Size(1101, 533);
+            this.frmMigraciones_Fill_Panel.TabIndex = 0;
+            // 
+            // _frmMigraciones_UltraFormManager_Dock_Area_Left
+            // 
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left.DockedPosition = Infragistics.Win.UltraWinForm.DockedPosition.Left;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left.ForeColor = System.Drawing.SystemColors.ControlText;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left.FormManager = this.ultraFormManager1;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left.InitialResizeAreaExtent = 8;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left.Location = new System.Drawing.Point(0, 31);
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left.Name = "_frmMigraciones_UltraFormManager_Dock_Area_Left";
+            this._frmMigraciones_UltraFormManager_Dock_Area_Left.Size = new System.Drawing.Size(8, 533);
+            // 
+            // _frmMigraciones_UltraFormManager_Dock_Area_Right
+            // 
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinForm.DockedPosition.Right;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right.FormManager = this.ultraFormManager1;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right.InitialResizeAreaExtent = 8;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right.Location = new System.Drawing.Point(1109, 31);
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right.Name = "_frmMigraciones_UltraFormManager_Dock_Area_Right";
+            this._frmMigraciones_UltraFormManager_Dock_Area_Right.Size = new System.Drawing.Size(8, 533);
+            // 
+            // _frmMigraciones_UltraFormManager_Dock_Area_Top
+            // 
+            this._frmMigraciones_UltraFormManager_Dock_Area_Top.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this._frmMigraciones_UltraFormManager_Dock_Area_Top.DockedPosition = Infragistics.Win.UltraWinForm.DockedPosition.Top;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Top.ForeColor = System.Drawing.SystemColors.ControlText;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Top.FormManager = this.ultraFormManager1;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Top.Location = new System.Drawing.Point(0, 0);
+            this._frmMigraciones_UltraFormManager_Dock_Area_Top.Name = "_frmMigraciones_UltraFormManager_Dock_Area_Top";
+            this._frmMigraciones_UltraFormManager_Dock_Area_Top.Size = new System.Drawing.Size(1117, 31);
+            // 
+            // _frmMigraciones_UltraFormManager_Dock_Area_Bottom
+            // 
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom.DockedPosition = Infragistics.Win.UltraWinForm.DockedPosition.Bottom;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom.ForeColor = System.Drawing.SystemColors.ControlText;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom.FormManager = this.ultraFormManager1;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom.InitialResizeAreaExtent = 8;
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom.Location = new System.Drawing.Point(0, 564);
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom.Name = "_frmMigraciones_UltraFormManager_Dock_Area_Bottom";
+            this._frmMigraciones_UltraFormManager_Dock_Area_Bottom.Size = new System.Drawing.Size(1117, 8);
+            // 
+            // frmMigraciones
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(1117, 572);
+            this.Controls.Add(this.frmMigraciones_Fill_Panel);
+            this.Controls.Add(this._frmMigraciones_UltraFormManager_Dock_Area_Left);
+            this.Controls.Add(this._frmMigraciones_UltraFormManager_Dock_Area_Right);
+            this.Controls.Add(this._frmMigraciones_UltraFormManager_Dock_Area_Top);
+            this.Controls.Add(this._frmMigraciones_UltraFormManager_Dock_Area_Bottom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmMigraciones";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Migración de Productos";
+            this.Load += new System.EventHandler(this.frmMigraciones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gpDetalle)).EndInit();
+            this.gpDetalle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox2)).EndInit();
+            this.ultraGroupBox2.ResumeLayout(false);
+            this.ultraGroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox3)).EndInit();
+            this.ultraGroupBox3.ResumeLayout(false);
+            this.ultraGroupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetCodServicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraExpandableGroupBox1)).EndInit();
+            this.ultraExpandableGroupBox1.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ultraFormManager1)).EndInit();
+            this.frmMigraciones_Fill_Panel.ClientArea.ResumeLayout(false);
+            this.frmMigraciones_Fill_Panel.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private Infragistics.Win.UltraWinGrid.UltraGrid grdData;
+        private Infragistics.Win.Misc.UltraButton btnImportar;
+        private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource1;
+        private Infragistics.Win.Misc.UltraGroupBox gpDetalle;
+        private Infragistics.Win.Misc.UltraLabel lblContadorFilas;
+        private System.Windows.Forms.ComboBox cboCodigo;
+        private Infragistics.Win.Misc.UltraGroupBox ultraGroupBox2;
+        private Infragistics.Win.Misc.UltraLabel ultraLabel3;
+        private System.Windows.Forms.ComboBox cboUnidadMedida;
+        private Infragistics.Win.Misc.UltraLabel ultraLabel4;
+        private System.Windows.Forms.ComboBox cboCosto;
+        private Infragistics.Win.Misc.UltraLabel ultraLabel2;
+        private System.Windows.Forms.ComboBox cboDescripcion;
+        private Infragistics.Win.Misc.UltraLabel ultraLabel1;
+        private Infragistics.Win.Misc.UltraButton ultraButton1;
+        private Infragistics.Win.Misc.UltraLabel ultraLabel6;
+        private System.Windows.Forms.ComboBox cboLinea;
+        private Infragistics.Win.Misc.UltraLabel ultraLabel7;
+        private System.Windows.Forms.ComboBox cboTipoProducto;
+        private Infragistics.Win.Misc.UltraGroupBox ultraGroupBox3;
+        private Infragistics.Win.Misc.UltraValidator uvDatos;
+        private Infragistics.Win.Misc.UltraButton ultraButton2;
+        private Infragistics.Win.Misc.UltraExpandableGroupBox ultraExpandableGroupBox1;
+        private Infragistics.Win.Misc.UltraExpandableGroupBoxPanel ultraExpandableGroupBoxPanel1;
+        private Infragistics.Win.UltraWinForm.UltraFormManager ultraFormManager1;
+        private Infragistics.Win.Misc.UltraPanel frmMigraciones_Fill_Panel;
+        private Infragistics.Win.UltraWinForm.UltraFormDockArea _frmMigraciones_UltraFormManager_Dock_Area_Left;
+        private Infragistics.Win.UltraWinForm.UltraFormDockArea _frmMigraciones_UltraFormManager_Dock_Area_Right;
+        private Infragistics.Win.UltraWinForm.UltraFormDockArea _frmMigraciones_UltraFormManager_Dock_Area_Top;
+        private Infragistics.Win.UltraWinForm.UltraFormDockArea _frmMigraciones_UltraFormManager_Dock_Area_Bottom;
+        private Infragistics.Win.Misc.UltraLabel label18;
+        private Infragistics.Win.UltraWinEditors.UltraTextEditor txtDetCodServicios;
+        private Infragistics.Win.Misc.UltraButton ultraButton3;
+        private Infragistics.Win.Misc.UltraButton ultraButton4;
+        private Infragistics.Win.Misc.UltraButton ultraButton5;
+
+    }
+}

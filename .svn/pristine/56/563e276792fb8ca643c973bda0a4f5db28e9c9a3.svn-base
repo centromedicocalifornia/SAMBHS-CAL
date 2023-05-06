@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04ACEEEE-BA05-46B7-A0C2-FD2B6F2E04B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAMBHS.Common.BE</RootNamespace>
+    <AssemblyName>SAMBHS.Common.BE</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Custom\actaentregaDto.cs" />
+    <Compile Include="Custom\activofijodetalleDto.cs" />
+    <Compile Include="Custom\activofijoDto.cs" />
+    <Compile Include="Custom\ActivoFijoTipoActivoDto.cs" />
+    <Compile Include="Custom\AlmacenConsulta.cs" />
+    <Compile Include="Custom\Anexo.cs" />
+    <Compile Include="Custom\asientocontableDto.cs" />
+    <Compile Include="Custom\BusquedaExtraccionDto.cs" />
+    <Compile Include="Custom\CalculoFlujoEfectivoDto.cs" />
+    <Compile Include="Custom\CobranzaTipoDocumentoDto.cs" />
+    <Compile Include="Custom\ComparacionSaldoContableAdministrativo.cs" />
+    <Compile Include="Custom\ConsultaFlujoProcesosNBS.cs" />
+    <Compile Include="Custom\ConsultaStockProductos.cs" />
+    <Compile Include="Custom\cuentasinventariosDto.cs" />
+    <Compile Include="Custom\destinoDto.cs" />
+    <Compile Include="Custom\diariodetalleDto.cs" />
+    <Compile Include="Custom\diarioDto.cs" />
+    <Compile Include="Custom\documentoretenciondetalleDto.cs" />
+    <Compile Include="Custom\documentoretencionDto.cs" />
+    <Compile Include="Custom\DocumentoRetencionPendiente.cs" />
+    <Compile Include="Custom\flujoefectivoasientoajustedetalleDto.cs" />
+    <Compile Include="Custom\flujoefectivoasientoajusteDto.cs" />
+    <Compile Include="Custom\flujoefectivoconceptosdetallesDto.cs" />
+    <Compile Include="Custom\flujoefectivoconceptosDto.cs" />
+    <Compile Include="Custom\flujoefectivoconfiguracionDto.cs" />
+    <Compile Include="Custom\FlujoEfectivoReporte.cs" />
+    <Compile Include="Custom\guiaremisioncompradetalleDto.cs" />
+    <Compile Include="Custom\guiaremisiondetalleDto.cs" />
+    <Compile Include="Custom\historialpagosventaDto.cs" />
+    <Compile Include="Custom\ImportacionRegistroVentaCobranzaDto.cs" />
+    <Compile Include="Custom\ImportacionRegistroVentaDetalleDto.cs" />
+    <Compile Include="Custom\ImportacionRegistroVentaDto.cs" />
+    <Compile Include="Custom\letrascanjeDto.cs" />
+    <Compile Include="Custom\letrasdescuentomantenimientoDto.cs" />
+    <Compile Include="Custom\letrasdetalleDto.cs" />
+    <Compile Include="Custom\letrasDto.cs" />
+    <Compile Include="Custom\letrasmantenimientodetalleDto.cs" />
+    <Compile Include="Custom\letrasmantenimientoDto.cs" />
+    <Compile Include="Custom\letraspagarcanjeDto.cs" />
+    <Compile Include="Custom\letraspagardetalleDto.cs" />
+    <Compile Include="Custom\letraspagarDto.cs" />
+    <Compile Include="Custom\liquidacioncompradetalleDto.cs" />
+    <Compile Include="Custom\liquidacioncompraDto.cs" />
+    <Compile Include="Custom\MesesDto.cs" />
+    <Compile Include="Custom\movimientodetallerecetafinalDto.cs" />
+    <Compile Include="Custom\movimientoestadobancarioDto.cs" />
+    <Compile Include="Custom\nbs_formatounicofacturaciondetalleDto.cs" />
+    <Compile Include="Custom\nbs_formatounicofacturacionDto.cs" />
+    <Compile Include="Custom\nbs_ordentrabajodetalleDto.cs" />
+    <Compile Include="Custom\nbs_ordentrabajoDto.cs" />
+    <Compile Include="Custom\nbs_ventakardexDto.cs" />
+    <Compile Include="Custom\ordendecompradetalleDto.cs" />
+    <Compile Include="Custom\ordendecompraDto.cs" />
+    <Compile Include="Custom\ordenproduccionDto.cs" />
+    <Compile Include="Custom\OrdenProduccion.cs" />
+    <Compile Include="Custom\pagopendienteDto.cs" />
+    <Compile Include="Custom\planillaafecafpDto.cs" />
+    <Compile Include="Custom\planillaafecctsDto.cs" />
+    <Compile Include="Custom\planillaafecgratiDto.cs" />
+    <Compile Include="Custom\planillaafechrsexttardDto.cs" />
+    <Compile Include="Custom\planillaafecleyesemp.cs" />
+    <Compile Include="Custom\planillaafecrentquintaDto.cs" />
+    <Compile Include="Custom\planillaafectacionesgeneralesDto.cs" />
+    <Compile Include="Custom\planillaasistenciaDto.cs" />
+    <Compile Include="Custom\planillacalculoDto.cs" />
+    <Compile Include="Custom\planillaconceptosadministracionDto.cs" />
+    <Compile Include="Custom\planillaconceptosDto.cs" />
+    <Compile Include="Custom\planillaDto.cs" />
+    <Compile Include="Custom\planillanumeracionDto.cs" />
+    <Compile Include="Custom\planillaporcafpDto.cs" />
+    <Compile Include="Custom\planillaporcleyesempleadorDto.cs" />
+    <Compile Include="Custom\planillaporcleyestrabajadorDto.cs" />
+    <Compile Include="Custom\planillarelacioningresosDto.cs" />
+    <Compile Include="Custom\planillasemanasperiodoDto.cs" />
+    <Compile Include="Custom\planillaturnosDto.cs" />
+    <Compile Include="Custom\planillavaloresproyeccionquintaDto.cs" />
+    <Compile Include="Custom\planillavariablesdiasnolabsubsidiadosDto.cs" />
+    <Compile Include="Custom\planillavariablesingresosDto.cs" />
+    <Compile Include="Custom\planillavariablestrabajadorDto.cs" />
+    <Compile Include="Custom\productoinventarioDto.cs" />
+    <Compile Include="Custom\Rentecion5TReporte.cs" />
+    <Compile Include="Custom\ReporteAlmacen.cs" />
+    <Compile Include="Custom\ReporteAsientoDiario.cs" />
+    <Compile Include="Custom\ReporteDocumentoTicket.cs" />
+    <Compile Include="Custom\ReporteLetrasDto.cs" />
+    <Compile Include="Custom\ReporteLibroActivoDto.cs" />
+    <Compile Include="Custom\ReporteMonitoreoVenta.cs" />
+    <Compile Include="Custom\ReporteOrdenCompraDto.cs" />
+    <Compile Include="Custom\ReportePlanilllas.cs" />
+    <Compile Include="Custom\ReporteRelacionBienesDto.cs" />
+    <Compile Include="Custom\ReporteAdministracionConceptos.cs" />
+    <Compile Include="Custom\ReporteAnalisisCuentas.cs" />
+    <Compile Include="Custom\ReporteBalanceComprobacion.cs" />
+    <Compile Include="Custom\ReporteBalanceGeneral.cs" />
+    <Compile Include="Custom\ReporteBalanceMensual.cs" />
+    <Compile Include="Custom\ReporteCentroCostos.cs" />
+    <Compile Include="Custom\ReporteChequesGirados.cs" />
+    <Compile Include="Custom\ReporteComprasLineaAnalitico.cs" />
+    <Compile Include="Custom\ReporteCuadroMensualSaldos.cs" />
+    <Compile Include="Custom\ReporteCuadroMensualSaldosCcosto.cs" />
+    <Compile Include="Custom\ReporteDestinos.cs" />
+    <Compile Include="Custom\ReporteDocumentoNotaDebito.cs" />
+    <Compile Include="Custom\ReporteDocumentos.cs" />
+    <Compile Include="Custom\ReporteDocumentosIngresados.cs" />
+    <Compile Include="Custom\ReporteEstadoCuentaCliente.cs" />
+    <Compile Include="Custom\ReporteGananciasPerdidasporFuncion.cs" />
+    <Compile Include="Custom\ReporteGananciasPerdidasporFuncionCcosto.cs" />
+    <Compile Include="Custom\ReporteGananciasPerdidasporNaturaleza.cs" />
+    <Compile Include="Custom\ReporteGananciasPerdidasporNaturalezaCcosto.cs" />
+    <Compile Include="Custom\ReporteHojaTrabajo.cs" />
+    <Compile Include="Custom\ReporteImportacionesProductoAnalitico.cs" />
+    <Compile Include="Custom\ReporteLibroCajayBancos.cs" />
+    <Compile Include="Custom\ReporteLibroDiario.cs" />
+    <Compile Include="Custom\ReporteLibroInventarioBalanceCajaBanco.cs" />
+    <Compile Include="Custom\ReporteLibroInventarioBalanceClientes.cs" />
+    <Compile Include="Custom\ReporteLibroInventarioBalanceMercaderias.cs" />
+    <Compile Include="Custom\ReporteLibroMayor.cs" />
+    <Compile Include="Custom\ReportePlanContable.cs" />
+    <Compile Include="Custom\pendientesconciliacionDto.cs" />
+    <Compile Include="Custom\ReporteCompraDAO.cs" />
+    <Compile Include="Custom\ReporteConciliacionBancaria.cs" />
+    <Compile Include="Custom\ReporteCuadredeCaja.cs" />
+    <Compile Include="Custom\ReporteCuentasPorCobrar.cs" />
+    <Compile Include="Custom\ReporteDataHierarchy.cs" />
+    <Compile Include="Custom\ReporteExtractoBancario.cs" />
+    <Compile Include="Custom\ReporteImportaciones.cs" />
+    <Compile Include="Custom\establecimientoalmacenDto.cs" />
+    <Compile Include="Custom\guiaremisioncompraDto.cs" />
+    <Compile Include="Custom\importaciondetallefobDto.cs" />
+    <Compile Include="Custom\importaciondetallegastosDto.cs" />
+    <Compile Include="Custom\importaciondetalleproductoDto.cs" />
+    <Compile Include="Custom\importacionDto.cs" />
+    <Compile Include="Custom\KardexList.cs" />
+    <Compile Include="Custom\pendientecobrardetalleDto.cs" />
+    <Compile Include="Custom\pendientecobrarDto.cs" />
+    <Compile Include="Custom\ReporteCliente.cs" />
+    <Compile Include="Custom\ReporteCondicionPago.cs" />
+    <Compile Include="Custom\ReporteEmpresa.cs" />
+    <Compile Include="Custom\ReporteEstablecimiento.cs" />
+    <Compile Include="Custom\ReporteImportacionesProveeedorAnalitico.cs" />
+    <Compile Include="Custom\ReporteImportacionesProveeedorResumen.cs" />
+    <Compile Include="Custom\ReporteLibroBanco.cs" />
+    <Compile Include="Custom\ReporteLinea.cs" />
+    <Compile Include="Custom\ReporteListadoIngresoAlmacenAcumulado.cs" />
+    <Compile Include="Custom\ReporteListadoIngresoAlmacenAnalitico.cs" />
+    <Compile Include="Custom\ReporteListadoSalidaAlmacenAcumulado.cs" />
+    <Compile Include="Custom\NombreEmpresa.cs" />
+    <Compile Include="Custom\ReporteDocumentoVoucher.cs" />
+    <Compile Include="Custom\adelantoDto.cs" />
+    <Compile Include="Custom\administracionconceptosDto.cs" />
+    <Compile Include="Custom\agenciatransporteDto.cs" />
+    <Compile Include="Custom\avalclienteDto.cs" />
+    <Compile Include="Custom\carteraclienteDto.cs" />
+    <Compile Include="Custom\clienteDto.cs" />
+    <Compile Include="Custom\cobranzadetalleDto.cs" />
+    <Compile Include="Custom\cobranzaDto.cs" />
+    <Compile Include="Custom\cobranzapendienteDto.cs" />
+    <Compile Include="Custom\colorDto.cs" />
+    <Compile Include="Custom\AutorizationList.cs" />
+    <Compile Include="Custom\applicationhierarchyDto.cs" />
+    <Compile Include="Custom\compradetalleDto.cs" />
+    <Compile Include="Custom\conceptoDto.cs" />
+    <Compile Include="Custom\compraDto.cs" />
+    <Compile Include="Custom\condicionpagoDto.cs" />
+    <Compile Include="Custom\configuracionempresaDto.cs" />
+    <Compile Include="Custom\datahierarchyDto.cs" />
+    <Compile Include="Custom\establecimientodetalleDto.cs" />
+    <Compile Include="Custom\establecimientoDto.cs" />
+    <Compile Include="Custom\gastosimportacionDto.cs" />
+    <Compile Include="Custom\guiaremisionDto.cs" />
+    <Compile Include="Custom\lineaDto.cs" />
+    <Compile Include="Custom\listapreciodetalleDto.cs" />
+    <Compile Include="Custom\listaprecioDto.cs" />
+    <Compile Include="Custom\marcaDto.cs" />
+    <Compile Include="Custom\modeloDto.cs" />
+    <Compile Include="Custom\movimientodetalleDto.cs" />
+    <Compile Include="Custom\movimientoDto.cs" />
+    <Compile Include="Custom\nodeDto.cs" />
+    <Compile Include="Custom\nodewarehouseDto.cs" />
+    <Compile Include="Custom\OrganizationDto.cs" />
+    <Compile Include="Custom\pedidoDto.cs" />
+    <Compile Include="Custom\personDto.cs" />
+    <Compile Include="Custom\productoalmacenDto.cs" />
+    <Compile Include="Custom\productoDto.cs" />
+    <Compile Include="Custom\recibohonorarioDto.cs" />
+    <Compile Include="Custom\ReporteDocumentoFactura.cs" />
+    <Compile Include="Custom\ReporteDocumentoGuiaRemision.cs" />
+    <Compile Include="Custom\ReporteDocumentoNotaCredito.cs" />
+    <Compile Include="Custom\ReporteDocumentoPedido.cs" />
+    <Compile Include="Custom\ReporteDocumentoVoucherAdelanto.cs" />
+    <Compile Include="Custom\ReporteListadoSalidaAlmacenAnalitico.cs" />
+    <Compile Include="Custom\ReporteNotaIngresoAlmacen.cs.cs" />
+    <Compile Include="Custom\ReporteNotaSalidaAlmacen.cs" />
+    <Compile Include="Custom\ReportePlanillaCobranza.cs" />
+    <Compile Include="Custom\ReporteProducto.cs" />
+    <Compile Include="Custom\ReporteReciboHonorarios.cs" />
+    <Compile Include="Custom\ReporteRegistroCompra.cs" />
+    <Compile Include="Custom\ReporteRegistroCompraAnaliticoDAOT.cs" />
+    <Compile Include="Custom\ReporteRegistroCompraProductoAnalitico.cs" />
+    <Compile Include="Custom\ReporteRegistroCompraProductoResumen.cs" />
+    <Compile Include="Custom\ReporteRegistroCompraProveedorAnalitico.cs" />
+    <Compile Include="Custom\ReporteRegistroCompraProveedorResumen.cs" />
+    <Compile Include="Custom\ReporteRegistroCompraResumenDAOT.cs" />
+    <Compile Include="Custom\ReporteRegistroCompraSunat.cs" />
+    <Compile Include="Custom\ReporteRegistroPedido.cs" />
+    <Compile Include="Custom\ReporteRegistroVenta.cs" />
+    <Compile Include="Custom\ReporteRegistroVentaAlmacenResumen.cs" />
+    <Compile Include="Custom\ReporteRegistroVentaAnaliticoDAOT.cs" />
+    <Compile Include="Custom\ReporteRegistroVentaClienteAnalitico.cs" />
+    <Compile Include="Custom\ReporteRegistroVentaClienteResumen.cs" />
+    <Compile Include="Custom\ReporteRegistroVentaContable.cs" />
+    <Compile Include="Custom\ReporteRegistroVentaProductoAnalitico.cs" />
+    <Compile Include="Custom\ReporteRegistroVentaProductoMensual.cs" />
+    <Compile Include="Custom\ReporteRegistroVentaProductoResumen.cs" />
+    <Compile Include="Custom\ReporteRegistroVentaResumenDAOT.cs" />
+    <Compile Include="Custom\ReporteResumenAlmacen.cs" />
+    <Compile Include="Custom\ReporteResumenMovimiento.cs" />
+    <Compile Include="Custom\ReporteStockConsolidado.cs" />
+    <Compile Include="Custom\ReporteTipoCambio.cs" />
+    <Compile Include="Custom\ReporteTransferenciaAlmacen.cs" />
+    <Compile Include="Custom\ReporteUnidadMedida.cs" />
+    <Compile Include="Custom\ReporteVendedor.cs" />
+    <Compile Include="Custom\ReporteVentaCobranza.cs" />
+    <Compile Include="Custom\ReporteVentaDAO.cs" />
+    <Compile Include="Custom\ReporteVentasSunat.cs" />
+    <Compile Include="Custom\roleDto.cs" />
+    <Compile Include="Custom\saldomensualbancosDto.cs" />
+    <Compile Include="Custom\systemparameterDto.cs" />
+    <Compile Include="Custom\systemuserDto.cs" />
+    <Compile Include="Custom\systemusernodeDto.cs" />
+    <Compile Include="Custom\tallaDto.cs" />
+    <Compile Include="Custom\tesoreriadetalleDto.cs" />
+    <Compile Include="Custom\tesoreriaDto.cs" />
+    <Compile Include="Custom\tipodecambioDto.cs" />
+    <Compile Include="Custom\TotalCobranzaDto.cs" />
+    <Compile Include="Custom\trabajadorconsultaDto.cs" />
+    <Compile Include="Custom\transportistachoferDto.cs" />
+    <Compile Include="Custom\transportistaDto.cs" />
+    <Compile Include="Custom\transportistaunidadtransporteDto.cs" />
+    <Compile Include="Custom\UltraComboCierrreMensualDto.cs" />
+    <Compile Include="Custom\valoresRegistroCompra.cs" />
+    <Compile Include="Custom\valoresRegistroPedido.cs" />
+    <Compile Include="Custom\valoresRegistroVenta.cs" />
+    <Compile Include="Custom\vendedorDto.cs" />
+    <Compile Include="Custom\ventadetalleDto.cs" />
+    <Compile Include="Custom\VentaDto.cs" />
+    <Compile Include="Custom\warehouseDto.cs" />
+    <Compile Include="GeneratedWindows\activofijodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\adelantoDto.cs" />
+    <Compile Include="GeneratedWindows\administracionconceptosDto.cs" />
+    <Compile Include="GeneratedWindows\agenciatransporteDto.cs" />
+    <Compile Include="GeneratedWindows\almacenDto.cs" />
+    <Compile Include="GeneratedWindows\asientocontableDto.cs" />
+    <Compile Include="GeneratedWindows\avalclienteDto.cs" />
+    <Compile Include="GeneratedWindows\carteraclienteDto.cs" />
+    <Compile Include="GeneratedWindows\cierremensualDto.cs" />
+    <Compile Include="GeneratedWindows\clientedireccionesDto.cs" />
+    <Compile Include="GeneratedWindows\clienteDto.cs" />
+    <Compile Include="GeneratedWindows\cobranzaDto.cs" />
+    <Compile Include="GeneratedWindows\cobranzapendienteDto.cs" />
+    <Compile Include="GeneratedWindows\colorDto.cs" />
+    <Compile Include="GeneratedWindows\compraDto.cs" />
+    <Compile Include="GeneratedWindows\compradetalleDto.cs" />
+    <Compile Include="GeneratedWindows\conceptoDto.cs" />
+    <Compile Include="GeneratedWindows\condicionpagoDto.cs" />
+    <Compile Include="GeneratedWindows\configuracionfacturacionDto.cs" />
+    <Compile Include="GeneratedWindows\cuentasinventariosDto.cs" />
+    <Compile Include="GeneratedWindows\datahierarchyDto.cs" />
+    <Compile Include="GeneratedWindows\destinoDto.cs" />
+    <Compile Include="GeneratedWindows\diarioDto.cs" />
+    <Compile Include="GeneratedWindows\diariodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\documentoDto.cs" />
+    <Compile Include="GeneratedWindows\documentoretencionDto.cs" />
+    <Compile Include="GeneratedWindows\documentoretenciondetalleDto.cs" />
+    <Compile Include="GeneratedWindows\activofijodepreciacionDto.cs" />
+    <Compile Include="GeneratedWindows\cobranzadetalleDto.cs" />
+    <Compile Include="GeneratedWindows\activofijoDto.cs" />
+    <Compile Include="GeneratedWindows\cobranzaletraspagarpendienteDto.cs" />
+    <Compile Include="GeneratedWindows\contratodetalletrabajadorDto.cs" />
+    <Compile Include="GeneratedWindows\contratotrabajadorDto.cs" />
+    <Compile Include="GeneratedWindows\derechohabientetrabajadorDto.cs" />
+    <Compile Include="GeneratedWindows\areaslaboratrabajadorDto.cs" />
+    <Compile Include="GeneratedWindows\cobranzaletraspendienteDto.cs" />
+    <Compile Include="GeneratedWindows\dbconfigDto.cs" />
+    <Compile Include="GeneratedWindows\documentoretencionhomologacionDto.cs" />
+    <Compile Include="GeneratedWindows\documentorolDto.cs" />
+    <Compile Include="GeneratedWindows\configuracionempresaDto.cs" />
+    <Compile Include="GeneratedWindows\cajachicaDto.cs" />
+    <Compile Include="GeneratedWindows\conceptoscajachicaDto.cs" />
+    <Compile Include="GeneratedWindows\cajachicadetalleDto.cs" />
+    <Compile Include="GeneratedWindows\configuracionbalancesDto.cs" />
+    <Compile Include="GeneratedWindows\activofijoanexoDto.cs" />
+    <Compile Include="GeneratedWindows\ordenproducciondocumentosDto.cs" />
+    <Compile Include="GeneratedWindows\ventaimportaciondataconfigDto.cs" />
+    <Compile Include="GeneratedWindows\ordenproduccionDto.cs" />
+    <Compile Include="GeneratedWindows\flujoefectivoconceptosdetallesDto.cs" />
+    <Compile Include="GeneratedWindows\guiaremisionhomologacionDto.cs" />
+    <Compile Include="GeneratedWindows\planillaasistenciaDto.cs" />
+    <Compile Include="GeneratedWindows\planilladatoslaborablesDto.cs" />
+    <Compile Include="GeneratedWindows\planilladiasnolaborablesDto.cs" />
+    <Compile Include="GeneratedWindows\planillasemanasperiodoDto.cs" />
+    <Compile Include="GeneratedWindows\planillaturnosdetalleDto.cs" />
+    <Compile Include="GeneratedWindows\planillaturnosDto.cs" />
+    <Compile Include="GeneratedWindows\relacionusuarioclienteDto.cs" />
+    <Compile Include="GeneratedWindows\flujoefectivocabeceraDto.cs" />
+    <Compile Include="GeneratedWindows\relaciontributosexportacionDto.cs" />
+    <Compile Include="GeneratedWindows\productorecetasalidaDto.cs" />
+    <Compile Include="GeneratedWindows\flujoefectivoasientoajustedetalleDto.cs" />
+    <Compile Include="GeneratedWindows\flujoefectivoasientoajusteDto.cs" />
+    <Compile Include="GeneratedWindows\flujoefectivoconceptosDto.cs" />
+    <Compile Include="GeneratedWindows\flujoefectivoconfiguracionDto.cs" />
+    <Compile Include="GeneratedWindows\flujoefectivoDto.cs" />
+    <Compile Include="GeneratedWindows\planillavaloresproyeccionquintaDto.cs" />
+    <Compile Include="GeneratedWindows\planillaafectacionesgeneralesDto.cs" />
+    <Compile Include="GeneratedWindows\planillavaloresrentaquintaDto.cs" />
+    <Compile Include="GeneratedWindows\planillavaloresuitDto.cs" />
+    <Compile Include="GeneratedWindows\ventadetalleanexoDto.cs" />
+    <Compile Include="GeneratedWindows\letrasdescuentomantenimientoDto.cs" />
+    <Compile Include="GeneratedWindows\lineacuentaDto.cs" />
+    <Compile Include="GeneratedWindows\movimientodetallerecetafinalDto.cs" />
+    <Compile Include="GeneratedWindows\productoinventarioDto.cs" />
+    <Compile Include="GeneratedWindows\productoiscDto.cs" />
+    <Compile Include="GeneratedWindows\productorecetaDto.cs" />
+    <Compile Include="GeneratedWindows\nbs_ventakardexDto.cs" />
+    <Compile Include="GeneratedWindows\nbs_formatounicofacturaciondetalleDto.cs" />
+    <Compile Include="GeneratedWindows\nbs_formatounicofacturacionDto.cs" />
+    <Compile Include="GeneratedWindows\nbs_ordentrabajodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\nbs_ordentrabajoDto.cs" />
+    <Compile Include="GeneratedWindows\planillarelacioningresosDto.cs" />
+    <Compile Include="GeneratedWindows\planillarelacionesnetopagarDto.cs" />
+    <Compile Include="GeneratedWindows\planillarelacionesdescuentosafpDto.cs" />
+    <Compile Include="GeneratedWindows\planillarelacionesaportacionesDto.cs" />
+    <Compile Include="GeneratedWindows\planillarelaciondescuentosDto.cs" />
+    <Compile Include="GeneratedWindows\planillavariablesaportacionesDto.cs" />
+    <Compile Include="GeneratedWindows\planillacalculoDto.cs" />
+    <Compile Include="GeneratedWindows\planillaconceptosadministracionDto.cs" />
+    <Compile Include="GeneratedWindows\planillaafecleyestrabDto.cs" />
+    <Compile Include="GeneratedWindows\planillaafecleyesempDto.cs" />
+    <Compile Include="GeneratedWindows\liquidacioncompradetalleDto.cs" />
+    <Compile Include="GeneratedWindows\liquidacioncompraDto.cs" />
+    <Compile Include="GeneratedWindows\planillavariablestrabajadorDto.cs" />
+    <Compile Include="GeneratedWindows\planillavariablesingresosDto.cs" />
+    <Compile Include="GeneratedWindows\planillavariableshorasextrasDto.cs" />
+    <Compile Include="GeneratedWindows\planillavariablesdescuentosDto.cs" />
+    <Compile Include="GeneratedWindows\planillavariablesdiasnolabsubsidiadosDto.cs" />
+    <Compile Include="GeneratedWindows\planillanumeracionDto.cs" />
+    <Compile Include="GeneratedWindows\planillaafecrentquintaDto.cs" />
+    <Compile Include="GeneratedWindows\planillaafechrsexttardDto.cs" />
+    <Compile Include="GeneratedWindows\planillaafecgratiDto.cs" />
+    <Compile Include="GeneratedWindows\planillaafecctsDto.cs" />
+    <Compile Include="GeneratedWindows\planillaafecafpDto.cs" />
+    <Compile Include="GeneratedWindows\trabajadorDto.cs" />
+    <Compile Include="GeneratedWindows\regimenpensionariotrabajadorDto.cs" />
+    <Compile Include="GeneratedWindows\planillaporcleyestrabajadorDto.cs" />
+    <Compile Include="GeneratedWindows\planillaporcleyesempleadorDto.cs" />
+    <Compile Include="GeneratedWindows\planillaporcafpDto.cs" />
+    <Compile Include="GeneratedWindows\planillaconceptosDto.cs" />
+    <Compile Include="GeneratedWindows\letraspagardetalleDto.cs" />
+    <Compile Include="GeneratedWindows\letraspagarcanjeDto.cs" />
+    <Compile Include="GeneratedWindows\letraspagarDto.cs" />
+    <Compile Include="GeneratedWindows\pagopendienteDto.cs" />
+    <Compile Include="GeneratedWindows\pagodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\pagoDto.cs" />
+    <Compile Include="GeneratedWindows\productoDto.cs" />
+    <Compile Include="GeneratedWindows\movimientoestadobancarioDto.cs" />
+    <Compile Include="GeneratedWindows\ventadetalleDto.cs" />
+    <Compile Include="GeneratedWindows\ventaDto.cs" />
+    <Compile Include="GeneratedWindows\vendedorDto.cs" />
+    <Compile Include="GeneratedWindows\transportistaunidadtransporteDto.cs" />
+    <Compile Include="GeneratedWindows\transportistachoferDto.cs" />
+    <Compile Include="GeneratedWindows\transportistaDto.cs" />
+    <Compile Include="GeneratedWindows\ventaelectronicasecuentialDto.cs" />
+    <Compile Include="GeneratedWindows\ventahomolagacionDto.cs" />
+    <Compile Include="GeneratedWindows\ventaresumenhomologacionDto.cs" />
+    <Compile Include="Generated\licensesDto.cs" />
+    <Compile Include="Generated\tipodecambioDto.cs" />
+    <Compile Include="GeneratedWindows\tesoreriadetalleDto.cs" />
+    <Compile Include="GeneratedWindows\tesoreriaDto.cs" />
+    <Compile Include="GeneratedWindows\temporalventadetalleDto.cs" />
+    <Compile Include="GeneratedWindows\tallaDto.cs" />
+    <Compile Include="GeneratedWindows\separacionproductoDto.cs" />
+    <Compile Include="GeneratedWindows\secuentialDto.cs" />
+    <Compile Include="GeneratedWindows\saldoscontablesDto.cs" />
+    <Compile Include="GeneratedWindows\saldomensualbancosDto.cs" />
+    <Compile Include="GeneratedWindows\saldoestadobancarioDto.cs" />
+    <Compile Include="GeneratedWindows\relacionformapagodocumentoDto.cs" />
+    <Compile Include="GeneratedWindows\recibohonorariodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\recibohonorarioDto.cs" />
+    <Compile Include="GeneratedWindows\productodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\productoalmacenDto.cs" />
+    <Compile Include="GeneratedWindows\pendientesconciliacionDto.cs" />
+    <Compile Include="GeneratedWindows\pendientecobrardetalleDto.cs" />
+    <Compile Include="GeneratedWindows\pendientecobrarDto.cs" />
+    <Compile Include="GeneratedWindows\pedidodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\pedidoDto.cs" />
+    <Compile Include="GeneratedWindows\ordendecompradetalleDto.cs" />
+    <Compile Include="GeneratedWindows\ordendecompraDto.cs" />
+    <Compile Include="GeneratedWindows\movimientodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\movimientoDto.cs" />
+    <Compile Include="GeneratedWindows\modeloDto.cs" />
+    <Compile Include="GeneratedWindows\marcaDto.cs" />
+    <Compile Include="GeneratedWindows\loghistorialDto.cs" />
+    <Compile Include="GeneratedWindows\logDto.cs" />
+    <Compile Include="GeneratedWindows\listapreciodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\listaprecioDto.cs" />
+    <Compile Include="GeneratedWindows\lineacreditoempresaDto.cs" />
+    <Compile Include="GeneratedWindows\lineacreditoclienteDto.cs" />
+    <Compile Include="GeneratedWindows\lineaDto.cs" />
+    <Compile Include="GeneratedWindows\letrasmantenimientodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\letrasmantenimientoDto.cs" />
+    <Compile Include="GeneratedWindows\letrasdetalleDto.cs" />
+    <Compile Include="GeneratedWindows\letrascanjeDto.cs" />
+    <Compile Include="GeneratedWindows\letrasDto.cs" />
+    <Compile Include="GeneratedWindows\importaciondetalleproductoDto.cs" />
+    <Compile Include="GeneratedWindows\importaciondetallegastosDto.cs" />
+    <Compile Include="GeneratedWindows\importaciondetallefobDto.cs" />
+    <Compile Include="GeneratedWindows\importacionDto.cs" />
+    <Compile Include="GeneratedWindows\guiaremisiondetalleDto.cs" />
+    <Compile Include="GeneratedWindows\guiaremisioncompradetalleDto.cs" />
+    <Compile Include="GeneratedWindows\guiaremisioncompraDto.cs" />
+    <Compile Include="GeneratedWindows\guiaremisionDto.cs" />
+    <Compile Include="GeneratedWindows\gastosimportacionDto.cs" />
+    <Compile Include="GeneratedWindows\establecimientodetalleDto.cs" />
+    <Compile Include="GeneratedWindows\establecimientoalmacenDto.cs" />
+    <Compile Include="GeneratedWindows\establecimientoDto.cs" />
+    <Compile Include="Generated\applicationhierarchyDto.cs" />
+    <Compile Include="Generated\systemusernodeDto.cs" />
+    <Compile Include="Generated\systemuserDto.cs" />
+    <Compile Include="Generated\nodeDto.cs" />
+    <Compile Include="Generated\personDto.cs" />
+    <Compile Include="Generated\roleprofileDto.cs" />
+    <Compile Include="Generated\roleDto.cs" />
+    <Compile Include="Generated\nodewarehouseDto.cs" />
+    <Compile Include="Generated\warehouseDto.cs" />
+    <Compile Include="Generated\extendedactionDto.cs" />
+    <Compile Include="Generated\systemparameterDto.cs" />
+    <Compile Include="Generated\organizationDto.cs" />
+    <Compile Include="Custom\planillavaloresrentaquintaDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Custom\ReporteComprobanteTesoreria.cs" />
+    <Compile Include="Custom\ReporteListadoComprobantesTesoreria.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

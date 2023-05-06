@@ -1,0 +1,362 @@
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.Design.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.Linq.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\AxInterop.ZKFPEngXControl.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Dapper.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\itextsharp.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Almacen.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BE.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.Resource.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Security.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\ScrapperReniecSunat.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SigPlusNET.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.WebRequest.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Web.Http.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\WebCam_Capture.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.CommonWIN.BL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\FineUI.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Ionic.Zip.Reduced.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Almacen.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BE.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.Resource.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Security.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.WebRequest.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Web.Http.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.WebRequest.resources.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Web.Http.resources.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.Formatting.resources.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Interop.NETCONLib.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Interop.NETWORKLIST.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csproj.ResolveComReference.cache
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.FormPrecioComponente.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.FormPrecioComponente_Seg_.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmAddExam.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAddRecipe.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAddSolicitudCarta.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAgendaParticular.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAgendarTrabajador.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBandejaAgenda.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.FrmBuscarMedicamento.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarServiciosPendientesAsistencial.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarServiciosPendientes.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarTicket.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmCamera.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmCapturedFingerPrint.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmConfigSeguros.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmConfirmarDespacho.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmCrudPacient.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.Mantenimientos.frmCustomerCapchaSUNAT.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarProtocolo.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarTrabajador.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditMedic.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmElegirTipoDetalle.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEmpresa.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmFacturarHospitalizacion.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmNuevoRegistro.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmPreCarga.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmRecetaMedica.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmReport.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmReporteReceta.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmSearchMedicamento.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmViewChanges.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.Properties.Resources.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.Reports.frmRoadMapAsist.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.Reports.frmRoadMap.resources
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll.licenses
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+C:\Users\Administrator\Desktop\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.Design.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.Linq.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\AxInterop.ZKFPEngXControl.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Dapper.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\HtmlAgilityPack.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\itextsharp.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Almacen.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BE.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.Resource.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Security.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\ScrapperReniecSunat.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SigPlusNET.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.WebRequest.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Web.Http.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\WebCam_Capture.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.CommonWIN.BL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\FineUI.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Ionic.Zip.Reduced.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.Formatting.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Almacen.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BE.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.Resource.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Security.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.xml
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.WebRequest.xml
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Web.Http.xml
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.Formatting.xml
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.resources.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.WebRequest.resources.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Web.Http.resources.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.Formatting.resources.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csprojResolveAssemblyReference.cache
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Interop.NETCONLib.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Interop.NETWORKLIST.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csproj.ResolveComReference.cache
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.FormPrecioComponente.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.FormPrecioComponente_Seg_.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmAddExam.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAddRecipe.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAddSolicitudCarta.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAgendaParticular.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAgendarTrabajador.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBandejaAgenda.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.FrmBuscarMedicamento.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarServiciosPendientesAsistencial.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarServiciosPendientes.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarTicket.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmCamera.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmCapturedFingerPrint.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmConfigSeguros.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmConfirmarDespacho.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmCrudPacient.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.Mantenimientos.frmCustomerCapchaSUNAT.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarProtocolo.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarTrabajador.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditMedic.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmElegirTipoDetalle.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEmpresa.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmFacturarHospitalizacion.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmNuevoRegistro.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmPreCarga.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmRecetaMedica.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmReport.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmReporteReceta.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmSearchMedicamento.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmViewChanges.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.Properties.Resources.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.Reports.frmRoadMapAsist.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.Reports.frmRoadMap.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csproj.GenerateResource.Cache
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll.licenses
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmVacunasCovid19.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarProtocolo.resources
+D:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmListarPacientes.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\AxInterop.ZKFPEngXControl.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Dapper.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\FineUI.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\HtmlAgilityPack.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\itextsharp.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Almacen.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Security.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\ScrapperReniecSunat.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SigPlusNET.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.WebRequest.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Web.Http.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\WebCam_Capture.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.CommonWIN.BL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.Formatting.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Security.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.xml
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.WebRequest.xml
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Web.Http.xml
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.Formatting.xml
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.resources.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.WebRequest.resources.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Web.Http.resources.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.Formatting.resources.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Interop.NETCONLib.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Interop.NETWORKLIST.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csproj.ResolveComReference.cache
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.FormPrecioComponente.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.FormPrecioComponente_Seg_.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmAddExam.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAddRecipe.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAddSolicitudCarta.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAgendaParticular.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAgendarTrabajador.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBandejaAgenda.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.FrmBuscarMedicamento.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarProtocolo.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarServiciosPendientesAsistencial.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarServiciosPendientes.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarTicket.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmCamera.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmCapturedFingerPrint.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmConfigSeguros.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmConfirmarDespacho.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmCrudPacient.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.Mantenimientos.frmCustomerCapchaSUNAT.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarProtocolo.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarTrabajador.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditMedic.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmElegirTipoDetalle.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEmpresa.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmFacturarHospitalizacion.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmListarPacientes.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmNuevoRegistro.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmPreCarga.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmRecetaMedica.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmReport.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmReporteReceta.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmSearchMedicamento.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmVacunasCovid19.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmViewChanges.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.Properties.Resources.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.Reports.frmRoadMapAsist.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.Reports.frmRoadMap.resources
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csproj.GenerateResource.Cache
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll.licenses
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarEstadoDigitalContact.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\AxInterop.ZKFPEngXControl.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Dapper.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\FineUI.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\HtmlAgilityPack.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Almacen.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Security.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\ScrapperReniecSunat.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SigPlusNET.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.WebRequest.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Web.Http.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\WebCam_Capture.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.CommonWIN.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.Formatting.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Security.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.WebRequest.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Web.Http.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\System.Net.Http.Formatting.xml
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.resources.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.WebRequest.resources.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Web.Http.resources.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\es\System.Net.Http.Formatting.resources.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Interop.NETCONLib.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Interop.NETWORKLIST.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csproj.ResolveComReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.FormPrecioComponente.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.FormPrecioComponente_Seg_.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmAddExam.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAddRecipe.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAddSolicitudCarta.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAgendaParticular.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmAgendarTrabajador.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBandejaAgenda.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.FrmBuscarMedicamento.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarProtocolo.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarServiciosPendientesAsistencial.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarServiciosPendientes.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmBuscarTicket.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmCamera.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.frmCapturedFingerPrint.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmConfigSeguros.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmConfirmarDespacho.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmCrudPacient.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.Mantenimientos.frmCustomerCapchaSUNAT.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarEstadoDigitalContact.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarProtocolo.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditarTrabajador.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEditMedic.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmElegirTipoDetalle.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmEmpresa.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmFacturarHospitalizacion.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmListarPacientes.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmNuevoRegistro.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmPreCarga.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmRecetaMedica.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmReport.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmReporteReceta.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmSearchMedicamento.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmVacunasCovid19.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.frmViewChanges.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.Properties.Resources.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.Reports.frmRoadMapAsist.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\Sigesoft.Node.WinClient.UI.Reports.frmRoadMap.resources
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.csproj.GenerateResource.Cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll.licenses
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb

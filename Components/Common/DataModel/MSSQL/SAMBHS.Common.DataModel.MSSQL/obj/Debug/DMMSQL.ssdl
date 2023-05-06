@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SAMBHS.Common.DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SAMBHSEntitiesModelStoreContainer">
+    <EntitySet Name="applicationhierarchies" EntityType="SAMBHS.Common.DataModel.Store.applicationhierarchy" store:Type="Tables" Schema="dbo" Table="applicationhierarchy" />
+    <EntitySet Name="dbconfigs" EntityType="SAMBHS.Common.DataModel.Store.dbconfig" store:Type="Tables" Schema="dbo" Table="dbconfig" />
+    <EntitySet Name="extendedactions" EntityType="SAMBHS.Common.DataModel.Store.extendedaction" store:Type="Tables" Schema="dbo" Table="extendedaction" />
+    <EntitySet Name="licenses" EntityType="SAMBHS.Common.DataModel.Store.licenses" store:Type="Tables" Schema="dbo" Table="licenses" />
+    <EntitySet Name="nodes" EntityType="SAMBHS.Common.DataModel.Store.node" store:Type="Tables" Schema="dbo" Table="node" />
+    <EntitySet Name="nodewarehouses" EntityType="SAMBHS.Common.DataModel.Store.nodewarehouse" store:Type="Tables" Schema="dbo" Table="nodewarehouse" />
+    <EntitySet Name="organizations" EntityType="SAMBHS.Common.DataModel.Store.organization" store:Type="Tables" Schema="dbo" Table="organization" />
+    <EntitySet Name="people" EntityType="SAMBHS.Common.DataModel.Store.person" store:Type="Tables" Schema="dbo" Table="person" />
+    <EntitySet Name="roles" EntityType="SAMBHS.Common.DataModel.Store.role" store:Type="Tables" Schema="dbo" Table="role" />
+    <EntitySet Name="roleprofiles" EntityType="SAMBHS.Common.DataModel.Store.roleprofile" store:Type="Tables" Schema="dbo" Table="roleprofile" />
+    <EntitySet Name="systemparameters" EntityType="SAMBHS.Common.DataModel.Store.systemparameter" store:Type="Tables" Schema="dbo" Table="systemparameter" />
+    <EntitySet Name="systemusers" EntityType="SAMBHS.Common.DataModel.Store.systemuser" store:Type="Tables" Schema="dbo" Table="systemuser" />
+    <EntitySet Name="systemusernodes" EntityType="SAMBHS.Common.DataModel.Store.systemusernode" store:Type="Tables" Schema="dbo" Table="systemusernode" />
+    <EntitySet Name="tipodecambios" EntityType="SAMBHS.Common.DataModel.Store.tipodecambio" store:Type="Tables" Schema="dbo" Table="tipodecambio" />
+    <EntitySet Name="warehouses" EntityType="SAMBHS.Common.DataModel.Store.warehouse" store:Type="Tables" Schema="dbo" Table="warehouse" />
+    <AssociationSet Name="Fk_ApplicationHierarchy_ExtendedAction_i_ApplicationHierarchyId" Association="SAMBHS.Common.DataModel.Store.Fk_ApplicationHierarchy_ExtendedAction_i_ApplicationHierarchyId">
+      <End Role="applicationhierarchy" EntitySet="applicationhierarchies" />
+      <End Role="extendedaction" EntitySet="extendedactions" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_SystemUser_ExtendedAction_i_SystemUserId" Association="SAMBHS.Common.DataModel.Store.Fk_SystemUser_ExtendedAction_i_SystemUserId">
+      <End Role="systemuser" EntitySet="systemusers" />
+      <End Role="extendedaction" EntitySet="extendedactions" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Node_NodeWarehouse_i_NodeId" Association="SAMBHS.Common.DataModel.Store.Fk_Node_NodeWarehouse_i_NodeId">
+      <End Role="node" EntitySet="nodes" />
+      <End Role="nodewarehouse" EntitySet="nodewarehouses" />
+    </AssociationSet>
+    <AssociationSet Name="warehouse_nodewarehouse_v_WarehouseId" Association="SAMBHS.Common.DataModel.Store.warehouse_nodewarehouse_v_WarehouseId">
+      <End Role="warehouse" EntitySet="warehouses" />
+      <End Role="nodewarehouse" EntitySet="nodewarehouses" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Role_RoleProfile_i_RoleId" Association="SAMBHS.Common.DataModel.Store.Fk_Role_RoleProfile_i_RoleId">
+      <End Role="role" EntitySet="roles" />
+      <End Role="roleprofile" EntitySet="roleprofiles" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_ApplicationHierarchy_RoleProfile_i_ApplicationHierarchyId" Association="SAMBHS.Common.DataModel.Store.Fk_ApplicationHierarchy_RoleProfile_i_ApplicationHierarchyId">
+      <End Role="applicationhierarchy" EntitySet="applicationhierarchies" />
+      <End Role="roleprofile" EntitySet="roleprofiles" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Person_SystemUser_i_PersonId" Association="SAMBHS.Common.DataModel.Store.Fk_Person_SystemUser_i_PersonId">
+      <End Role="person" EntitySet="people" />
+      <End Role="systemuser" EntitySet="systemusers" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Node_SystemUserNode_i_NodeId" Association="SAMBHS.Common.DataModel.Store.Fk_Node_SystemUserNode_i_NodeId">
+      <End Role="node" EntitySet="nodes" />
+      <End Role="systemusernode" EntitySet="systemusernodes" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_SystemUser_SystemUserWarehouse_i_SystemUserId" Association="SAMBHS.Common.DataModel.Store.Fk_SystemUser_SystemUserWarehouse_i_SystemUserId">
+      <End Role="systemuser" EntitySet="systemusers" />
+      <End Role="systemusernode" EntitySet="systemusernodes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="applicationhierarchy">
+    <Key>
+      <PropertyRef Name="i_ApplicationHierarchyId" />
+    </Key>
+    <Property Name="i_ApplicationHierarchyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="i_ApplicationHierarchyTypeId" Type="int">
+      <Documentation>
+        <Summary>Hace referencia a a la tabla parametro
+
+1 Agrupacion (no usa ScopeId)
+2 Funcionalidad (pantalla) (Si usa ScopeId)
+3 Accion(no usa ScopeId)
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_Level" Type="int" />
+    <Property Name="v_Description" Type="varchar" MaxLength="100" />
+    <Property Name="v_Form" Type="varchar" MaxLength="200" />
+    <Property Name="v_Code" Type="varchar" MaxLength="250">
+      <Documentation>
+        <Summary>Es el código del formulario y tambien el código de acción</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_ParentId" Type="int" />
+    <Property Name="i_ScopeId" Type="int">
+      <Documentation>
+        <Summary>Hace referencia a la tabla SystemParameter
+tipo opcion:  global: Son los permisos globales (Adm sistema, Adm Negocio) , contextual : Permiso por Nodo / Empresa(Adm Sistema, Adm Negocio)</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+    <Property Name="i_TypeFormId" Type="int" />
+  </EntityType>
+  <EntityType Name="dbconfig">
+    <Key>
+      <PropertyRef Name="i_ConfId" />
+    </Key>
+    <Property Name="i_ConfId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="v_RutaMSSQL" Type="varchar" MaxLength="250" />
+    <Property Name="v_RutaBDPlantilla" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="extendedaction">
+    <Documentation>
+      <Summary>Son los permisos extendidos para un usuario en particular</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_ExtendedActionId" />
+    </Key>
+    <Property Name="i_ExtendedActionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="i_SystemUserId" Type="int" />
+    <Property Name="i_ApplicationHierarchyId" Type="int" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="licenses">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="v_License" Type="varchar" MaxLength="5000" />
+    <Property Name="v_Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="t_FechaCreacion" Type="datetime" />
+    <Property Name="i_IdUsuarioCreacion" Type="int" />
+    <Property Name="t_FechaExpiracion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="node">
+    <Documentation>
+      <Summary>Son las áreas geográficas donde se ingresará los datos (Almacenes, Tienda, Central, etc)
+
+El nodo N001 será el nodo Data Center</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_NodeId" />
+    </Key>
+    <Property Name="i_NodeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="v_RazonSocial" Type="varchar" MaxLength="250" />
+    <Property Name="v_RUC" Type="varchar" MaxLength="11" />
+    <Property Name="v_Direccion" Type="varchar" MaxLength="250" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="nodewarehouse">
+    <Key>
+      <PropertyRef Name="i_NodeWarehouseId" />
+    </Key>
+    <Property Name="i_NodeWarehouseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="i_NodeId" Type="int" />
+    <Property Name="i_WarehouseId" Type="int" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="organization">
+    <Key>
+      <PropertyRef Name="i_OrganizationId" />
+    </Key>
+    <Property Name="i_OrganizationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="v_IdentificationNumber" Type="varchar" MaxLength="20" />
+    <Property Name="v_Name" Type="varchar" MaxLength="250" />
+    <Property Name="v_Address" Type="varchar" MaxLength="250" />
+    <Property Name="v_PhoneNumber" Type="varchar" MaxLength="15" />
+    <Property Name="v_Mail" Type="varchar" MaxLength="200" />
+    <Property Name="v_ContacName" Type="text" />
+    <Property Name="v_Observation" Type="text" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="person">
+    <Documentation>
+      <Summary>Person será creado solo en el Data Center, y bajará a los nodos</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_PersonId" />
+    </Key>
+    <Property Name="i_PersonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="v_FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="v_FirstLastName" Type="varchar" MaxLength="50" />
+    <Property Name="v_SecondLastName" Type="varchar" MaxLength="50" />
+    <Property Name="i_DocTypeId" Type="int">
+      <Documentation>
+        <Summary>Dni, Ruc, Passaporte, Etc</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_DocNumber" Type="varchar" MaxLength="20" />
+    <Property Name="d_Birthdate" Type="date" />
+    <Property Name="v_BirthPlace" Type="varchar" MaxLength="100">
+      <Documentation>
+        <Summary>Lugar de Nacimiento como texto
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_SexTypeId" Type="int">
+      <Documentation>
+        <Summary>Masculino, Femenino
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_MaritalStatusId" Type="int">
+      <Documentation>
+        <Summary>Soltero; Casado; Conviviente; Divorciado; Viudo
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_LevelOfId" Type="int">
+      <Documentation>
+        <Summary>Analfabeto; Primaria Incompleta; Primaria Completa; Secundaria Incompleta; Secundaria Completa; Técnico; Universitario; Post Grado.
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_TelephoneNumber" Type="varchar" MaxLength="15" />
+    <Property Name="v_AdressLocation" Type="varchar" MaxLength="250">
+      <Documentation>
+        <Summary>Lugar de residencia actual
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_GeografyLocationId" Type="varchar" MaxLength="6">
+      <Documentation>
+        <Summary>còdigo de obigueo
+</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_ContactName" Type="varchar" MaxLength="50" />
+    <Property Name="v_EmergencyPhone" Type="varchar" MaxLength="15" />
+    <Property Name="b_PersonImage" Type="image" />
+    <Property Name="v_Mail" Type="varchar" MaxLength="100" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+    <Property Name="i_InsertNodeId" Type="int" />
+    <Property Name="i_UpdateNodeId" Type="int" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="i_RoleId" />
+    </Key>
+    <Property Name="i_RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="v_Name" Type="varchar" MaxLength="100" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="roleprofile">
+    <Documentation>
+      <Summary>aca se grabran las pantallas y acciones de un rol por usuario</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_RoleProfileId" />
+    </Key>
+    <Property Name="i_RoleProfileId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="i_ApplicationHierarchyId" Type="int" />
+    <Property Name="i_RoleId" Type="int" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="systemparameter">
+    <Key>
+      <PropertyRef Name="i_GroupId" />
+      <PropertyRef Name="i_ParameterId" />
+    </Key>
+    <Property Name="i_GroupId" Type="int" Nullable="false" />
+    <Property Name="i_ParameterId" Type="int" Nullable="false" />
+    <Property Name="v_Value1" Type="varchar" MaxLength="200" />
+    <Property Name="v_Value2" Type="varchar" MaxLength="200" />
+    <Property Name="v_Value3" Type="varchar" MaxLength="200" />
+    <Property Name="v_Field" Type="varchar" MaxLength="200" />
+    <Property Name="i_ParentParameterId" Type="int" />
+    <Property Name="i_Sort" Type="int" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="systemuser">
+    <Key>
+      <PropertyRef Name="i_SystemUserId" />
+    </Key>
+    <Property Name="i_SystemUserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="i_PersonId" Type="int" />
+    <Property Name="i_RoleId" Type="int">
+      <Documentation>
+        <Summary>Es el Rol que el usuario va a tener; viene de un grupo de SystemParameter</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="v_UserName" Type="varchar" MaxLength="100" />
+    <Property Name="v_Password" Type="varchar" MaxLength="100" />
+    <Property Name="v_SecretQuestion" Type="varchar" MaxLength="100" />
+    <Property Name="v_SecretAnswer" Type="varchar" MaxLength="200" />
+    <Property Name="v_CodeBar" Type="varchar" MaxLength="50">
+      <Documentation>
+        <Summary>Código de barras del usuario, para poder loguearse para registrar una venta</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="i_UsuarioContable" Type="int" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="systemusernode">
+    <Documentation>
+      <Summary>En esta tabla se almacenará usuarios con  acceso a uno o mas nodos.</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="i_SystemUserNodeId" />
+    </Key>
+    <Property Name="i_SystemUserNodeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="i_SystemUserId" Type="int" />
+    <Property Name="i_NodeId" Type="int" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="tipodecambio">
+    <Key>
+      <PropertyRef Name="i_CodTipoCambio" />
+    </Key>
+    <Property Name="i_CodTipoCambio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="i_Periodo" Type="int" />
+    <Property Name="d_FechaTipoC" Type="date" />
+    <Property Name="d_ValorCompra" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="d_ValorVenta" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+    <Property Name="d_ValorCompraContable" Type="numeric" Precision="18" Scale="4" />
+    <Property Name="d_ValorVentaContable" Type="numeric" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="warehouse">
+    <Key>
+      <PropertyRef Name="i_WarehouseId" />
+    </Key>
+    <Property Name="i_WarehouseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="v_Name" Type="varchar" MaxLength="250" />
+    <Property Name="v_Address" Type="varchar" MaxLength="250" />
+    <Property Name="v_PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="v_CommercialName" Type="varchar" MaxLength="250" />
+    <Property Name="v_TicketSerialNumber" Type="varchar" MaxLength="50" />
+    <Property Name="v_EstablishmentCode" Type="varchar" MaxLength="50" />
+    <Property Name="i_IsDeleted" Type="int" />
+    <Property Name="i_InsertUserId" Type="int" />
+    <Property Name="d_InsertDate" Type="datetime2" />
+    <Property Name="i_UpdateUserId" Type="int" />
+    <Property Name="d_UpdateDate" Type="datetime2" />
+  </EntityType>
+  <Association Name="Fk_ApplicationHierarchy_ExtendedAction_i_ApplicationHierarchyId">
+    <End Role="applicationhierarchy" Type="SAMBHS.Common.DataModel.Store.applicationhierarchy" Multiplicity="0..1" />
+    <End Role="extendedaction" Type="SAMBHS.Common.DataModel.Store.extendedaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="applicationhierarchy">
+        <PropertyRef Name="i_ApplicationHierarchyId" />
+      </Principal>
+      <Dependent Role="extendedaction">
+        <PropertyRef Name="i_ApplicationHierarchyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_SystemUser_ExtendedAction_i_SystemUserId">
+    <End Role="systemuser" Type="SAMBHS.Common.DataModel.Store.systemuser" Multiplicity="0..1" />
+    <End Role="extendedaction" Type="SAMBHS.Common.DataModel.Store.extendedaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="systemuser">
+        <PropertyRef Name="i_SystemUserId" />
+      </Principal>
+      <Dependent Role="extendedaction">
+        <PropertyRef Name="i_SystemUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Node_NodeWarehouse_i_NodeId">
+    <End Role="node" Type="SAMBHS.Common.DataModel.Store.node" Multiplicity="0..1" />
+    <End Role="nodewarehouse" Type="SAMBHS.Common.DataModel.Store.nodewarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="node">
+        <PropertyRef Name="i_NodeId" />
+      </Principal>
+      <Dependent Role="nodewarehouse">
+        <PropertyRef Name="i_NodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="warehouse_nodewarehouse_v_WarehouseId">
+    <End Role="warehouse" Type="SAMBHS.Common.DataModel.Store.warehouse" Multiplicity="0..1" />
+    <End Role="nodewarehouse" Type="SAMBHS.Common.DataModel.Store.nodewarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="warehouse">
+        <PropertyRef Name="i_WarehouseId" />
+      </Principal>
+      <Dependent Role="nodewarehouse">
+        <PropertyRef Name="i_WarehouseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Role_RoleProfile_i_RoleId">
+    <End Role="role" Type="SAMBHS.Common.DataModel.Store.role" Multiplicity="0..1" />
+    <End Role="roleprofile" Type="SAMBHS.Common.DataModel.Store.roleprofile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="i_RoleId" />
+      </Principal>
+      <Dependent Role="roleprofile">
+        <PropertyRef Name="i_RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_ApplicationHierarchy_RoleProfile_i_ApplicationHierarchyId">
+    <End Role="applicationhierarchy" Type="SAMBHS.Common.DataModel.Store.applicationhierarchy" Multiplicity="0..1" />
+    <End Role="roleprofile" Type="SAMBHS.Common.DataModel.Store.roleprofile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="applicationhierarchy">
+        <PropertyRef Name="i_ApplicationHierarchyId" />
+      </Principal>
+      <Dependent Role="roleprofile">
+        <PropertyRef Name="i_ApplicationHierarchyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Person_SystemUser_i_PersonId">
+    <End Role="person" Type="SAMBHS.Common.DataModel.Store.person" Multiplicity="0..1" />
+    <End Role="systemuser" Type="SAMBHS.Common.DataModel.Store.systemuser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="person">
+        <PropertyRef Name="i_PersonId" />
+      </Principal>
+      <Dependent Role="systemuser">
+        <PropertyRef Name="i_PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Node_SystemUserNode_i_NodeId">
+    <End Role="node" Type="SAMBHS.Common.DataModel.Store.node" Multiplicity="0..1" />
+    <End Role="systemusernode" Type="SAMBHS.Common.DataModel.Store.systemusernode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="node">
+        <PropertyRef Name="i_NodeId" />
+      </Principal>
+      <Dependent Role="systemusernode">
+        <PropertyRef Name="i_NodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_SystemUser_SystemUserWarehouse_i_SystemUserId">
+    <End Role="systemuser" Type="SAMBHS.Common.DataModel.Store.systemuser" Multiplicity="0..1" />
+    <End Role="systemusernode" Type="SAMBHS.Common.DataModel.Store.systemusernode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="systemuser">
+        <PropertyRef Name="i_SystemUserId" />
+      </Principal>
+      <Dependent Role="systemusernode">
+        <PropertyRef Name="i_SystemUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_Backup_BD_Cliente" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SP_Backup_BD_Cliente">
+    <Parameter Name="v_DataBase" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="v_FileName" Type="varchar" Mode="In" MaxLength="50" />
+    <Parameter Name="v_RutaDestino" Type="varchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="SP_Cierra_Conexiones" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SP_Cierra_Conexiones">
+    <Parameter Name="RUC" Type="varchar" Mode="In" MaxLength="11" />
+  </Function>
+  <Function Name="sp_migracion_clientesproveedores" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp_migracion_clientesproveedores">
+    <Parameter Name="RUC_EmpresaOrigen" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="RUC_EmpresaDestino" Type="varchar" Mode="In" MaxLength="11" />
+  </Function>
+  <Function Name="sp_migracion_conceptos" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp_migracion_conceptos">
+    <Parameter Name="RUC_EmpresaOrigen" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="RUC_EmpresaDestino" Type="varchar" Mode="In" MaxLength="11" />
+  </Function>
+  <Function Name="sp_migracion_configuracionempresa" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp_migracion_configuracionempresa">
+    <Parameter Name="RUC_EmpresaOrigen" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="RUC_EmpresaDestino" Type="varchar" Mode="In" MaxLength="11" />
+  </Function>
+  <Function Name="sp_migracion_destinos" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp_migracion_destinos">
+    <Parameter Name="RUC_EmpresaOrigen" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="RUC_EmpresaDestino" Type="varchar" Mode="In" MaxLength="11" />
+  </Function>
+  <Function Name="sp_migracion_plancontable" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp_migracion_plancontable">
+    <Parameter Name="RUC_EmpresaOrigen" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="RUC_EmpresaDestino" Type="varchar" Mode="In" MaxLength="11" />
+  </Function>
+  <Function Name="SP_ReplicaBD_Plantilla" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SP_ReplicaBD_Plantilla">
+    <Parameter Name="RutaMSSQL" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="RutaPlantillaMaster" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="RUC" Type="char" Mode="In" MaxLength="11" />
+  </Function>
+  <Function Name="SP_RestauraBD_Cliente" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SP_RestauraBD_Cliente">
+    <Parameter Name="Ruta" Type="varchar" Mode="In" MaxLength="250" />
+    <Parameter Name="RUC" Type="char" Mode="In" MaxLength="11" />
+  </Function>
+  <Function Name="SPD_Almacen_Empresa" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SPD_Almacen_Empresa">
+    <Parameter Name="RUC_Empresa" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="i_IdAlmacen" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPD_Usuarios_Empresas" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SPD_Usuarios_Empresas">
+    <Parameter Name="RUC_Empresa" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="i_SystemUserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPE_Almacen_Empresa" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SPE_Almacen_Empresa">
+    <Parameter Name="RUC_Empresa" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="i_IdAlmacen" Type="int" Mode="In" />
+    <Parameter Name="v_Nombre" Type="nvarchar" Mode="In" MaxLength="250" />
+    <Parameter Name="v_Direccion" Type="nvarchar" Mode="In" MaxLength="250" />
+  </Function>
+  <Function Name="SPE_Usuarios_Empresas" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SPE_Usuarios_Empresas">
+    <Parameter Name="RUC_Empresa" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="i_SystemUserId" Type="int" Mode="In" />
+    <Parameter Name="i_PersonId" Type="int" Mode="In" />
+    <Parameter Name="i_RoleId" Type="int" Mode="In" />
+    <Parameter Name="v_UserName" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="v_Password" Type="varchar" Mode="In" MaxLength="100" />
+  </Function>
+  <Function Name="SPI_Almacen_Empresa" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SPI_Almacen_Empresa">
+    <Parameter Name="RUC_Empresa" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="i_IdAlmacen" Type="int" Mode="In" />
+    <Parameter Name="v_Nombre" Type="nvarchar" Mode="In" MaxLength="250" />
+    <Parameter Name="i_InsertUserId" Type="int" Mode="In" />
+    <Parameter Name="v_Direccion" Type="nvarchar" Mode="In" MaxLength="250" />
+    <Parameter Name="d_InsertDate" Type="varchar" Mode="In" MaxLength="10" />
+  </Function>
+  <Function Name="SPI_Usuarios_Empresas" IsComposable="false" BuiltIn="false" Aggregate="false" NiladicFunction="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SPI_Usuarios_Empresas">
+    <Parameter Name="RUC_Empresa" Type="varchar" Mode="In" MaxLength="11" />
+    <Parameter Name="i_SystemUserId" Type="int" Mode="In" />
+    <Parameter Name="i_PersonId" Type="int" Mode="In" />
+    <Parameter Name="i_RoleId" Type="int" Mode="In" />
+    <Parameter Name="v_UserName" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="v_Password" Type="varchar" Mode="In" MaxLength="100" />
+    <Parameter Name="i_InsertUserId" Type="int" Mode="In" />
+    <Parameter Name="d_InsertDate" Type="varchar" Mode="In" MaxLength="10" />
+  </Function>
+</Schema>

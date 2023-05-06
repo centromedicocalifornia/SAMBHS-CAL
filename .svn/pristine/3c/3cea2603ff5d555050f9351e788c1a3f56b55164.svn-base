@@ -1,0 +1,248 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity;
+using System.IO;
+using System.Net;
+using Newtonsoft.Json;
+using System.Text;
+using System.Linq;
+using SAMBHS.Common.DataModel;
+using SAMBHS.Windows.NubefactIntegration.Modelos;
+
+
+namespace SAMBHS.Windows.NubefactIntegration
+{
+    public class NubeFacTManager
+    {
+        private readonly BackgroundWorker _bw;
+        public string Ruta { get; set; }
+        public string Token { get; set; }
+        public TipoAccion TipoAccionRealizar { get; set; }
+        public string FormatoImpresion { get; set; }
+        private bool _erroresOcurridos;
+        private int _rowIndex;
+
+        public delegate void Terminado(Respuesta rpt, int rowIndex);
+        public delegate void Error(Exception ex, int rowIndex);
+        public delegate void Estado(string msg, int rowIndex);
+
+        public event Terminado TerminadoEvent;
+        public event Error ErrorEvent;
+        public event Estado EstadoEvent;
+
+        public NubeFacTManager()
+        {
+            _bw = new BackgroundWorker();
+            _bw.RunWorkerCompleted += _bw_RunWorkerCompleted;
+            _bw.DoWork += _bw_DoWork;
+        }
+
+        public void Comenzar(string pstrIdVenta, int rowIndex)
+        {
+            try
+            {
+                _rowIndex = rowIndex;
+                _bw.RunWorkerAsync(pstrIdVenta);
+            }
+            catch (Exception e)
+            {
+                _erroresOcurridos = true;
+                if (ErrorEvent != null) ErrorEvent(e, _rowIndex);
+            }
+        }
+
+        private void _bw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                var parm = (string)e.Argument;
+                var rpt = RealizarSolicitud(parm);
+                if (rpt != null)
+                    e.Result = rpt;
+            }
+            catch (Exception exception)
+            {
+                _erroresOcurridos = true;
+                if (ErrorEvent != null) ErrorEvent(exception, _rowIndex);
+            }
+        }
+
+        private void _bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (TerminadoEvent != null && !_erroresOcurridos && e.Result != null)
+                TerminadoEvent((Respuesta)e.Result, _rowIndex);
+        }
+
+        private Respuesta RealizarSolicitud(string pstrIdVenta)
+        {
+            try
+            {
+                var json = string.Empty;
+                switch (TipoAccionRealizar)
+                {
+                    case TipoAccion.EnviarComprobante:
+                        var invoice = ObtenerInvoice(pstrIdVenta);
+                        if (invoice != null)
+                            json = invoice.ToJson();
+                        break;
+
+                    case TipoAccion.ConsultarComprobante:
+                        break;
+
+                    case TipoAccion.DarBajaComprobante:
+                        break;
+
+                    case TipoAccion.ConsultarBajaComprobante:
+                        break;
+                }
+
+                if (!string.IsNullOrEmpty(json))
+                {
+                    //var bytes = Encoding.Default.GetBytes(json);
+                    //var jsonEnUtf8 = Encoding.UTF8.GetString(bytes);
+
+                    //using (var client = new WebClient())
+                    //{
+                    //    if (EstadoEvent != null) EstadoEvent("Enviando...", _rowIndex);
+                    //    client.Headers[HttpRequestHeader.ContentType] = "application/json";
+                    //    client.Headers[HttpRequestHeader.Authorization] = Token;
+                    //    var strRespuesta = client.UploadString(Ruta, "POST", json);
+                    //    return Respuesta.FromJson(strRespuesta);
+                    //}
+                    var client = new RestClient(Ruta, Token, HttpVerb.POST, json);
+                    var jsonR = client.MakeRequest();
+                    return Respuesta.FromJson(jsonR);
+                }
+
+                throw new Exception("No se pudo constituir el archivo Json");
+            }
+            catch (Exception e)
+            {
+                _erroresOcurridos = true;
+                if (ErrorEvent != null) ErrorEvent(e, _rowIndex);
+                return null;
+            }
+        }
+
+        public enum TipoAccion
+        {
+            EnviarComprobante,
+            ConsultarComprobante,
+            DarBajaComprobante,
+            ConsultarBajaComprobante
+        }
+
+        private Invoice ObtenerInvoice(string pstrIdVenta)
+        {
+            try
+            {
+                using (var dbContext = new SAMBHSEntitiesModelWin())
+                {
+                    if (EstadoEvent != null) EstadoEvent("Procesando...", _rowIndex);
+                    var v = dbContext.venta.FirstOrDefault(p => p.v_IdVenta.Equals(pstrIdVenta));
+                    if (v == null) return null;
+                    var c = dbContext.cliente.FirstOrDefault(p => p.v_IdCliente.Equals(v.v_IdCliente));
+                    if (c == null) return null;
+                    var det = dbContext.ventadetalle.Where(p => p.v_IdVenta.Equals(pstrIdVenta) && p.i_Eliminado == 0).ToList();
+                    if (!det.Any()) return null;
+
+                    var esNcr = (v.i_IdTipoDocumento ?? 0) == 7 || (v.i_IdTipoDocumento ?? 0) == 8;
+                    var cp = dbContext.datahierarchy.FirstOrDefault(p => p.i_GroupId == 23 && p.i_ItemId == (v.i_IdCondicionPago ?? 1));
+                    var condicionP = cp != null ? cp.v_Value1 : "CONTADO";
+
+
+                    var header = new Invoice
+                                {
+                                    ClienteDireccion = c.v_DirecPrincipal,
+                                    ClienteEmail = c.v_Correo,
+                                    ClienteNumeroDeDocumento = c.v_NroDocIdentificacion,
+                                    ClienteTipoDeDocumento = c.i_IdTipoIdentificacion ?? 1,
+                                    CodigoUnico = v.v_Periodo + v.v_Mes + v.v_Correlativo,
+                                    FechaDeEmision = GetDateFormatted(v.t_FechaRegistro ?? DateTime.Today),
+                                    FechaDeVencimiento = GetDateFormatted(v.t_FechaVencimiento ?? DateTime.Today),
+                                    PlacaVehiculo = v.v_PlacaVehiculo,
+                                    Moneda = v.i_IdMoneda ?? 1,
+                                    Operacion = "generar_comprobante",
+                                    TipoDeComprobante = v.i_IdTipoDocumento ?? 1,
+                                    Serie = v.v_SerieDocumento.Trim(),
+                                    Numero = long.Parse(v.v_CorrelativoDocumento),
+                                    SunatTransaction = 1,
+                                    ClienteDenominacion = (c.v_RazonSocial + " " + c.v_ApePaterno + " " + c.v_ApeMaterno + " " + c.v_PrimerNombre).Trim(),
+                                    TipoDeCambio = (v.d_TipoCambio ?? 3).ToString("F"),
+                                    PorcentajeDeIgv = "18.00",
+                                    TotalDescuento = (v.d_Descuento ?? 0).ToString("F"),
+                                    DescuentoGlobal = (v.d_Descuento ?? 0).ToString("F"),
+                                    TotalAnticipo = (v.d_Anticipio ?? 0).ToString("F"),
+                                    TotalGravada = det.Where(p => p.i_IdTipoOperacion.ToString().StartsWith("1")).Sum(s => s.d_ValorVenta ?? 0).ToString("F"),
+                                    TotalExonerada = det.Where(p => p.i_IdTipoOperacion.ToString().StartsWith("2")).Sum(s => s.d_ValorVenta ?? 0).ToString("F"),
+                                    TotalInafecta = det.Where(p => p.i_IdTipoOperacion.ToString().StartsWith("3")).Sum(s => s.d_ValorVenta ?? 0).ToString("F"),
+                                    TotalGratuita = "0.00",
+                                    TotalIgv = (v.d_IGV ?? 0).ToString("F"),
+                                    Total = (v.d_Total ?? 0).ToString("F"),
+                                    TotalOtrosCargos = ((v.d_total_otrostributos ?? 0) + (v.d_total_isc ?? 0)).ToString("F"),
+                                    PercepcionTipo = "",
+                                    Observaciones = v.v_Concepto.ToUpper(),
+                                    Detraccion = (v.i_AfectaDetraccion ?? 0) == 1 ? "verdadero" : "falso",
+                                    DocumentoQueSeModificaTipo = esNcr ? (v.i_IdTipoDocumentoRef ?? 0).ToString() : "",
+                                    DocumentoQueSeModificaSerie = esNcr ? v.v_SerieDocumentoRef.Trim().ToUpper() : "",
+                                    DocumentoQueSeModificaNumero = esNcr ? long.Parse(v.v_CorrelativoDocumentoRef).ToString().Trim() : "",
+                                    TipoDeNotaDeCredito = v.i_IdTipoNota ?? 1,
+                                    TipoDeNotaDeDebito = v.i_IdTipoNota ?? 1,
+                                    EnviarAutomaticamenteALaSunat = "verdadero",
+                                    EnviarAutomaticamenteAlCliente = string.IsNullOrWhiteSpace(c.v_Correo) ? "falso" : "verdadero",
+                                    CondicionesDePago = condicionP,
+                                    MedioDePago = "",
+                                    OrdenCompraServicio = v.v_OrdenCompra,
+                                    FormatoDePdf = FormatoImpresion,
+                                    ClienteEmail1 = "",
+                                    ClienteEmail2 = "",
+                                    PercepcionBaseImponible = "",
+                                    TablaPersonalizadaCodigo = "",
+                                    TotalIncluidoPercepcion = "",
+                                    TotalPercepcion = ""
+                                };
+
+                    var details = det.Select(d =>
+                    {
+                        var prod = dbContext.productodetalle.FirstOrDefault(p => p.v_IdProductoDetalle.Equals(d.v_IdProductoDetalle));
+                        if (prod == null) return null;
+                        var prodInfo = new { prod.producto.v_CodInterno, EServicio = (prod.producto.i_EsServicio??0) == 1};
+                        return new Item
+                        {
+                            Total = (d.d_PrecioVenta ?? 0).ToString("F"),
+                            AnticipoDocumentoNumero = v.v_IdDocAnticipo??"",
+                            AnticipoDocumentoSerie = "",
+                            AnticipoRegularizacion = "false",
+                            Cantidad = (d.d_Cantidad ?? 0).ToString("F"),
+                            Codigo = prodInfo.v_CodInterno,
+                            Descripcion = d.v_DescripcionProducto,
+                            Descuento = (d.d_Descuento ?? 0).ToString("F"),
+                            Igv = (d.d_Igv ?? 0).ToString("F"),
+                            PrecioUnitario = (d.d_Precio ?? 0).ToString("F"),
+                            Subtotal = (d.d_ValorVenta ?? 0).ToString("F"),
+                            UnidadDeMedida = prodInfo.EServicio ? "ZZ" : "NIU",
+                            TipoDeIgv = (d.i_IdTipoOperacion??1).ToString(),
+                            ValorUnitario = (d.d_Valor ?? 0).ToString("F"),
+                        };
+                    }).ToArray();
+
+                    header.Items = details;
+
+                    return header;
+                }
+            }
+            catch (Exception e)
+            {
+                _erroresOcurridos = true;
+                if (ErrorEvent != null) ErrorEvent(e, _rowIndex);
+                return null;
+            }
+        }
+
+        private static string GetDateFormatted(DateTime d)
+        {
+            return d.Day + "-" + d.Month + "-" + d.Year;
+        }
+    }
+}

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<configSections>
+		<sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+			<section name="SAMBHS.Windows.WinClient.UI.Requerimientos.NotariaBecerraSosaya.NBS_DBF_PathSettings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+			<section name="Infragistics.Win.UltraWinDock.UltraDockManager.frmBandejaEstadoVentaElectronica.dockManager" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+			<section name="SAMBHS.Windows.WinClient.UI.UserConfig" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+		</sectionGroup>
+	</configSections>
+ <connectionStrings>
+     <clear />
+     <add name="SAMBHSConnectionString" connectionString="metadata=res://SAMBHS.Common.DataModel.MSSQL/DMMSQL.csdl|res://SAMBHS.Common.DataModel.MSSQL/DMMSQL.ssdl|res://SAMBHS.Common.DataModel.MSSQL/DMMSQL.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=192.168.1.179;Initial Catalog=TIS_INTEGRADO;Integrated Security=False;Persist Security Info=True;User ID=sa;Password=123456&quot;"
+         providerName="System.Data.EntityClient" />
+     <add name="SAMBHSConnectionStringWin" connectionString="metadata=res://SAMBHS.Common.DataModel.MSSQLWIN/DMMSQLWIN.csdl|res://SAMBHS.Common.DataModel.MSSQLWIN/DMMSQLWIN.ssdl|res://SAMBHS.Common.DataModel.MSSQLWIN/DMMSQLWIN.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.\mssqlserver_2012;Initial Catalog=20505310072;Integrated Security=False;Persist Security Info=True;User ID=sa;Password=123456&quot;"
+         providerName="System.Data.EntityClient" />
+     <add name="SigesoftConnectionString" connectionString="Initial Catalog=SanLorenzo; Data Source=DESKTOP-GBIPEVA\MSSQL12;user id=sa;password=123456;Connect Timeout=2000"
+         providerName="System.Data.SqlClient" />
+ </connectionStrings>
+	<appSettings>
+		<add key="EmpresaPredeterminada" value="" />
+		<add key="NodeId" value="2" /> 
+		<add key="AccessTime" value="10000" />
+		<add key="EP2" value="29" />
+		<add key="AP29" value="1" />
+		<add key="ClientSettingsProvider.ServiceUri" value="" />
+	</appSettings>
+	<startup useLegacyV2RuntimeActivationPolicy="true">
+		<supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0" />
+	</startup> 
+	<system.web>
+		<membership defaultProvider="ClientAuthenticationMembershipProvider">
+			<providers>
+				<add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+			</providers>
+		</membership>
+		<roleManager defaultProvider="ClientRoleProvider" enabled="true">
+			<providers>
+				<add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+			</providers>
+		</roleManager>
+	</system.web>
+	<system.data>
+		<DbProviderFactories>
+			<remove invariant="Devart.Data.PostgreSql" />
+			<add name="dotConnect for PostgreSQL" invariant="Devart.Data.PostgreSql" description="Devart dotConnect for PostgreSQL" type="Devart.Data.PostgreSql.PgSqlProviderFactory, Devart.Data.PostgreSql, Version=6.8.333.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
+		</DbProviderFactories>
+	</system.data>
+	<system.net>
+		<settings>
+			<httpWebRequest useUnsafeHeaderParsing="true" />
+		</settings>
+	</system.net>
+	<userSettings>
+		<SAMBHS.Windows.WinClient.UI.Requerimientos.NotariaBecerraSosaya.NBS_DBF_PathSettings>
+	 <setting name="dbf_data_path" serializeAs="String">
+		<value />
+	 </setting>
+	 <setting name="dbf_clientref_path" serializeAs="String">
+		<value />
+	 </setting>
+	 <setting name="dbf_data_filename" serializeAs="String">
+		<value />
+	 </setting>
+	 <setting name="dbf_clientref_filename" serializeAs="String">
+		<value />
+	 </setting>
+	 <setting name="dbfSincro_Cabecera" serializeAs="String">
+		<value />
+	 </setting>
+	 <setting name="dbfSincro_Detalle" serializeAs="String">
+		<value />
+	 </setting>
+	 <setting name="BdEmpresaDestino" serializeAs="String">
+		<value />
+	 </setting>
+	</SAMBHS.Windows.WinClient.UI.Requerimientos.NotariaBecerraSosaya.NBS_DBF_PathSettings>
+		<SAMBHS.Windows.WinClient.UI.UserConfig>
+      <setting name="appEstablecimientoPredeterminado" serializeAs="String">
+          <value>-1</value>
+      </setting>
+      <setting name="appAlmacenPredeterminado" serializeAs="String">
+          <value>-1</value>
+      </setting>
+      <setting name="csUsuario" serializeAs="String">
+          <value>sa</value>
+      </setting>
+      <setting name="csServidor" serializeAs="String">
+          <value>sistema4-pc</value>
+      </setting>
+      <setting name="csPassword" serializeAs="String">
+          <value>123456</value>
+      </setting>
+      <setting name="csTipoMotorBD" serializeAs="String">
+          <value>MSSQLServer</value>
+      </setting>
+      <setting name="csTipoDocumentoVentaRapida" serializeAs="String">
+          <value>12</value>
+      </setting>
+      <setting name="appTipoBusquedaPredeterminadaProducto" serializeAs="String">
+          <value>Ambos</value>
+      </setting>
+      <setting name="repCurrentNode" serializeAs="String">
+          <value>N</value>
+      </setting>
+      <setting name="appPermiteIntercambiarDocumentosVR" serializeAs="String">
+          <value>False</value>
+      </setting>
+      <setting name="ImpresionDirectaTesoreria" serializeAs="String">
+          <value>True</value>
+      </setting>
+      <setting name="NroTicket" serializeAs="String">
+          <value />
+      </setting>
+      <setting name="sacRuc" serializeAs="String">
+          <value />
+      </setting>
+      <setting name="sacUser" serializeAs="String">
+          <value />
+      </setting>
+      <setting name="sacClave" serializeAs="String">
+          <value />
+      </setting>
+      <setting name="appEmisorComp" serializeAs="String">
+          <value>False</value>
+      </setting>
+      <setting name="ImpresioDirectaVentaRapida" serializeAs="String">
+          <value>True</value>
+      </setting>
+      <setting name="MostrarSoloFormasPagoAlmacenActual" serializeAs="String">
+          <value>False</value>
+      </setting>
+      <setting name="SerieCaja" serializeAs="String">
+          <value />
+      </setting>
+      <setting name="TipoDocumentoCajaChica" serializeAs="String">
+          <value />
+      </setting>
+      <setting name="CantVenta" serializeAs="String">
+          <value>1</value>
+      </setting>
+      <setting name="CantCompra" serializeAs="String">
+          <value>1</value>
+      </setting>
+      <setting name="ThermalPrinter" serializeAs="String">
+          <value>TSC TTP-244 Plus (Copiar 1)</value>
+      </setting>
+      <setting name="PermiteRealizarCobranzasImporteCero" serializeAs="String">
+          <value>False</value>
+      </setting>
+      <setting name="RealizarCalculoDespachoPedido" serializeAs="String">
+          <value>True</value>
+      </setting>
+      <setting name="AnularGuiaInternaExtraccion" serializeAs="String">
+          <value>True</value>
+      </setting>
+      <setting name="NubefactRuta" serializeAs="String">
+          <value />
+      </setting>
+      <setting name="NubefactToken" serializeAs="String">
+          <value />
+      </setting>
+      <setting name="NubefactFormato" serializeAs="String">
+          <value>A4</value>
+      </setting>
+      <setting name="NubefactAutoEnvio" serializeAs="String">
+          <value>False</value>
+      </setting>
+      <setting name="NubefactEnviarAlGuardar" serializeAs="String">
+          <value>False</value>
+      </setting>
+  </SAMBHS.Windows.WinClient.UI.UserConfig>
+	</userSettings>
+	<runtime>
+		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+			<dependentAssembly>
+				<assemblyIdentity name="System" publicKeyToken="b77a5c561934e089" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Data" publicKeyToken="b77a5c561934e089" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Drawing" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Windows.Forms" publicKeyToken="b77a5c561934e089" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Xml" publicKeyToken="b77a5c561934e089" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Runtime.Serialization.Formatters.Soap" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Configuration" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Core" publicKeyToken="b77a5c561934e089" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Transactions" publicKeyToken="b77a5c561934e089" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Xml.Linq" publicKeyToken="b77a5c561934e089" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Runtime.Serialization" publicKeyToken="b77a5c561934e089" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Web" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="System.Web.Services" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+				<bindingRedirect oldVersion="0.0.0.0-10.0.0.0" newVersion="10.0.0.0" />
+			</dependentAssembly>
+		</assemblyBinding>
+	</runtime>
+</configuration>

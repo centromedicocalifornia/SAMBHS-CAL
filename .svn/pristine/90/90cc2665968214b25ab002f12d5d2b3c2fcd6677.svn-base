@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <connectionStrings>
+        <add name="SAMBHSConnectionStringWin" connectionString="metadata=res://*/DMMSQLWIN.csdl|res://*/DMMSQLWIN.ssdl|res://*/DMMSQLWIN.msl;provider=Devart.Data.PostgreSql;provider connection string=&quot;User Id=postgres;Host=localhost;Database=20522199495;Initial Schema=public&quot;"
+            providerName="System.Data.EntityClient" />
+    </connectionStrings>
+</configuration>

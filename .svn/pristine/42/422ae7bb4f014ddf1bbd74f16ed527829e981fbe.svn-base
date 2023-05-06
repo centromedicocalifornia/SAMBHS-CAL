@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteTransferencias" targetNamespace="http://tempuri.org/dsReporteTransferencias.xsd" xmlns:mstns="http://tempuri.org/dsReporteTransferencias.xsd" xmlns="http://tempuri.org/dsReporteTransferencias.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteTransferencias" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteTransferencias" msprop:Generator_UserDSName="dsReporteTransferencias">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteTransferencias" msprop:Generator_TableClassName="dsReporteTransferenciasDataTable" msprop:Generator_TableVarName="tabledsReporteTransferencias" msprop:Generator_TablePropName="_dsReporteTransferencias" msprop:Generator_RowDeletingName="dsReporteTransferenciasRowDeleting" msprop:Generator_RowChangingName="dsReporteTransferenciasRowChanging" msprop:Generator_RowEvHandlerName="dsReporteTransferenciasRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteTransferenciasRowDeleted" msprop:Generator_UserTableName="dsReporteTransferencias" msprop:Generator_RowChangedName="dsReporteTransferenciasRowChanged" msprop:Generator_RowEvArgName="dsReporteTransferenciasRowChangeEvent" msprop:Generator_RowClassName="dsReporteTransferenciasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NroIngreso" msprop:Generator_ColumnVarNameInTable="columnNroIngreso" msprop:Generator_ColumnPropNameInRow="NroIngreso" msprop:Generator_ColumnPropNameInTable="NroIngresoColumn" msprop:Generator_UserColumnName="NroIngreso" type="xs:string" minOccurs="0" />
+              <xs:element name="NroSalida" msprop:Generator_ColumnVarNameInTable="columnNroSalida" msprop:Generator_ColumnPropNameInRow="NroSalida" msprop:Generator_ColumnPropNameInTable="NroSalidaColumn" msprop:Generator_UserColumnName="NroSalida" type="xs:string" minOccurs="0" />
+              <xs:element name="Key" msprop:Generator_ColumnVarNameInTable="columnKey" msprop:Generator_ColumnPropNameInRow="Key" msprop:Generator_ColumnPropNameInTable="KeyColumn" msprop:Generator_UserColumnName="Key" type="xs:string" minOccurs="0" />
+              <xs:element name="NroTransferencia" msprop:Generator_ColumnVarNameInTable="columnNroTransferencia" msprop:Generator_ColumnPropNameInRow="NroTransferencia" msprop:Generator_ColumnPropNameInTable="NroTransferenciaColumn" msprop:Generator_UserColumnName="NroTransferencia" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

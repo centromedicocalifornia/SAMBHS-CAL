@@ -1,0 +1,164 @@
+﻿using Infragistics.Win.UltraWinGrid;
+using SAMBHS.Common.BE;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SAMBHS.Windows.SigesoftIntegration.UI
+{
+    public partial class frmBuscarServiciosPendientes : Form
+    {
+        private string _organizationId;
+        public BindingList<ventadetalleDto> ListadoVentaDetalle = new BindingList<ventadetalleDto>();
+        public List<string> ServiciosSeleccionados
+        {
+            get
+            {
+                try
+                {                    
+                    var filas = ultraGrid1.Rows.Where(c => Convert.ToBoolean(c.Cells["Seleccionar"].Value.ToString())).Select(p => p.Cells["ServiceId"].Value.ToString());
+                    return filas.ToList();
+                }
+                catch (Exception)
+                {                    
+                    throw;
+                }
+            }
+        }
+
+        TipoFacturacion _tipoFacturacion;
+        public frmBuscarServiciosPendientes(string ruc, string nombreEmpresa, TipoFacturacion tipoFacturacion)
+        {
+            InitializeComponent();
+            ObtenerOrganizationId(ruc);
+            _tipoFacturacion = tipoFacturacion;
+            Text = "Servicios pendientes de: " + nombreEmpresa;
+        }
+
+        private void frmBuscarServiciosPendientes_Load(object sender, EventArgs e)
+        {
+            if (CargarLocacionesCombos())
+            {
+                btnBuscar.Click += btnBuscar_Click;
+            }
+        }
+
+        void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var locationId = cboLocacion.Value.ToString();
+                var esoId = int.Parse(cboEso.Value.ToString());
+                var gesoId = cboGeso.Value.ToString();
+                var ds = FacturacionServiciosBl.ObtenerServiciosPendientes(_tipoFacturacion, dtpF1.Value, dtpF2.Value, _organizationId, locationId, esoId, gesoId);
+                ultraGrid1.DataSource = ds;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private bool ObtenerOrganizationId(string ruc)
+        {
+            try
+            {
+                _organizationId = FacturacionServiciosBl.ObtenerOrganizationIdByRuc(ruc);
+                var notok = string.IsNullOrEmpty(_organizationId);
+                lblAdvertencia.Visible = notok;
+                ultraGroupBox1.Enabled = !notok;
+                return !string.IsNullOrEmpty(_organizationId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        private bool CargarLocacionesCombos()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(_organizationId))
+                {
+                    var ds = FacturacionServiciosBl.GetLocationsByOrganizationId(_organizationId);
+                    if (ds != null && ds.Any())
+                    {
+                        cboLocacion.DataSource = ds;
+                        cboLocacion.DisplayMember = "Nombre";
+                        cboLocacion.ValueMember = "LocationId";
+                        cboLocacion.Enabled = ds.Count > 1;
+                        if (ds.Count <= 0) return false;
+
+                        cboLocacion.ValueChanged += delegate
+                        {
+                            FacturacionServiciosBl.LlenarComboGeso(cboGeso, _organizationId, cboLocacion.Value.ToString());
+                        };
+
+                        cboLocacion.SelectedIndex = 0;
+
+                        FacturacionServiciosBl.LlenarComboEso(cboEso);
+
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        private void ultraGrid1_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
+        {
+            lblContador.Text = string.Format("{0} Registros", ((UltraGrid)sender).Rows.Count());
+        }
+
+        private void cboAceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ids = ultraGrid1.Rows.Where(c => Convert.ToBoolean(c.Cells["Seleccionar"].Value.ToString()))
+                    .Select(p => p.Cells["ServiceId"].Value.ToString()).ToArray();
+                pEspere.Visible = true;
+                ultraGroupBox1.Enabled = false;
+                ultraGroupBox2.Enabled = false;
+                cboAceptar.Enabled = false;
+
+                Task.Factory.StartNew(() =>
+                {
+                    ListadoVentaDetalle = FacturacionServiciosBl.ObtenerDetalleVenta(ids, _tipoFacturacion);
+                }).ContinueWith(t =>
+                {
+                    if (ListadoVentaDetalle.Any())
+                    {
+                        DialogResult = System.Windows.Forms.DialogResult.OK;
+                    }
+                    ultraGroupBox1.Enabled = true;
+                    ultraGroupBox2.Enabled = true;
+                    pEspere.Visible = false;
+                    cboAceptar.Enabled = true;
+                    Close();
+                }, TaskScheduler.FromCurrentSynchronizationContext());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

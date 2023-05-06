@@ -1,0 +1,49 @@
+﻿namespace SAMBHS.Windows.NubefactIntegration.Modelos
+{
+    using System.Globalization;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+
+    public partial class ConsultaAnulacion
+    {
+        [JsonProperty("operacion")]
+        public string Operacion { get; set; }
+
+        [JsonProperty("tipo_de_comprobante")]
+        public string TipoDeComprobante { get; set; }
+
+        [JsonProperty("serie")]
+        public string Serie { get; set; }
+
+        [JsonProperty("numero")]
+        public string Numero { get; set; }
+    }
+
+    public partial class ConsultaAnulacion
+    {
+        public static ConsultaAnulacion FromJson(string json)
+        {
+            return JsonConvert.DeserializeObject<ConsultaAnulacion>(json, ConsultaAnulacionConverter.Settings);
+        }
+    }
+
+    public static class ConsultaAnulacionSerialize
+    {
+        public static string ToJson(this ConsultaAnulacion self)
+        {
+            return JsonConvert.SerializeObject(self, ConsultaAnulacionConverter.Settings);
+        }
+    }
+
+    internal static class ConsultaAnulacionConverter
+    {
+        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
+        {
+            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+            DateParseHandling = DateParseHandling.None,
+            Converters = {
+                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
+            },
+        };
+    }
+}

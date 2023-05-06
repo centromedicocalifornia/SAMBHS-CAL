@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteLibroInventarioBalanceClientes" targetNamespace="http://tempuri.org/dsReporteLibroInventarioBalanceClientes.xsd" xmlns:mstns="http://tempuri.org/dsReporteLibroInventarioBalanceClientes.xsd" xmlns="http://tempuri.org/dsReporteLibroInventarioBalanceClientes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteLibroInventarioBalanceClientes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteLibroInventarioBalanceClientes" msprop:Generator_UserDSName="dsReporteLibroInventarioBalanceClientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsReporteLibroInventarioBalanceClientes" msprop:Generator_TableClassName="dsReporteLibroInventarioBalanceClientesDataTable" msprop:Generator_TableVarName="tabledsReporteLibroInventarioBalanceClientes" msprop:Generator_TablePropName="_dsReporteLibroInventarioBalanceClientes" msprop:Generator_RowDeletingName="dsReporteLibroInventarioBalanceClientesRowDeleting" msprop:Generator_RowChangingName="dsReporteLibroInventarioBalanceClientesRowChanging" msprop:Generator_RowEvHandlerName="dsReporteLibroInventarioBalanceClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="dsReporteLibroInventarioBalanceClientesRowDeleted" msprop:Generator_UserTableName="dsReporteLibroInventarioBalanceClientes" msprop:Generator_RowChangedName="dsReporteLibroInventarioBalanceClientesRowChanged" msprop:Generator_RowEvArgName="dsReporteLibroInventarioBalanceClientesRowChangeEvent" msprop:Generator_RowClassName="dsReporteLibroInventarioBalanceClientesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CuentaMayor" msprop:Generator_ColumnVarNameInTable="columnCuentaMayor" msprop:Generator_ColumnPropNameInRow="CuentaMayor" msprop:Generator_ColumnPropNameInTable="CuentaMayorColumn" msprop:Generator_UserColumnName="CuentaMayor" type="xs:string" minOccurs="0" />
+              <xs:element name="CuentaImputable" msprop:Generator_ColumnVarNameInTable="columnCuentaImputable" msprop:Generator_ColumnPropNameInRow="CuentaImputable" msprop:Generator_ColumnPropNameInTable="CuentaImputableColumn" msprop:Generator_UserColumnName="CuentaImputable" type="xs:string" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="Documento" msprop:Generator_ColumnVarNameInTable="columnDocumento" msprop:Generator_ColumnPropNameInRow="Documento" msprop:Generator_ColumnPropNameInTable="DocumentoColumn" msprop:Generator_UserColumnName="Documento" type="xs:string" minOccurs="0" />
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="MontoCobrar" msprop:Generator_ColumnVarNameInTable="columnMontoCobrar" msprop:Generator_ColumnPropNameInRow="MontoCobrar" msprop:Generator_ColumnPropNameInTable="MontoCobrarColumn" msprop:Generator_UserColumnName="MontoCobrar" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FechaComprobante" msprop:Generator_ColumnVarNameInTable="columnFechaComprobante" msprop:Generator_ColumnPropNameInRow="FechaComprobante" msprop:Generator_ColumnPropNameInTable="FechaComprobanteColumn" msprop:Generator_UserColumnName="FechaComprobante" type="xs:string" minOccurs="0" />
+              <xs:element name="SinDetalle" msprop:Generator_ColumnVarNameInTable="columnSinDetalle" msprop:Generator_ColumnPropNameInRow="SinDetalle" msprop:Generator_ColumnPropNameInTable="SinDetalleColumn" msprop:Generator_UserColumnName="SinDetalle" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsEmpresa" msprop:Generator_TableClassName="dsEmpresaDataTable" msprop:Generator_TableVarName="tabledsEmpresa" msprop:Generator_TablePropName="dsEmpresa" msprop:Generator_RowDeletingName="dsEmpresaRowDeleting" msprop:Generator_RowChangingName="dsEmpresaRowChanging" msprop:Generator_RowEvHandlerName="dsEmpresaRowChangeEventHandler" msprop:Generator_RowDeletedName="dsEmpresaRowDeleted" msprop:Generator_UserTableName="dsEmpresa" msprop:Generator_RowChangedName="dsEmpresaRowChanged" msprop:Generator_RowEvArgName="dsEmpresaRowChangeEvent" msprop:Generator_RowClassName="dsEmpresaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnNombreEmpresaPropietaria" msprop:Generator_ColumnPropNameInRow="NombreEmpresaPropietaria" msprop:Generator_ColumnPropNameInTable="NombreEmpresaPropietariaColumn" msprop:Generator_UserColumnName="NombreEmpresaPropietaria" type="xs:string" minOccurs="0" />
+              <xs:element name="RucEmpresaPropietaria" msprop:Generator_ColumnVarNameInTable="columnRucEmpresaPropietaria" msprop:Generator_ColumnPropNameInRow="RucEmpresaPropietaria" msprop:Generator_ColumnPropNameInTable="RucEmpresaPropietariaColumn" msprop:Generator_UserColumnName="RucEmpresaPropietaria" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

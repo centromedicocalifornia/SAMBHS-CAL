@@ -1,0 +1,48 @@
+﻿using System;
+using System.Drawing;
+using System.Threading;
+using System.Windows.Forms;
+
+
+namespace LoadingClass
+{
+    public class PleaseWait : IDisposable
+    {
+        private Form _splash;
+        private Point _location;
+        private readonly string _message;
+
+        public PleaseWait(Point location, string message)
+        {
+            _location = location;
+            _message = message;
+            var t = new Thread(WorkerThread) { IsBackground = true };
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
+        public void Dispose()
+        {
+            if (_splash != null && !_splash.IsDisposed)
+                _splash.Invoke(new MethodInvoker(StopThread));
+        }
+
+        private void StopThread()
+        {
+            if (_splash != null && !_splash.IsDisposed)
+                _splash.Close();
+        }
+
+        private void WorkerThread()
+        {
+            if (_splash != null && !_splash.IsDisposed)
+            {
+                _splash = new LoadingForm(_message)
+                {
+                    StartPosition = FormStartPosition.CenterScreen,
+                    TopMost = true
+                }; 
+                Application.Run(_splash);
+            }
+        }
+    }
+}
