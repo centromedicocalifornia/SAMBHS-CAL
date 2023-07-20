@@ -37,3 +37,16 @@ E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\DataModel\MSSQLSIGESO
 E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll.licenses
 E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
 E:\DEVELOPER\Facturacion_New\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\DMnodeSQLServer.ssdl
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\DMnodeSQLServer.csdl
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\DMnodeSQLServer.msl
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll.licenses
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb

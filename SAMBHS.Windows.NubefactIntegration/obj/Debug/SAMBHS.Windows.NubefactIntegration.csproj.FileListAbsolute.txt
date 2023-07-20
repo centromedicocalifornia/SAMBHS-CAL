@@ -58,3 +58,23 @@ E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\
 E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.dll
 E:\DEVELOPER\Facturacion_New\Facturacion\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Windows.NubefactIntegration.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Windows.NubefactIntegration.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\Newtonsoft.Json.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\FineUI.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\Dapper.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.pdb

@@ -76,3 +76,29 @@ E:\DEVELOPER\Facturacion_New\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\ob
 E:\DEVELOPER\Facturacion_New\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll.licenses
 E:\DEVELOPER\Facturacion_New\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll
 E:\DEVELOPER\Facturacion_New\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Almacen.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Dapper.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.CommonWIN.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\FineUI.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.csprojResolveAssemblyReference.cache
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll.licenses
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.pdb

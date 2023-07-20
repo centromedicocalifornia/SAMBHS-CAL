@@ -785,9 +785,9 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                             string[] desconcat = DataReniec.Split(',', ':');
 
                             //txtNombres.Text = desconcat[3].Replace("\"", "").Trim();
-                            txtNombres.Text = desconcat[9].Replace("}", "").Replace("\"", "").Trim();
-                            txtApellidoPaterno.Text = desconcat[5].Replace("\"", "").Trim();
-                            txtApellidoMaterno.Text = desconcat[7].Replace("\"", "").Trim();
+                            txtNombres.Text = desconcat[5].Replace("}", "").Replace("\"", "").Trim();
+                            txtApellidoPaterno.Text = desconcat[7].Replace("\"", "").Trim();
+                            txtApellidoMaterno.Text = desconcat[9].Replace("\"", "").Trim();
                             txtNroDocumento.Text = desconcat[3].Replace("}", "").Replace("\"", "").Trim();
                             _personId = null;
                         }

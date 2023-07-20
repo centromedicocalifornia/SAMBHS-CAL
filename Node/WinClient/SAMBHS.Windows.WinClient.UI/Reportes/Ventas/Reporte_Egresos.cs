@@ -126,53 +126,10 @@ namespace NetPdf
                 fecha = item.t_FechaRegistro.ToString().Split(' ')[0];
                 trabajador = item.Cliente;
 
-                if (item.UsuarioCrea == 2034)
-                    usuario = "JUAN ANTONIO LAFORA QUISPE";
-                else if (item.UsuarioCrea == 2035)
-                    usuario = "DIANA CONSUELO SANGAY LLERENA";
-                else if (item.UsuarioCrea == 3045)
-                    usuario = "SUSSAN NOEMI RUIZ CHOLAN";
-                else if (item.UsuarioCrea == 3046)
-                    usuario = "NATALI HELIVETH CACHAY MUÑOZ";
-                else if (item.UsuarioCrea == 3048)
-                    usuario = "MARIA VIVIANA LUCUMI LEON";
-                else if (item.UsuarioCrea == 3049)
-                    usuario = "DODA NOEMA DIAZ URIARTE";
-                else if (item.UsuarioCrea == 4049)
-                    usuario = "FREDY ROEL PICHILINGUE MARTINEZ";
-                else if (item.UsuarioCrea == 5049)
-                    usuario = "ISAMAR HUACCHA GONZALES";
-                else if (item.UsuarioCrea == 5050)
-                    usuario = "OLENKA DEL CARMEN OGÑOS VALQUI";
-                else if (item.UsuarioCrea == 7050)
-                    usuario = "LUIGI ANDERSON GAVIDIA RAMIREZ";
-                else if (item.UsuarioCrea == 8050)
-                    usuario = "JHONATAN ABNER ALVARADO SALAZAR";
-                else if (item.UsuarioCrea == 8051)
-                    usuario = "LIZ LUZMERY CHAVARRIA RODRIGUEZ";
-                //else if (item.UsuarioCrea == 1)
-                //    usuario = "CESAR MEDINA ROJAS";
-                else if (item.UsuarioCrea == 2036)
-                    usuario = "BERTHA ISABELA YZARRA CASTAÑEDA";
-                else if (item.UsuarioCrea == 2037)
-                    usuario = "JUAN HENRY LIZA ROJAS";
-                else if (item.UsuarioCrea == 2038)
-                    usuario = "LUCILA CASTREJON MINCHAN";
-                else if (item.UsuarioCrea == 2039)
-                    usuario = "PAOLA JHAKELIN DIAZ ROJAS";
-                else if (item.UsuarioCrea == 2040)
-                    usuario = "ESPERANZA TACULI GUTIERREZ";
-                else if (item.UsuarioCrea == 2044)
-                    usuario = "RUTH QUISPE JARA";
-                else if (item.UsuarioCrea == 2041)
-                    usuario = "ESTELITA CHICLOTE QUISPE";
-                else if (item.UsuarioCrea == 2046)
-                    usuario = "DEANELLY BRICEÑO LOPEZ";
-                else if (item.UsuarioCrea == 2047)
-                    usuario = "MARLITH SAAVEDRA GUTIERREZ";
+                if (item.UsuarioCrea == 9053)
+                    usuario = "MAICOL ARTEAGA SANCHEZ";
                 else if (item.UsuarioCrea == 1)
                     usuario = "ADMINISTRADOR DEL SISTEMA";
-
 
                 descripcion = item.v_DescripcionProducto.Split('-');
 

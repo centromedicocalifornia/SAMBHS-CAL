@@ -4446,78 +4446,11 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         private static int Usuariosigesoft(int usuarioGraba)
         {
             int usuariosigesoft = 11;
-            if (usuarioGraba == 2034)
+            if (usuarioGraba == 9053)
             {
-                usuariosigesoft = 199;
+                usuariosigesoft = 337;
             }
-            else if (usuarioGraba == 2035)
-            {
-                usuariosigesoft = 197;
-            }
-            else if (usuarioGraba == 2044)
-            {
-                usuariosigesoft = 193;
-            }
-            else if (usuarioGraba == 4049)
-            {
-                usuariosigesoft = 297;
-            }
-            else if (usuarioGraba == 2046)
-            {
-                usuariosigesoft = 244;
-            }
-            else if (usuarioGraba == 2048)
-            {
-                usuariosigesoft = 245;
-            }
-            else if (usuarioGraba == 2041)
-            {
-                usuariosigesoft = 203;
-            }
-            else if (usuarioGraba == 2040)
-            {
-                usuariosigesoft = 232;
-            }
-            else if (usuarioGraba == 2038)
-            {
-                usuariosigesoft = 232;
-            }
-            else if (usuarioGraba == 3045)
-            {
-                usuariosigesoft = 263;
-            }
-            else if (usuarioGraba == 3046)
-            {
-                usuariosigesoft = 271;
-            }
-            else if (usuarioGraba == 3048)
-            {
-                usuariosigesoft = 272;
-            }
-            else if (usuarioGraba == 3049)
-            {
-                usuariosigesoft = 280;
-            }
-            else if (usuarioGraba == 5050)
-            {
-                usuariosigesoft = 312;
-            }
-            else if (usuarioGraba == 6050)
-            {
-                usuariosigesoft = 364;
-            }
-            else if (usuarioGraba == 7050)
-            {
-                usuariosigesoft = 8009;
-            }
-            else if (usuarioGraba == 8050)
-            {
-                usuariosigesoft = 8471;
-            }
-            else if (usuarioGraba == 8051)
-            {
-                usuariosigesoft = 19477;
-            }
+            
 
             return usuariosigesoft;
         }

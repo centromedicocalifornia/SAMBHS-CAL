@@ -256,22 +256,9 @@ namespace NetPdf
                  {
                      if (systemUserId == 1 )
                          usuario = "ADMINISTRADOR DEL SISTEMA";
-                     //else if (systemUserId == 3045 )
-                     //    usuario = "SUSSAN NOEMI RUIZ CHOLAN ";
-                     else if (systemUserId == 2037)
-                         usuario = "JUAN HENRY LIZA ROJAS";
-                     //else if (systemUserId == 4049)
-                     //    usuario = "FREDY ROEL PICHILINGUE MARTINEZ";
-                     else if(systemUserId == 2036)
-                         usuario = "BERTHA ISABELA YZARRA CASTAÑEDA";
-                     else if (systemUserId == 2034)
-                         usuario = "JUAN ANTONIO LAFORA QUISPE";
-                     else if (systemUserId == 2035)
-                         usuario = "DIANA CONSUELO SANGAY LLERENA";
-                     else if (systemUserId == 6050)
-                         usuario = "MAX LEONEL RUDAS GUARNIZ";
-                     else
-                         usuario = lectoru.GetValue(15).ToString();
+                     else if (systemUserId == 9053)
+                         usuario = "MAICOL ARTEAGA SANCHEZ";
+                   
                  }
                  cells = new List<PdfPCell>()
                  {
