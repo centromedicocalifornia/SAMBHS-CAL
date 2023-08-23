@@ -873,7 +873,7 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
             ConexionSigesoft conectasam = new ConexionSigesoft();
             conectasam.opensigesoft();
             var cadena1 =
-                "select SUM(r_Price) from servicecomponent " +
+                "select ISNULL(SUM(r_Price),0) from servicecomponent " +
                 "where v_ServiceId='"+_serviceId+"' and i_IsDeleted=0 and i_IsRequiredId=1";
             SqlCommand comando = new SqlCommand(cadena1, connection: conectasam.conectarsigesoft);
             SqlDataReader lector = comando.ExecuteReader();
