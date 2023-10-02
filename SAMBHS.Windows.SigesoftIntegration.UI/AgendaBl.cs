@@ -24,6 +24,16 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
     {
         //SqlConnection conexx = new SqlConnection(ConnectionHelper.GetNewSigesoftConnection);
 
+        public class DataReniec
+        {
+            public bool Success { get; set; }
+            public string Dni { get; set; }
+            public string Nombres { get; set; }
+            public string ApellidoPaterno { get; set; }
+            public string ApellidoMaterno { get; set; }
+            public int CodVerifica { get; set; }
+        }
+
         public List<EsoDto> LlenarPacientesNew()
         {
             using (var cnx = ConnectionHelper.GetNewSigesoftConnection)

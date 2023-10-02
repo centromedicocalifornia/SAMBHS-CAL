@@ -165,3 +165,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Venta\SAMBHS.Ve
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Venta\SAMBHS.Venta.BL\obj\Debug\SAMBHS.Venta.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Venta\SAMBHS.Venta.BL\obj\Debug\SAMBHS.Venta.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Venta\SAMBHS.Venta.BL\obj\Debug\SAMBHS.Venta.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Venta\SAMBHS.Venta.BL\bin\Debug\Newtonsoft.Json.dll

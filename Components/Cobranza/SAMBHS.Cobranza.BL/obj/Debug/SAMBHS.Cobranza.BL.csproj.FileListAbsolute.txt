@@ -170,3 +170,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Cobranza\SAMBHS
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Cobranza\SAMBHS.Cobranza.BL\obj\Debug\SAMBHS.Cobranza.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Cobranza\SAMBHS.Cobranza.BL\obj\Debug\SAMBHS.Cobranza.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Cobranza\SAMBHS.Cobranza.BL\obj\Debug\SAMBHS.Cobranza.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Cobranza\SAMBHS.Cobranza.BL\bin\Debug\Newtonsoft.Json.dll

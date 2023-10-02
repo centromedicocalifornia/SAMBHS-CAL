@@ -174,3 +174,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Contabilidad\SA
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Contabilidad\SAMBHS.Contabilidad.BL\obj\Debug\SAMBHS.Contabilidad.BL.dll.licenses
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Contabilidad\SAMBHS.Contabilidad.BL\obj\Debug\SAMBHS.Contabilidad.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Contabilidad\SAMBHS.Contabilidad.BL\obj\Debug\SAMBHS.Contabilidad.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Contabilidad\SAMBHS.Contabilidad.BL\bin\Debug\Newtonsoft.Json.dll

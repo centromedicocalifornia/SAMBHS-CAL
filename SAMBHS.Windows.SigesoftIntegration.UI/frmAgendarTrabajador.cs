@@ -20,6 +20,7 @@ using System.Text;
 using System.Configuration;
 using SAMBHS.Common.DataModel;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 
 //SAMBHS.Windows.WinClient.UI.Sigesoft
@@ -1038,66 +1039,37 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 {
                     try
                     {
-                        //ObtenerDatosDNI(txtSearchNroDocument.Text.Trim());
-                        //var urlEssalud = "http://ww1.essalud.gob.pe/sisep/postulante/postulante/postulante_obtenerDatosPostulante.htm?strDni=" + txtSearchNroDocument.Text.Trim();
+                        string _ApiDni = GetApplicationConfigValue("ApiDni").ToString();
 
-                        //System.Net.WebClient wcEssalud = new System.Net.WebClient();
+                        var urlReniec = "https://dniruc.apisperu.com/api/v1/dni/" + txtSearchNroDocument.Text.Trim() + _ApiDni;
+                        System.Net.ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
 
-                        //var DataEssalud = wcEssalud.DownloadString(urlEssalud);
-
-                        //string validar = DataEssalud.Split(',', ':')[6].Replace("\"", "").Trim();
-                        //string validar2 = DataEssalud.Split('>', ' ')[0].Replace("<", "").Trim();
-                        //if ((validar != "" && validar != null) && validar2 != "html")
-                        //{
-                        //    string[] desconcat = DataEssalud.Split(',', ':');
-
-                        //    txtNombres.Text = desconcat[6].Replace("\"", "").Trim();
-                        //    txtApellidoPaterno.Text = desconcat[4].Replace("\"", "").Trim();
-
-                        //    txtApellidoMaterno.Text = desconcat[12].Replace("\"", "").Trim();
-                        //    txtApellidoMaterno.Text = txtApellidoMaterno.Text.Replace("}", "").Trim();
-                        //    txtApellidoMaterno.Text = txtApellidoMaterno.Text.Replace("]", "").Trim();
-
-                        //    txtNroDocumento.Text = desconcat[2].Replace("\"", "").Trim();
-                        //    dtpBirthdate.Value = DateTime.Parse(desconcat[8].Replace("\"", "").Trim());
-                        //    cboGenero.SelectedValue = desconcat[10].Replace("\"", "").Trim() == "3" ? 2 : desconcat[10].Replace("\"", "").Trim() == "2" ? 1 : 1;
-                        //    _personId = null;
-                        //}
-                        //else
-                        //{
-                            string _ApiDni = GetApplicationConfigValue("ApiDni").ToString();
-
-                            var urlReniec = "https://dniruc.apisperu.com/api/v1/dni/" + txtSearchNroDocument.Text.Trim() + _ApiDni;
-                            System.Net.ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
-                            //var urlReniec = "https://api.reniec.cloud/dni/" + txtSearchNroDocument.Text.Trim();
-
-                            System.Net.WebClient wcReniec = new System.Net.WebClient();
-                            wcReniec.Encoding = System.Text.Encoding.UTF8;
-                            string DataReniec = wcReniec.DownloadString(urlReniec);
-
-                            if (DataReniec != null && DataReniec != "null")
-                            {
-                                string[] desconcat = DataReniec.Split(',', ':');
-
-                                //txtNombres.Text = desconcat[3].Replace("\"", "").Trim();
-                                txtNombres.Text = desconcat[9].Replace("}", "").Replace("\"", "").Trim();
-                                txtApellidoPaterno.Text = desconcat[5].Replace("\"", "").Trim();
-                                txtApellidoMaterno.Text = desconcat[7].Replace("\"", "").Trim();
-                                txtNroDocumento.Text = desconcat[3].Replace("}", "").Replace("\"", "").Trim();
-                                _personId = null;
-                            }
+                        System.Net.WebClient wcReniec = new System.Net.WebClient();
+                        wcReniec.Encoding = System.Text.Encoding.UTF8;
+                        string DataReniecString = wcReniec.DownloadString(urlReniec);
+                        AgendaBl.DataReniec DataReniec = JsonConvert.DeserializeObject<AgendaBl.DataReniec>(DataReniecString);
 
 
-                        //}
+                        if (DataReniec.Success)
+                        {
+                            txtNombres.Text = DataReniec.Nombres;
+                            txtApellidoPaterno.Text = DataReniec.ApellidoPaterno;
+                            txtApellidoMaterno.Text = DataReniec.ApellidoMaterno;
+                            txtNroDocumento.Text = txtSearchNroDocument.Text.Trim();
+                            _personId = null;
+                        }
+                        else
+                        {
+                            MessageBox.Show(@"Nro. de Documento no se encontró en la Api 'dniruc.apisperu.com'", @"Información");
+                        }
+
                     }
                     catch (Exception)
                     {
                         MessageBox.Show(@"Nro. de DNI incorrecto", @"Información");
                         //throw;
                     }
-                    //var objetPerson = JsonConvert.DeserializeObject<JsonPersona>(Data);
-
-
+               
 
                 }
                 //TrabajadorNoEncontrado(txtSearchNroDocument.Text);

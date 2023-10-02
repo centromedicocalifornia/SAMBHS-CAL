@@ -178,3 +178,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Planilla.BL\bin\Deb
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Planilla.BL\obj\Debug\SAMBHS.Planilla.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Planilla.BL\obj\Debug\SAMBHS.Planilla.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Planilla.BL\obj\Debug\SAMBHS.Planilla.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Planilla.BL\bin\Debug\Newtonsoft.Json.dll

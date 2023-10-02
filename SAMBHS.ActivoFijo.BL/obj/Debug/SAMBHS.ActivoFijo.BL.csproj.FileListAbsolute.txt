@@ -186,3 +186,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\D
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\obj\Debug\SAMBHS.ActivoFijo.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.ActivoFijo.BL\bin\Debug\Newtonsoft.Json.dll

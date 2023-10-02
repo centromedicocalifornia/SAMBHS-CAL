@@ -186,3 +186,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Compra\SAMBHS.C
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Compra\SAMBHS.Compra.BL\obj\Debug\SAMBHS.Compra.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Compra\SAMBHS.Compra.BL\obj\Debug\SAMBHS.Compra.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Compra\SAMBHS.Compra.BL\obj\Debug\SAMBHS.Compra.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Compra\SAMBHS.Compra.BL\bin\Debug\Newtonsoft.Json.dll

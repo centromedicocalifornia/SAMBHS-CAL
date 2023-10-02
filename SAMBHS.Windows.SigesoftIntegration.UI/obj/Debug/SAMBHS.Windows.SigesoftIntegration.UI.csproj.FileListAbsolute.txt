@@ -360,3 +360,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftInt
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll.licenses
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\obj\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.SigesoftIntegration.UI\bin\Debug\Newtonsoft.Json.dll

@@ -186,3 +186,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Requerimientos.NBS\
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Requerimientos.NBS\obj\Debug\SAMBHS.Requerimientos.NBS.dll.licenses
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Requerimientos.NBS\obj\Debug\SAMBHS.Requerimientos.NBS.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Requerimientos.NBS\obj\Debug\SAMBHS.Requerimientos.NBS.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Requerimientos.NBS\bin\Debug\Newtonsoft.Json.dll
