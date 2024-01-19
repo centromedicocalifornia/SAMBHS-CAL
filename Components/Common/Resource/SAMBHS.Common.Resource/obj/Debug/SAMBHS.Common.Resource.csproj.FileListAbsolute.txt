@@ -130,3 +130,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll.licenses
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\itextsharp.dll

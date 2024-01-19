@@ -90,3 +90,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\OrdenProduccion\bin\Debug\
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\OrdenProduccion\obj\Debug\SAMBHS.OrdenProduccion.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\OrdenProduccion\obj\Debug\OrdenProduccion.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\OrdenProduccion\obj\Debug\OrdenProduccion.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\OrdenProduccion\bin\Debug\itextsharp.dll

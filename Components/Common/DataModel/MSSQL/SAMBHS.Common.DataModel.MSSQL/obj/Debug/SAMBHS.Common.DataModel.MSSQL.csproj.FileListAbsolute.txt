@@ -89,3 +89,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataMode
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.dll.licenses
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\itextsharp.dll

@@ -78,3 +78,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactInt
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Windows.NubefactIntegration\bin\Debug\itextsharp.dll

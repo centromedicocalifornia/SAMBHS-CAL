@@ -31,6 +31,8 @@ using SAMBHS.Common.BE.Custom;
 using SAMBHS.Windows.SigesoftIntegration.UI;
 using Dapper;
 using SAMBHS.Windows.SigesoftIntegration.UI.Reports;
+using ConexionSigesoft = SAMBHS.Common.BE.Custom.ConexionSigesoft;
+
 namespace SAMBHS.Venta.BL
 {
     public partial class VentaBL

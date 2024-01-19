@@ -61,7 +61,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         private int GetUserId_(string UserName)
         {
             int userId = 0;
-            ConexionSigesoft conexion = new ConexionSigesoft();
+            SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft conexion = new SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft();
             conexion.opensigesoft();
             string sql = "";
             SqlCommand comando = new SqlCommand(sql, conexion.conectarsigesoft);
@@ -161,7 +161,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                     if (resultplan[0].i_EsCoaseguro == 1)
                     {
                         #region Conexion SIGESOFT verificar la unidad productiva del componente
-                        ConexionSigesoft conectasam = new ConexionSigesoft();
+                        SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft conectasam = new SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft();
                         conectasam.opensigesoft();
                         //var cadena1 = "select PL.d_ImporteCo " +
                         //              "from [dbo].[plan] PL " +
@@ -268,7 +268,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                     if (resultplan[0].i_EsCoaseguro == 1)
                     {
                         #region Conexion SAM
-                        ConexionSigesoft conectasam = new ConexionSigesoft();
+                        SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft conectasam = new SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft();
                         conectasam.opensigesoft();
                         #endregion
                         var cadena1 = "select PR.r_MedicineDiscount, PR.r_DiscountExam, OO.v_Name, PR.v_CustomerOrganizationId from Organization OO inner join protocol PR On PR.v_AseguradoraOrganizationId = OO.v_OrganizationId where PR.v_ProtocolId ='" + _protocolId + "'";

@@ -78,7 +78,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             GetData(_listDiagnosticRepositoryLists);
             lblRecetamEd.Text = "Receta N°: " + ReceiptId;
             #region Conexion SIGESOFT verificar la unidad productiva del componente
-            ConexionSigesoft conectasam = new ConexionSigesoft();
+            SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft conectasam = new SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft();
             conectasam.opensigesoft();
             var cadena1 = "select re.i_MedicoId " +
                           "from receipHeader re " +
@@ -117,7 +117,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 if (e.Cell == null || e.Cell.Row.Cells["v_DiagnosticRepositoryId"].Value == null) return;
                 var diagnosticRepositoryId = e.Cell.Row.Cells["v_DiagnosticRepositoryId"].Value.ToString();
                 #region Conexion SIGESOFT verificar la unidad productiva del componente
-                ConexionSigesoft conectasam = new ConexionSigesoft();
+                SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft conectasam = new SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft();
                 conectasam.opensigesoft();
                 var cadena1 = "select CP.v_IdUnidadProductiva " +
                               "from diagnosticrepository DR " +
@@ -216,7 +216,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             else
             {
                 #region Conexion SAM
-                ConexionSigesoft conectasam = new ConexionSigesoft();
+                SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft conectasam = new SAMBHS.Windows.SigesoftIntegration.UI.Reports.ConexionSigesoft();
                 conectasam.opensigesoft();
                 #endregion
                 var cadena1 = "update receta set i_Lleva = 1, v_MedicoTratante = " + medico + " where v_ReceipId='" + ReceiptId + "'";

@@ -50,3 +50,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataMode
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll.licenses
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\obj\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLSIGESOFT\SAMBHS.Common.DataModel.MSSQLSIGESOFT\bin\Debug\itextsharp.dll

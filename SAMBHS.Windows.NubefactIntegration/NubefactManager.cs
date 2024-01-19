@@ -262,7 +262,7 @@ namespace SAMBHS.Windows.NubefactIntegration
                     var v = dbContext.venta.FirstOrDefault(p => p.v_IdVenta.Equals(pstrIdVenta));
                     if (v == null) return null;
 
-                    var cobdet = dbContext.cobranzadetalle.FirstOrDefault(p => p.v_IdVenta.Equals(pstrIdVenta) &&  p.i_Eliminado == 0);
+                    var cobdet = dbContext.cobranzadetalle.FirstOrDefault(p => p.v_IdVenta.Equals(pstrIdVenta) && p.i_Eliminado == 0);
                     string condicionPago = "";
                     if (cobdet == null)
                     {
@@ -310,7 +310,7 @@ namespace SAMBHS.Windows.NubefactIntegration
                     double detraccion = 0.12;
                     if (v.d_Total > 700)
                     {
-                        totalsindetracción = totalsindetracción- (totalsindetracción * decimal.Parse(detraccion.ToString()));
+                        totalsindetracción = totalsindetracción - (totalsindetracción * decimal.Parse(detraccion.ToString()));
                     }
                     string simboloMoneda = "S/.";
                     if (v.i_IdMoneda != 1)
@@ -322,56 +322,56 @@ namespace SAMBHS.Windows.NubefactIntegration
                                                 UNA VEZ EMITIDO EL COMPROBANTE DE PAGO, NO SE ACEPTARA EL CAMBIO POR OTRO TIPO DE COMPROBANTE (FACTURA/BOLETA), NI POR CAMBIO DE NOMBRE O RAZAN SOCIAL.  
                                                 ¡ANTES DE RETIRARSE, POR FAVOR VERIFIQUE SU COMPROBANTE, NO SE ACEPTARA CAMBIOS NI DEVOLUCIONES!";
                     var header = new InvoiceComprobante
-                                {
-                                    Operacion = "generar_comprobante",
-                                    TipoDeComprobante = tipoCpe,
-                                    Serie = v.v_SerieDocumento.Trim(),
-                                    Numero = long.Parse(v.v_CorrelativoDocumento),
-                                    SunatTransaction = 1,
-                                    ClienteTipoDeDocumento = c.v_IdCliente.Equals("N002-CL000000000") ? "-" : (c.i_IdTipoIdentificacion ?? 1).ToString(),
-                                    ClienteNumeroDeDocumento = c.v_NroDocIdentificacion,
-                                    ClienteDenominacion = (c.v_RazonSocial + " " + c.v_ApePaterno + " " + c.v_ApeMaterno + " " + c.v_PrimerNombre).Trim(),
-                                    ClienteDireccion = c.v_DirecPrincipal,
-                                    ClienteEmail = correo ?? "",
-                                    ClienteEmail1 = "",
-                                    ClienteEmail2 = "",
-                                    FechaDeEmision = GetDateFormatted(v.t_FechaRegistro ?? DateTime.Today),
-                                    FechaDeVencimiento = GetDateFormatted(v.t_FechaVencimiento ?? DateTime.Today),
-                                    Moneda = v.i_IdMoneda ?? 1,
-                                    TipoDeCambio = (v.d_TipoCambio ?? 3).ToString("F"),
-                                    PorcentajeDeIgv = "18.00",
-                                    DescuentoGlobal = (v.d_Descuento ?? 0).ToString("F"),
-                                    TotalDescuento = (v.d_Descuento ?? 0).ToString("F"),
-                                    TotalAnticipo = (v.d_Anticipio ?? 0).ToString("F"),
-                                    TotalGravada = det.Where(p => p.i_IdTipoOperacion.ToString().StartsWith("1")).Sum(s => s.d_ValorVenta ?? 0).ToString("F"),
-                                    TotalInafecta = det.Where(p => p.i_IdTipoOperacion.ToString().StartsWith("3")).Sum(s => s.d_ValorVenta ?? 0).ToString("F"),
-                                    TotalExonerada = det.Where(p => p.i_IdTipoOperacion.ToString().StartsWith("2")).Sum(s => s.d_ValorVenta ?? 0).ToString("F"),
-                                    TotalIgv = (v.d_IGV ?? 0).ToString("F"),
-                                    TotalGratuita = "0.00",
-                                    TotalOtrosCargos = ((v.d_total_otrostributos ?? 0) + (v.d_total_isc ?? 0)).ToString("F"),
-                                    Total = (v.d_Total ?? 0).ToString("F"),
-                                    PercepcionTipo = "",
-                                    PercepcionBaseImponible = "",
-                                    TotalPercepcion = "",
-                                    TotalIncluidoPercepcion = "",
-                                    Detraccion = (v.i_AfectaDetraccion ?? 0) == 1 ? "verdadero" : "falso",
-                                    //Observaciones = v.v_Concepto.ToUpper(),
-                                    Observaciones = "CONDICION DE PAGO: " + condicionP + ", CUOTA 1: MONTO NETO: " + simboloMoneda + " " + totalsindetracción + " / IMPORTANTE: " + mensajeAdicional,
-                                    DocumentoQueSeModificaTipo = esNcr ? DevuelveTipoCpe(v.i_IdTipoDocumentoRef ?? 0) : "",
-                                    DocumentoQueSeModificaSerie = esNcr ? v.v_SerieDocumentoRef.Trim().ToUpper() : "",
-                                    DocumentoQueSeModificaNumero = esNcr ? long.Parse(v.v_CorrelativoDocumentoRef).ToString().Trim() : "",
-                                    TipoDeNotaDeCredito = v.i_IdTipoNota.HasValue ? v.i_IdTipoNota > 0 ? v.i_IdTipoNota.ToString() : "" : "",
-                                    TipoDeNotaDeDebito = v.i_IdTipoNota.HasValue ? v.i_IdTipoNota > 0 ? v.i_IdTipoNota.ToString() : "" : "",
-                                    EnviarAutomaticamenteALaSunat = EnviarAutomaticamente ? "verdadero" : "falso",
-                                    EnviarAutomaticamenteAlCliente = string.IsNullOrWhiteSpace(correo) ? "falso" : "verdadero",
-                                    CodigoUnico = v.v_Periodo + v.v_Mes + v.v_Correlativo,
-                                    CondicionesDePago = condicionP,
-                                    MedioDePago = condicionP == "CREDITO" ? "credito" : condicionPago,
-                                    PlacaVehiculo = v.v_PlacaVehiculo,
-                                    OrdenCompraServicio = v.v_OrdenCompra,
-                                    TablaPersonalizadaCodigo = "",
-                                    FormatoDePdf = FormatoImpresion
-                                };
+                    {
+                        Operacion = "generar_comprobante",
+                        TipoDeComprobante = tipoCpe,
+                        Serie = v.v_SerieDocumento.Trim(),
+                        Numero = long.Parse(v.v_CorrelativoDocumento),
+                        SunatTransaction = 1,
+                        ClienteTipoDeDocumento = c.v_IdCliente.Equals("N002-CL000000000") ? "-" : (c.i_IdTipoIdentificacion ?? 1).ToString(),
+                        ClienteNumeroDeDocumento = c.v_NroDocIdentificacion,
+                        ClienteDenominacion = (c.v_RazonSocial + " " + c.v_ApePaterno + " " + c.v_ApeMaterno + " " + c.v_PrimerNombre).Trim(),
+                        ClienteDireccion = c.v_DirecPrincipal,
+                        ClienteEmail = correo ?? "",
+                        ClienteEmail1 = "",
+                        ClienteEmail2 = "",
+                        FechaDeEmision = GetDateFormatted(v.t_FechaRegistro ?? DateTime.Today),
+                        FechaDeVencimiento = GetDateFormatted(v.t_FechaVencimiento ?? DateTime.Today),
+                        Moneda = v.i_IdMoneda ?? 1,
+                        TipoDeCambio = (v.d_TipoCambio ?? 3).ToString("F"),
+                        PorcentajeDeIgv = "18.00",
+                        DescuentoGlobal = (v.d_Descuento ?? 0).ToString("F"),
+                        TotalDescuento = (v.d_Descuento ?? 0).ToString("F"),
+                        TotalAnticipo = (v.d_Anticipio ?? 0).ToString("F"),
+                        TotalGravada = det.Where(p => p.i_IdTipoOperacion.ToString().StartsWith("1")).Sum(s => s.d_ValorVenta ?? 0).ToString("F"),
+                        TotalInafecta = det.Where(p => p.i_IdTipoOperacion.ToString().StartsWith("3")).Sum(s => s.d_ValorVenta ?? 0).ToString("F"),
+                        TotalExonerada = det.Where(p => p.i_IdTipoOperacion.ToString().StartsWith("2")).Sum(s => s.d_ValorVenta ?? 0).ToString("F"),
+                        TotalIgv = (v.d_IGV ?? 0).ToString("F"),
+                        TotalGratuita = "0.00",
+                        TotalOtrosCargos = ((v.d_total_otrostributos ?? 0) + (v.d_total_isc ?? 0)).ToString("F"),
+                        Total = (v.d_Total ?? 0).ToString("F"),
+                        PercepcionTipo = "",
+                        PercepcionBaseImponible = "",
+                        TotalPercepcion = "",
+                        TotalIncluidoPercepcion = "",
+                        Detraccion = (v.i_AfectaDetraccion ?? 0) == 1 ? "verdadero" : "falso",
+                        //Observaciones = v.v_Concepto.ToUpper(),
+                        Observaciones = "CONDICION DE PAGO: " + condicionP + ", CUOTA 1: MONTO NETO: " + simboloMoneda + " " + totalsindetracción + " / IMPORTANTE: " + mensajeAdicional,
+                        DocumentoQueSeModificaTipo = esNcr ? DevuelveTipoCpe(v.i_IdTipoDocumentoRef ?? 0) : "",
+                        DocumentoQueSeModificaSerie = esNcr ? v.v_SerieDocumentoRef.Trim().ToUpper() : "",
+                        DocumentoQueSeModificaNumero = esNcr ? long.Parse(v.v_CorrelativoDocumentoRef).ToString().Trim() : "",
+                        TipoDeNotaDeCredito = v.i_IdTipoNota.HasValue ? v.i_IdTipoNota > 0 ? v.i_IdTipoNota.ToString() : "" : "",
+                        TipoDeNotaDeDebito = v.i_IdTipoNota.HasValue ? v.i_IdTipoNota > 0 ? v.i_IdTipoNota.ToString() : "" : "",
+                        EnviarAutomaticamenteALaSunat = EnviarAutomaticamente ? "verdadero" : "falso",
+                        EnviarAutomaticamenteAlCliente = string.IsNullOrWhiteSpace(correo) ? "falso" : "verdadero",
+                        CodigoUnico = v.v_Periodo + v.v_Mes + v.v_Correlativo,
+                        CondicionesDePago = condicionP,
+                        MedioDePago = condicionP == "CREDITO" ? "credito" : condicionPago,
+                        PlacaVehiculo = v.v_PlacaVehiculo,
+                        OrdenCompraServicio = v.v_OrdenCompra,
+                        TablaPersonalizadaCodigo = "",
+                        FormatoDePdf = FormatoImpresion
+                    };
                     List<VentaAlCredito> VentaAlCreditoLista = new List<VentaAlCredito>();
                     if (header.MedioDePago == "credito")
                     {
@@ -408,7 +408,7 @@ namespace SAMBHS.Windows.NubefactIntegration
                     }).ToArray();
 
                     header.Items = details;
-                    
+
 
                     if (!string.IsNullOrWhiteSpace(v.v_NroGuiaRemisionCorrelativo) && !string.IsNullOrWhiteSpace(v.v_NroGuiaRemisionSerie))
                     {

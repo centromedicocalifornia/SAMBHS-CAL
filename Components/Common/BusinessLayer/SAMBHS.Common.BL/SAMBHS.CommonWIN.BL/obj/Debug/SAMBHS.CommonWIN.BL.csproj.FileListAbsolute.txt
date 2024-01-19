@@ -82,3 +82,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Business
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessLayer\SAMBHS.Common.BL\SAMBHS.CommonWIN.BL\obj\Debug\SAMBHS.CommonWIN.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessLayer\SAMBHS.Common.BL\SAMBHS.CommonWIN.BL\obj\Debug\SAMBHS.CommonWIN.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessLayer\SAMBHS.Common.BL\SAMBHS.CommonWIN.BL\obj\Debug\SAMBHS.CommonWIN.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessLayer\SAMBHS.Common.BL\SAMBHS.CommonWIN.BL\bin\Debug\itextsharp.dll

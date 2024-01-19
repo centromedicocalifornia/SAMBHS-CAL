@@ -94,3 +94,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Security\SAMBHS
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Security\SAMBHS.Security.BL\obj\Debug\SAMBHS.Security.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Security\SAMBHS.Security.BL\obj\Debug\SAMBHS.Security.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Security\SAMBHS.Security.BL\obj\Debug\SAMBHS.Security.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Security\SAMBHS.Security.BL\bin\Debug\itextsharp.dll

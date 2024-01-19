@@ -102,3 +102,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll.licenses
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\itextsharp.dll

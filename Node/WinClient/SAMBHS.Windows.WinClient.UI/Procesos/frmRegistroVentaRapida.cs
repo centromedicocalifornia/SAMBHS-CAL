@@ -31,6 +31,8 @@ using System.Configuration;
 using SAMBHS.Windows.SigesoftIntegration.UI.BLL;
 using SAMBHS.Windows.SigesoftIntegration.UI.Reports;
 using System.Data.SqlClient;
+using SAMBHS.Common.BE.Custom;
+using Sigesoft.Node.WinClient.UI.Reports;
 
 namespace SAMBHS.Windows.WinClient.UI.Procesos
 {
@@ -1692,15 +1694,27 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
             }
             else if (idDoc == (int)DocumentType.RECIBO_SAN_LORENZO)
             {
+                if (txtRucCliente.Text == "00000000000")
+                {
+                    MessageBox.Show("Debe registrar al cliente con su documento.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 var MedicalCenter = new ServiceBL().GetInfoMedicalCenter();
 
                 var datosP = new VentaBL().GetReciboSanLorenzo(ref objOperationResult, txtSerieDoc.Text, txtCorrelativoDocIni.Text);
-
+                string nroRecibo = txtSerieDoc.Text + "-" + txtCorrelativoDocIni.Text;
                 if (datosP.Count() >= 1)
                 {
-                    string ruta = GetApplicationConfigValue("rutaEgresos").ToString();
-                    string nombre = txtSerieDoc.Text + "-" + txtCorrelativoDocIni.Text + " - CSL";
-                    Recibo_San_Lorenzo.CreateRecibo_San_Lorenzo(ruta + nombre + ".pdf", MedicalCenter, datosP);
+                    string serie_correlativo = txtSerieDoc.Text + "-" + txtCorrelativoDocIni.Text + "|" + cboMoneda.Text;
+                    string ruta = GetApplicationConfigValue("rutaEgresos").ToString() + nroRecibo + ".pdf";
+                    string calendar = listaServicios.Count() == 0 ? "CC" : ObtenerCalendar(listaServicios[0].ToString());
+                    string person = listaServicios.Count() == 0 ? "PP" : ObtenerPersonId(listaServicios[0].ToString());
+                    DateTime fechaNacimiento = listaServicios.Count() == 0 ? DateTime.Now : ObtenerFechaNac(person);
+                    //Recibo_San_Lorenzo.CreateRecibo_San_Lorenzo(ruta + nombre + ".pdf", MedicalCenter, datosP);
+                    string service = GetHistoryCLinic(person);//listaServicios.Count() == 0 ? "SS" : listaServicios[0].ToString();
+                    string DatosPaciente = ObtenerDatosPaciente(txtRucCliente.Text);
+                    DatosPaciente = DatosPaciente + "|" + service;
+                    Recibo_Interno2.CreateRecibo(ruta, DatosPaciente, calendar, fechaNacimiento, serie_correlativo, datosP);
+
                 }
                 else
                 {
@@ -1708,6 +1722,22 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
                     MessageBox.Show(msj, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 this.Enabled = true;
+                //var MedicalCenter = new ServiceBL().GetInfoMedicalCenter();
+
+                //var datosP = new VentaBL().GetReciboSanLorenzo(ref objOperationResult, txtSerieDoc.Text, txtCorrelativoDocIni.Text);
+
+                //if (datosP.Count() >= 1)
+                //{
+                //    string ruta = GetApplicationConfigValue("rutaEgresos").ToString();
+                //    string nombre = txtSerieDoc.Text + "-" + txtCorrelativoDocIni.Text + " - CSL";
+                //    Recibo_San_Lorenzo.CreateRecibo_San_Lorenzo(ruta + nombre + ".pdf", MedicalCenter, datosP);
+                //}
+                //else
+                //{
+                //    var msj = string.Format("Por favor registre un Recibo para Imprimir comprobante.");
+                //    MessageBox.Show(msj, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //}
+                //this.Enabled = true;
             }
             else if (idDoc == (int)DocumentType.TICKET_MEDICINAS)
             {
@@ -1750,6 +1780,99 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
             var link = VentaHelper.GetPdf(_ventaDto.v_IdVenta, VentaHelper.TipoConstancia.ENVIO, VentaHelper.TipoRepresentacion.PDF);
             if (!string.IsNullOrEmpty(link))
                 System.Diagnostics.Process.Start(link); 
+        }
+
+        private string ObtenerCalendar(string servicioId)
+        {
+            ConexionSigesoft conectasam = new ConexionSigesoft();
+            conectasam.opensigesoft();
+            string fecha = DateTime.Now.ToShortDateString();
+            var cadena = "select cc.v_CalendarId, su.v_UserName from calendar cc " +
+                         "inner join service ss on cc.v_ServiceId=ss.v_ServiceId " +
+                         "inner join servicecomponent sc on ss.v_ServiceId=sc.v_ServiceId " +
+                         "inner join systemuser su on sc.i_MedicoTratanteId=su.i_SystemUserId " +
+                         "where sc.v_ComponentId='N009-ME000001143' and ss.v_ServiceId='" + servicioId + "'";
+            var comando = new SqlCommand(cadena, connection: conectasam.conectarsigesoft);
+            var lector = comando.ExecuteReader();
+            string v_CalendarId = "";
+            while (lector.Read())
+            {
+                v_CalendarId = lector.GetValue(0).ToString() + '|' + lector.GetValue(1).ToString();
+            }
+            lector.Close();
+            conectasam.closesigesoft();
+            return v_CalendarId;
+        }
+
+        private string GetHistoryCLinic(string person)
+        {
+            ConexionSigesoft conectasam = new ConexionSigesoft();
+            conectasam.opensigesoft();
+            var cadena = "select v_nroHistoria from Historyclinics where v_PersonId = '" + person + "' ";
+            var comando = new SqlCommand(cadena, connection: conectasam.conectarsigesoft);
+            var lector = comando.ExecuteReader();
+            string v_nroHistoria = "";
+            while (lector.Read())
+            {
+                v_nroHistoria = lector.GetValue(0).ToString();
+            }
+            lector.Close();
+            conectasam.closesigesoft();
+            return v_nroHistoria == "" ? "---" : v_nroHistoria;
+        }
+
+        private string ObtenerPersonId(string servicioId)
+        {
+            ConexionSigesoft conectasam = new ConexionSigesoft();
+            conectasam.opensigesoft();
+            var cadena = "select v_PersonId from calendar where v_ServiceId = '" + servicioId + "' ";
+            var comando = new SqlCommand(cadena, connection: conectasam.conectarsigesoft);
+            var lector = comando.ExecuteReader();
+            string v_PersonId = "";
+            while (lector.Read())
+            {
+                v_PersonId = lector.GetValue(0).ToString();
+            }
+            lector.Close();
+            conectasam.closesigesoft();
+            return v_PersonId;
+        }
+
+        private DateTime ObtenerFechaNac(string person)
+        {
+            ConexionSigesoft conectasam = new ConexionSigesoft();
+            conectasam.opensigesoft();
+            string fecha = DateTime.Now.ToShortDateString();
+            var cadena = "select d_Birthdate from person where v_PersonId = '" + person + "'";
+            var comando = new SqlCommand(cadena, connection: conectasam.conectarsigesoft);
+            var lector = comando.ExecuteReader();
+            DateTime d_Birthdate = default(DateTime);
+            while (lector.Read())
+            {
+                d_Birthdate = (DateTime)lector.GetValue(0);
+            }
+            lector.Close();
+            conectasam.closesigesoft();
+            return d_Birthdate;
+        }
+
+        private string ObtenerDatosPaciente(string dni)
+        {
+            ConexionSAM2 conectasam = new ConexionSAM2();
+            conectasam.opensam();
+            string fecha = DateTime.Now.ToShortDateString();
+            var cadena = "select v_PrimerNombre + ' ' +	v_SegundoNombre + ' ' +	v_ApePaterno + ' ' +	v_ApeMaterno + ' ' +	v_RazonSocial as nombre, v_DirecPrincipal as direc from cliente where v_CodCliente='" + dni + "'";
+            var comando = new SqlCommand(cadena, connection: conectasam.conectarsam);
+            var lector = comando.ExecuteReader();
+            string datos = dni;
+            while (lector.Read())
+            {
+                datos = datos + "|" + lector.GetValue(0).ToString();
+                datos = datos + "|" + lector.GetValue(1).ToString();
+            }
+            lector.Close();
+            conectasam.closesam();
+            return datos;
         }
 
         public static string GetApplicationConfigValue(string nombre)

@@ -98,3 +98,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Tesoreria.BL\bin\De
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Tesoreria.BL\obj\Debug\SAMBHS.Tesoreria.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Tesoreria.BL\obj\Debug\SAMBHS.Tesoreria.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Tesoreria.BL\obj\Debug\SAMBHS.Tesoreria.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\SAMBHS.Tesoreria.BL\bin\Debug\itextsharp.dll

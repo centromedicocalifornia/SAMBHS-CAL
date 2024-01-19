@@ -110,3 +110,4 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\Business
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessLayer\SAMBHS.Common.BL\obj\Debug\SAMBHS.Common.BL.csprojResolveAssemblyReference.cache
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessLayer\SAMBHS.Common.BL\obj\Debug\SAMBHS.Common.BL.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessLayer\SAMBHS.Common.BL\obj\Debug\SAMBHS.Common.BL.pdb
+E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\BusinessLayer\SAMBHS.Common.BL\bin\Debug\itextsharp.dll

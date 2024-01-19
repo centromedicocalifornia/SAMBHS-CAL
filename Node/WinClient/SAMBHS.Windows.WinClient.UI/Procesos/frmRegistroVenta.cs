@@ -34,6 +34,8 @@ using NetPdf;
 using System.Configuration;
 using Infragistics.Win.UltraWinEditors;
 using SAMBHS.Windows.SigesoftIntegration.UI;
+using SAMBHS.Common.BE.Custom;
+using System.Data.SqlClient;
 
 
 namespace SAMBHS.Windows.WinClient.UI.Procesos
@@ -1987,14 +1989,53 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
             }
             else if (idDoc == (int)DocumentType.RECIBO_SAN_LORENZO)
             {
-                var MedicalCenter = new ServiceBL().GetInfoMedicalCenter();
+                try
+                {
+                    string ruta = GetApplicationConfigValue("rutaEgresos").ToString();
+                    string nroRecigo = txtSerieDoc.Text + "-" + txtCorrelativoDocIni.Text;
+                    string pdfPath = Path.Combine(Application.StartupPath, ruta + nroRecigo + ".pdf");
+                    Process.Start(pdfPath);
+                    this.Enabled = true;
+                }
+                catch (Exception)
+                {
+                    if (txtRucCliente.Text == "00000000000")
+                    {
+                        MessageBox.Show("Debe registrar al cliente con su documento.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    var MedicalCenter = new ServiceBL().GetInfoMedicalCenter();
 
-                var datosP = new VentaBL().GetReciboSanLorenzo(ref objOperationResult, txtSerieDoc.Text, txtCorrelativoDocIni.Text);
+                    var datosP = new VentaBL().GetReciboSanLorenzo(ref objOperationResult, txtSerieDoc.Text, txtCorrelativoDocIni.Text);
+                    string nroRecibo = txtSerieDoc.Text + "-" + txtCorrelativoDocIni.Text;
+                    if (datosP.Count() >= 1)
+                    {
+                        string serie_correlativo = txtSerieDoc.Text + "-" + txtCorrelativoDocIni.Text + "|" + cboMoneda.Text;
+                        string ruta = GetApplicationConfigValue("rutaEgresos").ToString() + nroRecibo + ".pdf";
+                        //string calendar = listaServicios.Count() == 0 ? "CC" : ObtenerCalendar(listaServicios[0].ToString());
+                        //string person = listaServicios.Count() == 0 ? "PP" : ObtenerPersonId(listaServicios[0].ToString());
+                        //DateTime fechaNacimiento = listaServicios.Count() == 0 ? DateTime.Now : ObtenerFechaNac(person);
+                        //Recibo_San_Lorenzo.CreateRecibo_San_Lorenzo(ruta + nombre + ".pdf", MedicalCenter, datosP);
+                        //string service = GetHistoryCLinic(person);//listaServicios.Count() == 0 ? "SS" : listaServicios[0].ToString();
+                        string DatosPaciente = ObtenerDatosPaciente(txtRucCliente.Text);
+                        DatosPaciente = DatosPaciente + "|SS";
+                        Recibo_Interno2.CreateRecibo(ruta, DatosPaciente, "VENTA DIRECTA", DateTime.Now, serie_correlativo, datosP);
+                    }
+                    else
+                    {
+                        var msj = string.Format("Por favor registre un Recibo para Imprimir comprobante.");
+                        MessageBox.Show(msj, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    this.Enabled = true;
+                }
 
-                string ruta = GetApplicationConfigValue("rutaEgresos").ToString();
-                string nombre = txtSerieDoc.Text + "-" + txtCorrelativoDocIni.Text + " - CSL";
-                Recibo_San_Lorenzo.CreateRecibo_San_Lorenzo(ruta + nombre + ".pdf", MedicalCenter, datosP);
-                this.Enabled = true;
+                //var MedicalCenter = new ServiceBL().GetInfoMedicalCenter();
+
+                //var datosP = new VentaBL().GetReciboSanLorenzo(ref objOperationResult, txtSerieDoc.Text, txtCorrelativoDocIni.Text);
+
+                //string ruta = GetApplicationConfigValue("rutaEgresos").ToString();
+                //string nombre = txtSerieDoc.Text + "-" + txtCorrelativoDocIni.Text + " - CSL";
+                //Recibo_San_Lorenzo.CreateRecibo_San_Lorenzo(ruta + nombre + ".pdf", MedicalCenter, datosP);
+                //this.Enabled = true;
             }
             else if (idDoc == (int)DocumentType.TICKET_MEDICINAS)
             {
@@ -2071,6 +2112,26 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
             AplicarConversion(cboMoneda.Value.ToString(), decimal.Parse(txtTipoCambio.Text), grdData);
 
         }
+
+        private string ObtenerDatosPaciente(string dni)
+        {
+            ConexionSAM2 conectasam = new ConexionSAM2();
+            conectasam.opensam();
+            string fecha = DateTime.Now.ToShortDateString();
+            var cadena = "select v_PrimerNombre + ' ' +	v_SegundoNombre + ' ' +	v_ApePaterno + ' ' +	v_ApeMaterno + ' ' +	v_RazonSocial as nombre, v_DirecPrincipal as direc from cliente where v_CodCliente='" + dni + "'";
+            var comando = new SqlCommand(cadena, connection: conectasam.conectarsam);
+            var lector = comando.ExecuteReader();
+            string datos = dni;
+            while (lector.Read())
+            {
+                datos = datos + "|" + lector.GetValue(0).ToString();
+                datos = datos + "|" + lector.GetValue(1).ToString();
+            }
+            lector.Close();
+            conectasam.closesam();
+            return datos;
+        }
+
 
         private void AplicarConversion(string idMoneda, decimal tipoCambio, UltraGrid grid)
         {

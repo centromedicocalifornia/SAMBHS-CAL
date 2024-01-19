@@ -5184,7 +5184,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 bool result = false;
                 using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
                 {
-                    ConexionSigesoft conectasam = new ConexionSigesoft();
+                    SAMBHS.Common.BE.Custom.ConexionSigesoft conectasam = new SAMBHS.Common.BE.Custom.ConexionSigesoft();
                     conectasam.opensigesoft();
                     var cadena1 = @" from protocol PR " +
                                 " left join [dbo].[plan] PL on PR.v_ProtocolId=PL.v_ProtocoloId " +
