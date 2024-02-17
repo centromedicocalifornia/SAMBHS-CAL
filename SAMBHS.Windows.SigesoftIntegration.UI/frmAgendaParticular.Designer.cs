@@ -1605,8 +1605,6 @@
             // checkMedicoPagado
             // 
             this.checkMedicoPagado.AutoSize = true;
-            this.checkMedicoPagado.Checked = true;
-            this.checkMedicoPagado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkMedicoPagado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkMedicoPagado.ForeColor = System.Drawing.Color.Red;
             this.checkMedicoPagado.Location = new System.Drawing.Point(655, 69);
@@ -1993,7 +1991,7 @@
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(287, 16);
             this.label55.TabIndex = 176;
-            this.label55.Text = "¿Cómo se enteró de Clínica San Lorenzo?";
+            this.label55.Text = "¿Cómo se enteró de Centro Médico California?";
             // 
             // cboMarketing
             // 
