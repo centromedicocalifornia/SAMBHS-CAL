@@ -39,7 +39,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         private AgendaBl agendaBl_ = new AgendaBl();
         private EmpresaBl empresaBl_ = new EmpresaBl();
         public int cierre = 0;
-        List<EsoDto> listaProtoColos = new List<EsoDto>();
+        List<EsoDtoProt> listaProtoColos = new List<EsoDtoProt>();
         private string _protocoloId;
         private DateTime? _FechaCita;
         private string _idccEditar = "";
@@ -114,6 +114,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 AgendaBl.LlenarComboEstablecimiento(cboEstablecimiento);
                 AgendaBl.LlenarComboVendedorExterno(cboVendedorExterno);
 
+                AgendaBl.LlenarComboEspecialidad(cboEspecialidad);
 
                 AgendaBl.LlenarComboTurno(cboTurno, "-1", DateTime.Now.ToString("yyyy-MM-dd"));
                 AgendaBl.LlenarComboHorario(cboHorario, "-1", "-1", DateTime.Now.ToString("yyyy-MM-dd"));
@@ -249,6 +250,19 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
 
             };
             Mode = "New";
+
+            string filtroEspecialidad = "";
+
+
+            if (cboEspecialidad.SelectedValue.ToString() != "-1")
+            {
+                filtroEspecialidad = cboEspecialidad.Text;
+            }
+
+            var selectedValue = int.Parse(cboServicio.SelectedValue.ToString());
+            var selectedType = int.Parse(cboTipoServicio.SelectedValue.ToString());
+
+
             if (_modoPre == "BUSCAR")
             {
                 var datosTrabajador = AgendaBl.GetDatosTrabajador(_dni);
@@ -265,78 +279,77 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
 
                     btnBuscarTrabajador_Click(sender, e);
                     //ObtenerDatosDNI(_dni);
-                    
+
                 }
 
 
                 switch (_tipoAtencion)
                 {
                     case 2:
-                    {
-                        cboTipoServicio.SelectedValue = 9;
-                        cboServicio.SelectedValue = 10;
-                        // ARNOLD NEW STORES
-                        AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
+                        {
+                            cboTipoServicio.SelectedValue = 9;
+                            cboServicio.SelectedValue = 10;
+                            // ARNOLD NEW STORES
+                            AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
+                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
 
-                        listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
-                        
-                        btnNuevoRegistro.Visible = false;
+                            btnNuevoRegistro.Visible = false;
 
-                        //PLAN
-                        label18.Visible = false;
-                        cboPlanAtencion.Visible = false;
-                        //
-                        txtNombreTitular.Visible = false;
-                        btnNuevoRegistro.Visible = false;
-                        lblTitular.Visible = false;
-                        cboParentesco.Visible = false;
-                        lblParentesco.Visible = false;
-                        lblLicencia.Visible = false;
-                        txtLicenciadeConducir.Visible = false;
-                        break;
-                    }
-                        
+                            //PLAN
+                            label18.Visible = false;
+                            cboPlanAtencion.Visible = false;
+                            //
+                            txtNombreTitular.Visible = false;
+                            btnNuevoRegistro.Visible = false;
+                            lblTitular.Visible = false;
+                            cboParentesco.Visible = false;
+                            lblParentesco.Visible = false;
+                            lblLicencia.Visible = false;
+                            txtLicenciadeConducir.Visible = false;
+                            break;
+                        }
+
                     case 3:
-                    {
-                        cboTipoServicio.SelectedValue = 11;
-                        cboServicio.SelectedValue = 12;
-                        //ARNOLD NEW STORES
-                        AgendaBl.LlenarComboProtocolo_Seguros(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
+                        {
+                            cboTipoServicio.SelectedValue = 11;
+                            cboServicio.SelectedValue = 12;
+                            //ARNOLD NEW STORES
+                            AgendaBl.LlenarComboProtocolo_Seguros(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
 
-                        listaProtoColos = AgendaBl.LlenarComboProtocolo_Seguros_new(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
-                        //cboProtocolo.SelectedIndex = -1;
-                        btnNuevoRegistro.Visible = true;
-                        //PLAN
-                        label18.Visible = true;
-                        cboPlanAtencion.Visible = true;
-                        lblLicencia.Visible = false;
-                        txtLicenciadeConducir.Visible = false;
-                        break;
-                        //
-                    }
+                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Seguros_new(cboProtocolo, selectedType, selectedValue, _empresa, _contrata);
+                            //cboProtocolo.SelectedIndex = -1;
+                            btnNuevoRegistro.Visible = true;
+                            //PLAN
+                            label18.Visible = true;
+                            cboPlanAtencion.Visible = true;
+                            lblLicencia.Visible = false;
+                            txtLicenciadeConducir.Visible = false;
+                            break;
+                            //
+                        }
                     case 4:
-                    {
-                        cboTipoServicio.SelectedValue = 34;
-                        cboServicio.SelectedValue = 35;
-                        // ARNOLD NEW STORES
-                        AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
+                        {
+                            cboTipoServicio.SelectedValue = 34;
+                            cboServicio.SelectedValue = 35;
+                            // ARNOLD NEW STORES
+                            AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
+                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
 
-                        listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
-                        btnNuevoRegistro.Visible = false;
-                        //PLAN
-                        label18.Visible = false;
-                        cboPlanAtencion.Visible = false;
-                        //
-                        txtNombreTitular.Visible = false;
-                        btnNuevoRegistro.Visible = false;
-                        lblTitular.Visible = false;
-                        cboParentesco.Visible = false;
-                        lblParentesco.Visible = false;
-                        lblLicencia.Visible = true;
-                        txtLicenciadeConducir.Visible = true;
-                        break;
-                    }
-                        
+                            btnNuevoRegistro.Visible = false;
+                            //PLAN
+                            label18.Visible = false;
+                            cboPlanAtencion.Visible = false;
+                            //
+                            txtNombreTitular.Visible = false;
+                            btnNuevoRegistro.Visible = false;
+                            lblTitular.Visible = false;
+                            cboParentesco.Visible = false;
+                            lblParentesco.Visible = false;
+                            lblLicencia.Visible = true;
+                            txtLicenciadeConducir.Visible = true;
+                            break;
+                        }
+
                 }
             }
             else if (_modoPre == "DIGITAL")
@@ -358,6 +371,8 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
 
                 }
 
+
+
                 switch (_tipoAtencion)
                 {
                     case 2:
@@ -367,20 +382,24 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                                 var Tipos = agendaBl_.getTiposServicioForProtocolo(_protocoloId);
 
                                 cboTipoServicio.SelectedValue = Tipos.TipoServicio;
-                                cboServicio.SelectedValue = Tipos.Servicio; 
+                                cboServicio.SelectedValue = Tipos.Servicio;
                             }
                             else
                             {
                                 cboTipoServicio.SelectedValue = 9;
-                                cboServicio.SelectedValue = 10; 
+                                cboServicio.SelectedValue = 10;
                             }
-                            
+
                             // ARNOLD NEW STORES
-                            AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
+                            //AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
 
-                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
+                            //listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
 
-                            
+                            AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
+                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
+
+
+
 
 
                             btnNuevoRegistro.Visible = false;
@@ -414,11 +433,16 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                                 cboServicio.SelectedValue = 12;
                             }
 
-                            
-                            //ARNOLD NEW STORES
-                            AgendaBl.LlenarComboProtocolo_Seguros(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
 
-                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Seguros_new(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
+                            //ARNOLD NEW STORES
+                            //AgendaBl.LlenarComboProtocolo_Seguros(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
+
+                            //listaProtoColos = AgendaBl.LlenarComboProtocolo_Seguros_new(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
+
+
+                            AgendaBl.LlenarComboProtocolo_Seguros(cboProtocolo, selectedType, selectedValue, _empresa, _contrata);
+                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Seguros_new(cboProtocolo, selectedType, selectedValue, _empresa, _contrata);
+
                             //cboProtocolo.SelectedIndex = -1;
                             btnNuevoRegistro.Visible = true;
                             //PLAN
@@ -444,11 +468,15 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                                 cboServicio.SelectedValue = 35;
                             }
 
-                            
-                            // ARNOLD NEW STORES
-                            AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
 
-                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
+                            // ARNOLD NEW STORES
+                            //AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
+
+                            //listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);   
+
+                            AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
+                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
+
                             btnNuevoRegistro.Visible = false;
                             //PLAN
                             label18.Visible = false;
@@ -475,63 +503,62 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 switch (_tipoAtencion)
                 {
                     case 2:
-                    {
-                        cboTipoServicio.SelectedValue = 9;
-                        cboServicio.SelectedValue = 10;
-                        AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
-
-                        listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
-                        //PLAN
-                        label18.Visible = false;
-                        cboPlanAtencion.Visible = false;
-                        //
-                        txtNombreTitular.Visible = false;
-                        btnNuevoRegistro.Visible = false;
-                        lblTitular.Visible = false;
-                        cboParentesco.Visible = false;
-                        lblParentesco.Visible = false;
-                        lblLicencia.Visible = false;
-                        txtLicenciadeConducir.Visible = false;
-                        break;
-                    }
+                        {
+                            cboTipoServicio.SelectedValue = 9;
+                            cboServicio.SelectedValue = 10;
+                            AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
+                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
+                            //PLAN
+                            label18.Visible = false;
+                            cboPlanAtencion.Visible = false;
+                            //
+                            txtNombreTitular.Visible = false;
+                            btnNuevoRegistro.Visible = false;
+                            lblTitular.Visible = false;
+                            cboParentesco.Visible = false;
+                            lblParentesco.Visible = false;
+                            lblLicencia.Visible = false;
+                            txtLicenciadeConducir.Visible = false;
+                            break;
+                        }
                     case 3:
-                    {
-                        cboTipoServicio.SelectedValue = 11;
-                        cboServicio.SelectedValue = 12;
-                        AgendaBl.LlenarComboProtocolo_Seguros(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
+                        {
+                            cboTipoServicio.SelectedValue = 11;
+                            cboServicio.SelectedValue = 12;
+                            AgendaBl.LlenarComboProtocolo_Seguros(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
 
-                        listaProtoColos = AgendaBl.LlenarComboProtocolo_Seguros_new(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
-                        //cboProtocolo.SelectedIndex = -1;
-                        //PLAN
-                        label18.Visible = true;
-                        cboPlanAtencion.Visible = true;
-                        lblLicencia.Visible = false;
-                        txtLicenciadeConducir.Visible = false;
-                        break;
-                        //
-                    }   
+                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Seguros_new(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
+                            //cboProtocolo.SelectedIndex = -1;
+                            //PLAN
+                            label18.Visible = true;
+                            cboPlanAtencion.Visible = true;
+                            lblLicencia.Visible = false;
+                            txtLicenciadeConducir.Visible = false;
+                            break;
+                            //
+                        }
                     case 4:
-                    {
-                        cboTipoServicio.SelectedValue = 34;
-                        cboServicio.SelectedValue = 35;
-                        // ARNOLD NEW STORES
-                        AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
+                        {
+                            cboTipoServicio.SelectedValue = 34;
+                            cboServicio.SelectedValue = 35;
+                            // ARNOLD NEW STORES
+                            AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
+                            listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
 
-                        listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
-                        btnNuevoRegistro.Visible = false;
-                        //PLAN
-                        label18.Visible = false;
-                        cboPlanAtencion.Visible = false;
-                        //
-                        txtNombreTitular.Visible = false;
-                        btnNuevoRegistro.Visible = false;
-                        lblTitular.Visible = false;
-                        cboParentesco.Visible = false;
-                        lblParentesco.Visible = false;
-                        lblLicencia.Visible = true;
-                        txtLicenciadeConducir.Visible = true;
-                        break;
-                    }
+                            btnNuevoRegistro.Visible = false;
+                            //PLAN
+                            label18.Visible = false;
+                            cboPlanAtencion.Visible = false;
+                            //
+                            txtNombreTitular.Visible = false;
+                            btnNuevoRegistro.Visible = false;
+                            lblTitular.Visible = false;
+                            cboParentesco.Visible = false;
+                            lblParentesco.Visible = false;
+                            lblLicencia.Visible = true;
+                            txtLicenciadeConducir.Visible = true;
+                            break;
+                        }
                 }
             }
 
@@ -1522,20 +1549,31 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         }
         private void cboProtocolo_Click(object sender, EventArgs e)
         {
+            var selectedValue = int.Parse(cboServicio.SelectedValue.ToString());
+            var selectedType = int.Parse(cboTipoServicio.SelectedValue.ToString());
+
+            string filtroEspecialidad = "";
+
+            if (cboEspecialidad.SelectedValue.ToString() != "-1")
+            {
+                filtroEspecialidad = cboEspecialidad.Text;
+            }
+
             if (_contrata == "")
             {
-                AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
+                AgendaBl.LlenarComboProtocolo_Particular(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa, filtroEspecialidad);
 
-                listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, int.Parse(cboServicio.SelectedValue.ToString()), int.Parse(cboTipoServicio.SelectedValue.ToString()), _empresa);
+                listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
             }
             else
             {
                 AgendaBl.LlenarComboProtocolo_Seguros(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
-                
-                listaProtoColos = AgendaBl.LlenarComboProtocolo_Seguros_new(cboProtocolo, int.Parse(cboTipoServicio.SelectedValue.ToString()), int.Parse(cboServicio.SelectedValue.ToString()), _empresa, _contrata);
+
+                listaProtoColos = AgendaBl.LlenarComboProtocolo_Particular_new(cboProtocolo, selectedValue, selectedType, _empresa, filtroEspecialidad);
             }
-            
+
         }
+
 
         private void cboProtocolo_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -1590,13 +1628,44 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         {
             try
             {
-                listaProtoColos = new List<EsoDto>();
-                cboProtocolo.DataSource = null;
-                cboProtocolo.Items.Clear();
-                cboProtocolo.DataSource = listaProtoColos = new AgendaBl().LlenarComboProtocolo(cboProtocolo, Convert.ToInt32(cboTipoServicio.SelectedValue), Convert.ToInt32(cboServicio.SelectedValue));
-                cboProtocolo.DisplayMember = "Nombre";
-                cboProtocolo.ValueMember = "Id";
-                cboProtocolo.SelectedIndex = 0;
+                if (cboEspecialidad.SelectedValue != null)
+                {
+                    if (cboEspecialidad.SelectedValue.ToString() != "-1")
+                    {
+                        //cboEspecialidad.Text
+                        listaProtoColos = new List<EsoDtoProt>();
+                        cboProtocolo.DataSource = null;
+                        cboProtocolo.Items.Clear();
+                        cboProtocolo.DataSource = listaProtoColos =
+                            new AgendaBl().LlenarComboProtocoloFiltrado(cboProtocolo,
+                                Convert.ToInt32(cboTipoServicio.SelectedValue),
+                                Convert.ToInt32(cboServicio.SelectedValue), cboEspecialidad.Text);
+                        cboProtocolo.DisplayMember = "Nombre";
+                        cboProtocolo.ValueMember = "Id";
+                        cboProtocolo.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        listaProtoColos = new List<EsoDtoProt>();
+                        cboProtocolo.DataSource = null;
+                        cboProtocolo.Items.Clear();
+                        cboProtocolo.DataSource = listaProtoColos = new AgendaBl().LlenarComboProtocolo(cboProtocolo, Convert.ToInt32(cboTipoServicio.SelectedValue), Convert.ToInt32(cboServicio.SelectedValue));
+                        cboProtocolo.DisplayMember = "Nombre";
+                        cboProtocolo.ValueMember = "Id";
+                        cboProtocolo.SelectedIndex = 0;
+                    }
+                }
+                else
+                {
+                    listaProtoColos = new List<EsoDtoProt>();
+                    cboProtocolo.DataSource = null;
+                    cboProtocolo.Items.Clear();
+                    cboProtocolo.DataSource = listaProtoColos = new AgendaBl().LlenarComboProtocolo(cboProtocolo, Convert.ToInt32(cboTipoServicio.SelectedValue), Convert.ToInt32(cboServicio.SelectedValue));
+                    cboProtocolo.DisplayMember = "Nombre";
+                    cboProtocolo.ValueMember = "Id";
+                    cboProtocolo.SelectedIndex = 0;
+                }
+
             }
             catch (Exception a)
             {
@@ -1728,6 +1797,49 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         private void cboHorario_SelectedValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboEspecialidad_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboEspecialidad.SelectedValue.ToString() != "-1")
+                {
+                    var KeyValueDtos_ = new AgendaBl().LlenarComboUsuarios(cboMedicoTratante);
+
+                    var dataMedicoTratante = KeyValueDtos_.FindAll(x => x.Value2 == cboEspecialidad.Text || x.Value2 == "- - -");
+                    cboMedicoTratante.Invoke((Action)(() =>
+                    {
+                        ConfigureComboKeyValue(cboMedicoTratante, dataMedicoTratante);
+                    }));
+
+                }
+                else
+                {
+                    var KeyValueDtos_ = new AgendaBl().LlenarComboUsuarios(cboMedicoTratante);
+
+                    var dataMedicoTratante = KeyValueDtos_;
+                    cboMedicoTratante.Invoke((Action)(() =>
+                    {
+                        ConfigureComboKeyValue(cboMedicoTratante, dataMedicoTratante);
+                    }));
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            } 
+        }
+
+        private void ConfigureComboKeyValue(ComboBox combo, List<KeyValueDTO> data)
+        {
+            data.Insert(0, new KeyValueDTO { Id = "-1", Value1 = "--Seleccionar--" });
+            combo.DataSource = data;
+            combo.DisplayMember = "Value1";
+            combo.ValueMember = "Id";
+            combo.SelectedIndex = 0;
         }
     }
 }

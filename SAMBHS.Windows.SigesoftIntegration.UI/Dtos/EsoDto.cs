@@ -11,6 +11,19 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         public string Nombre { get; set; }
         public string Id { get; set; }
 
+        public string Consultorio { get; set; }
+
+
+    }
+
+    public class EsoDtoProt
+    {
+        public int? GroupId { get; set; }
+        public int? EsoId { get; set; }
+        public string Nombre { get; set; }
+        public string Consultorio { get; set; }
+        public string Id { get; set; }
+
     }
 
     public class tipoServicioforServicio

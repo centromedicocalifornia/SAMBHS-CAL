@@ -11,11 +11,11 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
 {
     public partial class frmBuscarProtocolo : Form
     {
-        private List<EsoDto> _listaProtocolos = new List<EsoDto>();
-        private List<EsoDto> _listaProtocolosTemp = new List<EsoDto>();
+        private List<EsoDtoProt> _listaProtocolos = new List<EsoDtoProt>();
+        private List<EsoDtoProt> _listaProtocolosTemp = new List<EsoDtoProt>();
         public string protocoloId = "-1";
 
-        public frmBuscarProtocolo(List<EsoDto> listaProtocolos)
+        public frmBuscarProtocolo(List<EsoDtoProt> listaProtocolos)
         {
             _listaProtocolos = listaProtocolos;
 
@@ -38,7 +38,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             if (txtPacient.Text != string.Empty)
             {
 
-                _listaProtocolosTemp = new List<EsoDto>(_listaProtocolos.Where(p => p.Nombre.Contains(txtPacient.Text.ToUpper())));
+                _listaProtocolosTemp = new List<EsoDtoProt>(_listaProtocolos.Where(p => p.Nombre.Contains(txtPacient.Text.ToUpper())));
 
                 grdDataCalendar.DataSource = _listaProtocolosTemp;
 

@@ -213,6 +213,8 @@
             this.label30 = new System.Windows.Forms.Label();
             this.cboMedicoSolicitanteExterno = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
+            this.cboEspecialidad = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.gbDatosGenerales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaisOrigen)).BeginInit();
@@ -1788,7 +1790,7 @@
             this.cboMedicoTratante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMedicoTratante.ForeColor = System.Drawing.Color.Blue;
             this.cboMedicoTratante.FormattingEnabled = true;
-            this.cboMedicoTratante.Location = new System.Drawing.Point(104, 21);
+            this.cboMedicoTratante.Location = new System.Drawing.Point(104, 38);
             this.cboMedicoTratante.Margin = new System.Windows.Forms.Padding(2);
             this.cboMedicoTratante.Name = "cboMedicoTratante";
             this.cboMedicoTratante.Size = new System.Drawing.Size(346, 21);
@@ -1801,7 +1803,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(4, 28);
+            this.label19.Location = new System.Drawing.Point(4, 45);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(85, 13);
@@ -1851,6 +1853,8 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox5.Controls.Add(this.cboEspecialidad);
+            this.groupBox5.Controls.Add(this.label45);
             this.groupBox5.Controls.Add(this.cboHorario);
             this.groupBox5.Controls.Add(this.label33);
             this.groupBox5.Controls.Add(this.cboTurno);
@@ -1874,7 +1878,7 @@
             this.cboHorario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHorario.FormattingEnabled = true;
-            this.cboHorario.Location = new System.Drawing.Point(895, 21);
+            this.cboHorario.Location = new System.Drawing.Point(895, 38);
             this.cboHorario.Margin = new System.Windows.Forms.Padding(2);
             this.cboHorario.Name = "cboHorario";
             this.cboHorario.Size = new System.Drawing.Size(129, 21);
@@ -1886,7 +1890,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(856, 24);
+            this.label33.Location = new System.Drawing.Point(856, 41);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(35, 13);
@@ -1899,7 +1903,7 @@
             this.cboTurno.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTurno.FormattingEnabled = true;
-            this.cboTurno.Location = new System.Drawing.Point(632, 22);
+            this.cboTurno.Location = new System.Drawing.Point(632, 39);
             this.cboTurno.Margin = new System.Windows.Forms.Padding(2);
             this.cboTurno.Name = "cboTurno";
             this.cboTurno.Size = new System.Drawing.Size(99, 21);
@@ -1911,7 +1915,7 @@
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.Black;
-            this.label34.Location = new System.Drawing.Point(593, 24);
+            this.label34.Location = new System.Drawing.Point(593, 41);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(35, 13);
@@ -1921,7 +1925,7 @@
             // dtTimaCalendar
             // 
             this.dtTimaCalendar.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtTimaCalendar.Location = new System.Drawing.Point(766, 22);
+            this.dtTimaCalendar.Location = new System.Drawing.Point(766, 39);
             this.dtTimaCalendar.Name = "dtTimaCalendar";
             this.dtTimaCalendar.Size = new System.Drawing.Size(85, 20);
             this.dtTimaCalendar.TabIndex = 18;
@@ -1930,7 +1934,7 @@
             // dtDateCalendar
             // 
             this.dtDateCalendar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDateCalendar.Location = new System.Drawing.Point(488, 21);
+            this.dtDateCalendar.Location = new System.Drawing.Point(488, 38);
             this.dtDateCalendar.Name = "dtDateCalendar";
             this.dtDateCalendar.Size = new System.Drawing.Size(100, 20);
             this.dtDateCalendar.TabIndex = 17;
@@ -1941,7 +1945,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(734, 24);
+            this.label24.Location = new System.Drawing.Point(734, 41);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(30, 13);
@@ -1953,7 +1957,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(454, 25);
+            this.label26.Location = new System.Drawing.Point(454, 42);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(37, 13);
@@ -2107,6 +2111,32 @@
             this.label40.Size = new System.Drawing.Size(81, 13);
             this.label40.TabIndex = 179;
             this.label40.Text = "Médico Externo";
+            // 
+            // cboEspecialidad
+            // 
+            this.cboEspecialidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboEspecialidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEspecialidad.ForeColor = System.Drawing.Color.Black;
+            this.cboEspecialidad.FormattingEnabled = true;
+            this.cboEspecialidad.Location = new System.Drawing.Point(104, 13);
+            this.cboEspecialidad.Margin = new System.Windows.Forms.Padding(2);
+            this.cboEspecialidad.Name = "cboEspecialidad";
+            this.cboEspecialidad.Size = new System.Drawing.Size(346, 21);
+            this.cboEspecialidad.TabIndex = 187;
+            this.cboEspecialidad.SelectedValueChanged += new System.EventHandler(this.cboEspecialidad_SelectedValueChanged);
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.Red;
+            this.label45.Location = new System.Drawing.Point(4, 21);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(100, 13);
+            this.label45.TabIndex = 186;
+            this.label45.Text = "ESPECIALIDAD:";
             // 
             // frmAgendaParticular
             // 
@@ -2282,5 +2312,7 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ComboBox cboTurno;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox cboEspecialidad;
+        private System.Windows.Forms.Label label45;
     }
 }

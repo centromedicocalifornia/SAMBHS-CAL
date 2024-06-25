@@ -46,7 +46,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         bool loadd = false;
         private AgendaBl agendaBl_ = new AgendaBl();
         private EmpresaBl empresaBl_= new EmpresaBl();
-        List<EsoDto> listaProtoColos = new List<EsoDto>();
+        List<EsoDtoProt> listaProtoColos = new List<EsoDtoProt>();
 
         #region Properties
 
@@ -2066,7 +2066,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         {
             try
             {
-                listaProtoColos = new List<EsoDto>();
+                listaProtoColos = new List<EsoDtoProt>();
 
                 cboProtocolo.DataSource = null;
                 cboProtocolo.Items.Clear();

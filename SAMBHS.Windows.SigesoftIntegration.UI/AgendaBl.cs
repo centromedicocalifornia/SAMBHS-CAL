@@ -74,6 +74,34 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             }
 
         }
+
+        public static void LlenarComboEspecialidad(ComboBox cbo)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+
+                    var query = @"select i_ParameterId as 'EsoId', v_Value1 as 'Nombre' from systemparameter
+								where i_GroupId = 403 and i_IsDeleted = 0 and v_Value1 != '' ";
+
+                    var data = cnx.Query<EsoDto>(query).ToList();
+                    data.Insert(0, new EsoDto { EsoId = -1, Nombre = "--Seleccionar--" });
+
+                    cbo.DataSource = data;
+                    cbo.DisplayMember = "Nombre";
+                    cbo.ValueMember = "EsoId";
+                    cbo.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         public static void LlenarComboEstablecimiento(ComboBox cbo)
         {
             try
@@ -1040,44 +1068,59 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         {
             try
             {
-                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+                //SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
 
-                List<KeyValueDTO> query = (from a in dbContext.llenarcombousuarios_sp("")
-                                           select new KeyValueDTO
-                                           {
-                                               Value1 = a.Value1,
-                                               Id = a.Id.ToString()
-                                           }).ToList();
+                //List<KeyValueDTO> query = (from a in dbContext.llenarcombousuarios_sp("")
+                //                           select new KeyValueDTO
+                //                           {
+                //                               Value1 = a.Value1,
+                //                               Id = a.Id.ToString()
+                //                           }).ToList();
 
-                query.Insert(0, new KeyValueDTO { Id = "-1", Value1 = "--Seleccionar--" });
+                //query.Insert(0, new KeyValueDTO { Id = "-1", Value1 = "--Seleccionar--" });
 
-                return query;
+                //return query;
 
                 //cbo.DataSource = query;
                 //cbo.DisplayMember = "Value1";
                 //cbo.ValueMember = "Id";
                 //cbo.SelectedIndex = 0;
-                
 
-//                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
-//                {
-//                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
 
-//                    var query = @"SELECT b.v_FirstName + ' '  + b.v_FirstLastName + ' ' + v_SecondLastName as Value1, a.i_SystemUserId as Id
-//                                FROM systemuser a
-//                                INNER JOIN person b on a.v_PersonId = b.v_PersonId
-//                                WHERE a.i_IsDeleted = 0 ";
+                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                {
+                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
 
-//                    var data = cnx.Query<KeyValueDTO>(query).ToList();
-//                    data.Insert(0, new KeyValueDTO { Id = "-1", Value1 = "--Seleccionar--" });
+                    var query = @"SELECT b.v_FirstName + ' '  + b.v_FirstLastName + ' ' + v_SecondLastName as Value1, a.i_SystemUserId as Id, sp.v_Value1 as 'Value2'
+                                FROM systemuser a
+                                INNER JOIN person b on a.v_PersonId = b.v_PersonId
+								JOIN professional pr on a.v_PersonId = pr.v_PersonId
+								join systemparameter sp on sp.i_ParameterId = pr.i_Profesion and sp.i_GroupId = 403
+								UNION
+								SELECT b.v_FirstName + ' '  + b.v_FirstLastName + ' ' + v_SecondLastName as Value1, a.i_SystemUserId as Id, '- - -' as 'Value2'
+                                FROM systemuser a
+                                INNER JOIN person b on a.v_PersonId = b.v_PersonId
+								
+                                WHERE a.i_SystemUserId = 11
 
-//                    //cbo.DataSource = data;
-//                    //cbo.DisplayMember = "Value1";
-//                    //cbo.ValueMember = "Id";
-//                    //cbo.SelectedIndex = 1;
+								ORDER BY Value2 ";
 
-//                    return data;
-//                }
+                    var data = cnx.Query<KeyValueDTO>(query).ToList();
+                    data.Insert(0, new KeyValueDTO { Id = "-1", Value1 = "--Seleccionar--" });
+
+                    //cbo.DataSource = data;
+                    //cbo.DisplayMember = "Value1";
+                    //cbo.ValueMember = "Id";
+                    //cbo.SelectedIndex = 1;
+
+                    cbo.DataSource = data;
+                    cbo.DisplayMember = "Value1";
+                    cbo.ValueMember = "Id";
+                    cbo.SelectedIndex = 0;
+
+
+                    return data;
+                }
             }
             catch (Exception e)
             {
@@ -2862,20 +2905,21 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             }
         }
 
-        public List<EsoDto> LlenarComboProtocolo(ComboBox cbo, int? pServiceTypeId, int? pService)
+        public List<EsoDtoProt> LlenarComboProtocolo(ComboBox cbo, int? pServiceTypeId, int? pService)
         {
             try
             {
                 SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
 
-                List<EsoDto> query = (from a in dbContext.llenarcomboprotocolo_sp(pServiceTypeId, pService)
-                                      select new EsoDto
-                                           {
-                                               Id = a.Id,
-                                               Nombre = a.Nombre
-                                           }).ToList();
+                List<EsoDtoProt> query = (from a in dbContext.llenarcomboprotocolo_sp(pServiceTypeId, pService)
+                                          select new EsoDtoProt
+                                          {
+                                              Nombre = a.Nombre.Split('/')[0].Trim(),
+                                              Id = a.Id,
+                                              Consultorio = a.Nombre.Split('/')[1].Trim() == null ? "-" : a.Nombre.Split('/')[1].Trim()
+                                          }).ToList();
 
-                query.Insert(0, new EsoDto { Id = "-1", Nombre = "--Seleccionar--" });
+                query.Insert(0, new EsoDtoProt { Id = "-1", Nombre = "--Seleccionar--", Consultorio = "- - -" });
 
                 return query;
                 //cbo.DataSource = query;
@@ -2883,30 +2927,60 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 //cbo.ValueMember = "Id";
                 //cbo.SelectedIndex = 0;
 
-//                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
-//                {
-//                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+                //                using (var cnx = ConnectionHelper.GetNewSigesoftConnection)
+                //                {
+                //                    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
 
-////                    var query = @"SELECT v_ProtocolId AS Id, v_Name AS Nombre
-////                            FROM Protocol
-////                            WHERE i_MasterServiceTypeId =" + pServiceTypeId + "and i_IsDeleted = 0 and i_MasterServiceId =" + pService;
+                ////                    var query = @"SELECT v_ProtocolId AS Id, v_Name AS Nombre
+                ////                            FROM Protocol
+                ////                            WHERE i_MasterServiceTypeId =" + pServiceTypeId + "and i_IsDeleted = 0 and i_MasterServiceId =" + pService;
 
-//                    var query = "EXEC [LlenarComboProtocolo_SP] " + pServiceTypeId + " , " + pService;
+                //                    var query = "EXEC [LlenarComboProtocolo_SP] " + pServiceTypeId + " , " + pService;
 
-//                    var data = cnx.Query<EsoDto>(query).ToList();
-//                    data.Insert(0, new EsoDto {Id = "-1", Nombre = "--Seleccionar--"});
+                //                    var data = cnx.Query<EsoDto>(query).ToList();
+                //                    data.Insert(0, new EsoDto {Id = "-1", Nombre = "--Seleccionar--"});
 
-//                    cbo.DataSource = data;
-//                    cbo.DisplayMember = "Nombre";
-//                    cbo.ValueMember = "Id";
-//                    cbo.SelectedIndex = 0;
-//                }
+                //                    cbo.DataSource = data;
+                //                    cbo.DisplayMember = "Nombre";
+                //                    cbo.ValueMember = "Id";
+                //                    cbo.SelectedIndex = 0;
+                //                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
+        public List<EsoDtoProt> LlenarComboProtocoloFiltrado(ComboBox cbo, int? pServiceTypeId, int? pService, string consultorio)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                List<EsoDtoProt> query = (from a in dbContext.llenarcomboprotocolo_sp(pServiceTypeId, pService)
+                                          select new EsoDtoProt
+                                          {
+                                              Nombre = a.Nombre.Split('/')[0].Trim(),
+                                              Id = a.Id,
+                                              Consultorio = a.Nombre.Split('/')[1].Trim() == null ? "-" : a.Nombre.Split('/')[0].Trim()
+                                          }).ToList();
+                //query = query.FindAll(p => p.Consultorio == consultorio && p.Consultorio == "- - -");
+
+
+                query.Insert(0, new EsoDtoProt { Id = "-1", Nombre = "--Seleccionar--", Consultorio = "- - -" });
+
+
+                return query;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
         public static ProtocolDto GetDatosProtocolo(string pProtocoloId)
         {
@@ -4993,7 +5067,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             }
         }
 
-        public static void LlenarComboProtocolo_Particular(ComboBox cboProtocolo, int p1, int p2, string empresa)
+        public static void LlenarComboProtocolo_Particular(ComboBox cboProtocolo, int p1, int p2, string empresa, string filtroEspecialidad)
         {
             try
             {
@@ -5003,12 +5077,26 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
 
                 List<EsoDto> query = (from a in dbContext.llenarcomboprotocolo_particular_sp(p1, p2, empresa)
                                       select new EsoDto
-                                             {
-                                                 Nombre = a.Name,
-                                                 Id = a.Id
-                                             }).ToList();
+                                      {
+                                          Nombre = a.Name.Split('/')[0].Trim(),
+                                          Id = a.Id,
+                                          Consultorio = a.Name.Split('/')[1].Trim() == null ? "-" : a.Name.Split('/')[1].Trim()
+                                      }).ToList();
+
+                if (filtroEspecialidad != "")
+                {
+                    if (filtroEspecialidad == "ECOGRAFÍA" || filtroEspecialidad == "RADIOLOGÍA")
+                    {
+                        query = query.FindAll(p => p.Consultorio == "ECOGRAFÍA" || p.Consultorio == "RADIOLOGÍA" || p.Consultorio == "- - -");
+                    }
+                    else
+                    {
+                        query = query.FindAll(p => p.Consultorio == filtroEspecialidad || p.Consultorio == "- - -");
+                    }
+                }
+
                 query.Insert(0, new EsoDto { EsoId = -1, Nombre = "--Seleccionar--" });
-                
+
                 if (query != null)
                 {
                     result = true;
@@ -5067,7 +5155,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 throw ex;
             }
         }
-        public static List<EsoDto> LlenarComboProtocolo_Particular_new(ComboBox cboProtocolo, int p1, int p2, string empresa)
+        public static List<EsoDtoProt> LlenarComboProtocolo_Particular_new(ComboBox cboProtocolo, int p1, int p2, string empresa, string filtroEspecialidad)
         {
             try
             {
@@ -5075,13 +5163,27 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
 
                 SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
 
-                List<EsoDto> query = (from a in dbContext.llenarcomboprotocolo_particular_sp(p1, p2, empresa)
-                                      select new EsoDto
-                                      {
-                                          Nombre = a.Name,
-                                          Id = a.Id
-                                      }).ToList();
-                query.Insert(0, new EsoDto { EsoId = -1, Nombre = "--Seleccionar--" });
+                List<EsoDtoProt> query = (from a in dbContext.llenarcomboprotocolo_particular_sp(p1, p2, empresa)
+                                          select new EsoDtoProt
+                                          {
+                                              Nombre = a.Name.Split('/')[0].Trim(),
+                                              Id = a.Id,
+                                              Consultorio = a.Name.Split('/')[1].Trim() == null ? "-" : a.Name.Split('/')[1].Trim()
+                                          }).ToList();
+
+                if (filtroEspecialidad != "")
+                {
+                    if (filtroEspecialidad == "ECOGRAFÍA" || filtroEspecialidad == "RADIOLOGÍA")
+                    {
+                        query = query.FindAll(p => p.Consultorio == "ECOGRAFÍA" || p.Consultorio == "RADIOLOGÍA" || p.Consultorio == "- - -");
+                    }
+                    else
+                    {
+                        query = query.FindAll(p => p.Consultorio == filtroEspecialidad || p.Consultorio == "- - -");
+                    }
+                }
+
+                query.Insert(0, new EsoDtoProt { Id = "-1", Nombre = "--Seleccionar--", Consultorio = "---" });
 
                 return query;
 
@@ -5157,20 +5259,21 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             }
         }
 
-        public static List<EsoDto> LlenarComboProtocolo_Seguros_new(ComboBox cboProtocolo, int p1, int p2, string seguro, string empresa)
+        public static List<EsoDtoProt> LlenarComboProtocolo_Seguros_new(ComboBox cboProtocolo, int p1, int p2, string seguro, string empresa)
         {
             try
             {
                 bool result = false;
                 SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
 
-                List<EsoDto> query = (from a in dbContext.llenarcomboprotocolo_seguros_sp(p1, p2, seguro, empresa)
-                                      select new EsoDto
-                                      {
-                                          Nombre = a.Name,
-                                          Id = a.Id
-                                      }).ToList();
-                query.Insert(0, new EsoDto { Id = "-1", Nombre = "--Seleccionar--" });
+                List<EsoDtoProt> query = (from a in dbContext.llenarcomboprotocolo_seguros_sp(p1, p2, seguro, empresa)
+                                          select new EsoDtoProt
+                                          {
+                                              Nombre = a.Name.Split('/')[0].Trim(),
+                                              Id = a.Id,
+                                              Consultorio = a.Name.Split('/')[1].Trim() == null ? "-" : a.Name.Split('/')[1].Trim()
+                                          }).ToList();
+                query.Insert(0, new EsoDtoProt { Id = "-1", Nombre = "--Seleccionar--", Consultorio = "---" });
 
                 return query;
 
