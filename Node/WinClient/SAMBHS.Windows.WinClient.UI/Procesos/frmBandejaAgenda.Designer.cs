@@ -72,6 +72,8 @@
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn84 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ObservacionesAdicionales");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn85 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_TelephoneNumber");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn86 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("MKT");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("ComprobanteCobro");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn9 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TotalPagado");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
@@ -99,8 +101,8 @@
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance32 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance33 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand4 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn24 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_DateTimeCalendar");
@@ -189,6 +191,7 @@
             Infragistics.Win.Appearance appearance28 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance29 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance30 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance31 = new Infragistics.Win.Appearance();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMTC = new System.Windows.Forms.Button();
@@ -375,6 +378,8 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblDocumentoExportado = new Infragistics.Win.Misc.UltraLabel();
+            this.btnExportarBandeja = new Infragistics.Win.Misc.UltraButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -844,6 +849,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.lblDocumentoExportado);
+            this.splitContainer1.Panel1.Controls.Add(this.btnExportarBandeja);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.label22);
             this.splitContainer1.Panel1.Controls.Add(this.label21);
@@ -1005,34 +1012,33 @@
             ultraGridColumn71.Header.Caption = "Estado Cita";
             ultraGridColumn71.Header.VisiblePosition = 17;
             ultraGridColumn72.Header.Caption = "Protocolo";
-            ultraGridColumn72.Header.VisiblePosition = 22;
-            ultraGridColumn72.Hidden = true;
+            ultraGridColumn72.Header.VisiblePosition = 39;
             ultraGridColumn72.Width = 233;
             ultraGridColumn73.Header.Caption = "Es Vip";
-            ultraGridColumn73.Header.VisiblePosition = 23;
+            ultraGridColumn73.Header.VisiblePosition = 22;
             ultraGridColumn73.Hidden = true;
             ultraGridColumn74.Header.Caption = "Usuario Crea.";
-            ultraGridColumn74.Header.VisiblePosition = 29;
+            ultraGridColumn74.Header.VisiblePosition = 28;
             ultraGridColumn74.Width = 125;
             ultraGridColumn75.Format = "dd/MM/yyyy hh:mm tt";
             ultraGridColumn75.Header.Caption = "Fecha Crea.";
-            ultraGridColumn75.Header.VisiblePosition = 25;
+            ultraGridColumn75.Header.VisiblePosition = 24;
             ultraGridColumn75.Hidden = true;
             ultraGridColumn75.Width = 150;
             ultraGridColumn76.Header.Caption = "Usuario Act.";
-            ultraGridColumn76.Header.VisiblePosition = 26;
+            ultraGridColumn76.Header.VisiblePosition = 25;
             ultraGridColumn76.Hidden = true;
             ultraGridColumn76.Width = 125;
             ultraGridColumn77.Format = "dd/MM/yyyy hh:mm tt";
             ultraGridColumn77.Header.Caption = "Fecha Act.";
-            ultraGridColumn77.Header.VisiblePosition = 27;
+            ultraGridColumn77.Header.VisiblePosition = 26;
             ultraGridColumn77.Hidden = true;
             ultraGridColumn77.Width = 150;
             ultraGridColumn78.Header.Caption = "Empresa / Sede de Protocolo";
             ultraGridColumn78.Header.VisiblePosition = 13;
             ultraGridColumn78.Width = 355;
             ultraGridColumn79.Header.Caption = "Empresa / Sede de Servicio";
-            ultraGridColumn79.Header.VisiblePosition = 24;
+            ultraGridColumn79.Header.VisiblePosition = 23;
             ultraGridColumn79.Hidden = true;
             ultraGridColumn79.Width = 371;
             ultraGridColumn57.Format = "hh:mm tt";
@@ -1053,24 +1059,26 @@
             ultraGridColumn62.Header.VisiblePosition = 7;
             ultraGridColumn63.Header.VisiblePosition = 5;
             ultraGridColumn64.Header.VisiblePosition = 6;
-            ultraGridColumn80.Header.VisiblePosition = 28;
-            ultraGridColumn81.Header.VisiblePosition = 30;
+            ultraGridColumn80.Header.VisiblePosition = 27;
+            ultraGridColumn81.Header.VisiblePosition = 29;
             ultraGridColumn81.Hidden = true;
-            ultraGridColumn18.Header.VisiblePosition = 31;
+            ultraGridColumn18.Header.VisiblePosition = 30;
             ultraGridColumn18.Hidden = true;
-            ultraGridColumn82.Header.VisiblePosition = 32;
-            ultraGridColumn83.Header.VisiblePosition = 33;
-            ultraGridColumn11.Header.VisiblePosition = 34;
+            ultraGridColumn82.Header.VisiblePosition = 31;
+            ultraGridColumn83.Header.VisiblePosition = 32;
+            ultraGridColumn11.Header.VisiblePosition = 33;
             ultraGridColumn11.Hidden = true;
-            ultraGridColumn12.Header.VisiblePosition = 35;
+            ultraGridColumn12.Header.VisiblePosition = 34;
             ultraGridColumn12.Hidden = true;
-            ultraGridColumn16.Header.VisiblePosition = 36;
+            ultraGridColumn16.Header.VisiblePosition = 35;
             ultraGridColumn16.Hidden = true;
-            ultraGridColumn17.Header.VisiblePosition = 37;
+            ultraGridColumn17.Header.VisiblePosition = 36;
             ultraGridColumn84.Header.Caption = "Observaciones";
             ultraGridColumn84.Header.VisiblePosition = 3;
-            ultraGridColumn85.Header.VisiblePosition = 38;
-            ultraGridColumn86.Header.VisiblePosition = 39;
+            ultraGridColumn85.Header.VisiblePosition = 37;
+            ultraGridColumn86.Header.VisiblePosition = 38;
+            ultraGridColumn8.Header.VisiblePosition = 40;
+            ultraGridColumn9.Header.VisiblePosition = 41;
             ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn65,
             ultraGridColumn66,
@@ -1111,7 +1119,9 @@
             ultraGridColumn17,
             ultraGridColumn84,
             ultraGridColumn85,
-            ultraGridColumn86});
+            ultraGridColumn86,
+            ultraGridColumn8,
+            ultraGridColumn9});
             this.grdDataCalendar.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
             this.grdDataCalendar.DisplayLayout.InterBandSpacing = 10;
             this.grdDataCalendar.DisplayLayout.MaxColScrollRegions = 1;
@@ -1367,10 +1377,10 @@
             // 
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label17.Location = new System.Drawing.Point(6, 21);
+            this.label17.Location = new System.Drawing.Point(6, 9);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(231, 19);
+            this.label17.Size = new System.Drawing.Size(132, 31);
             this.label17.TabIndex = 53;
             this.label17.Text = "Lista de Agendados";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1539,14 +1549,14 @@
             this.editarPrecioToolStripMenuItem,
             this.verexamenesAuxiliaresConsultorioItem});
             this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(264, 136);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(265, 136);
             this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // btnEditarMedicos
             // 
             this.btnEditarMedicos.Image = global::SAMBHS.Windows.WinClient.UI.Resource.pencil1;
             this.btnEditarMedicos.Name = "btnEditarMedicos";
-            this.btnEditarMedicos.Size = new System.Drawing.Size(263, 22);
+            this.btnEditarMedicos.Size = new System.Drawing.Size(264, 22);
             this.btnEditarMedicos.Text = "Editar Medicos";
             this.btnEditarMedicos.Click += new System.EventHandler(this.btnEditarMedicos_Click_1);
             // 
@@ -1554,7 +1564,7 @@
             // 
             this.btnAgregarExamen.Image = global::SAMBHS.Windows.WinClient.UI.Resource.add;
             this.btnAgregarExamen.Name = "btnAgregarExamen";
-            this.btnAgregarExamen.Size = new System.Drawing.Size(263, 22);
+            this.btnAgregarExamen.Size = new System.Drawing.Size(264, 22);
             this.btnAgregarExamen.Text = "Agregar Examen";
             this.btnAgregarExamen.Click += new System.EventHandler(this.btnAgregarExamen_Click);
             // 
@@ -1563,7 +1573,7 @@
             this.btnRemoverEsamen.Enabled = false;
             this.btnRemoverEsamen.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoverEsamen.Image")));
             this.btnRemoverEsamen.Name = "btnRemoverEsamen";
-            this.btnRemoverEsamen.Size = new System.Drawing.Size(263, 22);
+            this.btnRemoverEsamen.Size = new System.Drawing.Size(264, 22);
             this.btnRemoverEsamen.Text = "Remover Examen";
             this.btnRemoverEsamen.Click += new System.EventHandler(this.btnRemoverEsamen_Click);
             // 
@@ -1571,7 +1581,7 @@
             // 
             this.verExamenesAdicionalesToolStripMenuItem.Image = global::SAMBHS.Windows.WinClient.UI.Resource.application_view_list;
             this.verExamenesAdicionalesToolStripMenuItem.Name = "verExamenesAdicionalesToolStripMenuItem";
-            this.verExamenesAdicionalesToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
+            this.verExamenesAdicionalesToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
             this.verExamenesAdicionalesToolStripMenuItem.Text = "Ver Examenes Eliminados";
             this.verExamenesAdicionalesToolStripMenuItem.Click += new System.EventHandler(this.verExamenesAdicionalesToolStripMenuItem_Click);
             // 
@@ -1579,7 +1589,7 @@
             // 
             this.editarPrecioToolStripMenuItem.Image = global::SAMBHS.Windows.WinClient.UI.Resource.tag_blue_edit;
             this.editarPrecioToolStripMenuItem.Name = "editarPrecioToolStripMenuItem";
-            this.editarPrecioToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
+            this.editarPrecioToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
             this.editarPrecioToolStripMenuItem.Text = "Editar Precio";
             this.editarPrecioToolStripMenuItem.Click += new System.EventHandler(this.editarPrecioToolStripMenuItem_Click);
             // 
@@ -1587,7 +1597,7 @@
             // 
             this.verexamenesAuxiliaresConsultorioItem.Image = global::SAMBHS.Windows.WinClient.UI.Resource.build_cancel;
             this.verexamenesAuxiliaresConsultorioItem.Name = "verexamenesAuxiliaresConsultorioItem";
-            this.verexamenesAuxiliaresConsultorioItem.Size = new System.Drawing.Size(263, 22);
+            this.verexamenesAuxiliaresConsultorioItem.Size = new System.Drawing.Size(264, 22);
             this.verexamenesAuxiliaresConsultorioItem.Text = "Examenes Adicionales (Consultorio)";
             this.verexamenesAuxiliaresConsultorioItem.Click += new System.EventHandler(this.verexamenesAuxiliaresConsultorioItem_Click);
             // 
@@ -3077,12 +3087,12 @@
             // ultraButton1
             // 
             this.ultraButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            appearance15.Image = global::SAMBHS.Windows.WinClient.UI.Resource.bricks;
-            appearance15.ImageHAlign = Infragistics.Win.HAlign.Left;
-            appearance15.ImageVAlign = Infragistics.Win.VAlign.Middle;
-            appearance15.TextHAlignAsString = "Right";
-            appearance15.TextVAlignAsString = "Middle";
-            this.ultraButton1.Appearance = appearance15;
+            appearance32.Image = global::SAMBHS.Windows.WinClient.UI.Resource.bricks;
+            appearance32.ImageHAlign = Infragistics.Win.HAlign.Left;
+            appearance32.ImageVAlign = Infragistics.Win.VAlign.Middle;
+            appearance32.TextHAlignAsString = "Right";
+            appearance32.TextVAlignAsString = "Middle";
+            this.ultraButton1.Appearance = appearance32;
             this.ultraButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraButton1.Location = new System.Drawing.Point(118, 547);
             this.ultraButton1.Margin = new System.Windows.Forms.Padding(2);
@@ -3095,12 +3105,12 @@
             // ultraButton2
             // 
             this.ultraButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            appearance16.Image = global::SAMBHS.Windows.WinClient.UI.Resource.page_excel1;
-            appearance16.ImageHAlign = Infragistics.Win.HAlign.Center;
-            appearance16.ImageVAlign = Infragistics.Win.VAlign.Middle;
-            appearance16.TextHAlignAsString = "Right";
-            appearance16.TextVAlignAsString = "Middle";
-            this.ultraButton2.Appearance = appearance16;
+            appearance33.Image = global::SAMBHS.Windows.WinClient.UI.Resource.page_excel1;
+            appearance33.ImageHAlign = Infragistics.Win.HAlign.Center;
+            appearance33.ImageVAlign = Infragistics.Win.VAlign.Middle;
+            appearance33.TextHAlignAsString = "Right";
+            appearance33.TextVAlignAsString = "Middle";
+            this.ultraButton2.Appearance = appearance33;
             this.ultraButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraButton2.Location = new System.Drawing.Point(731, 499);
             this.ultraButton2.Margin = new System.Windows.Forms.Padding(2);
@@ -3966,6 +3976,37 @@
             this.label36.TabIndex = 0;
             this.label36.Text = "Fecha Atención";
             // 
+            // lblDocumentoExportado
+            // 
+            this.lblDocumentoExportado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDocumentoExportado.AutoSize = true;
+            this.lblDocumentoExportado.Enabled = false;
+            this.lblDocumentoExportado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocumentoExportado.Location = new System.Drawing.Point(316, 19);
+            this.lblDocumentoExportado.Name = "lblDocumentoExportado";
+            this.lblDocumentoExportado.Size = new System.Drawing.Size(32, 21);
+            this.lblDocumentoExportado.TabIndex = 178;
+            this.lblDocumentoExportado.Text = "- - -";
+            // 
+            // btnExportarBandeja
+            // 
+            this.btnExportarBandeja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            appearance31.Image = global::SAMBHS.Windows.WinClient.UI.Resource.page_excel1;
+            appearance31.ImageHAlign = Infragistics.Win.HAlign.Center;
+            appearance31.ImageVAlign = Infragistics.Win.VAlign.Middle;
+            appearance31.TextHAlignAsString = "Right";
+            appearance31.TextVAlignAsString = "Middle";
+            this.btnExportarBandeja.Appearance = appearance31;
+            this.btnExportarBandeja.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarBandeja.Location = new System.Drawing.Point(175, 14);
+            this.btnExportarBandeja.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExportarBandeja.Name = "btnExportarBandeja";
+            this.btnExportarBandeja.Size = new System.Drawing.Size(76, 24);
+            this.btnExportarBandeja.TabIndex = 177;
+            this.btnExportarBandeja.Text = "Excel";
+            this.btnExportarBandeja.Click += new System.EventHandler(this.btnExportarBandeja_Click);
+            // 
             // frmBandejaAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4203,5 +4244,7 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Infragistics.Win.Misc.UltraLabel lblDocumentoExportado;
+        private Infragistics.Win.Misc.UltraButton btnExportarBandeja;
     }
 }

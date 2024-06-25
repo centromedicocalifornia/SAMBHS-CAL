@@ -82,3 +82,24 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataMode
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\obj\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\obj\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\itextsharp.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll.config
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\Microsoft.CSharp.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\SAMBHS.Common.BE.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\System.Data.DataSetExtensions.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\System.Data.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\System.Data.Entity.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\System.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\System.Runtime.Serialization.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\System.Xml.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\System.Xml.Linq.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\itextsharp.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\bin\Debug\SAMBHS.Common.BE.pdb
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\obj\Debug\DMMSQLWIN.ssdl
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\obj\Debug\DMMSQLWIN.csdl
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\obj\Debug\DMMSQLWIN.msl
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\obj\Debug\SAMBHS.Common.DataModel.MSSQLWIN.csprojResolveAssemblyReference.cache
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\obj\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll.licenses
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\obj\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQLWIN\SAMBHS.Common.DataModel.MSSQLWIN\obj\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb

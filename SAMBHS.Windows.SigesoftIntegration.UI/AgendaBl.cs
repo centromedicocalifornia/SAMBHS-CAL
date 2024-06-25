@@ -1138,7 +1138,8 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                             //"SUM (m.r_Price)  as PrecioTotalProtocolo, " +
                             "d.v_OrganizationId, " +
                             "d.v_ServiceId, " +
-                            "d.v_ComprobantePago, " +
+                            //"d.v_ComprobantePago, " +
+                            " ISNULL(d.v_ComprobantePago,'SIN COBRO') AS v_ComprobantePago,  " +
                             "d.v_NroLiquidacion, " +
                             "f1.v_IdentificationNumber as RucEmpFact, " +
                             "DATEDIFF(YEAR,b.d_Birthdate,GETDATE())-(CASE WHEN DATEADD(YY,DATEDIFF(YEAR,b.d_Birthdate,GETDATE()),b.d_Birthdate)>GETDATE() THEN 1 ELSE 0 END) as i_Edad , " +                           //"m.i_MedicoTratanteId " +
@@ -1150,7 +1151,9 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                             " a.i_NewContinuationId, " +
                             " d.i_ServiceStatusId, " +
                             " ISNULL(d.v_ObservacionesAdicionales,'---') AS v_ObservacionesAdicionales, b.v_TelephoneNumber as v_TelephoneNumber , " +
-                            " ISNULL(mkt.v_Value1, '- - -' ) as 'MKT' " +
+                            " ISNULL(mkt.v_Value1, '- - -' ) as 'MKT', " +
+                            " ISNULL(vt.v_SerieDocumento + '-' + VT.v_CorrelativoDocumento,'- - -')as ComprobanteCobro, " + 
+                            " ISNULL(vt.d_Total, 0) as TotalPagado "  +
                             "FROM calendar a "+
                             "INNER JOIN systemuser z on a.i_InsertUserId = z.i_SystemUserId " +
                             "INNER JOIN person b on a.v_PersonId = b.v_PersonId "+
@@ -1179,8 +1182,9 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                             "LEFT JOIN organization j on d.v_OrganizationId = j.v_OrganizationId "+
                             "LEFT JOIN location k on d.v_OrganizationId = k.v_OrganizationId and d.v_LocationId = k.v_LocationId "+
                             "INNER JOIN groupoccupation l on l.v_GroupOccupationId = e.v_GroupOccupationId " +
+                            " left join [20505310072].dbo.venta vt On replace((replace(d.v_ComprobantePago,' | ', '')),' ','') = vt.v_SerieDocumento + '-' + VT.v_CorrelativoDocumento " +
                             //"INNER JOIN servicecomponent m on d.v_ServiceId = m.v_ServiceId " +
-                            "WHERE (" + nroDoc + " is null or " + nroDoc + "  = B.v_DocNumber )" +
+                            " WHERE (" + nroDoc + " is null or " + nroDoc + "  = B.v_DocNumber )" +
                             "AND(d_DateTimeCalendar > CONVERT(datetime,'" + fi + "',103) and  d_DateTimeCalendar < CONVERT(datetime,'" + ff + "',103)) " +
                             //"AND(" + tipoServicio + " is null or " + tipoServicio + " = i_ServiceTypeId) " +
                             "AND(" + servicio + " is null or " + servicio + " = i_ServiceId) " +
@@ -1193,7 +1197,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                             "AND a.i_IsDeleted = 0 " +
                             //"AND m.i_IsDeleted = 0  " +
                             //"AND m.i_IsRequiredId = 1  " +
-                            "GROUP BY a.i_ServiceTypeId, d.v_ServiceId,a.d_DateTimeCalendar,B.v_FirstLastName,B.v_SecondLastName,B.v_FirstName,B.v_DocNumber,sp1.v_Value1,sp8.v_Value1,a.d_SalidaCM,sp9.v_Value1,sp2.v_Value1,sp3.v_Value1,sp4.v_Value1,sp7.v_Value1,sp5.v_Value1,e.v_Name,sp6.v_Value1,f.v_Name,g.v_Name,j.v_Name,k.v_Name,a.d_EntryTimeCM,l.v_Name,b.v_CurrentOccupation,l.v_Name,b.v_CurrentOccupation,B.v_FirstName,B.v_FirstLastName,B.v_SecondLastName,h.v_Name,e.v_ProtocolId,a.v_CalendarId,b.d_Birthdate,d.i_MasterServiceId,b.v_PersonId,d.v_OrganizationId,f1.v_IdentificationNumber, z.v_UserName, d.v_ComprobantePago, d.v_NroLiquidacion, i_CalendarStatusId, d.d_InsertDate, a.v_CalendarId, a.i_LineStatusId, d.i_AptitudeStatusId, a.i_NewContinuationId, d.i_ServiceStatusId, d.v_ObservacionesAdicionales, b.v_TelephoneNumber, mkt.v_Value1";
+                            "GROUP BY a.i_ServiceTypeId, d.v_ServiceId,a.d_DateTimeCalendar,B.v_FirstLastName,B.v_SecondLastName,B.v_FirstName,B.v_DocNumber,sp1.v_Value1,sp8.v_Value1,a.d_SalidaCM,sp9.v_Value1,sp2.v_Value1,sp3.v_Value1,sp4.v_Value1,sp7.v_Value1,sp5.v_Value1,e.v_Name,sp6.v_Value1,f.v_Name,g.v_Name,j.v_Name,k.v_Name,a.d_EntryTimeCM,l.v_Name,b.v_CurrentOccupation,l.v_Name,b.v_CurrentOccupation,B.v_FirstName,B.v_FirstLastName,B.v_SecondLastName,h.v_Name,e.v_ProtocolId,a.v_CalendarId,b.d_Birthdate,d.i_MasterServiceId,b.v_PersonId,d.v_OrganizationId,f1.v_IdentificationNumber, z.v_UserName, d.v_ComprobantePago, d.v_NroLiquidacion, i_CalendarStatusId, d.d_InsertDate, a.v_CalendarId, a.i_LineStatusId, d.i_AptitudeStatusId, a.i_NewContinuationId, d.i_ServiceStatusId, d.v_ObservacionesAdicionales, b.v_TelephoneNumber, mkt.v_Value1, vt.v_SerieDocumento, VT.v_CorrelativoDocumento, vt.d_Total ";
 
                 var data = cnx.Query<AgendaDto>(query).ToList();
                 return data;

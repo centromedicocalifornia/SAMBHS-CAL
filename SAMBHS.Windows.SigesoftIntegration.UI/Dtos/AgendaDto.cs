@@ -80,5 +80,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI.Dtos
         public string v_EmployerOrganizationId { get; set; }
         public string v_Puesto { get; set; }
 
+        public string ComprobanteCobro { get; set; }
+        public decimal TotalPagado { get; set; }
     }
 }

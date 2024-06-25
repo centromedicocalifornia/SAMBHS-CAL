@@ -91,3 +91,27 @@ E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\OrdenProduccion\obj\Debug\
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\OrdenProduccion\obj\Debug\OrdenProduccion.dll
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\OrdenProduccion\obj\Debug\OrdenProduccion.pdb
 E:\DEVELOPER\CM CALIFORNIA - TRUJILLO\DEV\Facturacion\OrdenProduccion\bin\Debug\itextsharp.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\Librerias\Devart.Data.Design.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\Librerias\Devart.Data.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\Librerias\Devart.Data.Linq.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\OrdenProduccion.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\OrdenProduccion.pdb
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.Common.BE.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.Common.Resource.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.CommonWIN.BL.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\itextsharp.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\FineUI.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\Dapper.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\Ionic.Zip.Reduced.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.Common.BE.pdb
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\bin\Debug\SAMBHS.Common.Resource.pdb
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\obj\Debug\SAMBHS.OrdenProduccion.BL.csprojResolveAssemblyReference.cache
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\obj\Debug\OrdenProduccion.dll
+D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\OrdenProduccion\obj\Debug\OrdenProduccion.pdb

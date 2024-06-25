@@ -25,6 +25,10 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using SAMBHS.Windows.WinClient.UI.Mantenimientos;
 
+using Infragistics.Win.UltraWinGrid.ExcelExport;
+using System.Threading.Tasks;
+using System.Threading;
+
 namespace SAMBHS.Windows.WinClient.UI.Procesos
 {
     public partial class frmBandejaAgenda : Form
@@ -54,6 +58,10 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
         int dia;
         int mes;
         int anio;
+
+        private Task _tarea;
+        private readonly System.Threading.CancellationTokenSource _cts = new System.Threading.CancellationTokenSource();
+
 
         public frmBandejaAgenda(string value)
         {
@@ -3109,10 +3117,38 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
             frm.ShowDialog();
         }
 
+        private void btnExportarBandeja_Click(object sender, EventArgs e)
+        {
+            if (!grdDataCalendar.Rows.Any() || (_tarea != null && !_tarea.IsCompleted)) return;
 
+            const string dummyFileName = "Listado de Atenciones California";
 
+            using (var sf = new SaveFileDialog
+            {
+                DefaultExt = "xlsx",
+                Filter = @"xlsx files (*.xlsx)|*.xlsx",
+                FileName = dummyFileName
+            })
+            {
+                if (sf.ShowDialog() != DialogResult.OK) return;
+                var filename = sf.FileName;
+                btnExportarBandeja.Appearance.Image = Resource.loadingfinal1;
 
-
+                _tarea = Task.Factory.StartNew(() =>
+                {
+                    using (var ultraGridExcelExporter1 = new UltraGridExcelExporter())
+                        ultraGridExcelExporter1.Export(grdDataCalendar, filename);
+                }, _cts.Token)
+                    .ContinueWith(t => ActualizarLabel("TERMINADO"),
+                        TaskScheduler.FromCurrentSynchronizationContext());
+            }
+        }
+        private void ActualizarLabel(string texto)
+        {
+            lblDocumentoExportado.Text = texto;
+            //btnExportarBandeja.Enabled = false;
+            btnExportarBandeja.Appearance.Image = Resource.accept;
+        }
 
 
         
