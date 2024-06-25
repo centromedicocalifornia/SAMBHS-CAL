@@ -4674,6 +4674,94 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
         {
             txtCodigo.Text = "N009-0000";
         }
+
+        private void ultraButton2_Click(object sender, EventArgs e)
+        {
+            cboDocumento.Value = "3";
+            txtSerieDoc.Text = "B001";
+            PredeterminarEstablecimiento(txtSerieDoc.Text);
+            _limiteDocumento = DocumentoBL.ObtenerLimiteDocumento(int.Parse(cboDocumento.Value.ToString()), txtSerieDoc.Text.Trim());
+            CancelEventArgs e1 = new CancelEventArgs();
+            this.txtSerieDoc_Validating(sender, e1);
+            cboTipoServicio.Value = "2";
+        }
+
+        private void ultraButton4_Click(object sender, EventArgs e)
+        {
+            cboDocumento.Value = "1";
+            txtSerieDoc.Text = "F001";
+            PredeterminarEstablecimiento(txtSerieDoc.Text);
+            _limiteDocumento = DocumentoBL.ObtenerLimiteDocumento(int.Parse(cboDocumento.Value.ToString()), txtSerieDoc.Text.Trim());
+            CancelEventArgs e1 = new CancelEventArgs();
+            this.txtSerieDoc_Validating(sender, e1);
+            cboTipoServicio.Value = "2";
+        }
+
+        private void ultraButton5_Click(object sender, EventArgs e)
+        {
+            cboDocumento.Value = "3";
+            txtSerieDoc.Text = "B002";
+            PredeterminarEstablecimiento(txtSerieDoc.Text);
+            _limiteDocumento = DocumentoBL.ObtenerLimiteDocumento(int.Parse(cboDocumento.Value.ToString()), txtSerieDoc.Text.Trim());
+            CancelEventArgs e1 = new CancelEventArgs();
+            this.txtSerieDoc_Validating(sender, e1);
+            cboTipoServicio.Value = "1";
+        }
+
+        private void ultraButton6_Click(object sender, EventArgs e)
+        {
+            cboDocumento.Value = "1";
+            txtSerieDoc.Text = "F002";
+            PredeterminarEstablecimiento(txtSerieDoc.Text);
+            _limiteDocumento = DocumentoBL.ObtenerLimiteDocumento(int.Parse(cboDocumento.Value.ToString()), txtSerieDoc.Text.Trim());
+            CancelEventArgs e1 = new CancelEventArgs();
+            this.txtSerieDoc_Validating(sender, e1);
+            cboTipoServicio.Value = "1";
+        }
+
+        private void ultraButton7_Click(object sender, EventArgs e)
+        {
+            cboDocumento.Value = "506";
+            txtSerieDoc.Text = "RSL";
+            PredeterminarEstablecimiento(txtSerieDoc.Text);
+            _limiteDocumento = DocumentoBL.ObtenerLimiteDocumento(int.Parse(cboDocumento.Value.ToString()), txtSerieDoc.Text.Trim());
+            CancelEventArgs e1 = new CancelEventArgs();
+            this.txtSerieDoc_Validating(sender, e1);
+            cboTipoServicio.Value = "2";
+        }
+
+        private void ultraButton8_Click(object sender, EventArgs e)
+        {
+            cboDocumento.Value = "502";
+            txtSerieDoc.Text = "ECA";
+            PredeterminarEstablecimiento(txtSerieDoc.Text);
+            _limiteDocumento = DocumentoBL.ObtenerLimiteDocumento(int.Parse(cboDocumento.Value.ToString()), txtSerieDoc.Text.Trim());
+            CancelEventArgs e1 = new CancelEventArgs();
+            this.txtSerieDoc_Validating(sender, e1);
+            cboTipoServicio.Value = "2";
+        }
+
+        private void ultraButton9_Click(object sender, EventArgs e)
+        {
+            cboDocumento.Value = "3";
+            txtSerieDoc.Text = "B003";
+            PredeterminarEstablecimiento(txtSerieDoc.Text);
+            _limiteDocumento = DocumentoBL.ObtenerLimiteDocumento(int.Parse(cboDocumento.Value.ToString()), txtSerieDoc.Text.Trim());
+            CancelEventArgs e1 = new CancelEventArgs();
+            this.txtSerieDoc_Validating(sender, e1);
+            cboTipoServicio.Value = "3";
+        }
+
+        private void ultraButton10_Click(object sender, EventArgs e)
+        {
+            cboDocumento.Value = "1";
+            txtSerieDoc.Text = "F003";
+            PredeterminarEstablecimiento(txtSerieDoc.Text);
+            _limiteDocumento = DocumentoBL.ObtenerLimiteDocumento(int.Parse(cboDocumento.Value.ToString()), txtSerieDoc.Text.Trim());
+            CancelEventArgs e1 = new CancelEventArgs();
+            this.txtSerieDoc_Validating(sender, e1);
+            cboTipoServicio.Value = "3";
+        }
     }
 }
 
