@@ -100,3 +100,24 @@ D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Deb
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.csprojResolveAssemblyReference.cache
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.dll
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Windows.NubefactIntegration.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Windows.NubefactIntegration.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\Newtonsoft.Json.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\FineUI.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\Dapper.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\itextsharp.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.csprojResolveAssemblyReference.cache
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\SAMBHS.Windows.NubefactIntegration\obj\Debug\SAMBHS.Windows.NubefactIntegration.pdb

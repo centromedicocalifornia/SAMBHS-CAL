@@ -315,6 +315,8 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
         private void grdDataCalendar_AfterSelectChange(object sender, Infragistics.Win.UltraWinGrid.AfterSelectChangeEventArgs e)
         {
             btnImprimirHojaRuta.Enabled = (ugComponentes.Rows.Count > 0);
+            btnImprimirHojaRutaA4.Enabled = (ugComponentes.Rows.Count > 0);
+
             btnEditarTrabajador.Enabled = (ugComponentes.Rows.Count > 0);
             btnCambiarProtocolo.Enabled = (ugComponentes.Rows.Count > 0);
             if (grdDataCalendar.Selected.Rows.Count != 0)
@@ -3148,6 +3150,12 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
             lblDocumentoExportado.Text = texto;
             //btnExportarBandeja.Enabled = false;
             btnExportarBandeja.Appearance.Image = Resource.accept;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            var frm = new frmRoadMapA4(_strServicelId, _calendarId, _fechaNacimiento);
+            frm.ShowDialog();
         }
 
 

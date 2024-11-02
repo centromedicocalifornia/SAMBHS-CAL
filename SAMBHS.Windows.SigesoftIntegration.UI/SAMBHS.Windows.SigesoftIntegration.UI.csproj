@@ -400,11 +400,23 @@
     <Compile Include="PacientesList.cs" />
     <Compile Include="Reports\ConexionSAM.cs" />
     <Compile Include="Reports\ConexionSigesoft.cs" />
+    <Compile Include="Reports\crRoadMapA41.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crRoadMapA4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\crRoadMapAsist.cs">
       <DependentUpon>crRoadMapAsist.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\frmRoadMapA4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmRoadMapA4.Designer.cs">
+      <DependentUpon>frmRoadMapA4.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\frmRoadMapAsist.cs">
       <SubType>Form</SubType>
@@ -595,6 +607,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crRoadMapA4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crRoadMapA41.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\crRoadMapAsist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crRoadMapAsist.cs</LastGenOutput>
@@ -606,6 +622,9 @@
     <EmbeddedResource Include="Reports\crRoadMap.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crRoadMap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmRoadMapA4.resx">
+      <DependentUpon>frmRoadMapA4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmRoadMapAsist.resx">
       <DependentUpon>frmRoadMapAsist.cs</DependentUpon>

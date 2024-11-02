@@ -208,3 +208,45 @@ D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\obj\Debug\SAMBHS.Venta.BL.csprojResolveAssemblyReference.cache
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\obj\Debug\SAMBHS.Venta.BL.dll
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\obj\Debug\SAMBHS.Venta.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\Librerias\Devart.Data.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Venta.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Venta.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\Dapper.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Almacen.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.CommonWIN.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Tesoreria.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\itextsharp.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\WebCam_Capture.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\AxInterop.ZKFPEngXControl.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SigPlusNET.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Security.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\ScrapperReniecSunat.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\Newtonsoft.Json.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\FineUI.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\HtmlAgilityPack.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Tesoreria.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Windows.SigesoftIntegration.UI.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Security.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLSIGESOFT.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\obj\Debug\SAMBHS.Venta.BL.csprojResolveAssemblyReference.cache
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\obj\Debug\SAMBHS.Venta.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Venta\SAMBHS.Venta.BL\obj\Debug\SAMBHS.Venta.BL.pdb

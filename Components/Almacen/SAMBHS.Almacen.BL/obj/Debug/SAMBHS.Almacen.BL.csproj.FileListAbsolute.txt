@@ -130,3 +130,30 @@ D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\obj\D
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll.licenses
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Almacen.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Almacen.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Dapper.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.CommonWIN.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\itextsharp.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\FineUI.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.CommonWIN.BL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.csprojResolveAssemblyReference.cache
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll.licenses
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Almacen\SAMBHS.Almacen.BL\obj\Debug\SAMBHS.Almacen.BL.pdb

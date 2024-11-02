@@ -75,3 +75,19 @@ D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Co
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll.licenses
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll.config
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\itextsharp.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\Microsoft.CSharp.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.DataSetExtensions.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Data.Entity.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Runtime.Serialization.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\bin\Debug\System.Xml.Linq.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.csprojResolveAssemblyReference.cache
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll.licenses
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\BusinessEntity\SAMBHS.Common.BE\obj\Debug\SAMBHS.Common.BE.pdb

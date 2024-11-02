@@ -165,3 +165,37 @@ D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.R
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll.licenses
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Design.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.Linq.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Librerias\Devart.Data.PostgreSql.Entity.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.Resource.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Dapper.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\FineUI.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\Ionic.Zip.Reduced.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Configuration.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.DataSetExtensions.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Data.Entity.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Runtime.Serialization.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Web.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Windows.Forms.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\System.Xml.Linq.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\itextsharp.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csprojResolveAssemblyReference.cache
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.ConexionPerdida.resources
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\App_Demo.UI.DownloadingUpdate.resources
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\LoadingClass.LoadingForm.resources
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.Properties.Resources.resources
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.csproj.GenerateResource.Cache
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll.licenses
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\Resource\SAMBHS.Common.Resource\obj\Debug\SAMBHS.Common.Resource.pdb

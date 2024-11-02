@@ -113,3 +113,26 @@ D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.C
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.dll.licenses
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.dll
 D:\WORK\DEV ALL\CMC\SAMBHS\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll.config
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\Microsoft.CSharp.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\SAMBHS.Common.BE.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\System.Data.DataSetExtensions.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\System.Data.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\System.Data.Entity.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\System.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\System.Runtime.Serialization.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\System.Xml.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\System.Xml.Linq.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\itextsharp.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\SAMBHS.Common.BE.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\bin\Debug\SAMBHS.Common.DataModel.MSSQLWIN.pdb
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\DMMSQL.ssdl
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\DMMSQL.csdl
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\DMMSQL.msl
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.csprojResolveAssemblyReference.cache
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.dll.licenses
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.dll
+E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Components\Common\DataModel\MSSQL\SAMBHS.Common.DataModel.MSSQL\obj\Debug\SAMBHS.Common.DataModel.MSSQL.pdb
