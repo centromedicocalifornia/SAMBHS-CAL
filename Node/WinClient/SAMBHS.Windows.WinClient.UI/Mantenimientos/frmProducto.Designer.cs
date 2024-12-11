@@ -331,6 +331,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             Infragistics.Win.Appearance appearance189 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance190 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance191 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance192 = new Infragistics.Win.Appearance();
             Infragistics.Win.ValueListItem valueListItem5 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem3 = new Infragistics.Win.ValueListItem();
             Infragistics.Win.ValueListItem valueListItem4 = new Infragistics.Win.ValueListItem();
@@ -346,10 +347,10 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.Misc.ValidationGroup validationGroup1 = new Infragistics.Win.Misc.ValidationGroup("Color");
             Infragistics.Win.Misc.ValidationGroup validationGroup2 = new Infragistics.Win.Misc.ValidationGroup("ISC");
-            Infragistics.Win.Appearance appearance192 = new Infragistics.Win.Appearance();
             this.btnEliminarImagen = new Infragistics.Win.Misc.UltraButton();
             this.btnBuscarImagen = new Infragistics.Win.Misc.UltraButton();
             this.pictureProduct = new System.Windows.Forms.PictureBox();
+            this.chkInsumo = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
             this.cboPerfilDetraccion = new Infragistics.Win.UltraWinGrid.UltraCombo();
             this.ultraLabel14 = new Infragistics.Win.Misc.UltraLabel();
             this.txtPrecioMayorista = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
@@ -564,6 +565,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             this.btnMatriz = new Infragistics.Win.Misc.UltraButton();
             this.btnNuevoProducto = new Infragistics.Win.Misc.UltraButton();
             this.groupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
+            this.btnExportarBandeja = new Infragistics.Win.Misc.UltraButton();
             this.label1 = new System.Windows.Forms.Label();
             this.cboEstadoProducto = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
             this.ultraLabel10 = new Infragistics.Win.Misc.UltraLabel();
@@ -585,8 +587,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             this._frmProducto_UltraFormManager_Dock_Area_Bottom = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
             this.popupImagen = new Infragistics.Win.Misc.UltraPopupControlContainer(this.components);
             this.popupIsc = new Infragistics.Win.Misc.UltraPopupControlContainer(this.components);
-            this.btnExportarBandeja = new Infragistics.Win.Misc.UltraButton();
-            this.chkInsumo = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
+            this.ultraCheckEditor1 = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
             groupBox3 = new Infragistics.Win.Misc.UltraGroupBox();
             ultraPanel2 = new Infragistics.Win.Misc.UltraPanel();
             ultraPanel1 = new Infragistics.Win.Misc.UltraPanel();
@@ -600,6 +601,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduct)).BeginInit();
             ultraPanel2.ClientArea.SuspendLayout();
             ultraPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkInsumo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPerfilDetraccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioMayorista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUtilidad)).BeginInit();
@@ -750,7 +752,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             ((System.ComponentModel.ISupportInitialize)(this.uvModelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraFormManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkInsumo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraCheckEditor1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -765,7 +767,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             groupBox3.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             groupBox3.Location = new System.Drawing.Point(12, 6);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(211, 117);
+            groupBox3.Size = new System.Drawing.Size(211, 103);
             groupBox3.TabIndex = 44;
             groupBox3.Text = "Imagen Referencial";
             // 
@@ -778,7 +780,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             appearance1.TextVAlignAsString = "Middle";
             this.btnEliminarImagen.Appearance = appearance1;
             this.btnEliminarImagen.BackColorInternal = System.Drawing.Color.Transparent;
-            this.btnEliminarImagen.Location = new System.Drawing.Point(172, 83);
+            this.btnEliminarImagen.Location = new System.Drawing.Point(172, 69);
             this.btnEliminarImagen.Name = "btnEliminarImagen";
             this.btnEliminarImagen.Size = new System.Drawing.Size(29, 23);
             this.btnEliminarImagen.TabIndex = 37;
@@ -794,7 +796,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             appearance2.TextVAlignAsString = "Middle";
             this.btnBuscarImagen.Appearance = appearance2;
             this.btnBuscarImagen.BackColorInternal = System.Drawing.Color.Transparent;
-            this.btnBuscarImagen.Location = new System.Drawing.Point(172, 57);
+            this.btnBuscarImagen.Location = new System.Drawing.Point(172, 43);
             this.btnBuscarImagen.Name = "btnBuscarImagen";
             this.btnBuscarImagen.Size = new System.Drawing.Size(29, 23);
             this.btnBuscarImagen.TabIndex = 36;
@@ -810,7 +812,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             this.pictureProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureProduct.Location = new System.Drawing.Point(6, 25);
             this.pictureProduct.Name = "pictureProduct";
-            this.pictureProduct.Size = new System.Drawing.Size(199, 86);
+            this.pictureProduct.Size = new System.Drawing.Size(199, 72);
             this.pictureProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureProduct.TabIndex = 0;
             this.pictureProduct.TabStop = false;
@@ -823,6 +825,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             // ultraPanel2.ClientArea
             // 
+            ultraPanel2.ClientArea.Controls.Add(this.ultraCheckEditor1);
             ultraPanel2.ClientArea.Controls.Add(this.chkInsumo);
             ultraPanel2.ClientArea.Controls.Add(this.cboPerfilDetraccion);
             ultraPanel2.ClientArea.Controls.Add(this.ultraLabel14);
@@ -850,6 +853,16 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             ultraPanel2.Name = "ultraPanel2";
             ultraPanel2.Size = new System.Drawing.Size(232, 383);
             ultraPanel2.TabIndex = 1;
+            // 
+            // chkInsumo
+            // 
+            this.chkInsumo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkInsumo.AutoSize = true;
+            this.chkInsumo.Location = new System.Drawing.Point(134, 202);
+            this.chkInsumo.Name = "chkInsumo";
+            this.chkInsumo.Size = new System.Drawing.Size(71, 17);
+            this.chkInsumo.TabIndex = 57;
+            this.chkInsumo.Text = "¿Insumo?";
             // 
             // cboPerfilDetraccion
             // 
@@ -942,7 +955,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.ultraLabel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ultraLabel14.AutoSize = true;
-            this.ultraLabel14.Location = new System.Drawing.Point(6, 339);
+            this.ultraLabel14.Location = new System.Drawing.Point(6, 360);
             this.ultraLabel14.Name = "ultraLabel14";
             this.ultraLabel14.Size = new System.Drawing.Size(112, 14);
             this.ultraLabel14.TabIndex = 47;
@@ -952,7 +965,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.txtPrecioMayorista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecioMayorista.Location = new System.Drawing.Point(134, 335);
+            this.txtPrecioMayorista.Location = new System.Drawing.Point(134, 356);
             this.txtPrecioMayorista.MaxLength = 10;
             this.txtPrecioMayorista.Name = "txtPrecioMayorista";
             this.txtPrecioMayorista.Size = new System.Drawing.Size(88, 21);
@@ -964,7 +977,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.txtUtilidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUtilidad.Location = new System.Drawing.Point(134, 313);
+            this.txtUtilidad.Location = new System.Drawing.Point(134, 334);
             this.txtUtilidad.MaxLength = 10;
             this.txtUtilidad.Name = "txtUtilidad";
             this.txtUtilidad.Size = new System.Drawing.Size(88, 21);
@@ -977,7 +990,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.ultraLabel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ultraLabel13.AutoSize = true;
-            this.ultraLabel13.Location = new System.Drawing.Point(6, 317);
+            this.ultraLabel13.Location = new System.Drawing.Point(6, 338);
             this.ultraLabel13.Name = "ultraLabel13";
             this.ultraLabel13.Size = new System.Drawing.Size(125, 14);
             this.ultraLabel13.TabIndex = 46;
@@ -987,7 +1000,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.chkOtrosTributos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkOtrosTributos.AutoSize = true;
-            this.chkOtrosTributos.Location = new System.Drawing.Point(6, 361);
+            this.chkOtrosTributos.Location = new System.Drawing.Point(6, 107);
             this.chkOtrosTributos.Name = "chkOtrosTributos";
             this.chkOtrosTributos.Size = new System.Drawing.Size(231, 17);
             this.chkOtrosTributos.TabIndex = 35;
@@ -997,7 +1010,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.txtCantidadFabricacionMensual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidadFabricacionMensual.Location = new System.Drawing.Point(134, 247);
+            this.txtCantidadFabricacionMensual.Location = new System.Drawing.Point(134, 268);
             this.txtCantidadFabricacionMensual.MaxLength = 10;
             this.txtCantidadFabricacionMensual.Name = "txtCantidadFabricacionMensual";
             this.txtCantidadFabricacionMensual.Size = new System.Drawing.Size(88, 21);
@@ -1008,7 +1021,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.ultraLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ultraLabel6.AutoSize = true;
-            this.ultraLabel6.Location = new System.Drawing.Point(6, 251);
+            this.ultraLabel6.Location = new System.Drawing.Point(6, 272);
             this.ultraLabel6.Name = "ultraLabel6";
             this.ultraLabel6.Size = new System.Drawing.Size(113, 14);
             this.ultraLabel6.TabIndex = 45;
@@ -1080,7 +1093,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.txtDatosStockMin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDatosStockMin.Location = new System.Drawing.Point(134, 225);
+            this.txtDatosStockMin.Location = new System.Drawing.Point(134, 246);
             this.txtDatosStockMin.MaxLength = 10;
             this.txtDatosStockMin.Name = "txtDatosStockMin";
             this.txtDatosStockMin.Size = new System.Drawing.Size(88, 21);
@@ -1091,7 +1104,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 273);
+            this.label25.Location = new System.Drawing.Point(6, 294);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(89, 14);
             this.label25.TabIndex = 30;
@@ -1101,7 +1114,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 229);
+            this.label23.Location = new System.Drawing.Point(6, 250);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(75, 14);
             this.label23.TabIndex = 34;
@@ -1121,7 +1134,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.txtDatosPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDatosPrecioVenta.Location = new System.Drawing.Point(134, 269);
+            this.txtDatosPrecioVenta.Location = new System.Drawing.Point(134, 290);
             this.txtDatosPrecioVenta.MaxLength = 10;
             this.txtDatosPrecioVenta.Name = "txtDatosPrecioVenta";
             this.txtDatosPrecioVenta.Size = new System.Drawing.Size(88, 21);
@@ -1134,7 +1147,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.lblPrecioCosto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPrecioCosto.AutoSize = true;
-            this.lblPrecioCosto.Location = new System.Drawing.Point(6, 295);
+            this.lblPrecioCosto.Location = new System.Drawing.Point(6, 316);
             this.lblPrecioCosto.Name = "lblPrecioCosto";
             this.lblPrecioCosto.Size = new System.Drawing.Size(89, 14);
             this.lblPrecioCosto.TabIndex = 32;
@@ -1144,7 +1157,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.txtDatosPrecioCosto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDatosPrecioCosto.Location = new System.Drawing.Point(134, 291);
+            this.txtDatosPrecioCosto.Location = new System.Drawing.Point(134, 312);
             this.txtDatosPrecioCosto.MaxLength = 10;
             this.txtDatosPrecioCosto.Name = "txtDatosPrecioCosto";
             this.txtDatosPrecioCosto.Size = new System.Drawing.Size(88, 21);
@@ -4528,6 +4541,23 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             this.groupBox1.TabIndex = 0;
             this.groupBox1.Text = "Filtro de Búsqueda";
             // 
+            // btnExportarBandeja
+            // 
+            this.btnExportarBandeja.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            appearance192.Image = global::SAMBHS.Windows.WinClient.UI.Resource.page_excel1;
+            appearance192.ImageHAlign = Infragistics.Win.HAlign.Center;
+            appearance192.ImageVAlign = Infragistics.Win.VAlign.Middle;
+            appearance192.TextHAlignAsString = "Right";
+            appearance192.TextVAlignAsString = "Middle";
+            this.btnExportarBandeja.Appearance = appearance192;
+            this.btnExportarBandeja.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarBandeja.Location = new System.Drawing.Point(550, 51);
+            this.btnExportarBandeja.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExportarBandeja.Name = "btnExportarBandeja";
+            this.btnExportarBandeja.Size = new System.Drawing.Size(59, 24);
+            this.btnExportarBandeja.TabIndex = 162;
+            this.btnExportarBandeja.Click += new System.EventHandler(this.btnExportarBandeja_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -4742,32 +4772,15 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             // 
             this.popupIsc.PopupControl = upnIsc;
             // 
-            // btnExportarBandeja
+            // ultraCheckEditor1
             // 
-            this.btnExportarBandeja.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            appearance192.Image = global::SAMBHS.Windows.WinClient.UI.Resource.page_excel1;
-            appearance192.ImageHAlign = Infragistics.Win.HAlign.Center;
-            appearance192.ImageVAlign = Infragistics.Win.VAlign.Middle;
-            appearance192.TextHAlignAsString = "Right";
-            appearance192.TextVAlignAsString = "Middle";
-            this.btnExportarBandeja.Appearance = appearance192;
-            this.btnExportarBandeja.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportarBandeja.Location = new System.Drawing.Point(550, 51);
-            this.btnExportarBandeja.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExportarBandeja.Name = "btnExportarBandeja";
-            this.btnExportarBandeja.Size = new System.Drawing.Size(59, 24);
-            this.btnExportarBandeja.TabIndex = 162;
-            this.btnExportarBandeja.Click += new System.EventHandler(this.btnExportarBandeja_Click);
-            // 
-            // chkInsumo
-            // 
-            this.chkInsumo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chkInsumo.AutoSize = true;
-            this.chkInsumo.Location = new System.Drawing.Point(134, 202);
-            this.chkInsumo.Name = "chkInsumo";
-            this.chkInsumo.Size = new System.Drawing.Size(71, 17);
-            this.chkInsumo.TabIndex = 57;
-            this.chkInsumo.Text = "¿Insumo?";
+            this.ultraCheckEditor1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ultraCheckEditor1.AutoSize = true;
+            this.ultraCheckEditor1.Location = new System.Drawing.Point(6, 227);
+            this.ultraCheckEditor1.Name = "ultraCheckEditor1";
+            this.ultraCheckEditor1.Size = new System.Drawing.Size(80, 17);
+            this.ultraCheckEditor1.TabIndex = 58;
+            this.ultraCheckEditor1.Text = "¿Genérico?";
             // 
             // frmProducto
             // 
@@ -4796,6 +4809,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             ultraPanel2.ClientArea.ResumeLayout(false);
             ultraPanel2.ClientArea.PerformLayout();
             ultraPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkInsumo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPerfilDetraccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioMayorista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUtilidad)).EndInit();
@@ -4959,7 +4973,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
             ((System.ComponentModel.ISupportInitialize)(this.uvModelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraFormManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkInsumo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraCheckEditor1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5206,6 +5220,7 @@ namespace SAMBHS.Windows.WinClient.UI.Mantenimientos
         private System.Windows.Forms.Label label1;
         private UltraButton btnExportarBandeja;
         private UltraCheckEditor chkInsumo;
+        private UltraCheckEditor ultraCheckEditor1;
 
     }
 }
