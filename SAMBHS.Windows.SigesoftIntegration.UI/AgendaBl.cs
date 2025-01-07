@@ -4119,6 +4119,10 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 var serviceId = GetNewId(9, secuentialId, "SR");
                 oServiceDto.ServiceId = serviceId;
                 var tipoEmpresa = ObtenerTipoEmpresaByProtocol(oServiceDto.ProtocolId);
+
+                var usuariosigesoft = Usuariosigesoft(usuarioGraba);
+
+
                 using (var ts = new TransactionScope())
                 {
 
@@ -4128,7 +4132,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                             "INSERT INTO [dbo].[service]([v_ServiceId],[v_ProtocolId],[v_PersonId],[i_MasterServiceId],[i_ServiceStatusId],[i_AptitudeStatusId],[d_ServiceDate],[d_GlobalExpirationDate],[d_ObsExpirationDate],[v_OrganizationId],[i_FlagAgentId],[v_Motive],[i_IsFac],[i_StatusLiquidation],i_IsFacMedico,i_IsDeleted,i_InsertUserId,d_InsertDate,v_centrocosto,i_MedicoPagado,v_Area, v_ObservacionesAdicionales, i_ModTrabajo, i_ProcedenciaPac_Mkt )" +
                             "VALUES ('" + serviceId + "','" + oServiceDto.ProtocolId + "','" + oServiceDto.PersonId + "'," +
                             oServiceDto.MasterServiceId + "," + oServiceDto.ServiceStatusId + "," +
-                            oServiceDto.AptitudeStatusId + ",GETDATE(),NULL,NULL,'" + oServiceDto.OrganizationId + "',1,'',1,1,0,0,11,GETDATE(),'" + oServiceDto.v_centrocosto + "',0,'" + oServiceDto.Area + "', '" + oServiceDto.ObservacionesAtencion + "', " + oServiceDto.i_ModTrabajo + ", " + oServiceDto.i_ProcedenciaPac_Mkt + ")";
+                            oServiceDto.AptitudeStatusId + ",GETDATE(),NULL,NULL,'" + oServiceDto.OrganizationId + "',1,'',1,1,0,0,"+usuariosigesoft+",GETDATE(),'" + oServiceDto.v_centrocosto + "',0,'" + oServiceDto.Area + "', '" + oServiceDto.ObservacionesAtencion + "', " + oServiceDto.i_ModTrabajo + ", " + oServiceDto.i_ProcedenciaPac_Mkt + ")";
                         cnx.Execute(query);
 
                         if (oServiceDto._idccEditarNew != "")
@@ -4537,6 +4541,14 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             if (usuarioGraba == 9053)
             {
                 usuariosigesoft = 337;
+            }
+            else if (usuarioGraba == 10055)
+            {
+                usuariosigesoft = 1771;
+            }
+            else if (usuarioGraba == 10056)
+            {
+                usuariosigesoft = 1466;
             }
             
 

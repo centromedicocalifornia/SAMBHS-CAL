@@ -1202,6 +1202,10 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             {
                 usuariograba = 197;
             }
+            else if (usuariograba == 10055)
+            {
+                usuariograba = 1771;
+            }
             else
             {
                 usuariograba = 11;

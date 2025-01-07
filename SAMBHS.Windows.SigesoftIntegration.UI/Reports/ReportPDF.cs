@@ -256,6 +256,10 @@ namespace NetPdf
                  {
                      if (systemUserId == 1 )
                          usuario = "ADMINISTRADOR DEL SISTEMA";
+                     else if (systemUserId == 10055)
+                         usuario = "DAFNIS ANYELA CORTEZ BARANDIARAN";
+                     else if (systemUserId == 10056)
+                         usuario = "EDELIZ CONSUELO MORALES SAUCEDO";
                      else if (systemUserId == 9053)
                          usuario = "MAICOL ARTEAGA SANCHEZ";
                    
