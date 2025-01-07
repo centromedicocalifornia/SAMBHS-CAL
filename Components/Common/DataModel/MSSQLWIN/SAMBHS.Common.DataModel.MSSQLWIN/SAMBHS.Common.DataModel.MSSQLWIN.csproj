@@ -81,10 +81,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DMMSQLWIN1.Designer.cs">
+    <Compile Include="DMMSQLWIN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DMMSQLWIN.edmx</DependentUpon>
+      <DependentUpon>DMMSQLWIN.edml</DependentUpon>
     </Compile>
     <Compile Include="GeneratedAssemblers\activofijodetalleAssembler.cs" />
     <Compile Include="GeneratedAssemblers\adelantoAssembler.cs" />
@@ -272,14 +272,14 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="DMMSQLWIN.Diagram1.view">
-      <DependentUpon>DMMSQLWIN.edmx</DependentUpon>
+      <DependentUpon>DMMSQLWIN.edml</DependentUpon>
     </None>
-    <DevartEntityDeploy Include="DMMSQLWIN.edmx">
+    <DevartEntityDeploy Include="DMMSQLWIN.edml">
       <Generator>DevartEfGenerator</Generator>
-      <LastGenOutput>DMMSQLWIN1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DMMSQLWIN.Designer.cs</LastGenOutput>
     </DevartEntityDeploy>
     <None Include="DMMSQLWIN.edps">
-      <DependentUpon>DMMSQLWIN.edmx</DependentUpon>
+      <DependentUpon>DMMSQLWIN.edml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

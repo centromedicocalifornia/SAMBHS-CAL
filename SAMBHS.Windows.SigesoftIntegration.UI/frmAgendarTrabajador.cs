@@ -1747,16 +1747,19 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 _newUser.i_SystemUserTypeId = 5;
                 AgendaBl.InsertSystemUser(_newUser);
             }
-            if (_PersonDto.Telefono != null || _PersonDto.Telefono != "" )
-            {
-                return ConsumirPostSMS(_PersonDto.Nombres.Trim().Split(' ')[0] + " " + _PersonDto.ApellidoPaterno.Trim(),
-                    txtNombres.Text.Trim().Split(' ')[0].ToLower() + "." + txtApellidoPaterno.Text.Trim().Replace(" ", "").ToLower(),
-                    _PersonDto.NroDocumento, _PersonDto.Telefono);
-            }
-            else
-            {
-                return "No registrado para sms.";
-            }
+
+            return "Usuario Registrado correctamente.";
+
+            //if (_PersonDto.Telefono != null || _PersonDto.Telefono != "" )
+            //{
+            //    return ConsumirPostSMS(_PersonDto.Nombres.Trim().Split(' ')[0] + " " + _PersonDto.ApellidoPaterno.Trim(),
+            //        txtNombres.Text.Trim().Split(' ')[0].ToLower() + "." + txtApellidoPaterno.Text.Trim().Replace(" ", "").ToLower(),
+            //        _PersonDto.NroDocumento, _PersonDto.Telefono);
+            //}
+            //else
+            //{
+            //    return "No registrado para sms.";
+            //}
             
         }
         public static string GetApplicationConfigValue(string nombre)

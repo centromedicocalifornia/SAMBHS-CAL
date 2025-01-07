@@ -1217,12 +1217,16 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 _newUser.i_InsertUserId = usuariograba;
                 _newUser.i_SystemUserTypeId = 5;
                 AgendaBl.InsertSystemUser(_newUser);
-                return "USUARIO INSERTADO";
+                //return "USUARIO INSERTADO";
             }
-            else
-            {
-                return "EXISTING USER";
-            }
+            //else
+            //{
+                return "USUARIO REGISTRADO";
+            //}
+
+
+
+
             //if (_PersonDto.Telefono != null || _PersonDto.Telefono != "")
             //{
             //    return ConsumirPostSMS(_PersonDto.Nombres.Trim().Split(' ')[0] + " " + _PersonDto.ApellidoPaterno.Trim(),

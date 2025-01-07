@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SAMBHSEntitiesModelWinStoreContainer" CdmEntityContainer="SAMBHSEntitiesModelWin">
+  <EntityContainerMapping StorageEntityContainer="SAMBHSCommonDataModelStoreContainer" CdmEntityContainer="SAMBHSEntitiesModelWin">
     <EntitySetMapping Name="activofijo">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.activofijo">
-        <MappingFragment StoreEntitySet="activofijos">
+        <MappingFragment StoreEntitySet="activofijo">
           <ScalarProperty Name="v_IdActivoFijo" ColumnName="v_IdActivoFijo" />
           <ScalarProperty Name="v_IdProducto" ColumnName="v_IdProducto" />
           <ScalarProperty Name="i_IdTipoMotivo" ColumnName="i_IdTipoMotivo" />
@@ -70,7 +70,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="activofijoanexo">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.activofijoanexo">
-        <MappingFragment StoreEntitySet="activofijoanexos">
+        <MappingFragment StoreEntitySet="activofijoanexo">
           <ScalarProperty Name="i_IdActivoFijoAnexo" ColumnName="i_IdActivoFijoAnexo" />
           <ScalarProperty Name="v_IdActivoFijo" ColumnName="v_IdActivoFijo" />
           <ScalarProperty Name="i_IdTipoDocumento" ColumnName="i_IdTipoDocumento" />
@@ -89,7 +89,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="activofijodepreciacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.activofijodepreciacion">
-        <MappingFragment StoreEntitySet="activofijodepreciacions">
+        <MappingFragment StoreEntitySet="activofijodepreciacion">
           <ScalarProperty Name="v_IdDepreciacion" ColumnName="v_IdDepreciacion" />
           <ScalarProperty Name="v_IdActivoFijo" ColumnName="v_IdActivoFijo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -107,7 +107,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="activofijodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.activofijodetalle">
-        <MappingFragment StoreEntitySet="activofijodetalles">
+        <MappingFragment StoreEntitySet="activofijodetalle">
           <ScalarProperty Name="v_IdActivoFijoDetalle" ColumnName="v_IdActivoFijoDetalle" />
           <ScalarProperty Name="v_IdActivoFijo" ColumnName="v_IdActivoFijo" />
           <ScalarProperty Name="t_FechaAsignacion" ColumnName="t_FechaAsignacion" />
@@ -124,7 +124,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="adelanto">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.adelanto">
-        <MappingFragment StoreEntitySet="adelantos">
+        <MappingFragment StoreEntitySet="adelanto">
           <ScalarProperty Name="v_IdAdelanto" ColumnName="v_IdAdelanto" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -169,7 +169,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="agenciatransporte">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.agenciatransporte">
-        <MappingFragment StoreEntitySet="agenciatransportes">
+        <MappingFragment StoreEntitySet="agenciatransporte">
           <ScalarProperty Name="v_IdAgenciaTransporte" ColumnName="v_IdAgenciaTransporte" />
           <ScalarProperty Name="v_CodTransportista" ColumnName="v_CodTransportista" />
           <ScalarProperty Name="v_NombreRazonSocial" ColumnName="v_NombreRazonSocial" />
@@ -195,7 +195,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="almacen">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.almacen">
-        <MappingFragment StoreEntitySet="almacens">
+        <MappingFragment StoreEntitySet="almacen">
           <ScalarProperty Name="i_IdAlmacen" ColumnName="i_IdAlmacen" />
           <ScalarProperty Name="v_Nombre" ColumnName="v_Nombre" />
           <ScalarProperty Name="v_Direccion" ColumnName="v_Direccion" />
@@ -216,7 +216,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="areaslaboratrabajador">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.areaslaboratrabajador">
-        <MappingFragment StoreEntitySet="areaslaboratrabajadors">
+        <MappingFragment StoreEntitySet="areaslaboratrabajador">
           <ScalarProperty Name="v_IdAreaLaborada" ColumnName="v_IdAreaLaborada" />
           <ScalarProperty Name="v_IdTrabajador" ColumnName="v_IdTrabajador" />
           <ScalarProperty Name="i_AreaVigente" ColumnName="i_AreaVigente" />
@@ -235,7 +235,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="asientocontable">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.asientocontable">
-        <MappingFragment StoreEntitySet="asientocontables">
+        <MappingFragment StoreEntitySet="asientocontable">
           <ScalarProperty Name="i_IdCuenta" ColumnName="i_IdCuenta" />
           <ScalarProperty Name="v_NroCuenta" ColumnName="v_NroCuenta" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
@@ -274,7 +274,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="avalcliente">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.avalcliente">
-        <MappingFragment StoreEntitySet="avalclientes">
+        <MappingFragment StoreEntitySet="avalcliente">
           <ScalarProperty Name="v_IdAvalCliente" ColumnName="v_IdAvalCliente" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
           <ScalarProperty Name="v_Nombres" ColumnName="v_Nombres" />
@@ -292,7 +292,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="cajachica">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.cajachica">
-        <MappingFragment StoreEntitySet="cajachicas">
+        <MappingFragment StoreEntitySet="cajachica">
           <ScalarProperty Name="v_IdCajaChica" ColumnName="v_IdCajaChica" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -315,7 +315,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="cajachicadetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.cajachicadetalle">
-        <MappingFragment StoreEntitySet="cajachicadetalles">
+        <MappingFragment StoreEntitySet="cajachicadetalle">
           <ScalarProperty Name="v_IdCajaChicaDetalle" ColumnName="v_IdCajaChicaDetalle" />
           <ScalarProperty Name="v_IdCajaChica" ColumnName="v_IdCajaChica" />
           <ScalarProperty Name="i_Motivo" ColumnName="i_Motivo" />
@@ -337,7 +337,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="carteracliente">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.carteracliente">
-        <MappingFragment StoreEntitySet="carteraclientes">
+        <MappingFragment StoreEntitySet="carteracliente">
           <ScalarProperty Name="v_IdCarteraCliente" ColumnName="v_IdCarteraCliente" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
           <ScalarProperty Name="v_IdVendedor" ColumnName="v_IdVendedor" />
@@ -351,7 +351,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="cierremensual">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.cierremensual">
-        <MappingFragment StoreEntitySet="cierremensuals">
+        <MappingFragment StoreEntitySet="cierremensual">
           <ScalarProperty Name="v_IdCierreMensaual" ColumnName="v_IdCierreMensaual" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
@@ -367,7 +367,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="cliente">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.cliente">
-        <MappingFragment StoreEntitySet="clientes">
+        <MappingFragment StoreEntitySet="cliente">
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
           <ScalarProperty Name="v_IdVendedor" ColumnName="v_IdVendedor" />
           <ScalarProperty Name="v_CodCliente" ColumnName="v_CodCliente" />
@@ -440,7 +440,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="cobranza">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.cobranza">
-        <MappingFragment StoreEntitySet="cobranzas">
+        <MappingFragment StoreEntitySet="cobranza">
           <ScalarProperty Name="v_IdCobranza" ColumnName="v_IdCobranza" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="i_IdEstablecimiento" ColumnName="i_IdEstablecimiento" />
@@ -468,7 +468,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="cobranzadetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.cobranzadetalle">
-        <MappingFragment StoreEntitySet="cobranzadetalles">
+        <MappingFragment StoreEntitySet="cobranzadetalle">
           <ScalarProperty Name="v_IdCobranzaDetalle" ColumnName="v_IdCobranzaDetalle" />
           <ScalarProperty Name="v_IdCobranza" ColumnName="v_IdCobranza" />
           <ScalarProperty Name="v_IdVenta" ColumnName="v_IdVenta" />
@@ -498,7 +498,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="cobranzaletraspagarpendiente">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.cobranzaletraspagarpendiente">
-        <MappingFragment StoreEntitySet="cobranzaletraspagarpendientes">
+        <MappingFragment StoreEntitySet="cobranzaletraspagarpendiente">
           <ScalarProperty Name="v_IdCobranzaLetrasPagarPendiente" ColumnName="v_IdCobranzaLetrasPagarPendiente" />
           <ScalarProperty Name="v_IdLetrasPagarDetalle" ColumnName="v_IdLetrasPagarDetalle" />
           <ScalarProperty Name="d_Acuenta" ColumnName="d_Acuenta" />
@@ -513,7 +513,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="cobranzaletraspendiente">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.cobranzaletraspendiente">
-        <MappingFragment StoreEntitySet="cobranzaletraspendientes">
+        <MappingFragment StoreEntitySet="cobranzaletraspendiente">
           <ScalarProperty Name="v_IdCobranzaLetrasPendiente" ColumnName="v_IdCobranzaLetrasPendiente" />
           <ScalarProperty Name="v_IdLetrasDetalle" ColumnName="v_IdLetrasDetalle" />
           <ScalarProperty Name="d_Acuenta" ColumnName="d_Acuenta" />
@@ -528,7 +528,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="cobranzapendiente">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.cobranzapendiente">
-        <MappingFragment StoreEntitySet="cobranzapendientes">
+        <MappingFragment StoreEntitySet="cobranzapendiente">
           <ScalarProperty Name="v_IdCobranzaPendiente" ColumnName="v_IdCobranzaPendiente" />
           <ScalarProperty Name="v_IdVenta" ColumnName="v_IdVenta" />
           <ScalarProperty Name="d_Acuenta" ColumnName="d_Acuenta" />
@@ -543,7 +543,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="color">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.color">
-        <MappingFragment StoreEntitySet="colors">
+        <MappingFragment StoreEntitySet="color">
           <ScalarProperty Name="v_IdColor" ColumnName="v_IdColor" />
           <ScalarProperty Name="v_CodColor" ColumnName="v_CodColor" />
           <ScalarProperty Name="v_Nombre" ColumnName="v_Nombre" />
@@ -557,7 +557,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="compra">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.compra">
-        <MappingFragment StoreEntitySet="compras">
+        <MappingFragment StoreEntitySet="compra">
           <ScalarProperty Name="v_IdCompra" ColumnName="v_IdCompra" />
           <ScalarProperty Name="v_IdDocumentoReferencia" ColumnName="v_IdDocumentoReferencia" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
@@ -623,7 +623,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="compradetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.compradetalle">
-        <MappingFragment StoreEntitySet="compradetalles">
+        <MappingFragment StoreEntitySet="compradetalle">
           <ScalarProperty Name="v_IdCompraDetalle" ColumnName="v_IdCompraDetalle" />
           <ScalarProperty Name="v_IdCompra" ColumnName="v_IdCompra" />
           <ScalarProperty Name="v_IdMovimientoDetalle" ColumnName="v_IdMovimientoDetalle" />
@@ -664,7 +664,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="concepto">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.concepto">
-        <MappingFragment StoreEntitySet="conceptos">
+        <MappingFragment StoreEntitySet="concepto">
           <ScalarProperty Name="v_IdConcepto" ColumnName="v_IdConcepto" />
           <ScalarProperty Name="v_Codigo" ColumnName="v_Codigo" />
           <ScalarProperty Name="v_Nombre" ColumnName="v_Nombre" />
@@ -680,7 +680,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="conceptoscajachica">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.conceptoscajachica">
-        <MappingFragment StoreEntitySet="conceptoscajachicas">
+        <MappingFragment StoreEntitySet="conceptoscajachica">
           <ScalarProperty Name="i_IdConceptosCajaChica" ColumnName="i_IdConceptosCajaChica" />
           <ScalarProperty Name="v_NombreConceptoCajaChica" ColumnName="v_NombreConceptoCajaChica" />
           <ScalarProperty Name="v_NroCuenta" ColumnName="v_NroCuenta" />
@@ -698,7 +698,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="condicionpago">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.condicionpago">
-        <MappingFragment StoreEntitySet="condicionpagos">
+        <MappingFragment StoreEntitySet="condicionpago">
           <ScalarProperty Name="v_IdCondicionPago" ColumnName="v_IdCondicionPago" />
           <ScalarProperty Name="v_NombreCondicion" ColumnName="v_NombreCondicion" />
           <ScalarProperty Name="i_CreditoLetras" ColumnName="i_CreditoLetras" />
@@ -733,7 +733,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="configuracionempresa">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.configuracionempresa">
-        <MappingFragment StoreEntitySet="configuracionempresas">
+        <MappingFragment StoreEntitySet="configuracionempresa">
           <ScalarProperty Name="i_IdConfiguracionEmpresa" ColumnName="i_IdConfiguracionEmpresa" />
           <ScalarProperty Name="i_IdMoneda" ColumnName="i_IdMoneda" />
           <ScalarProperty Name="i_AfectoIgvCompras" ColumnName="i_AfectoIgvCompras" />
@@ -846,7 +846,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="configuracionfacturacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.configuracionfacturacion">
-        <MappingFragment StoreEntitySet="configuracionfacturacions">
+        <MappingFragment StoreEntitySet="configuracionfacturacion">
           <ScalarProperty Name="i_Idconfiguracionfacturacion" ColumnName="i_Idconfiguracionfacturacion" />
           <ScalarProperty Name="v_Ruc" ColumnName="v_Ruc" />
           <ScalarProperty Name="v_Usuario" ColumnName="v_Usuario" />
@@ -882,7 +882,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="contratodetalletrabajador">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.contratodetalletrabajador">
-        <MappingFragment StoreEntitySet="contratodetalletrabajadors">
+        <MappingFragment StoreEntitySet="contratodetalletrabajador">
           <ScalarProperty Name="v_IdContratoDetalle" ColumnName="v_IdContratoDetalle" />
           <ScalarProperty Name="v_IdContrato" ColumnName="v_IdContrato" />
           <ScalarProperty Name="v_IdConcepto" ColumnName="v_IdConcepto" />
@@ -899,7 +899,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="contratotrabajador">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.contratotrabajador">
-        <MappingFragment StoreEntitySet="contratotrabajadors">
+        <MappingFragment StoreEntitySet="contratotrabajador">
           <ScalarProperty Name="v_IdContrato" ColumnName="v_IdContrato" />
           <ScalarProperty Name="v_IdTrabajador" ColumnName="v_IdTrabajador" />
           <ScalarProperty Name="v_NroContrato" ColumnName="v_NroContrato" />
@@ -941,7 +941,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="datahierarchy">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.datahierarchy">
-        <MappingFragment StoreEntitySet="datahierarchies">
+        <MappingFragment StoreEntitySet="datahierarchy">
           <ScalarProperty Name="i_GroupId" ColumnName="i_GroupId" />
           <ScalarProperty Name="i_ItemId" ColumnName="i_ItemId" />
           <ScalarProperty Name="v_Value1" ColumnName="v_Value1" />
@@ -963,7 +963,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="dbconfig">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.dbconfig">
-        <MappingFragment StoreEntitySet="dbconfigs">
+        <MappingFragment StoreEntitySet="dbconfig">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="version" ColumnName="version" />
         </MappingFragment>
@@ -971,7 +971,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="derechohabientetrabajador">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.derechohabientetrabajador">
-        <MappingFragment StoreEntitySet="derechohabientetrabajadors">
+        <MappingFragment StoreEntitySet="derechohabientetrabajador">
           <ScalarProperty Name="v_IdDerechoHabiente" ColumnName="v_IdDerechoHabiente" />
           <ScalarProperty Name="v_IdTrabajador" ColumnName="v_IdTrabajador" />
           <ScalarProperty Name="i_IdTipoDocumento" ColumnName="i_IdTipoDocumento" />
@@ -1015,7 +1015,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="destino">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.destino">
-        <MappingFragment StoreEntitySet="destinos">
+        <MappingFragment StoreEntitySet="destino">
           <ScalarProperty Name="v_IdDestino" ColumnName="v_IdDestino" />
           <ScalarProperty Name="v_CuentaOrigen" ColumnName="v_CuentaOrigen" />
           <ScalarProperty Name="v_CuentaDestino" ColumnName="v_CuentaDestino" />
@@ -1032,7 +1032,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="diario">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.diario">
-        <MappingFragment StoreEntitySet="diarios">
+        <MappingFragment StoreEntitySet="diario">
           <ScalarProperty Name="v_IdDiario" ColumnName="v_IdDiario" />
           <ScalarProperty Name="v_IdDocumentoReferencia" ColumnName="v_IdDocumentoReferencia" />
           <ScalarProperty Name="i_IdPlanillaNumeracion" ColumnName="i_IdPlanillaNumeracion" />
@@ -1070,7 +1070,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="diariodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.diariodetalle">
-        <MappingFragment StoreEntitySet="diariodetalles">
+        <MappingFragment StoreEntitySet="diariodetalle">
           <ScalarProperty Name="v_IdDiarioDetalle" ColumnName="v_IdDiarioDetalle" />
           <ScalarProperty Name="i_EsDestino" ColumnName="i_EsDestino" />
           <ScalarProperty Name="v_IdDiario" ColumnName="v_IdDiario" />
@@ -1099,7 +1099,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="documento">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.documento">
-        <MappingFragment StoreEntitySet="documentos">
+        <MappingFragment StoreEntitySet="documento">
           <ScalarProperty Name="i_CodigoDocumento" ColumnName="i_CodigoDocumento" />
           <ScalarProperty Name="v_Nombre" ColumnName="v_Nombre" />
           <ScalarProperty Name="v_Siglas" ColumnName="v_Siglas" />
@@ -1134,7 +1134,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="documentoretencion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.documentoretencion">
-        <MappingFragment StoreEntitySet="documentoretencions">
+        <MappingFragment StoreEntitySet="documentoretencion">
           <ScalarProperty Name="v_IdDocumentoRetencion" ColumnName="v_IdDocumentoRetencion" />
           <ScalarProperty Name="v_IdTesoreria" ColumnName="v_IdTesoreria" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
@@ -1160,7 +1160,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="documentoretenciondetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.documentoretenciondetalle">
-        <MappingFragment StoreEntitySet="documentoretenciondetalles">
+        <MappingFragment StoreEntitySet="documentoretenciondetalle">
           <ScalarProperty Name="v_IdDocumentoRetencionDetalle" ColumnName="v_IdDocumentoRetencionDetalle" />
           <ScalarProperty Name="v_IdDocumentoRetencion" ColumnName="v_IdDocumentoRetencion" />
           <ScalarProperty Name="i_IdTipoDocumento" ColumnName="i_IdTipoDocumento" />
@@ -1182,7 +1182,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="documentoretencionhomologacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.documentoretencionhomologacion">
-        <MappingFragment StoreEntitySet="documentoretencionhomologacions">
+        <MappingFragment StoreEntitySet="documentoretencionhomologacion">
           <ScalarProperty Name="i_Idhomologacion" ColumnName="i_Idhomologacion" />
           <ScalarProperty Name="v_IdDocumentoRetencion" ColumnName="v_IdDocumentoRetencion" />
           <ScalarProperty Name="b_FileXml" ColumnName="b_FileXml" />
@@ -1193,7 +1193,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="documentorol">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.documentorol">
-        <MappingFragment StoreEntitySet="documentorols">
+        <MappingFragment StoreEntitySet="documentorol">
           <ScalarProperty Name="i_IdDocumentoRol" ColumnName="i_IdDocumentoRol" />
           <ScalarProperty Name="i_CodigoEnum" ColumnName="i_CodigoEnum" />
           <ScalarProperty Name="i_IdTipoDocumento" ColumnName="i_IdTipoDocumento" />
@@ -1207,7 +1207,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="establecimiento">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.establecimiento">
-        <MappingFragment StoreEntitySet="establecimientos">
+        <MappingFragment StoreEntitySet="establecimiento">
           <ScalarProperty Name="i_IdEstablecimiento" ColumnName="i_IdEstablecimiento" />
           <ScalarProperty Name="v_Nombre" ColumnName="v_Nombre" />
           <ScalarProperty Name="v_Direccion" ColumnName="v_Direccion" />
@@ -1222,7 +1222,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="establecimientoalmacen">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.establecimientoalmacen">
-        <MappingFragment StoreEntitySet="establecimientoalmacens">
+        <MappingFragment StoreEntitySet="establecimientoalmacen">
           <ScalarProperty Name="i_IdEstablecimientoAlmacen" ColumnName="i_IdEstablecimientoAlmacen" />
           <ScalarProperty Name="i_IdEstablecimiento" ColumnName="i_IdEstablecimiento" />
           <ScalarProperty Name="i_IdAlmacen" ColumnName="i_IdAlmacen" />
@@ -1236,7 +1236,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="establecimientodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.establecimientodetalle">
-        <MappingFragment StoreEntitySet="establecimientodetalles">
+        <MappingFragment StoreEntitySet="establecimientodetalle">
           <ScalarProperty Name="i_IdEstablecimientoDetalle" ColumnName="i_IdEstablecimientoDetalle" />
           <ScalarProperty Name="i_IdEstablecimiento" ColumnName="i_IdEstablecimiento" />
           <ScalarProperty Name="i_IdTipoDocumento" ColumnName="i_IdTipoDocumento" />
@@ -1257,7 +1257,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="flujoefectivo">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.flujoefectivo">
-        <MappingFragment StoreEntitySet="flujoefectivos">
+        <MappingFragment StoreEntitySet="flujoefectivo">
           <ScalarProperty Name="i_IdFlujoEfectivo" ColumnName="i_IdFlujoEfectivo" />
           <ScalarProperty Name="v_CtaMayor" ColumnName="v_CtaMayor" />
           <ScalarProperty Name="v_DescripcionCuenta" ColumnName="v_DescripcionCuenta" />
@@ -1282,7 +1282,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="flujoefectivoasientoajuste">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.flujoefectivoasientoajuste">
-        <MappingFragment StoreEntitySet="flujoefectivoasientoajustes">
+        <MappingFragment StoreEntitySet="flujoefectivoasientoajuste">
           <ScalarProperty Name="i_IdAsientoAjuste" ColumnName="i_IdAsientoAjuste" />
           <ScalarProperty Name="i_IdFlujoEfectivoCabecera" ColumnName="i_IdFlujoEfectivoCabecera" />
           <ScalarProperty Name="i_NroAsiento" ColumnName="i_NroAsiento" />
@@ -1294,7 +1294,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="flujoefectivoasientoajustedetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.flujoefectivoasientoajustedetalle">
-        <MappingFragment StoreEntitySet="flujoefectivoasientoajustedetalles">
+        <MappingFragment StoreEntitySet="flujoefectivoasientoajustedetalle">
           <ScalarProperty Name="i_IdAsientoAjusteDetalle" ColumnName="i_IdAsientoAjusteDetalle" />
           <ScalarProperty Name="i_IdAsientoAjuste" ColumnName="i_IdAsientoAjuste" />
           <ScalarProperty Name="v_NroCuenta" ColumnName="v_NroCuenta" />
@@ -1306,7 +1306,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="flujoefectivocabecera">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.flujoefectivocabecera">
-        <MappingFragment StoreEntitySet="flujoefectivocabeceras">
+        <MappingFragment StoreEntitySet="flujoefectivocabecera">
           <ScalarProperty Name="i_IdFlujoEfectivoCabecera" ColumnName="i_IdFlujoEfectivoCabecera" />
           <ScalarProperty Name="v_PeriodoProceso" ColumnName="v_PeriodoProceso" />
         </MappingFragment>
@@ -1336,7 +1336,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="flujoefectivoconfiguracion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.flujoefectivoconfiguracion">
-        <MappingFragment StoreEntitySet="flujoefectivoconfiguracions">
+        <MappingFragment StoreEntitySet="flujoefectivoconfiguracion">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="i_IdConceptoFlujo" ColumnName="i_IdConceptoFlujo" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
@@ -1350,7 +1350,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="gastosimportacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.gastosimportacion">
-        <MappingFragment StoreEntitySet="gastosimportacions">
+        <MappingFragment StoreEntitySet="gastosimportacion">
           <ScalarProperty Name="v_GastoImportacion" ColumnName="v_GastoImportacion" />
           <ScalarProperty Name="v_Codigo" ColumnName="v_Codigo" />
           <ScalarProperty Name="v_Nombre" ColumnName="v_Nombre" />
@@ -1366,7 +1366,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="guiaremision">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.guiaremision">
-        <MappingFragment StoreEntitySet="guiaremisions">
+        <MappingFragment StoreEntitySet="guiaremision">
           <ScalarProperty Name="v_IdGuiaRemision" ColumnName="v_IdGuiaRemision" />
           <ScalarProperty Name="i_IdEstablecimiento" ColumnName="i_IdEstablecimiento" />
           <ScalarProperty Name="v_IdTransportista" ColumnName="v_IdTransportista" />
@@ -1416,7 +1416,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="guiaremisioncompra">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.guiaremisioncompra">
-        <MappingFragment StoreEntitySet="guiaremisioncompras">
+        <MappingFragment StoreEntitySet="guiaremisioncompra">
           <ScalarProperty Name="v_IdGuiaCompra" ColumnName="v_IdGuiaCompra" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -1442,7 +1442,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="guiaremisioncompradetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.guiaremisioncompradetalle">
-        <MappingFragment StoreEntitySet="guiaremisioncompradetalles">
+        <MappingFragment StoreEntitySet="guiaremisioncompradetalle">
           <ScalarProperty Name="v_IdGuiaCompraDetalle" ColumnName="v_IdGuiaCompraDetalle" />
           <ScalarProperty Name="v_IdGuiaCompra" ColumnName="v_IdGuiaCompra" />
           <ScalarProperty Name="v_IdMovimientoDetalle" ColumnName="v_IdMovimientoDetalle" />
@@ -1466,7 +1466,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="guiaremisiondetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.guiaremisiondetalle">
-        <MappingFragment StoreEntitySet="guiaremisiondetalles">
+        <MappingFragment StoreEntitySet="guiaremisiondetalle">
           <ScalarProperty Name="v_IdGuiaRemisionDetalle" ColumnName="v_IdGuiaRemisionDetalle" />
           <ScalarProperty Name="v_IdGuiaRemision" ColumnName="v_IdGuiaRemision" />
           <ScalarProperty Name="v_IdMovimientoDetalle" ColumnName="v_IdMovimientoDetalle" />
@@ -1496,7 +1496,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="guiaremisionhomologacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.guiaremisionhomologacion">
-        <MappingFragment StoreEntitySet="guiaremisionhomologacions">
+        <MappingFragment StoreEntitySet="guiaremisionhomologacion">
           <ScalarProperty Name="i_Idhomologacion" ColumnName="i_Idhomologacion" />
           <ScalarProperty Name="v_IdGuiaRemision" ColumnName="v_IdGuiaRemision" />
           <ScalarProperty Name="b_FileXml" ColumnName="b_FileXml" />
@@ -1505,7 +1505,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="importacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.importacion">
-        <MappingFragment StoreEntitySet="importacions">
+        <MappingFragment StoreEntitySet="importacion">
           <ScalarProperty Name="v_IdImportacion" ColumnName="v_IdImportacion" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -1592,7 +1592,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="importaciondetallefob">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.importaciondetallefob">
-        <MappingFragment StoreEntitySet="importacionDetalleFobs">
+        <MappingFragment StoreEntitySet="importacionDetalleFob">
           <ScalarProperty Name="v_IdImportacionDetalleFob" ColumnName="v_IdImportacionDetalleFob" />
           <ScalarProperty Name="v_IdImportacion" ColumnName="v_IdImportacion" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
@@ -1655,7 +1655,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="importaciondetalleproducto">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.importaciondetalleproducto">
-        <MappingFragment StoreEntitySet="importacionDetalleProductos">
+        <MappingFragment StoreEntitySet="importacionDetalleProducto">
           <ScalarProperty Name="v_IdImportacionDetalleProducto" ColumnName="v_IdImportacionDetalleProducto" />
           <ScalarProperty Name="v_IdImportacion" ColumnName="v_IdImportacion" />
           <ScalarProperty Name="v_IdProductoDetalle" ColumnName="v_IdProductoDetalle" />
@@ -1713,7 +1713,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="letrascanje">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.letrascanje">
-        <MappingFragment StoreEntitySet="letrascanjes">
+        <MappingFragment StoreEntitySet="letrascanje">
           <ScalarProperty Name="v_IdLetrasCanje" ColumnName="v_IdLetrasCanje" />
           <ScalarProperty Name="v_IdLetras" ColumnName="v_IdLetras" />
           <ScalarProperty Name="v_IdVenta" ColumnName="v_IdVenta" />
@@ -1731,7 +1731,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="letrasdescuentomantenimiento">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.letrasdescuentomantenimiento">
-        <MappingFragment StoreEntitySet="letrasdescuentomantenimientos">
+        <MappingFragment StoreEntitySet="letrasdescuentomantenimiento">
           <ScalarProperty Name="v_IdLetraDescuentoCancelacion" ColumnName="v_IdLetraDescuentoCancelacion" />
           <ScalarProperty Name="v_IdLetrasDetalle" ColumnName="v_IdLetrasDetalle" />
           <ScalarProperty Name="t_FechaCancelacion" ColumnName="t_FechaCancelacion" />
@@ -1748,7 +1748,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="letrasdetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.letrasdetalle">
-        <MappingFragment StoreEntitySet="letrasdetalles">
+        <MappingFragment StoreEntitySet="letrasdetalle">
           <ScalarProperty Name="v_IdLetrasDetalle" ColumnName="v_IdLetrasDetalle" />
           <ScalarProperty Name="v_IdLetras" ColumnName="v_IdLetras" />
           <ScalarProperty Name="v_IdLetrasRenovacion" ColumnName="v_IdLetrasRenovacion" />
@@ -1775,7 +1775,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="letrasmantenimiento">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.letrasmantenimiento">
-        <MappingFragment StoreEntitySet="letrasmantenimientos">
+        <MappingFragment StoreEntitySet="letrasmantenimiento">
           <ScalarProperty Name="v_IdLetrasMantenimiento" ColumnName="v_IdLetrasMantenimiento" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
           <ScalarProperty Name="t_FechaRegistro" ColumnName="t_FechaRegistro" />
@@ -1792,7 +1792,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="letrasmantenimientodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.letrasmantenimientodetalle">
-        <MappingFragment StoreEntitySet="letrasmantenimientodetalles">
+        <MappingFragment StoreEntitySet="letrasmantenimientodetalle">
           <ScalarProperty Name="v_IdLetrasMantenimientoDetalle" ColumnName="v_IdLetrasMantenimientoDetalle" />
           <ScalarProperty Name="v_IdLetrasMantenimiento" ColumnName="v_IdLetrasMantenimiento" />
           <ScalarProperty Name="v_IdLetrasDetalle" ColumnName="v_IdLetrasDetalle" />
@@ -1812,7 +1812,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="letraspagar">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.letraspagar">
-        <MappingFragment StoreEntitySet="letraspagars">
+        <MappingFragment StoreEntitySet="letraspagar">
           <ScalarProperty Name="v_IdLetrasPagar" ColumnName="v_IdLetrasPagar" />
           <ScalarProperty Name="v_IdProveedor" ColumnName="v_IdProveedor" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
@@ -1837,7 +1837,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="letraspagarcanje">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.letraspagarcanje">
-        <MappingFragment StoreEntitySet="letraspagarcanjes">
+        <MappingFragment StoreEntitySet="letraspagarcanje">
           <ScalarProperty Name="v_IdLetrasPagarCanje" ColumnName="v_IdLetrasPagarCanje" />
           <ScalarProperty Name="v_IdLetrasPagar" ColumnName="v_IdLetrasPagar" />
           <ScalarProperty Name="v_IdCompra" ColumnName="v_IdCompra" />
@@ -1853,7 +1853,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="letraspagardetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.letraspagardetalle">
-        <MappingFragment StoreEntitySet="letraspagardetalles">
+        <MappingFragment StoreEntitySet="letraspagardetalle">
           <ScalarProperty Name="v_IdLetrasPagarDetalle" ColumnName="v_IdLetrasPagarDetalle" />
           <ScalarProperty Name="v_IdLetrasPagar" ColumnName="v_IdLetrasPagar" />
           <ScalarProperty Name="v_IdProveedor" ColumnName="v_IdProveedor" />
@@ -1878,7 +1878,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="linea">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.linea">
-        <MappingFragment StoreEntitySet="lineas">
+        <MappingFragment StoreEntitySet="linea">
           <ScalarProperty Name="v_IdLinea" ColumnName="v_IdLinea" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_CodLinea" ColumnName="v_CodLinea" />
@@ -1899,7 +1899,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="lineacreditocliente">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.lineacreditocliente">
-        <MappingFragment StoreEntitySet="lineacreditoclientes">
+        <MappingFragment StoreEntitySet="lineacreditocliente">
           <ScalarProperty Name="v_IdLineaCredito" ColumnName="v_IdLineaCredito" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
           <ScalarProperty Name="i_IdBanco" ColumnName="i_IdBanco" />
@@ -1918,7 +1918,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="lineacreditoempresa">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.lineacreditoempresa">
-        <MappingFragment StoreEntitySet="lineacreditoempresas">
+        <MappingFragment StoreEntitySet="lineacreditoempresa">
           <ScalarProperty Name="i_IdLineaPrecio" ColumnName="i_IdLineaPrecio" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
           <ScalarProperty Name="i_IdMoneda" ColumnName="i_IdMoneda" />
@@ -1930,7 +1930,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="lineacuenta">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.lineacuenta">
-        <MappingFragment StoreEntitySet="lineacuentas">
+        <MappingFragment StoreEntitySet="lineacuenta">
           <ScalarProperty Name="i_IdLineaCuenta" ColumnName="i_IdLineaCuenta" />
           <ScalarProperty Name="v_IdLinea" ColumnName="v_IdLinea" />
           <ScalarProperty Name="v_NroCuentaVenta" ColumnName="v_NroCuentaVenta" />
@@ -1948,7 +1948,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="liquidacioncompra">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.liquidacioncompra">
-        <MappingFragment StoreEntitySet="liquidacioncompras">
+        <MappingFragment StoreEntitySet="liquidacioncompra">
           <ScalarProperty Name="v_IdLiquidacionCompra" ColumnName="v_IdLiquidacionCompra" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -1981,7 +1981,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="liquidacioncompradetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.liquidacioncompradetalle">
-        <MappingFragment StoreEntitySet="liquidacioncompradetalles">
+        <MappingFragment StoreEntitySet="liquidacioncompradetalle">
           <ScalarProperty Name="v_IdLiquidacionCompraDetalle" ColumnName="v_IdLiquidacionCompraDetalle" />
           <ScalarProperty Name="v_IdLiquidacionCompra" ColumnName="v_IdLiquidacionCompra" />
           <ScalarProperty Name="v_IdMovimientoDetalle" ColumnName="v_IdMovimientoDetalle" />
@@ -2008,7 +2008,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="listaprecio">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.listaprecio">
-        <MappingFragment StoreEntitySet="listaprecios">
+        <MappingFragment StoreEntitySet="listaprecio">
           <ScalarProperty Name="v_IdListaPrecios" ColumnName="v_IdListaPrecios" />
           <ScalarProperty Name="i_IdAlmacen" ColumnName="i_IdAlmacen" />
           <ScalarProperty Name="i_IdLista" ColumnName="i_IdLista" />
@@ -2023,7 +2023,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="listapreciodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.listapreciodetalle">
-        <MappingFragment StoreEntitySet="listapreciodetalles">
+        <MappingFragment StoreEntitySet="listapreciodetalle">
           <ScalarProperty Name="v_idListaPrecioDetalle" ColumnName="v_idListaPrecioDetalle" />
           <ScalarProperty Name="v_IdListaPrecios" ColumnName="v_IdListaPrecios" />
           <ScalarProperty Name="v_IdProductoAlmacen" ColumnName="v_IdProductoAlmacen" />
@@ -2045,7 +2045,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="log">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.log">
-        <MappingFragment StoreEntitySet="logs">
+        <MappingFragment StoreEntitySet="log">
           <ScalarProperty Name="i_IdLogError" ColumnName="i_IdLogError" />
           <ScalarProperty Name="i_SystemUserId" ColumnName="i_SystemUserId" />
           <ScalarProperty Name="v_Error" ColumnName="v_Error" />
@@ -2058,7 +2058,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="loghistorial">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.loghistorial">
-        <MappingFragment StoreEntitySet="loghistorials">
+        <MappingFragment StoreEntitySet="loghistorial">
           <ScalarProperty Name="i_IdHistorial" ColumnName="i_IdHistorial" />
           <ScalarProperty Name="v_Accion" ColumnName="v_Accion" />
           <ScalarProperty Name="v_NombrePC" ColumnName="v_NombrePC" />
@@ -2068,7 +2068,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="marca">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.marca">
-        <MappingFragment StoreEntitySet="marcas">
+        <MappingFragment StoreEntitySet="marca">
           <ScalarProperty Name="v_IdMarca" ColumnName="v_IdMarca" />
           <ScalarProperty Name="v_IdLinea" ColumnName="v_IdLinea" />
           <ScalarProperty Name="v_CodMarca" ColumnName="v_CodMarca" />
@@ -2084,7 +2084,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="modelo">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.modelo">
-        <MappingFragment StoreEntitySet="modelos">
+        <MappingFragment StoreEntitySet="modelo">
           <ScalarProperty Name="v_IdModelo" ColumnName="v_IdModelo" />
           <ScalarProperty Name="v_IdMarca" ColumnName="v_IdMarca" />
           <ScalarProperty Name="v_CodModelo" ColumnName="v_CodModelo" />
@@ -2099,7 +2099,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="movimiento">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.movimiento">
-        <MappingFragment StoreEntitySet="movimientos">
+        <MappingFragment StoreEntitySet="movimiento">
           <ScalarProperty Name="v_IdMovimiento" ColumnName="v_IdMovimiento" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2140,7 +2140,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="movimientodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.movimientodetalle">
-        <MappingFragment StoreEntitySet="movimientodetalles">
+        <MappingFragment StoreEntitySet="movimientodetalle">
           <ScalarProperty Name="v_IdMovimientoDetalle" ColumnName="v_IdMovimientoDetalle" />
           <ScalarProperty Name="v_IdMovimiento" ColumnName="v_IdMovimiento" />
           <ScalarProperty Name="v_IdProductoDetalle" ColumnName="v_IdProductoDetalle" />
@@ -2176,7 +2176,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="movimientodetallerecetafinal">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.movimientodetallerecetafinal">
-        <MappingFragment StoreEntitySet="movimientodetallerecetafinals">
+        <MappingFragment StoreEntitySet="movimientodetallerecetafinal">
           <ScalarProperty Name="v_IdRecetaFinal" ColumnName="v_IdRecetaFinal" />
           <ScalarProperty Name="v_IdProdTerminado" ColumnName="v_IdProdTerminado" />
           <ScalarProperty Name="v_IdProdInsumo" ColumnName="v_IdProdInsumo" />
@@ -2193,7 +2193,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="movimientoestadobancario">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.movimientoestadobancario">
-        <MappingFragment StoreEntitySet="movimientoestadobancarios">
+        <MappingFragment StoreEntitySet="movimientoestadobancario">
           <ScalarProperty Name="v_IdMovimientoEstadoBancario" ColumnName="v_IdMovimientoEstadoBancario" />
           <ScalarProperty Name="v_IdReferencia" ColumnName="v_IdReferencia" />
           <ScalarProperty Name="v_NroCuenta" ColumnName="v_NroCuenta" />
@@ -2220,7 +2220,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="nbs_formatounicofacturacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.nbs_formatounicofacturacion">
-        <MappingFragment StoreEntitySet="nbs_formatounicofacturacions">
+        <MappingFragment StoreEntitySet="nbs_formatounicofacturacion">
           <ScalarProperty Name="v_IdFormatoUnicoFacturacion" ColumnName="v_IdFormatoUnicoFacturacion" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
@@ -2241,7 +2241,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="nbs_formatounicofacturaciondetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.nbs_formatounicofacturaciondetalle">
-        <MappingFragment StoreEntitySet="nbs_formatounicofacturaciondetalles">
+        <MappingFragment StoreEntitySet="nbs_formatounicofacturaciondetalle">
           <ScalarProperty Name="v_IdFormatoUnicoFacturacionDetalle" ColumnName="v_IdFormatoUnicoFacturacionDetalle" />
           <ScalarProperty Name="v_IdFormatoUnicoFacturacion" ColumnName="v_IdFormatoUnicoFacturacion" />
           <ScalarProperty Name="v_IdOrdenTrabajo" ColumnName="v_IdOrdenTrabajo" />
@@ -2264,7 +2264,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="nbs_ordentrabajo">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.nbs_ordentrabajo">
-        <MappingFragment StoreEntitySet="nbs_ordentrabajos">
+        <MappingFragment StoreEntitySet="nbs_ordentrabajo">
           <ScalarProperty Name="v_IdOrdenTrabajo" ColumnName="v_IdOrdenTrabajo" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2289,7 +2289,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="nbs_ordentrabajodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.nbs_ordentrabajodetalle">
-        <MappingFragment StoreEntitySet="nbs_ordentrabajodetalles">
+        <MappingFragment StoreEntitySet="nbs_ordentrabajodetalle">
           <ScalarProperty Name="v_IdOrdenTrabajoDetalle" ColumnName="v_IdOrdenTrabajoDetalle" />
           <ScalarProperty Name="v_IdOrdenTrabajo" ColumnName="v_IdOrdenTrabajo" />
           <ScalarProperty Name="i_Cantidad" ColumnName="i_Cantidad" />
@@ -2310,7 +2310,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="nbs_ventakardex">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.nbs_ventakardex">
-        <MappingFragment StoreEntitySet="nbs_ventakardexes">
+        <MappingFragment StoreEntitySet="nbs_ventakardex">
           <ScalarProperty Name="v_IdVentaKardex" ColumnName="v_IdVentaKardex" />
           <ScalarProperty Name="v_IdVenta" ColumnName="v_IdVenta" />
           <ScalarProperty Name="v_NroKardex" ColumnName="v_NroKardex" />
@@ -2326,7 +2326,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="nodewarehouse">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.nodewarehouse">
-        <MappingFragment StoreEntitySet="nodewarehouses">
+        <MappingFragment StoreEntitySet="nodewarehouse">
           <ScalarProperty Name="i_NodeWarehouseId" ColumnName="i_NodeWarehouseId" />
           <ScalarProperty Name="i_NodeId" ColumnName="i_NodeId" />
           <ScalarProperty Name="i_WarehouseId" ColumnName="i_WarehouseId" />
@@ -2340,7 +2340,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="ordendecompra">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.ordendecompra">
-        <MappingFragment StoreEntitySet="ordendecompras">
+        <MappingFragment StoreEntitySet="ordendecompra">
           <ScalarProperty Name="v_IdOrdenCompra" ColumnName="v_IdOrdenCompra" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2381,7 +2381,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="ordendecompradetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.ordendecompradetalle">
-        <MappingFragment StoreEntitySet="ordendecompradetalles">
+        <MappingFragment StoreEntitySet="ordendecompradetalle">
           <ScalarProperty Name="v_IdOrdenCompraDetalle" ColumnName="v_IdOrdenCompraDetalle" />
           <ScalarProperty Name="v_IdOrdenCompra" ColumnName="v_IdOrdenCompra" />
           <ScalarProperty Name="i_IdAlmacen" ColumnName="i_IdAlmacen" />
@@ -2406,7 +2406,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="ordenproduccion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.ordenproduccion">
-        <MappingFragment StoreEntitySet="ordenproduccions">
+        <MappingFragment StoreEntitySet="ordenproduccion">
           <ScalarProperty Name="i_IdOrdenProduccion" ColumnName="i_IdOrdenProduccion" />
           <ScalarProperty Name="v_IdProductoDetalle" ColumnName="v_IdProductoDetalle" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2444,7 +2444,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="pago">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.pago">
-        <MappingFragment StoreEntitySet="pagos">
+        <MappingFragment StoreEntitySet="pago">
           <ScalarProperty Name="v_IdPago" ColumnName="v_IdPago" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="i_IdEstablecimiento" ColumnName="i_IdEstablecimiento" />
@@ -2472,7 +2472,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="pagodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.pagodetalle">
-        <MappingFragment StoreEntitySet="pagodetalles">
+        <MappingFragment StoreEntitySet="pagodetalle">
           <ScalarProperty Name="v_IdPagoDetalle" ColumnName="v_IdPagoDetalle" />
           <ScalarProperty Name="v_IdPago" ColumnName="v_IdPago" />
           <ScalarProperty Name="v_IdCompra" ColumnName="v_IdCompra" />
@@ -2495,7 +2495,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="pagopendiente">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.pagopendiente">
-        <MappingFragment StoreEntitySet="pagopendientes">
+        <MappingFragment StoreEntitySet="pagopendiente">
           <ScalarProperty Name="v_IdPagoPendiente" ColumnName="v_IdPagoPendiente" />
           <ScalarProperty Name="v_IdCompra" ColumnName="v_IdCompra" />
           <ScalarProperty Name="v_IdLiqCompra" ColumnName="v_IdLiqCompra" />
@@ -2511,7 +2511,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="pedido">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.pedido">
-        <MappingFragment StoreEntitySet="pedidos">
+        <MappingFragment StoreEntitySet="pedido">
           <ScalarProperty Name="v_IdPedido" ColumnName="v_IdPedido" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2559,7 +2559,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="pedidodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.pedidodetalle">
-        <MappingFragment StoreEntitySet="pedidodetalles">
+        <MappingFragment StoreEntitySet="pedidodetalle">
           <ScalarProperty Name="v_IdPedidoDetalle" ColumnName="v_IdPedidoDetalle" />
           <ScalarProperty Name="v_IdPedido" ColumnName="v_IdPedido" />
           <ScalarProperty Name="i_IdAlmacen" ColumnName="i_IdAlmacen" />
@@ -2594,7 +2594,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="pendientecobrar">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.pendientecobrar">
-        <MappingFragment StoreEntitySet="pendienteCobrars">
+        <MappingFragment StoreEntitySet="pendienteCobrar">
           <ScalarProperty Name="v_IdPendienteCobrar" ColumnName="v_IdPendienteCobrar" />
           <ScalarProperty Name="v_NroCuenta" ColumnName="v_NroCuenta" />
           <ScalarProperty Name="i_IdTipoDocumento" ColumnName="i_IdTipoDocumento" />
@@ -2616,7 +2616,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="pendientecobrardetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.pendientecobrardetalle">
-        <MappingFragment StoreEntitySet="pendientecobrardetalles">
+        <MappingFragment StoreEntitySet="pendientecobrardetalle">
           <ScalarProperty Name="v_IdPendienteCobrarDetalle" ColumnName="v_IdPendienteCobrarDetalle" />
           <ScalarProperty Name="v_IdPendienteCobrar" ColumnName="v_IdPendienteCobrar" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
@@ -2641,7 +2641,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="pendientesconciliacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.pendientesconciliacion">
-        <MappingFragment StoreEntitySet="pendientesconciliacions">
+        <MappingFragment StoreEntitySet="pendientesconciliacion">
           <ScalarProperty Name="v_IdPendientesConciliacion" ColumnName="v_IdPendientesConciliacion" />
           <ScalarProperty Name="v_NroCuenta" ColumnName="v_NroCuenta" />
           <ScalarProperty Name="v_Anio" ColumnName="v_Anio" />
@@ -2662,7 +2662,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaafecafp">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaafecafp">
-        <MappingFragment StoreEntitySet="planillaafecafps">
+        <MappingFragment StoreEntitySet="planillaafecafp">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2695,7 +2695,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaafecgrati">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaafecgrati">
-        <MappingFragment StoreEntitySet="planillaafecgratis">
+        <MappingFragment StoreEntitySet="planillaafecgrati">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2712,7 +2712,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaafechrsexttard">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaafechrsexttard">
-        <MappingFragment StoreEntitySet="planillaafechrsexttards">
+        <MappingFragment StoreEntitySet="planillaafechrsexttard">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2729,7 +2729,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaafecleyesemp">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaafecleyesemp">
-        <MappingFragment StoreEntitySet="planillaafecleyesemps">
+        <MappingFragment StoreEntitySet="planillaafecleyesemp">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2748,7 +2748,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaafecleyestrab">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaafecleyestrab">
-        <MappingFragment StoreEntitySet="planillaafecleyestrabs">
+        <MappingFragment StoreEntitySet="planillaafecleyestrab">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2768,7 +2768,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaafecrentquinta">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaafecrentquinta">
-        <MappingFragment StoreEntitySet="planillaafecrentquintas">
+        <MappingFragment StoreEntitySet="planillaafecrentquinta">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2806,7 +2806,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaasistencia">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaasistencia">
-        <MappingFragment StoreEntitySet="planillaasistencias">
+        <MappingFragment StoreEntitySet="planillaasistencia">
           <ScalarProperty Name="i_IdAsistencia" ColumnName="i_IdAsistencia" />
           <ScalarProperty Name="v_IdTrabajador" ColumnName="v_IdTrabajador" />
           <ScalarProperty Name="i_IdSemana" ColumnName="i_IdSemana" />
@@ -2830,7 +2830,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillacalculo">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillacalculo">
-        <MappingFragment StoreEntitySet="planillacalculos">
+        <MappingFragment StoreEntitySet="planillacalculo">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="i_IdPlanillaNumeracion" ColumnName="i_IdPlanillaNumeracion" />
           <ScalarProperty Name="v_IdTrabajador" ColumnName="v_IdTrabajador" />
@@ -2871,7 +2871,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaconceptosadministracion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaconceptosadministracion">
-        <MappingFragment StoreEntitySet="planillaconceptosadministracions">
+        <MappingFragment StoreEntitySet="planillaconceptosadministracion">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_IdConceptoPlanilla" ColumnName="v_IdConceptoPlanilla" />
           <ScalarProperty Name="i_IdGrupo" ColumnName="i_IdGrupo" />
@@ -2905,7 +2905,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillanumeracion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillanumeracion">
-        <MappingFragment StoreEntitySet="planillanumeracions">
+        <MappingFragment StoreEntitySet="planillanumeracion">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Numero" ColumnName="v_Numero" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
@@ -2932,7 +2932,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaporcafp">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaporcafp">
-        <MappingFragment StoreEntitySet="planillaporcafps">
+        <MappingFragment StoreEntitySet="planillaporcafp">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2953,7 +2953,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaporcleyesempleador">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaporcleyesempleador">
-        <MappingFragment StoreEntitySet="planillaporcleyesempleadors">
+        <MappingFragment StoreEntitySet="planillaporcleyesempleador">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -2971,7 +2971,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaporcleyestrabajador">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaporcleyestrabajador">
-        <MappingFragment StoreEntitySet="planillaporcleyestrabajadors">
+        <MappingFragment StoreEntitySet="planillaporcleyestrabajador">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -3023,7 +3023,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillarelacionesdescuentosafp">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillarelacionesdescuentosafp">
-        <MappingFragment StoreEntitySet="planillarelacionesdescuentosafps">
+        <MappingFragment StoreEntitySet="planillarelacionesdescuentosafp">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="i_IdRegimenPensionario" ColumnName="i_IdRegimenPensionario" />
@@ -3039,7 +3039,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillarelacionesnetopagar">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillarelacionesnetopagar">
-        <MappingFragment StoreEntitySet="planillarelacionesnetopagars">
+        <MappingFragment StoreEntitySet="planillarelacionesnetopagar">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="i_IdTipoPlanilla" ColumnName="i_IdTipoPlanilla" />
@@ -3071,7 +3071,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillasemanasperiodo">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillasemanasperiodo">
-        <MappingFragment StoreEntitySet="planillasemanasperiodos">
+        <MappingFragment StoreEntitySet="planillasemanasperiodo">
           <ScalarProperty Name="i_IdSemana" ColumnName="i_IdSemana" />
           <ScalarProperty Name="i_NroSemana" ColumnName="i_NroSemana" />
           <ScalarProperty Name="t_FechaInicio" ColumnName="t_FechaInicio" />
@@ -3090,7 +3090,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillaturnosdetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillaturnosdetalle">
-        <MappingFragment StoreEntitySet="planillaturnosdetalles">
+        <MappingFragment StoreEntitySet="planillaturnosdetalle">
           <ScalarProperty Name="i_IdTurnoDetalle" ColumnName="i_IdTurnoDetalle" />
           <ScalarProperty Name="i_IdTurno" ColumnName="i_IdTurno" />
           <ScalarProperty Name="t_IngresoI" ColumnName="t_IngresoI" />
@@ -3105,7 +3105,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillavaloresproyeccionquinta">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillavaloresproyeccionquinta">
-        <MappingFragment StoreEntitySet="planillavaloresproyeccionquintas">
+        <MappingFragment StoreEntitySet="planillavaloresproyeccionquinta">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="i_IdMes" ColumnName="i_IdMes" />
@@ -3118,7 +3118,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillavaloresrentaquinta">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillavaloresrentaquinta">
-        <MappingFragment StoreEntitySet="planillavaloresrentaquintas">
+        <MappingFragment StoreEntitySet="planillavaloresrentaquinta">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="i_Tope1" ColumnName="i_Tope1" />
@@ -3142,7 +3142,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillavaloresuit">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillavaloresuit">
-        <MappingFragment StoreEntitySet="planillavaloresuits">
+        <MappingFragment StoreEntitySet="planillavaloresuit">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="d_ValorUIT" ColumnName="d_ValorUIT" />
@@ -3236,7 +3236,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="planillavariablestrabajador">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.planillavariablestrabajador">
-        <MappingFragment StoreEntitySet="planillavariablestrabajadors">
+        <MappingFragment StoreEntitySet="planillavariablestrabajador">
           <ScalarProperty Name="v_IdPlanillaVariablesTrabajador" ColumnName="v_IdPlanillaVariablesTrabajador" />
           <ScalarProperty Name="i_IdPlanillaNumeracion" ColumnName="i_IdPlanillaNumeracion" />
           <ScalarProperty Name="v_IdTrabajador" ColumnName="v_IdTrabajador" />
@@ -3271,7 +3271,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="producto">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.producto">
-        <MappingFragment StoreEntitySet="productos">
+        <MappingFragment StoreEntitySet="producto">
           <ScalarProperty Name="v_IdProducto" ColumnName="v_IdProducto" />
           <ScalarProperty Name="v_IdLinea" ColumnName="v_IdLinea" />
           <ScalarProperty Name="v_IdMarca" ColumnName="v_IdMarca" />
@@ -3348,7 +3348,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="productoalmacen">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.productoalmacen">
-        <MappingFragment StoreEntitySet="productoalmacens">
+        <MappingFragment StoreEntitySet="productoalmacen">
           <ScalarProperty Name="v_IdProductoAlmacen" ColumnName="v_IdProductoAlmacen" />
           <ScalarProperty Name="i_IdAlmacen" ColumnName="i_IdAlmacen" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
@@ -3371,7 +3371,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="productodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.productodetalle">
-        <MappingFragment StoreEntitySet="productodetalles">
+        <MappingFragment StoreEntitySet="productodetalle">
           <ScalarProperty Name="v_IdProductoDetalle" ColumnName="v_IdProductoDetalle" />
           <ScalarProperty Name="v_IdProducto" ColumnName="v_IdProducto" />
           <ScalarProperty Name="v_IdColor" ColumnName="v_IdColor" />
@@ -3386,7 +3386,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="productoinventario">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.productoinventario">
-        <MappingFragment StoreEntitySet="productoinventarios">
+        <MappingFragment StoreEntitySet="productoinventario">
           <ScalarProperty Name="i_IdProductoInventario" ColumnName="i_IdProductoInventario" />
           <ScalarProperty Name="i_IdEstablecimiento" ColumnName="i_IdEstablecimiento" />
           <ScalarProperty Name="i_IdAlmacen" ColumnName="i_IdAlmacen" />
@@ -3398,7 +3398,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="productoisc">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.productoisc">
-        <MappingFragment StoreEntitySet="productoiscs">
+        <MappingFragment StoreEntitySet="productoisc">
           <ScalarProperty Name="i_IdProductoIsc" ColumnName="i_IdProductoIsc" />
           <ScalarProperty Name="v_IdProducto" ColumnName="v_IdProducto" />
           <ScalarProperty Name="i_IdSistemaIsc" ColumnName="i_IdSistemaIsc" />
@@ -3414,7 +3414,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="productoreceta">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.productoreceta">
-        <MappingFragment StoreEntitySet="productorecetas">
+        <MappingFragment StoreEntitySet="productoreceta">
           <ScalarProperty Name="i_IdReceta" ColumnName="i_IdReceta" />
           <ScalarProperty Name="v_IdProdTerminado" ColumnName="v_IdProdTerminado" />
           <ScalarProperty Name="v_IdProdInsumo" ColumnName="v_IdProdInsumo" />
@@ -3431,7 +3431,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="productorecetasalida">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.productorecetasalida">
-        <MappingFragment StoreEntitySet="productorecetasalidas">
+        <MappingFragment StoreEntitySet="productorecetasalida">
           <ScalarProperty Name="i_IdRecetaSalida" ColumnName="i_IdRecetaSalida" />
           <ScalarProperty Name="v_IdProductoTributo" ColumnName="v_IdProductoTributo" />
           <ScalarProperty Name="i_Eliminado" ColumnName="i_Eliminado" />
@@ -3445,7 +3445,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="recibohonorario">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.recibohonorario">
-        <MappingFragment StoreEntitySet="recibohonorarios">
+        <MappingFragment StoreEntitySet="recibohonorario">
           <ScalarProperty Name="v_IdReciboHonorario" ColumnName="v_IdReciboHonorario" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -3482,7 +3482,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="recibohonorariodetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.recibohonorariodetalle">
-        <MappingFragment StoreEntitySet="recibohonorariodetalles">
+        <MappingFragment StoreEntitySet="recibohonorariodetalle">
           <ScalarProperty Name="v_IdReciboHonorarioDetalle" ColumnName="v_IdReciboHonorarioDetalle" />
           <ScalarProperty Name="v_IdReciboHonorario" ColumnName="v_IdReciboHonorario" />
           <ScalarProperty Name="v_NroCuenta" ColumnName="v_NroCuenta" />
@@ -3499,7 +3499,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="regimenpensionariotrabajador">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.regimenpensionariotrabajador">
-        <MappingFragment StoreEntitySet="regimenpensionariotrabajadors">
+        <MappingFragment StoreEntitySet="regimenpensionariotrabajador">
           <ScalarProperty Name="v_IdRegimenPensionario" ColumnName="v_IdRegimenPensionario" />
           <ScalarProperty Name="v_IdTrabajador" ColumnName="v_IdTrabajador" />
           <ScalarProperty Name="i_IdRegimenPensionario" ColumnName="i_IdRegimenPensionario" />
@@ -3518,7 +3518,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="relacionformapagodocumento">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.relacionformapagodocumento">
-        <MappingFragment StoreEntitySet="relacionformapagodocumentos">
+        <MappingFragment StoreEntitySet="relacionformapagodocumento">
           <ScalarProperty Name="i_IdRelacion" ColumnName="i_IdRelacion" />
           <ScalarProperty Name="i_IdFormaPago" ColumnName="i_IdFormaPago" />
           <ScalarProperty Name="i_CodigoDocumento" ColumnName="i_CodigoDocumento" />
@@ -3531,7 +3531,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="relaciontributosexportacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.relaciontributosexportacion">
-        <MappingFragment StoreEntitySet="relaciontributosexportacions">
+        <MappingFragment StoreEntitySet="relaciontributosexportacion">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="i_IdTipoPagoExportacion" ColumnName="i_IdTipoPagoExportacion" />
           <ScalarProperty Name="i_IdRecetaExportacion" ColumnName="i_IdRecetaExportacion" />
@@ -3540,7 +3540,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="relacionusuariocliente">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.relacionusuariocliente">
-        <MappingFragment StoreEntitySet="relacionusuarioclientes">
+        <MappingFragment StoreEntitySet="relacionusuariocliente">
           <ScalarProperty Name="i_IdRelacionusuariocliente" ColumnName="i_IdRelacionusuariocliente" />
           <ScalarProperty Name="i_SystemUser" ColumnName="i_SystemUser" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
@@ -3555,7 +3555,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="saldoestadobancario">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.saldoestadobancario">
-        <MappingFragment StoreEntitySet="saldoestadobancarios">
+        <MappingFragment StoreEntitySet="saldoestadobancario">
           <ScalarProperty Name="v_IdSaldoEstadoBancario" ColumnName="v_IdSaldoEstadoBancario" />
           <ScalarProperty Name="v_NroCuenta" ColumnName="v_NroCuenta" />
           <ScalarProperty Name="v_Mes" ColumnName="v_Mes" />
@@ -3588,7 +3588,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="secuential">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.secuential">
-        <MappingFragment StoreEntitySet="secuentials">
+        <MappingFragment StoreEntitySet="secuential">
           <ScalarProperty Name="v_ReplicationID" ColumnName="v_ReplicationID" />
           <ScalarProperty Name="i_NodeId" ColumnName="i_NodeId" />
           <ScalarProperty Name="i_TableId" ColumnName="i_TableId" />
@@ -3598,7 +3598,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="separacionproducto">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.separacionproducto">
-        <MappingFragment StoreEntitySet="separacionproductos">
+        <MappingFragment StoreEntitySet="separacionproducto">
           <ScalarProperty Name="v_IdSeparacionProducto" ColumnName="v_IdSeparacionProducto" />
           <ScalarProperty Name="v_IdProductoAlmacen" ColumnName="v_IdProductoAlmacen" />
           <ScalarProperty Name="d_Separacion_Cantidad" ColumnName="d_Separacion_Cantidad" />
@@ -3617,7 +3617,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="systemparameter">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.systemparameter">
-        <MappingFragment StoreEntitySet="systemparameters">
+        <MappingFragment StoreEntitySet="systemparameter">
           <ScalarProperty Name="i_GroupId" ColumnName="i_GroupId" />
           <ScalarProperty Name="i_ParameterId" ColumnName="i_ParameterId" />
           <ScalarProperty Name="i_ParentParameterId" ColumnName="i_ParentParameterId" />
@@ -3635,7 +3635,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="systemuser">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.systemuser">
-        <MappingFragment StoreEntitySet="systemusers">
+        <MappingFragment StoreEntitySet="systemuser">
           <ScalarProperty Name="i_SystemUserId" ColumnName="i_SystemUserId" />
           <ScalarProperty Name="i_PersonId" ColumnName="i_PersonId" />
           <ScalarProperty Name="i_RoleId" ColumnName="i_RoleId" />
@@ -3655,7 +3655,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="talla">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.talla">
-        <MappingFragment StoreEntitySet="tallas">
+        <MappingFragment StoreEntitySet="talla">
           <ScalarProperty Name="v_IdTalla" ColumnName="v_IdTalla" />
           <ScalarProperty Name="v_CodTalla" ColumnName="v_CodTalla" />
           <ScalarProperty Name="v_Nombre" ColumnName="v_Nombre" />
@@ -3669,7 +3669,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="temporalventadetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.temporalventadetalle">
-        <MappingFragment StoreEntitySet="temporalVentaDetalles">
+        <MappingFragment StoreEntitySet="temporalVentaDetalle">
           <ScalarProperty Name="v_IdTemporalVentaD" ColumnName="v_IdTemporalVentaD" />
           <ScalarProperty Name="i_IdAlmacen" ColumnName="i_IdAlmacen" />
           <ScalarProperty Name="v_IdProductoDetalle" ColumnName="v_IdProductoDetalle" />
@@ -3688,7 +3688,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="tesoreria">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.tesoreria">
-        <MappingFragment StoreEntitySet="tesorerias">
+        <MappingFragment StoreEntitySet="tesoreria">
           <ScalarProperty Name="v_IdTesoreria" ColumnName="v_IdTesoreria" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
           <ScalarProperty Name="i_IdTipoDocumento" ColumnName="i_IdTipoDocumento" />
@@ -3723,7 +3723,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="tesoreriadetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.tesoreriadetalle">
-        <MappingFragment StoreEntitySet="tesoreriadetalles">
+        <MappingFragment StoreEntitySet="tesoreriadetalle">
           <ScalarProperty Name="v_IdTesoreriaDetalle" ColumnName="v_IdTesoreriaDetalle" />
           <ScalarProperty Name="i_EsDestino" ColumnName="i_EsDestino" />
           <ScalarProperty Name="v_IdTesoreria" ColumnName="v_IdTesoreria" />
@@ -3754,7 +3754,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="tipodecambio">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.tipodecambio">
-        <MappingFragment StoreEntitySet="tipodecambios">
+        <MappingFragment StoreEntitySet="tipodecambio">
           <ScalarProperty Name="i_CodTipoCambio" ColumnName="i_CodTipoCambio" />
           <ScalarProperty Name="i_Periodo" ColumnName="i_Periodo" />
           <ScalarProperty Name="d_FechaTipoC" ColumnName="d_FechaTipoC" />
@@ -3772,7 +3772,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="trabajador">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.trabajador">
-        <MappingFragment StoreEntitySet="trabajadors">
+        <MappingFragment StoreEntitySet="trabajador">
           <ScalarProperty Name="v_IdTrabajador" ColumnName="v_IdTrabajador" />
           <ScalarProperty Name="v_IdCliente" ColumnName="v_IdCliente" />
           <ScalarProperty Name="v_CodInterno" ColumnName="v_CodInterno" />
@@ -3847,7 +3847,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="transportista">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.transportista">
-        <MappingFragment StoreEntitySet="transportistas">
+        <MappingFragment StoreEntitySet="transportista">
           <ScalarProperty Name="v_IdTransportista" ColumnName="v_IdTransportista" />
           <ScalarProperty Name="v_Codigo" ColumnName="v_Codigo" />
           <ScalarProperty Name="v_NombreRazonSocial" ColumnName="v_NombreRazonSocial" />
@@ -3873,7 +3873,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="transportistachofer">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.transportistachofer">
-        <MappingFragment StoreEntitySet="transportistachofers">
+        <MappingFragment StoreEntitySet="transportistachofer">
           <ScalarProperty Name="v_IdChofer" ColumnName="v_IdChofer" />
           <ScalarProperty Name="v_IdTransportista" ColumnName="v_IdTransportista" />
           <ScalarProperty Name="v_NombreCompleto" ColumnName="v_NombreCompleto" />
@@ -3890,7 +3890,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="transportistaunidadtransporte">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.transportistaunidadtransporte">
-        <MappingFragment StoreEntitySet="transportistaunidadtransportes">
+        <MappingFragment StoreEntitySet="transportistaunidadtransporte">
           <ScalarProperty Name="v_IdUnidadTransporte" ColumnName="v_IdUnidadTransporte" />
           <ScalarProperty Name="v_IdTransportista" ColumnName="v_IdTransportista" />
           <ScalarProperty Name="v_TractoPlaca" ColumnName="v_TractoPlaca" />
@@ -3909,7 +3909,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="vendedor">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.vendedor">
-        <MappingFragment StoreEntitySet="vendedors">
+        <MappingFragment StoreEntitySet="vendedor">
           <ScalarProperty Name="v_IdVendedor" ColumnName="v_IdVendedor" />
           <ScalarProperty Name="i_SystemUser" ColumnName="i_SystemUser" />
           <ScalarProperty Name="v_CodVendedor" ColumnName="v_CodVendedor" />
@@ -3940,7 +3940,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="venta">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.venta">
-        <MappingFragment StoreEntitySet="ventas">
+        <MappingFragment StoreEntitySet="venta">
           <ScalarProperty Name="v_IdVenta" ColumnName="v_IdVenta" />
           <ScalarProperty Name="v_IdFormatoUnicoFacturacion" ColumnName="v_IdFormatoUnicoFacturacion" />
           <ScalarProperty Name="v_Periodo" ColumnName="v_Periodo" />
@@ -4052,7 +4052,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="ventadetalle">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.ventadetalle">
-        <MappingFragment StoreEntitySet="ventadetalles">
+        <MappingFragment StoreEntitySet="ventadetalle">
           <ScalarProperty Name="v_IdVentaDetalle" ColumnName="v_IdVentaDetalle" />
           <ScalarProperty Name="v_IdVenta" ColumnName="v_IdVenta" />
           <ScalarProperty Name="v_IdMovimientoDetalle" ColumnName="v_IdMovimientoDetalle" />
@@ -4103,7 +4103,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="ventadetalleanexo">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.ventadetalleanexo">
-        <MappingFragment StoreEntitySet="ventadetalleanexos">
+        <MappingFragment StoreEntitySet="ventadetalleanexo">
           <ScalarProperty Name="i_IdVentaDetalleAnexo" ColumnName="i_IdVentaDetalleAnexo" />
           <ScalarProperty Name="v_Anexo" ColumnName="v_Anexo" />
           <ScalarProperty Name="i_Eliminado" ColumnName="i_Eliminado" />
@@ -4116,7 +4116,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="ventaelectronicasecuential">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.ventaelectronicasecuential">
-        <MappingFragment StoreEntitySet="ventaelectronicasecuentials">
+        <MappingFragment StoreEntitySet="ventaelectronicasecuential">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="i_IdTipoOperacion" ColumnName="i_IdTipoOperacion" />
           <ScalarProperty Name="i_NroCorrelativo" ColumnName="i_NroCorrelativo" />
@@ -4125,7 +4125,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="ventahomolagacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.ventahomolagacion">
-        <MappingFragment StoreEntitySet="ventahomolagacions">
+        <MappingFragment StoreEntitySet="ventahomolagacion">
           <ScalarProperty Name="i_IdVentaHomologacion" ColumnName="i_IdVentaHomologacion" />
           <ScalarProperty Name="b_FileXml" ColumnName="b_FileXml" />
           <ScalarProperty Name="v_IdVenta" ColumnName="v_IdVenta" />
@@ -4136,7 +4136,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="ventaimportaciondataconfig">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.ventaimportaciondataconfig">
-        <MappingFragment StoreEntitySet="ventaimportaciondataconfigs">
+        <MappingFragment StoreEntitySet="ventaimportaciondataconfig">
           <ScalarProperty Name="i_Id" ColumnName="i_Id" />
           <ScalarProperty Name="v_CtaVenta" ColumnName="v_CtaVenta" />
           <ScalarProperty Name="v_CtaEfectivo" ColumnName="v_CtaEfectivo" />
@@ -4152,7 +4152,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="ventaresumenhomologacion">
       <EntityTypeMapping TypeName="SAMBHS.Common.DataModel.ventaresumenhomologacion">
-        <MappingFragment StoreEntitySet="ventaresumenhomologacions">
+        <MappingFragment StoreEntitySet="ventaresumenhomologacion">
           <ScalarProperty Name="i_Idventaresumen" ColumnName="i_Idventaresumen" />
           <ScalarProperty Name="v_Ticket" ColumnName="v_Ticket" />
           <ScalarProperty Name="b_FileZip" ColumnName="b_FileZip" />
