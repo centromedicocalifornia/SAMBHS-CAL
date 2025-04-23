@@ -47,6 +47,11 @@ namespace SAMBHS.Windows.WinClient.UI.Reportes
                     case TiposReportes.OrdenCompra:
                         Reporte = new crDocumentoOrdenCompra();
                         break;
+                    case TiposReportes.GuiaRemisionVenta:
+                        Reporte = new crDocumentoGuiaRemisionMangueras();
+                        //Reporte = new crGuiaRemisionElectronica();
+
+                        break;
                 }
 
                 return Reporte;

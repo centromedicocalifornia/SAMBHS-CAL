@@ -46,7 +46,7 @@ namespace SAMBHS.Windows.WinClient.UI.Reportes.Ventas
 
             ds1.Tables.Add(dt);
             rp.SetDataSource(ds1);
-            rp.SetParameterValue("CantidadDecimal", Globals.ClientSession.i_CantidadDecimales ?? 2);
+            //rp.SetParameterValue("CantidadDecimal", Globals.ClientSession.i_CantidadDecimales ?? 2);
 
             try
             {

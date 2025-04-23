@@ -4110,7 +4110,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             }
         }
 
-        public static BindingList<ventadetalleDto> SheduleService(ServiceDto oServiceDto, int usuarioGraba)
+        public static BindingList<ventadetalleDto> SheduleService(ServiceDto oServiceDto, int usuarioGraba, int atenciondia)
         {
             try
             {
@@ -4444,7 +4444,7 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                             AddServiceComponent(oServiceComponentDto);
 
                         }
-                        AddCalendar(oServiceDto, usuarioGraba, 1);
+                        AddCalendar(oServiceDto, usuarioGraba, atenciondia);
 
                         if (oServiceDto.MasterServiceId == 19 || ((oServiceDto.MasterServiceId == 10 || oServiceDto.MasterServiceId == 15 || oServiceDto.MasterServiceId == 16 || oServiceDto.MasterServiceId == 17 || oServiceDto.MasterServiceId == 18 || oServiceDto.MasterServiceId == 19) && tipoEmpresa == 4))
                         {

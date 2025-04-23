@@ -995,8 +995,8 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
                         grdData.Rows[grdData.ActiveRow.Index].Cells["UMEmpaque"].Value = Filas[i].Cells["EmpaqueUnidadMedida"].Value == null ? null : Filas[i].Cells["EmpaqueUnidadMedida"].Value.ToString();
                         grdData.Rows[grdData.ActiveRow.Index].Cells["v_NroCuenta"].Value = Filas[i].Cells["NroCuentaCompra"].Value != null ? Filas[i].Cells["NroCuentaCompra"].Value.ToString() : "-1";
                         grdData.Rows[grdData.ActiveRow.Index].Cells["i_EsServicio"].Value = Filas[i].Cells["i_EsServicio"].Value == null ? 0 : int.Parse(Filas[i].Cells["i_EsServicio"].Value.ToString());
-                        grdData.Rows[grdData.ActiveRow.Index].Cells["i_SolicitarNroSerie"].Value = int.Parse(Filas[i].Cells["i_SolicitarNroSerie"].Value.ToString());
-                        grdData.Rows[grdData.ActiveRow.Index].Cells["i_SolicitarNroLote"].Value = int.Parse(Filas[i].Cells["i_SolicitarNroLote"].Value.ToString());
+                        //grdData.Rows[grdData.ActiveRow.Index].Cells["i_SolicitarNroSerie"].Value = int.Parse(Filas[i].Cells["i_SolicitarNroSerie"].Value.ToString());
+                        //grdData.Rows[grdData.ActiveRow.Index].Cells["i_SolicitarNroLote"].Value = int.Parse(Filas[i].Cells["i_SolicitarNroLote"].Value.ToString());
                         grdData.Rows[grdData.ActiveRow.Index].Cells["v_NroSerie"].Value = Filas[i].Cells["v_NroSerie"].Value == null || Filas[i].Cells["v_NroSerie"].Value == "" ? null : Filas[i].Cells["v_NroSerie"].Value.ToString();
                         grdData.Rows[grdData.ActiveRow.Index].Cells["v_NroLote"].Value = Filas[i].Cells["v_NroLote"].Value == null || Filas[i].Cells["v_NroLote"].Value == "" ? null : Filas[i].Cells["v_NroLote"].Value.ToString();
                         grdData.Rows[grdData.ActiveRow.Index].Cells["t_FechaCaducidad"].Value = Filas[i].Cells["t_FechaCaducidad"].Value == null ? null : Filas[i].Cells["t_FechaCaducidad"].Value.ToString();
@@ -1154,6 +1154,13 @@ namespace SAMBHS.Windows.WinClient.UI.Procesos
                 MessageBox.Show(ex.Message);
                 return false;
             }
+        }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+            //_IdMovimientoss = _pstrIdMovimiento_Nuevo;
+            //var frm = new Reportes.Almacen.frmDocumentoNotaIngresoAlmacen(_IdMovimientoss);
+            //frm.Show();
         }
     }
 }

@@ -769,9 +769,16 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             try
             {
                 var oServiceDto = OServiceDto();
+                
                 if (cboTipoServicio.SelectedValue.ToString() == "1")
                 {
-                    AgendaBl.SheduleService(oServiceDto, Int32.Parse(ClientSession[2]));
+                    int atencionDia = 0;
+                    if (checkDia.Checked == true)
+                    {
+                        atencionDia = 1;
+                    }
+
+                    AgendaBl.SheduleService(oServiceDto, Int32.Parse(ClientSession[2]),atencionDia);
 
                 }
                 else
@@ -890,7 +897,8 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                     MasterServiceId = int.Parse(cboServicio.SelectedValue.ToString()),
                     ServiceStatusId = (int)ServiceStatus.Iniciado,
                     AptitudeStatusId = (int)AptitudeStatus.SinAptitud,
-                    ServiceDate = null,
+                    ServiceDate = dtDateCalendar.Value,
+                    //ServiceDate = null,
                     GlobalExpirationDate = null,
                     ObsExpirationDate = null,
                     FlagAgentId = 1,
@@ -2210,6 +2218,20 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
         private void cboMarketing_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkDia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkDia.Checked == true)
+            {
+                label56.Enabled = false;
+                dtDateCalendar.Enabled = false;
+            }
+            else
+            {
+                label56.Enabled = true;
+                dtDateCalendar.Enabled = true;
+            }
         }
         
     }

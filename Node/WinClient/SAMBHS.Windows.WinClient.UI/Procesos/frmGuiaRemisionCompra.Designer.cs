@@ -96,6 +96,7 @@
             Infragistics.Win.Appearance appearance39 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinEditors.EditorButton editorButton1 = new Infragistics.Win.UltraWinEditors.EditorButton("btnBuscar");
             Infragistics.Win.Appearance appearance40 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance41 = new Infragistics.Win.Appearance();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtCorrelativo = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
             this.label16 = new Infragistics.Win.Misc.UltraLabel();
@@ -144,6 +145,7 @@
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Top = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Bottom = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.BtnImprimir = new Infragistics.Win.Misc.UltraButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCorrelativo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMes)).BeginInit();
@@ -458,7 +460,7 @@
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Location = new System.Drawing.Point(12, 186);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1013, 247);
+            this.groupBox3.Size = new System.Drawing.Size(1013, 246);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.Text = "Detalle de Compra";
             // 
@@ -612,7 +614,7 @@
             this.grdData.Location = new System.Drawing.Point(5, 18);
             this.grdData.Margin = new System.Windows.Forms.Padding(2);
             this.grdData.Name = "grdData";
-            this.grdData.Size = new System.Drawing.Size(1003, 198);
+            this.grdData.Size = new System.Drawing.Size(1003, 197);
             this.grdData.TabIndex = 1;
             this.grdData.AfterCellUpdate += new Infragistics.Win.UltraWinGrid.CellEventHandler(this.grdData_AfterCellUpdate);
             this.grdData.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdData_InitializeLayout);
@@ -630,7 +632,7 @@
             appearance28.TextHAlignAsString = "Right";
             appearance28.TextVAlignAsString = "Middle";
             this.btnAgregar.Appearance = appearance28;
-            this.btnAgregar.Location = new System.Drawing.Point(895, 219);
+            this.btnAgregar.Location = new System.Drawing.Point(895, 218);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(113, 22);
@@ -648,7 +650,7 @@
             appearance29.TextVAlignAsString = "Middle";
             this.btnEliminar.Appearance = appearance29;
             this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(779, 219);
+            this.btnEliminar.Location = new System.Drawing.Point(779, 218);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 22);
@@ -665,7 +667,7 @@
             appearance30.TextHAlignAsString = "Right";
             appearance30.TextVAlignAsString = "Middle";
             this.btnSalir.Appearance = appearance30;
-            this.btnSalir.Location = new System.Drawing.Point(11, 441);
+            this.btnSalir.Location = new System.Drawing.Point(136, 440);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(59, 30);
@@ -682,7 +684,7 @@
             appearance31.TextHAlignAsString = "Right";
             appearance31.TextVAlignAsString = "Middle";
             this.btnGuardar.Appearance = appearance31;
-            this.btnGuardar.Location = new System.Drawing.Point(74, 441);
+            this.btnGuardar.Location = new System.Drawing.Point(199, 440);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(79, 30);
@@ -694,7 +696,7 @@
             // 
             this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(868, 449);
+            this.label33.Location = new System.Drawing.Point(868, 448);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(33, 14);
             this.label33.TabIndex = 79;
@@ -706,7 +708,7 @@
             appearance32.TextHAlignAsString = "Right";
             this.txtTotal.Appearance = appearance32;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(907, 445);
+            this.txtTotal.Location = new System.Drawing.Point(907, 444);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -930,6 +932,7 @@
             // 
             // frmGuiaRemisionCompra_Fill_Panel.ClientArea
             // 
+            this.frmGuiaRemisionCompra_Fill_Panel.ClientArea.Controls.Add(this.BtnImprimir);
             this.frmGuiaRemisionCompra_Fill_Panel.ClientArea.Controls.Add(this.ultraStatusBar1);
             this.frmGuiaRemisionCompra_Fill_Panel.ClientArea.Controls.Add(this.groupBox1);
             this.frmGuiaRemisionCompra_Fill_Panel.ClientArea.Controls.Add(this.label33);
@@ -941,14 +944,14 @@
             this.frmGuiaRemisionCompra_Fill_Panel.ClientArea.Controls.Add(this.panel1);
             this.frmGuiaRemisionCompra_Fill_Panel.Cursor = System.Windows.Forms.Cursors.Default;
             this.frmGuiaRemisionCompra_Fill_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frmGuiaRemisionCompra_Fill_Panel.Location = new System.Drawing.Point(8, 31);
+            this.frmGuiaRemisionCompra_Fill_Panel.Location = new System.Drawing.Point(8, 32);
             this.frmGuiaRemisionCompra_Fill_Panel.Name = "frmGuiaRemisionCompra_Fill_Panel";
-            this.frmGuiaRemisionCompra_Fill_Panel.Size = new System.Drawing.Size(1035, 500);
+            this.frmGuiaRemisionCompra_Fill_Panel.Size = new System.Drawing.Size(1035, 499);
             this.frmGuiaRemisionCompra_Fill_Panel.TabIndex = 0;
             // 
             // ultraStatusBar1
             // 
-            this.ultraStatusBar1.Location = new System.Drawing.Point(0, 477);
+            this.ultraStatusBar1.Location = new System.Drawing.Point(0, 476);
             this.ultraStatusBar1.Name = "ultraStatusBar1";
             this.ultraStatusBar1.Size = new System.Drawing.Size(1035, 23);
             this.ultraStatusBar1.TabIndex = 80;
@@ -962,9 +965,9 @@
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Left.ForeColor = System.Drawing.SystemColors.ControlText;
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Left.FormManager = this.ultraFormManager1;
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Left.InitialResizeAreaExtent = 8;
-            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Left.Location = new System.Drawing.Point(0, 31);
+            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Left.Location = new System.Drawing.Point(0, 32);
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Left.Name = "_frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Left";
-            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Left.Size = new System.Drawing.Size(8, 500);
+            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Left.Size = new System.Drawing.Size(8, 499);
             // 
             // _frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right
             // 
@@ -974,9 +977,9 @@
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText;
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right.FormManager = this.ultraFormManager1;
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right.InitialResizeAreaExtent = 8;
-            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right.Location = new System.Drawing.Point(1043, 31);
+            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right.Location = new System.Drawing.Point(1043, 32);
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right.Name = "_frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right";
-            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right.Size = new System.Drawing.Size(8, 500);
+            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Right.Size = new System.Drawing.Size(8, 499);
             // 
             // _frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Top
             // 
@@ -987,7 +990,7 @@
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Top.FormManager = this.ultraFormManager1;
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Top.Location = new System.Drawing.Point(0, 0);
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Top.Name = "_frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Top";
-            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Top.Size = new System.Drawing.Size(1051, 31);
+            this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Top.Size = new System.Drawing.Size(1051, 32);
             // 
             // _frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Bottom
             // 
@@ -1000,6 +1003,23 @@
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Bottom.Location = new System.Drawing.Point(0, 531);
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Bottom.Name = "_frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Bottom";
             this._frmGuiaRemisionCompra_UltraFormManager_Dock_Area_Bottom.Size = new System.Drawing.Size(1051, 8);
+            // 
+            // BtnImprimir
+            // 
+            this.BtnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            appearance41.Image = global::SAMBHS.Windows.WinClient.UI.Resource.printer;
+            appearance41.ImageHAlign = Infragistics.Win.HAlign.Left;
+            appearance41.ImageVAlign = Infragistics.Win.VAlign.Middle;
+            appearance41.TextHAlignAsString = "Right";
+            appearance41.TextVAlignAsString = "Middle";
+            this.BtnImprimir.Appearance = appearance41;
+            this.BtnImprimir.Location = new System.Drawing.Point(17, 440);
+            this.BtnImprimir.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnImprimir.Name = "BtnImprimir";
+            this.BtnImprimir.Size = new System.Drawing.Size(71, 30);
+            this.BtnImprimir.TabIndex = 205;
+            this.BtnImprimir.Text = "&Imprimir";
+            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
             // frmGuiaRemisionCompra
             // 
@@ -1104,5 +1124,6 @@
         private Common.Resource.RucEditor txtRucProveedor;
         private Infragistics.Win.UltraWinStatusBar.UltraStatusBar ultraStatusBar1;
         private System.Windows.Forms.Timer timer1;
+        private Infragistics.Win.Misc.UltraButton BtnImprimir;
     }
 }

@@ -40,18 +40,6 @@
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance25 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance26 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance27 = new Infragistics.Win.Appearance();
@@ -125,6 +113,18 @@
             Infragistics.Win.Appearance appearance94 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance95 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance96 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -159,7 +159,6 @@
             this.cboEmpresaTrabajo = new System.Windows.Forms.ComboBox();
             this.cboEmpresaCliente = new System.Windows.Forms.ComboBox();
             this.cboEmpresaEmpleadora = new System.Windows.Forms.ComboBox();
-            this.txtRucCliente = new SAMBHS.Common.Resource.RucEditor();
             this.cboGeso = new System.Windows.Forms.ComboBox();
             this.cboTipoEso = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -258,11 +257,14 @@
             this.label54 = new System.Windows.Forms.Label();
             this.cboMarketing = new System.Windows.Forms.ComboBox();
             this.label55 = new System.Windows.Forms.Label();
+            this.txtRucCliente = new SAMBHS.Common.Resource.RucEditor();
+            this.dtDateCalendar = new System.Windows.Forms.DateTimePicker();
+            this.label56 = new System.Windows.Forms.Label();
+            this.checkDia = new System.Windows.Forms.CheckBox();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCCosto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRucCliente)).BeginInit();
             this.gbDatosGenerales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaisOrigen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNacionalidad)).BeginInit();
@@ -272,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPuesto)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRucCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -603,12 +606,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkDia);
+            this.groupBox2.Controls.Add(this.dtDateCalendar);
+            this.groupBox2.Controls.Add(this.label56);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.txtCCosto);
             this.groupBox2.Controls.Add(this.label28);
-            this.groupBox2.Controls.Add(this.cboMedicoTratante);
-            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.cboEmpresaTrabajo);
             this.groupBox2.Controls.Add(this.cboEmpresaCliente);
             this.groupBox2.Controls.Add(this.cboEmpresaEmpleadora);
@@ -734,10 +738,10 @@
             this.cboMedicoTratante.Enabled = false;
             this.cboMedicoTratante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMedicoTratante.FormattingEnabled = true;
-            this.cboMedicoTratante.Location = new System.Drawing.Point(703, 46);
+            this.cboMedicoTratante.Location = new System.Drawing.Point(648, 342);
             this.cboMedicoTratante.Margin = new System.Windows.Forms.Padding(2);
             this.cboMedicoTratante.Name = "cboMedicoTratante";
-            this.cboMedicoTratante.Size = new System.Drawing.Size(291, 21);
+            this.cboMedicoTratante.Size = new System.Drawing.Size(175, 21);
             this.cboMedicoTratante.TabIndex = 160;
             this.cboMedicoTratante.ValueMember = "Id";
             this.cboMedicoTratante.Visible = false;
@@ -747,7 +751,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(614, 50);
+            this.label19.Location = new System.Drawing.Point(559, 346);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(85, 13);
@@ -798,71 +802,6 @@
             this.cboEmpresaEmpleadora.Size = new System.Drawing.Size(438, 21);
             this.cboEmpresaEmpleadora.TabIndex = 156;
             this.cboEmpresaEmpleadora.ValueMember = "Id";
-            // 
-            // txtRucCliente
-            // 
-            appearance13.BackColor = System.Drawing.SystemColors.Window;
-            appearance13.BorderColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtRucCliente.DisplayLayout.Appearance = appearance13;
-            this.txtRucCliente.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            this.txtRucCliente.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
-            appearance14.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            appearance14.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance14.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance14.BorderColor = System.Drawing.SystemColors.Window;
-            this.txtRucCliente.DisplayLayout.GroupByBox.Appearance = appearance14;
-            appearance15.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtRucCliente.DisplayLayout.GroupByBox.BandLabelAppearance = appearance15;
-            this.txtRucCliente.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance16.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            appearance16.BackColor2 = System.Drawing.SystemColors.Control;
-            appearance16.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance16.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtRucCliente.DisplayLayout.GroupByBox.PromptAppearance = appearance16;
-            this.txtRucCliente.DisplayLayout.MaxColScrollRegions = 1;
-            this.txtRucCliente.DisplayLayout.MaxRowScrollRegions = 1;
-            this.txtRucCliente.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
-            appearance17.BackColor = System.Drawing.SystemColors.Window;
-            appearance17.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtRucCliente.DisplayLayout.Override.ActiveCellAppearance = appearance17;
-            appearance18.BackColor = System.Drawing.SystemColors.Highlight;
-            appearance18.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtRucCliente.DisplayLayout.Override.ActiveRowAppearance = appearance18;
-            this.txtRucCliente.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
-            this.txtRucCliente.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
-            appearance19.BackColor = System.Drawing.SystemColors.Window;
-            this.txtRucCliente.DisplayLayout.Override.CardAreaAppearance = appearance19;
-            appearance20.BorderColor = System.Drawing.Color.Silver;
-            appearance20.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
-            this.txtRucCliente.DisplayLayout.Override.CellAppearance = appearance20;
-            this.txtRucCliente.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
-            this.txtRucCliente.DisplayLayout.Override.CellPadding = 0;
-            appearance21.BackColor = System.Drawing.SystemColors.Control;
-            appearance21.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance21.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
-            appearance21.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance21.BorderColor = System.Drawing.SystemColors.Window;
-            this.txtRucCliente.DisplayLayout.Override.GroupByRowAppearance = appearance21;
-            appearance22.TextHAlignAsString = "Left";
-            this.txtRucCliente.DisplayLayout.Override.HeaderAppearance = appearance22;
-            this.txtRucCliente.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-            this.txtRucCliente.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
-            appearance23.BackColor = System.Drawing.SystemColors.Window;
-            appearance23.BorderColor = System.Drawing.Color.Silver;
-            this.txtRucCliente.DisplayLayout.Override.RowAppearance = appearance23;
-            this.txtRucCliente.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
-            appearance24.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtRucCliente.DisplayLayout.Override.TemplateAddRowAppearance = appearance24;
-            this.txtRucCliente.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
-            this.txtRucCliente.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
-            this.txtRucCliente.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
-            this.txtRucCliente.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Never;
-            this.txtRucCliente.Location = new System.Drawing.Point(489, 45);
-            this.txtRucCliente.Name = "txtRucCliente";
-            this.txtRucCliente.Size = new System.Drawing.Size(115, 22);
-            this.txtRucCliente.TabIndex = 155;
-            this.txtRucCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRucCliente_KeyDown);
-            this.txtRucCliente.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtRucCliente_MouseDown);
             // 
             // cboGeso
             // 
@@ -1037,6 +976,8 @@
             this.gbDatosGenerales.Controls.Add(this.cboModalidadTrabajo);
             this.gbDatosGenerales.Controls.Add(this.button2);
             this.gbDatosGenerales.Controls.Add(this.txtPaisOrigen);
+            this.gbDatosGenerales.Controls.Add(this.cboMedicoTratante);
+            this.gbDatosGenerales.Controls.Add(this.label19);
             this.gbDatosGenerales.Controls.Add(this.txtNacionalidad);
             this.gbDatosGenerales.Controls.Add(this.label50);
             this.gbDatosGenerales.Controls.Add(this.label49);
@@ -1150,7 +1091,7 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = global::SAMBHS.Windows.SigesoftIntegration.UI.Properties.Resources.facturar;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(556, 244);
+            this.button2.Location = new System.Drawing.Point(559, 142);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 31);
             this.button2.TabIndex = 170;
@@ -1214,7 +1155,7 @@
             this.txtPaisOrigen.DisplayMember = "PaisOrigen";
             this.txtPaisOrigen.DropDownWidth = 250;
             this.txtPaisOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaisOrigen.Location = new System.Drawing.Point(637, 345);
+            this.txtPaisOrigen.Location = new System.Drawing.Point(864, 314);
             this.txtPaisOrigen.Name = "txtPaisOrigen";
             this.txtPaisOrigen.Size = new System.Drawing.Size(137, 22);
             this.txtPaisOrigen.TabIndex = 169;
@@ -1275,7 +1216,7 @@
             this.txtNacionalidad.DisplayMember = "Nacionalidad";
             this.txtNacionalidad.DropDownWidth = 250;
             this.txtNacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNacionalidad.Location = new System.Drawing.Point(864, 292);
+            this.txtNacionalidad.Location = new System.Drawing.Point(864, 290);
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(137, 22);
             this.txtNacionalidad.TabIndex = 168;
@@ -1286,7 +1227,7 @@
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.ForeColor = System.Drawing.Color.Black;
-            this.label50.Location = new System.Drawing.Point(564, 347);
+            this.label50.Location = new System.Drawing.Point(791, 316);
             this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(63, 13);
@@ -1624,7 +1565,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(790, 297);
+            this.label22.Location = new System.Drawing.Point(790, 295);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(69, 13);
@@ -2439,6 +2380,110 @@
             this.label55.TabIndex = 173;
             this.label55.Text = "¿Cómo se enteró de Clínica San Lorenzo?";
             // 
+            // txtRucCliente
+            // 
+            appearance13.BackColor = System.Drawing.SystemColors.Window;
+            appearance13.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtRucCliente.DisplayLayout.Appearance = appearance13;
+            this.txtRucCliente.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.txtRucCliente.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
+            appearance14.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            appearance14.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance14.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance14.BorderColor = System.Drawing.SystemColors.Window;
+            this.txtRucCliente.DisplayLayout.GroupByBox.Appearance = appearance14;
+            appearance15.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtRucCliente.DisplayLayout.GroupByBox.BandLabelAppearance = appearance15;
+            this.txtRucCliente.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance16.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            appearance16.BackColor2 = System.Drawing.SystemColors.Control;
+            appearance16.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance16.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtRucCliente.DisplayLayout.GroupByBox.PromptAppearance = appearance16;
+            this.txtRucCliente.DisplayLayout.MaxColScrollRegions = 1;
+            this.txtRucCliente.DisplayLayout.MaxRowScrollRegions = 1;
+            this.txtRucCliente.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
+            appearance17.BackColor = System.Drawing.SystemColors.Window;
+            appearance17.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtRucCliente.DisplayLayout.Override.ActiveCellAppearance = appearance17;
+            appearance18.BackColor = System.Drawing.SystemColors.Highlight;
+            appearance18.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtRucCliente.DisplayLayout.Override.ActiveRowAppearance = appearance18;
+            this.txtRucCliente.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
+            this.txtRucCliente.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
+            appearance19.BackColor = System.Drawing.SystemColors.Window;
+            this.txtRucCliente.DisplayLayout.Override.CardAreaAppearance = appearance19;
+            appearance20.BorderColor = System.Drawing.Color.Silver;
+            appearance20.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
+            this.txtRucCliente.DisplayLayout.Override.CellAppearance = appearance20;
+            this.txtRucCliente.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
+            this.txtRucCliente.DisplayLayout.Override.CellPadding = 0;
+            appearance21.BackColor = System.Drawing.SystemColors.Control;
+            appearance21.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance21.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
+            appearance21.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance21.BorderColor = System.Drawing.SystemColors.Window;
+            this.txtRucCliente.DisplayLayout.Override.GroupByRowAppearance = appearance21;
+            appearance22.TextHAlignAsString = "Left";
+            this.txtRucCliente.DisplayLayout.Override.HeaderAppearance = appearance22;
+            this.txtRucCliente.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            this.txtRucCliente.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
+            appearance23.BackColor = System.Drawing.SystemColors.Window;
+            appearance23.BorderColor = System.Drawing.Color.Silver;
+            this.txtRucCliente.DisplayLayout.Override.RowAppearance = appearance23;
+            this.txtRucCliente.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
+            appearance24.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtRucCliente.DisplayLayout.Override.TemplateAddRowAppearance = appearance24;
+            this.txtRucCliente.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.txtRucCliente.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.txtRucCliente.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
+            this.txtRucCliente.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Never;
+            this.txtRucCliente.Location = new System.Drawing.Point(489, 45);
+            this.txtRucCliente.Name = "txtRucCliente";
+            this.txtRucCliente.Size = new System.Drawing.Size(115, 22);
+            this.txtRucCliente.TabIndex = 155;
+            this.txtRucCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRucCliente_KeyDown);
+            this.txtRucCliente.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtRucCliente_MouseDown);
+            // 
+            // dtDateCalendar
+            // 
+            this.dtDateCalendar.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dtDateCalendar.CalendarTitleForeColor = System.Drawing.Color.Blue;
+            this.dtDateCalendar.Enabled = false;
+            this.dtDateCalendar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDateCalendar.Location = new System.Drawing.Point(894, 47);
+            this.dtDateCalendar.Name = "dtDateCalendar";
+            this.dtDateCalendar.Size = new System.Drawing.Size(100, 20);
+            this.dtDateCalendar.TabIndex = 166;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Enabled = false;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.Color.Blue;
+            this.label56.Location = new System.Drawing.Point(797, 50);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(96, 13);
+            this.label56.TabIndex = 165;
+            this.label56.Text = "Fecha Atención";
+            // 
+            // checkDia
+            // 
+            this.checkDia.AutoSize = true;
+            this.checkDia.Checked = true;
+            this.checkDia.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDia.ForeColor = System.Drawing.Color.Red;
+            this.checkDia.Location = new System.Drawing.Point(610, 46);
+            this.checkDia.Name = "checkDia";
+            this.checkDia.Size = new System.Drawing.Size(182, 20);
+            this.checkDia.TabIndex = 167;
+            this.checkDia.Text = "¿ATENCION DEL DIA?";
+            this.checkDia.UseVisualStyleBackColor = true;
+            this.checkDia.CheckedChanged += new System.EventHandler(this.checkDia_CheckedChanged);
+            // 
             // frmAgendarTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2472,7 +2517,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCCosto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRucCliente)).EndInit();
             this.gbDatosGenerales.ResumeLayout(false);
             this.gbDatosGenerales.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaisOrigen)).EndInit();
@@ -2483,6 +2527,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPuesto)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtRucCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2623,5 +2668,8 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.ComboBox cboMarketing;
         private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.DateTimePicker dtDateCalendar;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.CheckBox checkDia;
     }
 }

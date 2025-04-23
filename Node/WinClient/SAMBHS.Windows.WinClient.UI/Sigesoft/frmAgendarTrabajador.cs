@@ -78,7 +78,7 @@ namespace SAMBHS.Windows.WinClient.UI.Sigesoft
             var oServiceDto = OServiceDto();
             Task.Factory.StartNew(() =>
             {
-                ListadoVentaDetalle = AgendaBl.SheduleService(oServiceDto, 11);
+                ListadoVentaDetalle = AgendaBl.SheduleService(oServiceDto, 11, 1);
             }).ContinueWith(t =>
             {
                 if (!ListadoVentaDetalle.Any()) return;
