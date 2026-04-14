@@ -28,6 +28,7 @@ namespace SAMBHS.Windows.NubefactIntegration
             {
                 using (var client = new WebClient())
                 {
+                    ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768 | SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
                     using (client.OpenRead("https://www.nubefact.com"))
                     {
                         return true;
@@ -88,7 +89,7 @@ namespace SAMBHS.Windows.NubefactIntegration
             EstadoSunatResult = EstadoSunat.PENDIENTE;
             EnviarAutomaticamente = false;
             ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768 | SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
         }
 
         /// <summary>

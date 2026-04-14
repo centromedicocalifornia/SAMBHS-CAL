@@ -4550,6 +4550,14 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
             {
                 usuariosigesoft = 1466;
             }
+            else if (usuarioGraba == 10052)
+            {
+                usuariosigesoft = 7011;
+            }
+            else if (usuarioGraba == 10053)
+            {
+                usuariosigesoft = 7407;
+            }
             
 
             return usuariosigesoft;

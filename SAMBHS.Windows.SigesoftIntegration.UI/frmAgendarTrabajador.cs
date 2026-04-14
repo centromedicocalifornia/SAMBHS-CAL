@@ -1270,22 +1270,22 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
 
 
 
-                cboAltitud.SelectedValue = datosTrabajador.Altitud;
-                txtExploitedMineral.Text = datosTrabajador.Minerales.Trim();
-                cboNivelEstudio.SelectedValue = datosTrabajador.Estudios;
-                cboGrupo.SelectedValue = datosTrabajador.Grupo;
-                cboFactorSan.SelectedValue = datosTrabajador.Factor;
-                txtResidenceTimeInWorkplace.Text = datosTrabajador.TiempoResidencia.Trim();
-                cboTipoSeguro.SelectedValue = datosTrabajador.TipoSeguro;
-                txtNumberLivingChildren.Text = datosTrabajador.Vivos.ToString().Trim();
-                txtNumberDependentChildren.Text = datosTrabajador.Muertos.ToString().Trim();
-                txtNroHermanos.Text = datosTrabajador.Hermanos.ToString().Trim();
-                txtTelephoneNumber.Text = datosTrabajador.Telefono.Trim();
-                cboParentesco.SelectedValue = datosTrabajador.Parantesco;
-                cboLugarLabor.SelectedValue = datosTrabajador.Labor;
-                txtResidenciaAnte.Text = datosTrabajador.ResidenciaAnterior.Trim();
+                cboAltitud.SelectedValue = datosTrabajador.Altitud == null ? -1 : datosTrabajador.Altitud;
+                txtExploitedMineral.Text = (datosTrabajador.Minerales ?? "").Trim();
+                cboNivelEstudio.SelectedValue = datosTrabajador.Estudios == null ? -1 : datosTrabajador.Estudios;
+                cboGrupo.SelectedValue = datosTrabajador.Grupo == null ? -1 : datosTrabajador.Grupo;
+                cboFactorSan.SelectedValue = datosTrabajador.Factor == null ? -1 : datosTrabajador.Factor;
+                txtResidenceTimeInWorkplace.Text = (datosTrabajador.TiempoResidencia ?? "").Trim();
+                cboTipoSeguro.SelectedValue = datosTrabajador.TipoSeguro == null ? -1 : datosTrabajador.TipoSeguro;
+                txtNumberLivingChildren.Text = datosTrabajador.Vivos == null ? "0" : datosTrabajador.Vivos.ToString().Trim();
+                txtNumberDependentChildren.Text = datosTrabajador.Muertos == null ? "0" : datosTrabajador.Muertos.ToString().Trim();
+                txtNroHermanos.Text = datosTrabajador.Hermanos == null ? "0" : datosTrabajador.Hermanos.ToString().Trim();
+                txtTelephoneNumber.Text = (datosTrabajador.Telefono ?? "").Trim();
+                cboParentesco.SelectedValue = datosTrabajador.Parantesco == null ? -1 : datosTrabajador.Parantesco;
+                cboLugarLabor.SelectedValue = datosTrabajador.Labor == null ? -1 : datosTrabajador.Labor;
+                txtResidenciaAnte.Text = (datosTrabajador.ResidenciaAnterior ?? "").Trim();
                 //txtNacionalidad.Text = datosTrabajador.Nacionalidad;
-                txtReligion.Text = datosTrabajador.Religion.Trim();
+                txtReligion.Text = (datosTrabajador.Religion ?? "").Trim();
 
                 FingerPrintTemplate = datosTrabajador.b_FingerPrintTemplate;
                 FingerPrintImage = datosTrabajador.b_FingerPrintImage;
@@ -2232,6 +2232,11 @@ namespace SAMBHS.Windows.SigesoftIntegration.UI
                 label56.Enabled = true;
                 dtDateCalendar.Enabled = true;
             }
+        }
+
+        private void label55_Click(object sender, EventArgs e)
+        {
+
         }
         
     }

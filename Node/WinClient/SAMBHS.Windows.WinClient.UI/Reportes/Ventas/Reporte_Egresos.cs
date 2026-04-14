@@ -132,6 +132,10 @@ namespace NetPdf
                     usuario = "DAFNIS ANYELA CORTEZ BARANDIARAN";
                 else if (item.UsuarioCrea == 10056)
                     usuario = "EDELIZ CONSUELO MORALES SAUCEDO";
+                else if (item.UsuarioCrea == 10052)
+                    usuario = "DIANA RODRIGUEZ BAZAN";
+                else if (item.UsuarioCrea == 10053)
+                    usuario = "ANGELITA HILARIO CRUZ";
                 else if (item.UsuarioCrea == 1)
                     usuario = "ADMINISTRADOR DEL SISTEMA";
 

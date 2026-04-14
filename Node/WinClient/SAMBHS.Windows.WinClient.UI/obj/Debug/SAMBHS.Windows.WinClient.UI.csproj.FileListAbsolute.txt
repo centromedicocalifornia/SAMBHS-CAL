@@ -4120,12 +4120,6 @@ E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI
 E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.exe
 E:\DEV_AMOJ\CMC\SAMBHS_CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\obj\Debug\SAMBHS.Windows.WinClient.UI.pdb
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Backgrounds\AnyDesk.exe
-D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\PlantillasExcel\plantilla_asiento_diario.xlsx
-D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\PlantillasExcel\plantilla_registro_productos.xlsx
-D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Reportes\LogoTipos\photo.jpg
-D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Reportes\Ventas\crCliente.rpt
-D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Reportes\Ventas\crCliente.cs
-D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\PlantillasExcel\plantilla_venta_contable.xlsx
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\BandejaLiquidacionCompra.png
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\cajachica.png
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\calendar.png
@@ -4150,6 +4144,8 @@ D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\De
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\tipoactivo.png
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\up-arrow.png
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\weekly-calendar.png
+D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\PlantillasExcel\plantilla_asiento_diario.xlsx
+D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\PlantillasExcel\plantilla_registro_productos.xlsx
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\29-128.png
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\afpnet.png
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\AnexoVentaDetalla.png
@@ -4285,6 +4281,10 @@ D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\De
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\usercard_01.png
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\Planilla_A.png
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\img\vector_210-252_13-128.png
+D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Reportes\LogoTipos\photo.jpg
+D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Reportes\Ventas\crCliente.rpt
+D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Reportes\Ventas\crCliente.cs
+D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\PlantillasExcel\plantilla_venta_contable.xlsx
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Librerias\Devart.Data.Design.dll
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Librerias\Devart.Data.dll
 D:\DEV_DBO_SIST\CMC\SAMBHS-CAL\Node\WinClient\SAMBHS.Windows.WinClient.UI\bin\Debug\Librerias\Devart.Data.Linq.dll

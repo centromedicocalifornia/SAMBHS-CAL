@@ -262,6 +262,11 @@ namespace NetPdf
                          usuario = "EDELIZ CONSUELO MORALES SAUCEDO";
                      else if (systemUserId == 9053)
                          usuario = "MAICOL ARTEAGA SANCHEZ";
+                     else if (systemUserId == 10052)
+                         usuario = "DIANA RODRIGUEZ BAZAN";
+                     else if (systemUserId == 10053)
+                         usuario = "ANGELITA HILARIO CRUZ";
+
                    
                  }
                  cells = new List<PdfPCell>()
