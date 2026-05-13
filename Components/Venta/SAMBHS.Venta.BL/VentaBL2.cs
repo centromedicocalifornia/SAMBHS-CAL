@@ -361,11 +361,12 @@ namespace SAMBHS.Venta.BL
             {
                 using (var dbContext = new SAMBHSEntitiesModelWin())
                 {
-                    if (systemUserId == 1 || systemUserId == 2037 || systemUserId == 4049)
+                    if (rolId == 16 || rolId == -1)
                     {
                         var query = (from n in dbContext.venta
                                      join A in dbContext.cliente on n.v_IdCliente equals A.v_IdCliente into A_join
                                      from A in A_join.DefaultIfEmpty()
+
                                      join J2 in dbContext.systemuser on new { i_UpdateUserId = n.i_ActualizaIdUsuario.Value }
                                          equals new { i_UpdateUserId = J2.i_SystemUserId } into J2_join
                                      from J2 in J2_join.DefaultIfEmpty()
@@ -378,6 +379,21 @@ namespace SAMBHS.Venta.BL
                                      join J5 in dbContext.cobranzapendiente on new { idventa = n.v_IdVenta, eliminado = 0 }
                                          equals new { idventa = J5.v_IdVenta, eliminado = J5.i_Eliminado ?? 0 } into J5_join
                                      from J5 in J5_join.DefaultIfEmpty()
+
+                                     join J6 in dbContext.datahierarchy on new { i_InsertUserId = n.i_IdPuntoEmbarque.Value, grupo = 180 }
+                                        equals new { i_InsertUserId = J6.i_ItemId, grupo = J6.i_GroupId } into J6_join
+                                     from J6 in J6_join.DefaultIfEmpty()
+
+                                     join J7 in dbContext.datahierarchy on new { i_InsertUserId = n.i_IdPuntoDestino.Value, grupo = 181 }
+                                        equals new { i_InsertUserId = J7.i_ItemId, grupo = J7.i_GroupId } into J7_join
+                                     from J7 in J7_join.DefaultIfEmpty()
+
+                                     join A1 in dbContext.cobranzadetalle on n.v_IdVenta equals A1.v_IdVenta into A1_join
+                                     from A1 in A1_join.DefaultIfEmpty()
+
+                                     join A2 in dbContext.datahierarchy on new { i_InsertUserId = A1.i_IdFormaPago.Value, grupo = 46 }
+                                       equals new { i_InsertUserId = A2.i_ItemId, grupo = A2.i_GroupId, } into A2_join
+                                     from A2 in A2_join.DefaultIfEmpty()
 
                                      where
                                          n.i_Eliminado == 0 && n.t_FechaRegistro >= F_Ini && n.t_FechaRegistro <= F_Fin &&
@@ -448,10 +464,10 @@ namespace SAMBHS.Venta.BL
                     {
                         var query = (from n in dbContext.venta
 
-                                     join A1 in dbContext.vendedor on n.v_IdVendedor equals A1.v_IdVendedor into A1_join
-                                     from A1 in A1_join.DefaultIfEmpty()
+                                     join A3 in dbContext.vendedor on n.v_IdVendedor equals A3.v_IdVendedor into A3_join
+                                     from A3 in A3_join.DefaultIfEmpty()
 
-                                     join J6 in dbContext.systemuser on A1.i_SystemUser equals J6.i_SystemUserId
+                                     join J6 in dbContext.systemuser on A3.i_SystemUser equals J6.i_SystemUserId
 
                                      join A in dbContext.cliente on n.v_IdCliente equals A.v_IdCliente into A_join
                                      from A in A_join.DefaultIfEmpty()
@@ -467,6 +483,21 @@ namespace SAMBHS.Venta.BL
                                      join J5 in dbContext.cobranzapendiente on new { idventa = n.v_IdVenta, eliminado = 0 }
                                          equals new { idventa = J5.v_IdVenta, eliminado = J5.i_Eliminado ?? 0 } into J5_join
                                      from J5 in J5_join.DefaultIfEmpty()
+
+                                     join J7 in dbContext.datahierarchy on new { i_InsertUserId = n.i_IdPuntoEmbarque.Value, grupo = 180 }
+                                        equals new { i_InsertUserId = J7.i_ItemId, grupo = J7.i_GroupId } into J7_join
+                                     from J7 in J7_join.DefaultIfEmpty()
+
+                                     join J8 in dbContext.datahierarchy on new { i_InsertUserId = n.i_IdPuntoDestino.Value, grupo = 181 }
+                                        equals new { i_InsertUserId = J8.i_ItemId, grupo = J8.i_GroupId } into J8_join
+                                     from J8 in J8_join.DefaultIfEmpty()
+
+                                     join A1 in dbContext.cobranzadetalle on n.v_IdVenta equals A1.v_IdVenta into A1_join
+                                     from A1 in A1_join.DefaultIfEmpty()
+
+                                     join A2 in dbContext.datahierarchy on new { i_InsertUserId = A1.i_IdFormaPago.Value, grupo = 46 }
+                                       equals new { i_InsertUserId = A2.i_ItemId, grupo = A2.i_GroupId, } into A2_join
+                                     from A2 in A2_join.DefaultIfEmpty()
 
                                      where
                                          n.i_Eliminado == 0 && n.t_FechaRegistro >= F_Ini && n.t_FechaRegistro <= F_Fin &&
@@ -538,14 +569,9 @@ namespace SAMBHS.Venta.BL
                     else
                     {
                         var query = (from n in dbContext.venta
-
-                                     join A1 in dbContext.vendedor on n.v_IdVendedor equals A1.v_IdVendedor into A1_join
-                                     from A1 in A1_join.DefaultIfEmpty()
-
-                                     join J6 in dbContext.systemuser on A1.i_SystemUser equals J6.i_SystemUserId
-
                                      join A in dbContext.cliente on n.v_IdCliente equals A.v_IdCliente into A_join
                                      from A in A_join.DefaultIfEmpty()
+
                                      join J2 in dbContext.systemuser on new { i_UpdateUserId = n.i_ActualizaIdUsuario.Value }
                                          equals new { i_UpdateUserId = J2.i_SystemUserId } into J2_join
                                      from J2 in J2_join.DefaultIfEmpty()
@@ -559,12 +585,29 @@ namespace SAMBHS.Venta.BL
                                          equals new { idventa = J5.v_IdVenta, eliminado = J5.i_Eliminado ?? 0 } into J5_join
                                      from J5 in J5_join.DefaultIfEmpty()
 
+                                     join J6 in dbContext.datahierarchy on new { i_InsertUserId = n.i_IdPuntoEmbarque.Value, grupo = 180 }
+                                        equals new { i_InsertUserId = J6.i_ItemId, grupo = J6.i_GroupId } into J6_join
+                                     from J6 in J6_join.DefaultIfEmpty()
+
+                                     join J7 in dbContext.datahierarchy on new { i_InsertUserId = n.i_IdPuntoDestino.Value, grupo = 181 }
+                                        equals new { i_InsertUserId = J7.i_ItemId, grupo = J7.i_GroupId } into J7_join
+                                     from J7 in J7_join.DefaultIfEmpty()
+
+                                     join A1 in dbContext.cobranzadetalle on n.v_IdVenta equals A1.v_IdVenta into A1_join
+                                     from A1 in A1_join.DefaultIfEmpty()
+
+                                     join A2 in dbContext.datahierarchy on new { i_InsertUserId = A1.i_IdFormaPago.Value, grupo = 46 }
+                                       equals new { i_InsertUserId = A2.i_ItemId, grupo = A2.i_GroupId, } into A2_join
+                                     from A2 in A2_join.DefaultIfEmpty()
+
                                      where
                                          n.i_Eliminado == 0 && n.t_FechaRegistro >= F_Ini && n.t_FechaRegistro <= F_Fin &&
                                          (idEstablecimiento == -1 || n.i_IdEstablecimiento == idEstablecimiento) &&
-                                         (n.i_InsertaIdUsuario == systemUserId) &&
                                          (!soloElectronicos || (n.v_SerieDocumento.StartsWith("B") || n.v_SerieDocumento.StartsWith("F")))
+                                         &&
+                                         (n.i_InsertaIdUsuario == systemUserId) 
                                      orderby n.t_InsertaFecha descending
+
                                      select new ventaDto
                                      {
                                          v_IdVenta = n.v_IdVenta,
