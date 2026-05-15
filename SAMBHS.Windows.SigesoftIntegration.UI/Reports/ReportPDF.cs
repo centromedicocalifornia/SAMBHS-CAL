@@ -266,6 +266,8 @@ namespace NetPdf
                          usuario = "DIANA RODRIGUEZ BAZAN";
                      else if (systemUserId == 10053)
                          usuario = "ANGELITA HILARIO CRUZ";
+                     else if (systemUserId == 11052)
+                         usuario = "KIARA LOANA GALVEZ ASCOY";
 
                    
                  }
